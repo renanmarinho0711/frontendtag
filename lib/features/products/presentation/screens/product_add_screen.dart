@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/enums/loading_status.dart';
@@ -468,7 +468,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).greenGradient, ThemeColors.of(context).greenGradientEnd],
+                colors: [ThemeColors.of(context).success, ThemeColors.of(context).successEnd],
               ),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
@@ -517,7 +517,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   : const Icon(Icons.check_rounded, size: 18),
               label: Text(_salvando ? 'Salvando...' : 'Salvar'),
               style: FilledButton.styleFrom(
-                backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+                backgroundColor: ThemeColors.of(context).success,
                 foregroundColor: ThemeColors.of(context).surface,
               ),
             ),
@@ -551,7 +551,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   child: Container(
                     height: 3,
                     color: isCompleted 
-                        ? ThemeColors.of(context).brandPrimaryGreen 
+                        ? ThemeColors.of(context).success 
                         : ThemeColors.of(context).grey200,
                   ),
                 );
@@ -566,12 +566,12 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: isCompleted 
-                        ? ThemeColors.of(context).brandPrimaryGreen 
+                        ? ThemeColors.of(context).success 
                         : isActive 
-                            ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2)
+                            ? ThemeColors.of(context).success.withValues(alpha: 0.2)
                             : ThemeColors.of(context).grey200,
                     border: isActive 
-                        ? Border.all(color: ThemeColors.of(context).brandPrimaryGreen, width: 2)
+                        ? Border.all(color: ThemeColors.of(context).success, width: 2)
                         : null,
                   ),
                   child: Center(
@@ -583,7 +583,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                               fontSize: isActive ? 14 : 12,
                               fontWeight: FontWeight.bold,
                               color: isActive 
-                                  ? ThemeColors.of(context).brandPrimaryGreen 
+                                  ? ThemeColors.of(context).success 
                                   : ThemeColors.of(context).textSecondary,
                             ),
                           ),
@@ -607,7 +607,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     fontSize: 11,
                     fontWeight: isActive || isCompleted ? FontWeight.w600 : FontWeight.normal,
                     color: isActive 
-                        ? ThemeColors.of(context).brandPrimaryGreen 
+                        ? ThemeColors.of(context).success 
                         : isCompleted 
                             ? ThemeColors.of(context).success
                             : ThemeColors.of(context).textSecondary,
@@ -1106,7 +1106,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                       decoration: BoxDecoration(
-                        color: ThemeColors.of(context).brandPrimaryGreen,
+                        color: ThemeColors.of(context).success,
                         borderRadius: AppRadius.sm,
                       ),
                       child: Text(
@@ -1147,7 +1147,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
               boxShadow: AppShadows.subtle,
               border: Border.all(
                 color: _vincularTag 
-                    ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.5) 
+                    ? ThemeColors.of(context).success.withValues(alpha: 0.5) 
                     : ThemeColors.of(context).borderLight,
                 width: _vincularTag ? 2 : 1,
               ),
@@ -1175,18 +1175,18 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
                 decoration: BoxDecoration(
                   color: _vincularTag 
-                      ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
+                      ? ThemeColors.of(context).success.withValues(alpha: 0.1)
                       : ThemeColors.of(context).grey200,
                   borderRadius: AppRadius.sm,
                 ),
                 child: Icon(
                   Icons.label_rounded,
                   color: _vincularTag 
-                      ? ThemeColors.of(context).brandPrimaryGreen 
+                      ? ThemeColors.of(context).success 
                       : ThemeColors.of(context).textSecondary,
                 ),
               ),
-              activeColor: ThemeColors.of(context).brandPrimaryGreen,
+              activeColor: ThemeColors.of(context).success,
               contentPadding: EdgeInsets.zero,
             ),
           ),
@@ -1323,7 +1323,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     icon: const Icon(Icons.arrow_forward_rounded, size: 18),
                     label: const Text('Prximo'),
                     style: FilledButton.styleFrom(
-                      backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+                      backgroundColor: ThemeColors.of(context).success,
                       foregroundColor: ThemeColors.of(context).surface,
                       padding: EdgeInsets.symmetric(
                         vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
@@ -1348,7 +1348,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                         : const Icon(Icons.check_rounded, size: 18),
                     label: Text(_salvando ? 'Salvando...' : 'Criar Produto'),
                     style: FilledButton.styleFrom(
-                      backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+                      backgroundColor: ThemeColors.of(context).success,
                       foregroundColor: ThemeColors.of(context).surface,
                       padding: EdgeInsets.symmetric(
                         vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
@@ -1427,7 +1427,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
           borderSide: BorderSide(
             color: showValidation && isValid 
                 ? ThemeColors.of(context).success 
-                : ThemeColors.of(context).brandPrimaryGreen,
+                : ThemeColors.of(context).success,
             width: 2,
           ),
         ),
@@ -1641,6 +1641,8 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
     }
   }
 }
+
+
 
 
 

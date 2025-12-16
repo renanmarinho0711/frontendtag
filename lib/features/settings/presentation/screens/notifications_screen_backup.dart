@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -316,7 +316,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimary.withOpacity(0.05),
+            color: ThemeColors.of(context).shadowSubtle(0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -690,7 +690,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimary.withOpacity(0.05),
+            color: ThemeColors.of(context).shadowSubtle(0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -885,7 +885,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimary.withOpacity(0.05),
+            color: ThemeColors.of(context).shadowSubtle(0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -1264,7 +1264,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimary.withOpacity(0.05),
+            color: ThemeColors.of(context).shadowSubtle(0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -1288,7 +1288,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [ThemeColors.of(context).greenGradient, ThemeColors.of(context).greenGradientEnd],
+                    colors: [ThemeColors.of(context).success, ThemeColors.of(context).successEnd],
                   ),
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
@@ -1908,6 +1908,7 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
+
 
 
 

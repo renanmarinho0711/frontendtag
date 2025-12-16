@@ -324,7 +324,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                         height: 120,
                         width: 120,
                         decoration: BoxDecoration(
-                          color: ThemeColors.of(context).grey200,
+                          color: ThemeColors.of(context).borderLight,
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Icon(Icons.image_not_supported_rounded, size: 48, color: ThemeColors.of(context).grey500),
@@ -425,7 +425,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
             },
             icon: const Icon(Icons.add_shopping_cart_rounded),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+              backgroundColor: ThemeColors.of(context).success,
             ),
             label: const Text('Importar'),
           ),
@@ -547,7 +547,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
             },
             icon: const Icon(Icons.add_rounded),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+              backgroundColor: ThemeColors.of(context).success,
             ),
             label: const Text('Cadastrar'),
           ),
@@ -706,7 +706,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(24)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).success.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -810,7 +810,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
       child: TabBar(
         controller: _tabController,
         indicator: BoxDecoration(
-          color: ThemeColors.of(context).brandPrimaryGreen,
+          color: ThemeColors.of(context).success,
           borderRadius: BorderRadius.circular(12),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
@@ -896,7 +896,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
   }
 
   Widget _buildProgressStep(int stepNum, String label, IconData icon, bool isActive) {
-    final color = isActive ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).textTertiary;
+    final color = isActive ? ThemeColors.of(context).success : ThemeColors.of(context).textTertiary;
     
     return Column(
       children: [
@@ -928,7 +928,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
       height: 2,
       margin: const EdgeInsets.symmetric(horizontal: 4),
       decoration: BoxDecoration(
-        color: isActive ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).border,
+        color: isActive ? ThemeColors.of(context).success : ThemeColors.of(context).border,
         borderRadius: BorderRadius.circular(1),
       ),
     );
@@ -1143,6 +1143,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     );
   }
 }
+
 
 
 

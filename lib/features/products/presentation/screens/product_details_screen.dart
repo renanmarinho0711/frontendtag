@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/products/presentation/screens/product_edit_screen.dart';
 import 'package:tagbean/features/products/presentation/screens/product_qr_screen.dart';
@@ -78,11 +78,11 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                     ),
                   );
                 },
-                icon: Icon(Icons.edit_rounded, size: 18, color: ThemeColors.of(context).brandPrimaryGreen),
+                icon: Icon(Icons.edit_rounded, size: 18, color: ThemeColors.of(context).success),
                 label: Text(
                   'Editar',
                   style: TextStyle(
-                    color: ThemeColors.of(context).brandPrimaryGreen,
+                    color: ThemeColors.of(context).success,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -145,8 +145,8 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             delegate: _SliverTabBarDelegate(
               TabBar(
                 controller: _tabController,
-                indicatorColor: ThemeColors.of(context).brandPrimaryGreen,
-                labelColor: ThemeColors.of(context).brandPrimaryGreen,
+                indicatorColor: ThemeColors.of(context).success,
+                labelColor: ThemeColors.of(context).success,
                 unselectedLabelColor: ThemeColors.of(context).textSecondary,
                 labelStyle: TextStyle(
                   fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
@@ -167,7 +167,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
           ),
         ],
         body: _isLoading
-            ? Center(child: CircularProgressIndicator(color: ThemeColors.of(context).brandPrimaryGreen))
+            ? Center(child: CircularProgressIndicator(color: ThemeColors.of(context).success))
             : TabBarView(
                 controller: _tabController,
                 children: [
@@ -425,7 +425,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             child: _buildQuickActionCard(
               icon: Icons.label_rounded,
               label: 'Gerenciar\nTag',
-              color: ThemeColors.of(context).brandPrimaryGreen,
+              color: ThemeColors.of(context).success,
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -819,12 +819,12 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                       Container(
                         padding: EdgeInsets.all(AppSpacing.sm),
                         decoration: BoxDecoration(
-                          color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                          color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.attach_money_rounded,
-                          color: ThemeColors.of(context).brandPrimaryGreen,
+                          color: ThemeColors.of(context).success,
                           size: 20,
                         ),
                       ),
@@ -919,7 +919,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                     icon: Icon(Icons.add_rounded),
                     label: Text('Criar Estratgia'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+                      backgroundColor: ThemeColors.of(context).success,
                     ),
                   ),
                 ],
@@ -1114,6 +1114,7 @@ class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(_SliverTabBarDelegate oldDelegate) => false;
 }
+
 
 
 

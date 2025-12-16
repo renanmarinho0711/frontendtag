@@ -205,7 +205,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
         vertical: AppSizes.productEditSectionSpacing.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.lg : AppRadius.xl),
         boxShadow: isMobile ? AppShadows.cardElevatedMobile : AppShadows.cardElevatedDesktop,
       ),
@@ -219,7 +219,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back_rounded,
-                color: ThemeColors.of(context).grey400,
+                color: ThemeColors.of(context).textTertiary,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
               onPressed: () {
@@ -243,7 +243,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
             ),
             child: Icon(
               CategoryThemes.getTheme(_categoria).icon,
-              color: ThemeColors.of(context).grey600,
+              color: ThemeColors.of(context).textSecondary,
               size: AppSizes.iconMedium.get(isMobile, isTablet),
             ),
           ),
@@ -258,7 +258,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 ),
                 Text(
                   widget.product.nome,
-                  style: _responsiveTextStyle(AppTextStyles.caption.copyWith(color: ThemeColors.of(context).grey400)),
+                  style: _responsiveTextStyle(AppTextStyles.caption.copyWith(color: ThemeColors.of(context).textTertiary)),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -322,7 +322,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Container(
                 padding: AppSizes.productEditIconToTitle.toEdgeInsetsAll(isMobile, isTablet),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   boxShadow: hasTag ? AppShadows.successGlow : AppShadows.warningGlow,
                 ),
@@ -351,7 +351,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                           ? 'Este produto possui tag sincronizada'
                           : 'Este produto no possui tag associada',
                       style: _responsiveTextStyle(AppTextStyles.caption.copyWith(
-                        color: ThemeColors.of(context).grey400,
+                        color: ThemeColors.of(context).textTertiary,
                       )),
                     ),
                   ],
@@ -383,7 +383,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
             Container(
               padding: AppSizes.formFieldSpacing.toEdgeInsetsAll(isMobile, isTablet),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).grey600,
+                color: ThemeColors.of(context).textSecondary,
                 borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
               ),
               child: Column(
@@ -408,7 +408,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                     SnackBar(
                       content: Row(
                         children: [
-                          Icon(Icons.open_in_new_rounded, color: ThemeColors.of(context).grey600),
+                          Icon(Icons.open_in_new_rounded, color: ThemeColors.of(context).textSecondary),
                           SizedBox(width: AppSpacing.md),
                           Text('Abrindo detalhes da tag...'),
                         ],
@@ -425,7 +425,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 label: const Text('Ver Detalhes da Tag'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ThemeColors.of(context).greenMaterial,
-                  foregroundColor: ThemeColors.of(context).grey600,
+                  foregroundColor: ThemeColors.of(context).textSecondary,
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVerticalDense.get(isMobile, isTablet),
                   ),
@@ -445,7 +445,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                     SnackBar(
                       content: Row(
                         children: [
-                          Icon(Icons.qr_code_scanner_rounded, color: ThemeColors.of(context).grey600),
+                          Icon(Icons.qr_code_scanner_rounded, color: ThemeColors.of(context).textSecondary),
                           const SizedBox(width: AppSpacing.md),
                           const Text('Abrindo associao de tag...'),
                         ],
@@ -462,7 +462,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 label: const Text('Associar Tag Agora'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ThemeColors.of(context).warningMain,
-                  foregroundColor: ThemeColors.of(context).grey600,
+                  foregroundColor: ThemeColors.of(context).textSecondary,
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVerticalDense.get(isMobile, isTablet),
                   ),
@@ -498,7 +498,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
         Text(
           label,
           style: _responsiveTextStyle(AppTextStyles.valueLabel.copyWith(
-            color: ThemeColors.of(context).grey400,
+            color: ThemeColors.of(context).textTertiary,
             fontWeight: FontWeight.w500,
           )),
         ),
@@ -519,7 +519,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     return Container(
       padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.lg : AppRadius.xl),
         boxShadow: isMobile ? AppShadows.cardMobile : AppShadows.cardDesktop,
       ),
@@ -536,7 +536,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 ),
                 child: Icon(
                   Icons.info_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -646,7 +646,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           borderSide: BorderSide(
             color: showValidation && isValid 
                 ? ThemeColors.of(context).greenLight
-                : ThemeColors.of(context).grey400.withOpacity(0.3),
+                : ThemeColors.of(context).textTertiary.withOpacity(0.3),
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -674,7 +674,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     return Container(
       padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.lg : AppRadius.xl),
         boxShadow: isMobile ? AppShadows.cardMobile : AppShadows.cardDesktop,
       ),
@@ -691,7 +691,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 ),
                 child: Icon(
                   Icons.attach_money_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -755,7 +755,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     return Container(
       padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.lg : AppRadius.xl),
         boxShadow: isMobile ? AppShadows.cardMobile : AppShadows.cardDesktop,
       ),
@@ -772,7 +772,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 ),
                 child: Icon(
                   Icons.category_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -900,7 +900,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     return Container(
       padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.lg : AppRadius.xl),
         boxShadow: isMobile ? AppShadows.cardMobile : AppShadows.cardDesktop,
       ),
@@ -917,7 +917,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 ),
                 child: Icon(
                   Icons.history_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -932,7 +932,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 Text(
                   '${_historicoPrecos.length} alteraes',
                   style: _responsiveTextStyle(AppTextStyles.caption.copyWith(
-                    color: ThemeColors.of(context).grey400,
+                    color: ThemeColors.of(context).textTertiary,
                   )),
                 ),
             ],
@@ -948,13 +948,13 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                     Icon(
                       Icons.history_rounded,
                       size: AppSizes.iconHero.get(isMobile, isTablet),
-                      color: ThemeColors.of(context).grey400.withOpacity(0.8),
+                      color: ThemeColors.of(context).textTertiary.withOpacity(0.8),
                     ),
                     const SizedBox(height: AppSpacing.md),
                     Text(
                       'Nenhum histrico disponvel',
                       style: _responsiveTextStyle(AppTextStyles.body.copyWith(
-                        color: ThemeColors.of(context).grey400,
+                        color: ThemeColors.of(context).textTertiary,
                       )),
                     ),
                   ],
@@ -997,7 +997,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                     padding: EdgeInsets.symmetric(
                       vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                     ),
-                    side: BorderSide(color: ThemeColors.of(context).grey200),
+                    side: BorderSide(color: ThemeColors.of(context).borderLight),
                     shape: RoundedRectangleBorder(
                       borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                     ),
@@ -1030,7 +1030,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Text(
                 item.usuario ?? 'Sistema',
                 style: _responsiveTextStyle(AppTextStyles.tiny.copyWith(
-                  color: ThemeColors.of(context).grey400,
+                  color: ThemeColors.of(context).textTertiary,
                 )),
               ),
             ],
@@ -1070,10 +1070,10 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     return Container(
       padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         boxShadow: [
           BoxShadow(
-            color: Color(0x141E293B),
+            color: ThemeColors.of(context).shadowDark,
             blurRadius: 8,
             offset: const Offset(0, -2),
           ),
@@ -1098,7 +1098,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                   ),
-                  side: BorderSide(color: ThemeColors.of(context).grey200),
+                  side: BorderSide(color: ThemeColors.of(context).borderLight),
                   shape: RoundedRectangleBorder(
                     borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   ),
@@ -1106,7 +1106,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 child: Text(
                   'Cancelar',
                   style: _responsiveTextStyle(AppTextStyles.buttonText.copyWith(
-                    color: ThemeColors.of(context).grey400,
+                    color: ThemeColors.of(context).textTertiary,
                   )),
                 ),
               ),
@@ -1118,14 +1118,14 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                 onPressed: _formularioValido && !_salvando ? _salvarProduto : null,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ThemeColors.of(context).greenMaterial,
-                  foregroundColor: ThemeColors.of(context).grey600,
+                  foregroundColor: ThemeColors.of(context).textSecondary,
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                   ),
                   shape: RoundedRectangleBorder(
                     borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   ),
-                  disabledBackgroundColor: ThemeColors.of(context).grey400.withOpacity(0.3),
+                  disabledBackgroundColor: ThemeColors.of(context).textTertiary.withOpacity(0.3),
                 ),
                 child: _salvando
                     ? SizedBox(
@@ -1133,7 +1133,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                         height: 20,
                         child: CircularProgressIndicator(
                           strokeWidth: 2,
-                          valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).grey600),
+                          valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).textSecondary),
                         ),
                       )
                     : Text(
@@ -1172,7 +1172,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           onPressed: () => Navigator.pop(context, true),
           style: ElevatedButton.styleFrom(
             backgroundColor: ThemeColors.of(context).errorMain,
-            foregroundColor: ThemeColors.of(context).grey600,
+            foregroundColor: ThemeColors.of(context).textSecondary,
           ),
           child: const Text('Descartar'),
         ),
@@ -1290,7 +1290,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: ThemeColors.of(context).warningMain,
-              foregroundColor: ThemeColors.of(context).grey600,
+              foregroundColor: ThemeColors.of(context).textSecondary,
             ),
             child: const Text('Desassociar'),
           ),
@@ -1299,6 +1299,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     );
   }
 }
+
 
 
 

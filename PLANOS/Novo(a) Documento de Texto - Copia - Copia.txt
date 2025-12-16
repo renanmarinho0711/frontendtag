@@ -1,0 +1,289 @@
+Com base na análise completa do repositório, incluindo os arquivos de auditoria já existentes (CORES_REAIS_PARA_MIGRAR.txt, MAPEAMENTO_189_CORES_ATIVAS.txt, ESTRATEGIA_MIGRACAO_CORES.txt), segue o mapeamento 100% completo de todas as modificações necessárias:
+
+📊 RESUMO GERAL
+Categoria	Quantidade
+Cores hardcoded em PRESENTATION (screens/widgets)	6
+Cores hardcoded em DATA MODELS	72
+Uso de .withOpacity() / .withValues()	50+
+Uso de tokens legados (grey600, brandPrimaryGreen, etc.)	100+
+Arquivos obsoletos a remover	6
+TOTAL DE MODIFICAÇÕES	228+
+🔴 PARTE 1: CORES HARDCODED EM PRESENTATION (CRÍTICO - MIGRAR IMEDIATAMENTE)
+MÓDULO: PRODUCTS
+Arquivo: lib/features/products/presentation/screens/product_edit_screen.dart
+
+Code
+LINHA 1076: 
+ESTÁ ASSIM:  color: Color(0x141E293B),
+DEVE FICAR ASSIM: color: ThemeColors.of(context).shadowDark,
+Code
+LINHA 1211:
+ESTÁ ASSIM: Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+DEVE FICAR ASSIM: Icon(Icons.check_rounded, color: ThemeColors.of(context).textSecondary),
+Arquivo: lib/features/products/presentation/widgets/qr/products_empty_state.dart
+
+Code
+LINHA 93:
+ESTÁ ASSIM: iconColor: const Color(0xFF4CAF50),
+DEVE FICAR ASSIM: iconColor: ThemeColors.of(context).success,
+Code
+LINHA 105:
+ESTÁ ASSIM: iconColor: const Color(0xFFFF9800),
+DEVE FICAR ASSIM: iconColor: ThemeColors.of(context).warning,
+MÓDULO: TAGS
+Arquivo: lib/features/tags/presentation/widgets/recent_tags_card.dart
+
+Code
+LINHA 125:
+ESTÁ ASSIM: color: const Color(0xFF6B7280),
+DEVE FICAR ASSIM: color: ThemeColors. of(context).textSecondary,
+Code
+LINHA 133:
+ESTÁ ASSIM: color: const Color(0xFF6B7280),
+DEVE FICAR ASSIM: color: ThemeColors.of(context).textSecondary,
+🟠 PARTE 2: CORES HARDCODED EM DATA MODELS (FALLBACKS)
+MÓDULO: SETTINGS
+Arquivo: lib/features/settings/data/models/settings_models.dart
+
+Code
+LINHA 61:
+ESTÁ ASSIM: connected('Conectado', const Color(0xFF22C55E)),
+DEVE FICAR ASSIM: connected('Conectado', 'success'),  // Usar colorKey
+Code
+LINHA 62:
+ESTÁ ASSIM: disconnected('Desconectado', const Color(0xFFEF4444)),
+DEVE FICAR ASSIM: disconnected('Desconectado', 'error'),  // Usar colorKey
+Code
+LINHA 63:
+ESTÁ ASSIM: testing('Testando... ', const Color(0xFFF97316)),
+DEVE FICAR ASSIM: testing('Testando...', 'warning'),  // Usar colorKey
+Code
+LINHA 64:
+ESTÁ ASSIM: error('Erro', const Color(0xFFEF4444));
+DEVE FICAR ASSIM: error('Erro', 'error');  // Usar colorKey
+MÓDULO: PRICING
+Arquivo: lib/features/pricing/data/models/pricing_models.dart
+
+Code
+LINHA 104:
+ESTÁ ASSIM: this.cor = const Color(0xFF2196F3),
+DEVE FICAR ASSIM: this.colorKey = 'info',
+Code
+LINHA 169:
+ESTÁ ASSIM: cor: json['cor'] is Color ?  json['cor'] as Color : const Color(0xFF2196F3),
+DEVE FICAR ASSIM: colorKey: json['colorKey']?.toString() ?? 'info',
+Code
+LINHA 411:
+ESTÁ ASSIM: return const Color(0xFFFF5252);
+DEVE FICAR ASSIM: return 'errorDark';  // Retornar colorKey
+Code
+LINHA 413:
+ESTÁ ASSIM: return const Color(0xFFFF9800);
+DEVE FICAR ASSIM: return 'warning';
+Code
+LINHA 415:
+ESTÁ ASSIM: return const Color(0xFF4CAF50);
+DEVE FICAR ASSIM: return 'success';
+Code
+LINHA 715:
+ESTÁ ASSIM: return const Color(0xFF4CAF50);
+DEVE FICAR ASSIM: return 'success';
+Code
+LINHA 717:
+ESTÁ ASSIM: return const Color(0xFF2196F3);
+DEVE FICAR ASSIM: return 'info';
+Code
+LINHA 719:
+ESTÁ ASSIM: return const Color(0xFF06B6D4);
+DEVE FICAR ASSIM: return 'infoCyan';
+Code
+LINHA 721:
+ESTÁ ASSIM: return const Color(0xFFEA580C);
+DEVE FICAR ASSIM: return 'warningDark';
+Code
+LINHA 723:
+ESTÁ ASSIM: return const Color(0xFF64748B);
+DEVE FICAR ASSIM: return 'textSecondary';
+MÓDULO: REPORTS
+Arquivo: lib/features/reports/data/models/report_models.dart
+
+Code
+LINHA 62:
+ESTÁ ASSIM: return const Color(0xFF4CAF50);
+DEVE FICAR ASSIM: return 'success';
+Code
+LINHA 64:
+ESTÁ ASSIM: return const Color(0xFFFF5252);
+DEVE FICAR ASSIM: return 'errorDark';
+Code
+LINHA 66:
+ESTÁ ASSIM: return const Color(0xFF9E9E9E);
+DEVE FICAR ASSIM: return 'textDisabled';
+Code
+LINHA 140:
+ESTÁ ASSIM: if (colorValue == null) return const Color(0xFF9E9E9E);
+DEVE FICAR ASSIM: if (colorValue == null) return 'textDisabled';
+Code
+LINHA 148:
+ESTÁ ASSIM: return const Color(0xFF9E9E9E);
+DEVE FICAR ASSIM: return 'textDisabled';
+MÓDULO: STRATEGIES
+Arquivo: lib/features/strategies/data/models/cross_selling_models.dart
+
+Code
+LINHA 82-91:
+ESTÁ ASSIM: 
+'success': Color(0xFF22C55E),
+'error': Color(0xFFEF4444),
+'warning': Color(0xFFF59E0B),
+'info': Color(0xFF0284C7),
+'primary': Color(0xFF22C55E),
+'secondary': Color(0xFF64748B),
+'blueMain': Color(0xFF3B82F6),
+'blueCyan': Color(0xFF06B6D4),
+'greenMain': Color(0xFF22C55E),
+'redMain': Color(0xFFEF4444),
+
+DEVE FICAR ASSIM: 
+// REMOVER mapa hardcoded - usar ThemeColors.of(context).getColorByKey(key) no widget
+🟡 PARTE 3: USO DE .withOpacity() E .withValues() A CORRIGIR
+MÓDULO: SETTINGS
+Arquivo: lib/features/settings/presentation/screens/users_screen.dart
+
+Code
+LINHA 281:
+ESTÁ ASSIM: color: ThemeColors.of(context).surface. withOpacity(0.2),
+DEVE FICAR ASSIM: color: ThemeColors.of(context).surfaceOverlay20,
+Code
+LINHA 268:
+ESTÁ ASSIM: color: ThemeColors.of(context).greenGradient.withValues(alpha: 0.3),
+DEVE FICAR ASSIM: color: ThemeColors.of(context).successShadow,
+Arquivo: lib/features/settings/presentation/screens/notifications_screen_backup.dart
+
+Code
+LINHA 594:
+ESTÁ ASSIM: color: value ? color. withOpacity(0.05) : ThemeColors.of(context).textSecondary,
+DEVE FICAR ASSIM: color: value ? ThemeColors.of(context).surfaceWithColor(color, 0.05) : ThemeColors.of(context).surfaceSecondary,
+Code
+LINHA 598:
+ESTÁ ASSIM: color: value ? color.withOpacity(0.3) : ThemeColors.of(context).textSecondary,
+DEVE FICAR ASSIM:  color: value ? ThemeColors. of(context).borderWithColor(color, 0.3) : ThemeColors.of(context).borderLight,
+Code
+LINHA 607:
+ESTÁ ASSIM: color: value ? color.withOpacity(0.1) : ThemeColors.of(context).textSecondary,
+DEVE FICAR ASSIM:  color: value ? ThemeColors. of(context).surfaceWithColor(color, 0.1) : ThemeColors.of(context).surfaceSecondary,
+Code
+LINHA 690:
+ESTÁ ASSIM: color: ThemeColors.of(context).textPrimary.withOpacity(0.05),
+DEVE FICAR ASSIM: color: ThemeColors. of(context).shadowSubtle,
+MÓDULO: PRODUCTS
+Arquivo: lib/features/products/presentation/screens/product_edit_screen.dart
+
+Code
+LINHA 648:
+ESTÁ ASSIM: ThemeColors.of(context).grey400.withOpacity(0.3),
+DEVE FICAR ASSIM: ThemeColors.of(context).borderLight,
+Code
+LINHA 951:
+ESTÁ ASSIM: ThemeColors.of(context).grey400.withOpacity(0.8),
+DEVE FICAR ASSIM: ThemeColors.of(context).textDisabled,
+Code
+LINHA 1127:
+ESTÁ ASSIM: disabledBackgroundColor: ThemeColors.of(context).grey400.withOpacity(0.3),
+DEVE FICAR ASSIM: disabledBackgroundColor: ThemeColors.of(context).surfaceDisabled,
+🔵 PARTE 4: TOKENS LEGADOS A SUBSTITUIR
+Mapeamento Global de Substituições
+Token Legado	Token Correto
+brandPrimaryGreen	success ou primary
+greenGradient	success
+greenGradientEnd	successDark
+greenMain	success
+greenMaterial	success
+greenMaterial	success
+blueMain	info
+blueCyan	infoCyan
+orangeMain	warning
+orangeMaterial	warning
+warningMain	warning
+errorMain	error
+backgroundLight	surfaceSecondary
+grey200	borderLight
+grey400	textTertiary
+grey500	textSecondary
+grey600	surface (em fundos) ou textSecondary (em textos)
+grey700	surfaceDark
+transparent	Colors.transparent
+Arquivos com tokens legados a substituir:
+lib/features/products/presentation/screens/products_list_screen.dart
+
+Linhas: 225, 268, 313, 403, 479, 752-769, 784, 800, 817-825
+lib/features/products/presentation/screens/product_add_screen.dart
+
+Linhas: 179, 214, 470-471, 514, 520-521, 554-555, 571, 574, 586-587, 610, 640-641, 645, 654, 658-659, 685, 744-745, 748-750
+lib/features/products/presentation/screens/product_details_screen.dart
+
+Linhas: 58, 81, 85, 148-150, 170, 271, 368-369, 428, 445, 480, 822-828, 922, 971
+lib/features/products/presentation/screens/product_edit_screen.dart
+
+Linhas: 199, 208, 246, 314, 331, 411, 427-428, 448, 464-465, 522, 539, 554-559, 632, 637, 648, 656-657, 677, 695, 709-716, 774, 848-849, 869-870
+lib/features/products/presentation/screens/product_qr_screen.dart
+
+Linhas: 149, 154, 194, 299, 330, 347, 358, 370, 396-398, 407, 429, 501, 514, 550, 607, 658, 709, 732, 807, 821, 884, 907
+lib/features/strategies/presentation/screens/ai_suggestions_screen.dart
+
+Linhas: 33, 43, 53, 63
+lib/features/strategies/presentation/screens/strategy_report_screen.dart
+
+Linhas: 48-50, 58
+lib/features/dashboard/presentation/screens/dashboard_screen.dart
+
+Linha 37: REMOVER import duplicado de theme_colors.dart
+🗑️ PARTE 5: ARQUIVOS OBSOLETOS A REMOVER
+Arquivo	Motivo
+lib/design_system/theme/brand_colors.dart	Duplicado com brand. dart
+lib/design_system/theme/colors.dart	Migrar tokens para theme_colors_dynamic.dart e remover
+lib/design_system/theme/gradients.dart	Migrar para dynamic_gradients.dart
+lib/design_system/theme/module_gradients.dart	Unificar em dynamic_gradients.dart
+lib/core/theme/ (pasta inteira)	Duplicação - unificar em design_system/theme/
+lib/modules/ (pasta inteira)	Duplicação - já existe em lib/features/
+🗑️ PARTE 6: IMPORTS OBSOLETOS A REMOVER
+Em TODOS os arquivos que importam diretamente:
+
+Dart
+// REMOVER ESTES IMPORTS: 
+import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:tagbean/design_system/theme/gradients.dart';
+import 'package:tagbean/design_system/theme/module_gradients. dart';
+import 'package: tagbean/design_system/theme/colors.dart';
+import 'package:tagbean/core/theme/app_colors.dart';
+
+// MANTER APENAS: 
+import 'package:tagbean/design_system/design_system.dart';
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
+📋 ORDEM DE EXECUÇÃO RECOMENDADA
+FASE 1: Cores Hardcoded em Presentation (6 modificações)
+product_edit_screen.dart - 2 cores
+products_empty_state.dart - 2 cores
+recent_tags_card.dart - 2 cores
+FASE 2: Tokens Legados em Products (4 arquivos, ~80 modificações)
+products_list_screen.dart
+product_add_screen.dart
+product_details_screen.dart
+product_qr_screen.dart
+FASE 3: Tokens Legados em Strategies (2 arquivos, ~10 modificações)
+ai_suggestions_screen.dart
+strategy_report_screen.dart
+FASE 4: Data Models com colorKey (5 arquivos, ~25 modificações)
+settings_models.dart
+pricing_models.dart
+report_models.dart
+cross_selling_models.dart
+Demais models
+FASE 5: Settings e Dashboard (~20 modificações)
+users_screen.dart
+notifications_screen_backup.dart
+dashboard_screen.dart
+FASE 6: Limpeza Final
+Remover arquivos obsoletos
+Remover imports duplicados
+Validar compilação

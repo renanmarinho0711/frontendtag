@@ -350,7 +350,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
             colors: [
               ThemeColors.of(context).grey50,
               ThemeColors.of(context).grey100,
-              ThemeColors.of(context).grey200,
+              ThemeColors.of(context).borderLight,
             ],
           ),
         ),
@@ -906,7 +906,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ThemeColors.of(context).grey200, ThemeColors.of(context).grey300],
+            colors: [ThemeColors.of(context).borderLight, ThemeColors.of(context).grey300],
           ),
           borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
         ),
@@ -5043,6 +5043,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
     );
   }
 }
+
 
 
 

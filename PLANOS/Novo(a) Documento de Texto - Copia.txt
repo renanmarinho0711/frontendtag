@@ -1,0 +1,425 @@
+MÓDULO: PRODUCTS
+lib/features/products/presentation/screens/products_list_screen.dart
+LINHA 225-226:
+
+Code
+ESTÁ ASSIM:  backgroundColor: success ?  ThemeColors.of(context).brandPrimaryGreen :  ThemeColors.of(context).error
+DEVE FICAR ASSIM: backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error
+LINHA 268-270:
+
+Code
+ESTÁ ASSIM: backgroundColor: success ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).error
+DEVE FICAR ASSIM: backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error
+LINHA 313-314:
+
+Code
+ESTÁ ASSIM: backgroundColor: deletedCount > 0 ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).error
+DEVE FICAR ASSIM: backgroundColor: deletedCount > 0 ? ThemeColors.of(context).success : ThemeColors.of(context).error
+LINHA 403 e 479:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).greenGradient
+DEVE FICAR ASSIM:  color: ThemeColors.of(context).success
+LINHA 752-769:
+
+Code
+ESTÁ ASSIM: gradient: LinearGradient(... colors:  [ThemeColors.of(context).brandPrimaryGreen. withValues(alpha: 0.05)... ])
+DEVE FICAR ASSIM: gradient: ThemeColors.of(context).gradientFilterCard
+LINHA 761:
+
+Code
+ESTÁ ASSIM: border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen. withValues(alpha: 0.15), width: 1)
+DEVE FICAR ASSIM: border:  Border.all(color: ThemeColors.of(context).borderSuccess, width: 1)
+LINHA 784:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).textTertiary. withValues(alpha: 0.6)
+DEVE FICAR ASSIM: color: ThemeColors. of(context).textPlaceholder
+LINHA 800:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
+DEVE FICAR ASSIM:  color: ThemeColors.of(context).successLight
+LINHAS 817-825:
+
+Code
+ESTÁ ASSIM: borderSide: BorderSide(color:  ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2))
+DEVE FICAR ASSIM: borderSide: BorderSide(color: ThemeColors.of(context).borderSuccess)
+lib/features/products/presentation/screens/product_add_screen.dart
+LINHA 179:
+
+Code
+ESTÁ ASSIM: backgroundColor: cor.withValues(alpha: 0.1)
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).categoryChipBackground(cor)
+LINHA 214:
+
+Code
+ESTÁ ASSIM: backgroundColor: theme.color.withValues(alpha: 0.1)
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).categoryChipBackground(theme.color)
+LINHA 470-471:
+
+Code
+ESTÁ ASSIM: gradient: LinearGradient(colors: [ThemeColors.of(context).greenGradient, ThemeColors. of(context).greenGradientEnd])
+DEVE FICAR ASSIM: gradient: ThemeColors. of(context).gradientSuccess
+LINHA 514:
+
+Code
+ESTÁ ASSIM: valueColor: AlwaysStoppedAnimation<Color>(ThemeColors. of(context).surface)
+DEVE FICAR ASSIM: valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).onPrimary)
+LINHA 520-521:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).brandPrimaryGreen, foregroundColor: ThemeColors.of(context).surface
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).success, foregroundColor: ThemeColors.of(context).onSuccess
+LINHA 554-555:
+
+Code
+ESTÁ ASSIM: ?  ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).grey200
+DEVE FICAR ASSIM: ? ThemeColors.of(context).success : ThemeColors. of(context).borderLight
+LINHA 571:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2)
+DEVE FICAR ASSIM: color: ThemeColors. of(context).successLight
+LINHA 574:
+
+Code
+ESTÁ ASSIM: Border.all(color: ThemeColors.of(context).brandPrimaryGreen, width: 2)
+DEVE FICAR ASSIM: Border.all(color: ThemeColors.of(context).success, width: 2)
+LINHA 586-587:
+
+Code
+ESTÁ ASSIM: color: isActive ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).textSecondary
+DEVE FICAR ASSIM: color: isActive ?  ThemeColors.of(context).success : ThemeColors.of(context).textSecondary
+LINHA 610:
+
+Code
+ESTÁ ASSIM: ?  ThemeColors.of(context).brandPrimaryGreen : isCompleted ? ThemeColors.of(context).success
+DEVE FICAR ASSIM:  ? ThemeColors.of(context).success : isCompleted ? ThemeColors.of(context).successDark
+LINHA 640-641:
+
+Code
+ESTÁ ASSIM: ThemeColors.of(context).infoPastel. withValues(alpha: 0.5), ThemeColors.of(context).infoPastel. withValues(alpha: 0.2)
+DEVE FICAR ASSIM: ThemeColors.of(context).infoSurfaceLight, ThemeColors.of(context).infoSurfaceLighter
+LINHA 645:
+
+Code
+ESTÁ ASSIM: Border.all(color: ThemeColors.of(context).blueMain. withValues(alpha: 0.3))
+DEVE FICAR ASSIM: Border.all(color: ThemeColors.of(context).borderInfo)
+LINHA 654:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).blueMain
+DEVE FICAR ASSIM:  color: ThemeColors.of(context).info
+LINHA 658-659:
+
+Code
+ESTÁ ASSIM: color: ThemeColors. of(context).surface (dentro de const Icon)
+DEVE FICAR ASSIM:  REMOVER const, usar ThemeColors.of(context).onInfo
+LINHA 685:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).blueMain
+DEVE FICAR ASSIM:  backgroundColor: ThemeColors.of(context).info
+LINHA 744-745:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).successBackground (dentro de const)
+DEVE FICAR ASSIM:  REMOVER const, usar ThemeColors.of(context).successLight
+LINHA 748-750:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).successIcon (dentro de const Icon)
+DEVE FICAR ASSIM: REMOVER const, usar ThemeColors.of(context).success
+lib/features/products/presentation/screens/product_details_screen.dart
+LINHA 58:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).backgroundLight
+DEVE FICAR ASSIM: backgroundColor: ThemeColors. of(context).surfaceSecondary
+LINHA 81, 85:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM:  color: ThemeColors.of(context).success
+LINHA 148-150:
+
+Code
+ESTÁ ASSIM: indicatorColor: ThemeColors.of(context).brandPrimaryGreen, labelColor: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM: indicatorColor: ThemeColors.of(context).primary, labelColor: ThemeColors. of(context).primary
+LINHA 170:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM:  color: ThemeColors.of(context).primary
+LINHA 271:
+
+Code
+ESTÁ ASSIM: color: _product. cor. withValues(alpha: 0.1)
+DEVE FICAR ASSIM: color: ThemeColors.of(context).surfaceWithColor(_product.cor, 0.1)
+LINHA 368:
+
+Code
+ESTÁ ASSIM: side: BorderSide(color: ThemeColors.of(context).orangeMain)
+DEVE FICAR ASSIM: side: BorderSide(color: ThemeColors.of(context).warning)
+LINHA 369:
+
+Code
+ESTÁ ASSIM: foregroundColor: ThemeColors.of(context).orangeMain
+DEVE FICAR ASSIM: foregroundColor: ThemeColors.of(context).warning
+LINHA 428:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM: color: ThemeColors.of(context).success
+LINHA 445:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).orangeMain
+DEVE FICAR ASSIM: color: ThemeColors.of(context).warning
+LINHA 480:
+
+Code
+ESTÁ ASSIM: color: color.withValues(alpha: 0.1)
+DEVE FICAR ASSIM: color: ThemeColors.of(context).surfaceWithColor(color, 0.1)
+LINHA 822-828:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
+DEVE FICAR ASSIM: color: ThemeColors.of(context).successLight
+LINHA 922:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).success
+LINHA 971:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).orangeMain
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).warning
+lib/features/products/presentation/screens/product_edit_screen.dart
+LINHA 8:
+
+Code
+ESTÁ ASSIM: import 'package:tagbean/design_system/theme/gradients.dart';
+DEVE FICAR ASSIM:  REMOVER (usar apenas design_system. dart)
+LINHA 199:
+
+Code
+ESTÁ ASSIM: ThemeColors.of(context).greenMaterial
+DEVE FICAR ASSIM: ThemeColors.of(context).success
+LINHA 208:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).grey600
+DEVE FICAR ASSIM: color: ThemeColors.of(context).surface
+LINHA 246:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).grey600
+DEVE FICAR ASSIM: color: ThemeColors. of(context).surface
+LINHA 314:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).greenMaterial
+DEVE FICAR ASSIM: color: ThemeColors. of(context).success
+LINHA 331:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).greenMaterial
+DEVE FICAR ASSIM: color: ThemeColors.of(context).success
+LINHA 411:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).grey600
+DEVE FICAR ASSIM: color:  ThemeColors.of(context).surface
+LINHA 427-428:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).greenMaterial, foregroundColor: ThemeColors. of(context).grey600
+DEVE FICAR ASSIM: backgroundColor: ThemeColors. of(context).success, foregroundColor: ThemeColors.of(context).onSuccess
+LINHA 448:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).grey600
+DEVE FICAR ASSIM: color: ThemeColors. of(context).surface
+LINHA 464-465:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).warningMain, foregroundColor: ThemeColors. of(context).grey600
+DEVE FICAR ASSIM: backgroundColor: ThemeColors. of(context).warning, foregroundColor: ThemeColors.of(context).onWarning
+LINHA 522, 539, 554-559, 632, 637, 648, 656-657, 677, 695, 709-716, 774, 848-849, 869-870:
+
+Code
+ESTÁ ASSIM: ThemeColors.of(context).grey600 / grey400 / grey700 / grey200
+DEVE FICAR ASSIM:  ThemeColors.of(context).surface / textSecondary / surfaceDark / borderLight
+LINHA 648:
+
+Code
+ESTÁ ASSIM: ThemeColors.of(context).grey400. withOpacity(0.3)
+DEVE FICAR ASSIM: ThemeColors.of(context).borderLight
+LINHA 951:
+
+Code
+ESTÁ ASSIM: ThemeColors.of(context).grey400. withOpacity(0.8)
+DEVE FICAR ASSIM: ThemeColors.of(context).textDisabled
+lib/features/products/presentation/screens/product_qr_screen.dart
+LINHA 149:
+
+Code
+ESTÁ ASSIM: color: (isTag ? ThemeColors.of(context).primary : ThemeColors.of(context).blueCyan).withValues(alpha: 0.1)
+DEVE FICAR ASSIM: color: ThemeColors.of(context).surfaceWithColor(isTag ? ThemeColors.of(context).primary : ThemeColors. of(context).info, 0.1)
+LINHA 154:
+
+Code
+ESTÁ ASSIM: ThemeColors.of(context).blueCyan
+DEVE FICAR ASSIM:  ThemeColors.of(context).info
+LINHA 194:
+
+Code
+ESTÁ ASSIM: backgroundColor: isTag ? ThemeColors.of(context).primary : ThemeColors. of(context).blueCyan
+DEVE FICAR ASSIM:  backgroundColor: isTag ? ThemeColors.of(context).primary : ThemeColors.of(context).info
+LINHA 299:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).success. withValues(alpha: 0.1)
+DEVE FICAR ASSIM: color: ThemeColors.of(context).successLight
+LINHA 330:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).grey200
+DEVE FICAR ASSIM: color: ThemeColors.of(context).surfaceSecondary
+LINHA 347, 358, 370:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).grey500 / grey600
+DEVE FICAR ASSIM:  color: ThemeColors.of(context).textSecondary / textPrimary
+LINHA 396-398:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).info. withValues(alpha: 0.1), border: Border.all(color: ThemeColors.of(context).info. withValues(alpha: 0.3))
+DEVE FICAR ASSIM: color: ThemeColors. of(context).infoLight, border: Border.all(color: ThemeColors.of(context).borderInfo)
+LINHA 407:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).info (dentro de const Text)
+DEVE FICAR ASSIM:  REMOVER const, usar ThemeColors.of(context).info
+LINHA 429:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).success
+LINHA 501:
+
+Code
+ESTÁ ASSIM: Icon(Icons.check_rounded, color: ThemeColors.of(context).warning, size: 48)
+DEVE FICAR ASSIM: Icon(Icons.warning_rounded, color: ThemeColors.of(context).warning, size: 48)
+LINHA 514:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).info. withValues(alpha: 0.1)
+DEVE FICAR ASSIM: color: ThemeColors.of(context).infoLight
+LINHA 550:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).brandPrimaryGreen
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).success
+LINHA 607:
+
+Code
+ESTÁ ASSIM: Icon(Icons.check_rounded, color: ThemeColors.of(context).warning, size: 48)
+DEVE FICAR ASSIM: Icon(Icons.warning_rounded, color: ThemeColors.of(context).warning, size: 48)
+LINHA 658:
+
+Code
+ESTÁ ASSIM: Icon(Icons.check_rounded, color: ThemeColors.of(context).surface)
+DEVE FICAR ASSIM: Icon(Icons.error_rounded, color: ThemeColors.of(context).onError)
+LINHA 709:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).brandPrimaryGreen. withValues(alpha: 0.3)
+DEVE FICAR ASSIM: color: ThemeColors. of(context).successShadow
+LINHA 732:
+
+Code
+ESTÁ ASSIM: Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 24)
+DEVE FICAR ASSIM: Icon(Icons.link_rounded, color: ThemeColors.of(context).onPrimary, size: 24)
+LINHA 807:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).backgroundLight
+DEVE FICAR ASSIM: color: ThemeColors. of(context).surfaceSecondary
+LINHA 821:
+
+Code
+ESTÁ ASSIM: dividerColor: ThemeColors.of(context).transparent
+DEVE FICAR ASSIM: dividerColor: Colors.transparent
+LINHA 884:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).backgroundLight
+DEVE FICAR ASSIM: color: ThemeColors. of(context).surfaceSecondary
+LINHA 907:
+
+Code
+ESTÁ ASSIM: color: isActive ? color. withValues(alpha: 0.1) : ThemeColors.of(context).transparent
+DEVE FICAR ASSIM: color: isActive ? ThemeColors.of(context).surfaceWithColor(color, 0.1) : Colors.transparent
+🔵 MÓDULO: STRATEGIES
+lib/features/strategies/presentation/screens/ai_suggestions_screen.dart
+LINHA 33:
+
+Code
+ESTÁ ASSIM: 'cor':  ThemeColors.of(context).greenMain
+DEVE FICAR ASSIM: 'cor': ThemeColors.of(context).success
+LINHA 43:
+
+Code
+ESTÁ ASSIM: 'cor': ThemeColors.of(context).error
+DEVE FICAR ASSIM: 'cor': ThemeColors.of(context).errorMain
+LINHA 53:
+
+Code
+ESTÁ ASSIM: 'cor': ThemeColors.of(context).blueMain
+DEVE FICAR ASSIM: 'cor': ThemeColors.of(context).info
+LINHA 63:
+
+Code
+ESTÁ ASSIM: 'cor': ThemeColors.of(context).greenMain
+DEVE FICAR ASSIM:  'cor': ThemeColors. of(context).success
+lib/features/strategies/presentation/screens/strategy_report_screen.dart
+LINHA 48-50:
+
+Code
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).primary, foregroundColor: ThemeColors.of(context).surface
+DEVE FICAR ASSIM: backgroundColor: ThemeColors.of(context).appBarBackground, foregroundColor: ThemeColors.of(context).appBarForeground
+LINHA 58:
+
+Code
+ESTÁ ASSIM: color: ThemeColors.of(context).backgroundLight
+DEVE FICAR ASSIM: color: ThemeColors. of(context).surfaceSecondary
+🟠 MÓDULO: DASHBOARD
+lib/features/dashboard/presentation/screens/dashboard_screen. dart
+LINHA 37:
+
+Code
+ESTÁ ASSIM: import 'package:tagbean/design_system/theme/theme_colors.dart';
+DEVE FICAR ASSIM: REMOVER (import duplicado/obsoleto)
+🔴 ARQUIVOS OBSOLETOS A REMOVER
+Arquivo	Motivo
+lib/design_system/theme/brand_colors.dart	Duplicado com brand. dart
+lib/design_system/theme/colors.dart	Migrar tokens para theme_colors_dynamic.dart
+lib/design_system/theme/gradients.dart	Migrar para dynamic_gradients.dart
+lib/design_system/theme/module_gradients.dart	Unificar em dynamic_gradients.dart
+lib/core/theme/	Pasta inteira - unificar em design_system/theme/
+lib/modules/	Pasta inteira - unificar em lib/features/
+📋 PADRÕES GLOBAIS A CORRIGIR
+Padrão Errado	Correção
+.withValues(alpha: X)	Usar token com opacidade pré-definida
+.withOpacity(X)	Usar token com opacidade pré-definida
+brandPrimaryGreen	Usar success ou primary
+greenMain / greenGradient / greenMaterial	Usar success
+blueMain / blueCyan	Usar info
+orangeMain	Usar warning
+backgroundLight	Usar surfaceSecondary
+grey200/400/500/600/700	Usar tokens semânticos
+const com ThemeColors	Remover const

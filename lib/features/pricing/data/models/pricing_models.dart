@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
@@ -32,7 +32,7 @@ enum OperationType {
   aumentar('aumentar', 'Aumentar'),
   aumento('aumento', 'Aumento'), // alias para aumentar
   diminuir('diminuir', 'Diminuir'),
-  reducao('reducao', 'Redu��o'); // alias para diminuir
+  reducao('reducao', 'Redu??o'); // alias para diminuir
 
   final String value;
   final String label;
@@ -56,7 +56,7 @@ enum ApplyScope {
   marca('marca', 'Por marca'),
   selecionados('selecionados', 'Produtos selecionados'),
   lista('lista', 'Lista de produtos'),
-  faixaPreco('faixaPreco', 'Faixa de pre�o');
+  faixaPreco('faixaPreco', 'Faixa de pre?o');
 
   final String value;
   final String label;
@@ -101,7 +101,7 @@ class PricingProductModel {
     required this.precoNovo,
     required this.margemAtual,
     required this.margemNova,
-    this.cor = const Color(0xFF2196F3),
+    this.cor = const 'info',
     this.tag,
     this.ativo = true,
     this.selecionado = false,
@@ -166,7 +166,7 @@ class PricingProductModel {
       precoNovo: newPrice,
       margemAtual: currentMargin,
       margemNova: newMargin,
-      cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
+      cor: json['cor'] is Color ? json['cor'] as Color : const 'info',
       tag: json['tag']?.toString() ?? json['barcode']?.toString(),
       ativo: json['isActive'] as bool? ?? json['ativo'] as bool? ?? true,
       selecionado: json['selecionado'] as bool? ?? false,
@@ -381,7 +381,7 @@ class MarginReviewModel {
   bool get abaixoMinimo => margemAtual < margemMinima;
   bool get acimaideal => margemAtual >= margemIdeal;
 
-  /// �cone baseado no status
+  /// ?cone baseado no status
   IconData get statusIcon {
     switch (status) {
       case 'critico':
@@ -393,26 +393,26 @@ class MarginReviewModel {
     }
   }
   
-  /// Label do status para exibi��o
+  /// Label do status para exibi??o
   String get statusLabel {
     switch (status) {
       case 'critico':
-        return 'Cr�tico';
+        return 'Cr?tico';
       case 'atencao':
-        return 'Aten��o';
+        return 'Aten??o';
       default:
-        return 'Saud�vel';
+        return 'Saud?vel';
     }
   }
 
   Color get statusColor {
     switch (status) {
       case 'critico':
-        return const Color(0xFFFF5252);
+        return const 'errorDark';
       case 'atencao':
-        return const Color(0xFFFF9800);
+        return const 'warning';
       default:
-        return const Color(0xFF4CAF50);
+        return const 'success';
     }
   }
 
@@ -468,7 +468,7 @@ class MarginReviewModel {
 // PRICE HISTORY ENTRY
 // =============================================================================
 
-/// Entrada do hist�rico de pre�os
+/// Entrada do hist?rico de pre?os
 class PriceHistoryEntry {
   final String id;
   final DateTime date;
@@ -543,13 +543,13 @@ class AiSuggestionModel {
   Color get tipoColor {
     switch (tipo) {
       case 'aumento':
-        return const Color(0xFF4CAF50);
+        return const 'success';
       case 'reducao':
-        return const Color(0xFFFF5252);
+        return const 'errorDark';
       case 'manutencao':
-        return const Color(0xFF2196F3);
+        return const 'info';
       default:
-        return const Color(0xFF2196F3);
+        return const 'info';
     }
   }
 
@@ -725,11 +725,11 @@ class PricingHistoryModel {
   String get tipoLabel {
     switch (tipo) {
       case 'automatico':
-        return 'Ajuste Autom�tico';
+        return 'Ajuste Autom?tico';
       case 'manual':
         return 'Ajuste Manual';
       case 'ia':
-        return 'Sugest�o IA';
+        return 'Sugest?o IA';
       case 'lote':
         return 'Ajuste em Lote';
       default:
@@ -896,6 +896,7 @@ class DynamicPricingConfigModel {
     };
   }
 }
+
 
 
 

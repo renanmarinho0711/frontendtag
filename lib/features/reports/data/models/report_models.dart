@@ -125,7 +125,7 @@ class SalesReportModel {
 
   @Deprecated('Use corKey instead')
   static Color _parseColor(dynamic colorValue) {
-    if (colorValue == null) return const Color(0xFF9E9E9E);
+    if (colorValue == null) return const 'textDisabled';
     if (colorValue is Color) return colorValue;
     if (colorValue is int) return Color(colorValue);
     if (colorValue is String) {
@@ -133,7 +133,7 @@ class SalesReportModel {
       if (hex.length == 6) hex = 'FF$hex';
       return Color(int.parse(hex, radix: 16));
     }
-    return const Color(0xFF9E9E9E);
+    return const 'textDisabled';
   }
 
   static String? _parseColorKey(dynamic colorValue) {
@@ -337,6 +337,7 @@ class ReportsSummaryModel {
     );
   }
 }
+
 
 
 

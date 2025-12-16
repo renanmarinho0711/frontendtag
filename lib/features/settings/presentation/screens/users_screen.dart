@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/settings/data/models/user_model.dart';
 import 'package:tagbean/features/settings/presentation/providers/users_provider.dart';
@@ -258,14 +258,14 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
               ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [ThemeColors.of(context).greenGradient, ThemeColors.of(context).greenGradientEnd],
+                  colors: [ThemeColors.of(context).success, ThemeColors.of(context).successEnd],
                 ),
                 borderRadius: BorderRadius.circular(
                   isMobile ? 12 : (isTablet ? 14 : 16),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: ThemeColors.of(context).greenGradient.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).success.withValues(alpha: 0.3),
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -2112,6 +2112,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
     );
   }
 }
+
 
 
 
