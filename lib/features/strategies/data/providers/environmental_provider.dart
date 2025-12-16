@@ -1,9 +1,8 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/repositories/strategies_repository.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/design_system/theme/app_theme.dart';
 
@@ -11,7 +10,7 @@ import 'package:tagbean/design_system/theme/app_theme.dart';
 // REPOSITORY PROVIDER
 // ============================================================================
 
-/// Provider do StrategiesRepository para estrat�gias ambientais
+/// Provider do StrategiesRepository para estrat?gias ambientais
 final environmentalStrategiesRepositoryProvider = Provider<StrategiesRepository>((ref) {
   return StrategiesRepository();
 });
@@ -56,7 +55,7 @@ class TemperatureState {
   /// Estado com erro
   factory TemperatureState.error(String message) => TemperatureState(error: message);
 
-  /// Cria uma cpia com altera��es
+  /// Cria uma cpia com altera??es
   TemperatureState copyWith({
     List<TemperatureRangeModel>? temperatureRanges,
     List<TemperatureHistoryModel>? history,
@@ -213,7 +212,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
     state = state.copyWith(currentTemperature: temperature);
   }
 
-  /// Atualiza a condi��o atual
+  /// Atualiza a condi??o atual
   void setCurrentCondition(String condition) {
     state = state.copyWith(currentCondition: condition);
   }
@@ -244,7 +243,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
         final tempStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.environmental && 
                  s.name.toLowerCase().contains('temperatura'),
-          orElse: () => throw Exception('Estratgia de temperatura n�o encontrada'),
+          orElse: () => throw Exception('Estratgia de temperatura n?o encontrada'),
         );
         
         // Executa a estratgia para testar conexo
@@ -260,7 +259,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
     }
   }
 
-  /// Salva as configura��es
+  /// Salva as configura??es
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -269,7 +268,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
         final tempStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.environmental && 
                  s.name.toLowerCase().contains('temperatura'),
-          orElse: () => throw Exception('Estratgia de temperatura n�o encontrada'),
+          orElse: () => throw Exception('Estratgia de temperatura n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(tempStrategy.id, {
@@ -349,7 +348,7 @@ class PeakHoursState {
   /// Estado com erro
   factory PeakHoursState.error(String message) => PeakHoursState(error: message);
 
-  /// Cria uma cpia com altera��es
+  /// Cria uma cpia com altera??es
   PeakHoursState copyWith({
     List<PeakHourModel>? peakHours,
     List<WeekDayModel>? weekDays,
@@ -479,12 +478,12 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza a op��o de aplicar em finais de semana
+  /// Atualiza a op??o de aplicar em finais de semana
   void setAplicarFinaisSemana(bool value) {
     state = state.copyWith(aplicarFinaisSemana: value);
   }
 
-  /// Atualiza a op��o de notificar ajustes
+  /// Atualiza a op??o de notificar ajustes
   void setNotificarAjustes(bool value) {
     state = state.copyWith(notificarAjustes: value);
   }
@@ -511,7 +510,7 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
     state = state.copyWith(peakHours: updatedPeakHours);
   }
 
-  /// Salva as configura��es
+  /// Salva as configura??es
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -520,7 +519,7 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
         final peakStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.environmental && 
                  (s.name.toLowerCase().contains('pico') || s.name.toLowerCase().contains('peak')),
-          orElse: () => throw Exception('Estratgia de horrio de pico n�o encontrada'),
+          orElse: () => throw Exception('Estratgia de horrio de pico n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(peakStrategy.id, {
@@ -581,6 +580,7 @@ final peakHoursProvider =
     return PeakHoursNotifier(repository, storeId);
   },
 );
+
 
 
 

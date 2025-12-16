@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Widget que renderiza a Navigation Rail para desktop/tablet
@@ -334,6 +333,7 @@ class _NavigationRailItem extends StatelessWidget {
     );
   }
 }
+
 
 
 

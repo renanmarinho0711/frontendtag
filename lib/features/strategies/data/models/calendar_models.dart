@@ -1,5 +1,4 @@
-﻿import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_base_models.dart';
 
@@ -9,7 +8,7 @@ import 'package:tagbean/features/strategies/data/models/strategy_base_models.dar
 
 /// Modelo de Evento Comemorativo (Datas Comemorativas)
 /// 
-/// Representa um feriado ou data comemorativa que pode ter ajuste de pre�o autom�tico.
+/// Representa um feriado ou data comemorativa que pode ter ajuste de pre?o autom?tico.
 class HolidayEventModel {
   final String id;
   final String name;
@@ -236,7 +235,7 @@ class LongHolidayModel {
   }
 }
 
-/// Modelo de Ciclo de Sal�rio
+/// Modelo de Ciclo de Sal?rio
 class SalaryCycleModel {
   final String id;
   final String name;
@@ -329,7 +328,7 @@ class SalaryCycleModel {
   }
 }
 
-/// Modelo de Hist�rico de Ajustes do Ciclo de Sal�rio
+/// Modelo de Hist?rico de Ajustes do Ciclo de Sal?rio
 class SalaryAdjustmentHistoryModel {
   final String id;
   final String periodo;
@@ -376,6 +375,7 @@ String _parseColorKey(dynamic value) {
   if (value is String) return value;
   return 'success'; // Default
 }
+
 
 
 

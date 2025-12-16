@@ -1,5 +1,4 @@
-﻿import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_base_models.dart';
 
@@ -9,8 +8,8 @@ import 'package:tagbean/features/strategies/data/models/strategy_base_models.dar
 
 /// Modelo de Faixa de Temperatura
 /// 
-/// Representa uma faixa de temperatura com ajuste de pre�o associado.
-/// Usado na estrat�gia de precifica��o por temperatura.
+/// Representa uma faixa de temperatura com ajuste de pre?o associado.
+/// Usado na estrat?gia de precifica??o por temperatura.
 class TemperatureRangeModel {
   final String id;
   final String range;
@@ -101,9 +100,9 @@ String _parseColorKey(dynamic value) {
   return 'primary'; // Default
 }
 
-/// Modelo de Hist�rico de Temperatura
+/// Modelo de Hist?rico de Temperatura
 /// 
-/// Representa um registro de execu��o de ajuste baseado em temperatura.
+/// Representa um registro de execu??o de ajuste baseado em temperatura.
 class TemperatureHistoryModel {
   final String id;
   final String dateTime;
@@ -157,6 +156,7 @@ class TemperatureHistoryModel {
     };
   }
 }
+
 
 
 

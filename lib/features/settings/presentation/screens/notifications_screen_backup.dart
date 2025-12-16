@@ -4,7 +4,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/core/constants/app_constants.dart' as AppConst;
 import 'package:tagbean/features/settings/presentation/providers/settings_provider.dart';
 import 'package:tagbean/features/settings/data/models/settings_models.dart';
@@ -1907,6 +1906,7 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
+
 
 
 

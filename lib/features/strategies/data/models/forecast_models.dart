@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_base_models.dart';
 
@@ -399,3 +398,4 @@ String _parseColorKey(dynamic value) {
   if (value is String) return value;
   return 'blueMain'; // Default
 }
+

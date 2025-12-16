@@ -1,5 +1,4 @@
-﻿import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_base_models.dart';
 
@@ -120,7 +119,7 @@ String _parseColorKey(dynamic value) {
 
 /// Modelo de Time Esportivo
 /// 
-/// Representa um time/equipe monitorado para ajuste de pre�os em dias de jogos.
+/// Representa um time/equipe monitorado para ajuste de pre?os em dias de jogos.
 class SportsTeamModel {
   final String id;
   final String name;
@@ -249,11 +248,11 @@ class SportsGameModel {
     );
   }
 
-  /// T�tulo formatado do jogo
+  /// T?tulo formatado do jogo
   String get matchTitle => '$team vs $opponent';
 
   /// Data e hora formatados
-  String get dateTimeFormatted => '$date �s $time';
+  String get dateTimeFormatted => '$date ?s $time';
 
   factory SportsGameModel.fromJson(Map<String, dynamic> json) {
     return SportsGameModel(
@@ -279,6 +278,7 @@ class SportsGameModel {
     };
   }
 }
+
 
 
 

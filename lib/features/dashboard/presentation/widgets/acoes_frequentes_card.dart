@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-import 'package:tagbean/core/theme/app_typography.dart';
-import 'package:tagbean/core/theme/app_spacing.dart';
-import 'package:tagbean/core/theme/app_shadows.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
 /// # Card de Ações Frequentes
@@ -499,6 +496,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

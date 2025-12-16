@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/dashboard_navigation_rail.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Drawer mobile para navegao do Dashboard
@@ -185,6 +184,7 @@ class _DrawerMenuItem extends StatelessWidget {
     );
   }
 }
+
 
 
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'product_tag_model.dart';
 
@@ -226,5 +225,6 @@ class CategoriaHelper {
     return ['Bebidas', 'Mercearia', 'Perec�veis', 'Limpeza', 'Higiene'];
   }
 }
+
 
 

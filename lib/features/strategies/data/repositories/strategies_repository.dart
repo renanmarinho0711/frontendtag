@@ -1,7 +1,6 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/network/api_client.dart';
 import 'package:tagbean/core/network/api_response.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 
@@ -9,7 +8,7 @@ import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 // STRATEGIES REPOSITORY - INTEGRADO COM BACKEND
 // ============================================================================
 
-/// Repository para gerenciamento de estrat�gias de precifica��o.
+/// Repository para gerenciamento de estrat?gias de precifica??o.
 /// Totalmente integrado com o backend TagBean.
 /// 
 /// Endpoints utilizados:
@@ -32,7 +31,7 @@ class StrategiesRepository {
   // STRATEGIES CRUD
   // ============================================================================
 
-  /// Busca todas as estrat�gias de uma loja
+  /// Busca todas as estrat?gias de uma loja
   /// GET /api/strategies/store/{storeId}
   Future<ApiResponse<List<StrategyModel>>> getStrategies({
     required String storeId,
@@ -149,7 +148,7 @@ class StrategiesRepository {
   // EXECUTIONS
   // ============================================================================
 
-  /// Busca execu��es de uma estratgia
+  /// Busca execu??es de uma estratgia
   /// GET /api/strategies/{strategyId}/executions
   Future<ApiResponse<List<StrategyExecution>>> getExecutionsByStrategy(String strategyId) async {
     return await _apiService.get<List<StrategyExecution>>(
@@ -163,7 +162,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Busca execu��es recentes de todas as estrat�gias de uma loja
+  /// Busca execu??es recentes de todas as estrat?gias de uma loja
   /// GET /api/strategies/store/{storeId}/executions
   Future<ApiResponse<List<StrategyExecution>>> getRecentExecutions({
     required String storeId,
@@ -185,7 +184,7 @@ class StrategiesRepository {
   // STATISTICS & RESULTS
   // ============================================================================
 
-  /// Busca estat�sticas de uma estratgia
+  /// Busca estat?sticas de uma estratgia
   /// GET /api/strategies/{id}/stats
   Future<ApiResponse<StrategyStats>> getStrategyStats(String id) async {
     return await _apiService.get<StrategyStats>(
@@ -194,7 +193,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Busca top produtos afetados por estrat�gias
+  /// Busca top produtos afetados por estrat?gias
   /// GET /api/strategies/store/{storeId}/top-products
   Future<ApiResponse<List<TopProductResult>>> getTopProducts({
     required String storeId,
@@ -230,7 +229,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Busca estat�sticas de perodo de uma estratgia
+  /// Busca estat?sticas de perodo de uma estratgia
   /// GET /api/strategies/{id}/stats?period={period}
   Future<ApiResponse<StrategyPeriodStats>> getStrategyPeriodStats({
     required String strategyId,
@@ -243,7 +242,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Busca hist�rico de execu��es de uma estratgia
+  /// Busca hist?rico de execu??es de uma estratgia
   /// GET /api/strategies/{id}/history
   Future<ApiResponse<List<StrategyExecution>>> getExecutionHistory(String strategyId) async {
     return await _apiService.get<List<StrategyExecution>>(
@@ -462,7 +461,7 @@ class StrategiesRepository {
   // STRATEGY-SPECIFIC CONFIGURATIONS
   // ============================================================================
 
-  /// Busca configura��o especfica de uma estratgia
+  /// Busca configura??o especfica de uma estratgia
   /// GET /api/strategies/{id}/configuration
   Future<ApiResponse<Map<String, dynamic>>> getStrategyConfiguration(String id) async {
     return await _apiService.get<Map<String, dynamic>>(
@@ -471,7 +470,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Atualiza configura��o especfica de uma estratgia
+  /// Atualiza configura??o especfica de uma estratgia
   /// PUT /api/strategies/{id}/configuration
   Future<ApiResponse<Map<String, dynamic>>> updateStrategyConfiguration(
     String id,
@@ -484,7 +483,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Testa conexo/configura��o de uma estratgia
+  /// Testa conexo/configura??o de uma estratgia
   /// POST /api/strategies/{id}/test
   Future<ApiResponse<Map<String, dynamic>>> testStrategyConfiguration(String id) async {
     return await _apiService.post<Map<String, dynamic>>(
@@ -493,7 +492,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Simula execu��o de uma estratgia sem aplicar mudanas
+  /// Simula execu??o de uma estratgia sem aplicar mudanas
   /// POST /api/strategies/{id}/simulate
   Future<ApiResponse<Map<String, dynamic>>> simulateStrategy(
     String id, {
@@ -621,7 +620,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Busca dados visuais (mapa de calor, ranking, promo��es)
+  /// Busca dados visuais (mapa de calor, ranking, promo??es)
   /// GET /api/strategies/visual/data
   Future<ApiResponse<Map<String, dynamic>>> getVisualData(
     String storeId, {
@@ -637,7 +636,7 @@ class StrategiesRepository {
     );
   }
 
-  /// Busca dados de performance (liquida��o, markdown, previso IA)
+  /// Busca dados de performance (liquida??o, markdown, previso IA)
   /// GET /api/strategies/performance/data
   Future<ApiResponse<Map<String, dynamic>>> getPerformanceData(
     String storeId, {
@@ -654,7 +653,7 @@ class StrategiesRepository {
   }
 }
 
-/// Estat�sticas de uma estratgia
+/// Estat?sticas de uma estratgia
 class StrategyStats {
   final int totalExecutions;
   final int successfulExecutions;
@@ -680,6 +679,7 @@ class StrategyStats {
       ? (successfulExecutions / totalExecutions) * 100 
       : 0.0;
 }
+
 
 
 

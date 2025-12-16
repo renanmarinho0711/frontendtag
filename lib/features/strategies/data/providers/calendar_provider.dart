@@ -1,9 +1,8 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/repositories/strategies_repository.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/design_system/theme/app_theme.dart';
 
@@ -11,7 +10,7 @@ import 'package:tagbean/design_system/theme/app_theme.dart';
 // REPOSITORY PROVIDER
 // ============================================================================
 
-/// Provider do StrategiesRepository para estrat�gias de calend�rio
+/// Provider do StrategiesRepository para estrat?gias de calend?rio
 final calendarStrategiesRepositoryProvider = Provider<StrategiesRepository>((ref) {
   return StrategiesRepository();
 });
@@ -42,7 +41,7 @@ class HolidayEventsState {
   /// Estado com erro
   factory HolidayEventsState.error(String message) => HolidayEventsState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma c?pia com altera??es
   HolidayEventsState copyWith({
     List<HolidayEventModel>? events,
     bool? isLoading,
@@ -62,7 +61,7 @@ class HolidayEventsState {
   /// Retorna a contagem de eventos ativos
   int get activeEventsCount => events.where((e) => e.isActive).length;
 
-  /// Retorna eventos ordenados por pr�xima data
+  /// Retorna eventos ordenados por pr?xima data
   List<HolidayEventModel> get eventsSortedByNextDate {
     final sorted = List<HolidayEventModel>.from(events);
     sorted.sort((a, b) => a.nextDate.compareTo(b.nextDate));
@@ -139,17 +138,17 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
     return 'primary';
   }
 
-  /// Atualiza o status ativo da estrat�gia geral
+  /// Atualiza o status ativo da estrat?gia geral
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
   }
 
-  /// Atualiza a configura��o de reverter ap�s evento
+  /// Atualiza a configura??o de reverter ap?s evento
   void setRevertAfterEvent(bool revert) {
     state = state.copyWith(revertAfterEvent: revert);
   }
 
-  /// Atualiza o status ativo de um evento espec�fico
+  /// Atualiza o status ativo de um evento espec?fico
   void toggleEventActive(String eventId, bool isActive) {
     final updatedEvents = state.events.map((event) {
       if (event.id == eventId) {
@@ -161,7 +160,7 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
     state = state.copyWith(events: updatedEvents);
   }
 
-  /// Atualiza o ajuste de pre�o de um evento
+  /// Atualiza o ajuste de pre?o de um evento
   void updateEventAdjustment(String eventId, double adjustment) {
     final updatedEvents = state.events.map((event) {
       if (event.id == eventId) {
@@ -173,7 +172,7 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
     state = state.copyWith(events: updatedEvents);
   }
 
-  /// Atualiza os dias de anteced�ncia de um evento
+  /// Atualiza os dias de anteced?ncia de um evento
   void updateEventDaysInAdvance(String eventId, int days) {
     final updatedEvents = state.events.map((event) {
       if (event.id == eventId) {
@@ -197,7 +196,7 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
     state = state.copyWith(events: updatedEvents);
   }
 
-  /// Salva as configura��es no backend
+  /// Salva as configura??es no backend
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -206,7 +205,7 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
         final holidayStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.calendar && 
                  (s.name.toLowerCase().contains('comemorat') || s.name.toLowerCase().contains('holiday')),
-          orElse: () => throw Exception('Estrat�gia de datas comemorativas n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de datas comemorativas n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(holidayStrategy.id, {
@@ -462,22 +461,22 @@ class SportsTeamsNotifier extends StateNotifier<SportsTeamsState> {
     }
   }
 
-  /// Atualiza o status ativo da estrat�gia geral
+  /// Atualiza o status ativo da estrat?gia geral
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
   }
 
-  /// Atualiza a configura��o de notificar jogos
+  /// Atualiza a configura??o de notificar jogos
   void setNotifyGames(bool notify) {
     state = state.copyWith(notifyGames: notify);
   }
 
-  /// Atualiza as horas de anteced�ncia
+  /// Atualiza as horas de anteced?ncia
   void setHoursInAdvance(int hours) {
     state = state.copyWith(hoursInAdvance: hours);
   }
 
-  /// Atualiza o status ativo de um time espec�fico
+  /// Atualiza o status ativo de um time espec?fico
   void toggleTeamActive(String teamId, bool isActive) {
     final updatedTeams = state.teams.map((team) {
       if (team.id == teamId) {
@@ -489,7 +488,7 @@ class SportsTeamsNotifier extends StateNotifier<SportsTeamsState> {
     state = state.copyWith(teams: updatedTeams);
   }
 
-  /// Atualiza o ajuste de pre�o de um time
+  /// Atualiza o ajuste de pre?o de um time
   void updateTeamAdjustment(String teamId, double adjustment) {
     final updatedTeams = state.teams.map((team) {
       if (team.id == teamId) {
@@ -522,7 +521,7 @@ class SportsTeamsNotifier extends StateNotifier<SportsTeamsState> {
     }
   }
 
-  /// Salva as configura��es no backend
+  /// Salva as configura??es no backend
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -531,7 +530,7 @@ class SportsTeamsNotifier extends StateNotifier<SportsTeamsState> {
         final teamsStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.calendar && 
                  (s.name.toLowerCase().contains('time') || s.name.toLowerCase().contains('team')),
-          orElse: () => throw Exception('Estrat�gia de times n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de times n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(teamsStrategy.id, {
@@ -591,7 +590,7 @@ class LongHolidaysState {
       'Praia',
       'Camping',
       'Congelados',
-      'Descart�veis',
+      'Descart?veis',
     ],
   });
 
@@ -683,12 +682,12 @@ class LongHolidaysNotifier extends StateNotifier<LongHolidaysState> {
     }
   }
 
-  /// Atualiza o status ativo da estrat�gia geral
+  /// Atualiza o status ativo da estrat?gia geral
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
   }
 
-  /// Atualiza a configura��o de detec��o autom�tica
+  /// Atualiza a configura??o de detec??o autom?tica
   void setDeteccaoAutomatica(bool value) {
     state = state.copyWith(deteccaoAutomatica: value);
   }
@@ -713,7 +712,7 @@ class LongHolidaysNotifier extends StateNotifier<LongHolidaysState> {
     state = state.copyWith(categoriasSelecionadas: categorias);
   }
 
-  /// Toggle um feriado espec�fico
+  /// Toggle um feriado espec?fico
   void toggleHolidayActive(String holidayId, bool isActive) {
     final updatedHolidays = state.holidays.map((holiday) {
       if (holiday.id == holidayId) {
@@ -725,7 +724,7 @@ class LongHolidaysNotifier extends StateNotifier<LongHolidaysState> {
     state = state.copyWith(holidays: updatedHolidays);
   }
 
-  /// Atualiza o ajuste de um feriado espec�fico
+  /// Atualiza o ajuste de um feriado espec?fico
   void updateHolidayAdjustment(String holidayId, double adjustment) {
     final updatedHolidays = state.holidays.map((holiday) {
       if (holiday.id == holidayId) {
@@ -746,7 +745,7 @@ class LongHolidaysNotifier extends StateNotifier<LongHolidaysState> {
     }
   }
 
-  /// Salva as configura��es no backend
+  /// Salva as configura??es no backend
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -755,7 +754,7 @@ class LongHolidaysNotifier extends StateNotifier<LongHolidaysState> {
         final longHolidaysStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.calendar && 
                  (s.name.toLowerCase().contains('feriado') || s.name.toLowerCase().contains('prolongado')),
-          orElse: () => throw Exception('Estrat�gia de feriados prolongados n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de feriados prolongados n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(longHolidaysStrategy.id, {
@@ -821,7 +820,7 @@ class SalaryCycleState {
       'Higiene',
       'Limpeza',
       'Congelados',
-      'Latic�nios',
+      'Latic?nios',
       'Padaria',
     ],
   });
@@ -935,7 +934,7 @@ class SalaryCycleNotifier extends StateNotifier<SalaryCycleState> {
     }
   }
 
-  /// Atualiza o status ativo da estrat�gia geral
+  /// Atualiza o status ativo da estrat?gia geral
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
   }
@@ -945,12 +944,12 @@ class SalaryCycleNotifier extends StateNotifier<SalaryCycleState> {
     state = state.copyWith(monitorarQuinzena: value);
   }
 
-  /// Atualiza o ajuste de in�cio do m�s
+  /// Atualiza o ajuste de in?cio do m?s
   void setAjusteInicio(double value) {
     state = state.copyWith(ajusteInicio: value);
   }
 
-  /// Atualiza o ajuste de fim do m�s
+  /// Atualiza o ajuste de fim do m?s
   void setAjusteFim(double value) {
     state = state.copyWith(ajusteFim: value);
   }
@@ -970,7 +969,7 @@ class SalaryCycleNotifier extends StateNotifier<SalaryCycleState> {
     state = state.copyWith(categoriasSelecionadas: categorias);
   }
 
-  /// Toggle um ciclo espec�fico
+  /// Toggle um ciclo espec?fico
   void toggleCycleActive(String cycleId, bool isActive) {
     final updatedCycles = state.cycles.map((cycle) {
       if (cycle.id == cycleId) {
@@ -982,7 +981,7 @@ class SalaryCycleNotifier extends StateNotifier<SalaryCycleState> {
     state = state.copyWith(cycles: updatedCycles);
   }
 
-  /// Salva as configura��es no backend
+  /// Salva as configura??es no backend
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -990,8 +989,8 @@ class SalaryCycleNotifier extends StateNotifier<SalaryCycleState> {
       if (strategies.isSuccess && strategies.data != null) {
         final salaryCycleStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.calendar && 
-                 (s.name.toLowerCase().contains('sal�rio') || s.name.toLowerCase().contains('salary') || s.name.toLowerCase().contains('ciclo')),
-          orElse: () => throw Exception('Estrat�gia de ciclo de sal�rio n�o encontrada'),
+                 (s.name.toLowerCase().contains('sal?rio') || s.name.toLowerCase().contains('salary') || s.name.toLowerCase().contains('ciclo')),
+          orElse: () => throw Exception('Estrat?gia de ciclo de sal?rio n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(salaryCycleStrategy.id, {
@@ -1033,7 +1032,7 @@ final sportsEventsProvider = StateNotifierProvider<SportsEventsNotifier, SportsE
   return SportsEventsNotifier(repository, storeId);
 });
 
-/// Provider para times esportivos (tela de configura��o de times e jogos)
+/// Provider para times esportivos (tela de configura??o de times e jogos)
 final sportsTeamsProvider = StateNotifierProvider<SportsTeamsNotifier, SportsTeamsState>((ref) {
   final repository = ref.watch(calendarStrategiesRepositoryProvider);
   final currentStore = ref.watch(currentStoreProvider);
@@ -1049,13 +1048,14 @@ final longHolidaysProvider = StateNotifierProvider<LongHolidaysNotifier, LongHol
   return LongHolidaysNotifier(repository, storeId);
 });
 
-/// Provider para ciclo de sal�rio
+/// Provider para ciclo de sal?rio
 final salaryCycleProvider = StateNotifierProvider<SalaryCycleNotifier, SalaryCycleState>((ref) {
   final repository = ref.watch(calendarStrategiesRepositoryProvider);
   final currentStore = ref.watch(currentStoreProvider);
   final storeId = currentStore?.id ?? 'store-not-configured';
   return SalaryCycleNotifier(repository, storeId);
 });
+
 
 
 

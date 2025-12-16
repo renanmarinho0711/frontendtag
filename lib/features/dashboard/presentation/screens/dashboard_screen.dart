@@ -35,7 +35,6 @@ import 'package:tagbean/features/dashboard/presentation/widgets/recent_activity_
 import 'package:tagbean/features/dashboard/presentation/widgets/admin_panel_card.dart';
 // Widgets de navegao extrados
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/navigation.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
@@ -5043,6 +5042,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
     );
   }
 }
+
 
 
 

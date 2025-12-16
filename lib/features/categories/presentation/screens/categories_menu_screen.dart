@@ -10,7 +10,6 @@ import 'package:tagbean/features/categories/presentation/providers/categories_pr
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class CategoriasMenuScreen extends ConsumerStatefulWidget {
   const CategoriasMenuScreen({super.key});
@@ -856,6 +855,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
     );
   }
 }
+
 
 
 

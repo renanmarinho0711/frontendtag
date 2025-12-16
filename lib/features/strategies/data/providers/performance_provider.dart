@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/repositories/strategies_repository.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 // ============================================================================
@@ -1200,6 +1199,7 @@ final autoAuditProvider = StateNotifierProvider<AutoAuditNotifier, AutoAuditStat
     return AutoAuditNotifier(repository, storeId);
   },
 );
+
 
 
 

@@ -1,16 +1,15 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/repositories/strategies_repository.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 // ============================================================================
 // REPOSITORY PROVIDER
 // ============================================================================
 
-/// Provider do StrategiesRepository para estrat�gias de cross-selling
+/// Provider do StrategiesRepository para estrat?gias de cross-selling
 final crossSellingStrategiesRepositoryProvider = Provider<StrategiesRepository>((ref) {
   return StrategiesRepository();
 });
@@ -55,7 +54,7 @@ class NearbyProductsState {
   /// Estado com erro
   factory NearbyProductsState.error(String message) => NearbyProductsState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma c?pia com altera??es
   NearbyProductsState copyWith({
     List<NearbyProductSuggestionModel>? sugestoes,
     bool? isLoading,
@@ -86,16 +85,16 @@ class NearbyProductsState {
     );
   }
 
-  /// Total de sugest�es
+  /// Total de sugest?es
   int get totalSugestoes => sugestoes.length;
 
-  /// Dist�ncia m�xima formatada
+  /// Dist?ncia m?xima formatada
   String get distanciaMaximaFormatted => '${distanciaMaxima.toStringAsFixed(1)}m';
 
-  /// Confian�a m�nima formatada
+  /// Confian?a m?nima formatada
   String get confiancaMinimaFormatted => '${confiancaMinima.toStringAsFixed(0)}%';
 
-  /// Tempo de rota��o formatado
+  /// Tempo de rota??o formatado
   String get tempoRotacaoFormatted => '${tempoRotacao}s';
 }
 
@@ -171,7 +170,7 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza a dist�ncia mxima
+  /// Atualiza a dist?ncia mxima
   void setDistanciaMaxima(double distancia) {
     state = state.copyWith(distanciaMaxima: distancia);
   }
@@ -186,27 +185,27 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
     state = state.copyWith(estiloSeta: estilo);
   }
 
-  /// Atualiza a anima��o da seta
+  /// Atualiza a anima??o da seta
   void setSetaAnimada(bool animada) {
     state = state.copyWith(setaAnimada: animada);
   }
 
-  /// Atualiza a rota��o autom�tica
+  /// Atualiza a rota??o autom?tica
   void setRotacaoAutomatica(bool rotacao) {
     state = state.copyWith(rotacaoAutomatica: rotacao);
   }
 
-  /// Atualiza o tempo de rota��o
+  /// Atualiza o tempo de rota??o
   void setTempoRotacao(int tempo) {
     state = state.copyWith(tempoRotacao: tempo);
   }
 
-  /// Atualiza a notifica��o de sugest�es
+  /// Atualiza a notifica??o de sugest?es
   void setNotificarSugestoes(bool notificar) {
     state = state.copyWith(notificarSugestoes: notificar);
   }
 
-  /// Gera novas sugest�es via IA
+  /// Gera novas sugest?es via IA
   Future<void> gerarSugestoes() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -215,7 +214,7 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
         final nearbyStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.crossSelling && 
                  (s.name.toLowerCase().contains('vizinho') || s.name.toLowerCase().contains('nearby')),
-          orElse: () => throw Exception('Estrat�gia de produto vizinho n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de produto vizinho n?o encontrada'),
         );
         
         await _repository.executeStrategy(nearbyStrategy.id);
@@ -226,7 +225,7 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
     }
   }
 
-  /// Salva as configura��es
+  /// Salva as configura??es
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -235,7 +234,7 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
         final nearbyStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.crossSelling && 
                  (s.name.toLowerCase().contains('vizinho') || s.name.toLowerCase().contains('nearby')),
-          orElse: () => throw Exception('Estratgia de produto vizinho n�o encontrada'),
+          orElse: () => throw Exception('Estratgia de produto vizinho n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(nearbyStrategy.id, {
@@ -304,7 +303,7 @@ class OffersTrailState {
   /// Estado com erro
   factory OffersTrailState.error(String message) => OffersTrailState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma c?pia com altera??es
   OffersTrailState copyWith({
     List<OffersTrailModel>? trilhas,
     bool? isLoading,
@@ -419,7 +418,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza o intervalo de atualiza��o
+  /// Atualiza o intervalo de atualiza??o
   void setIntervaloAtualizacao(double intervalo) {
     state = state.copyWith(intervaloAtualizacao: intervalo);
   }
@@ -444,7 +443,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
     state = state.copyWith(estilo: estilo);
   }
 
-  /// Atualiza notifica��o ao cliente
+  /// Atualiza notifica??o ao cliente
   void setNotificarCliente(bool notificar) {
     state = state.copyWith(notificarCliente: notificar);
   }
@@ -480,7 +479,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
         final trailStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.crossSelling && 
                  (s.name.toLowerCase().contains('trilha') || s.name.toLowerCase().contains('trail')),
-          orElse: () => throw Exception('Estrat�gia de trilha n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de trilha n?o encontrada'),
         );
         
         await _repository.executeStrategy(trailStrategy.id);
@@ -491,7 +490,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
     }
   }
 
-  /// Salva as configura��es
+  /// Salva as configura??es
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -500,7 +499,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
         final trailStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.crossSelling && 
                  (s.name.toLowerCase().contains('trilha') || s.name.toLowerCase().contains('trail')),
-          orElse: () => throw Exception('Estrat�gia de trilha n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de trilha n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(trailStrategy.id, {
@@ -576,7 +575,7 @@ class SmartComboState {
   /// Estado com erro
   factory SmartComboState.error(String message) => SmartComboState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma c?pia com altera??es
   SmartComboState copyWith({
     List<SmartComboModel>? combos,
     bool? isLoading,
@@ -625,7 +624,7 @@ class SmartComboState {
   /// Faturamento formatado
   String get faturamentoFormatted => 'R\$ ${faturamentoTotal.toStringAsFixed(2)}';
 
-  /// Convers�o mdia
+  /// Convers?o mdia
   int get conversaoMedia {
     if (combos.isEmpty) return 0;
     return (combos.fold(0, (sum, c) => sum + c.conversao) / combos.length).round();
@@ -731,12 +730,12 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
     state = state.copyWith(produtosPorCombo: quantidade);
   }
 
-  /// Atualiza sugest�o automtica
+  /// Atualiza sugest?o automtica
   void setSugestaoAutomatica(bool sugestao) {
     state = state.copyWith(sugestaoAutomatica: sugestao);
   }
 
-  /// Atualiza integra��o com PDV
+  /// Atualiza integra??o com PDV
   void setIntegracaoPdv(bool integracao) {
     state = state.copyWith(integracaoPdv: integracao);
   }
@@ -782,7 +781,7 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
         final comboStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.crossSelling && 
                  s.name.toLowerCase().contains('combo'),
-          orElse: () => throw Exception('Estrat�gia de combo n�o encontrada'),
+          orElse: () => throw Exception('Estrat?gia de combo n?o encontrada'),
         );
         
         await _repository.executeStrategy(comboStrategy.id);
@@ -793,7 +792,7 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
     }
   }
 
-  /// Salva as configura��es
+  /// Salva as configura??es
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -802,7 +801,7 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
         final comboStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.crossSelling && 
                  s.name.toLowerCase().contains('combo'),
-          orElse: () => throw Exception('Estratgia de combo n�o encontrada'),
+          orElse: () => throw Exception('Estratgia de combo n?o encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(comboStrategy.id, {
@@ -841,6 +840,7 @@ final smartComboProvider = StateNotifierProvider<SmartComboNotifier, SmartComboS
     return SmartComboNotifier(repository, storeId);
   },
 );
+
 
 
 

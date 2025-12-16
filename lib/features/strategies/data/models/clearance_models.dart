@@ -1,15 +1,14 @@
-﻿import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_base_models.dart';
 
 // ============================================================================
-// AUTO CLEARANCE / LIQUIDA�O AUTOM�TICA MODELS
+// AUTO CLEARANCE / LIQUIDA?O AUTOM?TICA MODELS
 // ============================================================================
 
-/// Modelo de Fase de Liquida��o Autom�tica
+/// Modelo de Fase de Liquida??o Autom?tica
 /// 
-/// Representa uma fase da liquida��o progressiva com seus parmetros.
+/// Representa uma fase da liquida??o progressiva com seus parmetros.
 /// Os produtos entram em fases diferentes conforme o tempo sem vendas.
 class ClearancePhaseModel {
   final String id;
@@ -86,9 +85,9 @@ class ClearancePhaseModel {
   }
 }
 
-/// Modelo de Produto em Liquida��o
+/// Modelo de Produto em Liquida??o
 /// 
-/// Representa um produto que est� em processo de liquida��o autom�tica.
+/// Representa um produto que est? em processo de liquida??o autom?tica.
 class ClearanceProductModel {
   final String id;
   final String nome;
@@ -162,12 +161,12 @@ class ClearanceProductModel {
 }
 
 // ============================================================================
-// DYNAMIC MARKDOWN / REDU�O POR VALIDADE MODELS
+// DYNAMIC MARKDOWN / REDU?O POR VALIDADE MODELS
 // ============================================================================
 
 /// Modelo de Faixa de Validade para Dynamic Markdown
 /// 
-/// Representa uma faixa de dias restantes at� a validade com desconto associado.
+/// Representa uma faixa de dias restantes at? a validade com desconto associado.
 class MarkdownRuleModel {
   final String id;
   final String faixa;
@@ -240,7 +239,7 @@ class MarkdownRuleModel {
 
 /// Modelo de Produto Afetado pelo Dynamic Markdown
 /// 
-/// Representa um produto que est� com desconto devido � proximidade da validade.
+/// Representa um produto que est? com desconto devido ? proximidade da validade.
 class MarkdownProductModel {
   final String id;
   final String nome;
@@ -322,7 +321,7 @@ class MarkdownProductModel {
   }
 }
 
-/// Modelo de Hist�rico de Execu��o do Dynamic Markdown
+/// Modelo de Hist?rico de Execu??o do Dynamic Markdown
 class MarkdownHistoryModel {
   final String id;
   final String dataHora;
@@ -382,6 +381,7 @@ String _parseColorKey(dynamic value) {
   if (value is String) return value;
   return 'primary'; // Default
 }
+
 
 
 

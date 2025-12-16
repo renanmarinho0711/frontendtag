@@ -1,5 +1,4 @@
-﻿import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_base_models.dart';
 
@@ -7,10 +6,10 @@ import 'package:tagbean/features/strategies/data/models/strategy_base_models.dar
 // PEAK HOURS MODELS
 // ============================================================================
 
-/// Modelo de Hor�rio de Pico
+/// Modelo de Hor?rio de Pico
 ///
-/// Representa um per�odo do dia com ajuste de pre�o baseado no fluxo de clientes.
-/// Usado na estrat�gia de precifica��o por hor�rio de pico.
+/// Representa um per?odo do dia com ajuste de pre?o baseado no fluxo de clientes.
+/// Usado na estrat?gia de precifica??o por hor?rio de pico.
 class PeakHourModel {
   final String id;
   final String periodo;
@@ -103,7 +102,7 @@ class PeakHourModel {
 
 /// Modelo de Dia da Semana
 ///
-/// Representa um dia da semana com seu n�vel de movimento e status ativo.
+/// Representa um dia da semana com seu n?vel de movimento e status ativo.
 class WeekDayModel {
   final String id;
   final String dia;
@@ -152,9 +151,9 @@ class WeekDayModel {
   }
 }
 
-/// Modelo de Hist�rico de Execu��o de Hor�rio de Pico
+/// Modelo de Hist?rico de Execu??o de Hor?rio de Pico
 ///
-/// Representa um registro de execu��o de ajuste baseado em hor�rio de pico.
+/// Representa um registro de execu??o de ajuste baseado em hor?rio de pico.
 class PeakHourHistoryModel {
   final String id;
   final String data;
@@ -212,6 +211,7 @@ String _parseColorKey(dynamic value) {
   if (value is String) return value;
   return 'primary'; // Default
 }
+
 
 
 

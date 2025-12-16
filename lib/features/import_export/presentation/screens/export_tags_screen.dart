@@ -7,7 +7,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class ExportacaoTagsScreen extends ConsumerStatefulWidget {
   const ExportacaoTagsScreen({super.key});
@@ -1343,6 +1342,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
     }
   }
 }
+
 
 
 

@@ -1,14 +1,13 @@
-﻿import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 // ============================================================================
 // STRATEGY ENUMS
 // ============================================================================
 
-/// Categoria da estrat�gia de precifica��o
+/// Categoria da estrat?gia de precifica??o
 enum StrategyCategory {
-  calendar('Calend�rio', Icons.celebration_rounded, 'yellowGold'),
+  calendar('Calend?rio', Icons.celebration_rounded, 'yellowGold'),
   performance('Performance', Icons.trending_up_rounded, 'success'),
   environmental('Ambiental', Icons.thermostat_rounded, 'yellowGold'),
   engagement('Engajamento', Icons.map_rounded, 'urgent'),
@@ -30,7 +29,7 @@ enum StrategyCategory {
   }
 }
 
-/// Status da estrat�gia
+/// Status da estrat?gia
 enum StrategyStatus {
   active('ativa', 'Ativa', 'success', Icons.play_circle_filled_rounded),
   paused('pausada', 'Pausada', 'warning', Icons.pause_circle_filled_rounded),
@@ -62,10 +61,10 @@ enum StrategyStatus {
   bool get isExecuting => this == StrategyStatus.executing;
 }
 
-/// Status de execu��o de estrat�gia
+/// Status de execu??o de estrat?gia
 enum ExecutionStatus {
-  running('running', 'Em Execu��o', 'blueMain'),
-  completed('completed', 'Conclu�do', 'success'),
+  running('running', 'Em Execu??o', 'blueMain'),
+  completed('completed', 'Conclu?do', 'success'),
   failed('failed', 'Falhou', 'error'),
   partial('partial', 'Parcial', 'warning');
 
@@ -79,10 +78,10 @@ enum ExecutionStatus {
 // STRATEGY MODEL
 // ============================================================================
 
-/// Modelo principal de Estrat�gia de Precifica��o
+/// Modelo principal de Estrat?gia de Precifica??o
 /// 
-/// Representa uma estrat�gia configur�vel que pode ser ativada, pausada ou inativa.
-/// Cont�m m�tricas de desempenho, configura��es de execu��o e estat�sticas.
+/// Representa uma estrat?gia configur?vel que pode ser ativada, pausada ou inativa.
+/// Cont?m m?tricas de desempenho, configura??es de execu??o e estat?sticas.
 class StrategyModel {
   final String id;
   final String name;
@@ -94,12 +93,12 @@ class StrategyModel {
   final String primaryColorKey; // Semantic color key
   final List<String> gradient; // List of color key strings
 
-  // M�tricas de impacto
+  // M?tricas de impacto
   final String impactPercentage;
   final String impactValue;
   final int affectedProducts;
 
-  // Execu��o
+  // Execu??o
   final String? lastExecution;
   final String? nextExecution;
   final String frequency;
@@ -144,40 +143,40 @@ class StrategyModel {
   // COMPUTED PROPERTIES
   // ============================================================================
 
-  /// Taxa de sucesso das execu��es (0-100)
+  /// Taxa de sucesso das execu??es (0-100)
   double get successRate {
     if (totalExecutions == 0) return 0;
     return (successfulExecutions / totalExecutions) * 100;
   }
 
-  /// Verifica se a estrat�gia est� operacional
+  /// Verifica se a estrat?gia est? operacional
   bool get isOperational => status.isActive && affectedProducts > 0;
 
   /// Cor do badge de status
   String get statusColorKey => status.colorKey;
 
-  /// �cone do status
+  /// ?cone do status
   IconData get statusIcon => status.icon;
 
   /// Label formatada do status
   String get statusLabel => status.label;
 
-  /// �ltima execu��o formatada (ou "-" se nunca executou)
+  /// ?ltima execu??o formatada (ou "-" se nunca executou)
   String get lastExecutionFormatted => lastExecution ?? '-';
 
-  /// Pr�xima execu��o formatada (ou "-" se n�o agendada)
+  /// Pr?xima execu??o formatada (ou "-" se n?o agendada)
   String get nextExecutionFormatted => nextExecution ?? '-';
   
   /// Aliases para compatibilidade com telas
   String get impact => impactValue;
   int get products => affectedProducts;
   
-  /// Alias para verificar se est� ativa
+  /// Alias para verificar se est? ativa
   bool get isActive => status.isActive;
   
   /// Aliases para compatibilidade com ai_suggestions_screen
-  double get priceVariationPercent => 0.0; // Placeholder - estrat�gias n�o t�m esse dado diretamente
-  double get targetMarginPercent => 0.0; // Placeholder - estrat�gias n�o t�m esse dado diretamente
+  double get priceVariationPercent => 0.0; // Placeholder - estrat?gias n?o t?m esse dado diretamente
+  double get targetMarginPercent => 0.0; // Placeholder - estrat?gias n?o t?m esse dado diretamente
   int get priority => reliability; // Usa reliability como proxy para prioridade
 
   // ============================================================================
@@ -343,7 +342,7 @@ class StrategyModel {
 // STRATEGY EXECUTION MODEL
 // ============================================================================
 
-/// Representa uma execu��o de estrat�gia
+/// Representa uma execu??o de estrat?gia
 class StrategyExecution {
   final String id;
   final String strategyId;
@@ -390,9 +389,9 @@ class StrategyExecution {
     final diff = now.difference(executedAt);
     
     if (diff.inMinutes < 1) return 'Agora';
-    if (diff.inMinutes < 60) return 'H� ${diff.inMinutes}min';
-    if (diff.inHours < 24) return 'H� ${diff.inHours}h�';
-    if (diff.inDays < 7) return 'H� ${diff.inDays}d';
+    if (diff.inMinutes < 60) return 'H? ${diff.inMinutes}min';
+    if (diff.inHours < 24) return 'H? ${diff.inHours}h?';
+    if (diff.inDays < 7) return 'H? ${diff.inDays}d';
     
     return '${executedAt.day.toString().padLeft(2, '0')}/${executedAt.month.toString().padLeft(2, '0')}/${executedAt.year}';
   }
@@ -401,7 +400,7 @@ class StrategyExecution {
   String get durationFormatted {
     if (duration.inSeconds < 60) return '${duration.inSeconds}s';
     if (duration.inMinutes < 60) return '${duration.inMinutes}min';
-    return '${duration.inHours}h� ${duration.inMinutes % 60}min';
+    return '${duration.inHours}h? ${duration.inMinutes % 60}min';
   }
 
   factory StrategyExecution.fromJson(Map<String, dynamic> json) {
@@ -441,7 +440,7 @@ class StrategyExecution {
 // STATS MODELS
 // ============================================================================
 
-/// Modelo para produtos top nas estrat�gias
+/// Modelo para produtos top nas estrat?gias
 class TopProductResult {
   final String id;
   final String name;
@@ -496,7 +495,7 @@ class TopProductResult {
   String get margemLucroFormatted => '${profitMargin.toStringAsFixed(1)}%';
 }
 
-/// Estat�sticas de per�odo de uma estrat�gia
+/// Estat?sticas de per?odo de uma estrat?gia
 class StrategyPeriodStats {
   final String period;
   final int totalSales;
@@ -561,7 +560,7 @@ class StrategyPeriodStats {
   }
 }
 
-/// Dados de vendas di�rias
+/// Dados de vendas di?rias
 class DailySalesData {
   final DateTime date;
   final int sales;
@@ -586,6 +585,7 @@ class DailySalesData {
     return days[date.weekday % 7];
   }
 }
+
 
 
 

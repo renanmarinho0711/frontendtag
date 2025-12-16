@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 // import 'package:mobile_scanner/mobile_scanner.dart'; // Dependência removida para web
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 /// Widget de Scanner de Código de Barras usando a câmera do dispositivo
 /// NOTA: Não disponível em Web - substitua por upload de imagem ou input manual
@@ -604,6 +603,7 @@ class BarcodeScannerDialog {
     return result;
   }
 }
+
 
 
 
