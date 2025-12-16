@@ -1,0 +1,328 @@
+# CHECKLIST DE REFATORAÇÃO - TAGBEAN FRONTEND
+## Migração 100% para Cores Dinâmicas + Arquitetura Limpa
+**Status:** Inicial | **Versão:** 1.0 | **Data:** 2025-12-16
+
+---
+
+## REGRAS INVIOLÁVEIS (REFERÊNCIA RÁPIDA)
+
+✅ **OBRIGATÓRIO:**
+- [ ] Leitura completa (100 linhas por vez)
+- [ ] Cores dinâmicas APENAS de tokens do Design System
+- [ ] SOLID + DRY + Separação de responsabilidades
+- [ ] Teste individual de cada módulo
+- [ ] Documentar mudanças críticas
+- [ ] Eliminar:  hardcoded colors, inline styles, valores mágicos
+
+❌ **PROIBIDO:**
+- [ ] Scripts automáticos
+- [ ] Comentar código defeituoso
+- [ ] Remover funcionalidades
+- [ ] Rollback ou versões antigas
+- [ ] TODO/FIXME/Hacks temporários
+- [ ] Duplicação de lógica
+- [ ] Atalhos ou "gambiarras"
+
+---
+
+## ESTRUTURA DE MÓDULOS
+
+### 📁 CORE (Foundation)
+**Responsabilidade:** Configurações, constantes, utilitários globais
+- [x] `.dart_tool/dartpad/web_plugin_registrant.dart`
+- [x] `app/app. dart`
+- [x] `app/app_providers.dart`
+- [x] `constants/` (4 arquivos)
+- [x] `core. dart`
+- [x] `di/` (3 arquivos)
+- [x] `enums/` (2 arquivos)
+- [x] `exceptions/` (2 arquivos)
+- [x] `extensions/extensions.dart`
+- [x] `l10n/app_localizations.dart`
+- [x] `network/` (4 arquivos)
+- [x] `providers/` (3 arquivos)
+- [x] `router/` (4 arquivos)
+- [x] `services/` (4 arquivos)
+- [x] `storage/storage_service.dart`
+- [x] `theme/` (4 arquivos base)
+- [x] `utils/` (8 arquivos)
+- [x] `widgets/` (5 arquivos)
+
+**Total:** 29 arquivos ✅ **COMPLETO - 0 ERROS**
+
+---
+
+### 🎨 DESIGN_SYSTEM (Tokens + Temas)
+**Responsabilidade:** Tokens de cor, tipografia, spacing, sombras, temas
+- [x] `design_system. dart`
+- [x] `components/cards/card_widgets.dart`
+- [x] `components/common/common_widgets.dart`
+- [x] `components/dialogs/dialog_widgets.dart`
+- [x] `theme/app_theme.dart`
+- [x] `theme/borders. dart`
+- [x] `theme/brand.dart`
+- [x] `theme/brand_colors.dart`
+- [x] `theme/category_themes.dart`
+- [x] `theme/colors.dart`
+- [x] `theme/dynamic_gradient_container.dart`
+- [x] `theme/dynamic_gradients.dart`
+- [x] `theme/gradients.dart`
+- [x] `theme/icons.dart`
+- [x] `theme/module_gradients.dart`
+- [x] `theme/module_theme.dart`
+- [x] `theme/shadows.dart`
+- [x] `theme/sizes.dart`
+- [x] `theme/spacing.dart`
+- [x] `theme/temas/BOA_theme_colors_t10_indigo_night.dart`
+- [x] `theme/temas/BOA_theme_colors_t12_sky_blue.dart`
+- [x] `theme/temas/BOM_theme_colors_t14_forest_green.dart`
+- [x] `theme/temas/theme_colors. dart`
+- [x] `theme/temas/theme_colors_t01_emerald_power.dart` até t15
+- [x] `theme/temas/theme_colors_v01_dark_mode.dart` até v10
+- [x] `theme/theme_colors.dart`
+- [x] `theme/theme_colors_dynamic.dart`
+- [x] `theme/theme_contract.dart`
+- [x] `theme/theme_provider.dart`
+- [x] `theme/theme_selector_dialog.dart`
+- [x] `theme/typography.dart`
+
+**Total:** 33 arquivos ✅ **COMPLETO - 0 ERROS - 1 ENCODING FIX (brand.dart)**
+
+**PRIORIDADE:** ⭐⭐⭐ CRÍTICA (LER PRIMEIRO)
+
+---
+
+### 🔐 AUTH (Autenticação + Contexto)
+**Responsabilidade:** Login, senha, roles, trabalho context
+- [x] `auth.dart`
+- [x] `data/datasources/work_context_datasource.dart`
+- [x] `data/models/auth_models.dart`
+- [x] `data/models/user_model.dart`
+- [x] `data/models/work_context_model.dart`
+- [x] `data/repositories/auth_repository.dart`
+- [x] `presentation/helpers/role_color_helper.dart`
+- [x] `presentation/providers/auth_provider.dart`
+- [x] `presentation/providers/work_context_provider.dart`
+- [x] `presentation/screens/forgot_password_screen.dart`
+- [x] `presentation/screens/login_screen.dart`
+- [x] `presentation/screens/reset_password_screen.dart`
+- [x] `presentation/widgets/store_selector. dart`
+- [x] `presentation/widgets/store_switcher.dart`
+
+**Total:** 14 arquivos ✅ **COMPLETO - 0 ERROS - 8 ENCODING FIXES + 4 IMPORTS DUPS REMOVED**
+
+**PRIORIDADE:** ⭐⭐⭐ (Segundo)
+
+---
+
+### 📊 DASHBOARD (Hub Principal)
+**Responsabilidade:** Tela inicial, cards, navegação, widgets principais
+- [x] `dashboard.dart`
+- [x] `data/models/dashboard_models.dart`
+- [x] `data/repositories/dashboard_repository. dart`
+- [x] `presentation/providers/dashboard_provider.dart`
+- [x] `presentation/screens/dashboard_screen.dart`
+- [x] `presentation/widgets/` (26 cards + 5 navigation files)
+
+**Total:** 32 arquivos ✅ **COMPLETO - 0 ERROS - 2 ENCODING FIXES**
+
+**PRIORIDADE:** ⭐⭐⭐ (Terceiro)
+
+---
+
+### 📦 PRODUCTS (Produtos + Tags)
+**Responsabilidade:** Gestão de produtos, categorias, QR, scanner
+- [x] `products.dart`
+- [x] `data/datasources/products_datasource.dart`
+- [x] `data/models/product_model.dart`, `product_models.dart`, `product_tag_model.dart`
+- [x] `data/repositories/global_products_repository.dart`, `products_repository.dart`
+- [x] `data/services/product_tag_service.dart`
+- [x] `presentation/helpers/category_color_helper.dart`
+- [x] `presentation/providers/` (3 arquivos)
+- [x] `presentation/screens/` (8 arquivos)
+- [x] `presentation/widgets/` (20+ arquivos)
+
+**Total:** 43 arquivos ✅ **COMPLETO - 0 ERROS - 39 COLOR FIXES (product_edit_screen.dart)**
+
+**PRIORIDADE:** ⭐⭐⭐ (Quarto)
+
+---
+
+### 🏷️ TAGS (Identificação + Sync)
+**Responsabilidade:** Gestão de tags, sincronização, diagnóstico
+- [ ] `tags.dart`
+- [ ] `data/models/tag_model.dart`
+- [ ] `data/repositories/tags_repository.dart`
+- [ ] `presentation/providers/tags_provider.dart`
+- [ ] `presentation/screens/` (9 arquivos)
+- [ ] `presentation/widgets/` (9 arquivos)
+
+**Total:** 19 arquivos
+
+**PRIORIDADE:** ⭐⭐ (Quinto)
+
+---
+
+### 💰 PRICING (Preços + Margens)
+**Responsabilidade:** Pricing dinâmico, margens, ajustes, IA
+- [ ] `pricing.dart`
+- [ ] `data/models/pricing_models.dart`
+- [ ] `data/repositories/pricing_repository. dart`
+- [ ] `presentation/providers/pricing_provider.dart`
+- [ ] `presentation/screens/` (13 arquivos)
+
+**Total:** 17 arquivos
+
+**PRIORIDADE:** ⭐⭐
+
+---
+
+### 📋 CATEGORIES (Categorias de Produtos)
+**Responsabilidade:** Gestão de categorias, admin, stats
+- [ ] `categories.dart`
+- [ ] `data/models/category_models.dart`
+- [ ] `data/repositories/categories_repository. dart`
+- [ ] `presentation/providers/categories_provider.dart`
+- [ ] `presentation/screens/` (7 arquivos)
+
+**Total:** 11 arquivos
+
+**PRIORIDADE:** ⭐⭐
+
+---
+
+### 📈 REPORTS (Relatórios + Analytics)
+**Responsabilidade:** Vendas, performance, operacional, auditoria
+- [ ] `reports.dart`
+- [ ] `data/models/report_models. dart`
+- [ ] `data/repositories/reports_repository.dart`
+- [ ] `presentation/providers/reports_provider.dart`
+- [ ] `presentation/screens/` (5 arquivos)
+
+**Total:** 8 arquivos
+
+**PRIORIDADE:** ⭐⭐
+
+---
+
+### 🎯 STRATEGIES (Estratégias de Venda)
+**Responsabilidade:** Calendar, cross-selling, performance, environmental, visual
+- [ ] `strategies.dart`
+- [ ] `data/models/` (12 arquivos)
+- [ ] `data/providers/` (5 arquivos)
+- [ ] `data/repositories/strategies_repository.dart`
+- [ ] `presentation/helpers/clearance_status_color_helper.dart`
+- [ ] `presentation/providers/strategies_provider.dart`
+- [ ] `presentation/screens/` (15 arquivos subdivididos)
+
+**Total:** 35 arquivos
+
+**PRIORIDADE:** ⭐⭐
+
+---
+
+### 🔄 SYNC (Sincronização + Minew)
+**Responsabilidade:** Sync tags, minew, histórico, logs
+- [ ] `sync.dart`
+- [ ] `data/exceptions/sync_exceptions.dart`
+- [ ] `data/models/minew_models.dart`, `sync_models.dart`
+- [ ] `data/repositories/` (3 arquivos)
+- [ ] `data/services/` (2 arquivos)
+- [ ] `domain/usecases/` (2 arquivos)
+- [ ] `presentation/helpers/sync_status_color_helper.dart`
+- [ ] `presentation/providers/` (2 arquivos)
+- [ ] `presentation/screens/` (3 arquivos)
+- [ ] `presentation/widgets/` (4 arquivos)
+
+**Total:** 20 arquivos
+
+**PRIORIDADE:** ⭐⭐
+
+---
+
+### ⚙️ SETTINGS (Configurações + Backup)
+**Responsabilidade:** Notificações, ERP, backup, usuários
+- [ ] `settings.dart`
+- [ ] `data/models/settings_models.dart`, `user_model.dart`
+- [ ] `data/repositories/backup_repository.dart`, `users_repository.dart`
+- [ ] `presentation/providers/` (3 arquivos)
+- [ ] `presentation/screens/` (6 arquivos)
+
+**Total:** 13 arquivos
+
+**PRIORIDADE:** ⭐
+
+---
+
+### 📥 IMPORT_EXPORT (Importação + Exportação)
+**Responsabilidade:** Import/Export produtos, tags, batch operations
+- [ ] `import_export.dart`
+- [ ] `data/models/import_export_models.dart`
+- [ ] `data/repositories/import_export_repository.dart`
+- [ ] `presentation/providers/import_export_provider.dart`
+- [ ] `presentation/screens/` (6 arquivos)
+
+**Total:** 9 arquivos
+
+**PRIORIDADE:** ⭐
+
+---
+
+### 🔗 SHARED (Componentes + Utilities Compartilhados)
+**Responsabilidade:** Widgets reutilizáveis, mixins, modelos comuns
+- [ ] `shared.dart`
+- [ ] `data/repositories/` (2 arquivos)
+- [ ] `mixins/` (3 arquivos)
+- [ ] `models/models.dart`
+- [ ] `widgets/` (20+ arquivos)
+
+**Total:** 28 arquivos
+
+**PRIORIDADE:** ⭐⭐⭐ (Junto com CORE)
+
+---
+
+### 🗂️ MIGRATION (Arquivos Legados)
+**Responsabilidade:** Backup de código migrado
+- [ ] `modulos_backup/` (completo)
+- [ ] `modulos_migrados/` (completo)
+
+**Ação:** VERIFICAR SE AINDA SÃO NECESSÁRIOS - SE NÃO, REMOVER
+
+---
+
+## FLUXO DE EXECUÇÃO
+
+### FASE 1: PREPARAÇÃO (Foundation)
+1. [x] **LER DESIGN_SYSTEM** - Entender 100% dos tokens ✅ COMPLETO
+2. [x] **LER CORE** - Infraestrutura base ✅ COMPLETO
+3. [ ] **LER SHARED** - Componentes comuns ⏳ PRÓXIMO
+
+### FASE 2: AUTENTICAÇÃO
+4. [x] **REFATORAR AUTH** - Com tokens dinâmicos ✅ COMPLETO
+
+### FASE 3: NAVEGAÇÃO + HUB
+5. [x] **REFATORAR DASHBOARD** - Maior módulo visual ✅ COMPLETO
+
+### FASE 4: DADOS PRINCIPAIS
+6. [x] **REFATORAR PRODUCTS** ✅ COMPLETO
+7. [ ] **REFATORAR TAGS** ⏳ PRÓXIMO
+8. [ ] **REFATORAR CATEGORIES**
+
+### FASE 5: FUNCIONALIDADES SECUNDÁRIAS
+9. [ ] **REFATORAR PRICING**
+10. [ ] **REFATORAR STRATEGIES**
+11. [ ] **REFATORAR REPORTS**
+12. [ ] **REFATORAR SYNC**
+
+### FASE 6: UTILITÁRIOS
+13. [ ] **REFATORAR SETTINGS**
+14. [ ] **REFATORAR IMPORT_EXPORT**
+
+### FASE 7: LIMPEZA
+15. [ ] **VERIFICAR MIGRATION** - Remover se obsoleto
+16. [ ] **AUDITORIA FINAL** - 100% dinâmico
+
+---
+
+## TEMPLATE POR MÓDULO

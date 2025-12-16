@@ -1,0 +1,4262 @@
+﻿================================================================================
+                  ANALISE CONTEXTUAL DE CORES HARDCODED
+                 Verificacao de Color() vs ThemeColors
+                           Data: 16/12/2025 12:00:17
+================================================================================
+
+RESUMO EXECUTIVO
+----------------
+Total de modulos com Color() hardcoded: 7
+Total de instancias Color() hardcoded: 167
+
+NOTA: Chamadas de metodo, type hints e comentarios foram EXCLUIDOS desta analise
+      Esta analise mostra APENAS ocorrencias que precisam migrar para ThemeColors.of(context)
+
+ANALISE DETALHADA POR MODULO
+============================
+
+
+[MODULO: categories] - Total: 5 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : categories\data\models\category_models.dart
+Linha        : 20
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   return const Color(0xFF22C55E); // success
+
+Contexto (5 linhas antes e depois):
+   
+     @Deprecated('Use colorKey instead')
+     Color get color {
+       switch (this) {
+         case CategoryStatus.active:
+           return const Color(0xFF22C55E); // success
+         case CategoryStatus.inactive:
+           return const Color(0xFFFF9800); // orangeMaterial
+         case CategoryStatus.archived:
+           return const Color(0xFF64748B); // grey500
+       }
+     }
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : categories\data\models\category_models.dart
+Linha        : 22
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   return const Color(0xFFFF9800); // orangeMaterial
+
+Contexto (5 linhas antes e depois):
+     Color get color {
+       switch (this) {
+         case CategoryStatus.active:
+           return const Color(0xFF22C55E); // success
+         case CategoryStatus.inactive:
+           return const Color(0xFFFF9800); // orangeMaterial
+         case CategoryStatus.archived:
+           return const Color(0xFF64748B); // grey500
+       }
+     }
+   
+     IconData get icon {
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : categories\data\models\category_models.dart
+Linha        : 24
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   return const Color(0xFF64748B); // grey500
+
+Contexto (5 linhas antes e depois):
+         case CategoryStatus.active:
+           return const Color(0xFF22C55E); // success
+         case CategoryStatus.inactive:
+           return const Color(0xFFFF9800); // orangeMaterial
+         case CategoryStatus.archived:
+           return const Color(0xFF64748B); // grey500
+       }
+     }
+   
+     IconData get icon {
+       switch (this) {
+         case CategoryStatus.active:
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : categories\data\models\category_models.dart
+Linha        : 155
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF9CA3AF)
+
+Conteudo da linha:
+   if (colorValue == null) return const Color(0xFF9CA3AF); // grey500
+
+Contexto (5 linhas antes e depois):
+         'updatedAt': updatedAt.toIso8601String(),
+       };
+     }
+   
+     static Color _parseColor(dynamic colorValue) {
+       if (colorValue == null) return const Color(0xFF9CA3AF); // grey500
+       if (colorValue is Color) return colorValue;
+       if (colorValue is int) return Color(colorValue);
+       if (colorValue is String) {
+         // Remove # se existir
+         String hex = colorValue.replaceAll('#', '');
+         if (hex.length == 6) hex = 'FF$hex';
+
+SUGESTAO: ThemeColors.of(context).grey400
+--------------------------------------------------------------------------------
+
+Arquivo      : categories\data\models\category_models.dart
+Linha        : 164
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   return const Color(0xFF64748B); // grey500
+
+Contexto (5 linhas antes e depois):
+         // Remove # se existir
+         String hex = colorValue.replaceAll('#', '');
+         if (hex.length == 6) hex = 'FF$hex';
+         return Color(int.parse(hex, radix: 16));
+       }
+       return const Color(0xFF64748B); // grey500
+     }
+   
+     static CategoryStatus _parseStatus(dynamic statusValue) {
+       if (statusValue == null) return CategoryStatus.active;
+       if (statusValue is bool) {
+         return statusValue ? CategoryStatus.active : CategoryStatus.inactive;
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+
+[MODULO: pricing] - Total: 14 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 104
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   this.cor = const Color(0xFF2196F3),
+
+Contexto (5 linhas antes e depois):
+       required this.precoAtual,
+       required this.custo,
+       required this.precoNovo,
+       required this.margemAtual,
+       required this.margemNova,
+       this.cor = const Color(0xFF2196F3),
+       this.tag,
+       this.ativo = true,
+       this.selecionado = false,
+     });
+   
+     double get variacao => precoNovo - precoAtual;
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 169
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
+
+Contexto (5 linhas antes e depois):
+         precoAtual: currentPrice,
+         custo: cost,
+         precoNovo: newPrice,
+         margemAtual: currentMargin,
+         margemNova: newMargin,
+         cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
+         tag: json['tag']?.toString() ?? json['barcode']?.toString(),
+         ativo: json['isActive'] as bool? ?? json['ativo'] as bool? ?? true,
+         selecionado: json['selecionado'] as bool? ?? false,
+       );
+     }
+   
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 411
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF5252)
+
+Conteudo da linha:
+   return const Color(0xFFFF5252);
+
+Contexto (5 linhas antes e depois):
+     }
+   
+     Color get statusColor {
+       switch (status) {
+         case 'critico':
+           return const Color(0xFFFF5252);
+         case 'atencao':
+           return const Color(0xFFFF9800);
+         default:
+           return const Color(0xFF4CAF50);
+       }
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 413
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   return const Color(0xFFFF9800);
+
+Contexto (5 linhas antes e depois):
+     Color get statusColor {
+       switch (status) {
+         case 'critico':
+           return const Color(0xFFFF5252);
+         case 'atencao':
+           return const Color(0xFFFF9800);
+         default:
+           return const Color(0xFF4CAF50);
+       }
+     }
+   
+     factory MarginReviewModel.fromJson(Map<String, dynamic> json) {
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 415
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+         case 'critico':
+           return const Color(0xFFFF5252);
+         case 'atencao':
+           return const Color(0xFFFF9800);
+         default:
+           return const Color(0xFF4CAF50);
+       }
+     }
+   
+     factory MarginReviewModel.fromJson(Map<String, dynamic> json) {
+       // Mapear campos da API (camelCase) para o modelo
+       final price = (json['price'] ?? json['precoVenda'] ?? 0).toDouble();
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 546
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+     String get produto => produtoNome;
+   
+     Color get tipoColor {
+       switch (tipo) {
+         case 'aumento':
+           return const Color(0xFF4CAF50);
+         case 'reducao':
+           return const Color(0xFFFF5252);
+         case 'manutencao':
+           return const Color(0xFF2196F3);
+         default:
+           return const Color(0xFF2196F3);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 548
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF5252)
+
+Conteudo da linha:
+   return const Color(0xFFFF5252);
+
+Contexto (5 linhas antes e depois):
+     Color get tipoColor {
+       switch (tipo) {
+         case 'aumento':
+           return const Color(0xFF4CAF50);
+         case 'reducao':
+           return const Color(0xFFFF5252);
+         case 'manutencao':
+           return const Color(0xFF2196F3);
+         default:
+           return const Color(0xFF2196F3);
+       }
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 550
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   return const Color(0xFF2196F3);
+
+Contexto (5 linhas antes e depois):
+         case 'aumento':
+           return const Color(0xFF4CAF50);
+         case 'reducao':
+           return const Color(0xFFFF5252);
+         case 'manutencao':
+           return const Color(0xFF2196F3);
+         default:
+           return const Color(0xFF2196F3);
+       }
+     }
+   
+     IconData get tipoIcon {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 552
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   return const Color(0xFF2196F3);
+
+Contexto (5 linhas antes e depois):
+         case 'reducao':
+           return const Color(0xFFFF5252);
+         case 'manutencao':
+           return const Color(0xFF2196F3);
+         default:
+           return const Color(0xFF2196F3);
+       }
+     }
+   
+     IconData get tipoIcon {
+       switch (tipo) {
+         case 'aumento':
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 715
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+     /// DEPRECATED: Use tipoColorKey and resolve through ThemeColors.of(context)
+     @Deprecated('Use tipoColorKey instead')
+     Color get tipoColor {
+       switch (tipo) {
+         case 'automatico':
+           return const Color(0xFF4CAF50);
+         case 'manual':
+           return const Color(0xFF2196F3);
+         case 'ia':
+           return const Color(0xFF06B6D4);
+         case 'lote':
+           return const Color(0xFFEA580C);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 717
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   return const Color(0xFF2196F3);
+
+Contexto (5 linhas antes e depois):
+     Color get tipoColor {
+       switch (tipo) {
+         case 'automatico':
+           return const Color(0xFF4CAF50);
+         case 'manual':
+           return const Color(0xFF2196F3);
+         case 'ia':
+           return const Color(0xFF06B6D4);
+         case 'lote':
+           return const Color(0xFFEA580C);
+         default:
+           return const Color(0xFF64748B);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 719
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF06B6D4)
+
+Conteudo da linha:
+   return const Color(0xFF06B6D4);
+
+Contexto (5 linhas antes e depois):
+         case 'automatico':
+           return const Color(0xFF4CAF50);
+         case 'manual':
+           return const Color(0xFF2196F3);
+         case 'ia':
+           return const Color(0xFF06B6D4);
+         case 'lote':
+           return const Color(0xFFEA580C);
+         default:
+           return const Color(0xFF64748B);
+       }
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 721
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEA580C)
+
+Conteudo da linha:
+   return const Color(0xFFEA580C);
+
+Contexto (5 linhas antes e depois):
+         case 'manual':
+           return const Color(0xFF2196F3);
+         case 'ia':
+           return const Color(0xFF06B6D4);
+         case 'lote':
+           return const Color(0xFFEA580C);
+         default:
+           return const Color(0xFF64748B);
+       }
+     }
+   
+     IconData get tipoIcon {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : pricing\data\models\pricing_models.dart
+Linha        : 723
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   return const Color(0xFF64748B);
+
+Contexto (5 linhas antes e depois):
+         case 'ia':
+           return const Color(0xFF06B6D4);
+         case 'lote':
+           return const Color(0xFFEA580C);
+         default:
+           return const Color(0xFF64748B);
+       }
+     }
+   
+     IconData get tipoIcon {
+       switch (tipo) {
+         case 'automatico':
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+
+[MODULO: products] - Total: 7 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : products\data\models\product_models.dart
+Linha        : 96
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   this.cor = const Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+       this.unidade,
+       this.estoque,
+       this.estoqueMinimo,
+       this.ultimaAtualizacao,
+       this.dataAtualizacao,
+       this.cor = const Color(0xFF22C55E),
+       this.icone = Icons.inventory_2_rounded,
+       this.imagem,
+       this.codigoInterno,
+       this.fornecedor,
+       this.marca,
+       this.margemLucro,
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : products\data\models\product_models.dart
+Linha        : 330
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF1976D2)
+
+Conteudo da linha:
+   return const Color(0xFF1976D2); // material blue - temp fallback only
+
+Contexto (5 linhas antes e depois):
+     static Color _parseColor(dynamic cor) {
+       if (cor is Color) return cor;
+       if (cor is int) return Color(cor);
+       // IMPORTANT: Default color must be resolved at UI layer with ThemeColors.of(context)
+       // Returning a temporary color - actual color should be resolved in UI widgets
+       return const Color(0xFF1976D2); // material blue - temp fallback only
+     }
+   
+     static IconData _parseIcon(dynamic icone) {
+       if (icone is IconData) return icone;
+       // Default icon
+       return Icons.inventory_2_rounded;
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : products\data\models\product_models.dart
+Linha        : 455
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF1976D2)
+
+Conteudo da linha:
+   : const Color(0xFF1976D2); // placeholder - MUST resolve color at UI layer with ThemeColors.of(context)
+
+Contexto (5 linhas antes e depois):
+     bool get crescimentoPositivo => crescimento > 0;
+   
+     factory ProductCategoryStatsModel.fromJson(Map<String, dynamic> json) {
+       final cor = json['cor'] is Color 
+           ? json['cor'] as Color 
+           : const Color(0xFF1976D2); // placeholder - MUST resolve color at UI layer with ThemeColors.of(context)
+       
+       return ProductCategoryStatsModel(
+         id: json['id']?.toString() ?? '',
+         nome: json['nome']?.toString() ?? '',
+         icone: json['icone'] is IconData ? json['icone'] as IconData : Icons.category_rounded,
+         cor: cor,
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : products\presentation\screens\product_edit_screen.dart
+Linha        : 1076
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0x141E293B)
+
+Conteudo da linha:
+   color: Color(0x141E293B),
+
+Contexto (5 linhas antes e depois):
+         padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
+         decoration: BoxDecoration(
+           color: ThemeColors.of(context).grey600,
+           boxShadow: [
+             BoxShadow(
+               color: Color(0x141E293B),
+               blurRadius: 8,
+               offset: const Offset(0, -2),
+             ),
+           ],
+         ),
+         child: SafeArea(
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : products\presentation\screens\product_edit_screen.dart
+Linha        : 1211
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+
+Contexto (5 linhas antes e depois):
+   
+         ScaffoldMessenger.of(context).showSnackBar(
+           SnackBar(
+             content: Row(
+               children: [
+                 Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+                 const SizedBox(width: AppSpacing.md),
+                 Expanded(
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     mainAxisSize: MainAxisSize.min,
+                     children: [
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : products\presentation\widgets\qr\products_empty_state.dart
+Linha        : 93
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   iconColor: const Color(0xFF4CAF50),
+
+Contexto (5 linhas antes e depois):
+     factory ProductsEmptyState.pendentes({VoidCallback? onImport}) {
+       return ProductsEmptyState(
+         icon: Icons.check_circle_outline_rounded,
+         title: 'Todos vinculados!',
+         subtitle: 'Todos os produtos jï¿½ possuem tags vinculadas.',
+         iconColor: const Color(0xFF4CAF50),
+       );
+     }
+   
+     /// Factory para estado de nenhum produto vinculado
+     factory ProductsEmptyState.vinculados({VoidCallback? onScan}) {
+       return ProductsEmptyState(
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : products\presentation\widgets\qr\products_empty_state.dart
+Linha        : 105
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   iconColor: const Color(0xFFFF9800),
+
+Contexto (5 linhas antes e depois):
+         icon: Icons.label_off_rounded,
+         title: 'Nenhuma vinculaï¿½ï¿½o',
+         subtitle: 'Ainda nï¿½o hï¿½ produtos vinculados a tags. Escaneie para comeï¿½ar.',
+         actionLabel: 'Escanear',
+         onAction: onScan,
+         iconColor: const Color(0xFFFF9800),
+       );
+     }
+   
+     /// Factory para estado de carregando
+     factory ProductsEmptyState.loading() {
+       return ProductsEmptyState(
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+
+[MODULO: reports] - Total: 5 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : reports\data\models\report_models.dart
+Linha        : 62
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+   
+     @Deprecated('Use colorKey property in UI to get ThemeColors.of(context).getColorByKey(colorKey)')
+     Color get color {
+       switch (this) {
+         case ReportTrend.up:
+           return const Color(0xFF4CAF50);
+         case ReportTrend.down:
+           return const Color(0xFFFF5252);
+         case ReportTrend.stable:
+           return const Color(0xFF9E9E9E);
+       }
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : reports\data\models\report_models.dart
+Linha        : 64
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF5252)
+
+Conteudo da linha:
+   return const Color(0xFFFF5252);
+
+Contexto (5 linhas antes e depois):
+     Color get color {
+       switch (this) {
+         case ReportTrend.up:
+           return const Color(0xFF4CAF50);
+         case ReportTrend.down:
+           return const Color(0xFFFF5252);
+         case ReportTrend.stable:
+           return const Color(0xFF9E9E9E);
+       }
+     }
+   
+     IconData get icon {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : reports\data\models\report_models.dart
+Linha        : 66
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF9E9E9E)
+
+Conteudo da linha:
+   return const Color(0xFF9E9E9E);
+
+Contexto (5 linhas antes e depois):
+         case ReportTrend.up:
+           return const Color(0xFF4CAF50);
+         case ReportTrend.down:
+           return const Color(0xFFFF5252);
+         case ReportTrend.stable:
+           return const Color(0xFF9E9E9E);
+       }
+     }
+   
+     IconData get icon {
+       switch (this) {
+         case ReportTrend.up:
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : reports\data\models\report_models.dart
+Linha        : 140
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF9E9E9E)
+
+Conteudo da linha:
+   if (colorValue == null) return const Color(0xFF9E9E9E);
+
+Contexto (5 linhas antes e depois):
+       );
+     }
+   
+     @Deprecated('Use corKey instead')
+     static Color _parseColor(dynamic colorValue) {
+       if (colorValue == null) return const Color(0xFF9E9E9E);
+       if (colorValue is Color) return colorValue;
+       if (colorValue is int) return Color(colorValue);
+       if (colorValue is String) {
+         String hex = colorValue.replaceAll('#', '');
+         if (hex.length == 6) hex = 'FF$hex';
+         return Color(int.parse(hex, radix: 16));
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : reports\data\models\report_models.dart
+Linha        : 148
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF9E9E9E)
+
+Conteudo da linha:
+   return const Color(0xFF9E9E9E);
+
+Contexto (5 linhas antes e depois):
+       if (colorValue is String) {
+         String hex = colorValue.replaceAll('#', '');
+         if (hex.length == 6) hex = 'FF$hex';
+         return Color(int.parse(hex, radix: 16));
+       }
+       return const Color(0xFF9E9E9E);
+     }
+   
+     static String? _parseColorKey(dynamic colorValue) {
+       if (colorValue is String) return colorValue;
+       return null;
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+
+[MODULO: settings] - Total: 17 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : settings\data\models\settings_models.dart
+Linha        : 61
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   connected('Conectado', const Color(0xFF22C55E)),
+
+Contexto (5 linhas antes e depois):
+     final bool defaultEnabled;
+   }
+   
+   /// Status de conexï¿½o ERP
+   enum ERPConnectionStatus {
+     connected('Conectado', const Color(0xFF22C55E)),
+     disconnected('Desconectado', const Color(0xFFEF4444)),
+     testing('Testando...', const Color(0xFFF97316)),
+     error('Erro', const Color(0xFFEF4444));
+   
+     const ERPConnectionStatus(this.label, this.color);
+     
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\settings_models.dart
+Linha        : 62
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   disconnected('Desconectado', const Color(0xFFEF4444)),
+
+Contexto (5 linhas antes e depois):
+   }
+   
+   /// Status de conexï¿½o ERP
+   enum ERPConnectionStatus {
+     connected('Conectado', const Color(0xFF22C55E)),
+     disconnected('Desconectado', const Color(0xFFEF4444)),
+     testing('Testando...', const Color(0xFFF97316)),
+     error('Erro', const Color(0xFFEF4444));
+   
+     const ERPConnectionStatus(this.label, this.color);
+     
+     final String label;
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\settings_models.dart
+Linha        : 63
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF97316)
+
+Conteudo da linha:
+   testing('Testando...', const Color(0xFFF97316)),
+
+Contexto (5 linhas antes e depois):
+   
+   /// Status de conexï¿½o ERP
+   enum ERPConnectionStatus {
+     connected('Conectado', const Color(0xFF22C55E)),
+     disconnected('Desconectado', const Color(0xFFEF4444)),
+     testing('Testando...', const Color(0xFFF97316)),
+     error('Erro', const Color(0xFFEF4444));
+   
+     const ERPConnectionStatus(this.label, this.color);
+     
+     final String label;
+     final Color color;
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\settings_models.dart
+Linha        : 64
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   error('Erro', const Color(0xFFEF4444));
+
+Contexto (5 linhas antes e depois):
+   /// Status de conexï¿½o ERP
+   enum ERPConnectionStatus {
+     connected('Conectado', const Color(0xFF22C55E)),
+     disconnected('Desconectado', const Color(0xFFEF4444)),
+     testing('Testando...', const Color(0xFFF97316)),
+     error('Erro', const Color(0xFFEF4444));
+   
+     const ERPConnectionStatus(this.label, this.color);
+     
+     final String label;
+     final Color color;
+   }
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 65
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   return const Color(0xFFEF4444); // roleSuperAdmin placeholder
+
+Contexto (5 linhas antes e depois):
+     
+     @Deprecated('Use colorKey instead')
+     Color get color {
+       switch (this) {
+         case UserRole.platformAdmin:
+           return const Color(0xFFEF4444); // roleSuperAdmin placeholder
+         case UserRole.clientAdmin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserRole.storeManager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserRole.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 67
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF10B981)
+
+Conteudo da linha:
+   return const Color(0xFF10B981); // roleAdmin placeholder
+
+Contexto (5 linhas antes e depois):
+     Color get color {
+       switch (this) {
+         case UserRole.platformAdmin:
+           return const Color(0xFFEF4444); // roleSuperAdmin placeholder
+         case UserRole.clientAdmin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserRole.storeManager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserRole.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserRole.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+
+SUGESTAO: ThemeColors.of(context).greenMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 69
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF15803D)
+
+Conteudo da linha:
+   return const Color(0xFF15803D); // roleManager placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserRole.platformAdmin:
+           return const Color(0xFFEF4444); // roleSuperAdmin placeholder
+         case UserRole.clientAdmin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserRole.storeManager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserRole.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserRole.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+       }
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 71
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   return const Color(0xFFF59E0B); // roleOperator placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserRole.clientAdmin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserRole.storeManager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserRole.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserRole.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+       }
+     }
+     
+     IconData get iconData {
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 73
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   return const Color(0xFF64748B); // roleViewer placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserRole.storeManager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserRole.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserRole.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+       }
+     }
+     
+     IconData get iconData {
+       switch (this) {
+         case UserRole.platformAdmin:
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 178
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF10B981)
+
+Conteudo da linha:
+   return const Color(0xFF10B981); // roleAdmin placeholder
+
+Contexto (5 linhas antes e depois):
+     
+     @Deprecated('Use colorKey instead')
+     Color get color {
+       switch (this) {
+         case UserLevel.admin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserLevel.manager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserLevel.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserLevel.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+
+SUGESTAO: ThemeColors.of(context).greenMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 180
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF15803D)
+
+Conteudo da linha:
+   return const Color(0xFF15803D); // roleManager placeholder
+
+Contexto (5 linhas antes e depois):
+     Color get color {
+       switch (this) {
+         case UserLevel.admin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserLevel.manager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserLevel.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserLevel.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+       }
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 182
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   return const Color(0xFFF59E0B); // roleOperator placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserLevel.admin:
+           return const Color(0xFF10B981); // roleAdmin placeholder
+         case UserLevel.manager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserLevel.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserLevel.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+       }
+     }
+     
+     IconData get iconData {
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 184
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   return const Color(0xFF64748B); // roleViewer placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserLevel.manager:
+           return const Color(0xFF15803D); // roleManager placeholder
+         case UserLevel.operator:
+           return const Color(0xFFF59E0B); // roleOperator placeholder
+         case UserLevel.viewer:
+           return const Color(0xFF64748B); // roleViewer placeholder
+       }
+     }
+     
+     IconData get iconData {
+       switch (this) {
+         case UserLevel.admin:
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 242
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF10B981)
+
+Conteudo da linha:
+   return const Color(0xFF10B981); // statusActive placeholder
+
+Contexto (5 linhas antes e depois):
+     
+     @Deprecated('Use colorKey instead')
+     Color get color {
+       switch (this) {
+         case UserStatus.active:
+           return const Color(0xFF10B981); // statusActive placeholder
+         case UserStatus.inactive:
+           return const Color(0xFF64748B); // statusInactive placeholder
+         case UserStatus.pending:
+           return const Color(0xFFF59E0B); // statusPending placeholder
+         case UserStatus.blocked:
+           return const Color(0xFFEF4444); // statusBlocked placeholder
+
+SUGESTAO: ThemeColors.of(context).greenMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 244
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   return const Color(0xFF64748B); // statusInactive placeholder
+
+Contexto (5 linhas antes e depois):
+     Color get color {
+       switch (this) {
+         case UserStatus.active:
+           return const Color(0xFF10B981); // statusActive placeholder
+         case UserStatus.inactive:
+           return const Color(0xFF64748B); // statusInactive placeholder
+         case UserStatus.pending:
+           return const Color(0xFFF59E0B); // statusPending placeholder
+         case UserStatus.blocked:
+           return const Color(0xFFEF4444); // statusBlocked placeholder
+       }
+     }
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 246
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   return const Color(0xFFF59E0B); // statusPending placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserStatus.active:
+           return const Color(0xFF10B981); // statusActive placeholder
+         case UserStatus.inactive:
+           return const Color(0xFF64748B); // statusInactive placeholder
+         case UserStatus.pending:
+           return const Color(0xFFF59E0B); // statusPending placeholder
+         case UserStatus.blocked:
+           return const Color(0xFFEF4444); // statusBlocked placeholder
+       }
+     }
+   }
+   
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : settings\data\models\user_model.dart
+Linha        : 248
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   return const Color(0xFFEF4444); // statusBlocked placeholder
+
+Contexto (5 linhas antes e depois):
+         case UserStatus.inactive:
+           return const Color(0xFF64748B); // statusInactive placeholder
+         case UserStatus.pending:
+           return const Color(0xFFF59E0B); // statusPending placeholder
+         case UserStatus.blocked:
+           return const Color(0xFFEF4444); // statusBlocked placeholder
+       }
+     }
+   }
+   
+   /// Modelo de UsuÃ¡rio do sistema para settings
+   /// Alinhado com UserDto do backend
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+
+[MODULO: strategies] - Total: 74 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 82
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'success': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+     @Deprecated('Use corKey instead and resolve through ThemeColors.of(context)')
+     Color get cor {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 83
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'error': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+     Color get cor {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 84
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'warning': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 85
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF0284C7)
+
+Conteudo da linha:
+   'info': Color(0xFF0284C7),
+
+Contexto (5 linhas antes e depois):
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 86
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'primary': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 87
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   'secondary': Color(0xFF64748B),
+
+Contexto (5 linhas antes e depois):
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 88
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF3B82F6)
+
+Conteudo da linha:
+   'blueMain': Color(0xFF3B82F6),
+
+Contexto (5 linhas antes e depois):
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 89
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF06B6D4)
+
+Conteudo da linha:
+   'blueCyan': Color(0xFF06B6D4),
+
+Contexto (5 linhas antes e depois):
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 90
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'greenMain': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 91
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'redMain': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 92
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF97316)
+
+Conteudo da linha:
+   'orangeMain': Color(0xFFF97316),
+
+Contexto (5 linhas antes e depois):
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+     factory NearbyProductSuggestionModel.fromJson(Map<String, dynamic> json) {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 93
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'yellowGold': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+     factory NearbyProductSuggestionModel.fromJson(Map<String, dynamic> json) {
+       return NearbyProductSuggestionModel(
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 95
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   return colorMap[corKey] ?? const Color(0xFF22C55E);
+
+Contexto (5 linhas antes e depois):
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+     factory NearbyProductSuggestionModel.fromJson(Map<String, dynamic> json) {
+       return NearbyProductSuggestionModel(
+         id: json['id'] as String? ?? '',
+         produto: json['produto'] as String? ?? json['product'] as String? ?? '',
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 199
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'success': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+     @Deprecated('Use corKey instead and resolve through ThemeColors.of(context)')
+     Color get cor {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 200
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'error': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+     Color get cor {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 201
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'warning': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 202
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF0284C7)
+
+Conteudo da linha:
+   'info': Color(0xFF0284C7),
+
+Contexto (5 linhas antes e depois):
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 203
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'primary': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 204
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   'secondary': Color(0xFF64748B),
+
+Contexto (5 linhas antes e depois):
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 205
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF3B82F6)
+
+Conteudo da linha:
+   'blueMain': Color(0xFF3B82F6),
+
+Contexto (5 linhas antes e depois):
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 206
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF06B6D4)
+
+Conteudo da linha:
+   'blueCyan': Color(0xFF06B6D4),
+
+Contexto (5 linhas antes e depois):
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 207
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'greenMain': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 208
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'redMain': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 209
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF97316)
+
+Conteudo da linha:
+   'orangeMain': Color(0xFFF97316),
+
+Contexto (5 linhas antes e depois):
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+     factory OffersTrailModel.fromJson(Map<String, dynamic> json) {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 210
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'yellowGold': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+     factory OffersTrailModel.fromJson(Map<String, dynamic> json) {
+       return OffersTrailModel(
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 212
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   return colorMap[corKey] ?? const Color(0xFF22C55E);
+
+Contexto (5 linhas antes e depois):
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+     factory OffersTrailModel.fromJson(Map<String, dynamic> json) {
+       return OffersTrailModel(
+         id: json['id'] as String? ?? '',
+         nome: json['nome'] as String? ?? json['name'] as String? ?? '',
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 351
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'success': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+     @Deprecated('Use corKey instead and resolve through ThemeColors.of(context)')
+     Color get cor {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 352
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'error': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+     Color get cor {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 353
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'warning': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 354
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF0284C7)
+
+Conteudo da linha:
+   'info': Color(0xFF0284C7),
+
+Contexto (5 linhas antes e depois):
+       // UI layer should resolve corKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 355
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'primary': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 356
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   'secondary': Color(0xFF64748B),
+
+Contexto (5 linhas antes e depois):
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 357
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF3B82F6)
+
+Conteudo da linha:
+   'blueMain': Color(0xFF3B82F6),
+
+Contexto (5 linhas antes e depois):
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 358
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF06B6D4)
+
+Conteudo da linha:
+   'blueCyan': Color(0xFF06B6D4),
+
+Contexto (5 linhas antes e depois):
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 359
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'greenMain': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 360
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'redMain': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 361
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF97316)
+
+Conteudo da linha:
+   'orangeMain': Color(0xFFF97316),
+
+Contexto (5 linhas antes e depois):
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+   
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 362
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'yellowGold': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+   
+     factory SmartComboModel.fromJson(Map<String, dynamic> json) {
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\cross_selling_models.dart
+Linha        : 364
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   return colorMap[corKey] ?? const Color(0xFF22C55E);
+
+Contexto (5 linhas antes e depois):
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corKey] ?? const Color(0xFF22C55E);
+     }
+   
+   
+     factory SmartComboModel.fromJson(Map<String, dynamic> json) {
+       return SmartComboModel(
+         id: json['id'] as String? ?? '',
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 422
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'success': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+     @Deprecated('Use corRotaKey instead and resolve through ThemeColors.of(context)')
+     Color get corRota {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corRotaKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 423
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'error': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+     Color get corRota {
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corRotaKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 424
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'warning': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+       // This getter is here for backwards compatibility during migration
+       // UI layer should resolve corRotaKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 425
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF0284C7)
+
+Conteudo da linha:
+   'info': Color(0xFF0284C7),
+
+Contexto (5 linhas antes e depois):
+       // UI layer should resolve corRotaKey to Color using ThemeColors.of(context)
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 426
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'primary': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+       const colorMap = {
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 427
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF64748B)
+
+Conteudo da linha:
+   'secondary': Color(0xFF64748B),
+
+Contexto (5 linhas antes e depois):
+         'success': Color(0xFF22C55E),
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+
+SUGESTAO: ThemeColors.of(context).grey500
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 428
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF3B82F6)
+
+Conteudo da linha:
+   'blueMain': Color(0xFF3B82F6),
+
+Contexto (5 linhas antes e depois):
+         'error': Color(0xFFEF4444),
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 429
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF06B6D4)
+
+Conteudo da linha:
+   'blueCyan': Color(0xFF06B6D4),
+
+Contexto (5 linhas antes e depois):
+         'warning': Color(0xFFF59E0B),
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 430
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   'greenMain': Color(0xFF22C55E),
+
+Contexto (5 linhas antes e depois):
+         'info': Color(0xFF0284C7),
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+     }
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 431
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   'redMain': Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+         'primary': Color(0xFF22C55E),
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+     }
+     factory SmartRouteModel.fromJson(Map<String, dynamic> json) {
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 432
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF97316)
+
+Conteudo da linha:
+   'orangeMain': Color(0xFFF97316),
+
+Contexto (5 linhas antes e depois):
+         'secondary': Color(0xFF64748B),
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+     }
+     factory SmartRouteModel.fromJson(Map<String, dynamic> json) {
+       return SmartRouteModel(
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 433
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   'yellowGold': Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+         'blueMain': Color(0xFF3B82F6),
+         'blueCyan': Color(0xFF06B6D4),
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+     }
+     factory SmartRouteModel.fromJson(Map<String, dynamic> json) {
+       return SmartRouteModel(
+         id: json['id'] as String? ?? '',
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\engagement_models.dart
+Linha        : 435
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF22C55E)
+
+Conteudo da linha:
+   return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+
+Contexto (5 linhas antes e depois):
+         'greenMain': Color(0xFF22C55E),
+         'redMain': Color(0xFFEF4444),
+         'orangeMain': Color(0xFFF97316),
+         'yellowGold': Color(0xFFF59E0B),
+       };
+       return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+     }
+     factory SmartRouteModel.fromJson(Map<String, dynamic> json) {
+       return SmartRouteModel(
+         id: json['id'] as String? ?? '',
+         numero: json['numero'] as String? ?? json['number'] as String? ?? '',
+         itens: json['itens'] as int? ?? json['items'] as int? ?? 0,
+
+SUGESTAO: ThemeColors.of(context).greenMaterial ou successMain
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\forecast_models.dart
+Linha        : 179
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   Color get color => const Color(0xFF2196F3); // Fallback only
+
+Contexto (5 linhas antes e depois):
+     
+     // Aliases
+     double get weight => peso;
+     String get name => nome;
+     @Deprecated('Use corKey instead')
+     Color get color => const Color(0xFF2196F3); // Fallback only
+   
+     factory ForecastFactorModel.fromJson(Map<String, dynamic> json) {
+       return ForecastFactorModel(
+         id: json['id'] as String? ?? '',
+         nome: json['nome'] as String? ?? json['name'] as String? ?? '',
+         peso: (json['peso'] as num?)?.toDouble() ?? (json['weight'] as num?)?.toDouble() ?? 0.0,
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\markdown_models.dart
+Linha        : 156
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF5252)
+
+Conteudo da linha:
+   if (diasRestantes == 0) return const Color(0xFFFF5252);
+
+Contexto (5 linhas antes e depois):
+     }
+   
+     /// Retorna a cor baseada nos dias restantes (deprecated)
+     @Deprecated('Use statusColorKey property in UI layer')
+     Color get statusColor {
+       if (diasRestantes == 0) return const Color(0xFFFF5252);
+       if (diasRestantes <= 2) return const Color(0xFFFF9800);
+       if (diasRestantes <= 4) return const Color(0xFFFFC107);
+       return const Color(0xFF4CAF50);
+     }
+   
+     /// Retorna o ï¿½cone baseado nos dias restantes
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\markdown_models.dart
+Linha        : 157
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   if (diasRestantes <= 2) return const Color(0xFFFF9800);
+
+Contexto (5 linhas antes e depois):
+   
+     /// Retorna a cor baseada nos dias restantes (deprecated)
+     @Deprecated('Use statusColorKey property in UI layer')
+     Color get statusColor {
+       if (diasRestantes == 0) return const Color(0xFFFF5252);
+       if (diasRestantes <= 2) return const Color(0xFFFF9800);
+       if (diasRestantes <= 4) return const Color(0xFFFFC107);
+       return const Color(0xFF4CAF50);
+     }
+   
+     /// Retorna o ï¿½cone baseado nos dias restantes
+     IconData get statusIcon {
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\markdown_models.dart
+Linha        : 158
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFFC107)
+
+Conteudo da linha:
+   if (diasRestantes <= 4) return const Color(0xFFFFC107);
+
+Contexto (5 linhas antes e depois):
+     /// Retorna a cor baseada nos dias restantes (deprecated)
+     @Deprecated('Use statusColorKey property in UI layer')
+     Color get statusColor {
+       if (diasRestantes == 0) return const Color(0xFFFF5252);
+       if (diasRestantes <= 2) return const Color(0xFFFF9800);
+       if (diasRestantes <= 4) return const Color(0xFFFFC107);
+       return const Color(0xFF4CAF50);
+     }
+   
+     /// Retorna o ï¿½cone baseado nos dias restantes
+     IconData get statusIcon {
+       if (diasRestantes == 0) return Icons.dangerous_rounded;
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\markdown_models.dart
+Linha        : 159
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+     @Deprecated('Use statusColorKey property in UI layer')
+     Color get statusColor {
+       if (diasRestantes == 0) return const Color(0xFFFF5252);
+       if (diasRestantes <= 2) return const Color(0xFFFF9800);
+       if (diasRestantes <= 4) return const Color(0xFFFFC107);
+       return const Color(0xFF4CAF50);
+     }
+   
+     /// Retorna o ï¿½cone baseado nos dias restantes
+     IconData get statusIcon {
+       if (diasRestantes == 0) return Icons.dangerous_rounded;
+       if (diasRestantes <= 2) return Icons.error_rounded;
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\sports_models.dart
+Linha        : 186
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+
+Contexto (5 linhas antes e depois):
+         isActive: json['ativo'] as bool? ?? json['isActive'] as bool? ?? false,
+         adjustment: (json['ajuste'] as num?)?.toDouble() ?? (json['adjustment'] as num?)?.toDouble() ?? 0.0,
+         products: (json['produtos'] as List<dynamic>?)?.cast<String>() ?? 
+                   (json['products'] as List<dynamic>?)?.cast<String>() ?? [],
+         icon: _parseTeamIcon(json['icone'] ?? json['icon']),
+         color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+         badge: json['escudo'] as String? ?? json['badge'] as String? ?? '?',
+         nextGame: json['proxJogo'] as String? ?? json['nextGame'] as String? ?? '',
+       );
+     }
+   
+     Map<String, dynamic> toJson() {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\strategy_base_models.dart
+Linha        : 399
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   ? const Color(0xFF4CAF50)
+
+Contexto (5 linhas antes e depois):
+     String get statusColorKey => isSuccess ? 'success' : 'error';
+   
+     /// Status color (deprecated - use statusColorKey in UI)
+     @Deprecated('Use statusColorKey property in UI to get ThemeColors.of(context).getColorByKey(statusColorKey)')
+     Color get statusColor => isSuccess 
+         ? const Color(0xFF4CAF50) 
+         : const Color(0xFFFF5252);
+   
+     /// Status label
+     String get statusLabel => isSuccess ? 'Sucesso' : 'Erro';
+   
+     /// Formatted execution time
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\strategy_base_models.dart
+Linha        : 400
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF5252)
+
+Conteudo da linha:
+   : const Color(0xFFFF5252);
+
+Contexto (5 linhas antes e depois):
+   
+     /// Status color (deprecated - use statusColorKey in UI)
+     @Deprecated('Use statusColorKey property in UI to get ThemeColors.of(context).getColorByKey(statusColorKey)')
+     Color get statusColor => isSuccess 
+         ? const Color(0xFF4CAF50) 
+         : const Color(0xFFFF5252);
+   
+     /// Status label
+     String get statusLabel => isSuccess ? 'Sucesso' : 'Erro';
+   
+     /// Formatted execution time
+     String get executedAtFormatted {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\models\strategy_base_models.dart
+Linha        : 494
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+
+Contexto (5 linhas antes e depois):
+         name: json['nome'] as String? ?? json['name'] as String? ?? '',
+         sku: json['sku'] as String? ?? '',
+         strategy: json['estrategia'] as String? ?? json['strategy'] as String? ?? '',
+         gain: json['ganho'] as String? ?? json['gain'] as String? ?? 'R\$ 0',
+         quantity: json['quantidade'] as int? ?? json['quantity'] as int? ?? 0,
+         color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+         profitMargin: (json['profitMargin'] ?? json['margemLucro'] ?? 0).toDouble(),
+         salesVariation: (json['salesVariation'] ?? json['variacaoVendas'] ?? 0).toDouble(),
+       );
+     }
+   
+     Map<String, dynamic> toJson() {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\calendar_provider.dart
+Linha        : 428
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF10B981)
+
+Conteudo da linha:
+   color: const Color(0xFF10B981),
+
+Contexto (5 linhas antes e depois):
+                 adjustment: (t['adjustment'] ?? t['ajuste'] ?? 0).toDouble(),
+                 products: t['products'] is List 
+                     ? List<String>.from(t['products']) 
+                     : (t['produtos'] is List ? List<String>.from(t['produtos']) : []),
+                 icon: Icons.sports_soccer,
+                 color: const Color(0xFF10B981),
+                 badge: t['badge']?.toString() ?? t['escudo']?.toString() ?? '?',
+                 nextGame: t['nextGame']?.toString() ?? t['proxJogo']?.toString() ?? '',
+               ));
+             }
+           }
+           
+
+SUGESTAO: ThemeColors.of(context).greenMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\environmental_provider.dart
+Linha        : 470
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   if (colorValue == null) return const Color(0xFFFF9800);
+
+Contexto (5 linhas antes e depois):
+     }
+   
+     @deprecated
+     Color _parseColorDeprecated(dynamic colorValue) {
+       // This method is deprecated - use colorKey strings instead
+       if (colorValue == null) return const Color(0xFFFF9800);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFFFF9800);
+         }
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\environmental_provider.dart
+Linha        : 475
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   return const Color(0xFFFF9800);
+
+Contexto (5 linhas antes e depois):
+       if (colorValue == null) return const Color(0xFFFF9800);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFFFF9800);
+         }
+       }
+       return const Color(0xFFFF9800);
+     }
+   
+     /// Atualiza o status ativo da estratgia
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\environmental_provider.dart
+Linha        : 478
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFFF9800)
+
+Conteudo da linha:
+   return const Color(0xFFFF9800);
+
+Contexto (5 linhas antes e depois):
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFFFF9800);
+         }
+       }
+       return const Color(0xFFFF9800);
+     }
+   
+     /// Atualiza o status ativo da estratgia
+     void setStrategyActive(bool isActive) {
+       state = state.copyWith(isStrategyActive: isActive);
+     }
+
+SUGESTAO: ThemeColors.of(context).orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\performance_provider.dart
+Linha        : 193
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   if (colorValue == null) return const Color(0xFF2196F3);
+
+Contexto (5 linhas antes e depois):
+       if (colorValue is String) return colorValue;
+       return 'primary'; // Default
+     }
+   
+     Color _parseColor(dynamic colorValue) {
+       if (colorValue == null) return const Color(0xFF2196F3);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF2196F3);
+         }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\performance_provider.dart
+Linha        : 198
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   return const Color(0xFF2196F3);
+
+Contexto (5 linhas antes e depois):
+       if (colorValue == null) return const Color(0xFF2196F3);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF2196F3);
+         }
+       }
+       return const Color(0xFF2196F3);
+     }
+   
+     /// Atualiza o status ativo da estratï¿½gia
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\performance_provider.dart
+Linha        : 201
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF2196F3)
+
+Conteudo da linha:
+   return const Color(0xFF2196F3);
+
+Contexto (5 linhas antes e depois):
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF2196F3);
+         }
+       }
+       return const Color(0xFF2196F3);
+     }
+   
+     /// Atualiza o status ativo da estratï¿½gia
+     void setStrategyActive(bool isActive) {
+       state = state.copyWith(isStrategyActive: isActive);
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\performance_provider.dart
+Linha        : 471
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   if (colorValue == null) return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+         state = state.copyWith(isLoading: false, error: e.toString());
+       }
+     }
+   
+     Color _parseColor(dynamic colorValue) {
+       if (colorValue == null) return const Color(0xFF4CAF50);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF4CAF50);
+         }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\performance_provider.dart
+Linha        : 476
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+       if (colorValue == null) return const Color(0xFF4CAF50);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF4CAF50);
+         }
+       }
+       return const Color(0xFF4CAF50);
+     }
+   
+     /// Atualiza o status ativo da estratï¿½gia
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\performance_provider.dart
+Linha        : 479
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF4CAF50)
+
+Conteudo da linha:
+   return const Color(0xFF4CAF50);
+
+Contexto (5 linhas antes e depois):
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF4CAF50);
+         }
+       }
+       return const Color(0xFF4CAF50);
+     }
+   
+     /// Atualiza o status ativo da estratï¿½gia
+     void setStrategyActive(bool isActive) {
+       state = state.copyWith(isStrategyActive: isActive);
+     }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\visual_provider.dart
+Linha        : 157
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF757575)
+
+Conteudo da linha:
+   if (colorValue == null) return const Color(0xFF757575);
+
+Contexto (5 linhas antes e depois):
+       }
+       return 'textLight';
+     }
+   
+     Color _parseColor(dynamic colorValue) {
+       if (colorValue == null) return const Color(0xFF757575);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF757575);
+         }
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\visual_provider.dart
+Linha        : 162
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF757575)
+
+Conteudo da linha:
+   return const Color(0xFF757575);
+
+Contexto (5 linhas antes e depois):
+       if (colorValue == null) return const Color(0xFF757575);
+       if (colorValue is String) {
+         try {
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF757575);
+         }
+       }
+       return const Color(0xFF757575);
+     }
+   
+     void setStrategyActive(bool isActive) {
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+Arquivo      : strategies\data\providers\visual_provider.dart
+Linha        : 165
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF757575)
+
+Conteudo da linha:
+   return const Color(0xFF757575);
+
+Contexto (5 linhas antes e depois):
+           return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+         } catch (_) {
+           return const Color(0xFF757575);
+         }
+       }
+       return const Color(0xFF757575);
+     }
+   
+     void setStrategyActive(bool isActive) {
+       state = state.copyWith(isStrategyActive: isActive);
+     }
+   
+
+SUGESTAO: Verificar design_system para mapeamento correto
+--------------------------------------------------------------------------------
+
+
+[MODULO: tags] - Total: 45 instancias de Color() hardcoded
+================================================================================
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 330
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFD97706)
+
+Conteudo da linha:
+   color: Color(0xFFD97706),
+
+Contexto (5 linhas antes e depois):
+                               mobileFontSize: 9,
+                               tabletFontSize: 9,
+                             ),
+                             overflow: TextOverflow.ellipsis,
+                             fontWeight: FontWeight.w600,
+                             color: Color(0xFFD97706),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).warningDark
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 385
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                       isMobile ? 14 : (isTablet ? 15 : 16),
+                     ),
+                   ),
+                   child: Icon(
+                     Icons.label_rounded,
+                     color: Color(0xFF6B7280),
+                     size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
+                   ),
+                 ),
+                 SizedBox(
+                   width: AppSizes.paddingMdAlt.get(isMobile, isTablet),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 407
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                             mobileFontSize: 18,
+                             tabletFontSize: 20,
+                           ),
+                           overflow: TextOverflow.ellipsis,
+                           fontWeight: FontWeight.bold,
+                           color: Color(0xFF6B7280),
+                           letterSpacing: -0.5,
+                         ),
+                       ),
+                       SizedBox(
+                         height: AppSizes.paddingXxs.get(isMobile, isTablet),
+                       ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 436
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                               mobileFontSize: 11,
+                               tabletFontSize: 11,
+                             ),
+                             overflow: TextOverflow.ellipsis,
+                             fontWeight: FontWeight.w600,
+                             color: Color(0xFF6B7280),
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 498
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+         child: Column(
+           mainAxisSize: MainAxisSize.min,
+           children: [
+             Icon(
+               icon,
+               color: Color(0xFF6B7280),
+               size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
+             ),
+             SizedBox(
+               height: AppSizes.paddingXxs.get(isMobile, isTablet),
+             ),
+             Text(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 515
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                   mobileFontSize: 12,
+                   tabletFontSize: 13,
+                 ),
+                 overflow: TextOverflow.ellipsis,
+                 fontWeight: FontWeight.bold,
+                 color: Color(0xFF6B7280),
+               ),
+             ),
+             Text(
+               label,
+               style: TextStyle(
+                 fontSize: ResponsiveHelper.getResponsiveFontSize(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 565
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                     borderRadius: BorderRadius.circular(
+                         AppSizes.paddingSm.get(isMobile, isTablet)),
+                   ),
+                   child: Icon(
+                     Icons.inventory_2_rounded,
+                     color: Color(0xFF6B7280),
+                     size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
+                   ),
+                 ),
+                 SizedBox(
+                   width: AppSizes.paddingBase.get(isMobile, isTablet),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 620
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                         SnackBar(
+                           content: Row(
+                             children: [
+                               Icon(
+                                 Icons.open_in_new_rounded,
+                                 color: Color(0xFF6B7280),
+                                 size: AppSizes.iconMediumSmall
+                                     .get(isMobile, isTablet),
+                               ),
+                               SizedBox(
+                                 width:
+                                     AppSizes.paddingBase.get(isMobile, isTablet),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 711
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   foregroundColor: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                       padding: EdgeInsets.symmetric(
+                         vertical: AppSizes.paddingBase.get(isMobile, isTablet),
+                         horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
+                       ),
+                       backgroundColor: ThemeColors.of(context).orangeMain,
+                       foregroundColor: Color(0xFF6B7280),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(
+                             AppSizes.paddingSm.get(isMobile, isTablet)),
+                       ),
+                     ),
+                   ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 733
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+         width: double.infinity,
+         padding: EdgeInsets.all(
+           AppSizes.cardPadding.get(isMobile, isTablet),
+         ),
+         decoration: BoxDecoration(
+           color: Color(0xFF6B7280),
+           borderRadius: BorderRadius.circular(
+             isMobile ? 16 : (isTablet ? 18 : 20),
+           ),
+           boxShadow: [
+             BoxShadow(
+               color: ThemeColors.of(context).textPrimaryOverlay05,
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 761
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                     borderRadius: BorderRadius.circular(
+                         AppSizes.paddingSm.get(isMobile, isTablet)),
+                   ),
+                   child: Icon(
+                     Icons.analytics_rounded,
+                     color: Color(0xFF6B7280),
+                     size: AppSizes.iconSmall.get(isMobile, isTablet),
+                   ),
+                 ),
+                 SizedBox(
+                   width: AppSizes.paddingBase.get(isMobile, isTablet),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 895
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+         width: double.infinity,
+         padding: EdgeInsets.all(
+           AppSizes.cardPadding.get(isMobile, isTablet),
+         ),
+         decoration: BoxDecoration(
+           color: Color(0xFF6B7280),
+           borderRadius: BorderRadius.circular(
+             isMobile ? 16 : (isTablet ? 18 : 20),
+           ),
+           boxShadow: [
+             BoxShadow(
+               color: ThemeColors.of(context).textPrimaryOverlay05,
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 919
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF10B981)
+
+Conteudo da linha:
+   Color(0xFF10B981),
+
+Contexto (5 linhas antes e depois):
+                     AppSizes.paddingXs.get(isMobile, isTablet),
+                   ),
+                   decoration: BoxDecoration(
+                     gradient: LinearGradient(
+                       colors: [
+                         Color(0xFF10B981),
+                         ThemeColors.of(context).greenDark
+                       ],
+                     ),
+                     borderRadius: BorderRadius.circular(
+                         AppSizes.paddingSm.get(isMobile, isTablet)),
+                   ),
+
+SUGESTAO: ThemeColors.of(context).greenMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 928
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                     borderRadius: BorderRadius.circular(
+                         AppSizes.paddingSm.get(isMobile, isTablet)),
+                   ),
+                   child: Icon(
+                     Icons.edit_rounded,
+                     color: Color(0xFF6B7280),
+                     size: AppSizes.iconSmall.get(isMobile, isTablet),
+                   ),
+                 ),
+                 SizedBox(
+                   width: AppSizes.paddingBase.get(isMobile, isTablet),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1125
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   Color(0xFF6B7280)),
+
+Contexto (5 linhas antes e depois):
+                           width: 16,
+                           height: 16,
+                           child: CircularProgressIndicator(
+                             strokeWidth: 2,
+                             valueColor: AlwaysStoppedAnimation<Color>(
+                                 Color(0xFF6B7280)),
+                           ),
+                         )
+                       : Icon(Icons.sync_rounded,
+                           size: AppSizes.iconSmall.get(isMobile, isTablet)),
+                   label: Flexible(
+                     child: Text(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1150
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   foregroundColor: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                     padding: EdgeInsets.symmetric(
+                       vertical: AppSizes.paddingSm.get(isMobile, isTablet),
+                       horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
+                     ),
+                     backgroundColor: ThemeColors.of(context).blueMain,
+                     foregroundColor: Color(0xFF6B7280),
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(
+                           AppSizes.paddingBase.get(isMobile, isTablet)),
+                     ),
+                   ),
+                 ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1185
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   foregroundColor: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                       padding: EdgeInsets.symmetric(
+                         vertical: AppSizes.paddingSm.get(isMobile, isTablet),
+                         horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
+                       ),
+                       backgroundColor: ThemeColors.of(context).orangeMain,
+                       foregroundColor: Color(0xFF6B7280),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(
+                             AppSizes.paddingBase.get(isMobile, isTablet)),
+                       ),
+                     ),
+                   ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1240
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   Color(0xFF6B7280)),
+
+Contexto (5 linhas antes e depois):
+                           width: 16,
+                           height: 16,
+                           child: CircularProgressIndicator(
+                             strokeWidth: 2,
+                             valueColor: AlwaysStoppedAnimation<Color>(
+                                 Color(0xFF6B7280)),
+                           ),
+                         )
+                       : Icon(Icons.check_rounded,
+                           size: AppSizes.iconSmall.get(isMobile, isTablet)),
+                   label: Flexible(
+                     child: Text(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1264
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   foregroundColor: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                   style: ElevatedButton.styleFrom(
+                     padding: EdgeInsets.symmetric(
+                       vertical: AppSizes.paddingSm.get(isMobile, isTablet),
+                     ),
+                     backgroundColor: statusColor,
+                     foregroundColor: Color(0xFF6B7280),
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(
+                           AppSizes.paddingBase.get(isMobile, isTablet)),
+                     ),
+                     elevation: 0,
+                   ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1298
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   foregroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+               ),
+               style: OutlinedButton.styleFrom(
+                 padding: EdgeInsets.symmetric(
+                   vertical: AppSizes.paddingSm.get(isMobile, isTablet),
+                 ),
+                 foregroundColor: Color(0xFFEF4444),
+                 side: BorderSide(color: Color(0xFFEF4444)),
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(
+                       AppSizes.paddingBase.get(isMobile, isTablet)),
+                 ),
+               ),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1299
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   side: BorderSide(color: Color(0xFFEF4444)),
+
+Contexto (5 linhas antes e depois):
+               style: OutlinedButton.styleFrom(
+                 padding: EdgeInsets.symmetric(
+                   vertical: AppSizes.paddingSm.get(isMobile, isTablet),
+                 ),
+                 foregroundColor: Color(0xFFEF4444),
+                 side: BorderSide(color: Color(0xFFEF4444)),
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(
+                       AppSizes.paddingBase.get(isMobile, isTablet)),
+                 ),
+               ),
+             ),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1327
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+         if (mounted) {
+           setState(() => _testingSync = false);
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(
+               content: Text('Erro ao testar sincronizao: $e'),
+               backgroundColor: Color(0xFFEF4444),
+             ),
+           );
+         }
+       }
+     }
+   
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1425
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+       
+       if (storeId.isEmpty) {
+         ScaffoldMessenger.of(context).showSnackBar(
+           SnackBar(
+             content: const Text('Selecione uma loja primeiro'),
+             backgroundColor: Color(0xFFF59E0B),
+           ),
+         );
+         return;
+       }
+       
+       showModalBottomSheet(
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1461
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+
+Contexto (5 linhas antes e depois):
+         if (success) {
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(
+               content: Row(
+                 children: [
+                   Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+                   const SizedBox(width: 12),
+                   Expanded(
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       mainAxisSize: MainAxisSize.min,
+                       children: [
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1481
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF10B981)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFF10B981),
+
+Contexto (5 linhas antes e depois):
+                       ],
+                     ),
+                   ),
+                 ],
+               ),
+               backgroundColor: Color(0xFF10B981),
+               behavior: SnackBarBehavior.floating,
+               duration: const Duration(seconds: 3),
+             ),
+           );
+           
+           // Retorna para recarregar a tela com dados atualizados
+
+SUGESTAO: ThemeColors.of(context).greenMaterial
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1493
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+           Navigator.pop(context, true);
+         } else {
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(
+               content: const Text('Erro ao vincular tag'),
+               backgroundColor: Color(0xFFEF4444),
+             ),
+           );
+         }
+       } finally {
+         if (mounted) setState(() => _isSaving = false);
+       }
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1570
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                       SnackBar(
+                         content: Row(
+                           children: [
+                             Icon(
+                               Icons.check_circle_rounded,
+                               color: Color(0xFF6B7280),
+                               size: AppSizes.iconMediumSmall
+                                   .get(isMobile, isTablet),
+                             ),
+                             SizedBox(
+                               width:
+                                   AppSizes.paddingBase.get(isMobile, isTablet),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1598
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+                 } catch (e) {
+                   if (mounted) {
+                     ScaffoldMessenger.of(context).showSnackBar(
+                       SnackBar(
+                         content: Text('Erro ao desassociar: $e'),
+                         backgroundColor: Color(0xFFEF4444),
+                       ),
+                     );
+                   }
+                 }
+               },
+               style: ElevatedButton.styleFrom(
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1653
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+             SnackBar(
+               content: Row(
+                 children: [
+                   Icon(
+                     Icons.check_circle_rounded,
+                     color: Color(0xFF6B7280),
+                     size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
+                   ),
+                   SizedBox(
+                       width: AppSizes.paddingBase.get(isMobile, isTablet)),
+                   const Expanded(child: Text('Tag atualizada!')),
+                 ],
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1676
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+         if (mounted) {
+           setState(() => _isSaving = false);
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(
+               content: Text('Erro ao salvar: $e'),
+               backgroundColor: Color(0xFFEF4444),
+             ),
+           );
+         }
+       }
+     }
+   
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1693
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   color: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+             borderRadius: BorderRadius.circular(
+                 AppSizes.paddingLg.get(isMobile, isTablet)),
+           ),
+           icon: Icon(
+             Icons.warning_rounded,
+             color: Color(0xFFEF4444),
+             size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet),
+           ),
+           title: Text(
+             'Confirmar Excluso',
+             style: TextStyle(
+               fontSize: ResponsiveHelper.getResponsiveFontSize(
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1752
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+                       SnackBar(
+                         content: Row(
+                           children: [
+                             Icon(
+                               Icons.check_circle_rounded,
+                               color: Color(0xFF6B7280),
+                               size: AppSizes.iconMediumSmall
+                                   .get(isMobile, isTablet),
+                             ),
+                             SizedBox(
+                               width:
+                                   AppSizes.paddingBase.get(isMobile, isTablet),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1763
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+                                   AppSizes.paddingBase.get(isMobile, isTablet),
+                             ),
+                             const Expanded(child: Text('Tag excluda')),
+                           ],
+                         ),
+                         backgroundColor: Color(0xFFEF4444),
+                         behavior: SnackBarBehavior.floating,
+                         shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(
+                               AppSizes.paddingBase.get(isMobile, isTablet)),
+                         ),
+                       ),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1777
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+                 } catch (e) {
+                   if (mounted) {
+                     ScaffoldMessenger.of(context).showSnackBar(
+                       SnackBar(
+                         content: Text('Erro ao excluir: $e'),
+                         backgroundColor: Color(0xFFEF4444),
+                       ),
+                     );
+                   }
+                 }
+               },
+               style: ElevatedButton.styleFrom(
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1784
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFEF4444),
+
+Contexto (5 linhas antes e depois):
+                     );
+                   }
+                 }
+               },
+               style: ElevatedButton.styleFrom(
+                 backgroundColor: Color(0xFFEF4444),
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(
+                       AppSizes.paddingBase.get(isMobile, isTablet)),
+                 ),
+               ),
+               child: Text(
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1908
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+
+Contexto (5 linhas antes e depois):
+         // Produto no encontrado na loja
+         ScaffoldMessenger.of(context).showSnackBar(
+           SnackBar(
+             content: Row(
+               children: [
+                 Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+                 const SizedBox(width: 12),
+                 Expanded(
+                   child: Text('Produto "$barcode" no encontrado nesta loja'),
+                 ),
+               ],
+             ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1915
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFF59E0B)
+
+Conteudo da linha:
+   backgroundColor: Color(0xFFF59E0B),
+
+Contexto (5 linhas antes e depois):
+                 Expanded(
+                   child: Text('Produto "$barcode" no encontrado nesta loja'),
+                 ),
+               ],
+             ),
+             backgroundColor: Color(0xFFF59E0B),
+             behavior: SnackBarBehavior.floating,
+           ),
+         );
+       }
+     }
+   
+
+SUGESTAO: ThemeColors.of(context).warningMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 1935
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+           .toList();
+   
+       return Container(
+         height: MediaQuery.of(context).size.height * 0.75,
+         decoration: BoxDecoration(
+           color: Color(0xFF6B7280),
+           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+         ),
+         child: Column(
+           children: [
+             // Handle
+             Container(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 2109
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   icon: Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+
+Contexto (5 linhas antes e depois):
+                       ),
+                       borderRadius: BorderRadius.circular(12),
+                     ),
+                     child: IconButton(
+                       onPressed: _openBarcodeScanner,
+                       icon: Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+                       tooltip: 'Escanear cdigo',
+                     ),
+                   ),
+                 ],
+               ),
+             ),
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 2128
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   Icon(Icons.error_outline_rounded, size: 64, color: Color(0xFFEF4444)),
+
+Contexto (5 linhas antes e depois):
+                   : _error != null
+                       ? Center(
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Icon(Icons.error_outline_rounded, size: 64, color: Color(0xFFEF4444)),
+                               const SizedBox(height: 16),
+                               Text(_error!, style: TextStyle(color: Color(0xFFEF4444))),
+                               const SizedBox(height: 16),
+                               ElevatedButton.icon(
+                                 onPressed: _loadStoreProducts,
+                                 icon: const Icon(Icons.refresh_rounded),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 2130
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFFEF4444)
+
+Conteudo da linha:
+   Text(_error!, style: TextStyle(color: Color(0xFFEF4444))),
+
+Contexto (5 linhas antes e depois):
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Icon(Icons.error_outline_rounded, size: 64, color: Color(0xFFEF4444)),
+                               const SizedBox(height: 16),
+                               Text(_error!, style: TextStyle(color: Color(0xFFEF4444))),
+                               const SizedBox(height: 16),
+                               ElevatedButton.icon(
+                                 onPressed: _loadStoreProducts,
+                                 icon: const Icon(Icons.refresh_rounded),
+                                 label: const Text('Tentar novamente'),
+                               ),
+
+SUGESTAO: ThemeColors.of(context).errorMain
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 2199
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+   
+     Widget _buildProductTile(ProductModel product) {
+       return Container(
+         margin: const EdgeInsets.only(bottom: 8),
+         decoration: BoxDecoration(
+           color: Color(0xFF6B7280),
+           borderRadius: BorderRadius.circular(12),
+           border: Border.all(color: ThemeColors.of(context).grey200),
+         ),
+         child: ListTile(
+           onTap: () => widget.onProductSelected(product),
+           leading: Container(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\screens\tag_edit_screen.dart
+Linha        : 2214
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+               gradient: AppGradients.fromBaseColor(context, product.cor),
+               borderRadius: BorderRadius.circular(10),
+             ),
+             child: Icon(
+               product.icone,
+               color: Color(0xFF6B7280),
+               size: 24,
+             ),
+           ),
+           title: Text(
+             product.nome,
+             style: TextStyle(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\widgets\recent_tags_card.dart
+Linha        : 125
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: const Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+           padding: const EdgeInsets.symmetric(vertical: 24),
+           child: Column(
+             children: [
+               Icon(
+                 Icons.nfc_rounded,
+                 color: const Color(0xFF6B7280),
+                 size: 40,
+               ),
+               const SizedBox(height: 12),
+               Text(
+                 'Nenhuma tag recente',
+                 style: TextStyle(
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+Arquivo      : tags\presentation\widgets\recent_tags_card.dart
+Linha        : 133
+Tipo         : COLOR_HARDCODED
+Cor Encontrada: Color(0xFF6B7280)
+
+Conteudo da linha:
+   color: const Color(0xFF6B7280),
+
+Contexto (5 linhas antes e depois):
+               const SizedBox(height: 12),
+               Text(
+                 'Nenhuma tag recente',
+                 style: TextStyle(
+                   fontSize: isMobile ? 13 : 14,
+                   color: const Color(0xFF6B7280),
+                 ),
+               ),
+             ],
+           ),
+         ),
+       );
+
+SUGESTAO: ThemeColors.of(context).grey600
+--------------------------------------------------------------------------------
+
+
+================================================================================
+RESUMO POR TIPO DE COR
+================================================================================
+
+Color(0xFF6B7280): 29 ocorrencias
+Color(0xFFEF4444): 24 ocorrencias
+Color(0xFF22C55E): 19 ocorrencias
+Color(0xFFF59E0B): 13 ocorrencias
+Color(0xFF2196F3): 11 ocorrencias
+Color(0xFF64748B): 10 ocorrencias
+Color(0xFF4CAF50): 10 ocorrencias
+Color(0xFFFF9800): 7 ocorrencias
+Color(0xFF10B981): 6 ocorrencias
+Color(0xFFF97316): 5 ocorrencias
+Color(0xFF06B6D4): 5 ocorrencias
+Color(0xFFFF5252): 5 ocorrencias
+Color(0xFF0284C7): 4 ocorrencias
+Color(0xFF3B82F6): 4 ocorrencias
+Color(0xFF9E9E9E): 3 ocorrencias
+Color(0xFF757575): 3 ocorrencias
+Color(0xFF15803D): 2 ocorrencias
+Color(0xFF1976D2): 2 ocorrencias
+Color(0x141E293B): 1 ocorrencias
+Color(0xFFD97706): 1 ocorrencias
+Color(0xFFEA580C): 1 ocorrencias
+Color(0xFFFFC107): 1 ocorrencias
+Color(0xFF9CA3AF): 1 ocorrencias
+
+
+================================================================================
+RESUMO FINAL POR MODULO
+================================================================================
+
+[MODULO: categories]: 5 Color() hardcoded
+[MODULO: pricing]: 14 Color() hardcoded
+[MODULO: products]: 7 Color() hardcoded
+[MODULO: reports]: 5 Color() hardcoded
+[MODULO: settings]: 17 Color() hardcoded
+[MODULO: strategies]: 74 Color() hardcoded
+[MODULO: tags]: 45 Color() hardcoded
+

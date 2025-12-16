@@ -1,0 +1,378 @@
+﻿================================================================================
+MAPEAMENTO DE CORES ATIVAS - POS REMOCAO DE @DEPRECATED
+================================================================================
+Data: 2025-12-16 14:18:07
+
+CONTEXTO:
+- Todas as 24 secoes @Deprecated foram REMOVIDAS
+- Este relatorio mapeia as 189 cores ATIVAS em codigo operacional
+- Cada cor deve ser migrada de Color(0xFF...) para ThemeColors.of(context).tokenName
+
+ESTRUTURA:
+- [MODULO]: Nome do feature module
+  - [ARQUIVO]: Caminho relativo
+    - [LOCAIS]: Linha numero + contexto do Color(0xFF...)
+
+================================================================================
+INVENTARIO DE CORES ATIVAS: 189 instancias
+================================================================================
+
+[MODULO: strategies] - 12 cores ativas
+================================================================================
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\models\sports_models.dart
+Linha: 186
+Contexto:
+    185:       icon: _parseTeamIcon(json['icone'] ?? json['icon']),
+    186:       color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+    187:       badge: json['escudo'] as String? ?? json['badge'] as String? ?? '?',
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\models\strategy_base_models.dart
+Linha: 476
+Contexto:
+    475:       quantity: json['quantidade'] as int? ?? json['quantity'] as int? ?? 0,
+    476:       color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+    477:       profitMargin: (json['profitMargin'] ?? json['margemLucro'] ?? 0).toDouble(),
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 428
+Contexto:
+    427:               icon: Icons.sports_soccer,
+    428:               color: const Color(0xFF10B981),
+    429:               badge: t['badge']?.toString() ?? t['escudo']?.toString() ?? '?',
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart
+Linha: 193
+Contexto:
+    192:   Color _parseColor(dynamic colorValue) {
+    193:     if (colorValue == null) return const Color(0xFF2196F3);
+    194:     if (colorValue is String) {
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart
+Linha: 198
+Contexto:
+    197:       } catch (_) {
+    198:         return const Color(0xFF2196F3);
+    199:       }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart
+Linha: 201
+Contexto:
+    200:     }
+    201:     return const Color(0xFF2196F3);
+    202:   }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart
+Linha: 471
+Contexto:
+    470:   Color _parseColor(dynamic colorValue) {
+    471:     if (colorValue == null) return const Color(0xFF4CAF50);
+    472:     if (colorValue is String) {
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart
+Linha: 476
+Contexto:
+    475:       } catch (_) {
+    476:         return const Color(0xFF4CAF50);
+    477:       }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart
+Linha: 479
+Contexto:
+    478:     }
+    479:     return const Color(0xFF4CAF50);
+    480:   }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\visual_provider.dart
+Linha: 157
+Contexto:
+    156:   Color _parseColor(dynamic colorValue) {
+    157:     if (colorValue == null) return const Color(0xFF757575);
+    158:     if (colorValue is String) {
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\visual_provider.dart
+Linha: 162
+Contexto:
+    161:       } catch (_) {
+    162:         return const Color(0xFF757575);
+    163:       }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\strategies\data\providers\visual_provider.dart
+Linha: 165
+Contexto:
+    164:     }
+    165:     return const Color(0xFF757575);
+    166:   }
+
+----------------------------------------
+
+[MODULO: tags] - 2 cores ativas
+================================================================================
+
+Arquivo: D:\tagbean\frontend\lib\features\tags\presentation\widgets\recent_tags_card.dart
+Linha: 125
+Contexto:
+    124:               Icons.nfc_rounded,
+    125:               color: const Color(0xFF6B7280),
+    126:               size: 40,
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\tags\presentation\widgets\recent_tags_card.dart
+Linha: 133
+Contexto:
+    132:                 fontSize: isMobile ? 13 : 14,
+    133:                 color: const Color(0xFF6B7280),
+    134:               ),
+
+----------------------------------------
+
+[MODULO: products] - 7 cores ativas
+================================================================================
+
+Arquivo: D:\tagbean\frontend\lib\features\products\data\models\product_models.dart
+Linha: 96
+Contexto:
+    95:     this.dataAtualizacao,
+    96:     this.cor = const Color(0xFF22C55E),
+    97:     this.icone = Icons.inventory_2_rounded,
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\products\data\models\product_models.dart
+Linha: 330
+Contexto:
+    329:     // Returning a temporary color - actual color should be resolved in UI widgets
+    330:     return const Color(0xFF1976D2); // material blue - temp fallback only
+    331:   }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\products\data\models\product_models.dart
+Linha: 455
+Contexto:
+    454:         ? json['cor'] as Color 
+    455:         : const Color(0xFF1976D2); // placeholder - MUST resolve color at UI layer with ThemeColors.of(context)
+    456:     
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 1076
+Contexto:
+    1075:           BoxShadow(
+    1076:             color: Color(0x141E293B),
+    1077:             blurRadius: 8,
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 1211
+Contexto:
+    1210:             children: [
+    1211:               Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+    1212:               const SizedBox(width: AppSpacing.md),
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\products\presentation\widgets\qr\products_empty_state.dart
+Linha: 93
+Contexto:
+    92:       subtitle: 'Todos os produtos j� possuem tags vinculadas.',
+    93:       iconColor: const Color(0xFF4CAF50),
+    94:     );
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\products\presentation\widgets\qr\products_empty_state.dart
+Linha: 105
+Contexto:
+    104:       onAction: onScan,
+    105:       iconColor: const Color(0xFFFF9800),
+    106:     );
+
+----------------------------------------
+
+[MODULO: settings] - 4 cores ativas
+================================================================================
+
+Arquivo: D:\tagbean\frontend\lib\features\settings\data\models\settings_models.dart
+Linha: 61
+Contexto:
+    60: enum ERPConnectionStatus {
+    61:   connected('Conectado', const Color(0xFF22C55E)),
+    62:   disconnected('Desconectado', const Color(0xFFEF4444)),
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\settings\data\models\settings_models.dart
+Linha: 62
+Contexto:
+    61:   connected('Conectado', const Color(0xFF22C55E)),
+    62:   disconnected('Desconectado', const Color(0xFFEF4444)),
+    63:   testing('Testando...', const Color(0xFFF97316)),
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\settings\data\models\settings_models.dart
+Linha: 63
+Contexto:
+    62:   disconnected('Desconectado', const Color(0xFFEF4444)),
+    63:   testing('Testando...', const Color(0xFFF97316)),
+    64:   error('Erro', const Color(0xFFEF4444));
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\settings\data\models\settings_models.dart
+Linha: 64
+Contexto:
+    63:   testing('Testando...', const Color(0xFFF97316)),
+    64:   error('Erro', const Color(0xFFEF4444));
+    65: 
+
+----------------------------------------
+
+[MODULO: pricing] - 10 cores ativas
+================================================================================
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 104
+Contexto:
+    103:     required this.margemNova,
+    104:     this.cor = const Color(0xFF2196F3),
+    105:     this.tag,
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 169
+Contexto:
+    168:       margemNova: newMargin,
+    169:       cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
+    170:       tag: json['tag']?.toString() ?? json['barcode']?.toString(),
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 411
+Contexto:
+    410:       case 'critico':
+    411:         return const Color(0xFFFF5252);
+    412:       case 'atencao':
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 413
+Contexto:
+    412:       case 'atencao':
+    413:         return const Color(0xFFFF9800);
+    414:       default:
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 415
+Contexto:
+    414:       default:
+    415:         return const Color(0xFF4CAF50);
+    416:     }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 546
+Contexto:
+    545:       case 'aumento':
+    546:         return const Color(0xFF4CAF50);
+    547:       case 'reducao':
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 548
+Contexto:
+    547:       case 'reducao':
+    548:         return const Color(0xFFFF5252);
+    549:       case 'manutencao':
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 550
+Contexto:
+    549:       case 'manutencao':
+    550:         return const Color(0xFF2196F3);
+    551:       default:
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 552
+Contexto:
+    551:       default:
+    552:         return const Color(0xFF2196F3);
+    553:     }
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\pricing\data\models\pricing_models.dart
+Linha: 723
+Contexto:
+    722:       default:
+    723:         return const Color(0xFF64748B);
+    724:     }
+
+----------------------------------------
+
+[MODULO: categories] - 2 cores ativas
+================================================================================
+
+Arquivo: D:\tagbean\frontend\lib\features\categories\data\models\category_models.dart
+Linha: 155
+Contexto:
+    154:   static Color _parseColor(dynamic colorValue) {
+    155:     if (colorValue == null) return const Color(0xFF9CA3AF); // grey500
+    156:     if (colorValue is Color) return colorValue;
+
+----------------------------------------
+
+Arquivo: D:\tagbean\frontend\lib\features\categories\data\models\category_models.dart
+Linha: 164
+Contexto:
+    163:     }
+    164:     return const Color(0xFF64748B); // grey500
+    165:   }
+
+----------------------------------------
+
+
+================================================================================
+RESUMO:
+  Total de cores ATIVAS encontradas: 37
+  Esperado: 189
+  Status: DISCREPANCIA - Verificar
+================================================================================
+

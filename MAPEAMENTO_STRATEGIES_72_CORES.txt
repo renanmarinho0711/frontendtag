@@ -1,0 +1,179 @@
+﻿================================================================================
+MAPEAMENTO: MODULO STRATEGIES - 72 CORES ATIVAS
+================================================================================
+Data: 2025-12-16 14:19:52
+
+Objetivo: Identificar TODAS as instancias de Color() para migracao
+Formato: Color(0xFFXXXXXX) => ThemeColors.of(context).tokenName
+
+[ARQUIVO] D:\tagbean\frontend\lib\features\strategies\data\models\sports_models.dart (1 cores)
+================================================================================
+
+Linha: 186
+  Padrao: Color(json['cor'] ?? json['color'])
+  Antes:  icon: _parseTeamIcon(json['icone'] ?? json['icon']),
+  Atual:        color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+  Depois: badge: json['escudo'] as String? ?? json['badge'] as String? ?? '?',
+
+
+[ARQUIVO] D:\tagbean\frontend\lib\features\strategies\data\models\strategy_base_models.dart (1 cores)
+================================================================================
+
+Linha: 476
+  Padrao: Color(json['cor'] ?? json['color'])
+  Antes:  quantity: json['quantidade'] as int? ?? json['quantity'] as int? ?? 0,
+  Atual:        color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+  Depois: profitMargin: (json['profitMargin'] ?? json['margemLucro'] ?? 0).toDouble(),
+
+
+[ARQUIVO] D:\tagbean\frontend\lib\features\strategies\data\providers\calendar_provider.dart (1 cores)
+================================================================================
+
+Linha: 428
+  Padrao: Color(0xFF10B981)
+  Antes:  icon: Icons.sports_soccer,
+  Atual:                color: const Color(0xFF10B981),
+  Depois: badge: t['badge']?.toString() ?? t['escudo']?.toString() ?? '?',
+
+
+[ARQUIVO] D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart (10 cores)
+================================================================================
+
+Linha: 192
+  Padrao: Color(dynamic colorValue)
+  Atual:    Color _parseColor(dynamic colorValue) {
+  Depois: if (colorValue == null) return const Color(0xFF2196F3);
+
+
+Linha: 193
+  Padrao: Color(0xFF2196F3)
+  Antes:  Color _parseColor(dynamic colorValue) {
+  Atual:      if (colorValue == null) return const Color(0xFF2196F3);
+  Depois: if (colorValue is String) {
+
+
+Linha: 196
+  Padrao: Color(int.parse(colorValue.replaceFirst('#', '0xFF')
+  Antes:  try {
+  Atual:          return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+  Depois: } catch (_) {
+
+
+Linha: 198
+  Padrao: Color(0xFF2196F3)
+  Antes:  } catch (_) {
+  Atual:          return const Color(0xFF2196F3);
+  Depois: }
+
+
+Linha: 201
+  Padrao: Color(0xFF2196F3)
+  Antes:  }
+  Atual:      return const Color(0xFF2196F3);
+  Depois: }
+
+
+Linha: 470
+  Padrao: Color(dynamic colorValue)
+  Atual:    Color _parseColor(dynamic colorValue) {
+  Depois: if (colorValue == null) return const Color(0xFF4CAF50);
+
+
+Linha: 471
+  Padrao: Color(0xFF4CAF50)
+  Antes:  Color _parseColor(dynamic colorValue) {
+  Atual:      if (colorValue == null) return const Color(0xFF4CAF50);
+  Depois: if (colorValue is String) {
+
+
+Linha: 474
+  Padrao: Color(int.parse(colorValue.replaceFirst('#', '0xFF')
+  Antes:  try {
+  Atual:          return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+  Depois: } catch (_) {
+
+
+Linha: 476
+  Padrao: Color(0xFF4CAF50)
+  Antes:  } catch (_) {
+  Atual:          return const Color(0xFF4CAF50);
+  Depois: }
+
+
+Linha: 479
+  Padrao: Color(0xFF4CAF50)
+  Antes:  }
+  Atual:      return const Color(0xFF4CAF50);
+  Depois: }
+
+
+[ARQUIVO] D:\tagbean\frontend\lib\features\strategies\data\providers\visual_provider.dart (5 cores)
+================================================================================
+
+Linha: 156
+  Padrao: Color(dynamic colorValue)
+  Atual:    Color _parseColor(dynamic colorValue) {
+  Depois: if (colorValue == null) return const Color(0xFF757575);
+
+
+Linha: 157
+  Padrao: Color(0xFF757575)
+  Antes:  Color _parseColor(dynamic colorValue) {
+  Atual:      if (colorValue == null) return const Color(0xFF757575);
+  Depois: if (colorValue is String) {
+
+
+Linha: 160
+  Padrao: Color(int.parse(colorValue.replaceFirst('#', '0xFF')
+  Antes:  try {
+  Atual:          return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+  Depois: } catch (_) {
+
+
+Linha: 162
+  Padrao: Color(0xFF757575)
+  Antes:  } catch (_) {
+  Atual:          return const Color(0xFF757575);
+  Depois: }
+
+
+Linha: 165
+  Padrao: Color(0xFF757575)
+  Antes:  }
+  Atual:      return const Color(0xFF757575);
+  Depois: }
+
+
+[ARQUIVO] D:\tagbean\frontend\lib\features\strategies\presentation\helpers\clearance_status_color_helper.dart (2 cores)
+================================================================================
+
+Linha: 10
+  Padrao: Color(context, status)
+  Antes:  /// Antes: clearance_models.dart ClearanceStatus.color getter (sem context)
+  Atual:  /// Depois: ClearanceStatusColorHelper.getColor(context, status) - dinâmico
+  Depois: ///
+
+
+Linha: 35
+  Padrao: Color(BuildContext context, ClearanceStatus status)
+  Antes:  /// Retorna a cor dinâmica para um ClearanceStatus específico
+  Atual:    static Color getColor(BuildContext context, ClearanceStatus status) {
+  Depois: final colors = ThemeColors.of(context);
+
+
+
+================================================================================
+RESUMO POR ARQUIVO:
+  D:\tagbean\frontend\lib\features\strategies\data\models\sports_models.dart: 1 cores
+  D:\tagbean\frontend\lib\features\strategies\data\models\strategy_base_models.dart: 1 cores
+  D:\tagbean\frontend\lib\features\strategies\data\providers\calendar_provider.dart: 1 cores
+  D:\tagbean\frontend\lib\features\strategies\data\providers\performance_provider.dart: 10 cores
+  D:\tagbean\frontend\lib\features\strategies\data\providers\visual_provider.dart: 5 cores
+  D:\tagbean\frontend\lib\features\strategies\presentation\helpers\clearance_status_color_helper.dart: 2 cores
+
+
+TOTAL: 20 cores encontradas
+ESPERADO: 72 cores
+STATUS: DIFERENCA: -52
+================================================================================
+

@@ -1,0 +1,74 @@
+﻿name: tagbean
+description: Sistema de Gestão de Etiquetas Eletrônicas TagBean
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI e Ícones
+  cupertino_icons: ^1.0.2
+  google_fonts: ^5.0.0
+
+  # Utilitários
+  intl: ^0.20.2
+  shared_preferences: ^2.2.2
+
+  # Gerenciamento de Estado - Riverpod
+  flutter_riverpod: ^2.4.9
+
+  # HTTP Client
+  http: ^1.1.0
+  dio: ^5.4.0
+  flutter_secure_storage: ^9.0.0
+
+  # JSON Serialization (para models)
+  json_annotation: ^4.8.1
+  
+  # Conectividade - verificar estado de conexão
+  connectivity_plus: ^6.0.0
+  
+  # CSV Parser para processamento de CSV
+  csv: ^6.0.0
+  
+  # Web utilities (conditional import)
+  universal_html: ^2.2.4
+
+  # Navegação
+  go_router: ^13.2.0
+
+  # Injeção de dependência
+  get_it: ^7.6.7
+  injectable: ^2.3.2
+
+  # Localização
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  integration_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  # Assets - Imagens e recursos
+  assets:
+    - assets/images/logo/
+    - assets/l10n/
+
+  # Fonts (se necessário adicionar fontes customizadas)
+  # fonts:
+  #   - family: CustomFont
+  #     fonts:
+  #       - asset: fonts/CustomFont-Regular.ttf
+  #       - asset: fonts/CustomFont-Bold.ttf
+  #         weight: 700
+

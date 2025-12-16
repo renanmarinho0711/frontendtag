@@ -1,0 +1,407 @@
+﻿================================================================================
+MAPEAMENTO DE CORES - FRONTEND COMPLETA (exceto DESIGN_SYSTEM, CORE, AUTH, etc)
+================================================================================
+Data: 12/16/2025 14:06:28
+
+
+[MODULO: outro] - Total: 98 instÃ¢ncias
+================================================================================
+
+Arquivo: \categories\data\models\category_models.dart
+Linha: 20
+Conteudo: return const Color(0xFF22C55E); // success
+--------------------------------------------------------------------------------
+Arquivo: \categories\data\models\category_models.dart
+Linha: 22
+Conteudo: return const Color(0xFFFF9800); // orangeMaterial
+--------------------------------------------------------------------------------
+Arquivo: \categories\data\models\category_models.dart
+Linha: 24
+Conteudo: return const Color(0xFF64748B); // grey500
+--------------------------------------------------------------------------------
+Arquivo: \categories\data\models\category_models.dart
+Linha: 155
+Conteudo: if (colorValue == null) return const Color(0xFF9CA3AF); // grey500
+--------------------------------------------------------------------------------
+Arquivo: \categories\data\models\category_models.dart
+Linha: 164
+Conteudo: return const Color(0xFF64748B); // grey500
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 104
+Conteudo: this.cor = const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 169
+Conteudo: cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 411
+Conteudo: return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 413
+Conteudo: return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 415
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 546
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 548
+Conteudo: return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 550
+Conteudo: return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 552
+Conteudo: return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 715
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 717
+Conteudo: return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 719
+Conteudo: return const Color(0xFF06B6D4);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 721
+Conteudo: return const Color(0xFFEA580C);
+--------------------------------------------------------------------------------
+Arquivo: \pricing\data\models\pricing_models.dart
+Linha: 723
+Conteudo: return const Color(0xFF64748B);
+--------------------------------------------------------------------------------
+Arquivo: \reports\data\models\report_models.dart
+Linha: 62
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \reports\data\models\report_models.dart
+Linha: 64
+Conteudo: return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+Arquivo: \reports\data\models\report_models.dart
+Linha: 66
+Conteudo: return const Color(0xFF9E9E9E);
+--------------------------------------------------------------------------------
+Arquivo: \reports\data\models\report_models.dart
+Linha: 140
+Conteudo: if (colorValue == null) return const Color(0xFF9E9E9E);
+--------------------------------------------------------------------------------
+Arquivo: \reports\data\models\report_models.dart
+Linha: 148
+Conteudo: return const Color(0xFF9E9E9E);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 82
+Conteudo: 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 83
+Conteudo: 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 84
+Conteudo: 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 85
+Conteudo: 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 86
+Conteudo: 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 87
+Conteudo: 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 88
+Conteudo: 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 89
+Conteudo: 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 90
+Conteudo: 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 91
+Conteudo: 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 92
+Conteudo: 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 93
+Conteudo: 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 95
+Conteudo: return colorMap[corKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 199
+Conteudo: 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 200
+Conteudo: 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 201
+Conteudo: 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 202
+Conteudo: 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 203
+Conteudo: 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 204
+Conteudo: 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 205
+Conteudo: 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 206
+Conteudo: 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 207
+Conteudo: 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 208
+Conteudo: 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 209
+Conteudo: 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 210
+Conteudo: 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 212
+Conteudo: return colorMap[corKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 351
+Conteudo: 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 352
+Conteudo: 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 353
+Conteudo: 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 354
+Conteudo: 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 355
+Conteudo: 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 356
+Conteudo: 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 357
+Conteudo: 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 358
+Conteudo: 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 359
+Conteudo: 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 360
+Conteudo: 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 361
+Conteudo: 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 362
+Conteudo: 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\cross_selling_models.dart
+Linha: 364
+Conteudo: return colorMap[corKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 422
+Conteudo: 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 423
+Conteudo: 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 424
+Conteudo: 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 425
+Conteudo: 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 426
+Conteudo: 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 427
+Conteudo: 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 428
+Conteudo: 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 429
+Conteudo: 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 430
+Conteudo: 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 431
+Conteudo: 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 432
+Conteudo: 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 433
+Conteudo: 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\engagement_models.dart
+Linha: 435
+Conteudo: return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\forecast_models.dart
+Linha: 179
+Conteudo: Color get color => const Color(0xFF2196F3); // Fallback only
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\markdown_models.dart
+Linha: 156
+Conteudo: if (diasRestantes == 0) return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\markdown_models.dart
+Linha: 157
+Conteudo: if (diasRestantes <= 2) return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\markdown_models.dart
+Linha: 158
+Conteudo: if (diasRestantes <= 4) return const Color(0xFFFFC107);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\markdown_models.dart
+Linha: 159
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\sports_models.dart
+Linha: 186
+Conteudo: color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\strategy_base_models.dart
+Linha: 399
+Conteudo: ? const Color(0xFF4CAF50)
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\strategy_base_models.dart
+Linha: 400
+Conteudo: : const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\models\strategy_base_models.dart
+Linha: 494
+Conteudo: color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\calendar_provider.dart
+Linha: 428
+Conteudo: color: const Color(0xFF10B981),
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\environmental_provider.dart
+Linha: 470
+Conteudo: if (colorValue == null) return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\environmental_provider.dart
+Linha: 475
+Conteudo: return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\environmental_provider.dart
+Linha: 478
+Conteudo: return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\performance_provider.dart
+Linha: 193
+Conteudo: if (colorValue == null) return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\performance_provider.dart
+Linha: 198
+Conteudo: return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\performance_provider.dart
+Linha: 201
+Conteudo: return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\performance_provider.dart
+Linha: 471
+Conteudo: if (colorValue == null) return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\performance_provider.dart
+Linha: 476
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\performance_provider.dart
+Linha: 479
+Conteudo: return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\visual_provider.dart
+Linha: 157
+Conteudo: if (colorValue == null) return const Color(0xFF757575);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\visual_provider.dart
+Linha: 162
+Conteudo: return const Color(0xFF757575);
+--------------------------------------------------------------------------------
+Arquivo: \strategies\data\providers\visual_provider.dart
+Linha: 165
+Conteudo: return const Color(0xFF757575);
+--------------------------------------------------------------------------------
+
+
+RESUMO TOTAL:
+Total de instÃ¢ncias: 98
+MÃ³dulos com cores hardcoded: 98
+

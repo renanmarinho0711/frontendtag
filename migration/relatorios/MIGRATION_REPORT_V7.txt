@@ -1,0 +1,71 @@
+=== RELATORIO v7.0 ===
+Data: 12/14/2025 09:51:41
+Arquivos: 62
+Metodos: 219
+Chamadas: 216
+Migrados: 2349
+Const: 80
+
+=== ARQUIVOS ===
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\categories_admin_screen.dart
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\categories_list_screen.dart
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\categories_menu_screen.dart
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\categories_stats_screen.dart
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\category_add_screen.dart
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\category_edit_screen.dart
+D:\tagbean\frontend\lib\modules\categories\presentation\screens\category_products_screen.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\acoes_frequentes_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\admin_panel_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\alertas_acionaveis_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\compact_alerts_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\compact_sync_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\estrategias_ativas_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\fluxos_inteligentes_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\next_action_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\onboarding_steps_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\oportunidades_lucro_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\quick_actions_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\recent_activity_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\recent_activity_dashboard_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\resumo_do_dia_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\scanner_central_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\status_geral_sistema_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\sugestoes_ia_card.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\welcome_section.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\navigation\dashboard_app_bar.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+D:\tagbean\frontend\lib\modules\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+D:\tagbean\frontend\lib\modules\products\data\datasources\products_datasource.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\products_dashboard_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\products_import_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\products_list_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\products_stock_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\product_add_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\product_details_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\product_edit_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\screens\product_qr_screen.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\barcode_scanner_widget.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\products_alerts_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\products_catalog_summary.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\products_onboarding_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\products_quick_actions_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\products_sync_footer.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\product_tags_widget.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\recent_products_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\details\price_history_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\details\product_info_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\details\product_tag_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\details\quick_actions_section.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\list\products_header.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\list\products_skeleton.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\list\product_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\list\product_filters.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\qr\binding_confirmation_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\qr\products_empty_state.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\qr\product_binding_card.dart
+D:\tagbean\frontend\lib\modules\products\presentation\widgets\qr\qr_scan_area.dart

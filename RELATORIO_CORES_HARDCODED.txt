@@ -1,0 +1,1344 @@
+﻿================================================================================
+                    RELATORIO DE CORES HARDCODED (Color())
+                           Data: 16/12/2025 11:34:34
+================================================================================
+
+RESUMO
+------
+Total de modulos com cores hardcoded: 9
+Total de instancias encontradas: 256
+
+DETALHES POR MODULO
+-------------------
+
+
+[MODULO: auth] - Total: 7 instancias
+================================================================================
+
+Arquivo  : auth\presentation\helpers\role_color_helper.dart
+Linha    : 10
+Conteudo : /// Depois: RoleColorHelper.getColor(context, role) - dinÃ¢mico
+--------------------------------------------------------------------------------
+
+Arquivo  : auth\presentation\helpers\role_color_helper.dart
+Linha    : 31
+Conteudo : static Color getColor(BuildContext context, String role) {
+--------------------------------------------------------------------------------
+
+Arquivo  : auth\presentation\widgets\store_selector.dart
+Linha    : 364
+Conteudo : color: _getBackgroundColor(scope),
+--------------------------------------------------------------------------------
+
+Arquivo  : auth\presentation\widgets\store_selector.dart
+Linha    : 373
+Conteudo : color: _getIconColor(scope),
+--------------------------------------------------------------------------------
+
+Arquivo  : auth\presentation\widgets\store_selector.dart
+Linha    : 381
+Conteudo : color: _getIconColor(scope),
+--------------------------------------------------------------------------------
+
+Arquivo  : auth\presentation\widgets\store_selector.dart
+Linha    : 400
+Conteudo : Color _getBackgroundColor(WorkScope scope) {
+--------------------------------------------------------------------------------
+
+Arquivo  : auth\presentation\widgets\store_selector.dart
+Linha    : 411
+Conteudo : Color _getIconColor(WorkScope scope) {
+--------------------------------------------------------------------------------
+
+
+[MODULO: categories] - Total: 11 instancias
+================================================================================
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 20
+Conteudo : return const Color(0xFF22C55E); // success
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 22
+Conteudo : return const Color(0xFFFF9800); // orangeMaterial
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 24
+Conteudo : return const Color(0xFF64748B); // grey500
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 130
+Conteudo : cor: _parseColor(json['color'] ?? json['cor']),
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 154
+Conteudo : static Color _parseColor(dynamic colorValue) {
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 155
+Conteudo : if (colorValue == null) return const Color(0xFF9CA3AF); // grey500
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 157
+Conteudo : if (colorValue is int) return Color(colorValue);
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 162
+Conteudo : return Color(int.parse(hex, radix: 16));
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 164
+Conteudo : return const Color(0xFF64748B); // grey500
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 400
+Conteudo : cor: CategoryModel._parseColor(json['color'] ?? json['cor']),
+--------------------------------------------------------------------------------
+
+Arquivo  : categories\data\models\category_models.dart
+Linha    : 466
+Conteudo : cor: CategoryModel._parseColor(json['color'] ?? json['cor']),
+--------------------------------------------------------------------------------
+
+
+[MODULO: pricing] - Total: 17 instancias
+================================================================================
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 104
+Conteudo : this.cor = const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 169
+Conteudo : cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 411
+Conteudo : return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 413
+Conteudo : return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 415
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 546
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 548
+Conteudo : return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 550
+Conteudo : return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 552
+Conteudo : return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 715
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 717
+Conteudo : return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 719
+Conteudo : return const Color(0xFF06B6D4);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 721
+Conteudo : return const Color(0xFFEA580C);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\data\models\pricing_models.dart
+Linha    : 723
+Conteudo : return const Color(0xFF64748B);
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\presentation\screens\individual_adjustment_screen.dart
+Linha    : 454
+Conteudo : _getMargemColor(produto.margemAtual),
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\presentation\screens\individual_adjustment_screen.dart
+Linha    : 582
+Conteudo : Color _getMargemColor(double margem) {
+--------------------------------------------------------------------------------
+
+Arquivo  : pricing\presentation\screens\individual_adjustment_screen.dart
+Linha    : 695
+Conteudo : color: _getMargemColor(produto.margemAtual),
+--------------------------------------------------------------------------------
+
+
+[MODULO: products] - Total: 26 instancias
+================================================================================
+
+Arquivo  : products\data\models\product_model.dart
+Linha    : 150
+Conteudo : cor: Color(map['cor'] ?? 0xFF1976D2),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\data\models\product_models.dart
+Linha    : 96
+Conteudo : this.cor = const Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\data\models\product_models.dart
+Linha    : 229
+Conteudo : cor: _parseColor(json['cor']),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\data\models\product_models.dart
+Linha    : 325
+Conteudo : static Color _parseColor(dynamic cor) {
+--------------------------------------------------------------------------------
+
+Arquivo  : products\data\models\product_models.dart
+Linha    : 327
+Conteudo : if (cor is int) return Color(cor);
+--------------------------------------------------------------------------------
+
+Arquivo  : products\data\models\product_models.dart
+Linha    : 330
+Conteudo : return const Color(0xFF1976D2); // material blue - temp fallback only
+--------------------------------------------------------------------------------
+
+Arquivo  : products\data\models\product_models.dart
+Linha    : 455
+Conteudo : : const Color(0xFF1976D2); // placeholder - MUST resolve color at UI layer with ThemeColors.of(context)
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\helpers\category_color_helper.dart
+Linha    : 10
+Conteudo : /// Depois: CategoryColorHelper.getColor(context, categoria) - dinÃ¢mico
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\helpers\category_color_helper.dart
+Linha    : 37
+Conteudo : static Color getColor(BuildContext context, Categoria categoria) {
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\providers\products_state_provider.dart
+Linha    : 657
+Conteudo : cor: _getCategoryColor(cat['name'] ?? cat['nome'] ?? ''),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\providers\products_state_provider.dart
+Linha    : 716
+Conteudo : Color _getCategoryColor(String nome) {
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\providers\products_state_provider.dart
+Linha    : 731
+Conteudo : final color = _getCategoryColor(nome);
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\products_list_screen.dart
+Linha    : 1123
+Conteudo : gradient: AppGradients.fromBaseColor(context, produto.cor),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\products_list_screen.dart
+Linha    : 1145
+Conteudo : gradient: AppGradients.fromBaseColor(context, produto.cor),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\products_stock_screen.dart
+Linha    : 915
+Conteudo : color: _getStatusColor(item.status).withValues(alpha: 0.1),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\products_stock_screen.dart
+Linha    : 920
+Conteudo : color: _getStatusColor(item.status),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\products_stock_screen.dart
+Linha    : 1027
+Conteudo : Color _getStatusColor(String status) {
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\product_details_screen.dart
+Linha    : 202
+Conteudo : gradient: AppGradients.fromBaseColor(context, _product.cor),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\product_details_screen.dart
+Linha    : 631
+Conteudo : gradient: AppGradients.fromBaseColor(context, _product.cor),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\product_edit_screen.dart
+Linha    : 1076
+Conteudo : color: Color(0x141E293B),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\screens\product_edit_screen.dart
+Linha    : 1211
+Conteudo : Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\widgets\product_tags_widget.dart
+Linha    : 279
+Conteudo : color: _getSyncStatusColor(),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\widgets\product_tags_widget.dart
+Linha    : 350
+Conteudo : Color _getSyncStatusColor() {
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\widgets\list\product_card.dart
+Linha    : 101
+Conteudo : gradient: AppGradients.fromBaseColor(context, produto.cor),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\widgets\qr\products_empty_state.dart
+Linha    : 93
+Conteudo : iconColor: const Color(0xFF4CAF50),
+--------------------------------------------------------------------------------
+
+Arquivo  : products\presentation\widgets\qr\products_empty_state.dart
+Linha    : 105
+Conteudo : iconColor: const Color(0xFFFF9800),
+--------------------------------------------------------------------------------
+
+
+[MODULO: reports] - Total: 8 instancias
+================================================================================
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 62
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 64
+Conteudo : return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 66
+Conteudo : return const Color(0xFF9E9E9E);
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 139
+Conteudo : static Color _parseColor(dynamic colorValue) {
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 140
+Conteudo : if (colorValue == null) return const Color(0xFF9E9E9E);
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 142
+Conteudo : if (colorValue is int) return Color(colorValue);
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 146
+Conteudo : return Color(int.parse(hex, radix: 16));
+--------------------------------------------------------------------------------
+
+Arquivo  : reports\data\models\report_models.dart
+Linha    : 148
+Conteudo : return const Color(0xFF9E9E9E);
+--------------------------------------------------------------------------------
+
+
+[MODULO: settings] - Total: 17 instancias
+================================================================================
+
+Arquivo  : settings\data\models\settings_models.dart
+Linha    : 61
+Conteudo : connected('Conectado', const Color(0xFF22C55E)),
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\settings_models.dart
+Linha    : 62
+Conteudo : disconnected('Desconectado', const Color(0xFFEF4444)),
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\settings_models.dart
+Linha    : 63
+Conteudo : testing('Testando...', const Color(0xFFF97316)),
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\settings_models.dart
+Linha    : 64
+Conteudo : error('Erro', const Color(0xFFEF4444));
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 65
+Conteudo : return const Color(0xFFEF4444); // roleSuperAdmin placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 67
+Conteudo : return const Color(0xFF10B981); // roleAdmin placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 69
+Conteudo : return const Color(0xFF15803D); // roleManager placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 71
+Conteudo : return const Color(0xFFF59E0B); // roleOperator placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 73
+Conteudo : return const Color(0xFF64748B); // roleViewer placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 178
+Conteudo : return const Color(0xFF10B981); // roleAdmin placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 180
+Conteudo : return const Color(0xFF15803D); // roleManager placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 182
+Conteudo : return const Color(0xFFF59E0B); // roleOperator placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 184
+Conteudo : return const Color(0xFF64748B); // roleViewer placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 242
+Conteudo : return const Color(0xFF10B981); // statusActive placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 244
+Conteudo : return const Color(0xFF64748B); // statusInactive placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 246
+Conteudo : return const Color(0xFFF59E0B); // statusPending placeholder
+--------------------------------------------------------------------------------
+
+Arquivo  : settings\data\models\user_model.dart
+Linha    : 248
+Conteudo : return const Color(0xFFEF4444); // statusBlocked placeholder
+--------------------------------------------------------------------------------
+
+
+[MODULO: strategies] - Total: 86 instancias
+================================================================================
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 82
+Conteudo : 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 83
+Conteudo : 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 84
+Conteudo : 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 85
+Conteudo : 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 86
+Conteudo : 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 87
+Conteudo : 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 88
+Conteudo : 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 89
+Conteudo : 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 90
+Conteudo : 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 91
+Conteudo : 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 92
+Conteudo : 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 93
+Conteudo : 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 95
+Conteudo : return colorMap[corKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 199
+Conteudo : 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 200
+Conteudo : 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 201
+Conteudo : 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 202
+Conteudo : 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 203
+Conteudo : 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 204
+Conteudo : 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 205
+Conteudo : 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 206
+Conteudo : 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 207
+Conteudo : 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 208
+Conteudo : 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 209
+Conteudo : 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 210
+Conteudo : 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 212
+Conteudo : return colorMap[corKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 351
+Conteudo : 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 352
+Conteudo : 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 353
+Conteudo : 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 354
+Conteudo : 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 355
+Conteudo : 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 356
+Conteudo : 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 357
+Conteudo : 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 358
+Conteudo : 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 359
+Conteudo : 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 360
+Conteudo : 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 361
+Conteudo : 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 362
+Conteudo : 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\cross_selling_models.dart
+Linha    : 364
+Conteudo : return colorMap[corKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 422
+Conteudo : 'success': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 423
+Conteudo : 'error': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 424
+Conteudo : 'warning': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 425
+Conteudo : 'info': Color(0xFF0284C7),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 426
+Conteudo : 'primary': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 427
+Conteudo : 'secondary': Color(0xFF64748B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 428
+Conteudo : 'blueMain': Color(0xFF3B82F6),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 429
+Conteudo : 'blueCyan': Color(0xFF06B6D4),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 430
+Conteudo : 'greenMain': Color(0xFF22C55E),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 431
+Conteudo : 'redMain': Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 432
+Conteudo : 'orangeMain': Color(0xFFF97316),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 433
+Conteudo : 'yellowGold': Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\engagement_models.dart
+Linha    : 435
+Conteudo : return colorMap[corRotaKey] ?? const Color(0xFF22C55E);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\forecast_models.dart
+Linha    : 179
+Conteudo : Color get color => const Color(0xFF2196F3); // Fallback only
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\markdown_models.dart
+Linha    : 156
+Conteudo : if (diasRestantes == 0) return const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\markdown_models.dart
+Linha    : 157
+Conteudo : if (diasRestantes <= 2) return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\markdown_models.dart
+Linha    : 158
+Conteudo : if (diasRestantes <= 4) return const Color(0xFFFFC107);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\markdown_models.dart
+Linha    : 159
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\sports_models.dart
+Linha    : 186
+Conteudo : color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\strategy_base_models.dart
+Linha    : 316
+Conteudo : static Color? parseColor(dynamic color) {
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\strategy_base_models.dart
+Linha    : 318
+Conteudo : if (color is int) return Color(color);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\strategy_base_models.dart
+Linha    : 324
+Conteudo : static Color? _parseColor(dynamic color) => parseColor(color);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\strategy_base_models.dart
+Linha    : 399
+Conteudo : ? const Color(0xFF4CAF50)
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\strategy_base_models.dart
+Linha    : 400
+Conteudo : : const Color(0xFFFF5252);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\models\strategy_base_models.dart
+Linha    : 494
+Conteudo : color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\calendar_provider.dart
+Linha    : 428
+Conteudo : color: const Color(0xFF10B981),
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\environmental_provider.dart
+Linha    : 470
+Conteudo : if (colorValue == null) return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\environmental_provider.dart
+Linha    : 473
+Conteudo : return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\environmental_provider.dart
+Linha    : 475
+Conteudo : return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\environmental_provider.dart
+Linha    : 478
+Conteudo : return const Color(0xFFFF9800);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 192
+Conteudo : Color _parseColor(dynamic colorValue) {
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 193
+Conteudo : if (colorValue == null) return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 196
+Conteudo : return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 198
+Conteudo : return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 201
+Conteudo : return const Color(0xFF2196F3);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 470
+Conteudo : Color _parseColor(dynamic colorValue) {
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 471
+Conteudo : if (colorValue == null) return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 474
+Conteudo : return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 476
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\performance_provider.dart
+Linha    : 479
+Conteudo : return const Color(0xFF4CAF50);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\visual_provider.dart
+Linha    : 156
+Conteudo : Color _parseColor(dynamic colorValue) {
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\visual_provider.dart
+Linha    : 157
+Conteudo : if (colorValue == null) return const Color(0xFF757575);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\visual_provider.dart
+Linha    : 160
+Conteudo : return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\visual_provider.dart
+Linha    : 162
+Conteudo : return const Color(0xFF757575);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\data\providers\visual_provider.dart
+Linha    : 165
+Conteudo : return const Color(0xFF757575);
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\presentation\helpers\clearance_status_color_helper.dart
+Linha    : 10
+Conteudo : /// Depois: ClearanceStatusColorHelper.getColor(context, status) - dinâmico
+--------------------------------------------------------------------------------
+
+Arquivo  : strategies\presentation\helpers\clearance_status_color_helper.dart
+Linha    : 35
+Conteudo : static Color getColor(BuildContext context, ClearanceStatus status) {
+--------------------------------------------------------------------------------
+
+
+[MODULO: sync] - Total: 2 instancias
+================================================================================
+
+Arquivo  : sync\presentation\helpers\sync_status_color_helper.dart
+Linha    : 10
+Conteudo : /// Depois: SyncStatusColorHelper.getColor(context, status) - dinâmico
+--------------------------------------------------------------------------------
+
+Arquivo  : sync\presentation\helpers\sync_status_color_helper.dart
+Linha    : 35
+Conteudo : static Color getColor(BuildContext context, SyncStatus status) {
+--------------------------------------------------------------------------------
+
+
+[MODULO: tags] - Total: 82 instancias
+================================================================================
+
+Arquivo  : tags\data\models\tag_model.dart
+Linha    : 240
+Conteudo : twoInch3Color(1, '2.13" 3 Cores', 'Etiqueta 2.13 polegadas 3 cores'),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\data\models\tag_model.dart
+Linha    : 242
+Conteudo : sevenInch3Color(3, '7.5" 3 Cores', 'Etiqueta 7.5 polegadas 3 cores');
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 111
+Conteudo : Color _getStatusColor(TagModel tag) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 133
+Conteudo : Color _getBatteryColor(int battery) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 165
+Conteudo : Color _getSyncStatusColor(TagModel tag) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 176
+Conteudo : Color _getOnlineColor(TagModel tag) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 643
+Conteudo : final statusColor = _getStatusColor(tag);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 647
+Conteudo : final batteryColor = _getBatteryColor(tag.batteryLevel);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 803
+Conteudo : color: _getOnlineColor(tag),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tags_list_screen.dart
+Linha    : 812
+Conteudo : color: _getOnlineColor(tag),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 62
+Conteudo : Color _getStatusColor() {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 197
+Conteudo : final statusColor = _getStatusColor();
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 330
+Conteudo : color: Color(0xFFD97706),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 344
+Conteudo : final statusColor = _getStatusColor();
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 385
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 407
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 436
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 498
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 515
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 565
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 620
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 711
+Conteudo : foregroundColor: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 733
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 761
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 895
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 919
+Conteudo : Color(0xFF10B981),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 928
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1109
+Conteudo : final statusColor = _getStatusColor();
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1125
+Conteudo : Color(0xFF6B7280)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1150
+Conteudo : foregroundColor: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1185
+Conteudo : foregroundColor: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1240
+Conteudo : Color(0xFF6B7280)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1264
+Conteudo : foregroundColor: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1298
+Conteudo : foregroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1299
+Conteudo : side: BorderSide(color: Color(0xFFEF4444)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1327
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1425
+Conteudo : backgroundColor: Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1461
+Conteudo : Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1481
+Conteudo : backgroundColor: Color(0xFF10B981),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1493
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1570
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1598
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1653
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1676
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1693
+Conteudo : color: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1752
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1763
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1777
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1784
+Conteudo : backgroundColor: Color(0xFFEF4444),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1908
+Conteudo : Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1915
+Conteudo : backgroundColor: Color(0xFFF59E0B),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 1935
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 2109
+Conteudo : icon: Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 2128
+Conteudo : Icon(Icons.error_outline_rounded, size: 64, color: Color(0xFFEF4444)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 2130
+Conteudo : Text(_error!, style: TextStyle(color: Color(0xFFEF4444))),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 2199
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 2209
+Conteudo : gradient: AppGradients.fromBaseColor(context, product.cor),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\screens\tag_edit_screen.dart
+Linha    : 2214
+Conteudo : color: Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 125
+Conteudo : color: const Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 133
+Conteudo : color: const Color(0xFF6B7280),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 143
+Conteudo : final statusColor = _getStatusColor(context, tag.status);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 244
+Conteudo : color: _getBatteryColor(context, tag.batteryLevel!),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 253
+Conteudo : color: _getBatteryColor(context, tag.batteryLevel!),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 275
+Conteudo : Color _getStatusColor(BuildContext context, RecentTagStatus status) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\recent_tags_card.dart
+Linha    : 309
+Conteudo : Color _getBatteryColor(BuildContext context, int level) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_alerts_card.dart
+Linha    : 111
+Conteudo : final backgroundColor = _getBackgroundColor(context, alert.priority);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_alerts_card.dart
+Linha    : 112
+Conteudo : final borderColor = _getBorderColor(context, alert.priority);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_alerts_card.dart
+Linha    : 184
+Conteudo : Color _getBackgroundColor(BuildContext context, TagAlertPriority priority) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_alerts_card.dart
+Linha    : 195
+Conteudo : Color _getBorderColor(BuildContext context, TagAlertPriority priority) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_health_card.dart
+Linha    : 87
+Conteudo : progressColor: _getBatteryColor(context, metrics.avgBatteryLevel),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_health_card.dart
+Linha    : 111
+Conteudo : progressColor: _getSignalColor(context, metrics.avgSignalStrength),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_health_card.dart
+Linha    : 213
+Conteudo : Color _getBatteryColor(BuildContext context, double level) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_health_card.dart
+Linha    : 234
+Conteudo : Color _getSignalColor(BuildContext context, String strength) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_sync_footer.dart
+Linha    : 34
+Conteudo : final statusColor = _getStatusColor(context);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tags_sync_footer.dart
+Linha    : 172
+Conteudo : Color _getStatusColor(BuildContext context) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 284
+Conteudo : color: _getSyncProgressColor(context),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 295
+Conteudo : valueColor: AlwaysStoppedAnimation<Color>(_getSyncProgressColor(context)),
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 369
+Conteudo : Color _getSyncProgressColor(BuildContext context) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 406
+Conteudo : final color = _getStatusColor(context);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 449
+Conteudo : Color _getStatusColor(BuildContext context) {
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 491
+Conteudo : final color = _getTemperatureColor(context);
+--------------------------------------------------------------------------------
+
+Arquivo  : tags\presentation\widgets\tag_minew_sync_card.dart
+Linha    : 535
+Conteudo : Color _getTemperatureColor(BuildContext context) {
+--------------------------------------------------------------------------------
+
+
+================================================================================
+RESUMO FINAL
+================================================================================
+
+[MODULO: auth]: 7 cores hardcoded
+[MODULO: categories]: 11 cores hardcoded
+[MODULO: pricing]: 17 cores hardcoded
+[MODULO: products]: 26 cores hardcoded
+[MODULO: reports]: 8 cores hardcoded
+[MODULO: settings]: 17 cores hardcoded
+[MODULO: strategies]: 86 cores hardcoded
+[MODULO: sync]: 2 cores hardcoded
+[MODULO: tags]: 82 cores hardcoded
+

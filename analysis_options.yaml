@@ -1,0 +1,76 @@
+# Configuração de análise estática para o projeto TagBean
+# Este arquivo configura regras de lint e warnings do Dart Analyzer
+
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  # Habilita análise estrita
+  language:
+    strict-casts: false
+    strict-raw-types: false
+  
+  # Exclui arquivos gerados automaticamente
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gr.dart"
+    - "lib/generated/**"
+    - "build/**"
+    - ".dart_tool/**"
+    - "migration/**"  # Exclui arquivos de migração em andamento
+    - "test/**"  # Exclui testes
+    - ".flutter-plugins"
+    - ".flutter-plugins-dependencies"
+  
+  # Configuração de severidade dos erros
+  errors:
+    # Erros que devem permanecer como erro
+    invalid_assignment: error
+    missing_return: error
+    dead_code: warning
+    
+    # Warnings que podem ser reduzidos para info (elementos reservados para uso futuro)
+    unused_field: info
+    unused_element: info
+    unused_local_variable: info
+    unused_element_parameter: info
+    
+    # Deprecations e casts desnecessários
+    deprecated_member_use: info
+    deprecated_member_use_from_same_package: info
+    unnecessary_cast: info
+    
+    # Dead null aware expression (pode indicar código que precisa de revisão)
+    dead_null_aware_expression: info
+    
+    # Imports
+    unused_import: warning
+    unnecessary_import: info
+    
+    # Default clause unreachable
+    unreachable_switch_default: info
+
+linter:
+  rules:
+    # Regras de estilo habilitadas
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_final_locals: false
+    avoid_print: false  # Desabilitado para debugging
+    
+    # Regras de documentação (desabilitadas por enquanto)
+    public_member_api_docs: false
+    
+    # Regras de nomenclatura
+    constant_identifier_names: true
+    non_constant_identifier_names: true
+    
+    # Regras de código limpo
+    avoid_unnecessary_containers: true
+    prefer_single_quotes: true
+    require_trailing_commas: false
+    
+    # Regras de segurança
+    avoid_slow_async_io: true
+    cancel_subscriptions: true
+    close_sinks: true

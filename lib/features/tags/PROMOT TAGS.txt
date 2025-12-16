@@ -1,0 +1,376 @@
+opilot said: # 📋 PROMPT DE COMANDO: MAPEAMENTO
+📋 PROMPT DE COMANDO: MAPEAMENTO E REESTRUTURAÇÃO COMPLETA DE MÓDULO
+🎯 OBJETIVO DO PROMPT
+Este prompt deve ser utilizado para realizar o mapeamento completo, análise de integridade e reestruturação de UX/UI de qualquer módulo do sistema TagBean. O processo inclui verificação de todos os arquivos Flutter, conexões com backend, navegação entre telas e proposta de melhorias focadas na experiência do usuário.
+
+📝 INSTRUÇÕES DE USO
+Quando você receber este prompt, substitua [NOME_DO_MÓDULO] pelo módulo específico que deseja analisar (ex: TAGS, PRODUCTS, STRATEGIES, SYNC, etc.).
+
+🔧 PROMPT COMPLETO
+Code
+PROMPT:  MAPEAMENTO E REESTRUTURAÇÃO COMPLETA DO MÓDULO [NOME_DO_MÓDULO]
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 1: MAPEAMENTO TÉCNICO COMPLETO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. ESTRUTURA DE ARQUIVOS
+   - Liste TODOS os arquivos do módulo em `lib/features/[NOME_DO_MÓDULO]/`
+   - Inclua contagem de linhas de cada arquivo
+   - Identifique:  Screens, Widgets, Providers, Models, Repositories, Services
+   - Mapeie o arquivo barrel (exports)
+
+2. ANÁLISE DE CADA TELA (SCREEN)
+   Para CADA tela encontrada, documente:
+   
+   2.1 IDENTIFICAÇÃO
+       - Nome do arquivo
+       - Nome da classe
+       - Tipo (StatefulWidget, StatelessWidget, ConsumerStatefulWidget, etc.)
+       - Linhas de código
+   
+   2.2 LAYOUT VISUAL COMPLETO (em ASCII art)
+       - Estrutura visual EXATA da tela
+       - Posição de CADA elemento (header, cards, botões, FABs, etc.)
+       - Hierarquia visual clara
+   
+   2.3 MAPEAMENTO DE TODOS OS ELEMENTOS INTERATIVOS
+       Para CADA botão/ação, documente em tabela:
+       | Elemento | Tipo | Ícone | Cor | Texto | Ação/Destino | Status Backend |
+       
+   2.4 CAMPOS DE FORMULÁRIO (se houver)
+       | Campo | Tipo | Obrigatório | Validação | Controller |
+   
+   2.5 PROVIDERS UTILIZADOS
+       | Provider | Uso | Métodos Chamados |
+   
+   2.6 NAVEGAÇÃO
+       - De onde vem (telas anteriores)
+       - Para onde vai (telas destino)
+       - Parâmetros recebidos
+       - Parâmetros enviados
+
+3. ANÁLISE DO PROVIDER/STATE MANAGEMENT
+   - Liste TODOS os providers
+   - Documente cada estado (State class)
+   - Mapeie TODOS os métodos públicos
+   - Identifique dependências entre providers
+
+4. ANÁLISE DO REPOSITORY
+   - Liste TODOS os endpoints da API
+   - Formato:  | Método | Endpoint | Descrição | Request | Response |
+   - Identifique quais estão implementados vs mockados
+
+5. ANÁLISE DOS MODELS
+   - Documente CADA model/classe de dados
+   - Liste propriedades com tipos
+   - Identifique enums utilizados
+   - Mapeie métodos de serialização (fromJson, toJson)
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 2: VERIFICAÇÃO DE INTEGRIDADE
+═══════════════════════════════════════════════════════════════════════════════
+
+1. CONEXÃO COM BACKEND
+   Para CADA endpoint:
+   | Endpoint | Implementado Frontend | Implementado Backend | Testado | Status |
+   
+   Status: ✅ Funcionando | ⚠️ Parcial | ❌ Não Implementado | 🔧 Mockado
+
+2. BOTÕES E AÇÕES
+   Para CADA botão/ação interativa:
+   | Botão | Ação Esperada | Implementado | Conectado Backend | Funcionando |
+   
+3. NAVEGAÇÃO
+   Para CADA fluxo de navegação:
+   | Origem | Destino | Parâmetros | Implementado | Funcionando |
+
+4. VALIDAÇÕES
+   - Validações de formulário implementadas
+   - Tratamento de erros
+   - Estados de loading
+   - Estados vazios (empty states)
+   - Feedback ao usuário (snackbars, toasts)
+
+5. RESPONSIVIDADE
+   - Suporte mobile verificado
+   - Suporte tablet verificado
+   - Suporte desktop verificado
+   - Uso correto de ResponsiveHelper
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 3: ANÁLISE DE UX/UI ATUAL
+═══════════════════════════════════════════════════════════════════════════════
+
+1. PROBLEMAS IDENTIFICADOS
+   Liste cada problema encontrado: 
+   | # | Problema | Tela | Severidade | Impacto no Usuário |
+   
+   Severidade:  CRÍTICO | ALTO | MÉDIO | BAIXO
+
+2. FLUXO DO USUÁRIO ATUAL
+   Documente o caminho que o usuário faz para cada tarefa principal:
+   
+   TAREFA:  [descrição]
+   Passos atuais:
+   1. Usuário está em [tela]
+   2. Clica em [botão]
+   3. Navega para [tela]
+   ...  etc. 
+   
+   Problemas neste fluxo: 
+   - [problema 1]
+   - [problema 2]
+
+3. COMPARAÇÃO COM OUTROS MÓDULOS
+   Compare a estrutura deste módulo com módulos já padronizados (PRODUCTS, DASHBOARD):
+   | Aspecto | Este Módulo | Padrão Esperado | Diferença |
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 4: PROPOSTA DE REESTRUTURAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. NOVA ESTRUTURA DO MENU PRINCIPAL (DASHBOARD DO MÓDULO)
+   
+   1.1 LAYOUT PROPOSTO (ASCII art detalhado)
+   
+┌─────────────────────────────────────────────────────────────────────┐ │ HEADER DO MÓDULO │ │ [Detalhamento completo de cada elemento] │ ├─────────────────────────────────────────────────────────────────────┤ │ │ │ SEÇÃO 1: [Nome da Seção] │ │ ┌──────────────────────────────────────────────────────────────┐ │ │ │ [Descrição detalhada do que contém] │ │ │ │ [Cada card/elemento com sua posição exata] │ │ │ └──────────────────────────────────────────────────────────────┘ │ │ │ │ SEÇÃO 2: [Nome da Seção] │ │ ... etc │ │ │ └─────────────────────────────────────────────────────────────────────┘
+
+Code
+
+1.2 DESCRIÇÃO DE CADA SEÇÃO
+Para CADA seção proposta:
+
+SEÇÃO: [Nome]
+├── Propósito: [Por que esta seção existe]
+├── Posição: [Onde fica na tela - topo, meio, fim]
+├── Visibilidade: [Sempre visível / Condicional]
+├── Condição (se condicional): [Quando aparece]
+├── Elementos: 
+│   ├── Elemento 1: [tipo, texto, ícone, cor, ação]
+│   ├── Elemento 2: ... 
+│   └── ... 
+├── Comportamento Mobile: [Diferenças no mobile]
+├── Comportamento Tablet: [Diferenças no tablet]
+└── Comportamento Desktop:  [Diferenças no desktop]
+
+2. MAPEAMENTO COMPLETO DE NAVEGAÇÃO PROPOSTA
+
+DIAGRAMA DE NAVEGAÇÃO:
+
+[MENU PRINCIPAL DO MÓDULO] │ ├──► [Tela 1] ──► [Subtela 1.1] │ └──► [Subtela 1.2] │ ├──► [Tela 2] ──► [Subtela 2.1] │ └──► [Tela 3]
+
+Code
+
+Para CADA navegação: 
+| Origem | Elemento Clicado | Destino | Parâmetros | Retorno |
+
+3. CARDS E COMPONENTES PROPOSTOS
+
+Para CADA card/widget proposto:
+
+CARD: [Nome do Card]
+├── Arquivo: [nome_do_arquivo.dart]
+├── Tipo: [StatelessWidget/ConsumerWidget/etc]
+├── Propósito: [O que faz]
+├── Quando aparece: [Condições de visibilidade]
+├── Layout:
+│   ```
+│   ┌────────────────────────────────────┐
+│   │ [Layout ASCII do card]             │
+│   └────────────────────────────────────┘
+│   ```
+├── Props/Parâmetros: 
+│   | Parâmetro | Tipo | Obrigatório | Descrição |
+├── Ações:
+│   | Ação | Trigger | Callback | Destino |
+├── Estados:
+│   | Estado | Visual | Comportamento |
+└── Integração:
+    | Provider | Dados Consumidos | Métodos Chamados |
+
+4. AÇÕES RÁPIDAS E FABs
+
+| FAB/Ação | Ícone | Cor | Posição | Ação | Visibilidade |
+
+5. FLUXOS DE USUÁRIO OTIMIZADOS
+
+Para CADA tarefa principal:
+
+TAREFA:  [descrição]
+Fluxo otimizado:
+1. Usuário está em [tela]
+2. [ação necessária]
+3. [resultado esperado]
+
+Tempo estimado: [X cliques, Y segundos]
+Comparação com fluxo anterior:  [melhoria de X%]
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 5: ESPECIFICAÇÕES TÉCNICAS DE IMPLEMENTAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. ARQUIVOS A CRIAR
+| Arquivo | Caminho | Tipo | Descrição | Linhas Estimadas |
+
+2. ARQUIVOS A MODIFICAR
+| Arquivo | Modificação | Razão |
+
+3. ARQUIVOS A REMOVER/DEPRECIAR
+| Arquivo | Razão | Substituído Por |
+
+4. PROVIDERS NECESSÁRIOS
+Para CADA provider: 
+
+PROVIDER: [Nome]
+├── Arquivo: [caminho]
+├── Tipo: [StateNotifier/FutureProvider/etc]
+├── Estado: 
+│   | Propriedade | Tipo | Descrição |
+├── Métodos: 
+│   | Método | Parâmetros | Retorno | Descrição |
+└── Dependências:
+    | Provider Dependente | Uso |
+
+5. ENDPOINTS NECESSÁRIOS (BACKEND)
+| Método | Endpoint | Request Body | Response | Descrição |
+
+Para endpoints não existentes, especificar:
+- Estrutura esperada
+- Validações necessárias
+- Relacionamentos com outras entidades
+
+6. MODELS NECESSÁRIOS
+Para CADA model:
+
+MODEL: [Nome]
+├── Arquivo: [caminho]
+├── Propriedades:
+│   | Nome | Tipo | Nullable | Descrição |
+├── Construtores:  [factory, fromJson, etc]
+├── Métodos:  [toJson, copyWith, etc]
+└── Enums relacionados: 
+    | Enum | Valores |
+
+7. DESIGN SYSTEM
+Componentes do Design System a utilizar:
+| Componente | Uso | Personalização |
+
+Cores específicas do módulo:
+| Elemento | Cor | Token |
+
+Espaçamentos: 
+| Contexto | Valor | Token |
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 6: CHECKLIST DE IMPLEMENTAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+[ ] 1. PREPARAÇÃO
+ [ ] 1.1 Criar branch feature/[modulo]-restructure
+ [ ] 1.2 Backup dos arquivos atuais
+ [ ] 1.3 Documentar estado atual
+
+[ ] 2. BACKEND (se necessário)
+ [ ] 2.1 Criar/modificar endpoints
+ [ ] 2.2 Testar endpoints via Postman/Insomnia
+ [ ] 2.3 Documentar API
+
+[ ] 3. MODELS E PROVIDERS
+ [ ] 3.1 Criar/atualizar models
+ [ ] 3.2 Criar/atualizar providers
+ [ ] 3.3 Testar providers isoladamente
+
+[ ] 4. WIDGETS COMPARTILHADOS
+ [ ] 4.1 Criar widgets reutilizáveis
+ [ ] 4.2 Documentar props de cada widget
+ [ ] 4.3 Testar responsividade
+
+[ ] 5. TELAS
+ [ ] 5.1 Menu principal (dashboard do módulo)
+ [ ] 5.2 Telas secundárias
+ [ ] 5.3 Telas de detalhe/edição
+
+[ ] 6. NAVEGAÇÃO
+ [ ] 6.1 Configurar rotas
+ [ ] 6.2 Testar todos os fluxos
+ [ ] 6.3 Verificar passagem de parâmetros
+
+[ ] 7. INTEGRAÇÃO
+ [ ] 7.1 Conectar frontend com backend
+ [ ] 7.2 Testar todos os endpoints
+ [ ] 7.3 Implementar tratamento de erros
+
+[ ] 8. RESPONSIVIDADE
+ [ ] 8.1 Testar em mobile (< 600px)
+ [ ] 8.2 Testar em tablet (600-1024px)
+ [ ] 8.3 Testar em desktop (> 1024px)
+
+[ ] 9. POLISH
+ [ ] 9.1 Animações de transição
+ [ ] 9.2 Estados de loading
+ [ ] 9.3 Empty states
+ [ ] 9.4 Error states
+ [ ] 9.5 Feedback ao usuário (snackbars)
+
+[ ] 10. DOCUMENTAÇÃO
+ [ ] 10.1 Atualizar mapeamento
+ [ ] 10.2 Documentar APIs
+ [ ] 10.3 Atualizar índice geral
+
+═══════════════════════════════════════════════════════════════════════════════
+PARTE 7: CRITÉRIOS DE QUALIDADE
+═══════════════════════════════════════════════════════════════════════════════
+
+O módulo reestruturado DEVE atender a TODOS os critérios: 
+
+1. EXPERIÊNCIA DO USUÁRIO
+[ ] Usuário sabe onde está (hierarquia clara)
+[ ] Usuário sabe o que pode fazer (ações visíveis)
+[ ] Usuário sabe o próximo passo (fluxo intuitivo)
+[ ] Feedback imediato para todas as ações
+[ ] Máximo 3 cliques para qualquer tarefa principal
+
+2. CONSISTÊNCIA
+[ ] Segue padrão visual dos outros módulos
+[ ] Usa componentes do Design System
+[ ] Mesma estrutura de navegação
+[ ] Mesmos padrões de cores e ícones
+
+3. PERFORMANCE
+[ ] Loading states implementados
+[ ] Lazy loading onde aplicável
+[ ] Cache de dados quando possível
+[ ] Sem rebuilds desnecessários
+
+4. CÓDIGO
+[ ] Arquivos < 500 linhas (ideal)
+[ ] Widgets extraídos e reutilizáveis
+[ ] Nomes descritivos
+[ ] Comentários em lógicas complexas
+[ ] Sem código duplicado
+
+5. INTEGRAÇÃO
+[ ] Todos os botões funcionais
+[ ] Todos os endpoints conectados
+[ ] Tratamento de erros completo
+[ ] Estados offline considerados
+
+═══════════════════════════════════════════════════════════════════════════════
+📌 EXEMPLO DE USO
+Para analisar o módulo TAGS, você enviaria:
+
+Code
+PROMPT:  MAPEAMENTO E REESTRUTURAÇÃO COMPLETA DO MÓDULO TAGS
+
+[Todo o conteúdo do prompt acima]
+🎯 RESULTADO ESPERADO
+Ao executar este prompt, você receberá:
+
+Mapeamento técnico completo de todos os arquivos, telas, botões e navegações
+Diagnóstico de integridade identificando o que funciona e o que não funciona
+Análise de UX com problemas identificados e severidade
+Proposta detalhada de reestruturação com layouts ASCII
+Especificações técnicas prontas para implementação
+Checklist para acompanhamento da implementação
+Critérios de qualidade para validação final

@@ -1,0 +1,110 @@
+﻿================================================================================
+CORES HARDCODED APENAS EM PRESENTATION (screens e widgets)
+Auto-excluido: design_system, data models, repositories, providers
+================================================================================
+Data: 12/16/2025 14:09:02
+Total de instancias reais: 6
+Modulos com cores: 2
+
+RESUMO POR MODULO:
+--------------------------------------------------------------------------------
+[products]: 4 instancias
+[tags]: 2 instancias
+
+================================================================================
+
+[MODULO: products] - Total: 4 cores
+================================================================================
+
+Arquivo: products\presentation\screens\product_edit_screen.dart
+Linha: 1076
+Cor: color: Color(0x141E293B),
+
+Contexto:
+----------------------------------------
+        color: ThemeColors.of(context).grey600,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x141E293B),
+            blurRadius: 8,
+            offset: const Offset(0, -2),
+          ),
+--------------------------------------------------------------------------------
+
+Arquivo: products\presentation\screens\product_edit_screen.dart
+Linha: 1211
+Cor: Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+
+Contexto:
+----------------------------------------
+        SnackBar(
+          content: Row(
+            children: [
+              Icon(Icons.check_rounded, color: Color(0xFF6B7280)),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+--------------------------------------------------------------------------------
+
+Arquivo: products\presentation\widgets\qr\products_empty_state.dart
+Linha: 93
+Cor: iconColor: const Color(0xFF4CAF50),
+
+Contexto:
+----------------------------------------
+      icon: Icons.check_circle_outline_rounded,
+      title: 'Todos vinculados!',
+      subtitle: 'Todos os produtos jï¿½ possuem tags vinculadas.',
+      iconColor: const Color(0xFF4CAF50),
+    );
+  }
+
+--------------------------------------------------------------------------------
+
+Arquivo: products\presentation\widgets\qr\products_empty_state.dart
+Linha: 105
+Cor: iconColor: const Color(0xFFFF9800),
+
+Contexto:
+----------------------------------------
+      subtitle: 'Ainda nï¿½o hï¿½ produtos vinculados a tags. Escaneie para comeï¿½ar.',
+      actionLabel: 'Escanear',
+      onAction: onScan,
+      iconColor: const Color(0xFFFF9800),
+    );
+  }
+
+--------------------------------------------------------------------------------
+
+[MODULO: tags] - Total: 2 cores
+================================================================================
+
+Arquivo: tags\presentation\widgets\recent_tags_card.dart
+Linha: 125
+Cor: color: const Color(0xFF6B7280),
+
+Contexto:
+----------------------------------------
+          children: [
+            Icon(
+              Icons.nfc_rounded,
+              color: const Color(0xFF6B7280),
+              size: 40,
+            ),
+            const SizedBox(height: 12),
+--------------------------------------------------------------------------------
+
+Arquivo: tags\presentation\widgets\recent_tags_card.dart
+Linha: 133
+Cor: color: const Color(0xFF6B7280),
+
+Contexto:
+----------------------------------------
+              'Nenhuma tag recente',
+              style: TextStyle(
+                fontSize: isMobile ? 13 : 14,
+                color: const Color(0xFF6B7280),
+              ),
+            ),
+          ],
+--------------------------------------------------------------------------------
