@@ -1,4 +1,4 @@
-Ôªøimport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -6,10 +6,10 @@ import 'package:http/http.dart' as http;
 /// Tela de Testes Completos - Popula banco e testa todos os perfis
 /// 
 /// Este script:
-/// 1. Cria usu√°rios para todos os 5 perfis
+/// 1. Cria usu·rios para todos os 5 perfis
 /// 2. Cria dados de teste (produtos, tags, categorias, etc.)
-/// 3. Testa cada perfil com opera√ß√µes permitidas e negadas
-/// 4. Testa todos os cen√°rios de erro poss√≠veis
+/// 3. Testa cada perfil com operaÁıes permitidas e negadas
+/// 4. Testa todos os cen·rios de erro possÌveis
 class CompleteTestScreen extends ConsumerStatefulWidget {
   const CompleteTestScreen({super.key});
 
@@ -27,7 +27,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
   int _failed = 0;
   int _total = 0;
 
-  // Configura√ß√£o
+  // ConfiguraÁ„o
   static const String baseUrl = 'http://localhost:5000/api';
   
   // Tokens por perfil
@@ -36,12 +36,12 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
   // IDs criados durante os testes
   final Map<String, String> _createdIds = {};
 
-  // Usu√°rios de teste por perfil
+  // Usu·rios de teste por perfil
   static const Map<String, Map<String, dynamic>> testProfiles = {
     'PlatformAdmin': {
       'username': 'tagbean_admin',
       'password': 'TagBean@2025!',
-      'description': 'üîë Dono da Plataforma TagBean - Acesso Total',
+      'description': '?? Dono da Plataforma TagBean - Acesso Total',
       'icon': Icons.admin_panel_settings,
       'color': Colors.purple,
       'existsInDb': true,
@@ -49,7 +49,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     'ClientAdmin': {
       'username': 'demo_admin',
       'password': 'Demo@123',
-      'description': 'üè¢ Dono do Supermercado - Gerencia todas as lojas',
+      'description': '?? Dono do Supermercado - Gerencia todas as lojas',
       'icon': Icons.business,
       'color': Colors.blue,
       'existsInDb': true,
@@ -57,7 +57,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     'StoreManager': {
       'username': 'gerente_loja',
       'password': 'Gerente@123',
-      'description': 'üëî Gerente/Supervisor - Gerencia loja(s) espec√≠fica(s)',
+      'description': '?? Gerente/Supervisor - Gerencia loja(s) especÌfica(s)',
       'icon': Icons.store,
       'color': Colors.teal,
       'existsInDb': false,
@@ -65,7 +65,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     'Operator': {
       'username': 'operador_loja',
       'password': 'Operador@123',
-      'description': 'üõí Repositor/Operador - Opera√ß√µes b√°sicas na loja',
+      'description': '?? Repositor/Operador - OperaÁıes b·sicas na loja',
       'icon': Icons.person,
       'color': Colors.orange,
       'existsInDb': false,
@@ -73,7 +73,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     'Viewer': {
       'username': 'visualizador',
       'password': 'Viewer@123',
-      'description': 'üëÅÔ∏è Visualizador - Apenas leitura',
+      'description': '??? Visualizador - Apenas leitura',
       'icon': Icons.visibility,
       'color': Colors.grey,
       'existsInDb': false,
@@ -84,7 +84,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('üß™ Testes Completos - Todos os Perfis'),
+        title: const Text('?? Testes Completos - Todos os Perfis'),
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         actions: [
@@ -121,8 +121,8 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildStatCard('Total', _total, Colors.blue),
-              _buildStatCard('‚úÖ Passou', _passed, Colors.green),
-              _buildStatCard('‚ùå Falhou', _failed, Colors.red),
+              _buildStatCard('? Passou', _passed, Colors.green),
+              _buildStatCard('? Falhou', _failed, Colors.red),
               _buildStatCard('Taxa', _total > 0 ? '${((_passed / _total) * 100).toStringAsFixed(0)}%' : '0%', Colors.purple),
             ],
           ),
@@ -134,11 +134,11 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              'üìå $_currentPhase',
+              '?? $_currentPhase',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
             Text(
-              'üîÑ $_currentTest',
+              '?? $_currentTest',
               style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
             ),
           ],
@@ -175,7 +175,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
           final profile = entry.value;
           final hasToken = _tokens.containsKey(entry.key);
           return Card(
-            color: hasToken ? (profile['color'] as Color).withValues(alpha: 0.2) : Colors.grey.shade100,
+            color: hasToken ? (profile['color'] as Color)Light : Colors.grey.shade100,
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Row(
@@ -203,7 +203,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
                         style: TextStyle(fontSize: 10, color: Colors.grey),
                       ),
                       if (hasToken)
-                        const Text('‚úÖ Logado', style: TextStyle(fontSize: 9, color: Colors.green)),
+                        const Text('? Logado', style: TextStyle(fontSize: 9, color: Colors.green)),
                     ],
                   ),
                 ],
@@ -226,7 +226,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
           ElevatedButton.icon(
             onPressed: _isRunning ? null : _runCompleteTestSuite,
             icon: const Icon(Icons.play_circle_filled),
-            label: const Text('üöÄ EXECUTAR SUITE COMPLETA'),
+            label: const Text('?? EXECUTAR SUITE COMPLETA'),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green.shade700,
               foregroundColor: Colors.white,
@@ -271,12 +271,12 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
             Icon(Icons.science, size: 80, color: Colors.grey.shade300),
             const SizedBox(height: 16),
             Text(
-              'Execute a suite de testes para come√ßar',
+              'Execute a suite de testes para comeÁar',
               style: TextStyle(color: Colors.grey.shade500, fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
-              'Este teste ir√° criar usu√°rios, popular o banco\ne testar todos os cen√°rios poss√≠veis',
+              'Este teste ir· criar usu·rios, popular o banco\ne testar todos os cen·rios possÌveis',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey.shade400, fontSize: 12),
             ),
@@ -311,7 +311,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
           ),
         ),
         subtitle: Text(
-          '${result.category} ‚Ä¢ ${result.userRole} ‚Ä¢ ${result.duration}ms',
+          '${result.category} ï ${result.userRole} ï ${result.duration}ms',
           style: TextStyle(fontSize: 10),
         ),
         children: [
@@ -412,7 +412,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     // Fase 2: Testar todos os perfis
     await _testAllProfiles();
 
-    // Fase 3: Testar erros e valida√ß√µes
+    // Fase 3: Testar erros e validaÁıes
     await _testAllErrors();
 
     // Fase 4: Casos extremos
@@ -441,21 +441,21 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
     if (platformToken == null || clientToken == null) {
       _addResult(TestResult(
-        name: '‚ùå FALHA CR√çTICA: N√£o foi poss√≠vel autenticar',
+        name: '? FALHA CRÕTICA: N„o foi possÌvel autenticar',
         category: 'Setup',
         userRole: 'Sistema',
         method: '-',
         endpoint: '-',
         statusCode: 0,
         success: false,
-        message: 'Verifique se o backend est√° rodando',
+        message: 'Verifique se o backend est· rodando',
         duration: 0,
       ));
       setState(() => _isRunning = false);
       return;
     }
 
-    // 1.2 Criar usu√°rios de teste para todos os perfis
+    // 1.2 Criar usu·rios de teste para todos os perfis
     await _createTestUsers(clientToken);
 
     // 1.3 Criar categorias de teste
@@ -467,7 +467,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     // 1.5 Criar tags de teste
     await _createTestTags(platformToken);
 
-    // 1.6 Criar estrat√©gias de teste
+    // 1.6 Criar estratÈgias de teste
     await _createTestStrategies(platformToken);
 
     setState(() => _isRunning = false);
@@ -495,7 +495,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
       _addResult(TestResult(
         name: 'Login $profile',
-        category: 'Autentica√ß√£o',
+        category: 'AutenticaÁ„o',
         userRole: profile,
         method: 'POST',
         endpoint: '/auth/login',
@@ -509,7 +509,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       stopwatch.stop();
       _addResult(TestResult(
         name: 'Login $profile',
-        category: 'Autentica√ß√£o',
+        category: 'AutenticaÁ„o',
         userRole: profile,
         method: 'POST',
         endpoint: '/auth/login',
@@ -522,7 +522,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
   }
 
   Future<void> _createTestUsers(String token) async {
-    setState(() => _currentTest = 'Criando usu√°rios de teste...');
+    setState(() => _currentTest = 'Criando usu·rios de teste...');
 
     // Obter o ClientId do demo_admin
     String? clientId;
@@ -567,7 +567,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       if (clientId != null) 'clientId': clientId,
     }, 'Viewer');
 
-    // Fazer login com os novos usu√°rios
+    // Fazer login com os novos usu·rios
     await _login('StoreManager', 'gerente_loja', 'Gerente@123');
     await _login('Operator', 'operador_loja', 'Operador@123');
     await _login('Viewer', 'visualizador', 'Viewer@123');
@@ -575,7 +575,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
   Future<void> _createUser(String token, Map<String, dynamic> userData, String profile) async {
     setState(() {
-      _currentTest = 'Criando usu√°rio: ${userData['username']}';
+      _currentTest = 'Criando usu·rio: ${userData['username']}';
       _total++;
     });
 
@@ -588,7 +588,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       );
       stopwatch.stop();
 
-      // 201 = criado, 409 = j√° existe (ok para nosso caso)
+      // 201 = criado, 409 = j· existe (ok para nosso caso)
       final success = response.statusCode == 201 || response.statusCode == 409 || response.statusCode == 400;
 
       if (response.statusCode == 201) {
@@ -599,7 +599,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       }
 
       _addResult(TestResult(
-        name: 'Criar usu√°rio $profile',
+        name: 'Criar usu·rio $profile',
         category: 'Setup',
         userRole: 'ClientAdmin',
         method: 'POST',
@@ -607,8 +607,8 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
         statusCode: response.statusCode,
         success: success,
         message: response.statusCode == 201 ? 'Criado' : 
-                 response.statusCode == 409 ? 'J√° existe' : 
-                 response.statusCode == 400 ? 'J√° existe (400)' : 'Erro',
+                 response.statusCode == 409 ? 'J· existe' : 
+                 response.statusCode == 400 ? 'J· existe (400)' : 'Erro',
         duration: stopwatch.elapsedMilliseconds,
         requestBody: {...userData, 'password': '***'},
         responseBody: response.body,
@@ -616,7 +616,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     } catch (e) {
       stopwatch.stop();
       _addResult(TestResult(
-        name: 'Criar usu√°rio $profile',
+        name: 'Criar usu·rio $profile',
         category: 'Setup',
         userRole: 'ClientAdmin',
         method: 'POST',
@@ -631,7 +631,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
   Future<void> _createTestCategories(String token) async {
     final categories = [
-      {'name': 'Alimentos', 'description': 'Produtos aliment√≠cios', 'color': '#4CAF50'},
+      {'name': 'Alimentos', 'description': 'Produtos alimentÌcios', 'color': '#4CAF50'},
       {'name': 'Bebidas', 'description': 'Bebidas em geral', 'color': '#2196F3'},
       {'name': 'Higiene', 'description': 'Produtos de higiene pessoal', 'color': '#9C27B0'},
       {'name': 'Limpeza', 'description': 'Produtos de limpeza', 'color': '#FF9800'},
@@ -648,7 +648,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
         token: token,
         body: cat,
         expectSuccess: true,
-        allowStatus: [201, 409, 400], // Criado ou j√° existe
+        allowStatus: [201, 409, 400], // Criado ou j· existe
       );
     }
   }
@@ -657,9 +657,9 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     final products = [
       {'barcode': '7891000100103', 'name': 'Leite Integral 1L', 'price': 5.99, 'category': 0, 'stock': 100},
       {'barcode': '7891000100110', 'name': 'Arroz Tipo 1 5kg', 'price': 24.90, 'category': 0, 'stock': 50},
-      {'barcode': '7891000100127', 'name': 'Feij√£o Preto 1kg', 'price': 8.99, 'category': 0, 'stock': 80},
+      {'barcode': '7891000100127', 'name': 'Feij„o Preto 1kg', 'price': 8.99, 'category': 0, 'stock': 80},
       {'barcode': '7891000100134', 'name': 'Refrigerante Cola 2L', 'price': 9.99, 'category': 1, 'stock': 200},
-      {'barcode': '7891000100141', 'name': '√Ågua Mineral 500ml', 'price': 2.50, 'category': 1, 'stock': 500},
+      {'barcode': '7891000100141', 'name': '¡gua Mineral 500ml', 'price': 2.50, 'category': 1, 'stock': 500},
       {'barcode': '7891000100158', 'name': 'Sabonete 90g', 'price': 2.99, 'category': 2, 'stock': 150},
       {'barcode': '7891000100165', 'name': 'Shampoo 400ml', 'price': 15.90, 'category': 2, 'stock': 60},
       {'barcode': '7891000100172', 'name': 'Detergente 500ml', 'price': 3.49, 'category': 3, 'stock': 100},
@@ -717,14 +717,14 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
   Future<void> _createTestStrategies(String token) async {
     final strategies = [
-      {'name': 'Promo√ß√£o Fim de Semana', 'type': 0, 'configuration': '{"discount": 10}'},
-      {'name': 'Hor√°rio de Pico', 'type': 1, 'configuration': '{"increase": 5}'},
+      {'name': 'PromoÁ„o Fim de Semana', 'type': 0, 'configuration': '{"discount": 10}'},
+      {'name': 'Hor·rio de Pico', 'type': 1, 'configuration': '{"increase": 5}'},
       {'name': 'Queima de Estoque', 'type': 2, 'configuration': '{"discount": 30}'},
     ];
 
     for (final strat in strategies) {
       await _testRequest(
-        name: 'Criar estrat√©gia: ${strat['name']}',
+        name: 'Criar estratÈgia: ${strat['name']}',
         category: 'Setup',
         userRole: 'PlatformAdmin',
         method: 'POST',
@@ -747,7 +747,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
   Future<void> _testAllProfiles() async {
     setState(() {
-      _currentPhase = 'FASE 2: Testando Permiss√µes por Perfil';
+      _currentPhase = 'FASE 2: Testando Permissıes por Perfil';
       _isRunning = true;
     });
 
@@ -780,12 +780,12 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     // PlatformAdmin pode TUDO
     final endpoints = [
       {'method': 'GET', 'endpoint': '/clients', 'name': 'Listar clientes', 'success': true},
-      {'method': 'GET', 'endpoint': '/users', 'name': 'Listar usu√°rios', 'success': true},
+      {'method': 'GET', 'endpoint': '/users', 'name': 'Listar usu·rios', 'success': true},
       {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas', 'success': true},
       {'method': 'GET', 'endpoint': '/products', 'name': 'Listar produtos', 'success': true},
       {'method': 'GET', 'endpoint': '/tags', 'name': 'Listar tags', 'success': true},
       {'method': 'GET', 'endpoint': '/categories', 'name': 'Listar categorias', 'success': true},
-      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Listar estrat√©gias', 'success': true},
+      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Listar estratÈgias', 'success': true},
       {'method': 'GET', 'endpoint': '/gateways', 'name': 'Listar gateways', 'success': true},
       {'method': 'GET', 'endpoint': '/roles', 'name': 'Listar roles', 'success': true},
       {'method': 'GET', 'endpoint': '/reports/dashboard', 'name': 'Ver dashboard', 'success': true},
@@ -795,7 +795,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     for (final ep in endpoints) {
       await _testRequest(
         name: '$profile - ${ep['name']}',
-        category: 'Permiss√µes',
+        category: 'Permissıes',
         userRole: profile,
         method: ep['method'] as String,
         endpoint: ep['endpoint'] as String,
@@ -815,18 +815,18 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
     final tests = [
       {'method': 'GET', 'endpoint': '/clients', 'name': 'Listar clientes (NEGADO)', 'success': false, 'status': 403},
-      {'method': 'GET', 'endpoint': '/users', 'name': 'Listar usu√°rios (pr√≥prio cliente)', 'success': true, 'status': 200},
-      {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas (pr√≥prio cliente)', 'success': true, 'status': 200},
+      {'method': 'GET', 'endpoint': '/users', 'name': 'Listar usu·rios (prÛprio cliente)', 'success': true, 'status': 200},
+      {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas (prÛprio cliente)', 'success': true, 'status': 200},
       {'method': 'GET', 'endpoint': '/products', 'name': 'Listar produtos', 'success': true, 'status': 200},
       {'method': 'GET', 'endpoint': '/tags', 'name': 'Listar tags', 'success': true, 'status': 200},
-      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Listar estrat√©gias', 'success': true, 'status': 200},
+      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Listar estratÈgias', 'success': true, 'status': 200},
       {'method': 'POST', 'endpoint': '/roles', 'name': 'Criar role (NEGADO)', 'success': false, 'status': 403},
     ];
 
     for (final t in tests) {
       await _testRequest(
         name: '$profile - ${t['name']}',
-        category: 'Permiss√µes',
+        category: 'Permissıes',
         userRole: profile,
         method: t['method'] as String,
         endpoint: t['endpoint'] as String,
@@ -841,14 +841,14 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     final token = _tokens['StoreManager'];
     if (token == null) {
       _addResult(TestResult(
-        name: 'StoreManager - SKIP (n√£o logado)',
-        category: 'Permiss√µes',
+        name: 'StoreManager - SKIP (n„o logado)',
+        category: 'Permissıes',
         userRole: 'StoreManager',
         method: '-',
         endpoint: '-',
         statusCode: 0,
         success: false,
-        message: 'Usu√°rio n√£o foi criado ou login falhou',
+        message: 'Usu·rio n„o foi criado ou login falhou',
         duration: 0,
       ));
       setState(() => _total++);
@@ -859,11 +859,11 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     setState(() => _currentTest = 'Testando: $profile (Gerente)');
 
     final tests = [
-      {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas (atribu√≠das)', 'success': true},
+      {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas (atribuÌdas)', 'success': true},
       {'method': 'GET', 'endpoint': '/products', 'name': 'Listar produtos', 'success': true},
       {'method': 'GET', 'endpoint': '/tags', 'name': 'Listar tags', 'success': true},
-      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Listar estrat√©gias', 'success': true},
-      {'method': 'GET', 'endpoint': '/reports/dashboard', 'name': 'Ver relat√≥rios', 'success': true},
+      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Listar estratÈgias', 'success': true},
+      {'method': 'GET', 'endpoint': '/reports/dashboard', 'name': 'Ver relatÛrios', 'success': true},
       {'method': 'GET', 'endpoint': '/clients', 'name': 'Listar clientes (NEGADO)', 'success': false},
       {'method': 'POST', 'endpoint': '/stores', 'name': 'Criar loja (NEGADO)', 'success': false},
     ];
@@ -871,7 +871,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     for (final t in tests) {
       await _testRequest(
         name: '$profile - ${t['name']}',
-        category: 'Permiss√µes',
+        category: 'Permissıes',
         userRole: profile,
         method: t['method'] as String,
         endpoint: t['endpoint'] as String,
@@ -885,14 +885,14 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     final token = _tokens['Operator'];
     if (token == null) {
       _addResult(TestResult(
-        name: 'Operator - SKIP (n√£o logado)',
-        category: 'Permiss√µes',
+        name: 'Operator - SKIP (n„o logado)',
+        category: 'Permissıes',
         userRole: 'Operator',
         method: '-',
         endpoint: '-',
         statusCode: 0,
         success: false,
-        message: 'Usu√°rio n√£o foi criado ou login falhou',
+        message: 'Usu·rio n„o foi criado ou login falhou',
         duration: 0,
       ));
       setState(() => _total++);
@@ -905,9 +905,9 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     final tests = [
       {'method': 'GET', 'endpoint': '/products', 'name': 'Listar produtos', 'success': true},
       {'method': 'GET', 'endpoint': '/tags', 'name': 'Listar tags', 'success': true},
-      {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas (atribu√≠das)', 'success': true},
-      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Ver estrat√©gias (NEGADO)', 'success': false},
-      {'method': 'GET', 'endpoint': '/users', 'name': 'Listar usu√°rios (NEGADO)', 'success': false},
+      {'method': 'GET', 'endpoint': '/stores', 'name': 'Listar lojas (atribuÌdas)', 'success': true},
+      {'method': 'GET', 'endpoint': '/strategies', 'name': 'Ver estratÈgias (NEGADO)', 'success': false},
+      {'method': 'GET', 'endpoint': '/users', 'name': 'Listar usu·rios (NEGADO)', 'success': false},
       {'method': 'POST', 'endpoint': '/products', 'name': 'Criar produto (NEGADO)', 'success': false},
       {'method': 'DELETE', 'endpoint': '/products/qualquer', 'name': 'Deletar produto (NEGADO)', 'success': false},
     ];
@@ -915,7 +915,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     for (final t in tests) {
       await _testRequest(
         name: '$profile - ${t['name']}',
-        category: 'Permiss√µes',
+        category: 'Permissıes',
         userRole: profile,
         method: t['method'] as String,
         endpoint: t['endpoint'] as String,
@@ -929,14 +929,14 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     final token = _tokens['Viewer'];
     if (token == null) {
       _addResult(TestResult(
-        name: 'Viewer - SKIP (n√£o logado)',
-        category: 'Permiss√µes',
+        name: 'Viewer - SKIP (n„o logado)',
+        category: 'Permissıes',
         userRole: 'Viewer',
         method: '-',
         endpoint: '-',
         statusCode: 0,
         success: false,
-        message: 'Usu√°rio n√£o foi criado ou login falhou',
+        message: 'Usu·rio n„o foi criado ou login falhou',
         duration: 0,
       ));
       setState(() => _total++);
@@ -953,13 +953,13 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       {'method': 'POST', 'endpoint': '/products', 'name': 'Criar produto (NEGADO)', 'success': false},
       {'method': 'PUT', 'endpoint': '/products/qualquer', 'name': 'Atualizar produto (NEGADO)', 'success': false},
       {'method': 'DELETE', 'endpoint': '/tags/qualquer', 'name': 'Deletar tag (NEGADO)', 'success': false},
-      {'method': 'POST', 'endpoint': '/strategies', 'name': 'Criar estrat√©gia (NEGADO)', 'success': false},
+      {'method': 'POST', 'endpoint': '/strategies', 'name': 'Criar estratÈgia (NEGADO)', 'success': false},
     ];
 
     for (final t in tests) {
       await _testRequest(
         name: '$profile - ${t['name']}',
-        category: 'Permiss√µes',
+        category: 'Permissıes',
         userRole: profile,
         method: t['method'] as String,
         endpoint: t['endpoint'] as String,
@@ -975,19 +975,19 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
   Future<void> _testAllErrors() async {
     setState(() {
-      _currentPhase = 'FASE 3: Testando Cen√°rios de Erro';
+      _currentPhase = 'FASE 3: Testando Cen·rios de Erro';
       _isRunning = true;
     });
 
     final token = _tokens['PlatformAdmin'] ?? '';
 
-    // 3.1 Erros de Autentica√ß√£o
+    // 3.1 Erros de AutenticaÁ„o
     await _testAuthErrors();
 
-    // 3.2 Erros de Valida√ß√£o
+    // 3.2 Erros de ValidaÁ„o
     await _testValidationErrors(token);
 
-    // 3.3 Erros 404 - Recurso n√£o encontrado
+    // 3.3 Erros 404 - Recurso n„o encontrado
     await _testNotFoundErrors(token);
 
     // 3.4 Erros de Conflito (duplicidade)
@@ -997,13 +997,13 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
   }
 
   Future<void> _testAuthErrors() async {
-    setState(() => _currentTest = 'Testando erros de autentica√ß√£o...');
+    setState(() => _currentTest = 'Testando erros de autenticaÁ„o...');
 
     // Senha incorreta
     await _testRequest(
       name: 'Erro Auth - Senha incorreta',
       category: 'Erros Auth',
-      userRole: 'An√¥nimo',
+      userRole: 'AnÙnimo',
       method: 'POST',
       endpoint: '/auth/login',
       body: {'username': 'tagbean_admin', 'password': 'SenhaErrada'},
@@ -1011,11 +1011,11 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       expectedStatus: 401,
     );
 
-    // Usu√°rio inexistente
+    // Usu·rio inexistente
     await _testRequest(
-      name: 'Erro Auth - Usu√°rio inexistente',
+      name: 'Erro Auth - Usu·rio inexistente',
       category: 'Erros Auth',
-      userRole: 'An√¥nimo',
+      userRole: 'AnÙnimo',
       method: 'POST',
       endpoint: '/auth/login',
       body: {'username': 'usuario_fantasma', 'password': 'Qualquer@123'},
@@ -1027,7 +1027,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     await _testRequest(
       name: 'Erro Auth - Sem credenciais',
       category: 'Erros Auth',
-      userRole: 'An√¥nimo',
+      userRole: 'AnÙnimo',
       method: 'POST',
       endpoint: '/auth/login',
       body: {},
@@ -1039,16 +1039,16 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     await _testRequest(
       name: 'Erro Auth - Endpoint protegido sem token',
       category: 'Erros Auth',
-      userRole: 'An√¥nimo',
+      userRole: 'AnÙnimo',
       method: 'GET',
       endpoint: '/users',
       expectSuccess: false,
       expectedStatus: 401,
     );
 
-    // Token inv√°lido
+    // Token inv·lido
     await _testRequest(
-      name: 'Erro Auth - Token inv√°lido',
+      name: 'Erro Auth - Token inv·lido',
       category: 'Erros Auth',
       userRole: 'Token Falso',
       method: 'GET',
@@ -1060,12 +1060,12 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
   }
 
   Future<void> _testValidationErrors(String token) async {
-    setState(() => _currentTest = 'Testando erros de valida√ß√£o...');
+    setState(() => _currentTest = 'Testando erros de validaÁ„o...');
 
     // Produto sem nome
     await _testRequest(
-      name: 'Valida√ß√£o - Produto sem nome',
-      category: 'Erros Valida√ß√£o',
+      name: 'ValidaÁ„o - Produto sem nome',
+      category: 'Erros ValidaÁ„o',
       userRole: 'PlatformAdmin',
       method: 'POST',
       endpoint: '/products',
@@ -1075,10 +1075,10 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       expectedStatus: 400,
     );
 
-    // Produto com pre√ßo negativo
+    // Produto com preÁo negativo
     await _testRequest(
-      name: 'Valida√ß√£o - Pre√ßo negativo',
-      category: 'Erros Valida√ß√£o',
+      name: 'ValidaÁ„o - PreÁo negativo',
+      category: 'Erros ValidaÁ„o',
       userRole: 'PlatformAdmin',
       method: 'POST',
       endpoint: '/products',
@@ -1088,10 +1088,10 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       expectedStatus: 400,
     );
 
-    // Usu√°rio com email inv√°lido
+    // Usu·rio com email inv·lido
     await _testRequest(
-      name: 'Valida√ß√£o - Email inv√°lido',
-      category: 'Erros Valida√ß√£o',
+      name: 'ValidaÁ„o - Email inv·lido',
+      category: 'Erros ValidaÁ„o',
       userRole: 'PlatformAdmin',
       method: 'POST',
       endpoint: '/users',
@@ -1101,10 +1101,10 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       expectedStatus: 400,
     );
 
-    // MAC address inv√°lido
+    // MAC address inv·lido
     await _testRequest(
-      name: 'Valida√ß√£o - MAC inv√°lido',
-      category: 'Erros Valida√ß√£o',
+      name: 'ValidaÁ„o - MAC inv·lido',
+      category: 'Erros ValidaÁ„o',
       userRole: 'PlatformAdmin',
       method: 'POST',
       endpoint: '/tags',
@@ -1116,8 +1116,8 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
 
     // StoreId vazio
     await _testRequest(
-      name: 'Valida√ß√£o - StoreId obrigat√≥rio',
-      category: 'Erros Valida√ß√£o',
+      name: 'ValidaÁ„o - StoreId obrigatÛrio',
+      category: 'Erros ValidaÁ„o',
       userRole: 'PlatformAdmin',
       method: 'POST',
       endpoint: '/products',
@@ -1165,7 +1165,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     );
 
     await _testRequest(
-      name: '404 - Usu√°rio inexistente',
+      name: '404 - Usu·rio inexistente',
       category: 'Erros 404',
       userRole: 'PlatformAdmin',
       method: 'GET',
@@ -1191,7 +1191,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     setState(() => _currentTest = 'Testando erros de conflito...');
 
     await _testRequest(
-      name: 'Conflito - Usu√°rio duplicado',
+      name: 'Conflito - Usu·rio duplicado',
       category: 'Erros Conflito',
       userRole: 'PlatformAdmin',
       method: 'POST',
@@ -1239,9 +1239,9 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       allowStatus: [400, 201], // Pode aceitar ou rejeitar
     );
 
-    // 4.2 N√∫meros extremos
+    // 4.2 N˙meros extremos
     await _testRequest(
-      name: 'Edge - Pre√ßo muito alto',
+      name: 'Edge - PreÁo muito alto',
       category: 'Casos Extremos',
       userRole: 'PlatformAdmin',
       method: 'POST',
@@ -1268,16 +1268,16 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
       body: {
         'storeId': 'STORE-DEMO-001',
         'barcode': '9999999997',
-        'name': 'Caf√© A√ß√∫car & Cia <script>alert("XSS")</script>',
+        'name': 'CafÈ AÁ˙car & Cia <script>alert("XSS")</script>',
         'price': 10.0,
       },
       expectSuccess: true,
       allowStatus: [201, 400],
     );
 
-    // 4.4 Pagina√ß√£o com valores extremos
+    // 4.4 PaginaÁ„o com valores extremos
     await _testRequest(
-      name: 'Edge - P√°gina negativa',
+      name: 'Edge - P·gina negativa',
       category: 'Casos Extremos',
       userRole: 'PlatformAdmin',
       method: 'GET',
@@ -1384,7 +1384,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
           response = await http.patch(uri, headers: headers, body: body != null ? json.encode(body) : null);
           break;
         default:
-          throw Exception('M√©todo n√£o suportado: $method');
+          throw Exception('MÈtodo n„o suportado: $method');
       }
 
       stopwatch.stop();
@@ -1436,7 +1436,7 @@ class _CompleteTestScreenState extends ConsumerState<CompleteTestScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(_failed == 0 ? 'üéâ Sucesso Total!' : 'üìä Resumo'),
+        title: Text(_failed == 0 ? '?? Sucesso Total!' : '?? Resumo'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -1491,6 +1491,7 @@ class TestResult {
     this.responseBody,
   });
 }
+
 
 
 

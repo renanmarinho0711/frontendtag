@@ -180,7 +180,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).successLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -630,10 +630,10 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
-          border: Border.all(color: relatorio.cor.withValues(alpha: 0.3), width: isMobile ?  1.5 : 2),
+          border: Border.all(color: relatorio.corLight, width: isMobile ?  1.5 : 2),
           boxShadow: [
             BoxShadow(
-              color: relatorio.cor.withValues(alpha: 0.15),
+              color: relatorio.corLight,
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 6 : 8),
             ),
@@ -693,12 +693,12 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        relatorio.cor.withValues(alpha: 0.2),
-                        relatorio.cor.withValues(alpha: 0.1),
+                        relatorio.corLight,
+                        relatorio.corLight,
                       ],
                     ),
                     borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-                    border: Border.all(color: relatorio.cor.withValues(alpha: 0.3)),
+                    border: Border.all(color: relatorio.corLight),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -746,12 +746,12 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              relatorio.cor.withValues(alpha: 0.15),
-                              relatorio.cor.withValues(alpha: 0.05),
+                              relatorio.corLight,
+                              relatorio.corLight,
                             ],
                           ),
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-                          border: Border.all(color: relatorio.cor.withValues(alpha: 0.3)),
+                          border: Border.all(color: relatorio.corLight),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -784,7 +784,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 3.5, tablet: 3.75, desktop: 4),
                               ),
                               decoration: BoxDecoration(
-                                color: relatorio.cor.withValues(alpha: 0.1),
+                                color: relatorio.corLight,
                                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
                               ),
                               child: Text(
@@ -856,7 +856,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                         Container(
                           padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 9, tablet: 9.5, desktop: 10)),
                           decoration: BoxDecoration(
-                            color: relatorio.cor.withValues(alpha: 0.1),
+                            color: relatorio.corLight,
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Icon(
@@ -1122,7 +1122,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: relatorio.cor.withValues(alpha: 0.15),
+                    color: relatorio.corLight,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(Icons.file_download_rounded, color: relatorio.cor, size: 22),
@@ -1182,7 +1182,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withValues(alpha: 0.2)),
+          border: Border.all(color: colorLight),
         ),
         child: Row(
           children: [
@@ -1190,7 +1190,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
             const SizedBox(width: 16),
             Text(format, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: color)),
             const Spacer(),
-            Icon(Icons.arrow_forward_ios_rounded, size: 16, color: color.withValues(alpha: 0.5)),
+            Icon(Icons.arrow_forward_ios_rounded, size: 16, color: colorLight),
           ],
         ),
       ),
@@ -1220,6 +1220,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
     );
   }
 }
+
 
 
 

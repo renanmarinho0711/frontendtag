@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -39,7 +39,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     super.dispose();
   }
 
-  // Calcular estat�sticas de problemas baseadas nas tags reais
+  // Calcular estat?sticas de problemas baseadas nas tags reais
   List<Map<String, dynamic>> _getProblemas(List<TagModel> tags) {
     final lowBattery =
         tags.where((t) => t.batteryLevel < 20 && t.batteryLevel > 0).length;
@@ -57,15 +57,15 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         'filter': 'bateria',
       },
       {
-        'tipo': 'Sem Comunica��o',
+        'tipo': 'Sem Comunica??o',
         'quantidade': offline,
         'cor': ThemeColors.of(context).error,
         'icone': Icons.signal_wifi_off_rounded,
-        'descricao': 'Offline h� mais de 2h',
+        'descricao': 'Offline h? mais de 2h',
         'filter': 'offline',
       },
       {
-        'tipo': 'N�o Vinculadas',
+        'tipo': 'N?o Vinculadas',
         'quantidade': unbound,
         'cor': ThemeColors.of(context).warning,
         'icone': Icons.link_off_rounded,
@@ -73,7 +73,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         'filter': 'unbound',
       },
       {
-        'tipo': 'Bateria Cr�tica',
+        'tipo': 'Bateria Cr?tica',
         'quantidade': criticalBattery,
         'cor': ThemeColors.of(context).error,
         'icone': Icons.battery_0_bar_rounded,
@@ -134,15 +134,15 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
   String _getProblemaDescricao(TagModel tag) {
     final problemas = <String>[];
     if (tag.batteryLevel <= 5) {
-      problemas.add('Bateria Cr�tica (${tag.batteryLevel}%)');
+      problemas.add('Bateria Cr?tica (${tag.batteryLevel}%)');
     } else if (tag.batteryLevel < 20) {
       problemas.add('Bateria Baixa (${tag.batteryLevel}%)');
     }
     if (tag.status == TagStatus.offline) {
-      problemas.add('Sem Comunica��o');
+      problemas.add('Sem Comunica??o');
     }
     if (!tag.isBound) {
-      problemas.add('N�o Vinculada');
+      problemas.add('N?o Vinculada');
     }
     return problemas.isNotEmpty ? problemas.join(', ') : 'Verificar';
   }
@@ -151,9 +151,9 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     if (lastSync == null) return 'Nunca';
     final diff = DateTime.now().difference(lastSync);
     if (diff.inMinutes < 1) return 'Agora';
-    if (diff.inMinutes < 60) return '${diff.inMinutes}min atr�s';
-    if (diff.inHours < 24) return '${diff.inHours}h� atr�s';
-    return '${diff.inDays}d atr�s';
+    if (diff.inMinutes < 60) return '${diff.inMinutes}min atr?s';
+    if (diff.inHours < 24) return '${diff.inHours}h? atr?s';
+    return '${diff.inDays}d atr?s';
   }
 
   @override
@@ -280,7 +280,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   children: [
                     Expanded(
                       child: Text(
-                        'Tags Cr�ticas',
+                        'Tags Cr?ticas',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -386,7 +386,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
           ),
           SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
           Text(
-            'Todas as tags est�o funcionando normalmente.',
+            'Todas as tags est?o funcionando normalmente.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -395,7 +395,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 mobileFontSize: 12,
                 tabletFontSize: 13,
               ),
-              color: ThemeColors.of(context).successIcon.withValues(alpha: 0.8),
+              color: ThemeColors.of(context).successIconDark,
             ),
           ),
         ],
@@ -427,7 +427,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       ),
       child: Row(
         children: [
-          // Bot�o de voltar
+          // Bot?o de voltar
           if (widget.onBack != null) ...[            Container(
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).tealMain,
@@ -456,7 +456,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   AppSizes.paddingLg.get(isMobile, isTablet)),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).error.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).errorLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -476,7 +476,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Diagn�stico de Tags',
+                  'Diagn?stico de Tags',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -550,7 +550,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
             color: (totalProblemas > 0
                     ? ThemeColors.of(context).orangeMain
                     : ThemeColors.of(context).greenMain)
-                .withValues(alpha: 0.3),
+                Light,
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -566,7 +566,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   'Online', online.toString(), Icons.wifi_rounded),
               _buildResumoItem(
                   'Problemas', totalProblemas.toString(), Icons.warning_rounded),
-              _buildResumoItem('Sa�de', '$percentOk%', Icons.favorite_rounded),
+              _buildResumoItem('Sa?de', '$percentOk%', Icons.favorite_rounded),
             ],
           ),
         ],
@@ -617,8 +617,8 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       {'id': 'todos', 'label': 'Todos'},
       {'id': 'bateria', 'label': 'Bateria Baixa'},
       {'id': 'offline', 'label': 'Offline'},
-      {'id': 'unbound', 'label': 'N�o Vinculadas'},
-      {'id': 'critica', 'label': 'Cr�ticos'},
+      {'id': 'unbound', 'label': 'N?o Vinculadas'},
+      {'id': 'critica', 'label': 'Cr?ticos'},
     ];
 
     return SingleChildScrollView(
@@ -690,9 +690,9 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       child: Container(
         padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: cor.withValues(alpha: 0.1),
+          color: corLight,
           borderRadius: BorderRadius.circular(isMobile ? 14 : 16),
-          border: Border.all(color: cor.withValues(alpha: 0.3)),
+          border: Border.all(color: corLight),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -751,7 +751,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 14 : 16),
-        border: Border.all(color: corPrioridade.withValues(alpha: 0.3)),
+        border: Border.all(color: corPrioridadeLight),
         boxShadow: [
           BoxShadow(
             color: ThemeColors.of(context).textPrimaryOverlay05,
@@ -777,12 +777,12 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 ),
               ),
               SizedBox(width: AppSizes.paddingMd.get(isMobile, isTablet)),
-              // �cone de bateria
+              // ?cone de bateria
               Container(
                 padding:
                     EdgeInsets.all(AppSizes.paddingXs.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: corPrioridade.withValues(alpha: 0.1),
+                  color: corPrioridadeLight,
                   borderRadius: BorderRadius.circular(
                       AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
@@ -793,7 +793,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 ),
               ),
               SizedBox(width: AppSizes.paddingMd.get(isMobile, isTablet)),
-              // Informa��es
+              // Informa??es
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -823,7 +823,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                                 AppSizes.paddingXxs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: corPrioridade.withValues(alpha: 0.1),
+                            color: corPrioridadeLight,
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
@@ -871,7 +871,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   ],
                 ),
               ),
-              // �ltima atualiza��o
+              // ?ltima atualiza??o
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -963,7 +963,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-              const Expanded(child: Text('Diagn�stico atualizado!')),
+              const Expanded(child: Text('Diagn?stico atualizado!')),
             ],
           ),
           backgroundColor: ThemeColors.of(context).greenMain,
@@ -977,6 +977,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     }
   }
 }
+
 
 
 

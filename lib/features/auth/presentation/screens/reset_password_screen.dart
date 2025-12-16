@@ -276,9 +276,9 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).error.withValues(alpha: 0.1),
+                    color: ThemeColors.of(context).errorLight,
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: ThemeColors.of(context).error.withValues(alpha: 0.3)),
+                    border: Border.all(color: ThemeColors.of(context).errorLight),
                   ),
                   child: Row(
                     children: [
@@ -318,7 +318,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
             Container(
               padding: EdgeInsets.all(AppSpacing.xl),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).brandPrimaryGreenLight,
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -643,6 +643,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
     );
   }
 }
+
 
 
 

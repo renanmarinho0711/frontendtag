@@ -294,7 +294,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
             AppSizes.paddingSmAlt.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: colorLight,
             borderRadius: BorderRadius.circular(
               isMobile ? 8 : 10,
             ),
@@ -364,6 +364,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
     );
   }
 }
+
 
 
 

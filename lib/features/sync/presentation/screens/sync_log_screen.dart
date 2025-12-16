@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -29,7 +29,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   String _lastFiltroStatus = 'Todos';
   String _lastFiltroTipo = 'Todos';
 
-  // Obt�m logs do provider
+  // Obt?m logs do provider
   List<SyncHistoryEntry> get _logs => ref.watch(syncHistoryProvider);
 
   // Getter com cache para logs filtrados
@@ -211,7 +211,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Log de Sincroniza��o',
+                  'Log de Sincroniza??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -225,7 +225,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                   ),
                 ),
                 Text(
-                  'Hist�rico detalhado',
+                  'Hist?rico detalhado',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -572,7 +572,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                     ),
                     isDense: true,
                   ),
-                  items: ['Todos', 'Completa', 'Pre�os', 'Produtos Novos', 'Tags']
+                  items: ['Todos', 'Completa', 'Pre?os', 'Produtos Novos', 'Tags']
                       .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                       .toList(),
                   onChanged: (value) {
@@ -619,12 +619,12 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             ),
           ),
           border: Border.all(
-            color: logColor.withValues(alpha: 0.3),
+            color: logColorLight,
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: logColor.withValues(alpha: 0.1),
+              color: logColorLight,
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 15,
@@ -664,7 +664,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: logColor.withValues(alpha: 0.3),
+                    color: logColorLight,
                     blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                       context,
                       mobile: 10,
@@ -710,7 +710,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: logColor.withValues(alpha: 0.1),
+                    color: logColorLight,
                     borderRadius: BorderRadius.circular(
                       ResponsiveHelper.getResponsiveBorderRadius(
                         context,
@@ -840,7 +840,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                       height: AppSizes.spacingXsAlt2.get(isMobile, isTablet),
                     ),
                     Text(
-                      log.details ?? 'Nenhum detalhe dispon�vel.',
+                      log.details ?? 'Nenhum detalhe dispon?vel.',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -1140,11 +1140,11 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               _buildInfoRow('Data/Hora:', log.formattedDate),
               _buildInfoRow('Tipo:', log.type.label),
               _buildInfoRow('Status:', log.status.label),
-              _buildInfoRow('Usu�rio:', log.executedBy ?? 'Sistema'),
+              _buildInfoRow('Usu?rio:', log.executedBy ?? 'Sistema'),
               _buildInfoRow('Produtos:', '${log.productsCount}'),
               _buildInfoRow('Tags:', '${log.tagsCount}'),
               _buildInfoRow('Erros:', '${log.errorCount}'),
-              _buildInfoRow('Dura��o:', log.durationFormatted),
+              _buildInfoRow('Dura??o:', log.durationFormatted),
               SizedBox(
                 height: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
@@ -1169,7 +1169,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                 height: AppSizes.spacingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                log.details ?? 'Nenhum detalhe dispon�vel.',
+                log.details ?? 'Nenhum detalhe dispon?vel.',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     dialogContext,
@@ -1385,7 +1385,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
       ),
     );
 
-    // Gerar dados do log para exporta��o
+    // Gerar dados do log para exporta??o
     final syncState = ref.read(syncProvider);
     final history = syncState.history;
     
@@ -1393,30 +1393,30 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Nenhum log dispon�vel para exportar'),
+          content: Text('Nenhum log dispon?vel para exportar'),
           backgroundColor: ThemeColors.of(context).warningIcon,
         ),
       );
       return;
     }
     
-    // Converter hist�rico para texto
+    // Converter hist?rico para texto
     final buffer = StringBuffer();
-    buffer.writeln('=== LOG DE SINCRONIZA��O TAGBEAN ===');
+    buffer.writeln('=== LOG DE SINCRONIZA??O TAGBEAN ===');
     buffer.writeln('Gerado em: ${DateTime.now().toString()}');
     buffer.writeln('Total de registros: ${history.length}');
     buffer.writeln('');
     
     for (final entry in history) {
-      buffer.writeln('--- Sincroniza��o ${entry.id} ---');
+      buffer.writeln('--- Sincroniza??o ${entry.id} ---');
       buffer.writeln('Tipo: ${entry.type.name}');
       buffer.writeln('Status: ${entry.status.name}');
       buffer.writeln('Iniciado: ${entry.startedAt}');
-      buffer.writeln('Conclu�do: ${entry.completedAt}');
+      buffer.writeln('Conclu?do: ${entry.completedAt}');
       buffer.writeln('Tags: ${entry.tagsCount}');
       buffer.writeln('Sucesso: ${entry.successCount}');
       buffer.writeln('Erros: ${entry.errorCount}');
-      buffer.writeln('Dura��o: ${entry.duration?.inSeconds ?? 0}s');
+      buffer.writeln('Dura??o: ${entry.duration?.inSeconds ?? 0}s');
       buffer.writeln('');
     }
     
@@ -1470,6 +1470,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
     );
   }
 }
+
 
 
 

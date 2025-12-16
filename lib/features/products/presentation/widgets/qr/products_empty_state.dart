@@ -34,7 +34,7 @@ class ProductsEmptyState extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(AppSpacing.xl),
               decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
+                color: colorLight,
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -115,6 +115,7 @@ class ProductsEmptyState extends StatelessWidget {
     );
   }
 }
+
 
 
 

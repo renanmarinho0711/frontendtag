@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -662,10 +662,10 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
-          border: Border.all(color: statusColor.withValues(alpha: 0.2), width: 2),
+          border: Border.all(color: statusColorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: statusColor.withValues(alpha: 0.1),
+              color: statusColorLight,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
             ),
@@ -722,9 +722,9 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 1, tablet: 2, desktop: 2),
                               ),
                               decoration: BoxDecoration(
-                                color: statusColor.withValues(alpha: 0.1),
+                                color: statusColorLight,
                                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
-                                border: Border.all(color: statusColor.withValues(alpha: 0.3)),
+                                border: Border.all(color: statusColorLight),
                               ),
                               child: Text(
                                 statusText,
@@ -776,7 +776,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                           ),
                         ],
                         SizedBox(height: AppSizes.paddingXsAlt.get(isMobile, isTablet)),
-                        // Bateria, Sinal, Online e �ltima sincronizao
+                        // Bateria, Sinal, Online e ?ltima sincronizao
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -822,7 +822,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                               ),
                               SizedBox(width: AppSizes.paddingXxs.get(isMobile, isTablet)),
                               Text(
-                                '${tag.temperature}�C',
+                                '${tag.temperature}?C',
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10, tabletFontSize: 10),
                                   overflow: TextOverflow.ellipsis,
@@ -969,8 +969,8 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                 gradient: isInitialEmpty
                     ? LinearGradient(
                         colors: [
-                          ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
-                          ThemeColors.of(context).blueCyan.withValues(alpha: 0.05),
+                          ThemeColors.of(context).blueCyanLight,
+                          ThemeColors.of(context).blueCyanLight,
                         ],
                       )
                     : null,
@@ -1079,9 +1079,9 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                 width: isMobile ? double.infinity : 400,
                 padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.05),
+                  color: ThemeColors.of(context).blueCyanLight,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.2)),
+                  border: Border.all(color: ThemeColors.of(context).blueCyanLight),
                 ),
                 child: Row(
                   children: [
@@ -1394,6 +1394,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
     );
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -196,7 +196,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                   ),
                 ),
                 Text(
-                  'Alterar pre�os em %',
+                  'Alterar pre?os em %',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -278,7 +278,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Configura��o do Ajuste',
+                'Configura??o do Ajuste',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -328,7 +328,7 @@ class _PrecificacaoAjustePorcentagemScreenState
               ),
               Expanded(
                 child: _buildTipoButton(
-                  'Redu��o',
+                  'Redu??o',
                   Icons.trending_down_rounded,
                   1,
                   ThemeColors.of(context).error,
@@ -367,8 +367,8 @@ class _PrecificacaoAjustePorcentagemScreenState
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
               ),
               helperText: _tipoAjuste == 0
-                  ? 'Valor que ser� acrescido aos pre�os'
-                  : 'Valor que ser� descontado dos pre�os',
+                  ? 'Valor que ser? acrescido aos pre?os'
+                  : 'Valor que ser? descontado dos pre?os',
               helperStyle: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -419,7 +419,7 @@ class _PrecificacaoAjustePorcentagemScreenState
           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: isSelected ? color.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondaryOverlay10,
+          color: isSelected ? colorLight : ThemeColors.of(context).textSecondaryOverlay10,
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
           ),
@@ -526,7 +526,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Sele��o de Produtos',
+                'Sele??o de Produtos',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -567,7 +567,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                       ),
                     )
                   : const Icon(Icons.calculate_rounded),
-              label: Text(_calculando ? 'Calculando...' : 'Calcular Pr�via'),
+              label: Text(_calculando ? 'Calculando...' : 'Calcular Pr?via'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: ThemeColors.of(context).blueCyan,
                 foregroundColor: ThemeColors.of(context).surface,
@@ -607,7 +607,7 @@ class _PrecificacaoAjustePorcentagemScreenState
       child: Container(
         padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: isSelected ? ThemeColors.of(context).primaryLight.withValues(alpha: 0.2) : ThemeColors.of(context).transparent,
+          color: isSelected ? ThemeColors.of(context).primaryLightLight : ThemeColors.of(context).transparent,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textSecondaryOverlay30,
@@ -664,10 +664,10 @@ class _PrecificacaoAjustePorcentagemScreenState
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 18 : 20),
-        border: Border.all(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3)),
+        border: Border.all(color: ThemeColors.of(context).blueCyanLight),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).blueCyanLight,
             blurRadius: 15,
             offset: const Offset(0, 4),
           ),
@@ -690,7 +690,7 @@ class _PrecificacaoAjustePorcentagemScreenState
               ),
               const SizedBox(width: 12),
               const Text(
-                'Pr�via do Ajuste',
+                'Pr?via do Ajuste',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -783,6 +783,7 @@ class _PrecificacaoAjustePorcentagemScreenState
     );
   }
 }
+
 
 
 

@@ -1,9 +1,9 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-/// Card base reutilizÃ¡vel para o mÃ³dulo de sincronizaÃ§Ã£o.
+/// Card base reutilizável para o módulo de sincronização.
 /// Fornece estilo consistente com suporte a responsividade.
 class SyncCard extends StatelessWidget {
   final Widget child;
@@ -54,7 +54,7 @@ class SyncCard extends StatelessWidget {
           : null,
       boxShadow: [
         BoxShadow(
-          color: (borderColor ?? ThemeColors.of(context).textPrimary).withValues(alpha: 0.1),
+          color: (borderColor ?? ThemeColors.of(context).textPrimary)Light,
           blurRadius: isMobile ? 15 : 20,
           offset: const Offset(0, 4),
         ),
@@ -87,7 +87,7 @@ class SyncCard extends StatelessWidget {
   }
 }
 
-/// Card com header e conteÃºdo para seÃ§Ãµes do mÃ³dulo de sync.
+/// Card com header e conteúdo para seções do módulo de sync.
 class SyncSectionCard extends StatelessWidget {
   final String title;
   final String? subtitle;
@@ -190,4 +190,5 @@ class SyncSectionCard extends StatelessWidget {
     );
   }
 }
+
 

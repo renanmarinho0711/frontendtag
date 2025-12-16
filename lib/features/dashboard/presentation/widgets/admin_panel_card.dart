@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -54,7 +54,7 @@ class AdminPanelCard extends ConsumerWidget {
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         boxShadow: [
           BoxShadow(
-            color: (isPlatformAdmin ? ThemeColors.of(context).moduleDashboard : ThemeColors.of(context).blueCyan).withValues(alpha: 0.3),
+            color: (isPlatformAdmin ? ThemeColors.of(context).moduleDashboard : ThemeColors.of(context).blueCyan)Light,
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -339,6 +339,7 @@ class AdminPanelCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

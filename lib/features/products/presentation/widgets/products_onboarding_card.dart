@@ -58,15 +58,15 @@ class ProductsOnboardingCard extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            config.color.withValues(alpha: 0.15),
-            config.color.withValues(alpha: 0.05),
+            config.colorLight,
+            config.colorLight,
           ],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
-        border: Border.all(color: config.color.withValues(alpha: 0.3), width: 1.5),
+        border: Border.all(color: config.colorLight, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: config.color.withValues(alpha: 0.1),
+            color: config.colorLight,
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -80,7 +80,7 @@ class ProductsOnboardingCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
-                  color: config.color.withValues(alpha: 0.2),
+                  color: config.colorLight,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(config.icon, color: config.color, size: 28),
@@ -219,7 +219,7 @@ class ProductsOnboardingCard extends StatelessWidget {
       label: Text(label),
       style: OutlinedButton.styleFrom(
         foregroundColor: color,
-        side: BorderSide(color: color.withValues(alpha: 0.5)),
+        side: BorderSide(color: colorLight),
         padding: EdgeInsets.symmetric(
           horizontal: isMobile ? 16 : 20,
           vertical: isMobile ? 12 : 14,
@@ -256,6 +256,7 @@ class _ActionConfig {
 
   _ActionConfig(this.label, this.icon, this.onTap, this.isPrimary);
 }
+
 
 
 

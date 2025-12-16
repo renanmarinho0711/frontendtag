@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
@@ -233,7 +233,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         gradient: LinearGradient(
           colors: [
             ThemeColors.of(context).blueMain,
-            ThemeColors.of(context).blueMain.withValues(alpha: 0.8),
+            ThemeColors.of(context).blueMainDark,
           ],
         ),
         borderRadius: BorderRadius.circular(16),
@@ -299,7 +299,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -313,7 +313,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).greenMainLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(
@@ -411,7 +411,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -425,7 +425,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeMainLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(
@@ -512,7 +512,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -529,7 +529,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                      color: ThemeColors.of(context).successLight,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Icon(
@@ -620,7 +620,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -637,7 +637,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                      color: ThemeColors.of(context).blueMainLight,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Icon(
@@ -961,6 +961,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
     }
   }
 }
+
 
 
 

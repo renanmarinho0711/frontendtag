@@ -29,12 +29,12 @@ class ProductBindingCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isPendente 
-            ? ThemeColors.of(context).warning.withValues(alpha: 0.3)
-            : ThemeColors.of(context).success.withValues(alpha: 0.3),
+            ? ThemeColors.of(context).warningLight
+            : ThemeColors.of(context).successLight,
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -146,7 +146,7 @@ class ProductBindingCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+        color: ThemeColors.of(context).brandPrimaryGreenLight,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(
@@ -164,7 +164,7 @@ class ProductBindingCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+        color: ThemeColors.of(context).successLight,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -194,7 +194,7 @@ class ProductBindingCard extends StatelessWidget {
       return IconButton(
         onPressed: onBindTag,
         style: IconButton.styleFrom(
-          backgroundColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+          backgroundColor: ThemeColors.of(context).brandPrimaryGreenLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -209,7 +209,7 @@ class ProductBindingCard extends StatelessWidget {
       return IconButton(
         onPressed: onUnbindTag,
         style: IconButton.styleFrom(
-          backgroundColor: ThemeColors.of(context).warning.withValues(alpha: 0.1),
+          backgroundColor: ThemeColors.of(context).warningLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -223,6 +223,7 @@ class ProductBindingCard extends StatelessWidget {
     }
   }
 }
+
 
 
 

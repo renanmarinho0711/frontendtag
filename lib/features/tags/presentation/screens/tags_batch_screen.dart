@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -32,7 +32,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
   /// Total de tags do provider
   int get _totalTags => ref.watch(tagsNotifierProvider).tags.length;
 
-  // Opera��es dispon�veis (configura��o est�tica)
+  // Opera??es dispon?veis (configura??o est?tica)
   static final List<Map<String, dynamic>> _operacoes = [
     {
       'id': 0,
@@ -53,18 +53,18 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
     {
       'id': 2,
       'titulo': 'Sincronizar',
-      'subtitulo': 'Atualizar m�ltiplas tags',
+      'subtitulo': 'Atualizar m?ltiplas tags',
       'icone': Icons.sync_rounded,
       'cor': ThemeColors.of(context).blueMain,
       'gradiente': [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark],
     },
   ];
 
-  // Obter tags dispon�veis do provider
+  // Obter tags dispon?veis do provider
   List<TagModel> _getTagsDisponiveis(List<TagModel> allTags) {
     if (_categoriaFiltro == 'Associadas') {
       return allTags.where((t) => t.isBound).toList();
-    } else if (_categoriaFiltro == 'Dispon�veis') {
+    } else if (_categoriaFiltro == 'Dispon?veis') {
       return allTags.where((t) => !t.isBound).toList();
     }
     return allTags;
@@ -210,7 +210,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Opera��es em Lote',
+                  'Opera??es em Lote',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -224,7 +224,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                 ),
                 Text(
-                  'Gerenciar m�ltiplas tags',
+                  'Gerenciar m?ltiplas tags',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -309,13 +309,13 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                     border: Border.all(
                       color: isSelected
                           ? ThemeColors.of(context).transparent
-                          : (op['cor'] as Color).withValues(alpha: 0.3),
+                          : (op['cor'] as Color)Light,
                       width: 2,
                     ),
                     boxShadow: [
                       BoxShadow(
                         color: isSelected
-                            ? (op['cor'] as Color).withValues(alpha: 0.3)
+                            ? (op['cor'] as Color)Light
                             : ThemeColors.of(context).textPrimaryOverlay05,
                         blurRadius: isMobile ? 15 : 20,
                         offset: Offset(0, isMobile ? 6 : 8),
@@ -333,7 +333,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         decoration: BoxDecoration(
                           color: isSelected
                               ? ThemeColors.of(context).surfaceOverlay20
-                              : (op['cor'] as Color).withValues(alpha: 0.1),
+                              : (op['cor'] as Color)Light,
                           borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
                         ),
                         child: Icon(
@@ -455,7 +455,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   Expanded(
                     child: Text(
-                      'Desassociar M�ltiplas Tags',
+                      'Desassociar M?ltiplas Tags',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -630,7 +630,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         size: AppSizes.iconSmall.get(isMobile, isTablet),
                       ),
                       label: Text(
-                        'Executar Desassocia��o',
+                        'Executar Desassocia??o',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -714,7 +714,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                     width: AppSizes.paddingBase.get(isMobile, isTablet),
                   ),
                   Text(
-                    'Excluir M�ltiplas Tags',
+                    'Excluir M?ltiplas Tags',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -733,7 +733,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 height: AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               Text(
-                'Escolha o m�todo de sele��o:',
+                'Escolha o m?todo de sele??o:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -764,7 +764,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   Expanded(
                     child: _buildExclusionMethod(
-                      'Sele��o Manual',
+                      'Sele??o Manual',
                       'Escolher tags',
                       Icons.checklist_rounded,
                       ThemeColors.of(context).blueCyan,
@@ -797,7 +797,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                     ),
                     Expanded(
                       child: Text(
-                        'ATEN��O: Esta opera��o n�o pode ser desfeita!',
+                        'ATEN??O: Esta opera??o n?o pode ser desfeita!',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -853,9 +853,9 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
           AppSizes.paddingMdAlt.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
+          color: colorLight,
           borderRadius: BorderRadius.circular(isMobile ? 14 : 16),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          border: Border.all(color: colorLight),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -986,7 +986,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 height: AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               Text(
-                'Filtros para sele��o:',
+                'Filtros para sele??o:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1026,7 +1026,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   isDense: true,
                 ),
-                items: ['Todas', 'Associadas', 'Dispon�veis', 'Offline']
+                items: ['Todas', 'Associadas', 'Dispon?veis', 'Offline']
                     .map((e) => DropdownMenuItem(
                           value: e,
                           child: Text(
@@ -1128,7 +1128,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                           width: AppSizes.paddingXs.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Resumo da Sincroniza��o',
+                          'Resumo da Sincroniza??o',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1184,7 +1184,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                               child: CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface)),
                             )
                           : Icon(Icons.sync_rounded, size: AppSizes.iconSmall.get(isMobile, isTablet)),
-                      label: Text(_processando ? 'Sincronizando...' : 'Executar Sincroniza��o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
+                      label: Text(_processando ? 'Sincronizando...' : 'Executar Sincroniza??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(vertical: AppSizes.paddingSm.get(isMobile, isTablet)),
                         backgroundColor: ThemeColors.of(context).blueMain,
@@ -1220,7 +1220,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
         icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).orangeMain, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
-        title: Text('Confirmar Desassocia��o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
+        title: Text('Confirmar Desassocia??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
         content: Text('Deseja desassociar ${_tagsDesassociar.length} tag(s) selecionada(s)?', textAlign: TextAlign.center, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context), child: Text('Cancelar', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13)))),
@@ -1247,7 +1247,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   return;
                 }
                 
-                // Executar desassocia��o em lote via notifier
+                // Executar desassocia??o em lote via notifier
                 final result = await ref.read(tagsNotifierProvider.notifier).batchUnbindTags(
                   storeId: storeId,
                   macAddresses: _tagsDesassociar.toList(),
@@ -1330,7 +1330,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
         return;
       }
       
-      // Executar sincroniza��o real via provider
+      // Executar sincroniza??o real via provider
       final result = await ref.read(syncProvider.notifier).syncTags(storeId);
       
       if (mounted) {
@@ -1346,7 +1346,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                   Flexible(
                     child: Text(
-                      'Sincroniza��o conclu�da! ${result.successCount} de ${result.totalProcessed} tags.',
+                      'Sincroniza??o conclu?da! ${result.successCount} de ${result.totalProcessed} tags.',
                       style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13)),
                     ),
                   ),
@@ -1383,6 +1383,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
     }
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-Ôªøimport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -11,7 +11,7 @@ class CompactAlertsCard extends ConsumerWidget {
   final VoidCallback onTap;
   
   /// Lista de alertas customizados (opcional)
-  /// Se n√£o fornecida, usa dados do DashboardProvider
+  /// Se n„o fornecida, usa dados do DashboardProvider
   final List<DashboardAlert>? customAlerts;
   
   const CompactAlertsCard({
@@ -47,7 +47,7 @@ class CompactAlertsCard extends ConsumerWidget {
           border: Border.all(color: ThemeColors.of(context).errorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).redMain.withValues(alpha: 0.15),
+              color: ThemeColors.of(context).redMainLight,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 5),
             ),
@@ -104,7 +104,7 @@ class CompactAlertsCard extends ConsumerWidget {
                           height: AppSizes.paddingMicro.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Requer aten√ß√£o imediata',
+                          'Requer atenÁ„o imediata',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -202,6 +202,7 @@ class CompactAlertsCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

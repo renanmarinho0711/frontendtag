@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
@@ -64,18 +64,18 @@ class NextActionCard extends ConsumerWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                (suggestion['color'] as Color).withValues(alpha: 0.05),
-                (suggestion['color'] as Color).withValues(alpha: 0.15),
+                (suggestion['color'] as Color)Light,
+                (suggestion['color'] as Color)Light,
               ],
             ),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: (suggestion['color'] as Color).withValues(alpha: 0.3),
+              color: (suggestion['color'] as Color)Light,
               width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: (suggestion['color'] as Color).withValues(alpha: 0.1),
+                color: (suggestion['color'] as Color)Light,
                 blurRadius: 12,
                 offset: const Offset(0, 4),
               ),
@@ -90,7 +90,7 @@ class NextActionCard extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: (suggestion['color'] as Color).withValues(alpha: 0.15),
+                      color: (suggestion['color'] as Color)Light,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Icon(
@@ -325,6 +325,7 @@ class NextActionCard extends ConsumerWidget {
     return null;
   }
 }
+
 
 
 

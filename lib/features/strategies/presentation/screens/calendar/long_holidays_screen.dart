@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -192,7 +192,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   ),
                 ),
                 Text(
-                  'Detec��o de Pontes',
+                  'Detec??o de Pontes',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -270,7 +270,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               Icons.settings_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Configura��o',
+            text: 'Configura??o',
           ),
           Tab(
             icon: Icon(
@@ -424,7 +424,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Pontes e Feriad�es',
+                  'Pontes e Feriad?es',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -441,7 +441,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  holidaysState.isStrategyActive ? 'Detec��o ativa' : 'Detec��o inativa',
+                  holidaysState.isStrategyActive ? 'Detec??o ativa' : 'Detec??o inativa',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -498,7 +498,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+              color: ThemeColors.of(context).blueMainLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
               ),
@@ -518,7 +518,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Detec��o Autom�tica',
+                  'Detec??o Autom?tica',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -580,10 +580,10 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
         ),
-        border: Border.all(color: cor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(color: corLight, width: 2),
         boxShadow: [
           BoxShadow(
-            color: cor.withValues(alpha: 0.15),
+            color: corLight,
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 4 : 6),
           ),
@@ -609,7 +609,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: cor.withValues(alpha: 0.3),
+                      color: corLight,
                       blurRadius: isMobile ? 10 : 12,
                       offset: const Offset(0, 4),
                     ),
@@ -686,7 +686,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [cor, cor.withValues(alpha: 0.8)],
+                    colors: [cor, corDark],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 8 : 10,
@@ -759,7 +759,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeMainLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
@@ -829,7 +829,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+                      color: ThemeColors.of(context).blueCyanLight,
                       blurRadius: isMobile ? 6 : 8,
                       offset: const Offset(0, 3),
                     ),
@@ -889,15 +889,15 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              feriado.color.withValues(alpha: 0.1),
-              feriado.color.withValues(alpha: 0.05),
+              feriado.colorLight,
+              feriado.colorLight,
             ],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: feriado.color.withValues(alpha: 0.3),
+            color: feriado.colorLight,
             width: 2,
           ),
         ),
@@ -920,7 +920,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: feriado.color.withValues(alpha: 0.3),
+                    color: feriado.colorLight,
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -990,10 +990,10 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                       vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: feriado.color.withValues(alpha: 0.1),
+                      color: feriado.colorLight,
                       borderRadius: BorderRadius.circular(6),
                       border: Border.all(
-                        color: feriado.color.withValues(alpha: 0.3),
+                        color: feriado.colorLight,
                       ),
                     ),
                     child: Text(
@@ -1164,7 +1164,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? Identifica quando h� ponte ou feriad�o',
+                '? Identifica quando h? ponte ou feriad?o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1179,7 +1179,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre�os de produtos de lazer e viagem',
+                '? Aumenta pre?os de produtos de lazer e viagem',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1209,7 +1209,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Maximiza vendas em per�odos de turismo',
+                '? Maximiza vendas em per?odos de turismo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1270,7 +1270,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    success ? 'Configura��es Salvas!' : 'Erro ao salvar',
+                    success ? 'Configura??es Salvas!' : 'Erro ao salvar',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1306,6 +1306,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
     );
   }
 }
+
 
 
 

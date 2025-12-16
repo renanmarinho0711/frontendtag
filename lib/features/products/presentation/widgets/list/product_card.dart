@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
@@ -64,7 +64,7 @@ class ProductCard extends StatelessWidget {
                   EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
               child: Row(
                 children: [
-                  // Checkbox para modo de sele��o
+                  // Checkbox para modo de sele??o
                   if (isSelectionMode) ...[
                     Checkbox(
                       value: isSelected,
@@ -134,7 +134,7 @@ class ProductCard extends StatelessWidget {
                   vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: produto.cor.withValues(alpha: 0.1),
+                  color: produto.corLight,
                   borderRadius: AppRadius.xs,
                 ),
                 child: Text(
@@ -152,7 +152,7 @@ class ProductCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: const Text('•',
+              child: const Text('�',
                   style: TextStyle(color: ThemeColors.of(context).textSecondary)),
             ),
             Icon(
@@ -257,7 +257,7 @@ class ProductCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         if (produto.preco <= 0) ...[
-          // Alerta visual para produto sem pre�o
+          // Alerta visual para produto sem pre?o
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: AppSizes.paddingXsAlt3.get(isMobile, isTablet),
@@ -278,7 +278,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 const SizedBox(width: AppSpacing.xxs),
                 Text(
-                  'Sem pre�o',
+                  'Sem pre?o',
                   style: TextStyle(
                     fontSize:
                         AppTextStyles.fontSizeMicroAlt2.get(isMobile, isTablet),
@@ -313,6 +313,7 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

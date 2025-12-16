@@ -239,7 +239,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
               vertical: AppSizes.extraSmallPadding.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).blueCyanLight,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -465,13 +465,13 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              (stat['cor'] as Color).withValues(alpha: 0.1),
-              (stat['cor'] as Color).withValues(alpha: 0.05),
+              (stat['cor'] as Color)Light,
+              (stat['cor'] as Color)Light,
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: (stat['cor'] as Color).withValues(alpha: 0.3),
+            color: (stat['cor'] as Color)Light,
             width: AppSizes.borderWidthResponsive.get(isMobile, isTablet),
           ),
         ),
@@ -511,7 +511,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color).withValues(alpha: 0.1),
+                color: (stat['cor'] as Color)Light,
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -631,7 +631,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
         ),
         boxShadow: [
           BoxShadow(
-            color: (opcao['gradiente'][0] as Color).withValues(alpha: 0.3),
+            color: (opcao['gradiente'][0] as Color)Light,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 12,
@@ -857,6 +857,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
     );
   }
 }
+
 
 
 

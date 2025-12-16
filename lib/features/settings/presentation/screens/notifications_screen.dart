@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -250,7 +250,7 @@ class _ConfiguracoesNotificacoesScreenState
                 vertical: AppSizes.paddingXsAlt4.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.2),
+                color: ThemeColors.of(context).yellowGoldLight,
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -443,12 +443,12 @@ class _ConfiguracoesNotificacoesScreenState
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ? color.withValues(alpha: 0.05) : ThemeColors.of(context).backgroundLight,
+        color: value ? colorLight : ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
         ),
         border: Border.all(
-          color: value ? color.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary,
+          color: value ? colorLight : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -459,7 +459,7 @@ class _ConfiguracoesNotificacoesScreenState
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: value ? color.withValues(alpha: 0.1) : ThemeColors.of(context).backgroundLight,
+              color: value ? colorLight : ThemeColors.of(context).backgroundLight,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -834,7 +834,7 @@ class _ConfiguracoesNotificacoesScreenState
                   ),
                   child: Icon(
                     Icons.do_not_disturb_on_rounded,
-                    color: _naoPerturbar ? ThemeColors.of(context).primary.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondaryOverlay60,
+                    color: _naoPerturbar ? ThemeColors.of(context).primaryDark : ThemeColors.of(context).textSecondaryOverlay60,
                     size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
                   ),
                 ),
@@ -1423,7 +1423,7 @@ class _ConfiguracoesNotificacoesScreenState
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmber.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmberLight],
         ),
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
@@ -1819,6 +1819,7 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
+
 
 
 

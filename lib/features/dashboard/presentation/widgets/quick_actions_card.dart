@@ -147,7 +147,7 @@ class QuickActionsCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
           boxShadow: [
             BoxShadow(
-              color: gradient[0].withValues(alpha: 0.3),
+              color: gradient[0]Light,
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -220,6 +220,7 @@ class QuickActionsCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

@@ -41,8 +41,8 @@ class ProductsSyncFooter extends StatelessWidget {
             padding: const EdgeInsets.all(AppSpacing.xs),
             decoration: BoxDecoration(
               color: isOnline
-                  ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
-                  : ThemeColors.of(context).textTertiary.withValues(alpha: 0.1),
+                  ? ThemeColors.of(context).brandPrimaryGreenLight
+                  : ThemeColors.of(context).textTertiaryLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -117,6 +117,7 @@ class ProductsSyncFooter extends StatelessWidget {
     }
   }
 }
+
 
 
 

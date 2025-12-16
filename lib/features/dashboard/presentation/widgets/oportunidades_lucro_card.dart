@@ -254,7 +254,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         border: Border.all(
-          color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1),
+          color: ThemeColors.of(context).greenMaterialLight,
         ),
       ),
       child: Padding(
@@ -264,7 +264,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).greenMaterialLight,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -322,7 +322,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
         color: bgColor,
         borderRadius: BorderRadius.circular(12),
         border: destaque 
-            ? Border.all(color: iconColor.withValues(alpha: 0.3), width: 1.5) 
+            ? Border.all(color: iconColorLight, width: 1.5) 
             : null,
       ),
       child: Column(
@@ -351,6 +351,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

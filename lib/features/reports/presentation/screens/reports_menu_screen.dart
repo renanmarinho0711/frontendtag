@@ -408,7 +408,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                       vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 3.5, tablet: 3.75, desktop: 4),
                     ),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+                      color: ThemeColors.of(context).primaryLight,
                       borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
                     ),
                     child: Row(
@@ -451,7 +451,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).greenLightMaterial.withValues(alpha: 0.3)],
+          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).greenLightMaterialLight],
         ),
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
@@ -529,7 +529,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
         borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).statsOverviewBackground2.withValues(alpha: 0.5),
+            color: ThemeColors.of(context).statsOverviewBackground2Light,
             blurRadius: isMobile ? 25 : 30,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -907,7 +907,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
           ),
           boxShadow: [
             BoxShadow(
-              color: (relatÃ³rio['gradient'][0] as Color).withValues(alpha: 0.3),
+              color: (relatÃ³rio['gradient'][0] as Color)Light,
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -1090,7 +1090,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
         borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).quickActionsReportsBackground2.withValues(alpha: 0.5),
+            color: ThemeColors.of(context).quickActionsReportsBackground2Light,
             blurRadius: isMobile ? 25 : 30,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -1156,9 +1156,9 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
       child: Container(
         padding: EdgeInsets.symmetric(vertical: AppSizes.paddingSm.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.15),
+          color: colorLight,
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          border: Border.all(color: colorLight),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -1253,7 +1253,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
           Container(
             padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8)),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: colorLight,
               borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
             ),
             child: Icon(
@@ -1330,6 +1330,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
     );
   }
 }
+
 
 
 

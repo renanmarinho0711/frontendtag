@@ -131,7 +131,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
-                    color: action.color.withValues(alpha: 0.15),
+                    color: action.colorLight,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(action.icon, color: action.color, size: 20),
@@ -167,7 +167,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: action.color.withValues(alpha: 0.15),
+                      color: action.colorLight,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
@@ -194,6 +194,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

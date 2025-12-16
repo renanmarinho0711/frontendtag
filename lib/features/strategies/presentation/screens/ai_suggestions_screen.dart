@@ -285,7 +285,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).primaryLight,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 12,
@@ -587,7 +587,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         decoration: BoxDecoration(
-          color: isSelected ?  ThemeColors.of(context).primary.withValues(alpha: 0.15) : ThemeColors.of(context).textSecondary,
+          color: isSelected ?  ThemeColors.of(context).primaryLight : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(
             isMobile ? 18 : 20,
           ),
@@ -657,12 +657,12 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: (sugestao['cor'] as Color).withValues(alpha: 0.3),
+            color: (sugestao['cor'] as Color)Light,
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (sugestao['cor'] as Color).withValues(alpha: 0.1),
+              color: (sugestao['cor'] as Color)Light,
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -681,7 +681,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                 AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: (sugestao['cor'] as Color).withValues(alpha: 0.05),
+                color: (sugestao['cor'] as Color)Light,
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(
                     isMobile ? 12 : 14,
@@ -916,7 +916,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         ),
                       ),
                       decoration: BoxDecoration(
-                        color: (sugestao['cor'] as Color).withValues(alpha: 0.1),
+                        color: (sugestao['cor'] as Color)Light,
                         borderRadius: BorderRadius.circular(
                           isMobile ?  7 : 8,
                         ),
@@ -980,7 +980,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                           tablet: 17.5,
                           desktop: 18,
                         ),
-                        color: ThemeColors.of(context).warning.withValues(alpha: 0.8),
+                        color: ThemeColors.of(context).warningDark,
                       ),
                       SizedBox(
                         width: ResponsiveHelper.getResponsiveSpacing(
@@ -1659,6 +1659,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
     );
   }
 }
+
 
 
 

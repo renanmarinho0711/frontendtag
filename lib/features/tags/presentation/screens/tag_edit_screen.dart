@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -299,7 +299,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                   vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeMainLight,
                   borderRadius: BorderRadius.circular(
                       AppSizes.paddingBase.get(isMobile, isTablet)),
                   border: Border.all(color: ThemeColors.of(context).yellow50),
@@ -360,7 +360,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: statusColor.withValues(alpha: 0.3),
+            color: statusColorLight,
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -838,9 +838,9 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -1990,7 +1990,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
                 // Boto de Scanner de Cdigo de Barras
                 Container(
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                    color: ThemeColors.of(context).blueMainLight,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: IconButton(
@@ -2017,9 +2017,9 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).greenMainLight,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: ThemeColors.of(context).greenMain.withValues(alpha: 0.3)),
+                border: Border.all(color: ThemeColors.of(context).greenMainLight),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -2038,7 +2038,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).greenMain.withValues(alpha: 0.2),
+                      color: ThemeColors.of(context).greenMainLight,
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
@@ -2247,7 +2247,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: product.cor.withValues(alpha: 0.1),
+                color: product.corLight,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: Text(
@@ -2277,6 +2277,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
     );
   }
 }
+
 
 
 

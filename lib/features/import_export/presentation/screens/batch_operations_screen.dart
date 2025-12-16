@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/import_export/presentation/providers/import_export_provider.dart';
 import 'package:tagbean/features/import_export/data/models/import_export_models.dart';
@@ -24,65 +24,65 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
   BatchOperationsState get _state => ref.watch(batchOperationsProvider);
   BatchOperationsNotifier get _notifier => ref.read(batchOperationsProvider.notifier);
 
-  // Opera��es via provider (com fallback para lista est�tica enquanto carrega)
+  // Opera??es via provider (com fallback para lista est?tica enquanto carrega)
   List<Map<String, dynamic>> get _operacoes {
     final ops = _state.operations;
     if (ops.isEmpty) {
-      // Opera��es est�ticas dispon�veis
+      // Opera??es est?ticas dispon?veis
       return [
         {
-          'titulo': 'Atualizar Pre�os em Lote',
-          'subtitulo': 'Upload planilha: C�digo | Novo Pre�o',
-          'descricao': 'Altere m�ltiplos pre�os simultaneamente via Excel/CSV',
-          'descricaoDetalhada': 'Permite atualizar pre�os de centenas de produtos de uma s� vez. Ideal para reajustes gerais ou promo��es em massa.',
+          'titulo': 'Atualizar Pre?os em Lote',
+          'subtitulo': 'Upload planilha: C?digo | Novo Pre?o',
+          'descricao': 'Altere m?ltiplos pre?os simultaneamente via Excel/CSV',
+          'descricaoDetalhada': 'Permite atualizar pre?os de centenas de produtos de uma s? vez. Ideal para reajustes gerais ou promo??es em massa.',
           'icone': Icons.attach_money_rounded,
           'gradiente': [ThemeColors.of(context).greenGradient, ThemeColors.of(context).greenGradientEnd],
           'template': true,
-          'colunas': ['C�digo de Barras', 'Novo Pre�o', 'Pre�o/Kg (opcional)'],
+          'colunas': ['C?digo de Barras', 'Novo Pre?o', 'Pre?o/Kg (opcional)'],
           'exemplo': 'Ex: 7891234567890 | 12.99 | 15.50',
           'tipo': OperationType.updatePrices,
         },
         {
           'titulo': 'Excluir Produtos em Lote',
-          'subtitulo': 'Upload lista de c�digos de barras',
-          'descricao': 'Remova m�ltiplos produtos do sistema de uma s� vez',
-          'descricaoDetalhada': 'Exclus�o massiva de produtos. �til para limpeza de cadastros antigos ou produtos descontinuados.',
+          'subtitulo': 'Upload lista de c?digos de barras',
+          'descricao': 'Remova m?ltiplos produtos do sistema de uma s? vez',
+          'descricaoDetalhada': 'Exclus?o massiva de produtos. ?til para limpeza de cadastros antigos ou produtos descontinuados.',
           'icone': Icons.delete_sweep_rounded,
           'gradiente': [ThemeColors.of(context).error, ThemeColors.of(context).redDark],
           'template': true,
-          'colunas': ['C�digo de Barras'],
+          'colunas': ['C?digo de Barras'],
           'exemplo': 'Ex: 7891234567890',
           'tipo': OperationType.deleteProducts,
         },
         {
           'titulo': 'Associar Tags em Lote',
-          'subtitulo': 'Upload: ID Tag | C�digo Produto',
+          'subtitulo': 'Upload: ID Tag | C?digo Produto',
           'descricao': 'Vincule tags ESL aos produtos massivamente',
-          'descricaoDetalhada': 'Associa��o r�pida entre etiquetas eletr�nicas e produtos. Perfeito para instala��o inicial ou reorganiza��o.',
+          'descricaoDetalhada': 'Associa??o r?pida entre etiquetas eletr?nicas e produtos. Perfeito para instala??o inicial ou reorganiza??o.',
           'icone': Icons.link_rounded,
           'gradiente': [ThemeColors.of(context).primary, ThemeColors.of(context).blueDark],
           'template': true,
-          'colunas': ['ID da Tag', 'C�digo de Barras do Produto'],
+          'colunas': ['ID da Tag', 'C?digo de Barras do Produto'],
           'exemplo': 'Ex: TAG-001 | 7891234567890',
           'tipo': OperationType.associateTags,
         },
         {
           'titulo': 'Atualizar Categorias',
           'subtitulo': 'Reclassificar produtos em massa',
-          'descricao': 'Mude categorias de m�ltiplos produtos',
-          'descricaoDetalhada': 'Reorganize o cat�logo alterando categorias de v�rios produtos simultaneamente.',
+          'descricao': 'Mude categorias de m?ltiplos produtos',
+          'descricaoDetalhada': 'Reorganize o cat?logo alterando categorias de v?rios produtos simultaneamente.',
           'icone': Icons.category_rounded,
           'gradiente': [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain],
           'template': true,
-          'colunas': ['C�digo de Barras', 'Nova Categoria'],
+          'colunas': ['C?digo de Barras', 'Nova Categoria'],
           'exemplo': 'Ex: 7891234567890 | Alimentos/Cereais',
           'tipo': OperationType.updateCategories,
         },
         {
           'titulo': 'Desassociar Tags em Lote',
-          'subtitulo': 'Remover v�nculos tag-produto',
-          'descricao': 'Desvincula m�ltiplas tags dos produtos',
-          'descricaoDetalhada': 'Remove a associa��o entre tags e produtos. �til para manuten��o ou reorganiza��o do sistema.',
+          'subtitulo': 'Remover v?nculos tag-produto',
+          'descricao': 'Desvincula m?ltiplas tags dos produtos',
+          'descricaoDetalhada': 'Remove a associa??o entre tags e produtos. ?til para manuten??o ou reorganiza??o do sistema.',
           'icone': Icons.link_off_rounded,
           'gradiente': [ThemeColors.of(context).orangeMaterial, ThemeColors.of(context).warning],
           'template': true,
@@ -92,13 +92,13 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
         },
         {
           'titulo': 'Atualizar Estoque em Lote',
-          'subtitulo': 'Ajustar quantidades dispon�veis',
-          'descricao': 'Atualize estoque de m�ltiplos produtos',
-          'descricaoDetalhada': 'Sincronize estoque massivamente ap�s invent�rios ou recebimentos grandes.',
+          'subtitulo': 'Ajustar quantidades dispon?veis',
+          'descricao': 'Atualize estoque de m?ltiplos produtos',
+          'descricaoDetalhada': 'Sincronize estoque massivamente ap?s invent?rios ou recebimentos grandes.',
           'icone': Icons.inventory_rounded,
           'gradiente': [ThemeColors.of(context).cyanMain, ThemeColors.of(context).cyanDark],
           'template': true,
-          'colunas': ['C�digo de Barras', 'Quantidade'],
+          'colunas': ['C?digo de Barras', 'Quantidade'],
           'exemplo': 'Ex: 7891234567890 | 150',
           'tipo': OperationType.updateStock,
         },
@@ -127,7 +127,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
     );
     _animationController.forward();
     
-    // Carregar opera��es dispon�veis
+    // Carregar opera??es dispon?veis
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _notifier.loadOperations();
     });
@@ -166,7 +166,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       _buildAlertCard(),
                       ResponsiveSpacing.verticalMedium(context),
                       Text(
-                        'Opera��es Dispon�veis',
+                        'Opera??es Dispon?veis',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -183,7 +183,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                         height: AppSizes.spacingXs.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Escolha a opera��o que deseja executar',
+                        'Escolha a opera??o que deseja executar',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -288,7 +288,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).urgent.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).urgentLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -309,7 +309,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Opera��es em Lote',
+                  'Opera??es em Lote',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -331,7 +331,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                   ),
                 ),
                 Text(
-                  'A��es Massivas no Sistema',
+                  'A??es Massivas no Sistema',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -359,7 +359,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                 ),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).error.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).errorLight,
                 borderRadius: BorderRadius.circular(
                   isMobile ? 9 : 10,
                 ),
@@ -382,7 +382,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                     ),
                   ),
                   Text(
-                    'Avan�ado',
+                    'Avan?ado',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -413,7 +413,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeAmber.withValues(alpha: 0.1), ThemeColors.of(context).warningPastel],
+          colors: [ThemeColors.of(context).orangeAmberLight, ThemeColors.of(context).warningPastel],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
@@ -431,14 +431,14 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).orangeAmberLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
               ),
             ),
             child: Icon(
               Icons.warning_rounded,
-              color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
+              color: ThemeColors.of(context).orangeAmberDark,
               size: AppSizes.iconLarge.get(isMobile, isTablet),
             ),
           ),
@@ -451,7 +451,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Aten��o - Opera��es Irrevers�veis',
+                  'Aten??o - Opera??es Irrevers?veis',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -474,7 +474,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                   ),
                 ),
                 Text(
-                  'As opera��es em lote s�o permanentes. Revise os dados antes de executar.',
+                  'As opera??es em lote s?o permanentes. Revise os dados antes de executar.',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -518,12 +518,12 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: Border.all(
-            color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.3),
+            color: (operacao['gradiente'][0] as Color)Light,
             width: isMobile ? 1.5 : 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.1),
+              color: (operacao['gradiente'][0] as Color)Light,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
             ),
@@ -563,7 +563,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.3),
+                          color: (operacao['gradiente'][0] as Color)Light,
                           blurRadius: isMobile ? 10 : 12,
                           offset: const Offset(0, 4),
                         ),
@@ -662,7 +662,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                                 ),
                               ),
                               Text(
-                                'Template dispon�vel',
+                                'Template dispon?vel',
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -772,7 +772,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       AppSizes.paddingMdAlt.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.1),
+                      color: (operacao['gradiente'][0] as Color)Light,
                       borderRadius: BorderRadius.circular(
                         isMobile ? 10 : 12,
                       ),
@@ -1083,7 +1083,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               decoration: BoxDecoration(
                 border: Border.all(color: operacao['gradiente'][0], width: 2),
                 borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
-                color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.05),
+                color: (operacao['gradiente'][0] as Color)Light,
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -1171,19 +1171,19 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
           children: [
             Icon(Icons.warning_rounded, color: operacao['gradiente'][0]),
             const SizedBox(width: 12),
-            const Text('Confirmar Opera��o'),
+            const Text('Confirmar Opera??o'),
           ],
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Voc� est� prestes a executar:'),
+            const Text('Voc? est? prestes a executar:'),
             const SizedBox(height: 12),
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.1),
+                color: (operacao['gradiente'][0] as Color)Light,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Column(
@@ -1205,7 +1205,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Esta opera��o � irrevers�vel! ',
+                    'Esta opera??o ? irrevers?vel! ',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1247,7 +1247,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        'Processando opera��o...',
+                        'Processando opera??o...',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1264,7 +1264,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                 ),
               );
               
-              // Executar opera��o em lote via provider
+              // Executar opera??o em lote via provider
               final operationIds = <String>[operacao['id'] as String? ?? operacao['nome'] as String];
               await _notifier.executeOperation(operationIds);
               
@@ -1283,7 +1283,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                           const SizedBox(width: 12),
                           Flexible(
                             child: Text(
-                              'Opera��o conclu�da: ${result.successCount} de ${result.totalRecords} registros',
+                              'Opera??o conclu?da: ${result.successCount} de ${result.totalRecords} registros',
                             ),
                           ),
                         ],
@@ -1298,7 +1298,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(_state.errorMessage ?? 'Erro ao executar opera��o'),
+                      content: Text(_state.errorMessage ?? 'Erro ao executar opera??o'),
                       backgroundColor: ThemeColors.of(context).errorIcon,
                     ),
                   );
@@ -1318,6 +1318,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
     );
   }
 }
+
 
 
 

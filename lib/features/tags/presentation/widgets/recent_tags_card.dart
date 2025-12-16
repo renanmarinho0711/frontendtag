@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
@@ -11,7 +11,7 @@ enum RecentTagStatus {
   bateriaBaixa,
 }
 
-/// Tag recente para exibi��o
+/// Tag recente para exibi??o
 class RecentTagItem {
   final String id;
   final String nfcId;
@@ -151,17 +151,17 @@ class RecentTagsCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(isMobile ? 10 : 12),
           decoration: BoxDecoration(
-            color: statusColor.withValues(alpha: 0.05),
+            color: statusColorLight,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: statusColor.withValues(alpha: 0.15)),
+            border: Border.all(color: statusColorLight),
           ),
           child: Row(
             children: [
-              // �cone NFC
+              // ?cone NFC
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: statusColor.withValues(alpha: 0.1),
+                  color: statusColorLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -198,7 +198,7 @@ class RecentTagsCard extends StatelessWidget {
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: statusColor.withValues(alpha: 0.15),
+                            color: statusColorLight,
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
@@ -317,12 +317,13 @@ class RecentTagsCard extends StatelessWidget {
     final difference = now.difference(dateTime);
 
     if (difference.inMinutes < 1) return 'Agora';
-    if (difference.inMinutes < 60) return '${difference.inMinutes}min atr�s';
-    if (difference.inHours < 24) return '${difference.inHours}h� atr�s';
-    if (difference.inDays < 7) return '${difference.inDays}d atr�s';
+    if (difference.inMinutes < 60) return '${difference.inMinutes}min atr?s';
+    if (difference.inHours < 24) return '${difference.inHours}h? atr?s';
+    if (difference.inDays < 7) return '${difference.inDays}d atr?s';
     return '${dateTime.day}/${dateTime.month}';
   }
 }
+
 
 
 

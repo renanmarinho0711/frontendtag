@@ -75,7 +75,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
         border: Border.all(color: ThemeColors.of(context).primaryOverlay20),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -643,7 +643,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                           margin: const EdgeInsets.only(left: 8),
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                            color: ThemeColors.of(context).successLight,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Text(
@@ -705,7 +705,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                 decoration: BoxDecoration(
                   color: isSelected 
                       ? ThemeColors.of(context).primaryOverlay20 
-                      : ThemeColors.of(context).grey500.withValues(alpha: 0.1),
+                      : ThemeColors.of(context).grey500Light,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -753,7 +753,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                             margin: const EdgeInsets.only(left: 8),
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                              color: ThemeColors.of(context).successLight,
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Text(
@@ -897,6 +897,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     }
   }
 }
+
 
 
 

@@ -569,7 +569,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
         ),
         boxShadow: [
           BoxShadow(
-            color: widget.estrategia.primaryColor.withValues(alpha: 0.2),
+            color: widget.estrategia.primaryColorLight,
             blurRadius: isMobile ? 6 : 8,
             offset: const Offset(0, 2),
           ),
@@ -816,7 +816,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
         ),
         boxShadow: [
           BoxShadow(
-            color: gradient[0].withValues(alpha: 0.1),
+            color: gradient[0]Light,
             blurRadius: isMobile ? 6 : 8,
             offset: const Offset(0, 2),
           ),
@@ -1060,7 +1060,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: widget.estrategia.primaryColor.withValues(alpha: 0.3),
+                                color: widget.estrategia.primaryColorLight,
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),
@@ -1380,7 +1380,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: posicao == 1
-              ?  [ThemeColors.of(context).warning.withValues(alpha: 0.1), ThemeColors.of(context).warningDark.withValues(alpha: 0.1)]
+              ?  [ThemeColors.of(context).warningLight, ThemeColors.of(context).warningDarkLight]
               : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textSecondary],
         ),
         borderRadius: BorderRadius.circular(
@@ -1420,7 +1420,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: (posicao == 1 ?  ThemeColors.of(context).warning : ThemeColors.of(context).textSecondary).withValues(alpha: 0.3),
+                  color: (posicao == 1 ?  ThemeColors.of(context).warning : ThemeColors.of(context).textSecondary)Light,
                   blurRadius: isMobile ? 8 : 10,
                   offset: const Offset(0, 4),
                 ),
@@ -1746,7 +1746,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
             isMobile ? 12 : (isTablet ? 14 : 16),
           ),
           border: Border.all(
-            color: isSuccess ? ThemeColors.of(context).greenMain.withValues(alpha: 0.3) : ThemeColors.of(context).warningLight,
+            color: isSuccess ? ThemeColors.of(context).greenMainLight : ThemeColors.of(context).warningLight,
             width: 1.5,
           ),
           boxShadow: [
@@ -2012,6 +2012,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
     );
   }
 }
+
 
 
 

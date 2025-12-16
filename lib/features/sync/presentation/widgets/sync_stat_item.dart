@@ -1,10 +1,10 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-/// Item de estatÃ­stica individual com Ã­cone, valor e label.
-/// Usado para exibir mÃ©tricas como total de tags, online, etc.
+/// Item de estatística individual com ícone, valor e label.
+/// Usado para exibir métricas como total de tags, online, etc.
 class SyncStatItem extends StatelessWidget {
   final String value;
   final String label;
@@ -31,7 +31,7 @@ class SyncStatItem extends StatelessWidget {
         AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -40,7 +40,7 @@ class SyncStatItem extends StatelessWidget {
             desktop: 12,
           ),
         ),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -100,7 +100,7 @@ class SyncStatItem extends StatelessWidget {
   }
 }
 
-/// Grid de estatÃ­sticas com layout responsivo.
+/// Grid de estatísticas com layout responsivo.
 class SyncStatsGrid extends StatelessWidget {
   final List<SyncStatItemData> items;
   final int crossAxisCount;
@@ -165,7 +165,7 @@ class SyncStatsGrid extends StatelessWidget {
   }
 }
 
-/// Dados para um item de estatÃ­stica.
+/// Dados para um item de estatística.
 class SyncStatItemData {
   final String value;
   final String label;
@@ -272,4 +272,5 @@ class SyncStatsError extends StatelessWidget {
     );
   }
 }
+
 

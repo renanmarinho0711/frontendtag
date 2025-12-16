@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/enums/loading_status.dart';
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -141,7 +141,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'Edi��o produto a produto',
+                  'Edi??o produto a produto',
                   style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textSecondary),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -176,7 +176,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13.5),
         ),
         decoration: InputDecoration(
-          hintText: 'Buscar produto por nome ou c�digo...',
+          hintText: 'Buscar produto por nome ou c?digo...',
           hintStyle: TextStyle(
             color: ThemeColors.of(context).surfaceOverlay70,
             fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
@@ -267,7 +267,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
               PopupMenuItem(
                 value: 'preco',
                 child: Text(
-                  'Pre�o',
+                  'Pre?o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
                     overflow: TextOverflow.ellipsis,
@@ -341,12 +341,12 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 12 : (isTablet ? 14 : 16)),
           border: Border.all(
-            color: produto.cor.withValues(alpha: 0.3),
+            color: produto.corLight,
             width: isMobile ? 1.5 : 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: produto.cor.withValues(alpha: 0.1),
+              color: produto.corLight,
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(context, mobile: 8, tablet: 10, desktop: 12),
               offset: const Offset(0, 3),
             ),
@@ -400,7 +400,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                                 vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                               ),
                               decoration: BoxDecoration(
-                                color: produto.cor.withValues(alpha: 0.1),
+                                color: produto.corLight,
                                 borderRadius: BorderRadius.circular(AppSizes.paddingMicro.get(isMobile, isTablet)),
                               ),
                               child: Text(
@@ -441,7 +441,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             _buildCompactMetric(
-                              'Pre�o Atual',
+                              'Pre?o Atual',
                               'R\$ ${produto.precoAtual.toStringAsFixed(2)}',
                               Icons.attach_money_rounded,
                               produto.cor,
@@ -472,7 +472,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                     onPressed: () => _editarPreco(produto),
                     icon: Icon(Icons.edit_rounded, size: AppSizes.iconTiny.get(isMobile, isTablet)),
                     label: Text(
-                      'Editar Pre�o',
+                      'Editar Pre?o',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                         overflow: TextOverflow.ellipsis,
@@ -603,7 +603,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
             SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
             Expanded(
               child: Text(
-                'Editar Pre�o',
+                'Editar Pre?o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                   overflow: TextOverflow.ellipsis,
@@ -632,7 +632,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13.5),
               ),
               decoration: InputDecoration(
-                labelText: 'Novo Pre�o',
+                labelText: 'Novo Pre?o',
                 labelStyle: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                 ),
@@ -704,7 +704,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
             ),
             SizedBox(height: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
             Text(
-              'Ajuste R�pido:',
+              'Ajuste R?pido:',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                 fontWeight: FontWeight.bold,
@@ -750,7 +750,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                         children: [
                           Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
                           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-                          const Text('Pre�o atualizado com sucesso'),
+                          const Text('Pre?o atualizado com sucesso'),
                         ],
                       ),
                       backgroundColor: ThemeColors.of(context).success,
@@ -792,7 +792,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
                 children: [
                   Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 18),
                   const SizedBox(width: 8),
-                  Text('Pre�o ajustado $label'),
+                  Text('Pre?o ajustado $label'),
                 ],
               ),
               backgroundColor: color,
@@ -806,9 +806,9 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
+          color: colorLight,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: color.withValues(alpha: 0.5)),
+          border: Border.all(color: colorLight),
         ),
         child: Text(
           label,
@@ -823,6 +823,7 @@ class _AjusteIndividualScreenState extends ConsumerState<AjusteIndividualScreen>
     );
   }
 }
+
 
 
 

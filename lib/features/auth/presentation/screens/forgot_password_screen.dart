@@ -89,7 +89,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
-                        color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.2),
+                        color: ThemeColors.of(context).neutralBlackLight,
                         blurRadius: 30,
                         offset: const Offset(0, 10),
                       ),
@@ -180,9 +180,9 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).error.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).errorLight,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: ThemeColors.of(context).error.withValues(alpha: 0.3)),
+                border: Border.all(color: ThemeColors.of(context).errorLight),
               ),
               child: Row(
                 children: [
@@ -211,7 +211,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 elevation: 3,
-                shadowColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
+                shadowColor: ThemeColors.of(context).brandPrimaryGreenLight,
               ),
               child: _isLoading
                   ? SizedBox(
@@ -260,7 +260,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           height: 100,
           margin: const EdgeInsets.only(bottom: 24),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).greenMainLight,
             shape: BoxShape.circle,
           ),
           child: Icon(
@@ -313,7 +313,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              shadowColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
+              shadowColor: ThemeColors.of(context).brandPrimaryGreenLight,
             ),
             child: const Text(
               'Voltar para o login',
@@ -337,6 +337,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
     );
   }
 }
+
 
 
 

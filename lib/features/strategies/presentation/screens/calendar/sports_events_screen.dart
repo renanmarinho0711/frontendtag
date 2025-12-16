@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -195,7 +195,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                   ),
                 ),
                 Text(
-                  'Detec��o de Jogos',
+                  'Detec??o de Jogos',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                     overflow: TextOverflow.ellipsis,
@@ -258,7 +258,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
           ),
           Tab(
             icon: Icon(Icons.event_rounded, size: AppSizes.iconSmall.get(isMobile, isTablet)),
-            text: 'Pr�ximos Jogos',
+            text: 'Pr?ximos Jogos',
           ),
         ],
       ),
@@ -357,7 +357,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Detec��o Autom�tica',
+                  'Detec??o Autom?tica',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 17, mobileFontSize: 16),
                     overflow: TextOverflow.ellipsis,
@@ -421,7 +421,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueCyanLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -433,7 +433,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
               SizedBox(width: AppSizes.paddingSm.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  'Configura��es Gerais',
+                  'Configura??es Gerais',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                     overflow: TextOverflow.ellipsis,
@@ -464,7 +464,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  'Horas de Anteced�ncia',
+                  'Horas de Anteced?ncia',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                     overflow: TextOverflow.ellipsis,
@@ -478,7 +478,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -513,9 +513,9 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        color: value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondaryOverlay10,
+        color: value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondaryOverlay10,
         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-        border: Border.all(color: value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondaryOverlay30),
+        border: Border.all(color: value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondaryOverlay30),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -581,10 +581,10 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
-          border: Border.all(color: team.color.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: team.colorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: team.color.withValues(alpha: 0.15),
+              color: team.colorLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -606,7 +606,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                       borderRadius: BorderRadius.circular(AppSizes.paddingXl.get(isMobile, isTablet)),
                       boxShadow: [
                         BoxShadow(
-                          color: team.color.withValues(alpha: 0.3),
+                          color: team.colorLight,
                           blurRadius: isMobile ? 10 : 12,
                           offset: const Offset(0, 4),
                         ),
@@ -649,7 +649,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                             vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: team.color.withValues(alpha: 0.1),
+                            color: team.colorLight,
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
@@ -708,7 +708,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _buildConfigRow(
-                      'Ajuste de Pre�o',
+                      'Ajuste de Pre?o',
                       team.adjustmentFormatted,
                       Icons.trending_up_rounded,
                       team.color,
@@ -741,9 +741,9 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
       child: Container(
         padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.05),
+          color: colorLight,
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-          border: Border.all(color: color.withValues(alpha: 0.2)),
+          border: Border.all(color: colorLight),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -802,7 +802,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
       child: Container(
         padding: EdgeInsets.all(AppSizes.cardPadding.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)]),
+          gradient: LinearGradient(colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight]),
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
           border: Border.all(color: ThemeColors.of(context).infoLight, width: 2),
         ),
@@ -858,7 +858,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
               mainAxisSize: MainAxisSize.min,
               children: [
                 Expanded(child: _buildJogoInfo(Icons.calendar_today_rounded, 'Data', game.date)),
-                Expanded(child: _buildJogoInfo(Icons.access_time_rounded, 'Hor�rio', game.time)),
+                Expanded(child: _buildJogoInfo(Icons.access_time_rounded, 'Hor?rio', game.time)),
               ],
             ),
             SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -926,7 +926,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
         builder: (context, setDialogState) => AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet))),
           title: Text(
-            'Ajuste de Pre�o',
+            'Ajuste de Pre?o',
             style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 17)),
             overflow: TextOverflow.ellipsis,
           ),
@@ -978,10 +978,10 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
     // Usa categorias do backend
     final categoriesState = ref.read(categoriesProvider);
     final produtos = categoriesState.categories.map((c) => c.nome).toList();
-    // Se n�o houver categorias, usa lista padr�o para UX
+    // Se n?o houver categorias, usa lista padr?o para UX
     final listaProdutos = produtos.isNotEmpty 
         ? produtos 
-        : ['Bebidas', 'Snacks', 'Carv�o', 'Carnes', 'Petiscos', 'Cervejas'];
+        : ['Bebidas', 'Snacks', 'Carv?o', 'Carnes', 'Petiscos', 'Cervejas'];
     final selecionados = List<String>.from(team.products);
 
     showDialog(
@@ -1046,7 +1046,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
         icon: Icon(Icons.add_rounded, color: ThemeColors.of(context).blueMain, size: AppSizes.iconHeroMd.get(isMobile, isTablet)),
         title: Text('Adicionar Time', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 17))),
         content: Text(
-          'Em breve voc� poder� adicionar novos times para monitoramento personalizado.',
+          'Em breve voc? poder? adicionar novos times para monitoramento personalizado.',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13)),
           overflow: TextOverflow.ellipsis,
@@ -1085,9 +1085,9 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
-              Text('? Integra��o com calend�rios esportivos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12), height: 1.5)),
+              Text('? Integra??o com calend?rios esportivos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
-              Text('? Aumenta pre�os automaticamente em dias de jogos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12), height: 1.5)),
+              Text('? Aumenta pre?os automaticamente em dias de jogos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
               Text('? Ideal para bebidas, snacks e produtos de churrasco', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
@@ -1123,7 +1123,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Configura��es Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13))),
+                    Text('Configura??es Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13))),
                     Text('Eventos esportivos configurados', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11))),
                   ],
                 ),
@@ -1138,6 +1138,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
     }
   }
 }
+
 
 
 

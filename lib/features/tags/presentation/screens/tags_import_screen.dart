@@ -1,6 +1,6 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'dart:convert';
-// import 'package:file_picker/file_picker.dart'; // Dependência removida
+// import 'package:file_picker/file_picker.dart'; // Depend�ncia removida
 import 'package:csv/csv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -245,7 +245,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
               borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).blueCyanLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -455,7 +455,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).blueCyanLight,
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -678,7 +678,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             vertical: AppSizes.paddingXs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.8),
+                            color: ThemeColors.of(context).blueCyanDark,
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Row(
@@ -718,7 +718,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             vertical: AppSizes.paddingXs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).successIcon.withValues(alpha: 0.8),
+                            color: ThemeColors.of(context).successIconDark,
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Row(
@@ -1235,7 +1235,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                     vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMain.withValues(alpha: 0.1) : ThemeColors.of(context).warningPastel,
+                    color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMainLight : ThemeColors.of(context).warningPastel,
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                   ),
                   child: Text(
@@ -1249,7 +1249,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMain.withValues(alpha: 0.8) : ThemeColors.of(context).warningDark,
+                      color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMainDark : ThemeColors.of(context).warningDark,
                     ),
                   ),
                 ),
@@ -1312,7 +1312,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(isMobile ? 5 : 6),
       ),
       child: Text(
@@ -1948,6 +1948,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
     );
   }
 }
+
 
 
 

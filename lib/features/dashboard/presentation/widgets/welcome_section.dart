@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -29,7 +29,7 @@ class WelcomeSection extends ConsumerWidget {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
     
-    // Obt�m dados din�micos do dashboard
+    // Obt?m dados din?micos do dashboard
     final dashboardState = ref.watch(dashboardProvider);
     final activeStrategies = dashboardState.data.strategiesStats.activeCount;
     final totalProducts = dashboardState.data.storeStats.productsCount;
@@ -57,7 +57,7 @@ class WelcomeSection extends ConsumerWidget {
             spreadRadius: 0,
           ),
           BoxShadow(
-            color: ThemeColors.of(context).greenDark.withValues(alpha: 0.2),
+            color: ThemeColors.of(context).greenDarkLight,
             blurRadius: isMobile ? 40 : 60,
             offset: const Offset(0, 15),
             spreadRadius: -5,
@@ -66,7 +66,7 @@ class WelcomeSection extends ConsumerWidget {
       ),
       child: Stack(
         children: [
-          // Padr�o decorativo de fundo
+          // Padr?o decorativo de fundo
           Positioned(
             top: -50,
             right: -50,
@@ -102,7 +102,7 @@ class WelcomeSection extends ConsumerWidget {
             ),
           ),
           
-          // Conte�do principal
+          // Conte?do principal
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: AppSizes.paddingXlLg.get(isMobile, isTablet),
@@ -111,7 +111,7 @@ class WelcomeSection extends ConsumerWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Se��o de boas-vindas
+                // Se??o de boas-vindas
                 Expanded(
                   flex: isMobile ? 1 : 2,
                   child: Column(
@@ -158,7 +158,7 @@ class WelcomeSection extends ConsumerWidget {
                         height: AppSizes.paddingXs.get(isMobile, isTablet),
                       ),
                       
-                      // Nome do usu�rio com sauda��o
+                      // Nome do usu?rio com sauda??o
                       Row(
                         children: [
                           Flexible(
@@ -194,7 +194,7 @@ class WelcomeSection extends ConsumerWidget {
                       ),
                       SizedBox(height: isMobile ? 4 : 6),
                       
-                      // Informa��o de estrat�gias ativas
+                      // Informa??o de estrat?gias ativas
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -206,7 +206,7 @@ class WelcomeSection extends ConsumerWidget {
                             ),
                             SizedBox(width: isMobile ? 4 : 6),
                             Text(
-                              '$activeStrategies estrat�gias ativas',
+                              '$activeStrategies estrat?gias ativas',
                               style: TextStyle(
                                 color: ThemeColors.of(context).surfaceOverlay90,
                                 fontSize: AppTextStyles.fontSizeXxs.get(isMobile, isTablet),
@@ -215,7 +215,7 @@ class WelcomeSection extends ConsumerWidget {
                             ),
                             SizedBox(width: isMobile ? 4 : 8),
                             Text(
-                              '�',
+                              '?',
                               style: TextStyle(
                                 color: ThemeColors.of(context).surfaceOverlay50,
                                 fontSize: isMobile ? 10 : 12,
@@ -246,14 +246,14 @@ class WelcomeSection extends ConsumerWidget {
                 if (!isMobile) ...[
                   const SizedBox(width: 16),
                   
-                  // Informa��es de m�tricas (din�micas do backend)
+                  // Informa??es de m?tricas (din?micas do backend)
                   Expanded(
                     child: Builder(
                     builder: (context) {
                       final stats = dashboardState.data.strategiesStats;
                       final storeStats = dashboardState.data.storeStats;
                       
-                      // Formata valores monet�rios
+                      // Formata valores monet?rios
                       String formatCurrency(double value) {
                         final formatted = value.toStringAsFixed(2).replaceAll('.', ',');
                         final parts = formatted.split(',');
@@ -425,7 +425,7 @@ class WelcomeSection extends ConsumerWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
           ),
         ],
@@ -453,6 +453,7 @@ class WelcomeSection extends ConsumerWidget {
     );
   }
 }
+
 
 
 

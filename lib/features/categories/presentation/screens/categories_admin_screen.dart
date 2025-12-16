@@ -246,7 +246,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).successLight,
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -583,7 +583,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           border: isSelected ?  Border.all(color: ThemeColors.of(context).surface, width: 3) : null,
           boxShadow: [
             BoxShadow(
-              color: (categoria['cor'] as Color).withValues(alpha: 0.3),
+              color: (categoria['cor'] as Color)Light,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -767,7 +767,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           boxShadow: [
             BoxShadow(
               color: isSelected
-                  ? ThemeColors.of(context).success.withValues(alpha: 0.2)
+                  ? ThemeColors.of(context).successLight
                   : ThemeColors.of(context).textPrimaryOverlay05,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
@@ -836,7 +836,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: (categoria['cor'] as Color).withValues(alpha: 0.3),
+                          color: (categoria['cor'] as Color)Light,
                           blurRadius: 12,
                           offset: const Offset(0, 6),
                         ),
@@ -877,7 +877,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                                   vertical: 4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: ThemeColors.of(context).error.withValues(alpha: 0.2),
+                                  color: ThemeColors.of(context).errorLight,
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(color: ThemeColors.of(context).error),
                                 ),
@@ -1184,6 +1184,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     );
   }
 }
+
 
 
 

@@ -158,9 +158,9 @@ class QuickActionButton extends StatelessWidget {
             vertical: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: colorLight,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: color.withValues(alpha: 0.3)),
+            border: Border.all(color: colorLight),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -188,6 +188,7 @@ class QuickActionButton extends StatelessWidget {
     );
   }
 }
+
 
 
 

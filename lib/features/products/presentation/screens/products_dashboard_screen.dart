@@ -566,7 +566,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       leading: Container(
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: cor.withValues(alpha: 0.1),
+          color: corLight,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(icon, color: cor, size: 22),
@@ -684,7 +684,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).surface,
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3)),
+                border: Border.all(color: ThemeColors.of(context).brandPrimaryGreenLight),
                 boxShadow: [
                   BoxShadow(
                     color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.06),
@@ -755,12 +755,12 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
-            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.05),
+            ThemeColors.of(context).brandPrimaryGreenLight,
+            ThemeColors.of(context).brandPrimaryGreenLight,
           ],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3)),
+        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreenLight),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -770,7 +770,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2),
+                  color: ThemeColors.of(context).brandPrimaryGreenLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -1024,7 +1024,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 colors: [cor.withValues(alpha: 0.12), cor.withValues(alpha: 0.06)],
               ),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: cor.withValues(alpha: 0.3), width: 1.5),
+              border: Border.all(color: corLight, width: 1.5),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -1103,7 +1103,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               colors: [cor.withValues(alpha: 0.12), cor.withValues(alpha: 0.06)],
             ),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: cor.withValues(alpha: 0.3), width: 1),
+            border: Border.all(color: corLight, width: 1),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -1307,14 +1307,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             decoration: BoxDecoration(
               color: cor.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: cor.withValues(alpha: 0.2)),
+              border: Border.all(color: corLight),
             ),
             child: Row(
               children: [
                 Container(
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: cor.withValues(alpha: 0.15),
+                    color: corLight,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(acao['icon'] as IconData, color: cor, size: 20),
@@ -1419,7 +1419,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             decoration: BoxDecoration(
               color: ThemeColors.of(context).primary.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: ThemeColors.of(context).primary.withValues(alpha: 0.2)),
+              border: Border.all(color: ThemeColors.of(context).primaryLight),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1616,9 +1616,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                       decoration: BoxDecoration(
-                        color: cat.cor.withValues(alpha: 0.1),
+                        color: cat.corLight,
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: cat.cor.withValues(alpha: 0.3)),
+                        border: Border.all(color: cat.corLight),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -1637,7 +1637,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: cat.cor.withValues(alpha: 0.2),
+                              color: cat.corLight,
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
@@ -1764,7 +1764,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               Container(
                 padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).brandPrimaryGreenLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -1839,7 +1839,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           decoration: BoxDecoration(
             color: menu.cor.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: menu.cor.withValues(alpha: 0.2), width: 1),
+            border: Border.all(color: menu.corLight, width: 1),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -1850,7 +1850,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 child: Container(
                   padding: EdgeInsets.all(3),
                   decoration: BoxDecoration(
-                    color: menu.cor.withValues(alpha: 0.15),
+                    color: menu.corLight,
                     shape: BoxShape.circle,
                   ),
                   child: FittedBox(
@@ -1913,7 +1913,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             color: menu.cor.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: menu.cor.withValues(alpha: 0.2),
+              color: menu.corLight,
               width: 1,
             ),
           ),
@@ -1923,7 +1923,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               Container(
                 padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: menu.cor.withValues(alpha: 0.15),
+                  color: menu.corLight,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -1978,6 +1978,7 @@ class _ModuloMenuItem {
     required this.onTap,
   });
 }
+
 
 
 

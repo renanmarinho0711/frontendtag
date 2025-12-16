@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -317,10 +317,10 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
       padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
       decoration: BoxDecoration(
         color: isConnected 
-            ? ThemeColors.of(context).success.withValues(alpha: 0.1)
+            ? ThemeColors.of(context).successLight
             : isNone 
                 ? ThemeColors.of(context).backgroundLight
-                : ThemeColors.of(context).warning.withValues(alpha: 0.1),
+                : ThemeColors.of(context).warningLight,
         borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
         border: Border.all(
           color: isConnected 
@@ -336,7 +336,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: (selectedErp['color'] as Color).withValues(alpha: 0.2),
+              color: (selectedErp['color'] as Color)Light,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(
@@ -459,7 +459,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: isSelected ? color.withValues(alpha: 0.2) : ThemeColors.of(context).transparent,
+          color: isSelected ? colorLight : ThemeColors.of(context).transparent,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected ? color : ThemeColors.of(context).textSecondaryOverlay30,
@@ -644,7 +644,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
         borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -658,7 +658,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).successLight,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -826,7 +826,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
             style: ElevatedButton.styleFrom(
               backgroundColor: ThemeColors.of(context).success,
               foregroundColor: ThemeColors.of(context).surface,
-              disabledBackgroundColor: ThemeColors.of(context).success.withValues(alpha: 0.5),
+              disabledBackgroundColor: ThemeColors.of(context).successLight,
               padding: EdgeInsets.symmetric(
                 vertical: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
@@ -852,6 +852,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     }
   }
 }
+
 
 
 

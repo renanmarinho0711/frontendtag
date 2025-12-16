@@ -1,4 +1,4 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -8,8 +8,8 @@ import 'package:tagbean/features/sync/presentation/providers/sync_provider.dart'
 import 'package:tagbean/features/sync/presentation/widgets/sync_card.dart';
 import 'package:tagbean/features/sync/presentation/widgets/sync_stat_item.dart';
 
-/// Card dedicado para exibiÃ§Ã£o de estatÃ­sticas Minew Cloud.
-/// Inclui stats em tempo real, botÃµes de aÃ§Ã£o e refresh.
+/// Card dedicado para exibição de estatísticas Minew Cloud.
+/// Inclui stats em tempo real, botões de ação e refresh.
 class MinewStatsCard extends ConsumerWidget {
   final String storeId;
   final VoidCallback? onSyncComplete;
@@ -34,7 +34,7 @@ class MinewStatsCard extends ConsumerWidget {
       subtitle: 'Status em tempo real',
       icon: Icons.cloud_sync_rounded,
       iconGradient: [ThemeColors.of(context).primary, ThemeColors.of(context).blueDark],
-      borderColor: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+      borderColor: ThemeColors.of(context).primaryLight,
       trailing: IconButton(
         onPressed: () {
           ref.read(minewStatsRefreshProvider.notifier).state++;
@@ -44,7 +44,7 @@ class MinewStatsCard extends ConsumerWidget {
           color: ThemeColors.of(context).primary,
           size: AppSizes.iconSmall.get(isMobile, isTablet),
         ),
-        tooltip: 'Atualizar estatÃ­sticas',
+        tooltip: 'Atualizar estatísticas',
       ),
       child: Column(
         children: [
@@ -52,11 +52,11 @@ class MinewStatsCard extends ConsumerWidget {
           minewStatsAsync.when(
             data: (stats) {
               if (stats == null) {
-                return const SyncStatsError(error: 'Nenhum dado disponÃ­vel');
+                return const SyncStatsError(error: 'Nenhum dado disponível');
               }
               return _buildStatsGrid(stats);
             },
-            loading: () => const SyncStatsLoading(message: 'Carregando estatÃ­sticas...'),
+            loading: () => const SyncStatsLoading(message: 'Carregando estatísticas...'),
             error: (error, _) => SyncStatsError(
               error: error.toString(),
               onRetry: () => ref.read(minewStatsRefreshProvider.notifier).state++,
@@ -185,4 +185,5 @@ class MinewStatsCard extends ConsumerWidget {
     );
   }
 }
+
 

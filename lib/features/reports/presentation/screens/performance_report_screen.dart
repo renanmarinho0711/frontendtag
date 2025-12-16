@@ -245,7 +245,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).successLight,
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -378,9 +378,9 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               Container(
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).yellowGoldLight,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.5)),
+                  border: Border.all(color: ThemeColors.of(context).yellowGoldLight),
                 ),
                 child: const Row(
                   mainAxisSize: MainAxisSize.min,
@@ -565,12 +565,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(24),
           border: Border.all(
-            color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.3),
+            color: (relatÃ³rio['cor'] as Color)Light,
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.15),
+              color: (relatÃ³rio['cor'] as Color)Light,
               blurRadius: 25,
               offset: const Offset(0, 8),
             ),
@@ -637,10 +637,10 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: _getPrioridadeCor(relatÃ³rio['prioridade']).withValues(alpha: 0.1),
+                    color: _getPrioridadeCor(relatÃ³rio['prioridade'])Light,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                      color: _getPrioridadeCor(relatÃ³rio['prioridade']).withValues(alpha: 0.3),
+                      color: _getPrioridadeCor(relatÃ³rio['prioridade'])Light,
                     ),
                   ),
                   child: Text(
@@ -672,13 +672,13 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        (relatÃ³rio['cor'] as Color).withValues(alpha: 0.15),
-                        (relatÃ³rio['cor'] as Color).withValues(alpha: 0.05),
+                        (relatÃ³rio['cor'] as Color)Light,
+                        (relatÃ³rio['cor'] as Color)Light,
                       ],
                     ),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.3),
+                      color: (relatÃ³rio['cor'] as Color)Light,
                     ),
                   ),
                   child: Row(
@@ -710,7 +710,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: relatÃ³rio['cor'].withValues(alpha: 0.1),
+                          color: relatÃ³rio['cor']Light,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Icon(
@@ -744,7 +744,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.1),
+                            color: (relatÃ³rio['cor'] as Color)Light,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Icon(
@@ -787,13 +787,13 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            (relatÃ³rio['cor'] as Color).withValues(alpha: 0.1),
-                            (relatÃ³rio['cor'] as Color).withValues(alpha: 0.05),
+                            (relatÃ³rio['cor'] as Color)Light,
+                            (relatÃ³rio['cor'] as Color)Light,
                           ],
                         ),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.3),
+                          color: (relatÃ³rio['cor'] as Color)Light,
                         ),
                       ),
                       child: Column(
@@ -1033,7 +1033,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.15),
+                        color: (relatÃ³rio['cor'] as Color)Light,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Icon(Icons.list_rounded, color: relatÃ³rio['cor'], size: 22),
@@ -1137,6 +1137,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
     );
   }
 }
+
 
 
 

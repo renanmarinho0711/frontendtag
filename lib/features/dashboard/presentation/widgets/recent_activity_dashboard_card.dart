@@ -254,7 +254,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
           Container(
             padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
-              color: (activity['color'] as Color).withValues(alpha: 0.1),
+              color: (activity['color'] as Color)Light,
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -413,6 +413,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
     );
   }
 }
+
 
 
 

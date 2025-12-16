@@ -1,12 +1,12 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Prioridade do alerta - compat�vel com tags_dashboard_screen.dart
+/// Prioridade do alerta - compat?vel com tags_dashboard_screen.dart
 enum TagAlertPriority { critical, attention, info }
 
-/// Modelo de alerta de tags - compat�vel com tags_dashboard_screen.dart
+/// Modelo de alerta de tags - compat?vel com tags_dashboard_screen.dart
 class TagAlert {
   final String id;
   final TagAlertPriority priority;
@@ -29,7 +29,7 @@ class TagAlert {
   });
 }
 
-/// Card de alertas acion�veis para o m�dulo Tags
+/// Card de alertas acion?veis para o m?dulo Tags
 class TagsAlertsCard extends StatelessWidget {
   final List<TagAlert> alerts;
   final VoidCallback? onResolveAll;
@@ -124,7 +124,7 @@ class TagsAlertsCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: borderColor.withValues(alpha: 0.2),
+              color: borderColorLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(alert.icon, color: borderColor, size: isMobile ? 18 : 20),
@@ -184,11 +184,11 @@ class TagsAlertsCard extends StatelessWidget {
   Color _getBackgroundColor(BuildContext context, TagAlertPriority priority) {
     switch (priority) {
       case TagAlertPriority.critical:
-        return ThemeColors.of(context).error.withValues(alpha: 0.1);
+        return ThemeColors.of(context).errorLight;
       case TagAlertPriority.attention:
-        return ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.1);
+        return ThemeColors.of(context).orangeMaterialLight;
       case TagAlertPriority.info:
-        return ThemeColors.of(context).primary.withValues(alpha: 0.1);
+        return ThemeColors.of(context).primaryLight;
     }
   }
 
@@ -203,6 +203,7 @@ class TagsAlertsCard extends StatelessWidget {
     }
   }
 }
+
 
 
 

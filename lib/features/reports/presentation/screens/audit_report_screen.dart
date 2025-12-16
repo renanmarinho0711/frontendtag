@@ -268,7 +268,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).primaryLight,
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -409,9 +409,9 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).successLight,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: ThemeColors.of(context).success.withValues(alpha: 0.5)),
+                  border: Border.all(color: ThemeColors.of(context).successLight),
                 ),
                 child: const Row(
                   mainAxisSize: MainAxisSize.min,
@@ -609,12 +609,12 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: (log['cor'] as Color).withValues(alpha: 0.3),
+            color: (log['cor'] as Color)Light,
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: (log['cor'] as Color).withValues(alpha: 0.1),
+              color: (log['cor'] as Color)Light,
               blurRadius: 15,
               offset: const Offset(0, 4),
             ),
@@ -635,7 +635,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: (log['cor'] as Color).withValues(alpha: 0.3),
+                    color: (log['cor'] as Color)Light,
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -658,10 +658,10 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 4),
                   decoration: BoxDecoration(
-                    color: _getCategoriaCor(log['categoria']).withValues(alpha: 0.1),
+                    color: _getCategoriaCor(log['categoria'])Light,
                     borderRadius: BorderRadius.circular(6),
                     border: Border.all(
-                      color: _getCategoriaCor(log['categoria']).withValues(alpha: 0.3),
+                      color: _getCategoriaCor(log['categoria'])Light,
                     ),
                   ),
                   child: Text(
@@ -722,7 +722,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                         Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: (log['cor'] as Color).withValues(alpha: 0.1),
+                            color: (log['cor'] as Color)Light,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Icon(
@@ -806,9 +806,9 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -977,6 +977,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     }
   }
 }
+
 
 
 

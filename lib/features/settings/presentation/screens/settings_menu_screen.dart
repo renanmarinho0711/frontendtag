@@ -296,7 +296,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
               vertical: AppSizes.extraSmallPadding.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).success.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).successLight,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -350,7 +350,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).blueIndigo.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).blueIndigoLight],
         ),
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
@@ -438,7 +438,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
           ),
           boxShadow: [
             BoxShadow(
-              color: (item['gradient'][0] as Color).withValues(alpha: 0.3),
+              color: (item['gradient'][0] as Color)Light,
               blurRadius: isMobile ? 18 : 22,
               offset: const Offset(0, 6),
             ),
@@ -712,11 +712,11 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
         vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : 20,
         ),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -835,7 +835,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).error.withValues(alpha: 0.5),
+                  color: ThemeColors.of(context).errorLight,
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 ),
@@ -1302,7 +1302,7 @@ class _ClientsManagementPlaceholder extends StatelessWidget {
             Icon(
               Icons.business_rounded,
               size: 80,
-              color: ThemeColors.of(context).success.withValues(alpha: 0.5),
+              color: ThemeColors.of(context).successLight,
             ),
             const SizedBox(height: 24),
             Text(
@@ -1326,7 +1326,7 @@ class _ClientsManagementPlaceholder extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).successLight,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
@@ -1376,7 +1376,7 @@ class _StoresManagementPlaceholder extends StatelessWidget {
             Icon(
               Icons.storefront_rounded,
               size: 80,
-              color: ThemeColors.of(context).success.withValues(alpha: 0.5),
+              color: ThemeColors.of(context).successLight,
             ),
             const SizedBox(height: 24),
             Text(
@@ -1400,7 +1400,7 @@ class _StoresManagementPlaceholder extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).successLight,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
@@ -1429,6 +1429,7 @@ class _StoresManagementPlaceholder extends StatelessWidget {
     );
   }
 }
+
 
 
 

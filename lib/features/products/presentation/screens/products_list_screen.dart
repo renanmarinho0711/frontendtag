@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -761,7 +761,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       icon: Container(
                         padding: EdgeInsets.all(AppSpacing.xxs),
                         decoration: BoxDecoration(
-                          color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                          color: ThemeColors.of(context).brandPrimaryGreenLight,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
@@ -778,11 +778,11 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                   : null,
               border: OutlineInputBorder(
                 borderRadius: AppRadius.lg,
-                borderSide: BorderSide(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2)),
+                borderSide: BorderSide(color: ThemeColors.of(context).brandPrimaryGreenLight),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: AppRadius.lg,
-                borderSide: BorderSide(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2)),
+                borderSide: BorderSide(color: ThemeColors.of(context).brandPrimaryGreenLight),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: AppRadius.lg,
@@ -1018,12 +1018,12 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         margin: EdgeInsets.only(bottom: AppSizes.paddingBase.get(isMobile, isTablet)),
         decoration: BoxDecoration(
           color: isSelected 
-              ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.08)
+              ? ThemeColors.of(context).successLight
               : ThemeColors.of(context).surface,
           borderRadius: AppRadius.card,
           boxShadow: AppShadows.mediumCard,
           border: isSelected 
-              ? Border.all(color: ThemeColors.of(context).brandPrimaryGreen, width: 2)
+              ? Border.all(color: ThemeColors.of(context).success, width: 2)
               : null,
         ),
         child: Material(
@@ -1147,7 +1147,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                           maxLines: 2,
                         ),
                         SizedBox(height: AppSizes.paddingXxs.get(isMobile, isTablet)),
-                        // Categoria � Cdigo
+                        // Categoria ? Cdigo
                         Row(
                           children: [
                             Icon(
@@ -1170,7 +1170,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 6),
-                              child: Text('�', style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 12)),
+                              child: Text('?', style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 12)),
                             ),
                             Text(
                               produto.codigo,
@@ -1663,8 +1663,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 gradient: isInitialEmpty 
                     ? LinearGradient(
                         colors: [
-                          ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
-                          ThemeColors.of(context).greenMain.withValues(alpha: 0.05),
+                          ThemeColors.of(context).greenMainLight,
+                          ThemeColors.of(context).greenMainLight,
                         ],
                       )
                     : null,
@@ -2046,7 +2046,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         color: ThemeColors.of(context).surface,
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, -4),
           ),
@@ -2117,9 +2117,9 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
             vertical: isMobile ? 10 : 12,
           ),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: colorLight,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: color.withValues(alpha: 0.3)),
+            border: Border.all(color: colorLight),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -2281,7 +2281,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
                       padding: const EdgeInsets.all(AppSpacing.sm),
                       decoration: BoxDecoration(
                         color: isSelected 
-                          ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
+                          ? ThemeColors.of(context).brandPrimaryGreenLight
                           : ThemeColors.of(context).backgroundLight,
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -2309,7 +2309,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    selectedTileColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.05),
+                    selectedTileColor: ThemeColors.of(context).brandPrimaryGreenLight,
                     selected: isSelected,
                   );
                 },
@@ -2339,6 +2339,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
     );
   }
 }
+
 
 
 

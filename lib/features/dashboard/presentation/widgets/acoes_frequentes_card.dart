@@ -128,7 +128,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
             borderRadius: AppSpacing.borderRadiusSm,
             boxShadow: [
               BoxShadow(
-                color: colors.orangeMain.withValues(alpha: 0.3),
+                color: colors.orangeMainLight,
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -311,7 +311,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
           color: corPrimaria.withValues(alpha: 0.12),
           borderRadius: AppSpacing.borderRadiusMd,
           border: Border.all(
-            color: corPrimaria.withValues(alpha: 0.2),
+            color: corPrimariaLight,
             width: 1,
           ),
         ),
@@ -325,14 +325,14 @@ class AcoesFrequentesCard extends ConsumerWidget {
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [corPrimaria, corPrimaria.withValues(alpha: 0.8)],
+                      colors: [corPrimaria, corPrimariaDark],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     borderRadius: AppSpacing.borderRadiusSm,
                     boxShadow: [
                       BoxShadow(
-                        color: corPrimaria.withValues(alpha: 0.3),
+                        color: corPrimariaLight,
                         blurRadius: 6,
                         offset: const Offset(0, 2),
                       ),
@@ -409,12 +409,12 @@ class AcoesFrequentesCard extends ConsumerWidget {
             end: Alignment.centerRight,
             colors: [
               gradientColors[0].withValues(alpha: 0.12),
-              gradientColors[1].withValues(alpha: 0.05),
+              gradientColors[1]Light,
             ],
           ),
           borderRadius: AppSpacing.borderRadiusMd,
           border: Border.all(
-            color: gradientColors[0].withValues(alpha: 0.15),
+            color: gradientColors[0]Light,
             width: 1,
           ),
         ),
@@ -432,7 +432,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                 borderRadius: AppSpacing.borderRadiusSm,
                 boxShadow: [
                   BoxShadow(
-                    color: gradientColors[0].withValues(alpha: 0.3),
+                    color: gradientColors[0]Light,
                     blurRadius: 8,
                     offset: const Offset(0, 3),
                   ),
@@ -473,10 +473,10 @@ class AcoesFrequentesCard extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: colors.error.withValues(alpha: 0.1),
+                  color: colors.errorLight,
                   borderRadius: AppSpacing.borderRadiusFull,
                   border: Border.all(
-                    color: colors.error.withValues(alpha: 0.3),
+                    color: colors.errorLight,
                     width: 1,
                   ),
                 ),
@@ -490,7 +490,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
             // Seta indicadora
             Icon(
               Icons.arrow_forward_ios_rounded,
-              color: colors.textSecondary.withValues(alpha: 0.5),
+              color: colors.textSecondaryLight,
               size: 16,
             ),
           ],
@@ -499,6 +499,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

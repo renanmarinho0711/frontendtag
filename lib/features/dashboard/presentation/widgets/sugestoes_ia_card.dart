@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/strategies/presentation/screens/ai_suggestions_screen.dart';
@@ -41,7 +41,7 @@ class SugestoesIACard extends ConsumerWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.3),
+              color: ThemeColors.of(context).greenMaterialLight,
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -216,7 +216,7 @@ class SugestoesIACard extends ConsumerWidget {
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
-        border: Border.all(color: textColor.withValues(alpha: 0.3)),
+        border: Border.all(color: textColorLight),
       ),
       child: Row(
         children: [
@@ -249,6 +249,7 @@ class SugestoesIACard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

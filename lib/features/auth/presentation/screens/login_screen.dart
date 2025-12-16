@@ -307,7 +307,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).statusActive.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).statusActiveLight,
               blurRadius: 12,
               spreadRadius: 0,
             ),
@@ -573,7 +573,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
           foregroundColor: ThemeColors.of(context).surface,
           elevation: 0,
-          shadowColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
+          shadowColor: ThemeColors.of(context).brandPrimaryGreenLight,
           shape: RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
@@ -716,7 +716,7 @@ class _PulsingDotState extends State<_PulsingDot>
               color: widget.color,
               boxShadow: [
                 BoxShadow(
-                  color: widget.color.withValues(alpha: 0.5),
+                  color: widget.colorLight,
                   blurRadius: 6,
                   spreadRadius: 1,
                 ),
@@ -728,6 +728,7 @@ class _PulsingDotState extends State<_PulsingDot>
     );
   }
 }
+
 
 
 

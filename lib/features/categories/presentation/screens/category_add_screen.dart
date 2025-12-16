@@ -268,15 +268,15 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
-                ThemeColors.of(context).primary.withValues(alpha: 0.1),
+                ThemeColors.of(context).blueCyanLight,
+                ThemeColors.of(context).primaryLight,
               ],
             ),
             borderRadius: BorderRadius.circular(
               isMobile ? 12 : 16,
             ),
             border: Border.all(
-              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+              color: ThemeColors.of(context).blueCyanLight,
             ),
           ),
           child: Row(
@@ -284,7 +284,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
             children: [
               Icon(
                 Icons.lightbulb_rounded,
-                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.8),
+                color: ThemeColors.of(context).yellowGoldDark,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
               SizedBox(
@@ -369,7 +369,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                   boxShadow: isSelected
                       ? [
                           BoxShadow(
-                            color: cat.cor.withValues(alpha: 0.3),
+                            color: cat.corLight,
                             blurRadius: isMobile ? 8 : 12,
                             offset: const Offset(0, 4),
                           ),
@@ -387,7 +387,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                           AppSizes.paddingBase.get(isMobile, isTablet),
                         ),
                         decoration: BoxDecoration(
-                          color: cat.cor.withValues(alpha: 0.1),
+                          color: cat.corLight,
                           borderRadius: BorderRadius.circular(
                             isMobile ? 10 : 12,
                           ),
@@ -748,7 +748,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                   ),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? _corSelecionada.withValues(alpha: 0.1)
+                        ? _corSelecionadaLight
                         : ThemeColors.of(context).textSecondaryOverlay20,
                     border: Border.all(
                       color: isSelected ?  _corSelecionada : ThemeColors.of(context).textSecondary,
@@ -814,7 +814,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                     boxShadow: isSelected
                         ? [
                             BoxShadow(
-                              color: cor.withValues(alpha: 0.5),
+                              color: corLight,
                               blurRadius: isMobile ? 8 : 12,
                               offset: const Offset(0, 4),
                             ),
@@ -852,14 +852,14 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            _corSelecionada.withValues(alpha: 0.1),
-            _corSelecionada.withValues(alpha: 0.05),
+            _corSelecionadaLight,
+            _corSelecionadaLight,
           ],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
         ),
-        border: Border.all(color: _corSelecionada.withValues(alpha: 0.3)),
+        border: Border.all(color: _corSelecionadaLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -910,7 +910,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: _corSelecionada.withValues(alpha: 0.3),
+                      color: _corSelecionadaLight,
                       blurRadius: isMobile ? 8 : 12,
                       offset: const Offset(0, 4),
                     ),
@@ -1276,6 +1276,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
     );
   }
 }
+
 
 
 

@@ -235,7 +235,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
     return Material(
       color: isActive 
           ? widget.primaryColor 
-          : ThemeColors.of(context).neutralBlack.withValues(alpha: 0.5),
+          : ThemeColors.of(context).neutralBlackLight,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: onTap,
@@ -604,6 +604,7 @@ class BarcodeScannerDialog {
     return result;
   }
 }
+
 
 
 

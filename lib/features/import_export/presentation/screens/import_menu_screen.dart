@@ -244,9 +244,9 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                             ),
                             decoration: BoxDecoration(
-                              color: ThemeColors.of(context).primary.withValues(alpha: 0.1),
+                              color: ThemeColors.of(context).primaryLight,
                               borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
-                              border: Border.all(color: ThemeColors.of(context).primary.withValues(alpha: 0.3)),
+                              border: Border.all(color: ThemeColors.of(context).primaryLight),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -254,7 +254,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                                 Icon(
                                   Icons.apps_rounded,
                                   size: AppSizes.iconTiny.get(isMobile, isTablet),
-                                  color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
+                                  color: ThemeColors.of(context).primaryDark,
                                 ),
                                 SizedBox(
                                   width: AppSizes.paddingXsAlt.get(isMobile, isTablet),
@@ -270,7 +270,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                     fontWeight: FontWeight.bold,
-                                    color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
+                                    color: ThemeColors.of(context).primaryDark,
                                   ),
                                 ),
                               ],
@@ -440,7 +440,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).success.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).successLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
@@ -493,7 +493,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 14,
@@ -627,12 +627,12 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           gradient: LinearGradient(
             colors: [
               (stat['cor'] as Color).withValues(alpha: 0.25),
-              (stat['cor'] as Color).withValues(alpha: 0.15),
+              (stat['cor'] as Color)Light,
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: (stat['cor'] as Color).withValues(alpha: 0.5),
+            color: (stat['cor'] as Color)Light,
             width: isMobile ? 1.25 : 1.5,
           ),
         ),
@@ -672,7 +672,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color).withValues(alpha: 0.1),
+                color: (stat['cor'] as Color)Light,
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -731,7 +731,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).quickActionsImportBackground2.withValues(alpha: 0.5),
+            color: ThemeColors.of(context).quickActionsImportBackground2Light,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -1334,11 +1334,11 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         AppSizes.paddingSm.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
+        color: colorLight,
         borderRadius: BorderRadius.circular(
           isMobile ? 10 : 12,
         ),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         children: [
@@ -1356,11 +1356,11 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               desktop: 48,
             ),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: colorLight,
               borderRadius: BorderRadius.circular(
                 isMobile ?  10 : 12,
               ),
-              border: Border.all(color: color.withValues(alpha: 0.3)),
+              border: Border.all(color: colorLight),
             ),
             child: Center(
               child: Text(
@@ -1414,7 +1414,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.1),
+                        color: colorLight,
                         borderRadius: BorderRadius.circular(
                           isMobile ? 5 : 6,
                         ),
@@ -1647,7 +1647,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               AppSizes.paddingXs.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: colorLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 6 : 8,
               ),
@@ -1772,6 +1772,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
     );
   }
 }
+
 
 
 

@@ -176,7 +176,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
             });
           },
           selectedColor: cor,
-          backgroundColor: cor.withValues(alpha: 0.1),
+          backgroundColor: corLight,
           labelStyle: TextStyle(
             color: isSelected ? ThemeColors.of(context).surface : cor,
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
@@ -211,7 +211,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
           });
         },
         selectedColor: theme.color,
-        backgroundColor: theme.color.withValues(alpha: 0.1),
+        backgroundColor: theme.colorLight,
         labelStyle: TextStyle(
           color: isSelected ? ThemeColors.of(context).surface : theme.color,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
@@ -568,7 +568,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     color: isCompleted 
                         ? ThemeColors.of(context).success 
                         : isActive 
-                            ? ThemeColors.of(context).success.withValues(alpha: 0.2)
+                            ? ThemeColors.of(context).successLight
                             : ThemeColors.of(context).grey200,
                     border: isActive 
                         ? Border.all(color: ThemeColors.of(context).success, width: 2)
@@ -637,12 +637,12 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    ThemeColors.of(context).infoPastel.withValues(alpha: 0.5),
-                    ThemeColors.of(context).infoPastel.withValues(alpha: 0.2),
+                    ThemeColors.of(context).infoPastelLight,
+                    ThemeColors.of(context).infoPastelLight,
                   ],
                 ),
                 borderRadius: AppRadius.card,
-                border: Border.all(color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3)),
+                border: Border.all(color: ThemeColors.of(context).blueMainLight),
               ),
               child: Column(
                 children: [
@@ -1040,12 +1040,12 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  categoryTheme.color.withValues(alpha: 0.1),
-                  categoryTheme.color.withValues(alpha: 0.05),
+                  categoryTheme.colorLight,
+                  categoryTheme.colorLight,
                 ],
               ),
               borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.lg : AppRadius.xl),
-              border: Border.all(color: categoryTheme.color.withValues(alpha: 0.3)),
+              border: Border.all(color: categoryTheme.colorLight),
             ),
             child: Column(
               children: [
@@ -1058,7 +1058,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                         borderRadius: AppRadius.md,
                         boxShadow: [
                           BoxShadow(
-                            color: categoryTheme.color.withValues(alpha: 0.3),
+                            color: categoryTheme.colorLight,
                             blurRadius: 8,
                             offset: const Offset(0, 4),
                           ),
@@ -1147,7 +1147,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
               boxShadow: AppShadows.subtle,
               border: Border.all(
                 color: _vincularTag 
-                    ? ThemeColors.of(context).success.withValues(alpha: 0.5) 
+                    ? ThemeColors.of(context).successLight 
                     : ThemeColors.of(context).borderLight,
                 width: _vincularTag ? 2 : 1,
               ),
@@ -1175,7 +1175,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
                 decoration: BoxDecoration(
                   color: _vincularTag 
-                      ? ThemeColors.of(context).success.withValues(alpha: 0.1)
+                      ? ThemeColors.of(context).successLight
                       : ThemeColors.of(context).grey200,
                   borderRadius: AppRadius.sm,
                 ),
@@ -1198,7 +1198,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
             decoration: BoxDecoration(
               color: ThemeColors.of(context).infoPastel,
               borderRadius: AppRadius.sm,
-              border: Border.all(color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3)),
+              border: Border.all(color: ThemeColors.of(context).blueMainLight),
             ),
             child: Row(
               children: [
@@ -1209,7 +1209,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     'Revise os dados antes de salvar. Voc poder editar o produto posteriormente.',
                     style: TextStyle(
                       fontSize: 13,
-                      color: ThemeColors.of(context).blueMain.withValues(alpha: 0.8),
+                      color: ThemeColors.of(context).blueMainDark,
                     ),
                   ),
                 ),
@@ -1641,6 +1641,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
     }
   }
 }
+
 
 
 

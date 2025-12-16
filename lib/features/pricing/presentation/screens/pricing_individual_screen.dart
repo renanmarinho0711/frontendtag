@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/enums/loading_status.dart';
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
@@ -198,7 +198,7 @@ class _PrecificacaoAjusteIndividualScreenState
                     ),
                   ),
                   Text(
-                    'Alterar produto espec�fico',
+                    'Alterar produto espec?fico',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -315,7 +315,7 @@ class _PrecificacaoAjusteIndividualScreenState
                     ),
                   ),
                   decoration: InputDecoration(
-                    labelText: 'Nome ou C�digo de Barras',
+                    labelText: 'Nome ou C?digo de Barras',
                     labelStyle: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -375,7 +375,7 @@ class _PrecificacaoAjusteIndividualScreenState
                             SizedBox(
                               width: AppSizes.spacingBase.get(isMobile, isTablet),
                             ),
-                            const Text('Escaneando c�digo de barras...'),
+                            const Text('Escaneando c?digo de barras...'),
                           ],
                         ),
                         behavior: SnackBarBehavior.floating,
@@ -461,12 +461,12 @@ class _PrecificacaoAjusteIndividualScreenState
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 18 : (isTablet ? 19 : 20),
         ),
-        border: Border.all(color: ThemeColors.of(context).info.withValues(alpha: 0.3)),
+        border: Border.all(color: ThemeColors.of(context).infoLight),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -515,7 +515,7 @@ class _PrecificacaoAjusteIndividualScreenState
               const SizedBox(width: 8),
               Expanded(
                 child: _buildInfoChip(
-                  'Pre�o Atual',
+                  'Pre?o Atual',
                   'R\$ ${produto.precoAtual.toStringAsFixed(2)}',
                   ThemeColors.of(context).success,
                 ),
@@ -539,9 +539,9 @@ class _PrecificacaoAjusteIndividualScreenState
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         children: [
@@ -599,7 +599,7 @@ class _PrecificacaoAjusteIndividualScreenState
               ),
               const SizedBox(width: 10),
               const Text(
-                'Novo Pre�o',
+                'Novo Pre?o',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -616,7 +616,7 @@ class _PrecificacaoAjusteIndividualScreenState
               FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}')),
             ],
             decoration: InputDecoration(
-              labelText: 'Novo Pre�o',
+              labelText: 'Novo Pre?o',
               prefixText: 'R\$ ',
               prefixIcon: const Icon(Icons.monetization_on_rounded),
               border: OutlineInputBorder(
@@ -642,7 +642,7 @@ class _PrecificacaoAjusteIndividualScreenState
             child: ElevatedButton.icon(
               onPressed: _aplicarNovoPreco,
               icon: const Icon(Icons.check_circle_rounded),
-              label: const Text('Aplicar Novo Pre�o'),
+              label: const Text('Aplicar Novo Pre?o'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: ThemeColors.of(context).success,
                 foregroundColor: ThemeColors.of(context).surface,
@@ -689,7 +689,7 @@ class _PrecificacaoAjusteIndividualScreenState
               ),
               const SizedBox(width: 10),
               const Text(
-                'Hist�rico de Pre�os',
+                'Hist?rico de Pre?os',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -704,7 +704,7 @@ class _PrecificacaoAjusteIndividualScreenState
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                  'Nenhum hist�rico dispon�vel',
+                  'Nenhum hist?rico dispon?vel',
                   style: TextStyle(color: ThemeColors.of(context).textSecondary),
                 ),
               ),
@@ -733,7 +733,7 @@ class _PrecificacaoAjusteIndividualScreenState
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: (isAumento ? ThemeColors.of(context).success : ThemeColors.of(context).error).withValues(alpha: 0.1),
+            color: (isAumento ? ThemeColors.of(context).success : ThemeColors.of(context).error)Light,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
@@ -756,7 +756,7 @@ class _PrecificacaoAjusteIndividualScreenState
               ),
               const SizedBox(height: 4),
               Text(
-                item.reason ?? 'Altera��o de pre�o',
+                item.reason ?? 'Altera??o de pre?o',
                 style: TextStyle(
                   fontSize: 12,
                   color: ThemeColors.of(context).textSecondary,
@@ -791,7 +791,7 @@ class _PrecificacaoAjusteIndividualScreenState
             children: [
               Icon(Icons.check_rounded, color: ThemeColors.of(context).surface),
               const SizedBox(width: 12),
-              Text('Pre�o de ${_produtoSelecionado!.nome} atualizado!'),
+              Text('Pre?o de ${_produtoSelecionado!.nome} atualizado!'),
             ],
           ),
           backgroundColor: ThemeColors.of(context).success,
@@ -805,6 +805,7 @@ class _PrecificacaoAjusteIndividualScreenState
     }
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
@@ -79,7 +79,7 @@ class ScannerCentralCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1),
+                        color: ThemeColors.of(context).greenMaterialLight,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -227,6 +227,7 @@ class ScannerCentralCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

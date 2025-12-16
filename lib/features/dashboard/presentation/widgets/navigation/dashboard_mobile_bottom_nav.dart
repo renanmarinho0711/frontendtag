@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/dashboard_navigation_rail.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
@@ -29,7 +29,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
         color: ThemeColors.of(context).surface,
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -160,6 +160,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
     }
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
@@ -54,7 +54,7 @@ class OnboardingStepsCard extends ConsumerWidget {
             ),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: ThemeColors.of(context).onboardingBorder.withValues(alpha: 0.5),
+              color: ThemeColors.of(context).onboardingBorderLight,
               width: 1,
             ),
           ),
@@ -67,7 +67,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).onboardingIcon.withValues(alpha: 0.1),
+                      color: ThemeColors.of(context).onboardingIconLight,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(
@@ -214,16 +214,16 @@ class OnboardingStepsCard extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           decoration: BoxDecoration(
             color: completed 
-                ? ThemeColors.of(context).greenMain.withValues(alpha: 0.1)
+                ? ThemeColors.of(context).greenMainLight
                 : isNext
-                    ? ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1)
+                    ? ThemeColors.of(context).greenMaterialLight
                     : ThemeColors.of(context).grey100,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: completed
-                  ? ThemeColors.of(context).greenMain.withValues(alpha: 0.3)
+                  ? ThemeColors.of(context).greenMainLight
                   : isNext
-                      ? ThemeColors.of(context).greenMaterial.withValues(alpha: 0.3)
+                      ? ThemeColors.of(context).greenMaterialLight
                       : ThemeColors.of(context).grey300,
               width: isNext ? 2 : 1,
             ),
@@ -287,6 +287,7 @@ class OnboardingStepsCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

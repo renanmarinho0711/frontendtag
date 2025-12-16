@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/providers/performance_provider.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
@@ -414,7 +414,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).greenMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -439,7 +439,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                     ),
                     SizedBox(height: AppSizes.paddingXxs.get(isMobile, isTablet)),
                     Text(
-                      'ltima atualiza��o: 22/11/2025 s 03:15',
+                      'ltima atualiza??o: 22/11/2025 s 03:15',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                       overflow: TextOverflow.ellipsis,
@@ -459,7 +459,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).greenMain.withValues(alpha: 0.3),
+                      color: ThemeColors.of(context).greenMainLight,
                       blurRadius: isMobile ? 8 : 10,
                       offset: const Offset(0, 4),
                     ),
@@ -568,7 +568,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Text(
-                'Par�metros do Modelo',
+                'Par?metros do Modelo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                 overflow: TextOverflow.ellipsis,
@@ -590,7 +590,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  'Perodo Hist�rico de Anlise',
+                  'Perodo Hist?rico de Anlise',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
                   overflow: TextOverflow.ellipsis,
@@ -604,7 +604,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -669,7 +669,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  'Nvel de Confian�a Mnimo',
+                  'Nvel de Confian?a Mnimo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
                   overflow: TextOverflow.ellipsis,
@@ -683,7 +683,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueCyanLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -725,11 +725,11 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                 SizedBox(width: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
                 Expanded(
                   child: Text(
-                    'Previses abaixo deste nvel n�o sero exibidas',
+                    'Previses abaixo deste nvel n?o sero exibidas',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10),
                     overflow: TextOverflow.ellipsis,
-                      color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.8),
+                      color: ThemeColors.of(context).blueCyanDark,
                     ),
                   ),
                 ),
@@ -946,7 +946,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                           vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                         ),
                         decoration: BoxDecoration(
-                          color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                          color: ThemeColors.of(context).blueCyanLight,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -1007,7 +1007,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -1018,7 +1018,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Text(
-                'Distribui��o Visual',
+                'Distribui??o Visual',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                 overflow: TextOverflow.ellipsis,
@@ -1091,10 +1091,10 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
-          border: Border.all(color: produto.color.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: produto.colorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: produto.color.withValues(alpha: 0.15),
+              color: produto.colorLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -1195,9 +1195,9 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -1278,7 +1278,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
 
   Color _getColorForFator(String fator) {
     switch (fator) {
-      case 'Hist�rico de Vendas':
+      case 'Hist?rico de Vendas':
         return ThemeColors.of(context).blueMain;
       case 'Sazonalidade':
         return ThemeColors.of(context).greenMain;
@@ -1316,7 +1316,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
             ),
             SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
             Text(
-              'Analisando ${ref.read(aiForecastProvider).historicalPeriod} dias de hist�rico...',
+              'Analisando ${ref.read(aiForecastProvider).historicalPeriod} dias de hist?rico...',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
@@ -1418,7 +1418,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               ),
               SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
               Text(
-                '? Analisa hist�rico de vendas e padres de comportamento',
+                '? Analisa hist?rico de vendas e padres de comportamento',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
                 overflow: TextOverflow.ellipsis,
@@ -1439,7 +1439,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               ),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
               Text(
-                '? Sugere ajustes de pre�o e estoque proativamente',
+                '? Sugere ajustes de pre?o e estoque proativamente',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
                 overflow: TextOverflow.ellipsis,
@@ -1486,7 +1486,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
             ),
             SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
             Text(
-              'Configura��es do motor de IA salvas com sucesso',
+              'Configura??es do motor de IA salvas com sucesso',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
               overflow: TextOverflow.ellipsis,
@@ -1501,6 +1501,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
     );
   }
 }
+
 
 
 

@@ -200,15 +200,15 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
-            ThemeColors.of(context).primary.withValues(alpha: 0.1),
+            ThemeColors.of(context).blueCyanLight,
+            ThemeColors.of(context).primaryLight,
           ],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 16,
         ),
         border: Border.all(
-          color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+          color: ThemeColors.of(context).blueCyanLight,
         ),
       ),
       child: Row(
@@ -216,7 +216,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         children: [
           Icon(
             Icons.lightbulb_rounded,
-            color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.8),
+            color: ThemeColors.of(context).yellowGoldDark,
             size: AppSizes.iconMedium.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -541,13 +541,13 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              gradient[0].withValues(alpha: 0.1),
-              gradient[0].withValues(alpha: 0.05),
+              gradient[0]Light,
+              gradient[0]Light,
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: gradient[0].withValues(alpha: 0.3),
+            color: gradient[0]Light,
             width: isMobile ? 1.25 : 1.5,
           ),
         ),
@@ -823,8 +823,8 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         gradient: posicao == 1
             ? LinearGradient(
                 colors: [
-                  ThemeColors.of(context).yellowGold.withValues(alpha: 0.1),
-                  ThemeColors.of(context).warning.withValues(alpha: 0.1),
+                  ThemeColors.of(context).yellowGoldLight,
+                  ThemeColors.of(context).warningLight,
                 ],
               )
             : null,
@@ -963,10 +963,10 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           borderRadius: BorderRadius.circular(
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
-          border: Border.all(color: (categoria['cor'] as Color).withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: (categoria['cor'] as Color)Light, width: 2),
           boxShadow: [
             BoxShadow(
-              color: (categoria['cor'] as Color).withValues(alpha: 0.1),
+              color: (categoria['cor'] as Color)Light,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
             ),
@@ -1122,8 +1122,8 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                               ? Icons.trending_up_rounded
                               : Icons.trending_down_rounded,
                           color: categoria['crescimento'] > 0
-                              ? ThemeColors.of(context).success.withValues(alpha: 0.8)
-                              : ThemeColors.of(context).error.withValues(alpha: 0.8),
+                              ? ThemeColors.of(context).successDark
+                              : ThemeColors.of(context).errorDark,
                           size: 20,
                         ),
                         const SizedBox(width: 8),
@@ -1157,9 +1157,9 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         children: [
@@ -1595,7 +1595,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         children: [
@@ -1673,6 +1673,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     );
   }
 }
+
 
 
 

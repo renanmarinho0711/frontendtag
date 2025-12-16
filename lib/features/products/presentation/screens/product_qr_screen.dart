@@ -146,7 +146,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
             Container(
               padding: EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
-                color: (isTag ? ThemeColors.of(context).primary : ThemeColors.of(context).blueCyan).withValues(alpha: 0.1),
+                color: (isTag ? ThemeColors.of(context).primary : ThemeColors.of(context).blueCyan)Light,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
@@ -296,7 +296,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
             Container(
               padding: EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).successLight,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(Icons.check_rounded, color: ThemeColors.of(context).success),
@@ -393,9 +393,9 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               Container(
                 padding: EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).info.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: ThemeColors.of(context).info.withValues(alpha: 0.3)),
+                  border: Border.all(color: ThemeColors.of(context).infoLight),
                 ),
                 child: Row(
                   children: [
@@ -511,7 +511,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
             Container(
               padding: EdgeInsets.all(AppSpacing.md),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).info.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).infoLight,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Text(
@@ -706,7 +706,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(24)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).successLight,
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -904,7 +904,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: isActive ? color.withValues(alpha: 0.1) : ThemeColors.of(context).transparent,
+            color: isActive ? colorLight : ThemeColors.of(context).transparent,
             shape: BoxShape.circle,
             border: Border.all(color: color, width: isActive ? 2 : 1),
           ),
@@ -1019,16 +1019,16 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     return Container(
       padding: EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         children: [
           Container(
             padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.2),
+              color: colorLight,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 24),
@@ -1065,9 +1065,9 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -1143,6 +1143,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     );
   }
 }
+
 
 
 

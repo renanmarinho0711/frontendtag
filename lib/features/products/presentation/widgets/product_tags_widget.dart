@@ -252,7 +252,7 @@ class _TagListItem extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).blueCyanLight,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: const Text(
@@ -325,7 +325,7 @@ class _TagListItem extends StatelessWidget {
     }
 
     return CircleAvatar(
-      backgroundColor: color.withValues(alpha: 0.1),
+      backgroundColor: colorLight,
       child: Icon(icon, color: color, size: 20),
     );
   }
@@ -364,6 +364,7 @@ class _TagListItem extends StatelessWidget {
     return '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
   }
 }
+
 
 
 

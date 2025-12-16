@@ -44,7 +44,7 @@ class QrScanArea extends StatelessWidget {
         color: ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: hasCapture ? ThemeColors.of(context).success : primaryColor.withValues(alpha: 0.3),
+          color: hasCapture ? ThemeColors.of(context).success : primaryColorLight,
           width: hasCapture ? 2 : 1,
         ),
       ),
@@ -93,10 +93,10 @@ class QrScanArea extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(AppSpacing.dashboardSectionGap),
               decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.1),
+                color: primaryColorLight,
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: primaryColor.withValues(alpha: 0.3),
+                  color: primaryColorLight,
                   width: 2,
                 ),
               ),
@@ -215,7 +215,7 @@ class QrScanArea extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(AppSpacing.lg),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+              color: ThemeColors.of(context).successLight,
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -257,7 +257,7 @@ class _ScanLinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = color.withValues(alpha: 0.3)
+      ..color = colorLight
       ..strokeWidth = 2;
 
     // Desenha linhas de scan
@@ -265,7 +265,7 @@ class _ScanLinePainter extends CustomPainter {
     canvas.drawLine(
       Offset(0, lineY),
       Offset(size.width, lineY),
-      paint..color = color.withValues(alpha: 0.8),
+      paint..color = colorDark,
     );
 
     // Cantos do frame
@@ -298,6 +298,7 @@ class _ScanLinePainter extends CustomPainter {
     return oldDelegate.progress != progress;
   }
 }
+
 
 
 

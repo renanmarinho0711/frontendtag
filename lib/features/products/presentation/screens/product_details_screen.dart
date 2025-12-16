@@ -268,7 +268,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                         vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: _product.cor.withValues(alpha: 0.1),
+                        color: _product.corLight,
                         borderRadius: AppRadius.md,
                       ),
                       child: Column(
@@ -477,7 +477,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
+                  color: colorLight,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(icon, color: color, size: isMobile ? 20 : 24),
@@ -819,7 +819,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                       Container(
                         padding: EdgeInsets.all(AppSpacing.sm),
                         decoration: BoxDecoration(
-                          color: ThemeColors.of(context).success.withValues(alpha: 0.1),
+                          color: ThemeColors.of(context).successLight,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
@@ -1114,6 +1114,7 @@ class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(_SliverTabBarDelegate oldDelegate) => false;
 }
+
 
 
 

@@ -225,7 +225,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
               borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).yellowGoldLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -311,7 +311,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     ),
                   overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).blueMain.withValues(alpha: 0.8),
+                    color: ThemeColors.of(context).blueMainDark,
                   ),
                 ),
               ],
@@ -564,7 +564,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).blueCyanLight,
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -842,10 +842,10 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
-          border: Border.all(color: (setor['cor'] as Color).withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: (setor['cor'] as Color)Light, width: 2),
           boxShadow: [
             BoxShadow(
-              color: (setor['cor'] as Color).withValues(alpha: 0.1),
+              color: (setor['cor'] as Color)Light,
               blurRadius: isMobile ? 12 : 15,
               offset: const Offset(0, 4),
             ),
@@ -962,7 +962,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     icon: Icon(Icons.info_outline_rounded, size: AppSizes.iconTiny.get(isMobile, isTablet), color: setor['cor']),
                     label: Text('Ver Detalhes', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11), color: setor['cor'])),
                     style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: (setor['cor'] as Color).withValues(alpha: 0.5)),
+                      side: BorderSide(color: (setor['cor'] as Color)Light),
                       padding: EdgeInsets.symmetric(vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
                     ),
@@ -1191,6 +1191,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
     }
   }
 }
+
 
 
 

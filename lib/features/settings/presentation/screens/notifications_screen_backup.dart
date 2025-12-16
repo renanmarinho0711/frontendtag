@@ -595,7 +595,7 @@ class _ConfiguracoesNotificacoesScreenState
           AppSizes.paddingLg.get(isMobile, isTablet),
         ),
         border: Border.all(
-          color: value ? color.withOpacity(0.3) : ThemeColors.of(context).textSecondary,
+          color: value ? colorLight : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -983,7 +983,7 @@ class _ConfiguracoesNotificacoesScreenState
                   ),
                   child: Icon(
                     Icons.do_not_disturb_on_rounded,
-                    color: _naoPerturbar ? ThemeColors.of(context).primary.withOpacity(0.8) : ThemeColors.of(context).textSecondary.withOpacity(0.6),
+                    color: _naoPerturbar ? ThemeColors.of(context).primaryDark : ThemeColors.of(context).textSecondary.withOpacity(0.6),
                     size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
                   ),
                 ),
@@ -1478,7 +1478,7 @@ class _ConfiguracoesNotificacoesScreenState
                     desktop: 12,
                   ),
                 ),
-                border: Border. all(color: ThemeColors.of(context).textSecondary.withOpacity(0.3)),
+                border: Border. all(color: ThemeColors.of(context).textSecondaryLight),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -1572,7 +1572,7 @@ class _ConfiguracoesNotificacoesScreenState
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmber.withOpacity(0.1)],
+          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmberLight],
         ),
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
@@ -1840,7 +1840,7 @@ class _ConfiguracoesNotificacoesScreenState
                 AppSizes.paddingXs.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).surface.withOpacity(0.2),
+                color: ThemeColors.of(context).surfaceLight,
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -1908,6 +1908,7 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
+
 
 
 

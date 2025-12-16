@@ -127,7 +127,7 @@ class ProductsCatalogSummary extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: stat.isWarning
-                    ? Color.alphaBlend(stat.color.withValues(alpha: 0.5), ThemeColors.of(context).surface)
+                    ? Color.alphaBlend(stat.colorLight, ThemeColors.of(context).surface)
                     : Color.alphaBlend(stat.color.withValues(alpha: 0.25), ThemeColors.of(context).surface),
                 width: stat.isWarning ? 2 : 1.5,
               ),
@@ -180,6 +180,7 @@ class ProductsCatalogSummary extends StatelessWidget {
     );
   }
 }
+
 
 
 

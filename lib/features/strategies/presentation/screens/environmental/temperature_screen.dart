@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -186,7 +186,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Precifica��o por Temperatura',
+                  'Precifica??o por Temperatura',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -199,7 +199,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   ),
                 ),
                 Text(
-                  'Integra��o com Clima',
+                  'Integra??o com Clima',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -291,7 +291,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               Icons.history_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Hist�rico',
+            text: 'Hist?rico',
           ),
         ],
       ),
@@ -411,7 +411,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Integra��o com Clima',
+                  'Integra??o com Clima',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -474,7 +474,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).blueMainLight,
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -646,7 +646,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
@@ -662,7 +662,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               ),
               Expanded(
                 child: Text(
-                  'Configura��o API',
+                  'Configura??o API',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -752,7 +752,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   mobileFontSize: 12,
                 ),
               ),
-              hintText: 'Ex: S�o Paulo',
+              hintText: 'Ex: S?o Paulo',
               prefixIcon: Icon(
                 Icons.location_city_rounded,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
@@ -825,7 +825,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).success.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).successLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
@@ -848,7 +848,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Frequ�ncia de Atualiza��o',
+                'Frequ?ncia de Atualiza??o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -951,10 +951,10 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
           borderRadius: BorderRadius.circular(
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
-          border: Border.all(color: faixa.color.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: faixa.colorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: faixa.color.withValues(alpha: 0.15),
+              color: faixa.colorLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -980,7 +980,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: faixa.color.withValues(alpha: 0.3),
+                        color: faixa.colorLight,
                         blurRadius: isMobile ? 10 : 12,
                         offset: const Offset(0, 4),
                       ),
@@ -1051,7 +1051,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [faixa.color, faixa.color.withValues(alpha: 0.8)],
+                      colors: [faixa.color, faixa.colorDark],
                     ),
                     borderRadius: BorderRadius.circular(
                       isMobile ? 10 : 12,
@@ -1088,9 +1088,9 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                       vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: faixa.color.withValues(alpha: 0.1),
+                      color: faixa.colorLight,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: faixa.color.withValues(alpha: 0.3)),
+                      border: Border.all(color: faixa.colorLight),
                     ),
                     child: Text(
                       p,
@@ -1274,7 +1274,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               height: AppSizes.cardPadding.get(isMobile, isTablet),
             ),
             Text(
-              'Testando Conex�o',
+              'Testando Conex?o',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1327,7 +1327,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Conex�o Bem-Sucedida!',
+                      'Conex?o Bem-Sucedida!',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1379,7 +1379,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
-          'Precifica��o por Temperatura',
+          'Precifica??o por Temperatura',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1395,7 +1395,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Sistema inteligente que ajusta pre�os baseado na temperatura:',
+                'Sistema inteligente que ajusta pre?os baseado na temperatura:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1410,7 +1410,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? Integra��o com API OpenWeather em tempo real',
+                '? Integra??o com API OpenWeather em tempo real',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1425,7 +1425,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre�os de bebidas geladas em dias quentes',
+                '? Aumenta pre?os de bebidas geladas em dias quentes',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1440,7 +1440,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Reduz pre�os de sorvetes em dias frios',
+                '? Reduz pre?os de sorvetes em dias frios',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1455,7 +1455,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre�os de bebidas quentes no frio',
+                '? Aumenta pre?os de bebidas quentes no frio',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1470,7 +1470,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Atualiza��es autom�ticas a cada 30 minutos',
+                '? Atualiza??es autom?ticas a cada 30 minutos',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1522,7 +1522,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Configura��es salvas com sucesso',
+                'Configura??es salvas com sucesso',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1544,6 +1544,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
     });
   }
 }
+
 
 
 

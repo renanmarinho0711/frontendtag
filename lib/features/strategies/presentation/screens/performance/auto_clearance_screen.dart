@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -157,7 +157,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Liquida��o Autom�tica',
+                  'Liquida??o Autom?tica',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15),
                   overflow: TextOverflow.ellipsis,
@@ -308,7 +308,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${state.products.length} Produtos em Liquida��o',
+                      '${state.products.length} Produtos em Liquida??o',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                       overflow: TextOverflow.ellipsis,
@@ -356,7 +356,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
         borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).error.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).errorLight,
             blurRadius: isMobile ? 12 : 15,
             offset: Offset(0, isMobile ? 4 : 6),
           ),
@@ -384,7 +384,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Liquida��o Progressiva',
+                  'Liquida??o Progressiva',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 17, mobileFontSize: 16),
                   overflow: TextOverflow.ellipsis,
@@ -435,13 +435,13 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
         children: [
           Icon(
             Icons.lightbulb_outline_rounded,
-            color: ThemeColors.of(context).blueMain.withValues(alpha: 0.8),
+            color: ThemeColors.of(context).blueMainDark,
             size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
           ),
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
           Expanded(
             child: Text(
-              'Produtos sem vendas s�o automaticamente identificados e entram em liquida��o progressiva em 4 fases',
+              'Produtos sem vendas s?o automaticamente identificados e entram em liquida??o progressiva em 4 fases',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
               overflow: TextOverflow.ellipsis,
@@ -481,7 +481,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -497,7 +497,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Margem M�nima Permitida',
+                      'Margem M?nima Permitida',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15),
                       overflow: TextOverflow.ellipsis,
@@ -506,7 +506,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     ),
                     SizedBox(height: AppSizes.paddingXxs.get(isMobile, isTablet)),
                     Text(
-                      'Desconto n�o ultrapassa este limite',
+                      'Desconto n?o ultrapassa este limite',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                       overflow: TextOverflow.ellipsis,
@@ -526,7 +526,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3),
+                      color: ThemeColors.of(context).blueMainLight,
                       blurRadius: isMobile ? 8 : 10,
                       offset: const Offset(0, 4),
                     ),
@@ -572,7 +572,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                 SizedBox(width: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
                 Expanded(
                   child: Text(
-                    'Produtos n�o ter�o desconto que resulte em margem abaixo deste valor',
+                    'Produtos n?o ter?o desconto que resulte em margem abaixo deste valor',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10),
                     overflow: TextOverflow.ellipsis,
@@ -611,7 +611,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+              color: ThemeColors.of(context).blueCyanLight,
               borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
             ),
             child: Icon(
@@ -627,7 +627,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Notificar Produtos em Liquida��o',
+                  'Notificar Produtos em Liquida??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15),
                   overflow: TextOverflow.ellipsis,
@@ -636,7 +636,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                 ),
                 SizedBox(height: AppSizes.paddingXxs.get(isMobile, isTablet)),
                 Text(
-                  'Receber alertas quando produtos entrarem em liquida��o',
+                  'Receber alertas quando produtos entrarem em liquida??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                   overflow: TextOverflow.ellipsis,
@@ -686,7 +686,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).greenMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -738,7 +738,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).greenMain.withValues(alpha: 0.3),
+                      color: ThemeColors.of(context).greenMainLight,
                       blurRadius: isMobile ? 6 : 8,
                       offset: const Offset(0, 3),
                     ),
@@ -799,10 +799,10 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
-          border: Border.all(color: fase.cor.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: fase.corLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: fase.cor.withValues(alpha: 0.15),
+              color: fase.corLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -821,7 +821,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: fase.cor.withValues(alpha: 0.3),
+                        color: fase.corLight,
                         blurRadius: isMobile ? 10 : 12,
                         offset: const Offset(0, 4),
                       ),
@@ -858,7 +858,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                               vertical: AppSizes.paddingMicro2.get(isMobile, isTablet),
                             ),
                             decoration: BoxDecoration(
-                              color: fase.cor.withValues(alpha: 0.1),
+                              color: fase.corLight,
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
@@ -901,11 +901,11 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     vertical: AppSizes.paddingSmAlt3.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [fase.cor, fase.cor.withValues(alpha: 0.8)]),
+                    gradient: LinearGradient(colors: [fase.cor, fase.corDark]),
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: fase.cor.withValues(alpha: 0.3),
+                        color: fase.corLight,
                         blurRadius: isMobile ? 8 : 10,
                         offset: const Offset(0, 4),
                       ),
@@ -1026,10 +1026,10 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
-          border: Border.all(color: corFase.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: corFaseLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: corFase.withValues(alpha: 0.15),
+              color: corFaseLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -1097,7 +1097,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [corFase, corFase.withValues(alpha: 0.8)]),
+                    gradient: LinearGradient(colors: [corFase, corFaseDark]),
                     borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                   ),
                   child: Text(
@@ -1122,7 +1122,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Pre�o Original',
+                        'Pre?o Original',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10),
                         overflow: TextOverflow.ellipsis,
@@ -1154,7 +1154,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        'Pre�o com Desconto',
+                        'Pre?o com Desconto',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10),
                         overflow: TextOverflow.ellipsis,
@@ -1188,9 +1188,9 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                       vertical: AppSizes.paddingSmAlt3.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: corFase.withValues(alpha: 0.1),
+                      color: corFaseLight,
                       borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
-                      border: Border.all(color: corFase.withValues(alpha: 0.3)),
+                      border: Border.all(color: corFaseLight),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1260,7 +1260,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
       context: context,
       builder: (dialogContext) => StatefulBuilder(
         builder: (dialogContext2, setDialogState) {
-          // Cria uma c�pia local das categorias selecionadas para o di�logo
+          // Cria uma c?pia local das categorias selecionadas para o di?logo
           final localSelectedCategories = List<String>.from(state.selectedCategories);
           
           return AlertDialog(
@@ -1364,7 +1364,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'A liquida��o autom�tica identifica produtos parados e aplica descontos progressivos em 4 fases:',
+                'A liquida??o autom?tica identifica produtos parados e aplica descontos progressivos em 4 fases:',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13)),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -1384,14 +1384,14 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               ),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
               Text(
-                '? Respeita a margem m�nima configurada',
+                '? Respeita a margem m?nima configurada',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
               Text(
-                '? Tags ESL s�o atualizadas automaticamente',
+                '? Tags ESL s?o atualizadas automaticamente',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
                 overflow: TextOverflow.ellipsis,
@@ -1423,7 +1423,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
   void _salvarConfiguracoes() {
     final isMobile = ResponsiveHelper.isMobile(context);
     
-    // Salva as configura��es via provider
+    // Salva as configura??es via provider
     ref.read(autoClearanceProvider.notifier).saveConfigurations();
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1443,7 +1443,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Configura��es Salvas!',
+                    'Configura??es Salvas!',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
@@ -1451,7 +1451,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                     ),
                   ),
                   Text(
-                    'Liquida��o autom�tica ativa e configurada',
+                    'Liquida??o autom?tica ativa e configurada',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                     overflow: TextOverflow.ellipsis,
@@ -1470,6 +1470,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
     );
   }
 }
+
 
 
 

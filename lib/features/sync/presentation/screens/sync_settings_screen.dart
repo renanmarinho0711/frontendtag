@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/sync/presentation/providers/sync_provider.dart';
@@ -174,7 +174,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Configura��es',
+                  'Configura??es',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -188,7 +188,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                   ),
                 ),
                 Text(
-                  'Par�metros de sincroniza��o',
+                  'Par?metros de sincroniza??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -257,7 +257,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Intervalo de Sincroniza��o',
+                'Intervalo de Sincroniza??o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -299,7 +299,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
               ),
               suffixText: 'min',
-              helperText: 'Tempo entre sincroniza��es autom�ticas',
+              helperText: 'Tempo entre sincroniza??es autom?ticas',
               helperStyle: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -349,7 +349,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 ),
                 Expanded(
                   child: Text(
-                    'Intervalo m�nimo recomendado: 5 minutos',
+                    'Intervalo m?nimo recomendado: 5 minutos',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -419,7 +419,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Modo de Opera��o',
+                'Modo de Opera??o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -480,7 +480,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 Expanded(
                   child: Text(
                     _modo == 'Passivo'
-                        ? 'Modo Passivo: Apenas l� dados do ERP'
+                        ? 'Modo Passivo: Apenas l? dados do ERP'
                         : 'Modo Ativo: Envia e recebe dados do ERP',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -627,8 +627,8 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
             height: AppSizes.paddingMd.get(isMobile, isTablet),
           ),
           _buildDadoSwitch(
-            'Pre�os',
-            'Sincronizar pre�os dos produtos',
+            'Pre?os',
+            'Sincronizar pre?os dos produtos',
             _sincPrecos,
             Icons.attach_money_rounded,
             (value) => setState(() => _sincPrecos = value),
@@ -687,7 +687,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
           isMobile ? 10 : 12,
         ),
         border: Border.all(
-          color: value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondaryOverlay30,
+          color: value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondaryOverlay30,
         ),
       ),
       child: Row(
@@ -716,7 +716,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                     ),
                   overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.w600,
-                    color: value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondary,
+                    color: value ? ThemeColors.of(context).blueCyanDark : ThemeColors.of(context).textSecondary,
                   ),
                 ),
                 Text(
@@ -794,7 +794,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Notifica��es',
+                'Notifica??es',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -853,7 +853,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
             value: _notificarSucesso,
             onChanged: (value) => setState(() => _notificarSucesso = value!),
             title: Text(
-              'Notificar sincroniza��es bem-sucedidas',
+              'Notificar sincroniza??es bem-sucedidas',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -865,7 +865,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
               ),
             ),
             subtitle: Text(
-              'Receba confirma��o de sucesso',
+              'Receba confirma??o de sucesso',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -899,7 +899,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
@@ -922,7 +922,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 width: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                'Testar Conex�o',
+                'Testar Conex?o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -940,7 +940,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           Text(
-            'Verifique se a conex�o com o ERP est� funcionando corretamente antes de salvar.',
+            'Verifique se a conex?o com o ERP est? funcionando corretamente antes de salvar.',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -972,7 +972,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                       size: AppSizes.iconSmall.get(isMobile, isTablet),
                     ),
               label: Text(
-                _testando ? 'Testando...' : 'Testar Conex�o',
+                _testando ? 'Testando...' : 'Testar Conex?o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1048,7 +1048,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                     size: AppSizes.iconSmall.get(isMobile, isTablet),
                   ),
                   label: Text(
-                    'Salvar Configura��es',
+                    'Salvar Configura??es',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1125,7 +1125,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                     ),
                   ),
                   label: Text(
-                    'Salvar Configura��es',
+                    'Salvar Configura??es',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1165,7 +1165,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
     final workContext = ref.read(workContextProvider);
     final storeId = workContext.context.currentStoreId ?? '';
     
-    // Testar conex�o real com a API
+    // Testar conex?o real com a API
     SyncConnectionTestResult? result;
     if (storeId.isNotEmpty) {
       result = await ref.read(syncProvider.notifier).testConnection(storeId);
@@ -1194,7 +1194,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
             ),
           ),
           title: Text(
-            success ? 'Conex�o Estabelecida!' : 'Falha na Conex�o',
+            success ? 'Conex?o Estabelecida!' : 'Falha na Conex?o',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -1208,7 +1208,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                result?.message ?? (success ? 'A conex�o est� funcionando corretamente.' : 'N�o foi poss�vel estabelecer conex�o.'),
+                result?.message ?? (success ? 'A conex?o est? funcionando corretamente.' : 'N?o foi poss?vel estabelecer conex?o.'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1223,7 +1223,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
                 height: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                '${success ? "?" : "?"} Ping: ${result?.pingMs ?? 0}ms\n${result?.authStatus == "OK" ? "?" : "?"} Autentica��o: ${result?.authStatus ?? "N/A"}\n${result?.permissionsStatus == "OK" ? "?" : "?"} Permiss�es: ${result?.permissionsStatus ?? "N/A"}',
+                '${success ? "?" : "?"} Ping: ${result?.pingMs ?? 0}ms\n${result?.authStatus == "OK" ? "?" : "?"} Autentica??o: ${result?.authStatus ?? "N/A"}\n${result?.permissionsStatus == "OK" ? "?" : "?"} Permiss?es: ${result?.permissionsStatus ?? "N/A"}',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1267,7 +1267,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
   void _salvarConfiguracoes() {
     final isMobile = ResponsiveHelper.isMobile(context);
     
-    // Atualiza configura��es no provider
+    // Atualiza configura??es no provider
     final newSettings = SyncSettings(
       autoSync: _modo == 'Ativo',
       autoSyncIntervalMinutes: int.tryParse(_intervaloController.text) ?? 15,
@@ -1294,7 +1294,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
               width: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Configura��es salvas com sucesso!',
+              'Configura??es salvas com sucesso!',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1315,6 +1315,7 @@ class _SincronizacaoConfiguracoesScreenState extends ConsumerState<Sincronizacao
     );
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -286,7 +286,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               Icons.settings_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Configura��o',
+            text: 'Configura??o',
           ),
           Tab(
             icon: Icon(
@@ -454,7 +454,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeMain.withValues(alpha: 0.1), ThemeColors.of(context).amberMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).orangeMainLight, ThemeColors.of(context).amberMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
@@ -494,7 +494,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  'ESLs criam caminhos visuais conectando produtos complementares atrav�s dos corredores',
+                  'ESLs criam caminhos visuais conectando produtos complementares atrav?s dos corredores',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -547,7 +547,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -561,7 +561,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               ),
               Expanded(
                 child: Text(
-                  'Configura��es das Trilhas',
+                  'Configura??es das Trilhas',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -593,7 +593,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               ),
               Expanded(
                 child: Text(
-                  'Intervalo de Atualiza��o',
+                  'Intervalo de Atualiza??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -612,7 +612,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -676,7 +676,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -743,7 +743,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -757,7 +757,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               ),
               Expanded(
                 child: Text(
-                  'Estilo de Visualiza��o',
+                  'Estilo de Visualiza??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -792,7 +792,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               ),
               Expanded(
                 child: _buildEstiloButton(
-                  'N�meros',
+                  'N?meros',
                   'numeros',
                   Icons.format_list_numbered_rounded,
                   state,
@@ -843,7 +843,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).orangeMainLight,
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -906,8 +906,8 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         mainAxisSize: MainAxisSize.min,
         children: [
           _buildSwitchOption(
-            'Destacar In�cio',
-            'Produto inicial da trilha com anima��o especial',
+            'Destacar In?cio',
+            'Produto inicial da trilha com anima??o especial',
             Icons.start_rounded,
             state.destacarInicio,
             (value) => ref.read(offersTrailProvider.notifier).setDestacarInicio(value),
@@ -917,7 +917,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           ),
           _buildSwitchOption(
             'Destacar Fim',
-            'Produto final da trilha com anima��o especial',
+            'Produto final da trilha com anima??o especial',
             Icons.flag_rounded,
             state.destacarFim,
             (value) => ref.read(offersTrailProvider.notifier).setDestacarFim(value),
@@ -927,7 +927,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           ),
           _buildSwitchOption(
             'Notificar Cliente',
-            'Avisar cliente sobre trilha dispon�vel',
+            'Avisar cliente sobre trilha dispon?vel',
             Icons.notifications_active_rounded,
             state.notificarCliente,
             (value) => ref.read(offersTrailProvider.notifier).setNotificarCliente(value),
@@ -954,7 +954,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         color: value ? ThemeColors.of(context).warningPastel : ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         border: Border.all(
-          color: value ? ThemeColors.of(context).orangeMain.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary,
+          color: value ? ThemeColors.of(context).orangeMainLight : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -1041,12 +1041,12 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: trilha.cor.withValues(alpha: 0.3),
+            color: trilha.corLight,
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: trilha.cor.withValues(alpha: 0.15),
+              color: trilha.corLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -1070,7 +1070,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                     borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: trilha.cor.withValues(alpha: 0.3),
+                        color: trilha.corLight,
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -1116,7 +1116,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                               vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                             ),
                             decoration: BoxDecoration(
-                              color: trilha.cor.withValues(alpha: 0.1),
+                              color: trilha.corLight,
                               borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
                             ),
                             child: Text(
@@ -1157,7 +1157,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
-                                color: trilha.ativa ? ThemeColors.of(context).greenMain.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondary,
+                                color: trilha.ativa ? ThemeColors.of(context).greenMainDark : ThemeColors.of(context).textSecondary,
                               ),
                             ),
                           ),
@@ -1197,7 +1197,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   width: AppSizes.paddingXs.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Sequ�ncia:',
+                  'Sequ?ncia:',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -1225,10 +1225,10 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                     vertical: AppSizes.paddingXs.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: trilha.cor.withValues(alpha: 0.1),
+                    color: trilha.corLight,
                     borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                     border: Border.all(
-                      color: trilha.cor.withValues(alpha: 0.3),
+                      color: trilha.corLight,
                     ),
                   ),
                   child: Row(
@@ -1406,7 +1406,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                           height: AppSizes.paddingMicro2.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Convers�o',
+                          'Convers?o',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1461,7 +1461,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                           height: AppSizes.paddingMicro2.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Ticket M�dio',
+                          'Ticket M?dio',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1506,7 +1506,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                 style: OutlinedButton.styleFrom(
                   foregroundColor: trilha.cor,
                   side: BorderSide(
-                    color: trilha.cor.withValues(alpha: 0.3),
+                    color: trilha.corLight,
                   ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1553,7 +1553,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           ),
         ),
         content: Text(
-          'A IA criar� uma nova trilha de ofertas conectando produtos estrat�gicos com base em dados de vendas e comportamento dos clientes.',
+          'A IA criar? uma nova trilha de ofertas conectando produtos estrat?gicos com base em dados de vendas e comportamento dos clientes.',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1583,7 +1583,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           ElevatedButton(
             onPressed: () async {
               Navigator.pop(context);
-              // Chama o m�todo do provider para criar trilha via IA
+              // Chama o m?todo do provider para criar trilha via IA
               await ref.read(offersTrailProvider.notifier).criarTrilha();
               
               if (mounted) {
@@ -1699,7 +1699,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           ),
           ElevatedButton(
             onPressed: () {
-              // Salva as altera��es
+              // Salva as altera??es
               ref.read(offersTrailProvider.notifier).saveConfigurations();
               Navigator.of(context).pop();
               ScaffoldMessenger.of(context).showSnackBar(
@@ -1764,7 +1764,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? ESLs formam sequ�ncias visuais conectadas',
+                '? ESLs formam sequ?ncias visuais conectadas',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1812,7 +1812,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                 height: AppSizes.paddingXs.get(isMobile, isTablet),
               ),
               Text(
-                '? Cria experi�ncia gamificada de compra',
+                '? Cria experi?ncia gamificada de compra',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1828,7 +1828,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                 height: AppSizes.paddingXs.get(isMobile, isTablet),
               ),
               Text(
-                '? Rota��o autom�tica entre m�ltiplas trilhas',
+                '? Rota??o autom?tica entre m?ltiplas trilhas',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1867,7 +1867,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
   void _salvarConfiguracoes() async {
     final isMobile = ResponsiveHelper.isMobile(context);
 
-    // Salva as configura��es no backend
+    // Salva as configura??es no backend
     await ref.read(offersTrailProvider.notifier).saveConfigurations();
     
     final state = ref.read(offersTrailProvider);
@@ -1904,7 +1904,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Configura��es Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
+                      Text('Configura??es Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       Text('Trilhas de ofertas configuradas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11))),
                     ],
                   ),
@@ -1920,6 +1920,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
     }
   }
 }
+
 
 
 

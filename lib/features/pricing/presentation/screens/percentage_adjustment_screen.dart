@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/enums/loading_status.dart';
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -123,7 +123,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
                     _buildResumoImpacto(),
                     SizedBox(height: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
                     Text(
-                      'Pr�-visualiza��o',
+                      'Pr?-visualiza??o',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 20, mobileFontSize: 18, tabletFontSize: 19),
@@ -206,7 +206,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'Altera��o massiva de pre�os',
+                  'Altera??o massiva de pre?os',
                   style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textSecondary),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -237,7 +237,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
               Icon(Icons.flash_on_rounded, size: AppSizes.iconSmall.get(isMobile, isTablet), color: ThemeColors.of(context).infoDark),
               const SizedBox(width: 8),
               Text(
-                'A��es R�pidas',
+                'A??es R?pidas',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13.5),
                   fontWeight: FontWeight.bold,
@@ -646,7 +646,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
           vertical: isMobile ? 9 : 10,
         ),
         decoration: BoxDecoration(
-          color: isSelected ? ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondaryOverlay05,
+          color: isSelected ? ThemeColors.of(context).orangeMaterialLight : ThemeColors.of(context).textSecondaryOverlay05,
           borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
           border: Border.all(color: isSelected ? ThemeColors.of(context).orangeMaterial : ThemeColors.of(context).textSecondaryOverlay30),
         ),
@@ -702,7 +702,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
                 SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                 Expanded(
                   child: Text(
-                    'Configura��es Avan�adas',
+                    'Configura??es Avan?adas',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 17, mobileFontSize: 15, tabletFontSize: 16),
                       fontWeight: FontWeight.bold,
@@ -721,8 +721,8 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
           if (_configuracoesAvancadasExpandido) ...[
             SizedBox(height: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
             _buildSwitchTile(
-              'Respeitar Margem M�nima',
-              'N�o reduzir abaixo de ${_config.margemMinimaSeguranca}%',
+              'Respeitar Margem M?nima',
+              'N?o reduzir abaixo de ${_config.margemMinimaSeguranca}%',
               Icons.shield_rounded,
               _config.respeitarMargemMinima,
               (value) {
@@ -747,7 +747,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
             SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
             _buildSwitchTile(
               'Notificar Tags ESL',
-              'Sincronizar automaticamente ap�s aplicar',
+              'Sincronizar automaticamente ap?s aplicar',
               Icons.notifications_active_rounded,
               _config.notificarTags,
               (value) {
@@ -771,7 +771,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
       decoration: BoxDecoration(
         color: value ? ThemeColors.of(context).successPastel : ThemeColors.of(context).textSecondaryOverlay05,
         borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
-        border: Border.all(color: value ? ThemeColors.of(context).success.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondaryOverlay20),
+        border: Border.all(color: value ? ThemeColors.of(context).successLight : ThemeColors.of(context).textSecondaryOverlay20),
       ),
       child: Row(
         children: [
@@ -933,7 +933,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
-        border: Border.all(color: produto.cor.withValues(alpha: 0.3), width: isMobile ? 1.2 : 1.5),
+        border: Border.all(color: produto.corLight, width: isMobile ? 1.2 : 1.5),
         boxShadow: [
           BoxShadow(
             color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.04),
@@ -950,7 +950,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
               Container(
                 padding: EdgeInsets.all(isMobile ? 7 : 8),
                 decoration: BoxDecoration(
-                  color: produto.cor.withValues(alpha: 0.1),
+                  color: produto.corLight,
                   borderRadius: BorderRadius.circular(isMobile ? 7 : 8),
                 ),
                 child: Icon(Icons.shopping_bag_rounded, color: produto.cor, size: AppSizes.iconTiny.get(isMobile, isTablet)),
@@ -1083,15 +1083,15 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Voc� est� prestes a aplicar:'),
+            const Text('Voc? est? prestes a aplicar:'),
             SizedBox(height: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
             Container(
               padding: EdgeInsets.all(AppSizes.paddingMdAlt.get(isMobile, isTablet)),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: isAumento
-                      ? [ThemeColors.of(context).success.withValues(alpha: 0.1), ThemeColors.of(context).successLight]
-                      : [ThemeColors.of(context).errorPastel, ThemeColors.of(context).error.withValues(alpha: 0.2)],
+                      ? [ThemeColors.of(context).successLight, ThemeColors.of(context).successLight]
+                      : [ThemeColors.of(context).errorPastel, ThemeColors.of(context).errorLight],
                 ),
                 borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
               ),
@@ -1099,19 +1099,19 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${isAumento ? 'Aumento' : 'Redu��o'} de ${_config.valor}%',
+                    '${isAumento ? 'Aumento' : 'Redu??o'} de ${_config.valor}%',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
-                  Text('� $_produtosAfetados produtos afetados'),
-                  Text('� Impacto: ${_impactoTotal >= 0 ? '+' : ''}R\$ ${_impactoTotal.toStringAsFixed(2)}'),
-                  if (_config.notificarTags) const Text('� Tags ESL ser�o notificadas'),
+                  Text('? $_produtosAfetados produtos afetados'),
+                  Text('? Impacto: ${_impactoTotal >= 0 ? '+' : ''}R\$ ${_impactoTotal.toStringAsFixed(2)}'),
+                  if (_config.notificarTags) const Text('? Tags ESL ser?o notificadas'),
                 ],
               ),
             ),
             SizedBox(height: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
             const Text(
-              'Esta opera��o n�o pode ser desfeita.',
+              'Esta opera??o n?o pode ser desfeita.',
               style: TextStyle(fontSize: 12, color: ThemeColors.of(context).error, fontWeight: FontWeight.bold),
             ),
           ],
@@ -1158,6 +1158,7 @@ class _AjustePorcentagemScreenState extends ConsumerState<AjustePorcentagemScree
     );
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -541,7 +541,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).blueCyanLight,
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -610,7 +610,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
         borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).blueMainLight,
             blurRadius: isMobile ? 10 : 12,
             offset: const Offset(0, 4),
           ),
@@ -1362,7 +1362,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(isMobile ? 5 : 6),
       ),
       child: Text(
@@ -1824,6 +1824,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
     );
   }
 }
+
 
 
 

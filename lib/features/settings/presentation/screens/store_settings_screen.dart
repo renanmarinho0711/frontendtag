@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -209,7 +209,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.2),
+                color: ThemeColors.of(context).yellowGoldLight,
                 borderRadius: BorderRadius.circular(
                   isMobile ? 6 : 8,
                 ),
@@ -265,7 +265,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).greenGradient.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).greenGradientLight,
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -1119,6 +1119,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
     );
   }
 }
+
 
 
 

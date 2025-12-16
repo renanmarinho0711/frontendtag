@@ -1,4 +1,4 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -9,7 +9,7 @@ import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 class CompactMetricsGrid extends ConsumerWidget {
   const CompactMetricsGrid({super.key});
   
-  /// Formata nÃºmero para exibiÃ§Ã£o (ex: 1234 -> 1.234)
+  /// Formata número para exibição (ex: 1234 -> 1.234)
   String _formatNumber(int value) {
     if (value >= 1000) {
       return value.toString().replaceAllMapped(
@@ -20,7 +20,7 @@ class CompactMetricsGrid extends ConsumerWidget {
     return value.toString();
   }
   
-  /// ConstrÃ³i a lista de estatÃ­sticas a partir dos dados reais
+  /// Constrói a lista de estatísticas a partir dos dados reais
   List<Map<String, dynamic>> _buildEstatisticas(StoreStats stats, bool isLoading) {
     return [
       {
@@ -48,7 +48,7 @@ class CompactMetricsGrid extends ConsumerWidget {
         'tipo': 'aumento',
       },
       {
-        'label': 'Tags DisponÃ­veis',
+        'label': 'Tags Disponíveis',
         'valor': isLoading ? '...' : _formatNumber(stats.availableTagsCount),
         'icon': Icons.label_outline_rounded,
         'cor': ThemeColors.of(context).greenMaterial,
@@ -67,7 +67,7 @@ class CompactMetricsGrid extends ConsumerWidget {
     final dashboardState = ref.watch(dashboardProvider);
     final storeStats = dashboardState.storeStats;
     
-    // Construir estatÃ­sticas a partir dos dados reais
+    // Construir estatísticas a partir dos dados reais
     final estatisticas = _buildEstatisticas(storeStats, dashboardState.isLoading);
 
     return Container(
@@ -91,7 +91,7 @@ class CompactMetricsGrid extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: LinearProgressIndicator(
-                backgroundColor: ThemeColors.of(context).blueMaterial.withValues(alpha: 0.1),
+                backgroundColor: ThemeColors.of(context).blueMaterialLight,
                 valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueMaterial),
               ),
             ),
@@ -106,7 +106,7 @@ class CompactMetricsGrid extends ConsumerWidget {
                 ),
               ),
             ),
-          // Grid de mÃ©tricas
+          // Grid de métricas
           isMobile && !ResponsiveHelper.isLandscape(context)
               ? Column(
                   mainAxisSize: MainAxisSize.min,
@@ -164,13 +164,13 @@ class CompactMetricsGrid extends ConsumerWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              (stat['cor'] as Color).withValues(alpha: 0.1),
-              (stat['cor'] as Color).withValues(alpha: 0.05),
+              (stat['cor'] as Color)Light,
+              (stat['cor'] as Color)Light,
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: (stat['cor'] as Color).withValues(alpha: 0.3),
+            color: (stat['cor'] as Color)Light,
             width: AppSizes.borderWidthResponsive.get(isMobile, isTablet),
           ),
         ),
@@ -219,7 +219,7 @@ class CompactMetricsGrid extends ConsumerWidget {
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color).withValues(alpha: 0.1),
+                color: (stat['cor'] as Color)Light,
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -253,6 +253,7 @@ class CompactMetricsGrid extends ConsumerWidget {
     );
   }
 }
+
 
 
 

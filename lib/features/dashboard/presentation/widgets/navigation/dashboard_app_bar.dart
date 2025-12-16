@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/auth/presentation/widgets/store_selector.dart';
@@ -246,7 +246,7 @@ class DashboardAppBar extends ConsumerWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.5),
+                    color: ThemeColors.of(context).greenMaterialLight,
                     blurRadius: 6,
                     spreadRadius: 2,
                   ),
@@ -513,13 +513,13 @@ class _AppBarThemeButton extends ConsumerWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            themeColors.primary.withValues(alpha: 0.15),
-            themeColors.secondary.withValues(alpha: 0.15),
+            themeColors.primaryLight,
+            themeColors.secondaryLight,
           ],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
         border: Border.all(
-          color: themeColors.primary.withValues(alpha: 0.3),
+          color: themeColors.primaryLight,
           width: 1,
         ),
       ),
@@ -540,6 +540,7 @@ class _AppBarThemeButton extends ConsumerWidget {
     );
   }
 }
+
 
 
 

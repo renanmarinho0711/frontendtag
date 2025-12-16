@@ -251,7 +251,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                 vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).yellowGoldLight,
                 borderRadius: BorderRadius.circular(
                   isMobile ? 7 : 8,
                 ),
@@ -505,7 +505,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                   ),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? _corSelecionada.withValues(alpha: 0.1)
+                        ? _corSelecionadaLight
                         : ThemeColors.of(context).textSecondary,
                     border: Border.all(
                       color: isSelected
@@ -580,7 +580,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                     boxShadow: isSelected
                         ? [
                             BoxShadow(
-                              color: cor.withValues(alpha: 0.5),
+                              color: corLight,
                               blurRadius: isMobile ? 8 : 12,
                               offset: const Offset(0, 4),
                             ),
@@ -876,15 +876,15 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      _corSelecionada.withValues(alpha: 0.1),
-                      _corSelecionada.withValues(alpha: 0.05),
+                      _corSelecionadaLight,
+                      _corSelecionadaLight,
                     ],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                   border: Border.all(
-                    color: _corSelecionada.withValues(alpha: 0.3),
+                    color: _corSelecionadaLight,
                   ),
                 ),
                 child: Row(
@@ -1371,6 +1371,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
     }
   }
 }
+
 
 
 

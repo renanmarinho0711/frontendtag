@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:io';
 import 'package:tagbean/features/import_export/presentation/providers/import_export_provider.dart';
@@ -28,7 +28,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
   int get _currentStep => _state.currentStep;
   double get _uploadProgress => _state.uploadProgress;
 
-  // Hist�rico de importa��es via provider
+  // Hist?rico de importa??es via provider
   List<Map<String, dynamic>> get _historicoImportacoes {
     final history = _state.importHistory;
     if (history.isEmpty) {
@@ -54,7 +54,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
     );
     _animationController.forward();
     
-    // Carregar hist�rico
+    // Carregar hist?rico
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _notifier.loadHistory();
     });
@@ -98,7 +98,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                         height: AppSizes.cardPadding.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Importa��es Recentes',
+                        'Importa??es Recentes',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -194,7 +194,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).greenGradient.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).greenGradientLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -336,7 +336,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
               ),
             ),
           ),
-          _buildStepIndicator(2, 'Conclu�do', Icons.check_circle_rounded, _currentStep >= 2),
+          _buildStepIndicator(2, 'Conclu?do', Icons.check_circle_rounded, _currentStep >= 2),
         ],
       ),
     );
@@ -447,7 +447,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
               ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTeal.withValues(alpha: 0.1)],
+                  colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTealLight],
                 ),
                 shape: BoxShape.circle,
               ),
@@ -509,7 +509,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
               height: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Template padronizado com as colunas necess�rias',
+              'Template padronizado com as colunas necess?rias',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -556,9 +556,9 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                   SizedBox(
                     height: AppSizes.paddingSmAlt.get(isMobile, isTablet),
                   ),
-                  _buildColumnItem('ID da Tag', 'obrigat�rio', 'Ex: TAG-001, TAG-002'),
-                  _buildColumnItem('Localiza��o', 'opcional', 'Corredor e prateleira'),
-                  _buildColumnItem('Observa��es', 'opcional', 'Notas adicionais'),
+                  _buildColumnItem('ID da Tag', 'obrigat?rio', 'Ex: TAG-001, TAG-002'),
+                  _buildColumnItem('Localiza??o', 'opcional', 'Corredor e prateleira'),
+                  _buildColumnItem('Observa??es', 'opcional', 'Notas adicionais'),
                 ],
               ),
             ),
@@ -645,7 +645,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
 
   Widget _buildColumnItem(String nome, String status, String exemplo) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    final isObrigatorio = status == 'obrigat�rio';
+    final isObrigatorio = status == 'obrigat?rio';
     
     return Padding(
       padding: EdgeInsets.only(
@@ -691,7 +691,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                         vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: isObrigatorio ? ThemeColors.of(context).error.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
+                        color: isObrigatorio ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textSecondary,
                         borderRadius: BorderRadius.circular(
                           isMobile ? 5 : 6,
                         ),
@@ -707,7 +707,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: isObrigatorio ? ThemeColors.of(context).error.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondaryOverlay70,
+                          color: isObrigatorio ? ThemeColors.of(context).errorDark : ThemeColors.of(context).textSecondaryOverlay70,
                         ),
                       ),
                     ),
@@ -767,14 +767,14 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).materialTeal.withValues(alpha: 0.1), ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+                colors: [ThemeColors.of(context).materialTealLight, ThemeColors.of(context).cyanMainLight],
               ),
               shape: BoxShape.circle,
             ),
             child: Icon(
               Icons.cloud_upload_rounded,
               size: AppSizes.iconHeroMd.get(isMobile, isTablet),
-              color: ThemeColors.of(context).materialTeal.withValues(alpha: 0.8),
+              color: ThemeColors.of(context).materialTealDark,
             ),
           ),
           SizedBox(
@@ -786,11 +786,11 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).materialTeal.withValues(alpha: 0.1),
+              color: ThemeColors.of(context).materialTealLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 6 : 8,
               ),
-              border: Border.all(color: ThemeColors.of(context).materialTeal.withValues(alpha: 0.3)),
+              border: Border.all(color: ThemeColors.of(context).materialTealLight),
             ),
             child: Text(
               'ETAPA 2 - UPLOAD',
@@ -865,8 +865,8 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                     ? null
                     : LinearGradient(
                         colors: [
-                          ThemeColors.of(context).greenGradient.withValues(alpha: 0.1),
-                          ThemeColors.of(context).greenGradientEnd.withValues(alpha: 0.1),
+                          ThemeColors.of(context).greenGradientLight,
+                          ThemeColors.of(context).greenGradientEndLight,
                         ],
                       ),
                 border: Border.all(
@@ -993,7 +993,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                         ),
                       ),
                       child: Text(
-                        'M�ximo: 500 tags por arquivo',
+                        'M?ximo: 500 tags por arquivo',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1026,7 +1026,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : (isTablet ?  14 : 16),
@@ -1049,7 +1049,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                 width: AppSizes.paddingSmAlt.get(isMobile, isTablet),
               ),
               Text(
-                'Dicas de Importa��o',
+                'Dicas de Importa??o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1059,7 +1059,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
+                  color: ThemeColors.of(context).primaryDark,
                 ),
               ),
             ],
@@ -1067,10 +1067,10 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
           SizedBox(
             height: AppSizes.paddingSm.get(isMobile, isTablet),
           ),
-          _buildTipItem('?', 'IDs devem ser �nicos (ex: TAG-001)'),
-          _buildTipItem('?', 'Localiza��o � opcional mas recomendada'),
-          _buildTipItem('?', 'Tags duplicadas ser�o ignoradas'),
-          _buildTipItem('?', 'M�ximo de 500 tags por arquivo'),
+          _buildTipItem('?', 'IDs devem ser ?nicos (ex: TAG-001)'),
+          _buildTipItem('?', 'Localiza??o ? opcional mas recomendada'),
+          _buildTipItem('?', 'Tags duplicadas ser?o ignoradas'),
+          _buildTipItem('?', 'M?ximo de 500 tags por arquivo'),
         ],
       ),
     );
@@ -1228,7 +1228,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                     vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: taxaSucesso == 100 ? ThemeColors.of(context).success.withValues(alpha: 0.1) : ThemeColors.of(context).warningPastel,
+                    color: taxaSucesso == 100 ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningPastel,
                     borderRadius: BorderRadius.circular(
                       isMobile ? 6 : 8,
                     ),
@@ -1244,7 +1244,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: taxaSucesso == 100 ? ThemeColors.of(context).success.withValues(alpha: 0.8) : ThemeColors.of(context).warningDark,
+                      color: taxaSucesso == 100 ? ThemeColors.of(context).successDark : ThemeColors.of(context).warningDark,
                     ),
                   ),
                 ),
@@ -1313,7 +1313,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(
           isMobile ?  5 : 6,
         ),
@@ -1618,7 +1618,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
               width: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Ajuda - Importa��o',
+              'Ajuda - Importa??o',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1677,7 +1677,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                 ),
               ),
               Text(
-                '3.   Fa�a o upload do arquivo',
+                '3.   Fa?a o upload do arquivo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1720,7 +1720,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                 height: AppSizes.paddingXs.get(isMobile, isTablet),
               ),
               Text(
-                '� TAG-001, TAG-002, etc.',
+                '? TAG-001, TAG-002, etc.',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1732,7 +1732,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                 ),
               ),
               Text(
-                '� Devem ser �nicos',
+                '? Devem ser ?nicos',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1744,7 +1744,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
                 ),
               ),
               Text(
-                '� M�ximo 20 caracteres',
+                '? M?ximo 20 caracteres',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1791,6 +1791,7 @@ class _ImportacaoTagsScreenState extends ConsumerState<ImportacaoTagsScreen>
     );
   }
 }
+
 
 
 

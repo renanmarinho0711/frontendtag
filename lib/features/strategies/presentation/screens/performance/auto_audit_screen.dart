@@ -372,7 +372,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
             Container(
               padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                color: ThemeColors.of(context).blueMainLight,
                 borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
               ),
               child: Icon(
@@ -417,7 +417,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                 borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                 boxShadow: [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).blueMainLight,
                     blurRadius: isMobile ? 8 : 10,
                     offset: const Offset(0, 4),
                   ),
@@ -473,7 +473,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueCyanLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -525,9 +525,9 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                   vertical: AppSizes.paddingSmAlt3.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: entry.value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
+                  color: entry.value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondary,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-                  border: Border.all(color: entry.value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary),
+                  border: Border.all(color: entry.value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondary),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -593,7 +593,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeDark.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).orangeDarkLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -688,7 +688,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingLgAlt2.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTeal.withValues(alpha: 0.1)]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTealLight]),
         borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
         border: Border.all(color: ThemeColors.of(context).successLight, width: 2),
       ),
@@ -755,7 +755,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                 padding: EdgeInsets.symmetric(
                   vertical: AppSizes.paddingMdAlt.get(isMobile, isTablet),
                 ),
-                backgroundColor: ThemeColors.of(context).greenMain.withValues(alpha: 0.8),
+                backgroundColor: ThemeColors.of(context).greenMainDark,
                 foregroundColor: ThemeColors.of(context).surface,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
               ),
@@ -784,10 +784,10 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
-          border: Border.all(color: audit.cor.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: audit.corLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: audit.cor.withValues(alpha: 0.15),
+              color: audit.corLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -859,7 +859,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                         vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: audit.cor.withValues(alpha: 0.1),
+                        color: audit.corLight,
                         borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                       ),
                       child: Text(
@@ -932,7 +932,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                       vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: audit.cor.withValues(alpha: 0.1),
+                      color: audit.corLight,
                       borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                     ),
                     child: Row(
@@ -1248,6 +1248,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
     );
   }
 }
+
 
 
 

@@ -213,7 +213,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
           colors: [ThemeColors.of(context).infoModuleBackground, ThemeColors.of(context).infoModuleBackgroundAlt],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 18 : (isTablet ? 19 : 20)),
-        border: Border.all(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3), width: 2),
+        border: Border.all(color: ThemeColors.of(context).blueCyanLight, width: 2),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -362,10 +362,10 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 18 : (isTablet ? 19 : 20)),
-          border: Border.all(color: item.statusColor.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: item.statusColorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: item.statusColor.withValues(alpha: 0.1),
+              color: item.statusColorLight,
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(context, mobile: 16, tablet: 18, desktop: 20),
               offset: const Offset(0, 4),
             ),
@@ -444,9 +444,9 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                           vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8),
                         ),
                         decoration: BoxDecoration(
-                          color: item.statusColor.withValues(alpha: 0.1),
+                          color: item.statusColorLight,
                           borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
-                          border: Border.all(color: item.statusColor.withValues(alpha: 0.3)),
+                          border: Border.all(color: item.statusColorLight),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -500,9 +500,9 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
     return Container(
       padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 9, tablet: 9.5, desktop: 10)),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -538,7 +538,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
       margin: EdgeInsets.all(AppSizes.paddingMdAlt.get(isMobile, isTablet)),
       padding: EdgeInsets.all(AppSizes.paddingMdAlt.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight]),
         borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
         border: Border.all(color: ThemeColors.of(context).infoLight),
       ),
@@ -666,7 +666,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                       Container(
                         padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8)),
                         decoration: BoxDecoration(
-                          color: item.statusColor.withValues(alpha: 0.1),
+                          color: item.statusColorLight,
                           borderRadius: BorderRadius.circular(isMobile ? 7 : 8),
                         ),
                         child: Text(
@@ -769,6 +769,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
     );
   }
 }
+
 
 
 

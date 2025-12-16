@@ -631,7 +631,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).successLight,
                     blurRadius: isMobile ? 8 : 10,
                     offset: const Offset(0, 4),
                   ),
@@ -728,7 +728,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
           ),
           boxShadow: [
             BoxShadow(
-              color: estrategia.primaryColor.withValues(alpha: 0.3),
+              color: estrategia.primaryColorLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -883,12 +883,12 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isAtiva
-              ? Border.all(color: estrategia.primaryColor.withValues(alpha: 0.3), width: 2)
+              ? Border.all(color: estrategia.primaryColorLight, width: 2)
               : null,
           boxShadow: [
             BoxShadow(
               color: isAtiva
-                  ? estrategia.primaryColor.withValues(alpha: 0.1)
+                  ? estrategia.primaryColorLight
                   : ThemeColors.of(context).textPrimaryOverlay05,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
@@ -929,7 +929,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: estrategia.primaryColor.withValues(alpha: 0.3),
+                              color: estrategia.primaryColorLight,
                               blurRadius: isMobile ? 12 : 15,
                               offset: Offset(0, isMobile ? 4 : 6),
                             ),
@@ -1036,7 +1036,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                         AppSizes.paddingMdAlt.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: estrategia.primaryColor.withValues(alpha: 0.05),
+                        color: estrategia.primaryColorLight,
                         borderRadius: BorderRadius.circular(
                           isMobile ? 10 : 12,
                         ),
@@ -1164,7 +1164,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: (_currentTab == 0 ? ThemeColors.of(context).surface : color).withValues(alpha: 0.5),
+            color: (_currentTab == 0 ? ThemeColors.of(context).surface : color)Light,
             blurRadius: ResponsiveHelper.isMobile(context) ? 6 : 8,
             spreadRadius: ResponsiveHelper.isMobile(context) ? 1 : 2,
           ),
@@ -1280,6 +1280,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
     );
   }
 }
+
 
 
 

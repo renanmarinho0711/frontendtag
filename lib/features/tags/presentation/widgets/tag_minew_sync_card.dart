@@ -1,10 +1,10 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/tags/data/models/tag_model.dart';
 
-/// Estatï¿½sticas de sincronizaï¿½ï¿½o Minew das tags
+/// Estat?sticas de sincroniza??o Minew das tags
 class MinewSyncStats {
   final int totalTags;
   final int synced;
@@ -46,7 +46,7 @@ class MinewSyncStats {
     DateTime? lastSync;
 
     for (final tag in tags) {
-      // Contagem por status de sincronizaï¿½ï¿½o
+      // Contagem por status de sincroniza??o
       switch (tag.minewSyncStatus) {
         case 'synced':
           synced++;
@@ -66,7 +66,7 @@ class MinewSyncStats {
         offline++;
       }
 
-      // Encontrar ï¿½ltima sincronizaï¿½ï¿½o
+      // Encontrar ?ltima sincroniza??o
       if (tag.lastSync != null) {
         if (lastSync == null || tag.lastSync!.isAfter(lastSync)) {
           lastSync = tag.lastSync;
@@ -86,7 +86,7 @@ class MinewSyncStats {
   }
 }
 
-/// Card para exibir status de sincronizaï¿½ï¿½o Minew das tags
+/// Card para exibir status de sincroniza??o Minew das tags
 class TagMinewSyncCard extends StatelessWidget {
   final MinewSyncStats stats;
   final bool isSyncing;
@@ -130,7 +130,7 @@ class TagMinewSyncCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).brandPrimaryGreenLight,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -145,7 +145,7 @@ class TagMinewSyncCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sincronizaï¿½ï¿½o Minew',
+                      'Sincroniza??o Minew',
                       style: TextStyle(
                         fontSize: isMobile ? 16 : 18,
                         fontWeight: FontWeight.bold,
@@ -154,7 +154,7 @@ class TagMinewSyncCard extends StatelessWidget {
                     ),
                     if (stats.lastGlobalSync != null)
                       Text(
-                        'Ãšltima: ${_formatLastSync(stats.lastGlobalSync!)}',
+                        'Última: ${_formatLastSync(stats.lastGlobalSync!)}',
                         style: TextStyle(
                           fontSize: isMobile ? 11 : 12,
                           color: ThemeColors.of(context).textSecondary,
@@ -269,7 +269,7 @@ class TagMinewSyncCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Progresso de Sincronizaï¿½ï¿½o',
+              'Progresso de Sincroniza??o',
               style: TextStyle(
                 fontSize: isMobile ? 12 : 13,
                 fontWeight: FontWeight.w500,
@@ -314,7 +314,7 @@ class TagMinewSyncCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         children: [
@@ -378,9 +378,9 @@ class TagMinewSyncCard extends StatelessWidget {
     final diff = now.difference(dateTime);
 
     if (diff.inMinutes < 1) return 'Agora';
-    if (diff.inMinutes < 60) return 'hï¿½ ${diff.inMinutes} min';
-    if (diff.inHours < 24) return 'hï¿½ ${diff.inHours}hï¿½';
-    if (diff.inDays < 7) return 'hï¿½ ${diff.inDays} dias';
+    if (diff.inMinutes < 60) return 'h? ${diff.inMinutes} min';
+    if (diff.inHours < 24) return 'h? ${diff.inHours}h?';
+    if (diff.inDays < 7) return 'h? ${diff.inDays} dias';
 
     return '${dateTime.day}/${dateTime.month}/${dateTime.year}';
   }
@@ -424,9 +424,9 @@ class TagSyncStatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -471,7 +471,7 @@ class TagSyncStatusBadge extends StatelessWidget {
   }
 }
 
-/// Widget para exibir informaï¿½ï¿½es de temperatura da tag
+/// Widget para exibir informa??es de temperatura da tag
 class TagTemperatureIndicator extends StatelessWidget {
   final int? temperature;
   final bool compact;
@@ -498,7 +498,7 @@ class TagTemperatureIndicator extends StatelessWidget {
           Icon(icon, size: 14, color: color),
           const SizedBox(width: 2),
           Text(
-            '$temperatureÂ°C',
+            '$temperature°C',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w500,
@@ -512,7 +512,7 @@ class TagTemperatureIndicator extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -521,7 +521,7 @@ class TagTemperatureIndicator extends StatelessWidget {
           Icon(icon, size: 16, color: color),
           const SizedBox(width: 4),
           Text(
-            '$temperatureÂ°C',
+            '$temperature°C',
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w600,
@@ -548,6 +548,7 @@ class TagTemperatureIndicator extends StatelessWidget {
     return Icons.local_fire_department_rounded;
   }
 }
+
 
 
 

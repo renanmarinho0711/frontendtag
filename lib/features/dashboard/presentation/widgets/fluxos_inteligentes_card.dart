@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -39,7 +39,7 @@ class FluxosInteligentesCard extends ConsumerWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ThemeColors.of(context).blueCyan.withValues(alpha: 0.05),
+            ThemeColors.of(context).blueCyanLight,
             ThemeColors.of(context).blueLight.withValues(alpha: 0.08),
           ],
           begin: Alignment.topLeft,
@@ -47,7 +47,7 @@ class FluxosInteligentesCard extends ConsumerWidget {
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.15),
+          color: ThemeColors.of(context).greenMaterialLight,
           width: 1,
         ),
       ),
@@ -60,7 +60,7 @@ class FluxosInteligentesCard extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.15),
+                  color: ThemeColors.of(context).greenMaterialLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -181,7 +181,7 @@ class FluxosInteligentesCard extends ConsumerWidget {
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: fluxo.cor.withValues(alpha: 0.2),
+          color: fluxo.corLight,
           width: 1,
         ),
       ),
@@ -294,6 +294,7 @@ class _FluxoAcao {
 
   _FluxoAcao(this.label, this.onTap, {this.principal = false});
 }
+
 
 
 

@@ -646,7 +646,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           borderSide: BorderSide(
             color: showValidation && isValid 
                 ? ThemeColors.of(context).greenLight
-                : ThemeColors.of(context).textTertiary.withOpacity(0.3),
+                : ThemeColors.of(context).textTertiaryLight,
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -948,7 +948,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                     Icon(
                       Icons.history_rounded,
                       size: AppSizes.iconHero.get(isMobile, isTablet),
-                      color: ThemeColors.of(context).textTertiary.withOpacity(0.8),
+                      color: ThemeColors.of(context).textTertiaryDark,
                     ),
                     const SizedBox(height: AppSpacing.md),
                     Text(
@@ -1125,7 +1125,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                   shape: RoundedRectangleBorder(
                     borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   ),
-                  disabledBackgroundColor: ThemeColors.of(context).textTertiary.withOpacity(0.3),
+                  disabledBackgroundColor: ThemeColors.of(context).textTertiaryLight,
                 ),
                 child: _salvando
                     ? SizedBox(
@@ -1299,6 +1299,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     );
   }
 }
+
 
 
 

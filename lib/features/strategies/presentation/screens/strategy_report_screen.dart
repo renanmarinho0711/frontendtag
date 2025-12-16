@@ -104,7 +104,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).primaryLight,
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -306,12 +306,12 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             color: ThemeColors.of(context).surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: estrategia.primaryColor.withValues(alpha: 0.3),
+              color: estrategia.primaryColorLight,
               width: 2,
             ),
             boxShadow: [
               BoxShadow(
-                color: estrategia.primaryColor.withValues(alpha: 0.1),
+                color: estrategia.primaryColorLight,
                 blurRadius: 15,
                 offset: const Offset(0, 4),
               ),
@@ -355,7 +355,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 3),
                               decoration: BoxDecoration(
-                                color: estrategia.primaryColor.withValues(alpha: 0.1),
+                                color: estrategia.primaryColorLight,
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: Text(
@@ -433,7 +433,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     return Container(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 3),
       decoration: BoxDecoration(
-        color: cor.withValues(alpha: 0.1),
+        color: corLight,
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -606,7 +606,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: cor.withValues(alpha: 0.3)),
+        border: Border.all(color: corLight),
       ),
       child: Row(
         children: [
@@ -921,6 +921,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     );
   }
 }
+
 
 
 

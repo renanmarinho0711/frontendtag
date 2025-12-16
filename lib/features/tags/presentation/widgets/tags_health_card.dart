@@ -1,9 +1,9 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// M�tricas de sa�de das tags
+/// M?tricas de sa?de das tags
 class TagsHealthMetrics {
   final double avgBatteryLevel;
   final int criticalBatteryCount;
@@ -22,7 +22,7 @@ class TagsHealthMetrics {
   });
 }
 
-/// Card de sa�de das tags (bateria e sinal)
+/// Card de sa?de das tags (bateria e sinal)
 class TagsHealthCard extends StatelessWidget {
   final TagsHealthMetrics metrics;
   final VoidCallback? onBatteryTap;
@@ -66,7 +66,7 @@ class TagsHealthCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                'Sa�de das Tags',
+                'Sa?de das Tags',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
                   fontWeight: FontWeight.bold,
@@ -81,12 +81,12 @@ class TagsHealthCard extends StatelessWidget {
           _buildHealthItem(
             context: context,
             icon: Icons.battery_std_rounded,
-            label: 'Bateria M�dia',
+            label: 'Bateria M?dia',
             value: '${metrics.avgBatteryLevel.toStringAsFixed(0)}%',
             progress: metrics.avgBatteryLevel / 100,
             progressColor: _getBatteryColor(context, metrics.avgBatteryLevel),
             subtitle: metrics.criticalBatteryCount > 0
-                ? '${metrics.criticalBatteryCount} cr�ticas (<5%)'
+                ? '${metrics.criticalBatteryCount} cr?ticas (<5%)'
                 : metrics.lowBatteryCount > 0
                     ? '${metrics.lowBatteryCount} baixas (<20%)'
                     : 'Todas com boa carga',
@@ -141,9 +141,9 @@ class TagsHealthCard extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(isMobile ? 12 : 14),
         decoration: BoxDecoration(
-          color: progressColor.withValues(alpha: 0.05),
+          color: progressColorLight,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: progressColor.withValues(alpha: 0.2)),
+          border: Border.all(color: progressColorLight),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,7 +177,7 @@ class TagsHealthCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
               child: LinearProgressIndicator(
                 value: progress.clamp(0.0, 1.0),
-                backgroundColor: progressColor.withValues(alpha: 0.15),
+                backgroundColor: progressColorLight,
                 valueColor: AlwaysStoppedAnimation<Color>(progressColor),
                 minHeight: 6,
               ),
@@ -246,6 +246,7 @@ class TagsHealthCard extends StatelessWidget {
     }
   }
 }
+
 
 
 

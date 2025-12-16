@@ -515,7 +515,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         color: ThemeColors.of(context).surface,
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -849,7 +849,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.5),
+                  color: ThemeColors.of(context).greenMaterialLight,
                   blurRadius: 6,
                   spreadRadius: 2,
                 ),
@@ -1641,7 +1641,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).moduleDashboard.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).moduleDashboardLight,
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -1827,13 +1827,13 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              (stat['cor'] as Color).withValues(alpha: 0.1),
-              (stat['cor'] as Color).withValues(alpha: 0.05),
+              (stat['cor'] as Color)Light,
+              (stat['cor'] as Color)Light,
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, ResponsiveHelper.isTablet(context))),
           border: Border.all(
-            color: (stat['cor'] as Color).withValues(alpha: 0.3),
+            color: (stat['cor'] as Color)Light,
             width: AppSizes.borderWidthResponsive.get(isMobile, ResponsiveHelper.isTablet(context)),
           ),
         ),
@@ -1873,7 +1873,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color).withValues(alpha: 0.1),
+                color: (stat['cor'] as Color)Light,
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, ResponsiveHelper.isTablet(context))),
               ),
               child: Row(
@@ -2219,7 +2219,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).greenMaterialLight,
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -2567,7 +2567,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).modulerelatÃ³rios.withValues(alpha: 0.3),
+              color: ThemeColors.of(context).modulerelatÃ³riosLight,
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -2769,7 +2769,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
-        border: Border.all(color: textColor.withValues(alpha: 0.3)),
+        border: Border.all(color: textColorLight),
       ),
       child: Row(
         children: [
@@ -2822,7 +2822,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: isMobile ? 15 : 20,
             offset: const Offset(0, 4),
           ),
@@ -2985,11 +2985,11 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
       ),
       decoration: BoxDecoration(
-        color: cor.withValues(alpha: 0.1),
+        color: corLight,
         borderRadius: BorderRadius.circular(
           isMobile ?  10 : 12,
         ),
-        border: Border.all(color: cor.withValues(alpha: 0.3)),
+        border: Border.all(color: corLight),
       ),
       child: Row(
         children: [
@@ -3113,7 +3113,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: cor.withValues(alpha: 0.2),
+                    color: corLight,
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Text(
@@ -3150,7 +3150,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: isMobile ? 12 : 15,
             offset: const Offset(0, 4),
           ),
@@ -3498,7 +3498,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           border: Border.all(color: ThemeColors.of(context).errorLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).redMain.withValues(alpha: 0.1),
+              color: ThemeColors.of(context).redMainLight,
               blurRadius: isMobile ? 12 : 15,
               offset: const Offset(0, 4),
             ),
@@ -3720,7 +3720,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: isMobile ? 12 : 15,
             offset: const Offset(0, 4),
           ),
@@ -3811,7 +3811,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         ),
         boxShadow: [
           BoxShadow(
-            color: gradient[0].withValues(alpha: 0.3),
+            color: gradient[0]Light,
             blurRadius: isMobile ? 6 : 8,
             offset: const Offset(0, 4),
           ),
@@ -4127,7 +4127,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: colorLight,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
@@ -4411,7 +4411,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       return ThemeColors.of(context).alertErrorCardBackground;
     }
     // Fallback para cor genrica
-    return alertColor.withValues(alpha: 0.15);
+    return alertColorLight;
   }
 
   Color _getAlertCardBorder(Color alertColor) {
@@ -4667,7 +4667,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               ),
             ),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: colorLight,
               borderRadius: BorderRadius.circular(
                 isMobile ?  7 : 8,
               ),
@@ -4993,7 +4993,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: (isProduto ? ThemeColors.of(context).blueMain : ThemeColors.of(context).greenMaterial)
-                  .withValues(alpha: 0.1),
+                  Light,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -5023,7 +5023,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
               : Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+                    color: ThemeColors.of(context).greenMainLight,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -5043,6 +5043,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
     );
   }
 }
+
 
 
 

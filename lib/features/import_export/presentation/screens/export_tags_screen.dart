@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/import_export/presentation/providers/import_export_provider.dart';
 import 'package:tagbean/features/import_export/data/models/import_export_models.dart';
@@ -204,7 +204,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).primaryLight,
                   blurRadius: isMobile ?  10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -247,7 +247,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                   ),
                 ),
                 Text(
-                  'Relat�rio Completo de ESLs',
+                  'Relat?rio Completo de ESLs',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -306,7 +306,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: ThemeColors.of(context).success.withValues(alpha: 0.8),
+                      color: ThemeColors.of(context).successDark,
                     ),
                   ),
                 ],
@@ -373,7 +373,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         ),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: 0.1),
+            color: colorLight,
             blurRadius: isMobile ? 12 : 15,
             offset: const Offset(0, 4),
           ),
@@ -492,7 +492,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               ),
               Expanded(
                 child: Text(
-                  'Formato de Exporta��o',
+                  'Formato de Exporta??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -549,7 +549,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         ),
         decoration: BoxDecoration(
           color: isSelected
-              ? (formato['cor'] as Color).withValues(alpha: 0.1)
+              ? (formato['cor'] as Color)Light
               : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
@@ -688,7 +688,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             children: [
               _buildFilterChip('todas', 'Todas (1.248)', Icons.grid_view_rounded),
               _buildFilterChip('associadas', 'Associadas (1.127)', Icons.link_rounded),
-              _buildFilterChip('disponiveis', 'Dispon�veis (121)', Icons.check_circle_rounded),
+              _buildFilterChip('disponiveis', 'Dispon?veis (121)', Icons.check_circle_rounded),
               _buildFilterChip('offline', 'Offline (28)', Icons.wifi_off_rounded),
             ],
           ),
@@ -853,8 +853,8 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           ),
           ResponsiveSpacing.verticalMedium(context),
           _buildOptionSwitch(
-            'Localiza��o F�sica',
-            'Corredor, prateleira e posi��o',
+            'Localiza??o F?sica',
+            'Corredor, prateleira e posi??o',
             _incluirLocalizacao,
             Icons.location_on_rounded,
             (value) => _notifier.toggleIncludeLocation(),
@@ -864,7 +864,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           ),
           _buildOptionSwitch(
             'Produtos Associados',
-            'Nome, c�digo e pre�o do produto',
+            'Nome, c?digo e pre?o do produto',
             _incluirProdutos,
             Icons.inventory_2_rounded,
             (value) => _notifier.toggleIncludeProducts(),
@@ -873,8 +873,8 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             height: AppSizes.spacingBase.get(isMobile, isTablet),
           ),
           _buildOptionSwitch(
-            'M�tricas de Performance',
-            'Bateria, sinal, uptime e atualiza��es',
+            'M?tricas de Performance',
+            'Bateria, sinal, uptime e atualiza??es',
             _incluirMetricas,
             Icons.analytics_rounded,
             (value) => _notifier.toggleIncludeMetrics(),
@@ -883,8 +883,8 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             height: AppSizes.spacingBase.get(isMobile, isTablet),
           ),
           _buildOptionSwitch(
-            'Hist�rico de Atividades',
-            '�ltima atualiza��o e eventos',
+            'Hist?rico de Atividades',
+            '?ltima atualiza??o e eventos',
             _incluirHistorico,
             Icons.history_rounded,
             (value) => _notifier.toggleIncludeHistory(),
@@ -997,7 +997,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
@@ -1035,7 +1035,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
+                  color: ThemeColors.of(context).primaryDark,
                 ),
               ),
             ],
@@ -1067,17 +1067,17 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               ],
               if (_incluirProdutos) ...[
                 _buildColumnChip('Produto'),
-                _buildColumnChip('C�digo'),
-                _buildColumnChip('Pre�o'),
+                _buildColumnChip('C?digo'),
+                _buildColumnChip('Pre?o'),
               ],
               if (_incluirMetricas) ...[
                 _buildColumnChip('Uptime'),
                 _buildColumnChip('Updates'),
                 _buildColumnChip('Erros'),
-                _buildColumnChip('Lat�ncia'),
+                _buildColumnChip('Lat?ncia'),
               ],
               if (_incluirHistorico) ...[
-                _buildColumnChip('�ltima Atualiza��o'),
+                _buildColumnChip('?ltima Atualiza??o'),
                 _buildColumnChip('Eventos'),
               ],
             ],
@@ -1163,7 +1163,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                 ),
               ),
               Text(
-                'Resumo da Exporta��o',
+                'Resumo da Exporta??o',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1299,7 +1299,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
       ),
     );
 
-    // Executar exporta��o real via provider
+    // Executar exporta??o real via provider
     final workContext = ref.read(workContextProvider);
     final storeId = workContext.context.currentStoreId ?? '';
     await _notifier.exportTags(storeId);
@@ -1320,7 +1320,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                 Flexible(
                   child: Text(
                     _state.result != null 
-                        ? 'Exporta��o conclu�da: ${_state.result!.recordCount} tags'
+                        ? 'Exporta??o conclu?da: ${_state.result!.recordCount} tags'
                         : 'Tags exportadas com sucesso!',
                   ),
                 ),
@@ -1344,6 +1344,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
     }
   }
 }
+
 
 
 

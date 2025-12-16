@@ -74,12 +74,12 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         border: Border.all(
-          color: Color.alphaBlend(sortedAlerts.first.color.withValues(alpha: 0.3), ThemeColors.of(context).surface),
+          color: Color.alphaBlend(sortedAlerts.first.colorLight, ThemeColors.of(context).surface),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: Color.alphaBlend(sortedAlerts.first.color.withValues(alpha: 0.1), ThemeColors.of(context).surface),
+            color: Color.alphaBlend(sortedAlerts.first.colorLight, ThemeColors.of(context).surface),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -101,7 +101,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.sm),
                     decoration: BoxDecoration(
-                      color: sortedAlerts.first.color.withValues(alpha: 0.15),
+                      color: sortedAlerts.first.colorLight,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(
@@ -194,7 +194,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
           Container(
             padding: const EdgeInsets.all(AppSpacing.xs),
             decoration: BoxDecoration(
-              color: alert.color.withValues(alpha: 0.1),
+              color: alert.colorLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(alert.icon, color: alert.color, size: 18),
@@ -207,7 +207,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                     decoration: BoxDecoration(
-                      color: alert.color.withValues(alpha: 0.15),
+                      color: alert.colorLight,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -254,6 +254,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
     );
   }
 }
+
 
 
 

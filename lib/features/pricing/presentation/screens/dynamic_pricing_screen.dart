@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/enums/loading_status.dart';
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -25,11 +25,11 @@ class _PrecificacaoDinamicaScreenState
   DynamicPricingConfigModel get _config => _state.config;
   bool get _carregando => _state.status == LoadingStatus.loading;
   
-  /// Hist�rico de ajustes conectado ao provider
+  /// Hist?rico de ajustes conectado ao provider
   PricingHistoryState get _historyState => ref.watch(pricingHistoryProvider);
   List<PricingHistoryModel> get _historicoAjustes => _historyState.history.take(5).toList();
 
-  /// Calcula ajustes por tipo usando o hist�rico do backend
+  /// Calcula ajustes por tipo usando o hist?rico do backend
   int _getAjustesHojePorTipo(String tipo) {
     final hoje = DateTime.now();
     return _historyState.history.where((h) {
@@ -46,7 +46,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'competitividade',
       'nome': 'Competitividade',
-      'descricao': 'Ajusta pre�os baseado na concorr�ncia',
+      'descricao': 'Ajusta pre?os baseado na concorr?ncia',
       'ativa': _config.considerarConcorrencia,
       'peso': 40,
       'cor': ThemeColors.of(context).primary,
@@ -56,7 +56,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'demanda',
       'nome': 'Demanda',
-      'descricao': 'Pre�os aumentam com alta procura',
+      'descricao': 'Pre?os aumentam com alta procura',
       'ativa': _config.considerarDemanda,
       'peso': 30,
       'cor': ThemeColors.of(context).success,
@@ -66,7 +66,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'estoque',
       'nome': 'Estoque',
-      'descricao': 'Reduz pre�os para produtos parados',
+      'descricao': 'Reduz pre?os para produtos parados',
       'ativa': _config.ativo, // Usa status geral do dynamic pricing
       'peso': 20,
       'cor': ThemeColors.of(context).orangeMaterial,
@@ -76,7 +76,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'sazonalidade',
       'nome': 'Sazonalidade',
-      'descricao': 'Considera �pocas e eventos',
+      'descricao': 'Considera ?pocas e eventos',
       'ativa': _config.considerarSazonalidade,
       'peso': 10,
       'cor': ThemeColors.of(context).blueCyan,
@@ -142,7 +142,7 @@ class _PrecificacaoDinamicaScreenState
                         const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4),
                           child: Text(
-                            'Regras de Precifica��o',
+                            'Regras de Precifica??o',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -224,7 +224,7 @@ class _PrecificacaoDinamicaScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Precifica��o Din�mica',
+                  'Precifica??o Din?mica',
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -232,7 +232,7 @@ class _PrecificacaoDinamicaScreenState
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'Ajustes autom�ticos',
+                  'Ajustes autom?ticos',
                   style:
                       TextStyle(fontSize: 11, color: ThemeColors.of(context).textSecondary),
                   overflow: TextOverflow.ellipsis,
@@ -264,7 +264,7 @@ class _PrecificacaoDinamicaScreenState
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).greenTealLight,
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -292,7 +292,7 @@ class _PrecificacaoDinamicaScreenState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Sistema Autom�tico',
+                      'Sistema Autom?tico',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -405,7 +405,7 @@ class _PrecificacaoDinamicaScreenState
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).greenTealLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(
@@ -416,7 +416,7 @@ class _PrecificacaoDinamicaScreenState
               ),
               const SizedBox(width: 12),
               const Text(
-                'Configura��es Gerais',
+                'Configura??es Gerais',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -427,16 +427,16 @@ class _PrecificacaoDinamicaScreenState
           ),
           const SizedBox(height: 20),
 
-          // Margem M�nima
+          // Margem M?nima
           _buildConfigRow(
-            'Margem M�nima',
+            'Margem M?nima',
             '${_config.margemMinima.toStringAsFixed(0)}%',
           ),
           const SizedBox(height: 8),
 
-          // Margem M�xima
+          // Margem M?xima
           _buildConfigRow(
-            'Margem M�xima',
+            'Margem M?xima',
             '${_config.margemMaxima.toStringAsFixed(0)}%',
           ),
           const SizedBox(height: 16),
@@ -457,7 +457,7 @@ class _PrecificacaoDinamicaScreenState
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).greenTealLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -491,9 +491,9 @@ class _PrecificacaoDinamicaScreenState
           const Divider(),
           const SizedBox(height: 16),
 
-          // Op��es
+          // Op??es
           _buildSwitchOption(
-            'Respeitar Margem M�nima',
+            'Respeitar Margem M?nima',
             'Nunca reduzir abaixo da margem configurada',
             Icons.shield_rounded,
             _respeitarMargemMinima,
@@ -501,7 +501,7 @@ class _PrecificacaoDinamicaScreenState
           ),
           const SizedBox(height: 12),
           _buildSwitchOption(
-            'Notifica��es',
+            'Notifica??es',
             'Alertar sobre ajustes significativos',
             Icons.notifications_rounded,
             _notificacoes,
@@ -527,7 +527,7 @@ class _PrecificacaoDinamicaScreenState
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).greenTealLight,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
@@ -600,12 +600,12 @@ class _PrecificacaoDinamicaScreenState
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: (regra['cor'] as Color).withValues(alpha: 0.3),
+            color: (regra['cor'] as Color)Light,
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (regra['cor'] as Color).withValues(alpha: 0.1),
+              color: (regra['cor'] as Color)Light,
               blurRadius: 15,
               offset: const Offset(0, 4),
             ),
@@ -756,7 +756,7 @@ class _PrecificacaoDinamicaScreenState
           ),
           SizedBox(height: 16),
           Text(
-            'Carregando configura��es...',
+            'Carregando configura??es...',
             style: TextStyle(
               fontSize: 16,
               color: ThemeColors.of(context).textSecondary,
@@ -780,9 +780,9 @@ class _PrecificacaoDinamicaScreenState
 
   String _getSensibilidadeDescricao() {
     if (_sensibilidade <= 25) return 'Ajustes pequenos e cautelosos';
-    if (_sensibilidade <= 50) return 'Equil�brio entre cautela e agilidade';
-    if (_sensibilidade <= 75) return 'Ajustes r�pidos e significativos';
-    return 'Mudan�as r�pidas e grandes varia��es';
+    if (_sensibilidade <= 50) return 'Equil?brio entre cautela e agilidade';
+    if (_sensibilidade <= 75) return 'Ajustes r?pidos e significativos';
+    return 'Mudan?as r?pidas e grandes varia??es';
   }
 
   // ===========================================================================
@@ -818,7 +818,7 @@ class _PrecificacaoDinamicaScreenState
                   Icon(Icons.history_rounded, size: 28),
                   SizedBox(width: 12),
                   Text(
-                    'Hist�rico de Ajustes',
+                    'Hist?rico de Ajustes',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -840,7 +840,7 @@ class _PrecificacaoDinamicaScreenState
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'Nenhum ajuste de pre�o registrado',
+                            'Nenhum ajuste de pre?o registrado',
                             style: TextStyle(
                               color: ThemeColors.of(context).textSecondary,
                               fontSize: 14,
@@ -879,7 +879,7 @@ class _PrecificacaoDinamicaScreenState
       decoration: BoxDecoration(
         color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: cor.withValues(alpha: 0.3)),
+        border: Border.all(color: corLight),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -901,7 +901,7 @@ class _PrecificacaoDinamicaScreenState
                         AppSizes.extraSmallPadding.get(isMobile, isTablet),
                     vertical: 3),
                 decoration: BoxDecoration(
-                  color: cor.withValues(alpha: 0.1),
+                  color: corLight,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -948,7 +948,7 @@ class _PrecificacaoDinamicaScreenState
     );
   }
 
-  /// Formata a data como tempo relativo (ex: "2 horas atr�s")
+  /// Formata a data como tempo relativo (ex: "2 horas atr?s")
   String _formatTimeAgo(DateTime date) {
     final now = DateTime.now();
     final difference = now.difference(date);
@@ -956,11 +956,11 @@ class _PrecificacaoDinamicaScreenState
     if (difference.inMinutes < 1) {
       return 'Agora';
     } else if (difference.inMinutes < 60) {
-      return '${difference.inMinutes} min atr�s';
+      return '${difference.inMinutes} min atr?s';
     } else if (difference.inHours < 24) {
-      return '${difference.inHours} hora${difference.inHours > 1 ? 's' : ''} atr�s';
+      return '${difference.inHours} hora${difference.inHours > 1 ? 's' : ''} atr?s';
     } else if (difference.inDays < 7) {
-      return '${difference.inDays} dia${difference.inDays > 1 ? 's' : ''} atr�s';
+      return '${difference.inDays} dia${difference.inDays > 1 ? 's' : ''} atr?s';
     } else {
       return '${date.day}/${date.month}/${date.year}';
     }
@@ -986,7 +986,7 @@ class _PrecificacaoDinamicaScreenState
               children: [
                 Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
                 SizedBox(width: 12),
-                Text('Configura��es salvas com sucesso'),
+                Text('Configura??es salvas com sucesso'),
               ],
             ),
             backgroundColor: ThemeColors.of(context).greenTeal,
@@ -999,6 +999,7 @@ class _PrecificacaoDinamicaScreenState
     });
   }
 }
+
 
 
 

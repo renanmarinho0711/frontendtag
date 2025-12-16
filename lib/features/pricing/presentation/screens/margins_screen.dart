@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/enums/loading_status.dart';
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -73,7 +73,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _aplicarAjusteEmMassa,
         icon: const Icon(Icons.auto_fix_high_rounded),
-        label: const Text('Ajuste Autom�tico'),
+        label: const Text('Ajuste Autom?tico'),
         backgroundColor: ThemeColors.of(context).success,
       ),
     );
@@ -125,12 +125,12 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Revis�o de Margens',
+                  'Revis?o de Margens',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: -0.5),
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'An�lise de lucratividade',
+                  'An?lise de lucratividade',
                   style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textSecondary),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -140,9 +140,9 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
           IconButton(
             icon: Icon(Icons.settings_rounded, color: ThemeColors.of(context).textSecondary, size: 20),
             onPressed: () {
-              // TODO: Implementar configura��o de par�metros
+              // TODO: Implementar configura??o de par?metros
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Configura��es em desenvolvimento')),
+                const SnackBar(content: Text('Configura??es em desenvolvimento')),
               );
             },
           ),
@@ -176,7 +176,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Aten��o Necess�ria',
+                  'Aten??o Necess?ria',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -184,7 +184,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '$_criticos produto(s) com margem cr�tica e $_baixos com margem baixa',
+                  '$_criticos produto(s) com margem cr?tica e $_baixos com margem baixa',
                   style: TextStyle(fontSize: 12, height: 1.4),
                 ),
               ],
@@ -205,11 +205,11 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
           children: [
             _buildFilterChip('Todos', 'todos', Icons.list_rounded, null),
             const SizedBox(width: 8),
-            _buildFilterChip('Cr�tico', 'critico', Icons.error_rounded, ThemeColors.of(context).error),
+            _buildFilterChip('Cr?tico', 'critico', Icons.error_rounded, ThemeColors.of(context).error),
             const SizedBox(width: 8),
-            _buildFilterChip('Aten��o', 'atencao', Icons.warning_rounded, ThemeColors.of(context).orangeMaterial),
+            _buildFilterChip('Aten??o', 'atencao', Icons.warning_rounded, ThemeColors.of(context).orangeMaterial),
             const SizedBox(width: 8),
-            _buildFilterChip('Saud�vel', 'saudavel', Icons.check_circle_rounded, ThemeColors.of(context).success),
+            _buildFilterChip('Saud?vel', 'saudavel', Icons.check_circle_rounded, ThemeColors.of(context).success),
           ],
         ),
       ),
@@ -228,7 +228,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? chipColor.withValues(alpha: 0.15) : ThemeColors.of(context).textSecondaryOverlay10,
+          color: isSelected ? chipColorLight : ThemeColors.of(context).textSecondaryOverlay10,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected ? chipColor : ThemeColors.of(context).transparent,
@@ -272,12 +272,12 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: cor.withValues(alpha: 0.3),
+            color: corLight,
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: cor.withValues(alpha: 0.1),
+              color: corLight,
               blurRadius: 15,
               offset: const Offset(0, 4),
             ),
@@ -318,7 +318,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 3),
                         decoration: BoxDecoration(
-                          color: cor.withValues(alpha: 0.15),
+                          color: corLight,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -376,7 +376,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Pre�o:', style: TextStyle(fontSize: 12)),
+                            const Text('Pre?o:', style: TextStyle(fontSize: 12)),
                             Text(
                               'R\$ ${produto.precoAtual.toStringAsFixed(2)}',
                               style: TextStyle(
@@ -416,7 +416,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
                     label: const Text('Calcular'),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: cor,
-                      side: BorderSide(color: cor.withValues(alpha: 0.3)),
+                      side: BorderSide(color: corLight),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -474,7 +474,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text('Pre�o Sugerido'),
+        title: const Text('Pre?o Sugerido'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -603,14 +603,14 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text('Par�metros de Margem'),
+        title: const Text('Par?metros de Margem'),
         content: StatefulBuilder(
           builder: (context, setStateDialog) => Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
-                  const Expanded(child: Text('Margem M�nima:')),
+                  const Expanded(child: Text('Margem M?nima:')),
                   Text('${_margemMinima.round()}%', style: TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
@@ -645,17 +645,17 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
           ),
           ElevatedButton(
             onPressed: () {
-              // For�a rebuild para aplicar novos valores de margem
+              // For?a rebuild para aplicar novos valores de margem
               setState(() {});
               Navigator.pop(context);
-              // Feedback visual para o usu�rio
+              // Feedback visual para o usu?rio
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Row(
                     children: [
                       Icon(Icons.check_rounded, color: ThemeColors.of(context).surface),
                       const SizedBox(width: 12),
-                      Text('Par�metros atualizados: M�nima ${_margemMinima.round()}%, Ideal ${_margemIdeal.round()}%'),
+                      Text('Par?metros atualizados: M?nima ${_margemMinima.round()}%, Ideal ${_margemIdeal.round()}%'),
                     ],
                   ),
                   backgroundColor: ThemeColors.of(context).blueCyan,
@@ -681,9 +681,9 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: const Icon(Icons.auto_fix_high_rounded, color: ThemeColors.of(context).blueCyan, size: 48),
-        title: const Text('Ajuste Autom�tico'),
+        title: const Text('Ajuste Autom?tico'),
         content: Text(
-          'Aplicar margem ideal (${_margemIdeal.round()}%) em $_criticos produto(s) cr�tico(s) e $_baixos com margem baixa?',
+          'Aplicar margem ideal (${_margemIdeal.round()}%) em $_criticos produto(s) cr?tico(s) e $_baixos com margem baixa?',
           textAlign: TextAlign.center,
         ),
         actions: [
@@ -721,6 +721,7 @@ class _RevisaoMargensScreenState extends ConsumerState<RevisaoMargensScreen> wit
     );
   }
 }
+
 
 
 

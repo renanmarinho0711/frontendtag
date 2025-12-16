@@ -75,13 +75,13 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
-                    ThemeColors.of(context).orangeDark.withValues(alpha: 0.05),
+                    ThemeColors.of(context).orangeMainLight,
+                    ThemeColors.of(context).orangeDarkLight,
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.15),
+                  color: ThemeColors.of(context).orangeMainLight,
                 ),
               ),
               child: Row(
@@ -233,7 +233,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
       decoration: BoxDecoration(
         color: cor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: cor.withValues(alpha: 0.15)),
+        border: Border.all(color: corLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -241,7 +241,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
           Container(
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
-              color: cor.withValues(alpha: 0.15),
+              color: corLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icone, color: cor, size: 18),
@@ -305,6 +305,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

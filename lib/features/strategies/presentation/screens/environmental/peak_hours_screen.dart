@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -179,7 +179,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Hor�rio de Pico',
+                  'Hor?rio de Pico',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -192,7 +192,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                   ),
                 ),
                 Text(
-                  'Otimiza��o por Fluxo',
+                  'Otimiza??o por Fluxo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -277,14 +277,14 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
               Icons.access_time_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Hor�rios',
+            text: 'Hor?rios',
           ),
           Tab(
             icon: Icon(
               Icons.history_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Hist�rico',
+            text: 'Hist?rico',
           ),
         ],
       ),
@@ -399,7 +399,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Otimiza��o por Fluxo',
+                  'Otimiza??o por Fluxo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -479,7 +479,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueMainLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
@@ -495,7 +495,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
               ),
               Expanded(
                 child: Text(
-                  'Op��es Gerais',
+                  'Op??es Gerais',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -515,7 +515,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
           ),
           _buildOpcaoSwitch(
             'Aplicar em Finais de Semana',
-            'Ajustes tamb�m nos s�bados e domingos',
+            'Ajustes tamb?m nos s?bados e domingos',
             Icons.weekend_rounded,
             state.aplicarFinaisSemana,
             (v) => ref.read(peakHoursProvider.notifier).setAplicarFinaisSemana(v),
@@ -525,7 +525,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
           ),
           _buildOpcaoSwitch(
             'Notificar Ajustes',
-            'Receber alertas quando pre�os forem alterados',
+            'Receber alertas quando pre?os forem alterados',
             Icons.notifications_active_rounded,
             state.notificarAjustes,
             (v) => ref.read(peakHoursProvider.notifier).setNotificarAjustes(v),
@@ -543,12 +543,12 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ? ThemeColors.of(context).blueMain.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
+        color: value ? ThemeColors.of(context).blueMainLight : ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(
           isMobile ? 10 : 12,
         ),
         border: Border.all(
-          color: value ? ThemeColors.of(context).blueMain.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary,
+          color: value ? ThemeColors.of(context).blueMainLight : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -643,7 +643,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                  color: ThemeColors.of(context).blueCyanLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
@@ -763,12 +763,12 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).blueIndigo.withValues(alpha: 0.1), ThemeColors.of(context).primaryPastel],
+          colors: [ThemeColors.of(context).blueIndigoLight, ThemeColors.of(context).primaryPastel],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
         ),
-        border: Border.all(color: ThemeColors.of(context).blueIndigo.withValues(alpha: 0.3), width: 2),
+        border: Border.all(color: ThemeColors.of(context).blueIndigoLight, width: 2),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -779,7 +779,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
             children: [
               Icon(
                 Icons.show_chart_rounded,
-                color: ThemeColors.of(context).blueIndigo.withValues(alpha: 0.8),
+                color: ThemeColors.of(context).blueIndigoDark,
                 size: AppSizes.iconLarge.get(isMobile, isTablet),
               ),
               SizedBox(
@@ -795,7 +795,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).blueIndigo.withValues(alpha: 0.8),
+                  color: ThemeColors.of(context).blueIndigoDark,
                 ),
               ),
             ],
@@ -844,7 +844,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                       ),
                       if (index % 3 == 0)
                         Text(
-                          '${index}h�',
+                          '${index}h?',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -899,10 +899,10 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
           borderRadius: BorderRadius.circular(
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
-          border: Border.all(color: horario.cor.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: horario.corLight, width: 2),
           boxShadow: [
             BoxShadow(
-              color: horario.cor.withValues(alpha: 0.15),
+              color: horario.corLight,
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -928,7 +928,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: horario.cor.withValues(alpha: 0.3),
+                        color: horario.corLight,
                         blurRadius: isMobile ? 10 : 12,
                         offset: const Offset(0, 4),
                       ),
@@ -973,7 +973,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                               vertical: AppSizes.paddingMicro2.get(isMobile, isTablet),
                             ),
                             decoration: BoxDecoration(
-                              color: horario.cor.withValues(alpha: 0.1),
+                              color: horario.corLight,
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
@@ -1017,14 +1017,14 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                   ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [horario.cor, horario.cor.withValues(alpha: 0.8)],
+                      colors: [horario.cor, horario.corDark],
                     ),
                     borderRadius: BorderRadius.circular(
                       isMobile ? 10 : 12,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: horario.cor.withValues(alpha: 0.3),
+                        color: horario.corLight,
                         blurRadius: isMobile ? 8 : 10,
                         offset: const Offset(0, 4),
                       ),
@@ -1076,9 +1076,9 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                       vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: horario.cor.withValues(alpha: 0.1),
+                      color: horario.corLight,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: horario.cor.withValues(alpha: 0.3)),
+                      border: Border.all(color: horario.corLight),
                     ),
                     child: Text(
                       p,
@@ -1130,7 +1130,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                           ),
                         ),
                         decoration: BoxDecoration(
-                          color: horario.cor.withValues(alpha: 0.1),
+                          color: horario.corLight,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -1308,7 +1308,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
-          'Hor�rio de Pico',
+          'Hor?rio de Pico',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1324,7 +1324,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Sistema inteligente que otimiza pre�os baseado no fluxo de clientes:',
+                'Sistema inteligente que otimiza pre?os baseado no fluxo de clientes:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1339,7 +1339,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? Analisa padr�es de tr�fego em diferentes hor�rios',
+                '? Analisa padr?es de tr?fego em diferentes hor?rios',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1354,7 +1354,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre�os em hor�rios de pico (almo�o, jantar)',
+                '? Aumenta pre?os em hor?rios de pico (almo?o, jantar)',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1369,7 +1369,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Reduz pre�os em hor�rios de baixo movimento',
+                '? Reduz pre?os em hor?rios de baixo movimento',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1384,7 +1384,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Maximiza margem quando demanda � alta',
+                '? Maximiza margem quando demanda ? alta',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1399,7 +1399,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Ajustes autom�ticos a cada mudan�a de per�odo',
+                '? Ajustes autom?ticos a cada mudan?a de per?odo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1459,7 +1459,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Configura��es Salvas!',
+                    'Configura??es Salvas!',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1471,7 +1471,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                     ),
                   ),
                   Text(
-                    'Hor�rio de Pico ativo e configurado',
+                    'Hor?rio de Pico ativo e configurado',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1496,6 +1496,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
     );
   }
 }
+
 
 
 

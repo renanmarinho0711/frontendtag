@@ -161,7 +161,7 @@ class RecentProductsCard extends StatelessWidget {
                   width: isMobile ? 48 : 56,
                   height: isMobile ? 48 : 56,
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                    color: ThemeColors.of(context).brandPrimaryGreenLight,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: product.imagem != null && product.imagem!.isNotEmpty
@@ -291,9 +291,9 @@ class RecentProductsCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
+          color: colorLight,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          border: Border.all(color: colorLight),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -318,9 +318,9 @@ class RecentProductsCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+        color: ThemeColors.of(context).brandPrimaryGreenLight,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3)),
+        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreenLight),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -359,6 +359,7 @@ class RecentProductsCard extends StatelessWidget {
     }
   }
 }
+
 
 
 

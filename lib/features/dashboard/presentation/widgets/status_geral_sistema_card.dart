@@ -1,4 +1,4 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -6,7 +6,7 @@ import 'package:tagbean/features/dashboard/presentation/providers/dashboard_prov
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 /// BLOCO 1: Status Geral do Sistema
-/// Mostra o estado geral do sistema em um Ãºnico olhar
+/// Mostra o estado geral do sistema em um único olhar
 class StatusGeralSistemaCard extends ConsumerWidget {
   final VoidCallback? onForcarSincronizacao;
   final VoidCallback? onVerTagsOffline;
@@ -44,7 +44,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
+            color: ThemeColors.of(context).neutralBlackLight,
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -53,7 +53,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // TÃ­tulo
+          // Título
           Row(
             children: [
               Icon(
@@ -129,9 +129,9 @@ class StatusGeralSistemaCard extends ConsumerWidget {
           context,
           icon: Icons.sync_rounded,
           iconColor: ThemeColors.of(context).blueMaterial,
-          title: 'SincronizaÃ§Ã£o',
+          title: 'Sincronização',
           subtitle: _formatLastSync(ultimaSync),
-          actionLabel: 'ForÃ§ar',
+          actionLabel: 'Forçar',
           onAction: onForcarSincronizacao,
           isMobile: true,
         ),
@@ -150,7 +150,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
           icon: Icons.inventory_2_rounded,
           iconColor: produtosSemPreco > 0 ? ThemeColors.of(context).orangeMaterial : ThemeColors.of(context).greenMaterial,
           title: 'Produtos',
-          subtitle: produtosSemPreco > 0 ? '$produtosSemPreco sem preÃ§o' : 'Todos OK',
+          subtitle: produtosSemPreco > 0 ? '$produtosSemPreco sem preço' : 'Todos OK',
           actionLabel: produtosSemPreco > 0 ? 'Corrigir' : null,
           onAction: produtosSemPreco > 0 ? onCorrigirProdutos : null,
           isMobile: true,
@@ -188,9 +188,9 @@ class StatusGeralSistemaCard extends ConsumerWidget {
               context,
               icon: Icons.sync_rounded,
               iconColor: ThemeColors.of(context).blueMaterial,
-              title: 'SincronizaÃ§Ã£o',
+              title: 'Sincronização',
               subtitle: _formatLastSync(ultimaSync),
-              actionLabel: 'ForÃ§ar',
+              actionLabel: 'Forçar',
               onAction: onForcarSincronizacao,
             ),
           ),
@@ -213,7 +213,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
             icon: Icons.inventory_2_rounded,
             iconColor: produtosSemPreco > 0 ? ThemeColors.of(context).orangeMaterial : ThemeColors.of(context).greenMaterial,
             title: 'Produtos',
-            subtitle: produtosSemPreco > 0 ? '$produtosSemPreco sem preÃ§o' : 'Todos com preÃ§o',
+            subtitle: produtosSemPreco > 0 ? '$produtosSemPreco sem preço' : 'Todos com preço',
             actionLabel: produtosSemPreco > 0 ? 'Corrigir' : null,
             onAction: produtosSemPreco > 0 ? onCorrigirProdutos : null,
           ),
@@ -245,7 +245,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
           color: iconColor.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: iconColor.withValues(alpha: 0.2),
+            color: iconColorLight,
             width: 1,
           ),
         ),
@@ -288,7 +288,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: iconColor.withValues(alpha: 0.15),
+                    color: iconColorLight,
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
@@ -315,11 +315,12 @@ class StatusGeralSistemaCard extends ConsumerWidget {
     final difference = now.difference(lastSync);
     
     if (difference.inMinutes < 1) return 'Agora mesmo';
-    if (difference.inMinutes < 60) return 'HÃ¡ ${difference.inMinutes} min';
-    if (difference.inHours < 24) return 'HÃ¡ ${difference.inHours}hÃ¡';
-    return 'HÃ¡ ${difference.inDays}d';
+    if (difference.inMinutes < 60) return 'Há ${difference.inMinutes} min';
+    if (difference.inHours < 24) return 'Há ${difference.inHours}há';
+    return 'Há ${difference.inDays}d';
   }
 }
+
 
 
 

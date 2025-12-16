@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -209,7 +209,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
         decoration: BoxDecoration(
           color: iconColor.withValues(alpha: 0.06),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: iconColor.withValues(alpha: 0.1)),
+          border: Border.all(color: iconColorLight),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -269,7 +269,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
         decoration: BoxDecoration(
           color: iconColor.withValues(alpha: 0.06),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: iconColor.withValues(alpha: 0.1)),
+          border: Border.all(color: iconColorLight),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -316,7 +316,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(4),
                         child: LinearProgressIndicator(
                           value: progresso,
-                          backgroundColor: iconColor.withValues(alpha: 0.15),
+                          backgroundColor: iconColorLight,
                           valueColor: AlwaysStoppedAnimation<Color>(iconColor),
                           minHeight: 6,
                         ),
@@ -341,6 +341,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

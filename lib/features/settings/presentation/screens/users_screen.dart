@@ -265,7 +265,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+                    color: ThemeColors.of(context).successLight,
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -521,7 +521,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
           boxShadow: isAtivo
               ? [
                   BoxShadow(
-                    color: usuario.avatarColor.withValues(alpha: 0.1),
+                    color: usuario.avatarColorLight,
                     blurRadius: isMobile ? 15 : 20,
                     offset: const Offset(0, 4),
                   ),
@@ -567,7 +567,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: usuario.avatarColor.withValues(alpha: 0.3),
+                      color: usuario.avatarColorLight,
                       blurRadius: isMobile ? 10 : 12,
                       offset: const Offset(0, 4),
                     ),
@@ -616,12 +616,12 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                     vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: isAtivo ? ThemeColors.of(context).success.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
+                    color: isAtivo ? ThemeColors.of(context).successLight : ThemeColors.of(context).textSecondary,
                     borderRadius: BorderRadius.circular(
                       isMobile ? 6 : 8,
                     ),
                     border: Border.all(
-                      color: isAtivo ? ThemeColors.of(context).success.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary,
+                      color: isAtivo ? ThemeColors.of(context).successLight : ThemeColors.of(context).textSecondary,
                     ),
                   ),
                   child: Row(
@@ -659,7 +659,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.w600,
-                          color: isAtivo ? ThemeColors.of(context).success.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondary,
+                          color: isAtivo ? ThemeColors.of(context).successDark : ThemeColors.of(context).textSecondary,
                         ),
                       ),
                     ],
@@ -714,7 +714,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                         vertical: AppSizes.paddingMicro2.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: usuario.avatarColor.withValues(alpha: 0.1),
+                        color: usuario.avatarColorLight,
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
@@ -873,7 +873,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                   borderRadius: BorderRadius.circular(
                     isMobile ? 8 : 10,
                   ),
-                  border: Border.all(color: usuario.avatarColor.withValues(alpha: 0.3)),
+                  border: Border.all(color: usuario.avatarColorLight),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -1994,7 +1994,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
         ),
         icon: Icon(
           Icons.lock_reset_rounded,
-          color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
+          color: ThemeColors.of(context).primaryDark,
           size: AppSizes.iconHeroSm.get(isMobile, isTablet),
         ),
         title: Text(
@@ -2112,6 +2112,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
     );
   }
 }
+
 
 
 

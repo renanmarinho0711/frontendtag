@@ -475,7 +475,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: colorLight,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(icon, color: color, size: 24),
@@ -810,7 +810,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
               ),
             ],
             border: Border.all(
-              color: isWarning ? color.withValues(alpha: 0.5) : ThemeColors.of(context).border,
+              color: isWarning ? colorLight : ThemeColors.of(context).border,
               width: isWarning ? 2 : 1,
             ),
           ),
@@ -835,7 +835,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.xs),
                     decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
+                      color: colorLight,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(icon, color: color, size: 16),
@@ -908,8 +908,8 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
 
   Widget _buildAlertCard(TagAlert alert) {
     final backgroundColor = alert.priority == TagAlertPriority.critical
-        ? ThemeColors.of(context).error.withValues(alpha: 0.1)
-        : ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.1);
+        ? ThemeColors.of(context).errorLight
+        : ThemeColors.of(context).orangeMaterialLight;
     
     final borderColor = alert.priority == TagAlertPriority.critical
         ? ThemeColors.of(context).error
@@ -928,7 +928,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
           Container(
             padding: const EdgeInsets.all(AppSpacing.sm),
             decoration: BoxDecoration(
-              color: borderColor.withValues(alpha: 0.2),
+              color: borderColorLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(alert.icon, color: borderColor, size: 20),
@@ -1070,7 +1070,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.md),
                   decoration: BoxDecoration(
-                    color: item.color.withValues(alpha: 0.1),
+                    color: item.colorLight,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(item.icon, color: item.color, size: 24),
@@ -1213,7 +1213,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: colorLight,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(icon, color: color, size: 24),
@@ -1397,7 +1397,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
           decoration: BoxDecoration(
             color: item.color.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: item.color.withValues(alpha: 0.2)),
+            border: Border.all(color: item.colorLight),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -1409,7 +1409,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                   Container(
                     padding: EdgeInsets.all(isMobile ? 8 : 10),
                     decoration: BoxDecoration(
-                      color: item.color.withValues(alpha: 0.15),
+                      color: item.colorLight,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(
@@ -1617,6 +1617,7 @@ class _MenuTagItem {
     this.badge,
   });
 }
+
 
 
 

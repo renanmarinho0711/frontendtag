@@ -319,7 +319,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             color: ThemeColors.of(context).surface,
             borderRadius: AppRadius.card,
             border: Border.all(
-              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
+              color: ThemeColors.of(context).blueCyanLight,
               width: AppSizes.borderWidthMedium,
             ),
             boxShadow: [
@@ -625,7 +625,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     return Container(
       padding: AppSizes.paddingLg.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: AppRadius.lg,
         border: Border.all(color: color),
       ),
@@ -666,8 +666,8 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         borderRadius: AppRadius.lg,
         border: Border.all(
           color: item.valido 
-              ? ThemeColors.of(context).greenMain.withValues(alpha: 0.3) 
-              : ThemeColors.of(context).error.withValues(alpha: 0.3),
+              ? ThemeColors.of(context).greenMainLight 
+              : ThemeColors.of(context).errorLight,
           width: 2,
         ),
       ),
@@ -811,7 +811,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
           Container(
             padding: EdgeInsets.all(AppSpacing.xxl),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+              color: ThemeColors.of(context).brandPrimaryGreenLight,
               shape: BoxShape.circle,
             ),
             child: const CircularProgressIndicator(
@@ -859,7 +859,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         Container(
           padding: EdgeInsets.all(AppSpacing.xxl),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
+            color: ThemeColors.of(context).greenMainLight,
             shape: BoxShape.circle,
           ),
           child: Icon(
@@ -1192,6 +1192,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     );
   }
 }
+
 
 
 

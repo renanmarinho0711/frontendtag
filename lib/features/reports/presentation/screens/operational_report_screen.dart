@@ -279,7 +279,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).primaryLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -501,7 +501,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                     vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8),
                   ),
                   decoration: BoxDecoration(
-                    color: _autoRefresh ? ThemeColors.of(context).success.withValues(alpha: 0.3) : ThemeColors.of(context).surfaceOverlay20,
+                    color: _autoRefresh ? ThemeColors.of(context).successLight : ThemeColors.of(context).surfaceOverlay20,
                     borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                     border: Border.all(
                       color: _autoRefresh ? ThemeColors.of(context).success : ThemeColors.of(context).surfaceOverlay40,
@@ -730,12 +730,12 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
           border: Border.all(
-            color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.3),
+            color: (relatÃ³rio['cor'] as Color)Light,
             width: isMobile ? 1.5 : 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.15),
+              color: (relatÃ³rio['cor'] as Color)Light,
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 6 : 8),
             ),
@@ -864,13 +864,13 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              (relatÃ³rio['cor'] as Color).withValues(alpha: 0.15),
-                              (relatÃ³rio['cor'] as Color).withValues(alpha: 0.05),
+                              (relatÃ³rio['cor'] as Color)Light,
+                              (relatÃ³rio['cor'] as Color)Light,
                             ],
                           ),
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                           border: Border.all(
-                            color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.3),
+                            color: (relatÃ³rio['cor'] as Color)Light,
                           ),
                         ),
                         child: Column(
@@ -988,7 +988,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                         Container(
                           padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 9, tablet: 9.5, desktop: 10)),
                           decoration: BoxDecoration(
-                            color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.1),
+                            color: (relatÃ³rio['cor'] as Color)Light,
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Icon(
@@ -1122,9 +1122,9 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
         vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 5, tablet: 5.5, desktop: 6),
       ),
       decoration: BoxDecoration(
-        color: trendColor.withValues(alpha: 0.1),
+        color: trendColorLight,
         borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-        border: Border.all(color: trendColor.withValues(alpha: 0.3)),
+        border: Border.all(color: trendColorLight),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -1178,7 +1178,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
         vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 3.5, tablet: 3.75, desktop: 4),
       ),
       decoration: BoxDecoration(
-        color: badgeColor.withValues(alpha: 0.1),
+        color: badgeColorLight,
         borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
       ),
       child: Text(
@@ -1308,6 +1308,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
     );
   }
 }
+
 
 
 

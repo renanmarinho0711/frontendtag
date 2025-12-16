@@ -1,4 +1,4 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/sync/presentation/screens/sync_settings_screen.dart';
 import 'package:tagbean/features/sync/presentation/screens/sync_log_screen.dart';
@@ -84,7 +84,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                   SizedBox(
                     height: AppSizes.spacingMd.get(isMobile, isTablet),
                   ),
-                  // Widget reutilizÃ¡vel de Minew Stats
+                  // Widget reutilizável de Minew Stats
                   _buildMinewSection(),
                   SizedBox(
                     height: AppSizes.spacingMd.get(isMobile, isTablet),
@@ -207,7 +207,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).success.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).successLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
@@ -260,7 +260,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTeal.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTealLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 16,
@@ -359,7 +359,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).success.withValues(alpha: 0.3),
+            color: ThemeColors.of(context).successLight,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -744,7 +744,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: colorLight,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -753,7 +753,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             desktop: 12,
           ),
         ),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: colorLight),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -901,7 +901,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: gradient[0].withValues(alpha: 0.3),
+            color: gradient[0]Light,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 10,
@@ -981,7 +981,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
           borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
           boxShadow: [
             BoxShadow(
-              color: gradient[0].withValues(alpha: 0.3),
+              color: gradient[0]Light,
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -1054,9 +1054,9 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     );
   }
 
-  /// SeÃ§Ã£o Minew Cloud - Usa widget reutilizÃ¡vel MinewStatsCard
+  /// Seção Minew Cloud - Usa widget reutilizável MinewStatsCard
   Widget _buildMinewSection() {
-    // ObtÃ©m o storeId do contexto atual
+    // Obtém o storeId do contexto atual
     final workContext = ref.watch(workContextProvider);
     final storeId = workContext.context.currentStoreId;
     
@@ -1071,14 +1071,14 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     );
   }
 
-  /// Executa sincronizaÃ§Ã£o completa com Minew Cloud
+  /// Executa sincronização completa com Minew Cloud
   Future<void> _syncMinewComplete(String storeId) async {
     final syncNotifier = ref.read(syncProvider.notifier);
     
     final result = await syncNotifier.syncMinewComplete(storeId);
     
     if (result != null) {
-      // ForÃ§a refresh das stats
+      // Força refresh das stats
       ref.read(minewStatsRefreshTriggerProvider.notifier).state++;
       
       if (mounted) {
@@ -1096,7 +1096,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Erro na sincronizaÃ§Ã£o'),
+            content: const Text('Erro na sincronização'),
             backgroundColor: ThemeColors.of(context).error,
           ),
         );
@@ -1111,14 +1111,14 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     final result = await syncNotifier.importMinewTags(storeId);
     
     if (result != null) {
-      // ForÃ§a refresh das stats
+      // Força refresh das stats
       ref.read(minewStatsRefreshTriggerProvider.notifier).state++;
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              'ImportaÃ§Ã£o concluÃ­da! ${result.updated} novas tags',
+              'Importação concluída! ${result.updated} novas tags',
             ),
             backgroundColor: ThemeColors.of(context).success,
           ),
@@ -1625,6 +1625,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     );
   }
 }
+
 
 
 

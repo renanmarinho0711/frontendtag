@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -20,7 +20,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
   String _filtroSelecionado = 'todas';
   List<String> _categoriasSelecionadas = [];
   
-  /// Obt�m a lista de categorias do backend via provider
+  /// Obt?m a lista de categorias do backend via provider
   List<String> get _categorias {
     final categoriesState = ref.watch(categoriesProvider);
     return categoriesState.categories.map((c) => c.nome).toList();
@@ -93,7 +93,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           size: AppSizes.iconMediumAlt2.get(isMobile, isTablet),
         ),
         label: Text(
-          'Executar Opera��o',
+          'Executar Opera??o',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -136,7 +136,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Bot�o de voltar
+          // Bot?o de voltar
           if (widget.onBack != null) ...[            Container(
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).blueCyan,
@@ -164,7 +164,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
               borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).mintPastel.withValues(alpha: 0.3),
+                  color: ThemeColors.of(context).mintPastelLight,
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -185,7 +185,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Opera��es em Lote',
+                  'Opera??es em Lote',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -202,7 +202,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
                   height: AppSizes.paddingXxs.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Gerenciar M�ltiplas Tags',
+                  'Gerenciar M?ltiplas Tags',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -308,7 +308,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
               ),
               Expanded(
                 child: Text(
-                  'Selecione a Opera��o',
+                  'Selecione a Opera??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -330,7 +330,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           _buildOperacaoOption(
             'atualizar',
             'Atualizar Dados',
-            'Sincronizar pre�os e informa��es',
+            'Sincronizar pre?os e informa??es',
             Icons.refresh_rounded,
             ThemeColors.of(context).blueMain,
           ),
@@ -340,7 +340,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           _buildOperacaoOption(
             'reconfigurar',
             'Reconfigurar',
-            'Restaurar configura��es padr�o',
+            'Restaurar configura??es padr?o',
             Icons.settings_backup_restore_rounded,
             ThemeColors.of(context).orangeMain,
           ),
@@ -359,8 +359,8 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           ),
           _buildOperacaoOption(
             'testar',
-            'Testar Conex�o',
-            'Verificar comunica��o WiFi',
+            'Testar Conex?o',
+            'Verificar comunica??o WiFi',
             Icons.wifi_tethering_rounded,
             ThemeColors.of(context).greenMain,
           ),
@@ -394,7 +394,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
             decoration: BoxDecoration(
               gradient: isSelected
                   ? LinearGradient(
-                      colors: [color.withValues(alpha: 0.15), color.withValues(alpha: 0.05)],
+                      colors: [colorLight, colorLight],
                     )
                   : null,
               color: isSelected ? null : ThemeColors.of(context).textSecondary,
@@ -406,7 +406,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
               boxShadow: isSelected
                   ? [
                       BoxShadow(
-                        color: color.withValues(alpha: 0.2),
+                        color: colorLight,
                         blurRadius: isMobile ? 10 : 12,
                         offset: const Offset(0, 4),
                       ),
@@ -545,7 +545,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
               ),
               Expanded(
                 child: Text(
-                  'Aplicar Opera��o Em',
+                  'Aplicar Opera??o Em',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -576,7 +576,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           _buildRadioOption(
             'categorias',
             'Por Categoria',
-            'Selecionar categorias espec�ficas',
+            'Selecionar categorias espec?ficas',
             Icons.category_rounded,
           ),
           SizedBox(
@@ -897,7 +897,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
               ),
               Expanded(
                 child: Text(
-                  'Resumo da Opera��o',
+                  'Resumo da Opera??o',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -929,7 +929,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildResumoItem('Opera��o', _getOperacaoTexto(), Icons.settings_rounded),
+                _buildResumoItem('Opera??o', _getOperacaoTexto(), Icons.settings_rounded),
                 SizedBox(height: AppSizes.paddingSm.get(isMobile, isTablet)),
                 Container(height: 1, color: ThemeColors.of(context).surfaceOverlay30),
                 SizedBox(height: AppSizes.paddingSm.get(isMobile, isTablet)),
@@ -989,7 +989,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
       case 'desativar':
         return 'Desativar';
       case 'testar':
-        return 'Testar Conex�o';
+        return 'Testar Conex?o';
       default:
         return '';
     }
@@ -1026,7 +1026,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           children: [
             Icon(Icons.play_arrow_rounded, color: ThemeColors.of(context).primaryDark, size: AppSizes.iconMediumLargeAlt.get(isMobile, isTablet)),
             SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-            Text('Confirmar Opera��o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
+            Text('Confirmar Opera??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
           ],
         ),
         content: Column(
@@ -1042,9 +1042,9 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Esta opera��o � irrevers�vel! ', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11), fontWeight: FontWeight.bold, color: ThemeColors.of(context).primaryDark)),
+                  Text('Esta opera??o ? irrevers?vel! ', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11), fontWeight: FontWeight.bold, color: ThemeColors.of(context).primaryDark)),
                   SizedBox(height: AppSizes.paddingXxs.get(isMobile, isTablet)),
-                  Text('Certifique-se de ter selecionado as op��es corretas. ', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10, tabletFontSize: 10))),
+                  Text('Certifique-se de ter selecionado as op??es corretas. ', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10, tabletFontSize: 10))),
                 ],
               ),
             ),
@@ -1056,7 +1056,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Row(children: [SizedBox(width: ResponsiveHelper.getResponsiveWidth(context, mobile: 18, tablet: 19, desktop: 20), height: ResponsiveHelper.getResponsiveHeight(context, mobile: 18, tablet: 19, desktop: 20), child: CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface))), SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)), Expanded(child: Text('Opera��o em andamento... ', overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))))]), backgroundColor: ThemeColors.of(context).primaryDark, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))), duration: const Duration(seconds: 3)));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Row(children: [SizedBox(width: ResponsiveHelper.getResponsiveWidth(context, mobile: 18, tablet: 19, desktop: 20), height: ResponsiveHelper.getResponsiveHeight(context, mobile: 18, tablet: 19, desktop: 20), child: CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface))), SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)), Expanded(child: Text('Opera??o em andamento... ', overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))))]), backgroundColor: ThemeColors.of(context).primaryDark, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))), duration: const Duration(seconds: 3)));
             },
             style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).primaryDark, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(isMobile ? 10 : 12))),
             child: Text('Confirmar', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
@@ -1066,6 +1066,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
     );
   }
 }
+
 
 
 

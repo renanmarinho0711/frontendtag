@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/enums/loading_status.dart';
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
@@ -28,7 +28,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
   // NOTA: _filterTipo removido (morto)
 
   int get _aumentos => _sugestoes.where((s) => s.tipo == 'Aumento').length;
-  int get _promocoes => _sugestoes.where((s) => s.tipo == 'Promo��o').length;
+  int get _promocoes => _sugestoes.where((s) => s.tipo == 'Promo??o').length;
   int get _prioridade => _sugestoes.where((s) => s.confianca >= 90).length;
 
   @override
@@ -97,7 +97,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
           ),
           const SizedBox(height: 16),
           const Text(
-            'Nenhuma sugest�o dispon�vel',
+            'Nenhuma sugest?o dispon?vel',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
@@ -106,7 +106,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
           ),
           const SizedBox(height: 8),
           Text(
-            'As sugest�es de IA aparecer�o aqui',
+            'As sugest?es de IA aparecer?o aqui',
             style: TextStyle(
               fontSize: 14,
               color: ThemeColors.of(context).textSecondaryOverlay70,
@@ -163,12 +163,12 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sugest�es Inteligentes',
+                  'Sugest?es Inteligentes',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: -0.5),
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'An�lise autom�tica de pre�os',
+                  'An?lise autom?tica de pre?os',
                   style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textSecondary),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -205,11 +205,11 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
         children: [
           Row(
             children: [
-              Icon(Icons.lightbulb_rounded, color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8), size: 20),
+              Icon(Icons.lightbulb_rounded, color: ThemeColors.of(context).orangeAmberDark, size: 20),
               const SizedBox(width: 8),
               const Expanded(
                 child: Text(
-                  'Estrat�gia de Sugest�es Autom�ticas',
+                  'Estrat?gia de Sugest?es Autom?ticas',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -233,7 +233,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                               color: ThemeColors.of(context).surface,
                             ),
                             const SizedBox(width: 12),
-                            Text(value ? 'Estrat�gia ativada' : 'Estrat�gia desativada'),
+                            Text(value ? 'Estrat?gia ativada' : 'Estrat?gia desativada'),
                           ],
                         ),
                         backgroundColor: value ? ThemeColors.of(context).success : ThemeColors.of(context).error,
@@ -263,7 +263,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
               Container(width: 1, height: 35, color: ThemeColors.of(context).textSecondaryOverlay20),
               Expanded(
                 child: _buildStatItem(
-                  'Promo��es',
+                  'Promo??es',
                   '$_promocoes',
                   Icons.local_offer_rounded,
                   ThemeColors.of(context).orangeMaterial,
@@ -381,9 +381,9 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                   decoration: BoxDecoration(
-                    color: confiancaCor.withValues(alpha: 0.1),
+                    color: confiancaCorLight,
                     borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: confiancaCor.withValues(alpha: 0.3)),
+                    border: Border.all(color: confiancaCorLight),
                   ),
                   child: Text(
                     '${sugestao.confianca}%',
@@ -488,7 +488,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                   const SizedBox(width: 4),
                   Expanded(
                     child: Text(
-                      'Varia��o: ${sugestao.variacao > 0 ? '+' : ''}${sugestao.variacao.toStringAsFixed(1)}%',
+                      'Varia??o: ${sugestao.variacao > 0 ? '+' : ''}${sugestao.variacao.toStringAsFixed(1)}%',
                       style: TextStyle(fontSize: 13),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -509,7 +509,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                       ),
-                      child: const Text('An�lise', style: TextStyle(fontSize: 13)),
+                      child: const Text('An?lise', style: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -557,7 +557,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: Icon(Icons.analytics_rounded, color: ThemeColors.of(context).infoDark, size: 48),
-        title: const Text('An�lise Detalhada'),
+        title: const Text('An?lise Detalhada'),
         content: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -573,10 +573,10 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              _buildAnaliseItem('Hist�rico de vendas: 30 dias'),
+              _buildAnaliseItem('Hist?rico de vendas: 30 dias'),
               _buildAnaliseItem('Rotatividade: Alta'),
-              _buildAnaliseItem('Elasticidade de pre�o: Calculada'),
-              _buildAnaliseItem('Compara��o com concorr�ncia'),
+              _buildAnaliseItem('Elasticidade de pre?o: Calculada'),
+              _buildAnaliseItem('Compara??o com concorr?ncia'),
               _buildAnaliseItem('Sazonalidade: Considerada'),
               _buildAnaliseItem('Margem atual vs ideal'),
               const SizedBox(height: 16),
@@ -624,12 +624,12 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: Icon(icone, color: gradiente[0], size: 48),
-        title: const Text('Confirmar Sugest�o'),
+        title: const Text('Confirmar Sugest?o'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Aplicar sugest�o para ${sugestao.produto}?',
+              'Aplicar sugest?o para ${sugestao.produto}?',
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
@@ -644,14 +644,14 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text('Pre�o atual:'),
+                      const Text('Pre?o atual:'),
                       Text('R\$ ${sugestao.precoAtual.toStringAsFixed(2)}'),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text('Novo pre�o:'),
+                      const Text('Novo pre?o:'),
                       Text(
                         'R\$ ${sugestao.precoSugerido.toStringAsFixed(2)}',
                         style: TextStyle(
@@ -681,7 +681,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
                     children: [
                       Icon(Icons.check_rounded, color: ThemeColors.of(context).surface),
                       const SizedBox(width: 12),
-                      Text('Sugest�o aplicada: ${sugestao.produto}'),
+                      Text('Sugest?o aplicada: ${sugestao.produto}'),
                     ],
                   ),
                   backgroundColor: ThemeColors.of(context).success,
@@ -713,7 +713,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
           children: [
             Icon(Icons.check_rounded, color: ThemeColors.of(context).surface),
             const SizedBox(width: 12),
-            Text('Sugest�o rejeitada: ${sugestao.produto}'),
+            Text('Sugest?o rejeitada: ${sugestao.produto}'),
           ],
         ),
         backgroundColor: ThemeColors.of(context).error,
@@ -725,6 +725,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
     );
   }
 }
+
 
 
 

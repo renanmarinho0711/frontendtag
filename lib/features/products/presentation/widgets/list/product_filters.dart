@@ -76,13 +76,13 @@ class ProductFilters extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.05),
+            ThemeColors.of(context).brandPrimaryGreenLight,
             ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.02),
           ],
         ),
         borderRadius: AppRadius.card,
         border: Border.all(
-            color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.15), width: 1),
+            color: ThemeColors.of(context).brandPrimaryGreenLight, width: 1),
         boxShadow: [
           BoxShadow(
             color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.08),
@@ -130,7 +130,7 @@ class ProductFilters extends StatelessWidget {
                 icon: Container(
                   padding: EdgeInsets.all(AppSpacing.xxs),
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+                    color: ThemeColors.of(context).brandPrimaryGreenLight,
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
@@ -148,12 +148,12 @@ class ProductFilters extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: AppRadius.lg,
           borderSide:
-              BorderSide(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2)),
+              BorderSide(color: ThemeColors.of(context).brandPrimaryGreenLight),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: AppRadius.lg,
           borderSide:
-              BorderSide(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2)),
+              BorderSide(color: ThemeColors.of(context).brandPrimaryGreenLight),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: AppRadius.lg,
@@ -308,6 +308,7 @@ class ProductFilters extends StatelessWidget {
     );
   }
 }
+
 
 
 

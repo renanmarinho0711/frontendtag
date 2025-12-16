@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/pricing/presentation/screens/individual_adjustment_screen.dart';
 import 'package:tagbean/features/pricing/presentation/screens/percentage_adjustment_screen.dart';
@@ -24,7 +24,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
   late AnimationController _animationController;
   // NOTA: _selectedScreen e _selectedTitle removidos (mortos)
 
-  // Opcoes de menu fixas (sem cores - serão aplicadas dinamicamente)
+  // Opcoes de menu fixas (sem cores - ser�o aplicadas dinamicamente)
   static const List<Map<String, dynamic>> _opcoes = [
     {
       'titulo': 'Ajuste por Porcentagem',
@@ -324,7 +324,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.2),
+              color: ThemeColors.of(context).orangeAmberLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
@@ -526,10 +526,10 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
             AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: (alerta['cor'] as Color).withValues(alpha: 0.1),
+            color: (alerta['cor'] as Color)Light,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: (alerta['cor'] as Color).withValues(alpha: 0.3),
+              color: (alerta['cor'] as Color)Light,
               width: 1.5,
             ),
           ),
@@ -540,7 +540,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                   AppSizes.paddingSmAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: (alerta['cor'] as Color).withValues(alpha: 0.2),
+                  color: (alerta['cor'] as Color)Light,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -691,13 +691,13 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              (stat['cor'] as Color).withValues(alpha: 0.1),
-              (stat['cor'] as Color).withValues(alpha: 0.05),
+              (stat['cor'] as Color)Light,
+              (stat['cor'] as Color)Light,
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: (stat['cor'] as Color).withValues(alpha: 0.3),
+            color: (stat['cor'] as Color)Light,
             width: isMobile ? 1.25 : 1.5,
           ),
         ),
@@ -737,7 +737,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color).withValues(alpha: 0.1),
+                color: (stat['cor'] as Color)Light,
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -796,7 +796,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
           ),
           boxShadow: [
             BoxShadow(
-              color: (opcao['gradiente'][0] as Color).withValues(alpha: 0.3),
+              color: (opcao['gradiente'][0] as Color)Light,
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -953,7 +953,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 18 : 20,
@@ -1174,6 +1174,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
     );
   }
 }
+
 
 
 
