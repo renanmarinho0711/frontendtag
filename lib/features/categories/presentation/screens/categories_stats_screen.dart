@@ -86,7 +86,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     if (lower.contains('limp')) return ThemeColors.of(context).blueCyan;
     if (lower.contains('higien')) return ThemeColors.of(context).blueLight;
     if (lower.contains('padar')) return ThemeColors.of(context).yellowGold;
-    return ThemeColors.of(context).blueMain;
+    return ThemeColors.of(context).info;
   }
 
   List<Color> _getGradientForCategory(String nome) {
@@ -97,7 +97,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     if (lower.contains('limp')) return [ThemeColors.of(context).blueCyan, ThemeColors.of(context).primary];
     if (lower.contains('higien')) return [ThemeColors.of(context).blueLight, ThemeColors.of(context).primary];
     if (lower.contains('padar')) return [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning];
-    return [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark];
+    return [ThemeColors.of(context).info, ThemeColors.of(context).blueDark];
   }
 
   /// Getter para lista de categorias formatada para UI
@@ -848,7 +848,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                         ? [ThemeColors.of(context).silver, ThemeColors.of(context).grey900]
                         : posicao == 3
                             ? [ThemeColors.of(context).bronze, ThemeColors.of(context).brownSaddle]
-                            : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).grey400],
+                            : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textTertiary],
               ),
               shape: BoxShape.circle,
             ),
@@ -1527,7 +1527,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       insights.add({
         'icon': Icons.info_rounded,
         'text': 'Cadastre categorias para visualizar insights',
-        'color': ThemeColors.of(context).blueMain,
+        'color': ThemeColors.of(context).info,
       });
     }
     
@@ -1673,6 +1673,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     );
   }
 }
+
 
 
 

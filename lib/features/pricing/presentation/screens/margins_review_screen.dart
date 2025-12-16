@@ -160,7 +160,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain],
+                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).info],
               ),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
@@ -769,6 +769,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
     );
   }
 }
+
 
 
 

@@ -179,7 +179,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).greenMain,
+          backgroundColor: ThemeColors.of(context).success,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
           duration: const Duration(seconds: 2),
@@ -402,7 +402,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ),
             ListTile(
-              leading: Icon(Icons.sync_rounded, color: ThemeColors.of(context).orangeMain),
+              leading: Icon(Icons.sync_rounded, color: ThemeColors.of(context).warning),
               title: Text('Sincronizao automtica'),
               subtitle: Text('Atualizar ao abrir'),
               trailing: Icon(Icons.chevron_right_rounded),
@@ -419,7 +419,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: _buildCurrentScreen(),
       floatingActionButton: _currentScreen == 'dashboard' 
           ? _buildContextualFAB()
@@ -544,7 +544,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             _buildQuickMenuItem(
               icon: Icons.inventory_rounded,
               label: 'Gerenciar Estoque',
-              cor: ThemeColors.of(context).orangeMain,
+              cor: ThemeColors.of(context).warning,
               onTap: () {
                 Navigator.pop(context);
                 setState(() => _currentScreen = 'estoque');
@@ -906,7 +906,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   label: 'Sem Tag',
                   valor: '$_semTag',
                   icon: Icons.label_off_rounded,
-                  cor: ThemeColors.of(context).orangeMain,
+                  cor: ThemeColors.of(context).warning,
                   showAlert: _semTag > 0,
                   onTap: () {
                     _productsNotifier.clearFilters();
@@ -963,7 +963,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     label: 'Sem Tag',
                     valor: '$_semTag',
                     icon: Icons.label_off_rounded,
-                    cor: ThemeColors.of(context).orangeMain,
+                    cor: ThemeColors.of(context).warning,
                     showAlert: _semTag > 0,
                     onTap: () {
                       _productsNotifier.clearFilters();
@@ -1246,7 +1246,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         'label': 'Gerenciar Estoque',
         'subtitle': 'Entradas e sadas',
         'icon': Icons.inventory_rounded,
-        'cor': ThemeColors.of(context).orangeMain,
+        'cor': ThemeColors.of(context).warning,
         'screen': 'estoque',
       },
     ];
@@ -1396,7 +1396,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           // Ttulo
           Row(
             children: [
-              Icon(Icons.star_rounded, color: ThemeColors.of(context).orangeMain, size: 18),
+              Icon(Icons.star_rounded, color: ThemeColors.of(context).warning, size: 18),
               SizedBox(width: 6),
               Expanded(
                 child: Text(
@@ -1465,7 +1465,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                           width: 28,
                           height: 28,
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).backgroundLight,
+                            color: ThemeColors.of(context).surfaceSecondary,
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Icon(
@@ -1702,7 +1702,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         titulo: 'Importar',
         subtitulo: 'CSV/Excel',
         icone: Icons.upload_file_rounded,
-        cor: ThemeColors.of(context).orangeMain,
+        cor: ThemeColors.of(context).warning,
         onTap: () => setState(() => _currentScreen = 'importar'),
       ),
       _ModuloMenuItem(
@@ -1978,6 +1978,7 @@ class _ModuloMenuItem {
     required this.onTap,
   });
 }
+
 
 
 

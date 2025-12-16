@@ -38,7 +38,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: Container(
         child: SafeArea(
           child: Column(
@@ -332,7 +332,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
             'Atualizar Dados',
             'Sincronizar pre?os e informa??es',
             Icons.refresh_rounded,
-            ThemeColors.of(context).blueMain,
+            ThemeColors.of(context).info,
           ),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -342,7 +342,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
             'Reconfigurar',
             'Restaurar configura??es padr?o',
             Icons.settings_backup_restore_rounded,
-            ThemeColors.of(context).orangeMain,
+            ThemeColors.of(context).warning,
           ),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -362,7 +362,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
             'Testar Conex?o',
             'Verificar comunica??o WiFi',
             Icons.wifi_tethering_rounded,
-            ThemeColors.of(context).greenMain,
+            ThemeColors.of(context).success,
           ),
         ],
       ),
@@ -617,7 +617,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
           children: [
             Icon(
               icon,
-              color: isSelected ? ThemeColors.of(context).blueMain.withValues(alpha: 0.7) : ThemeColors.of(context).textSecondaryOverlay70,
+              color: isSelected ? ThemeColors.of(context).info.withValues(alpha: 0.7) : ThemeColors.of(context).textSecondaryOverlay70,
               size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
             ),
             SizedBox(
@@ -1066,6 +1066,7 @@ class _TagsOperacoesLoteScreenState extends ConsumerState<TagsOperacoesLoteScree
     );
   }
 }
+
 
 
 

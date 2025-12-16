@@ -71,7 +71,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                 FloatingActionButton(
                   heroTag: 'add',
                   onPressed: _criarTrilha,
-                  backgroundColor: ThemeColors.of(context).orangeMain,
+                  backgroundColor: ThemeColors.of(context).warning,
                   child: Icon(
                     Icons.add_rounded,
                     size: AppSizes.iconLarge.get(isMobile, isTablet),
@@ -100,7 +100,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                       ),
                     ),
                   ),
-                  backgroundColor: ThemeColors.of(context).orangeMain,
+                  backgroundColor: ThemeColors.of(context).warning,
                 ),
               ],
             ],
@@ -176,7 +176,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+                colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
               ),
               borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
             ),
@@ -265,7 +265,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         controller: _tabController,
         indicator: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+            colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         ),
@@ -356,14 +356,14 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+          colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 20 : (isTablet ? 22 : 24),
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).warning.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -454,7 +454,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeMainLight, ThemeColors.of(context).amberMainLight],
+          colors: [ThemeColors.of(context).warningLight, ThemeColors.of(context).amberMainLight],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
@@ -547,12 +547,12 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMainLight,
+                  color: ThemeColors.of(context).warningLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.settings_rounded,
-                  color: ThemeColors.of(context).orangeMain,
+                  color: ThemeColors.of(context).warning,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -586,7 +586,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               Icon(
                 Icons.update_rounded,
                 size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
-                color: ThemeColors.of(context).orangeMain,
+                color: ThemeColors.of(context).warning,
               ),
               SizedBox(
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -612,7 +612,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMainLight,
+                  color: ThemeColors.of(context).warningLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -626,7 +626,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                     ),
                   overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).orangeMain,
+                    color: ThemeColors.of(context).warning,
                   ),
                 ),
               ),
@@ -637,7 +637,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
             min: 10,
             max: 60,
             divisions: 10,
-            activeColor: ThemeColors.of(context).orangeMain,
+            activeColor: ThemeColors.of(context).warning,
             label: '${state.intervaloAtualizacao.round()}s',
             onChanged: (value) => ref.read(offersTrailProvider.notifier).setIntervaloAtualizacao(value),
           ),
@@ -650,7 +650,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
               Icon(
                 Icons.format_list_numbered_rounded,
                 size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
-                color: ThemeColors.of(context).orangeMain,
+                color: ThemeColors.of(context).warning,
               ),
               SizedBox(
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -676,7 +676,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMainLight,
+                  color: ThemeColors.of(context).warningLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -690,7 +690,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                     ),
                   overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).orangeMain,
+                    color: ThemeColors.of(context).warning,
                   ),
                 ),
               ),
@@ -701,7 +701,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
             min: 2,
             max: 8,
             divisions: 6,
-            activeColor: ThemeColors.of(context).orangeMain,
+            activeColor: ThemeColors.of(context).warning,
             label: '${state.produtosPorTrilha}',
             onChanged: (value) => ref.read(offersTrailProvider.notifier).setProdutosPorTrilha(value.round()),
           ),
@@ -743,12 +743,12 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.palette_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -831,7 +831,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         decoration: BoxDecoration(
           gradient: isSelected
               ? LinearGradient(
-                  colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+                  colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
                 )
               : null,
           color: isSelected ? null : ThemeColors.of(context).textSecondary,
@@ -843,7 +843,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).orangeMainLight,
+                    color: ThemeColors.of(context).warningLight,
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -954,7 +954,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         color: value ? ThemeColors.of(context).warningPastel : ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         border: Border.all(
-          color: value ? ThemeColors.of(context).orangeMainLight : ThemeColors.of(context).textSecondary,
+          color: value ? ThemeColors.of(context).warningLight : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -962,7 +962,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         children: [
           Icon(
             icon,
-            color: value ? ThemeColors.of(context).orangeMain : ThemeColors.of(context).textSecondary,
+            color: value ? ThemeColors.of(context).warning : ThemeColors.of(context).textSecondary,
             size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -1010,7 +1010,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: ThemeColors.of(context).orangeMain,
+              activeColor: ThemeColors.of(context).warning,
             ),
           ),
         ],
@@ -1157,7 +1157,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
-                                color: trilha.ativa ? ThemeColors.of(context).greenMainDark : ThemeColors.of(context).textSecondary,
+                                color: trilha.ativa ? ThemeColors.of(context).successDark : ThemeColors.of(context).textSecondary,
                               ),
                             ),
                           ),
@@ -1537,7 +1537,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         ),
         icon: Icon(
           Icons.add_circle_rounded,
-          color: ThemeColors.of(context).orangeMain,
+          color: ThemeColors.of(context).warning,
           size: AppSizes.iconHeroLg.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1597,14 +1597,14 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                         Text('Trilha criada com sucesso!', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       ],
                     ),
-                    backgroundColor: ThemeColors.of(context).orangeMain,
+                    backgroundColor: ThemeColors.of(context).warning,
                     behavior: SnackBarBehavior.floating,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(isMobile ? 10 : 12)),
                   ),
                 );
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).orangeMain),
+            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).warning),
             child: Text(
               'Criar Trilha',
               style: TextStyle(
@@ -1727,7 +1727,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
         ),
         icon: Icon(
           Icons.timeline_rounded,
-          color: ThemeColors.of(context).orangeMain,
+          color: ThemeColors.of(context).warning,
           size: AppSizes.iconHeroLg.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1911,7 +1911,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
                 ),
               ],
             ),
-            backgroundColor: ThemeColors.of(context).orangeMain,
+            backgroundColor: ThemeColors.of(context).warning,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
           ),
@@ -1920,6 +1920,7 @@ class _TrilhaOfertasConfigScreenState extends ConsumerState<TrilhaOfertasConfigS
     }
   }
 }
+
 
 
 

@@ -196,7 +196,7 @@ class BindingConfirmationCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -300,6 +300,7 @@ class BindingConfirmationCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

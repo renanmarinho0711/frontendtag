@@ -479,14 +479,14 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.tune_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -543,12 +543,12 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ? ThemeColors.of(context).blueMainLight : ThemeColors.of(context).textSecondary,
+        color: value ? ThemeColors.of(context).infoLight : ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(
           isMobile ? 10 : 12,
         ),
         border: Border.all(
-          color: value ? ThemeColors.of(context).blueMainLight : ThemeColors.of(context).textSecondary,
+          color: value ? ThemeColors.of(context).infoLight : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -556,7 +556,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
         children: [
           Icon(
             icon,
-            color: value ? ThemeColors.of(context).blueMain : ThemeColors.of(context).textSecondaryOverlay70,
+            color: value ? ThemeColors.of(context).info : ThemeColors.of(context).textSecondaryOverlay70,
             size: AppSizes.iconMedium.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -602,7 +602,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: ThemeColors.of(context).blueMain,
+              activeColor: ThemeColors.of(context).info,
             ),
           ),
         ],
@@ -1496,6 +1496,7 @@ class _HorarioPicoConfigScreenState extends ConsumerState<HorarioPicoConfigScree
     );
   }
 }
+
 
 
 

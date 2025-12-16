@@ -29,7 +29,7 @@ class ProductAlert {
       case AlertPriority.critical:
         return ThemeColors.of(context).error;
       case AlertPriority.attention:
-        return ThemeColors.of(context).orangeMain;
+        return ThemeColors.of(context).warning;
       case AlertPriority.info:
         return ThemeColors.of(context).primary;
       case AlertPriority.success:
@@ -158,7 +158,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
           if (!_isMinimized)
             Container(
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).backgroundLight,
+                color: ThemeColors.of(context).surfaceSecondary,
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(isMobile ? 16 : 20),
                 ),
@@ -254,6 +254,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
     );
   }
 }
+
 
 
 

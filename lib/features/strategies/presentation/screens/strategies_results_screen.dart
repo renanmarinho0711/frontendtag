@@ -1266,7 +1266,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: isPositive ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+                  color: isPositive ? ThemeColors.of(context).success : ThemeColors.of(context).error,
                 ),
               ),
             ],
@@ -1412,7 +1412,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                 colors: posicao == 1
                     ? [ThemeColors.of(context).warning, ThemeColors.of(context).warningDark]
                     : posicao == 2
-                        ? [ThemeColors.of(context).grey400, ThemeColors.of(context).grey600]
+                        ? [ThemeColors.of(context).textTertiary, ThemeColors.of(context).textSecondary]
                         : posicao == 3
                             ? [ThemeColors.of(context).brownMain, ThemeColors.of(context).brownDark]
                             : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textSecondary],
@@ -1646,15 +1646,15 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
           SizedBox(
             height: AppSizes.cardPadding.get(isMobile, isTablet),
           ),
-          _buildCategoryBar('Bebidas', 0.35, ThemeColors.of(context).blueMain),
+          _buildCategoryBar('Bebidas', 0.35, ThemeColors.of(context).info),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          _buildCategoryBar('Mercearia', 0.28, ThemeColors.of(context).greenMain),
+          _buildCategoryBar('Mercearia', 0.28, ThemeColors.of(context).success),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          _buildCategoryBar('Perec�veis', 0.22, ThemeColors.of(context).orangeMain),
+          _buildCategoryBar('Perec�veis', 0.22, ThemeColors.of(context).warning),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
@@ -1746,7 +1746,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
             isMobile ? 12 : (isTablet ? 14 : 16),
           ),
           border: Border.all(
-            color: isSuccess ? ThemeColors.of(context).greenMainLight : ThemeColors.of(context).warningLight,
+            color: isSuccess ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningLight,
             width: 1.5,
           ),
           boxShadow: [
@@ -1776,8 +1776,8 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: isSuccess
-                      ? [ThemeColors.of(context).greenMain, ThemeColors.of(context).successIcon]
-                      : [ThemeColors.of(context).orangeMain, ThemeColors.of(context).warningDark],
+                      ? [ThemeColors.of(context).success, ThemeColors.of(context).successIcon]
+                      : [ThemeColors.of(context).warning, ThemeColors.of(context).warningDark],
                 ),
                 borderRadius: BorderRadius.circular(
                   isMobile ? 10 : 12,
@@ -1810,7 +1810,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: isSuccess ? ThemeColors.of(context).greenMain : ThemeColors.of(context).orangeMain,
+                          color: isSuccess ? ThemeColors.of(context).success : ThemeColors.of(context).warning,
                         ),
                       ),
                       SizedBox(
@@ -2003,7 +2003,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).greenMain,
+        backgroundColor: ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -2012,6 +2012,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
     );
   }
 }
+
 
 
 

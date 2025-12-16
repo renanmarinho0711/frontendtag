@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
@@ -27,7 +27,7 @@ class EstrategiasLucroCard extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).greenMainOverlay30,
+            color: ThemeColors.of(context).successOverlay30,
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -301,6 +301,7 @@ class EstrategiasLucroCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

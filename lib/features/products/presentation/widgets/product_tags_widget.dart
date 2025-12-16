@@ -53,13 +53,13 @@ class ProductTagsWidget extends ConsumerWidget {
             const Icon(
               Icons.label_off_outlined,
               size: 48,
-              color: ThemeColors.of(context).grey400,
+              color: ThemeColors.of(context).textTertiary,
             ),
             const SizedBox(height: AppSpacing.sm),
             const Text(
               'Nenhuma tag vinculada',
               style: TextStyle(
-                color: ThemeColors.of(context).grey600,
+                color: ThemeColors.of(context).textSecondary,
                 fontSize: 14,
               ),
             ),
@@ -307,11 +307,11 @@ class _TagListItem extends StatelessWidget {
 
     switch (tag.syncStatus) {
       case TagSyncStatus.synced:
-        color = ThemeColors.of(context).greenMain;
+        color = ThemeColors.of(context).success;
         icon = Icons.check_circle;
         break;
       case TagSyncStatus.syncing:
-        color = ThemeColors.of(context).orangeMain;
+        color = ThemeColors.of(context).warning;
         icon = Icons.sync;
         break;
       case TagSyncStatus.error:
@@ -319,7 +319,7 @@ class _TagListItem extends StatelessWidget {
         icon = Icons.error;
         break;
       case TagSyncStatus.pending:
-        color = ThemeColors.of(context).grey500;
+        color = ThemeColors.of(context).textTertiary;
         icon = Icons.schedule;
         break;
     }
@@ -350,13 +350,13 @@ class _TagListItem extends StatelessWidget {
   Color _getSyncStatusColor() {
     switch (tag.syncStatus) {
       case TagSyncStatus.synced:
-        return ThemeColors.of(context).greenMain;
+        return ThemeColors.of(context).success;
       case TagSyncStatus.syncing:
-        return ThemeColors.of(context).orangeMain;
+        return ThemeColors.of(context).warning;
       case TagSyncStatus.error:
         return ThemeColors.of(context).error;
       case TagSyncStatus.pending:
-        return ThemeColors.of(context).grey500;
+        return ThemeColors.of(context).textTertiary;
     }
   }
 
@@ -364,6 +364,7 @@ class _TagListItem extends StatelessWidget {
     return '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
   }
 }
+
 
 
 

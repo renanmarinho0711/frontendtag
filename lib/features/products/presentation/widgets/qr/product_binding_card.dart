@@ -71,7 +71,7 @@ class ProductBindingCard extends StatelessWidget {
       width: 60,
       height: 60,
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: ThemeColors.of(context).border),
       ),
@@ -223,6 +223,7 @@ class ProductBindingCard extends StatelessWidget {
     }
   }
 }
+
 
 
 

@@ -150,7 +150,7 @@ class RecentProductsCard extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(isMobile ? 12 : 14),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).backgroundLight,
+              color: ThemeColors.of(context).surfaceSecondary,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: ThemeColors.of(context).border),
             ),
@@ -257,7 +257,7 @@ class RecentProductsCard extends StatelessWidget {
                             _buildActionChip(
                               label: 'Vincular Tag',
                               icon: Icons.link_rounded,
-                              color: ThemeColors.of(context).orangeMain,
+                              color: ThemeColors.of(context).warning,
                               onTap: () => onBindTag?.call(product),
                             ),
                         ],
@@ -359,6 +359,7 @@ class RecentProductsCard extends StatelessWidget {
     }
   }
 }
+
 
 
 

@@ -90,7 +90,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).orangeMain,
+              backgroundColor: ThemeColors.of(context).warning,
             ),
           Positioned(
             right: 0,
@@ -165,7 +165,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+                colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
               ),
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
@@ -254,7 +254,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         controller: _tabController,
         indicator: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+            colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
@@ -370,14 +370,14 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+          colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 20 : (isTablet ? 22 : 24),
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).warning.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -474,7 +474,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueMainLight,
+            color: ThemeColors.of(context).infoLight,
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -646,14 +646,14 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.cloud_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -1268,7 +1268,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
           mainAxisSize: MainAxisSize.min,
           children: [
             const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueMain),
+              valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).info),
             ),
             SizedBox(
               height: AppSizes.cardPadding.get(isMobile, isTablet),
@@ -1354,7 +1354,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).greenMain,
+          backgroundColor: ThemeColors.of(context).success,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1375,7 +1375,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         ),
         icon: Icon(
           Icons.wb_sunny_rounded,
-          color: ThemeColors.of(context).orangeMain,
+          color: ThemeColors.of(context).warning,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1534,7 +1534,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).orangeMain,
+          backgroundColor: ThemeColors.of(context).warning,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1544,6 +1544,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
     });
   }
 }
+
 
 
 

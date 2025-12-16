@@ -445,7 +445,7 @@ class WelcomeSection extends ConsumerWidget {
           ),
           Text(
             title,
-            style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey500),
+            style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textTertiary),
             textAlign: TextAlign.center,
           ),
         ],
@@ -453,6 +453,7 @@ class WelcomeSection extends ConsumerWidget {
     );
   }
 }
+
 
 
 

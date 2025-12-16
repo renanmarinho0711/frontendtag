@@ -41,7 +41,7 @@ class QrScanArea extends StatelessWidget {
       height: 220,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: hasCapture ? ThemeColors.of(context).success : primaryColorLight,
@@ -189,14 +189,14 @@ class QrScanArea extends StatelessWidget {
                 height: 16,
                 child: CircularProgressIndicator(
                   strokeWidth: 2,
-                  valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).grey600),
+                  valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).textSecondary),
                 ),
               ),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 'Escaneando...',
                 style: TextStyle(
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -298,6 +298,7 @@ class _ScanLinePainter extends CustomPainter {
     return oldDelegate.progress != progress;
   }
 }
+
 
 
 

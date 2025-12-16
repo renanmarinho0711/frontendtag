@@ -185,7 +185,7 @@ class DashboardAppBar extends ConsumerWidget {
               tabletFontSize: 10,
             ),
             overflow: TextOverflow.ellipsis,
-            color: ThemeColors.of(context).grey600,
+            color: ThemeColors.of(context).textSecondary,
           ),
         ),
       ],
@@ -204,8 +204,8 @@ class DashboardAppBar extends ConsumerWidget {
         child: TextField(
           decoration: InputDecoration(
             hintText: 'Buscar produtos, tags...',
-            hintStyle: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey500),
-            prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).grey400, size: 20),
+            hintStyle: TextStyle(fontSize: 13, color: ThemeColors.of(context).textTertiary),
+            prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).textTertiary, size: 20),
             border: InputBorder.none,
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
@@ -389,7 +389,7 @@ class _AppBarUserMenu extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).grey200, ThemeColors.of(context).grey300],
+          colors: [ThemeColors.of(context).borderLight, ThemeColors.of(context).grey300],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
       ),
@@ -409,7 +409,7 @@ class _AppBarUserMenu extends StatelessWidget {
                 ),
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
-                color: ThemeColors.of(context).grey700,
+                color: ThemeColors.of(context).surfaceDark,
               ),
             ),
           ),
@@ -447,7 +447,7 @@ class _AppBarUserMenu extends StatelessWidget {
                       tabletFontSize: 8,
                     ),
                     overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).grey600,
+                    color: ThemeColors.of(context).textSecondary,
                   ),
                 ),
               ],
@@ -460,7 +460,7 @@ class _AppBarUserMenu extends StatelessWidget {
                 tablet: 15,
                 desktop: 16,
               ),
-              color: ThemeColors.of(context).grey600,
+              color: ThemeColors.of(context).textSecondary,
             ),
           ],
         ],
@@ -483,7 +483,7 @@ class _AppBarUserMenu extends StatelessWidget {
           Icon(
             icon,
             size: 20,
-            color: isDestructive ? ThemeColors.of(context).redMain : ThemeColors.of(context).grey700,
+            color: isDestructive ? ThemeColors.of(context).redMain : ThemeColors.of(context).surfaceDark,
           ),
           const SizedBox(width: 12),
           Text(
@@ -540,6 +540,7 @@ class _AppBarThemeButton extends ConsumerWidget {
     );
   }
 }
+
 
 
 

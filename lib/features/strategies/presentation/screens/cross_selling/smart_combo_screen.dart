@@ -1002,12 +1002,12 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.local_offer_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -1441,7 +1441,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
-                                color: ThemeColors.of(context).greenMainDark,
+                                color: ThemeColors.of(context).successDark,
                               ),
                             ),
                           ),
@@ -2086,6 +2086,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
     }
   }
 }
+
 
 
 

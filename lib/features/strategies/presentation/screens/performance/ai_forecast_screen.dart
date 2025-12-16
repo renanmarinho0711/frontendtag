@@ -69,7 +69,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                 FloatingActionButton(
                   heroTag: 'treinar',
                   onPressed: _treinarModelo,
-                  backgroundColor: ThemeColors.of(context).blueMain,
+                  backgroundColor: ThemeColors.of(context).info,
                   child: Icon(
                     Icons.psychology_rounded,
                     size: AppSizes.iconLarge.get(isMobile, isTablet),
@@ -414,12 +414,12 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMainLight,
+                  color: ThemeColors.of(context).successLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.check_circle_rounded,
-                  color: ThemeColors.of(context).greenMain,
+                  color: ThemeColors.of(context).success,
                   size: AppSizes.iconMedium.get(isMobile, isTablet),
                 ),
               ),
@@ -455,11 +455,11 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                   vertical: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark]),
+                  gradient: LinearGradient(colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark]),
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).greenMainLight,
+                      color: ThemeColors.of(context).successLight,
                       blurRadius: isMobile ? 8 : 10,
                       offset: const Offset(0, 4),
                     ),
@@ -484,11 +484,11 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Expanded(child: _buildMetric('Produtos', '1.247', Icons.inventory_2_rounded, ThemeColors.of(context).blueMain)),
+              Expanded(child: _buildMetric('Produtos', '1.247', Icons.inventory_2_rounded, ThemeColors.of(context).info)),
               Container(width: 1, height: ResponsiveHelper.getResponsivePadding(context, mobile: 45, tablet: 47, desktop: 50), color: ThemeColors.of(context).textSecondary),
-              Expanded(child: _buildMetric('Preciso', '87%', Icons.trending_up_rounded, ThemeColors.of(context).greenMain)),
+              Expanded(child: _buildMetric('Preciso', '87%', Icons.trending_up_rounded, ThemeColors.of(context).success)),
               Container(width: 1, height: ResponsiveHelper.getResponsivePadding(context, mobile: 45, tablet: 47, desktop: 50), color: ThemeColors.of(context).textSecondary),
-              Expanded(child: _buildMetric('Previses', '45', Icons.lightbulb_rounded, ThemeColors.of(context).orangeMain)),
+              Expanded(child: _buildMetric('Previses', '45', Icons.lightbulb_rounded, ThemeColors.of(context).warning)),
             ],
           ),
         ],
@@ -557,7 +557,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+                  gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -584,7 +584,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
             children: [
               Icon(
                 Icons.history_rounded,
-                color: ThemeColors.of(context).blueMain,
+                color: ThemeColors.of(context).info,
                 size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -604,7 +604,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -613,7 +613,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15),
                   overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).blueMain,
+                    color: ThemeColors.of(context).info,
                   ),
                 ),
               ),
@@ -627,7 +627,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
             divisions: 67,
             label: '${ref.watch(aiForecastProvider).historicalPeriod} dias',
             onChanged: (value) => ref.read(aiForecastProvider.notifier).setHistoricalPeriod(value.toInt()),
-            activeColor: ThemeColors.of(context).blueMain,
+            activeColor: ThemeColors.of(context).info,
           ),
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1007,12 +1007,12 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.pie_chart_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -1279,11 +1279,11 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
   Color _getColorForFator(String fator) {
     switch (fator) {
       case 'Hist?rico de Vendas':
-        return ThemeColors.of(context).blueMain;
+        return ThemeColors.of(context).info;
       case 'Sazonalidade':
-        return ThemeColors.of(context).greenMain;
+        return ThemeColors.of(context).success;
       case 'Eventos & Calendrio':
-        return ThemeColors.of(context).orangeMain;
+        return ThemeColors.of(context).warning;
       case 'Clima & Temperatura':
         return ThemeColors.of(context).orangeDark;
       case 'Concorrncia':
@@ -1378,7 +1378,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
             ),
           ],
         ),
-        backgroundColor: hasError ? ThemeColors.of(context).error : ThemeColors.of(context).greenMain,
+        backgroundColor: hasError ? ThemeColors.of(context).error : ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
         duration: const Duration(seconds: 4),
@@ -1501,6 +1501,7 @@ class _PrevisaoIAConfigScreenState extends ConsumerState<PrevisaoIAConfigScreen>
     );
   }
 }
+
 
 
 

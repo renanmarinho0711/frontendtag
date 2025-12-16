@@ -62,13 +62,13 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
   Color _getStatusColor() {
     switch (widget.tag.status) {
       case TagStatus.online:
-        return ThemeColors.of(context).greenMain;
+        return ThemeColors.of(context).success;
       case TagStatus.offline:
         return ThemeColors.of(context).textSecondary;
       case TagStatus.lowBattery:
-        return ThemeColors.of(context).orangeMain;
+        return ThemeColors.of(context).warning;
       case TagStatus.bound:
-        return ThemeColors.of(context).blueMain;
+        return ThemeColors.of(context).info;
       case TagStatus.unbound:
         return ThemeColors.of(context).blueCyan;
       case TagStatus.unknown:
@@ -140,7 +140,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
@@ -202,7 +202,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         vertical: AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
         ),
@@ -218,7 +218,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         children: [
           Container(
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).backgroundLight,
+              color: ThemeColors.of(context).surfaceSecondary,
               borderRadius: BorderRadius.circular(
                   AppSizes.paddingBase.get(isMobile, isTablet)),
             ),
@@ -250,7 +250,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
             ),
             child: Icon(
               _getStatusIcon(),
-              color: ThemeColors.of(context).grey600,
+              color: ThemeColors.of(context).textSecondary,
               size: AppSizes.iconMedium.get(isMobile, isTablet),
             ),
           ),
@@ -299,7 +299,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                   vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMainLight,
+                  color: ThemeColors.of(context).warningLight,
                   borderRadius: BorderRadius.circular(
                       AppSizes.paddingBase.get(isMobile, isTablet)),
                   border: Border.all(color: ThemeColors.of(context).yellow50),
@@ -382,7 +382,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                 ),
                 child: Icon(
                   Icons.label_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                 ),
               ),
@@ -404,7 +404,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                         ),
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
-                        color: ThemeColors.of(context).grey600,
+                        color: ThemeColors.of(context).textSecondary,
                         letterSpacing: -0.5,
                       ),
                     ),
@@ -433,7 +433,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                           ),
                           overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.w600,
-                          color: ThemeColors.of(context).grey600,
+                          color: ThemeColors.of(context).textSecondary,
                         ),
                       ),
                     ),
@@ -495,7 +495,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         children: [
           Icon(
             icon,
-            color: ThemeColors.of(context).grey600,
+            color: ThemeColors.of(context).textSecondary,
             size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -512,7 +512,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
               ),
               overflow: TextOverflow.ellipsis,
               fontWeight: FontWeight.bold,
-              color: ThemeColors.of(context).grey600,
+              color: ThemeColors.of(context).textSecondary,
             ),
           ),
           Text(
@@ -556,13 +556,13 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                   AppSizes.paddingXs.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMain,
+                  color: ThemeColors.of(context).success,
                   borderRadius: BorderRadius.circular(
                       AppSizes.paddingSm.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.inventory_2_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -617,7 +617,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                           children: [
                             Icon(
                               Icons.open_in_new_rounded,
-                              color: ThemeColors.of(context).grey600,
+                              color: ThemeColors.of(context).textSecondary,
                               size: AppSizes.iconMediumSmall
                                   .get(isMobile, isTablet),
                             ),
@@ -671,8 +671,8 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                       vertical: AppSizes.paddingBase.get(isMobile, isTablet),
                       horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
                     ),
-                    foregroundColor: ThemeColors.of(context).greenMain,
-                    side: BorderSide(color: ThemeColors.of(context).greenMain),
+                    foregroundColor: ThemeColors.of(context).success,
+                    side: BorderSide(color: ThemeColors.of(context).success),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           AppSizes.paddingSm.get(isMobile, isTablet)),
@@ -707,8 +707,8 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                       vertical: AppSizes.paddingBase.get(isMobile, isTablet),
                       horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
                     ),
-                    backgroundColor: ThemeColors.of(context).orangeMain,
-                    foregroundColor: ThemeColors.of(context).grey600,
+                    backgroundColor: ThemeColors.of(context).warning,
+                    foregroundColor: ThemeColors.of(context).textSecondary,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           AppSizes.paddingSm.get(isMobile, isTablet)),
@@ -730,7 +730,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
         ),
@@ -758,7 +758,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                 ),
                 child: Icon(
                   Icons.analytics_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -808,7 +808,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                       'Tela',
                       widget.tag.screenSize ?? 'N/A',
                       Icons.aspect_ratio_rounded,
-                      ThemeColors.of(context).blueMain,
+                      ThemeColors.of(context).info,
                     ),
                   ),
                   SizedBox(
@@ -818,8 +818,8 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                       '${widget.tag.batteryLevel}%',
                       _getBatteryIcon(),
                       widget.tag.batteryLevel > 20
-                          ? ThemeColors.of(context).greenMain
-                          : ThemeColors.of(context).orangeMain,
+                          ? ThemeColors.of(context).success
+                          : ThemeColors.of(context).warning,
                     ),
                   ),
                 ],
@@ -892,7 +892,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
         ),
@@ -925,7 +925,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                 ),
                 child: Icon(
                   Icons.edit_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -1063,7 +1063,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                     : Icons.cancel_rounded,
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                 color: _status == 'Ativo'
-                    ? ThemeColors.of(context).greenMain
+                    ? ThemeColors.of(context).success
                     : ThemeColors.of(context).textSecondary,
               ),
               border: OutlineInputBorder(
@@ -1122,7 +1122,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                         child: CircularProgressIndicator(
                           strokeWidth: 2,
                           valueColor: AlwaysStoppedAnimation<Color>(
-                              ThemeColors.of(context).grey600),
+                              ThemeColors.of(context).textSecondary),
                         ),
                       )
                     : Icon(Icons.sync_rounded,
@@ -1146,8 +1146,8 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                     vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                     horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
                   ),
-                  backgroundColor: ThemeColors.of(context).blueMain,
-                  foregroundColor: ThemeColors.of(context).grey600,
+                  backgroundColor: ThemeColors.of(context).info,
+                  foregroundColor: ThemeColors.of(context).textSecondary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                         AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1181,8 +1181,8 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                       vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                       horizontal: AppSizes.paddingXs.get(isMobile, isTablet),
                     ),
-                    backgroundColor: ThemeColors.of(context).orangeMain,
-                    foregroundColor: ThemeColors.of(context).grey600,
+                    backgroundColor: ThemeColors.of(context).warning,
+                    foregroundColor: ThemeColors.of(context).textSecondary,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1237,7 +1237,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                         child: CircularProgressIndicator(
                           strokeWidth: 2,
                           valueColor: AlwaysStoppedAnimation<Color>(
-                              ThemeColors.of(context).grey600),
+                              ThemeColors.of(context).textSecondary),
                         ),
                       )
                     : Icon(Icons.check_rounded,
@@ -1261,7 +1261,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                     vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                   ),
                   backgroundColor: statusColor,
-                  foregroundColor: ThemeColors.of(context).grey600,
+                  foregroundColor: ThemeColors.of(context).textSecondary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                         AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1341,7 +1341,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         ),
         icon: Icon(
           Icons.check_circle_rounded,
-          color: ThemeColors.of(context).greenMain,
+          color: ThemeColors.of(context).success,
           size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1381,7 +1381,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                   mobileFontSize: 11,
                   tabletFontSize: 11,
                 ),
-                color: ThemeColors.of(context).greenMain,
+                color: ThemeColors.of(context).success,
               ),
             ),
           ],
@@ -1390,7 +1390,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).greenMain,
+              backgroundColor: ThemeColors.of(context).success,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
                     AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1458,7 +1458,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
           SnackBar(
             content: Row(
               children: [
-                 Icon(Icons.check_rounded, color: ThemeColors.of(context).grey600),
+                 Icon(Icons.check_rounded, color: ThemeColors.of(context).textSecondary),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
@@ -1509,7 +1509,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
         ),
         icon: Icon(
           Icons.link_off_rounded,
-          color: ThemeColors.of(context).orangeMain,
+          color: ThemeColors.of(context).warning,
           size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1567,7 +1567,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                         children: [
                           Icon(
                             Icons.check_circle_rounded,
-                            color: ThemeColors.of(context).grey600,
+                            color: ThemeColors.of(context).textSecondary,
                             size: AppSizes.iconMediumSmall
                                 .get(isMobile, isTablet),
                           ),
@@ -1580,7 +1580,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                           ),
                         ],
                       ),
-                      backgroundColor: ThemeColors.of(context).orangeMain,
+                      backgroundColor: ThemeColors.of(context).warning,
                       behavior: SnackBarBehavior.floating,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
@@ -1602,7 +1602,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
               }
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).orangeMain,
+              backgroundColor: ThemeColors.of(context).warning,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
                     AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1650,7 +1650,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
               children: [
                 Icon(
                   Icons.check_circle_rounded,
-                  color: ThemeColors.of(context).grey600,
+                  color: ThemeColors.of(context).textSecondary,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                 ),
                 SizedBox(
@@ -1658,7 +1658,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                 const Expanded(child: Text('Tag atualizada!')),
               ],
             ),
-            backgroundColor: ThemeColors.of(context).greenMain,
+            backgroundColor: ThemeColors.of(context).success,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
@@ -1749,7 +1749,7 @@ class _EtiquetasEditarScreenState extends ConsumerState<EtiquetasEditarScreen>
                         children: [
                           Icon(
                             Icons.check_circle_rounded,
-                            color: ThemeColors.of(context).grey600,
+                            color: ThemeColors.of(context).textSecondary,
                             size: AppSizes.iconMediumSmall
                                 .get(isMobile, isTablet),
                           ),
@@ -1905,7 +1905,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
         SnackBar(
           content: Row(
             children: [
-              Icon(Icons.check_rounded, color: ThemeColors.of(context).grey600),
+              Icon(Icons.check_rounded, color: ThemeColors.of(context).textSecondary),
               const SizedBox(width: 12),
               Expanded(
                 child: Text('Produto "$barcode" no encontrado nesta loja'),
@@ -1932,7 +1932,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.75,
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Column(
@@ -1990,14 +1990,14 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
                 // Boto de Scanner de Cdigo de Barras
                 Container(
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).blueMainLight,
+                    color: ThemeColors.of(context).infoLight,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: IconButton(
                     onPressed: _openBarcodeScanner,
                     icon: Icon(
                       Icons.qr_code_scanner_rounded,
-                      color: ThemeColors.of(context).blueMain,
+                      color: ThemeColors.of(context).info,
                     ),
                     tooltip: 'Escanear cdigo de barras',
                   ),
@@ -2017,28 +2017,28 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).greenMainLight,
+                color: ThemeColors.of(context).successLight,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: ThemeColors.of(context).greenMainLight),
+                border: Border.all(color: ThemeColors.of(context).successLight),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.store_rounded, size: 16, color: ThemeColors.of(context).greenMain),
+                  Icon(Icons.store_rounded, size: 16, color: ThemeColors.of(context).success),
                   const SizedBox(width: 6),
                   Text(
                     'Produtos da sua loja',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
-                      color: ThemeColors.of(context).greenMain,
+                      color: ThemeColors.of(context).success,
                     ),
                   ),
                   const SizedBox(width: 8),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).greenMainLight,
+                      color: ThemeColors.of(context).successLight,
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
@@ -2046,7 +2046,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
-                        color: ThemeColors.of(context).greenMain,
+                        color: ThemeColors.of(context).success,
                       ),
                     ),
                   ),
@@ -2100,13 +2100,13 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
                 Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).primary],
+                      colors: [ThemeColors.of(context).info, ThemeColors.of(context).primary],
                     ),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: IconButton(
                     onPressed: _openBarcodeScanner,
-                    icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).grey600),
+                    icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).textSecondary),
                     tooltip: 'Escanear cdigo',
                   ),
                 ),
@@ -2145,7 +2145,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
                                 Icon(
                                   Icons.inventory_2_outlined,
                                   size: 64,
-                                  color: ThemeColors.of(context).grey400,
+                                  color: ThemeColors.of(context).textTertiary,
                                 ),
                                 const SizedBox(height: 16),
                                 Text(
@@ -2196,9 +2196,9 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey600,
+        color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ThemeColors.of(context).grey200),
+        border: Border.all(color: ThemeColors.of(context).borderLight),
       ),
       child: ListTile(
         onTap: () => widget.onProductSelected(product),
@@ -2211,7 +2211,7 @@ class _ProductSelectorModalState extends ConsumerState<_ProductSelectorModal> {
           ),
           child: Icon(
             product.icone,
-            color: ThemeColors.of(context).grey600,
+            color: ThemeColors.of(context).textSecondary,
             size: 24,
           ),
         ),

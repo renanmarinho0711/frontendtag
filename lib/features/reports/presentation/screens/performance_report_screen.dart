@@ -1049,7 +1049,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                           ),
                           Text(
                             '${relatÃ³rio['produtos'] ?? 0} itens encontrados',
-                            style: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey600),
+                            style: TextStyle(fontSize: 13, color: ThemeColors.of(context).textSecondary),
                           ),
                         ],
                       ),
@@ -1073,7 +1073,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                     decoration: BoxDecoration(
                       color: ThemeColors.of(context).grey50,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: ThemeColors.of(context).grey200!),
+                      border: Border.all(color: ThemeColors.of(context).borderLight!),
                     ),
                     child: Row(
                       children: [
@@ -1091,11 +1091,11 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Item ${index + 1}', style: TextStyle(fontWeight: FontWeight.w600)),
-                              Text('Detalhes do item', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey600)),
+                              Text('Detalhes do item', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary)),
                             ],
                           ),
                         ),
-                        Icon(Icons.chevron_right_rounded, color: ThemeColors.of(context).grey400),
+                        Icon(Icons.chevron_right_rounded, color: ThemeColors.of(context).textTertiary),
                       ],
                     ),
                   ),
@@ -1137,6 +1137,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
     );
   }
 }
+
 
 
 

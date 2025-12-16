@@ -330,11 +330,11 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Expanded(child: _buildMiniStat('$pausadas', 'Pausadas', Icons.pause_circle_rounded, ThemeColors.of(context).orangeMain)),
+                    Expanded(child: _buildMiniStat('$pausadas', 'Pausadas', Icons.pause_circle_rounded, ThemeColors.of(context).warning)),
                     SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                     Expanded(child: _buildMiniStat('$inativas', 'Inativas', Icons.cancel_rounded, ThemeColors.of(context).textSecondary)),
                     SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-                    Expanded(child: _buildMiniStat('${strategiesState.strategies.length}', 'Total', Icons.layers_rounded, ThemeColors.of(context).blueMain)),
+                    Expanded(child: _buildMiniStat('${strategiesState.strategies.length}', 'Total', Icons.layers_rounded, ThemeColors.of(context).info)),
                   ],
                 ),
               ],
@@ -478,7 +478,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
           ),
         ),
         labelColor: ThemeColors.of(context).surface,
-        unselectedLabelColor: ThemeColors.of(context).grey600,
+        unselectedLabelColor: ThemeColors.of(context).textSecondary,
         labelStyle: TextStyle(
           fontSize: ResponsiveHelper.getResponsiveFontSize(
             context,
@@ -1049,7 +1049,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                               'Impacto',
                               estrategia.impact,
                               Icons.trending_up_rounded,
-                              ThemeColors.of(context).greenMain,
+                              ThemeColors.of(context).success,
                             ),
                           ),
                           Container(
@@ -1280,6 +1280,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
     );
   }
 }
+
 
 
 

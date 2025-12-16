@@ -124,7 +124,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).backgroundLight,
+          color: ThemeColors.of(context).surfaceSecondary,
         ),
         child: _carregando
             ? _buildLoadingState()
@@ -171,7 +171,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                     _mostrarDialogoFiltro();
                     setState(() => _showSpeedDial = false);
                   },
-                  backgroundColor: ThemeColors.of(context).blueMain,
+                  backgroundColor: ThemeColors.of(context).info,
                   child: Icon(
                     Icons.filter_list_rounded,
                     size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
@@ -1459,7 +1459,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       ),
                     ],
                   ),
-                  backgroundColor: ThemeColors.of(context).greenMain,
+                  backgroundColor: ThemeColors.of(context).success,
                   behavior: SnackBarBehavior.floating,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
@@ -1628,7 +1628,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       ),
                     ],
                   ),
-                  backgroundColor: ThemeColors.of(context).greenMain,
+                  backgroundColor: ThemeColors.of(context).success,
                   behavior: SnackBarBehavior.floating,
                 ),
               );
@@ -1659,6 +1659,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
     );
   }
 }
+
 
 
 

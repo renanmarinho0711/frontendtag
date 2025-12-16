@@ -149,7 +149,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
           builder: (context) => Scaffold(
             body: Container(
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).backgroundLight,
+                color: ThemeColors.of(context).surfaceSecondary,
               ),
               child: SafeArea(
                 child: SingleChildScrollView(
@@ -895,7 +895,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
         indicatorSize: TabBarIndicatorSize.tab,
         dividerColor: ThemeColors.of(context).borderLight,
         labelColor: ThemeColors.of(context).surface,
-        unselectedLabelColor: ThemeColors.of(context).grey600,
+        unselectedLabelColor: ThemeColors.of(context).textSecondary,
         labelStyle: TextStyle(
           fontSize: ResponsiveHelper.getResponsiveFontSize(
             context,
@@ -1293,7 +1293,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Configurao da estratgia "${estrategia.name}" em desenvolvimento'),
-                    backgroundColor: ThemeColors.of(context).orangeMain,
+                    backgroundColor: ThemeColors.of(context).warning,
                   ),
                 );
               }
@@ -1455,7 +1455,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Configurao da estratgia "${estrategia.name}" em desenvolvimento'),
-                    backgroundColor: ThemeColors.of(context).orangeMain,
+                    backgroundColor: ThemeColors.of(context).warning,
                   ),
                 );
               }
@@ -1603,7 +1603,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
                               'Impacto',
                               estrategia.impactPercentage,
                               Icons.trending_up_rounded,
-                              ThemeColors.of(context).greenMain,
+                              ThemeColors.of(context).success,
                             ),
                           ),
                           Container(
@@ -1712,10 +1712,10 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
     
     switch (status) {
       case 'ativa':
-        color = ThemeColors.of(context).greenMain;
+        color = ThemeColors.of(context).success;
         break;
       case 'pausada':
-        color = ThemeColors.of(context).orangeMain;
+        color = ThemeColors.of(context).warning;
         break;
       default:
         color = ThemeColors.of(context).textSecondary;
@@ -1845,6 +1845,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
     );
   }
 }
+
 
 
 

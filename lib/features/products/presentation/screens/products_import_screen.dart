@@ -550,7 +550,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 'Vlidos',
                 '$_validosNoPreview',
                 Icons.check_circle_rounded,
-                ThemeColors.of(context).greenMain,
+                ThemeColors.of(context).success,
               ),
             ),
             SizedBox(width: AppSpacing.md),
@@ -599,7 +599,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               child: ElevatedButton(
                 onPressed: _validosNoPreview > 0 ? _iniciarImportacao : null,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ThemeColors.of(context).greenMain,
+                  backgroundColor: ThemeColors.of(context).success,
                   disabledBackgroundColor: ThemeColors.of(context).textSecondary,
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingLg.get(isMobile, isTablet),
@@ -666,7 +666,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         borderRadius: AppRadius.lg,
         border: Border.all(
           color: item.valido 
-              ? ThemeColors.of(context).greenMainLight 
+              ? ThemeColors.of(context).successLight 
               : ThemeColors.of(context).errorLight,
           width: 2,
         ),
@@ -679,7 +679,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               Container(
                 padding: const EdgeInsets.all(AppSpacing.xs),
                 decoration: BoxDecoration(
-                  color: item.valido ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+                  color: item.valido ? ThemeColors.of(context).success : ThemeColors.of(context).error,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -859,13 +859,13 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         Container(
           padding: EdgeInsets.all(AppSpacing.xxl),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).greenMainLight,
+            color: ThemeColors.of(context).successLight,
             shape: BoxShape.circle,
           ),
           child: Icon(
             Icons.check_circle_rounded,
             size: AppSizes.iconHeroLg.get(isMobile, isTablet),
-            color: ThemeColors.of(context).greenMain,
+            color: ThemeColors.of(context).success,
           ),
         ),
         SizedBox(height: AppSpacing.xxl),
@@ -874,7 +874,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
           style: TextStyle(
             fontSize: AppTextStyles.fontSizeXxl.get(isMobile, isTablet),
             fontWeight: FontWeight.bold,
-            color: ThemeColors.of(context).greenMain,
+            color: ThemeColors.of(context).success,
           ),
         ),
         SizedBox(height: AppSpacing.md),
@@ -912,7 +912,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 'Importados com Sucesso',
                 '$_sucessos',
                 Icons.check_circle_rounded,
-                ThemeColors.of(context).greenMain,
+                ThemeColors.of(context).success,
               ),
               Divider(height: AppSpacing.xl),
               _buildResultItem(
@@ -978,7 +978,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                           Navigator.pushNamed(context, '/tags/batch');
                         },
                       ),
-                      backgroundColor: ThemeColors.of(context).greenMain,
+                      backgroundColor: ThemeColors.of(context).success,
                       behavior: SnackBarBehavior.floating,
                       shape: RoundedRectangleBorder(
                         borderRadius: AppRadius.lg,
@@ -1183,7 +1183,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             const Text('Baixando relatrio de importao...'),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).greenMain,
+        backgroundColor: ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: AppRadius.lg,
@@ -1192,6 +1192,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     );
   }
 }
+
 
 
 

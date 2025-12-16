@@ -56,7 +56,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: ThemeColors.of(context).grey200,
+          color: ThemeColors.of(context).borderLight,
           width: 1,
         ),
         boxShadow: [
@@ -288,7 +288,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ThemeColors.of(context).grey200),
+        border: Border.all(color: ThemeColors.of(context).borderLight),
       ),
       child: Column(
         children: [
@@ -344,7 +344,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ThemeColors.of(context).grey200),
+        border: Border.all(color: ThemeColors.of(context).borderLight),
       ),
       child: Column(
         children: [
@@ -413,6 +413,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
     );
   }
 }
+
 
 
 

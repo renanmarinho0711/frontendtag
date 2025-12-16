@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/dashboard_navigation_rail.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
@@ -164,7 +164,7 @@ class _DrawerMenuItem extends StatelessWidget {
           children: [
             Icon(
               item['icon'],
-              color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
+              color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
               size: 22,
             ),
             const SizedBox(width: 16),
@@ -172,7 +172,7 @@ class _DrawerMenuItem extends StatelessWidget {
               child: Text(
                 item['title'],
                 style: TextStyle(
-                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey700,
+                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).surfaceDark,
                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                   fontSize: 14,
                 ),
@@ -185,6 +185,7 @@ class _DrawerMenuItem extends StatelessWidget {
     );
   }
 }
+
 
 
 

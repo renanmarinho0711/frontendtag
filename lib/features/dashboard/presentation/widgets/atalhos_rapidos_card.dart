@@ -1,10 +1,10 @@
-Ôªøimport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
-/// BLOCO 6: Atalhos de Teclado / Gest√£os
-/// Acelera opera√ß√µes para usu√°rios frequentes
+/// BLOCO 6: Atalhos de Teclado / Gest„os
+/// Acelera operaÁıes para usu·rios frequentes
 class AtalhosRapidosCard extends StatelessWidget {
   final VoidCallback? onNovoProduto;
   final VoidCallback? onNovaTag;
@@ -27,7 +27,7 @@ class AtalhosRapidosCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     
-    // Em mobile, n√£o mostra atalhos de teclado
+    // Em mobile, n„o mostra atalhos de teclado
     if (isMobile) {
       return _buildMobileGestures(context);
     }
@@ -42,7 +42,7 @@ class AtalhosRapidosCard extends StatelessWidget {
         color: ThemeColors.of(context).grey50,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: ThemeColors.of(context).grey200,
+          color: ThemeColors.of(context).borderLight,
           width: 1,
         ),
       ),
@@ -58,7 +58,7 @@ class AtalhosRapidosCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                'ATALHOS R√ÅPIDOS',
+                'ATALHOS R¡PIDOS',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
@@ -111,7 +111,7 @@ class AtalhosRapidosCard extends StatelessWidget {
         color: ThemeColors.of(context).grey50,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: ThemeColors.of(context).grey200,
+          color: ThemeColors.of(context).borderLight,
           width: 1,
         ),
       ),
@@ -143,8 +143,8 @@ class AtalhosRapidosCard extends StatelessWidget {
             spacing: 12,
             runSpacing: 8,
             children: [
-              _buildGesture(Icons.swipe_right_rounded, 'Deslizar ‚Üí', 'Menu'),
-              _buildGesture(Icons.swipe_down_rounded, 'Deslizar ‚Üì', 'Atualizar'),
+              _buildGesture(Icons.swipe_right_rounded, 'Deslizar ?', 'Menu'),
+              _buildGesture(Icons.swipe_down_rounded, 'Deslizar ?', 'Atualizar'),
               _buildGesture(Icons.touch_app_rounded, '2 toques', 'Busca'),
             ],
           ),
@@ -165,7 +165,7 @@ class AtalhosRapidosCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).grey200,
+                color: ThemeColors.of(context).borderLight,
                 borderRadius: BorderRadius.circular(4),
                 border: Border.all(color: ThemeColors.of(context).grey300),
               ),
@@ -174,7 +174,7 @@ class AtalhosRapidosCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w600,
-                  color: ThemeColors.of(context).grey700,
+                  color: ThemeColors.of(context).surfaceDark,
                   fontFamily: 'monospace',
                 ),
               ),
@@ -230,13 +230,13 @@ class AtalhosRapidosCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildShortcutCategory('Navega√ß√£o', [
-                ('Ctrl+1-9', 'Ir para se√ß√£o'),
+              _buildShortcutCategory('NavegaÁ„o', [
+                ('Ctrl+1-9', 'Ir para seÁ„o'),
                 ('Ctrl+D', 'Dashboard'),
-                ('Esc', 'Fechar di√°logo'),
+                ('Esc', 'Fechar di·logo'),
               ]),
               const Divider(height: 24),
-              _buildShortcutCategory('A√ß√µes R√°pidas', [
+              _buildShortcutCategory('AÁıes R·pidas', [
                 ('Ctrl+P', 'Novo Produto'),
                 ('Ctrl+T', 'Nova Tag'),
                 ('Ctrl+V', 'Vincular Tag'),
@@ -292,7 +292,7 @@ class AtalhosRapidosCard extends StatelessWidget {
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'monospace',
-                    color: ThemeColors.of(context).grey700,
+                    color: ThemeColors.of(context).surfaceDark,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -362,6 +362,7 @@ mixin KeyboardShortcutsMixin<T extends StatefulWidget> on State<T> {
     }
   }
 }
+
 
 
 

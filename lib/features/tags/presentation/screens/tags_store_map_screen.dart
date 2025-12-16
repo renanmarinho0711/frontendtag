@@ -70,7 +70,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: Container(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -311,7 +311,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     ),
                   overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).blueMainDark,
+                    color: ThemeColors.of(context).infoDark,
                   ),
                 ),
               ],
@@ -996,7 +996,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Row(children: [Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)), SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)), Expanded(child: Text('Scanner ativado! ', overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))))]), backgroundColor: ThemeColors.of(context).greenMain.withValues(alpha: 0.7), behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Row(children: [Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)), SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)), Expanded(child: Text('Scanner ativado! ', overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))))]), backgroundColor: ThemeColors.of(context).success.withValues(alpha: 0.7), behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))));
             },
             style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).blueCyan, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))),
             child: Text('Iniciar Scanner', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
@@ -1064,11 +1064,11 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     SizedBox(height: AppSizes.paddingLgAlt.get(isMobile, isTablet)),
                     Text('Aes Rpidas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15, tabletFontSize: 15), fontWeight: FontWeight.bold)),
                     SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
-                    _buildActionButton('Atualizar Todas', Icons.refresh_rounded, ThemeColors.of(context).blueMain),
+                    _buildActionButton('Atualizar Todas', Icons.refresh_rounded, ThemeColors.of(context).info),
                     SizedBox(height: AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-                    _buildActionButton('Verificar Problemas', Icons.troubleshoot_rounded, ThemeColors.of(context).orangeMain),
+                    _buildActionButton('Verificar Problemas', Icons.troubleshoot_rounded, ThemeColors.of(context).warning),
                     SizedBox(height: AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-                    _buildActionButton('Exportar Relatório', Icons.file_download_rounded, ThemeColors.of(context).greenMain),
+                    _buildActionButton('Exportar Relatório', Icons.file_download_rounded, ThemeColors.of(context).success),
                   ],
                 ),
               ),
@@ -1165,7 +1165,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
               Text('Exportando relatório...'),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).greenMain,
+          backgroundColor: ThemeColors.of(context).success,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           margin: const EdgeInsets.all(16),
@@ -1191,6 +1191,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
     }
   }
 }
+
 
 
 

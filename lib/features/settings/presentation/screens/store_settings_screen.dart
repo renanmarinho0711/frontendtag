@@ -50,7 +50,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ThemeColors.of(context).backgroundLight,
+      color: ThemeColors.of(context).surfaceSecondary,
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -488,7 +488,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 ),
               ),
               filled: true,
-              fillColor: ThemeColors.of(context).backgroundLight,
+              fillColor: ThemeColors.of(context).surfaceSecondary,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                 vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -534,7 +534,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 ),
               ),
               filled: true,
-              fillColor: ThemeColors.of(context).backgroundLight,
+              fillColor: ThemeColors.of(context).surfaceSecondary,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                 vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -655,7 +655,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 ),
               ),
               filled: true,
-              fillColor: ThemeColors.of(context).backgroundLight,
+              fillColor: ThemeColors.of(context).surfaceSecondary,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                 vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -700,7 +700,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                       ),
                     ),
                     filled: true,
-                    fillColor: ThemeColors.of(context).backgroundLight,
+                    fillColor: ThemeColors.of(context).surfaceSecondary,
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                       vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -738,7 +738,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                       ),
                     ),
                     filled: true,
-                    fillColor: ThemeColors.of(context).backgroundLight,
+                    fillColor: ThemeColors.of(context).surfaceSecondary,
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                       vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -785,7 +785,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 ),
               ),
               filled: true,
-              fillColor: ThemeColors.of(context).backgroundLight,
+              fillColor: ThemeColors.of(context).surfaceSecondary,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                 vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -896,7 +896,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 ),
               ),
               filled: true,
-              fillColor: ThemeColors.of(context).backgroundLight,
+              fillColor: ThemeColors.of(context).surfaceSecondary,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                 vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -937,7 +937,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
                 ),
               ),
               filled: true,
-              fillColor: ThemeColors.of(context).backgroundLight,
+              fillColor: ThemeColors.of(context).surfaceSecondary,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                 vertical: AppSizes.paddingMdAlt2.get(isMobile, isTablet),
@@ -1119,6 +1119,7 @@ class _ConfiguracoesLojaScreenState extends ConsumerState<ConfiguracoesLojaScree
     );
   }
 }
+
 
 
 

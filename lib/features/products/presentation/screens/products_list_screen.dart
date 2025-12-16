@@ -1360,14 +1360,14 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               Icon(
                 produto.hasTag ? Icons.link_off_rounded : Icons.link_rounded, 
                 size: AppSizes.iconSmall.get(isMobile, isTablet), 
-                color: produto.hasTag ? ThemeColors.of(context).orangeMain : ThemeColors.of(context).brandPrimaryGreen,
+                color: produto.hasTag ? ThemeColors.of(context).warning : ThemeColors.of(context).brandPrimaryGreen,
               ),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 produto.hasTag ? 'Desvincular Tag' : 'Vincular Tag', 
                 style: TextStyle(
                   fontSize: AppTextStyles.fontSizeBase.get(isMobile, isTablet),
-                  color: produto.hasTag ? ThemeColors.of(context).orangeMain : ThemeColors.of(context).brandPrimaryGreen,
+                  color: produto.hasTag ? ThemeColors.of(context).warning : ThemeColors.of(context).brandPrimaryGreen,
                 ),
               ),
             ],
@@ -1510,7 +1510,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               }
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).orangeMain,
+              backgroundColor: ThemeColors.of(context).warning,
             ),
             child: const Text('Desvincular'),
           ),
@@ -1663,8 +1663,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 gradient: isInitialEmpty 
                     ? LinearGradient(
                         colors: [
-                          ThemeColors.of(context).greenMainLight,
-                          ThemeColors.of(context).greenMainLight,
+                          ThemeColors.of(context).successLight,
+                          ThemeColors.of(context).successLight,
                         ],
                       )
                     : null,
@@ -1674,7 +1674,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               child: Icon(
                 isInitialEmpty ? Icons.inventory_2_rounded : Icons.search_off_rounded,
                 size: AppSizes.iconHero3Xl.get(isMobile, isTablet),
-                color: isInitialEmpty ? ThemeColors.of(context).greenMain : ThemeColors.of(context).textSecondary,
+                color: isInitialEmpty ? ThemeColors.of(context).success : ThemeColors.of(context).textSecondary,
               ),
             ),
             SizedBox(height: AppSizes.paddingXl.get(isMobile, isTablet)),
@@ -1720,7 +1720,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: ThemeColors.of(context).greenMain,
+                    backgroundColor: ThemeColors.of(context).success,
                     foregroundColor: ThemeColors.of(context).surface,
                     padding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingXl.get(isMobile, isTablet),
@@ -1751,8 +1751,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     );
                   },
                   style: OutlinedButton.styleFrom(
-                    foregroundColor: ThemeColors.of(context).greenMain,
-                    side: BorderSide(color: ThemeColors.of(context).greenMain),
+                    foregroundColor: ThemeColors.of(context).success,
+                    side: BorderSide(color: ThemeColors.of(context).success),
                     padding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingXl.get(isMobile, isTablet),
                       vertical: AppSizes.paddingMd.get(isMobile, isTablet),
@@ -1779,8 +1779,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       _productsNotifier.clearFilters();
                     },
                     style: OutlinedButton.styleFrom(
-                      foregroundColor: ThemeColors.of(context).blueMain,
-                      side: BorderSide(color: ThemeColors.of(context).blueMain),
+                      foregroundColor: ThemeColors.of(context).info,
+                      side: BorderSide(color: ThemeColors.of(context).info),
                       padding: EdgeInsets.symmetric(
                         horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                         vertical: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -1799,7 +1799,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: ThemeColors.of(context).greenMain,
+                      backgroundColor: ThemeColors.of(context).success,
                       foregroundColor: ThemeColors.of(context).surface,
                       padding: EdgeInsets.symmetric(
                         horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
@@ -2282,7 +2282,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
                       decoration: BoxDecoration(
                         color: isSelected 
                           ? ThemeColors.of(context).brandPrimaryGreenLight
-                          : ThemeColors.of(context).backgroundLight,
+                          : ThemeColors.of(context).surfaceSecondary,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Icon(
@@ -2339,6 +2339,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
     );
   }
 }
+
 
 
 

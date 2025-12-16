@@ -428,7 +428,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
         children: [
           Container(
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).grey200,
+              color: ThemeColors.of(context).borderLight,
               borderRadius: isMobile ? AppRadius.iconButtonLarge : AppRadius.md,
             ),
             child: IconButton(
@@ -552,7 +552,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     height: 3,
                     color: isCompleted 
                         ? ThemeColors.of(context).success 
-                        : ThemeColors.of(context).grey200,
+                        : ThemeColors.of(context).borderLight,
                   ),
                 );
               } else {
@@ -569,7 +569,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                         ? ThemeColors.of(context).success 
                         : isActive 
                             ? ThemeColors.of(context).successLight
-                            : ThemeColors.of(context).grey200,
+                            : ThemeColors.of(context).borderLight,
                     border: isActive 
                         ? Border.all(color: ThemeColors.of(context).success, width: 2)
                         : null,
@@ -642,7 +642,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   ],
                 ),
                 borderRadius: AppRadius.card,
-                border: Border.all(color: ThemeColors.of(context).blueMainLight),
+                border: Border.all(color: ThemeColors.of(context).infoLight),
               ),
               child: Column(
                 children: [
@@ -651,7 +651,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                       Container(
                         padding: EdgeInsets.all(AppSpacing.md),
                         decoration: BoxDecoration(
-                          color: ThemeColors.of(context).blueMain,
+                          color: ThemeColors.of(context).info,
                           borderRadius: AppRadius.sm,
                         ),
                         child: const Icon(
@@ -682,7 +682,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                         onPressed: _abrirScanner,
                         icon: const Icon(Icons.camera_alt_rounded),
                         style: IconButton.styleFrom(
-                          backgroundColor: ThemeColors.of(context).blueMain,
+                          backgroundColor: ThemeColors.of(context).info,
                           foregroundColor: ThemeColors.of(context).surface,
                         ),
                       ),
@@ -899,7 +899,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     Container(
                       padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                       decoration: BoxDecoration(
-                        color: ThemeColors.of(context).grey200,
+                        color: ThemeColors.of(context).borderLight,
                         borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                       ),
                       child: Icon(
@@ -1176,7 +1176,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 decoration: BoxDecoration(
                   color: _vincularTag 
                       ? ThemeColors.of(context).successLight
-                      : ThemeColors.of(context).grey200,
+                      : ThemeColors.of(context).borderLight,
                   borderRadius: AppRadius.sm,
                 ),
                 child: Icon(
@@ -1198,18 +1198,18 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
             decoration: BoxDecoration(
               color: ThemeColors.of(context).infoPastel,
               borderRadius: AppRadius.sm,
-              border: Border.all(color: ThemeColors.of(context).blueMainLight),
+              border: Border.all(color: ThemeColors.of(context).infoLight),
             ),
             child: Row(
               children: [
-                Icon(Icons.info_outline_rounded, color: ThemeColors.of(context).blueMain),
+                Icon(Icons.info_outline_rounded, color: ThemeColors.of(context).info),
                 const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Text(
                     'Revise os dados antes de salvar. Voc poder editar o produto posteriormente.',
                     style: TextStyle(
                       fontSize: 13,
-                      color: ThemeColors.of(context).blueMainDark,
+                      color: ThemeColors.of(context).infoDark,
                     ),
                   ),
                 ),
@@ -1484,7 +1484,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).blueMain,
+        backgroundColor: ThemeColors.of(context).info,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         duration: const Duration(seconds: 3),
@@ -1641,6 +1641,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
     }
   }
 }
+
 
 
 

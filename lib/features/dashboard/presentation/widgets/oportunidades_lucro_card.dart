@@ -56,7 +56,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
           end: Alignment.bottomRight,
           colors: [
             ThemeColors.of(context).greenMaterialOverlay05,
-            ThemeColors.of(context).orangeMainOverlay03,
+            ThemeColors.of(context).warningOverlay03,
           ],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
@@ -86,7 +86,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
                     gradient: LinearGradient(
                       colors: [
                         ThemeColors.of(context).greenMaterial,
-                        ThemeColors.of(context).orangeMain,
+                        ThemeColors.of(context).warning,
                       ],
                     ),
                     borderRadius: BorderRadius.circular(12),
@@ -129,7 +129,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                colors: [ThemeColors.of(context).greenMaterial, ThemeColors.of(context).orangeMain],
+                                colors: [ThemeColors.of(context).greenMaterial, ThemeColors.of(context).warning],
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -166,10 +166,10 @@ class OportunidadesLucroCard extends ConsumerWidget {
                   child: _buildNumeroChave(
                     context: context,
                     icon: Icons.trending_up_rounded,
-                    iconColor: ThemeColors.of(context).greenMain,
+                    iconColor: ThemeColors.of(context).success,
                     valor: '$produtosSubir',
                     label: 'podem subir',
-                    bgColor: ThemeColors.of(context).greenMain.withValues(alpha: 0.08),
+                    bgColor: ThemeColors.of(context).success.withValues(alpha: 0.08),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -177,10 +177,10 @@ class OportunidadesLucroCard extends ConsumerWidget {
                   child: _buildNumeroChave(
                     context: context,
                     icon: Icons.trending_down_rounded,
-                    iconColor: ThemeColors.of(context).orangeMain,
+                    iconColor: ThemeColors.of(context).warning,
                     valor: '$produtosBaixar',
                     label: 'devem baixar',
-                    bgColor: ThemeColors.of(context).orangeMain.withValues(alpha: 0.08),
+                    bgColor: ThemeColors.of(context).warning.withValues(alpha: 0.08),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -298,7 +298,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
             ),
             Icon(
               Icons.check_circle_rounded,
-              color: ThemeColors.of(context).greenMain,
+              color: ThemeColors.of(context).success,
               size: 24,
             ),
           ],
@@ -351,6 +351,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

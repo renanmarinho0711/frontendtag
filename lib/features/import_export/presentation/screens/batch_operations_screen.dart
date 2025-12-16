@@ -72,7 +72,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
           'descricao': 'Mude categorias de m?ltiplos produtos',
           'descricaoDetalhada': 'Reorganize o cat?logo alterando categorias de v?rios produtos simultaneamente.',
           'icone': Icons.category_rounded,
-          'gradiente': [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain],
+          'gradiente': [ThemeColors.of(context).primary, ThemeColors.of(context).info],
           'template': true,
           'colunas': ['C?digo de Barras', 'Nova Categoria'],
           'exemplo': 'Ex: 7891234567890 | Alimentos/Cereais',
@@ -1318,6 +1318,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
     );
   }
 }
+
 
 
 

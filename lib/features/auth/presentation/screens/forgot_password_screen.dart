@@ -260,12 +260,12 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           height: 100,
           margin: const EdgeInsets.only(bottom: 24),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).greenMainLight,
+            color: ThemeColors.of(context).successLight,
             shape: BoxShape.circle,
           ),
           child: Icon(
             Icons.mark_email_read_rounded,
-            color: ThemeColors.of(context).greenMain,
+            color: ThemeColors.of(context).success,
             size: 50,
           ),
         ),
@@ -337,6 +337,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
     );
   }
 }
+
 
 
 

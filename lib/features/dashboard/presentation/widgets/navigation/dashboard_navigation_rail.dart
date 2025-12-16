@@ -174,7 +174,7 @@ class DashboardNavigationRail extends StatelessWidget {
           children: [
             Icon(
               isExpanded ? Icons.menu_open_rounded : Icons.menu_rounded,
-              color: ThemeColors.of(context).grey700,
+              color: ThemeColors.of(context).surfaceDark,
               size: ResponsiveHelper.getResponsiveIconSize(
                 context,
                 tablet: 22,
@@ -193,7 +193,7 @@ class DashboardNavigationRail extends StatelessWidget {
                 'Menu',
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  color: ThemeColors.of(context).grey700,
+                  color: ThemeColors.of(context).surfaceDark,
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
                     baseFontSize: 14,
@@ -297,7 +297,7 @@ class _NavigationRailItem extends StatelessWidget {
           children: [
             Icon(
               item['icon'],
-              color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
+              color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
               size: ResponsiveHelper.getResponsiveIconSize(
                 context,
                 tablet: 20,
@@ -316,7 +316,7 @@ class _NavigationRailItem extends StatelessWidget {
                 child: Text(
                   item['title'],
                   style: TextStyle(
-                    color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey700,
+                    color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).surfaceDark,
                     fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -334,6 +334,7 @@ class _NavigationRailItem extends StatelessWidget {
     );
   }
 }
+
 
 
 

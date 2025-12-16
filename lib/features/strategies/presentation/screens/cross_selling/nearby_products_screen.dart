@@ -846,12 +846,12 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.style_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -1656,6 +1656,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
     }
   }
 }
+
 
 
 

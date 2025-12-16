@@ -161,7 +161,7 @@ class DashboardRepository {
             count: lowBattery,
             description: '$lowBattery tags',
             iconCodePoint: 0xe19c, // Icons.battery_alert_rounded
-            colorValue: 0xFFF57C00, // ThemeColors.of(context).orangeMain (warning)
+            colorValue: 0xFFF57C00, // ThemeColors.of(context).warning (warning)
             details: 'Tags com bateria baixa. Considere substituir as baterias em breve.',
           ));
         }
@@ -231,6 +231,7 @@ class DashboardRepository {
     _apiService.dispose();
   }
 }
+
 
 
 

@@ -88,14 +88,14 @@ class DashboardMobileBottomNav extends StatelessWidget {
               children: [
                 Icon(
                   item['icon'],
-                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
+                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
                   size: 24,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   item['title'],
                   style: TextStyle(
-                    color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
+                    color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
                     fontSize: 10,
                     fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                   ),
@@ -160,6 +160,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
     }
   }
 }
+
 
 
 

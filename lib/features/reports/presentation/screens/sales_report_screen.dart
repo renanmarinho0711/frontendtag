@@ -1133,7 +1133,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text('Exportar relatorio', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                      Text(relatorio.titulo, style: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey600)),
+                      Text(relatorio.titulo, style: TextStyle(fontSize: 13, color: ThemeColors.of(context).textSecondary)),
                     ],
                   ),
                 ),
@@ -1220,6 +1220,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
     );
   }
 }
+
 
 
 

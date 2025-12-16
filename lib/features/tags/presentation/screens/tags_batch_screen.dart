@@ -39,8 +39,8 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
       'titulo': 'Desassociar',
       'subtitulo': 'Remover vnculo com produtos',
       'icone': Icons.link_off_rounded,
-      'cor': ThemeColors.of(context).orangeMain,
-      'gradiente': [ThemeColors.of(context).orangeMain, ThemeColors.of(context).warning],
+      'cor': ThemeColors.of(context).warning,
+      'gradiente': [ThemeColors.of(context).warning, ThemeColors.of(context).warning],
     },
     {
       'id': 1,
@@ -55,8 +55,8 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
       'titulo': 'Sincronizar',
       'subtitulo': 'Atualizar m?ltiplas tags',
       'icone': Icons.sync_rounded,
-      'cor': ThemeColors.of(context).blueMain,
-      'gradiente': [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark],
+      'cor': ThemeColors.of(context).info,
+      'gradiente': [ThemeColors.of(context).info, ThemeColors.of(context).blueDark],
     },
   ];
 
@@ -569,7 +569,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         AppSizes.paddingXs.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: isSelected ? ThemeColors.of(context).orangeMain : ThemeColors.of(context).textSecondaryOverlay40,
+                        color: isSelected ? ThemeColors.of(context).warning : ThemeColors.of(context).textSecondaryOverlay40,
                         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                       ),
                       child: Icon(
@@ -578,7 +578,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                       ),
                     ),
-                    activeColor: ThemeColors.of(context).orangeMain,
+                    activeColor: ThemeColors.of(context).warning,
                   ),
                 );
               }).toList(),
@@ -645,7 +645,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         padding: EdgeInsets.symmetric(
                           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                         ),
-                        backgroundColor: ThemeColors.of(context).orangeMain,
+                        backgroundColor: ThemeColors.of(context).warning,
                         foregroundColor: ThemeColors.of(context).surface,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -756,7 +756,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                       'Upload Planilha',
                       'Importar lista',
                       Icons.upload_file_rounded,
-                      ThemeColors.of(context).blueMain,
+                      ThemeColors.of(context).info,
                     ),
                   ),
                   SizedBox(
@@ -1187,7 +1187,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                       label: Text(_processando ? 'Sincronizando...' : 'Executar Sincroniza??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(vertical: AppSizes.paddingSm.get(isMobile, isTablet)),
-                        backgroundColor: ThemeColors.of(context).blueMain,
+                        backgroundColor: ThemeColors.of(context).info,
                         foregroundColor: ThemeColors.of(context).surface,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
                       ),
@@ -1219,7 +1219,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
-        icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).orangeMain, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
+        icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).warning, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
         title: Text('Confirmar Desassocia??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
         content: Text('Deseja desassociar ${_tagsDesassociar.length} tag(s) selecionada(s)?', textAlign: TextAlign.center, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
         actions: [
@@ -1272,7 +1272,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                             ),
                           ],
                         ),
-                        backgroundColor: ThemeColors.of(context).orangeMain,
+                        backgroundColor: ThemeColors.of(context).warning,
                         behavior: SnackBarBehavior.floating,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
                       ),
@@ -1300,7 +1300,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 }
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).orangeMain, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))),
+            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).warning, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))),
             child: Text('Confirmar', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
           ),
         ],
@@ -1352,7 +1352,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                 ],
               ),
-              backgroundColor: ThemeColors.of(context).blueMain,
+              backgroundColor: ThemeColors.of(context).info,
               behavior: SnackBarBehavior.floating,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
               duration: const Duration(seconds: 3),
@@ -1383,6 +1383,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
     }
   }
 }
+
 
 
 

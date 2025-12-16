@@ -435,7 +435,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
         children: [
           Icon(
             Icons.lightbulb_outline_rounded,
-            color: ThemeColors.of(context).blueMainDark,
+            color: ThemeColors.of(context).infoDark,
             size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
           ),
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -481,12 +481,12 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.percent_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -522,11 +522,11 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   vertical: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+                  gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).blueMainLight,
+                      color: ThemeColors.of(context).infoLight,
                       blurRadius: isMobile ? 8 : 10,
                       offset: const Offset(0, 4),
                     ),
@@ -553,7 +553,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
             divisions: 40,
             label: state.margemMinimaFormatted,
             onChanged: (value) => ref.read(autoClearanceProvider.notifier).setMargemMinima(value),
-            activeColor: ThemeColors.of(context).blueMain,
+            activeColor: ThemeColors.of(context).info,
           ),
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -686,12 +686,12 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMainLight,
+                  color: ThemeColors.of(context).successLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.category_rounded,
-                  color: ThemeColors.of(context).greenMain,
+                  color: ThemeColors.of(context).success,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -709,7 +709,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
               ),
               Container(
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark]),
+                  gradient: LinearGradient(colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark]),
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                 ),
                 child: IconButton(
@@ -734,11 +734,11 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   vertical: AppSizes.paddingSmAlt3.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark]),
+                  gradient: LinearGradient(colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark]),
                   borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).greenMainLight,
+                      color: ThemeColors.of(context).successLight,
                       blurRadius: isMobile ? 6 : 8,
                       offset: const Offset(0, 3),
                     ),
@@ -1285,7 +1285,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                           overflow: TextOverflow.ellipsis,
                         ),
                         value: isSelected,
-                        activeColor: ThemeColors.of(context).greenMain,
+                        activeColor: ThemeColors.of(context).success,
                         onChanged: (value) {
                           setListState(() {
                             if (value == true) {
@@ -1325,7 +1325,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
                   Navigator.pop(dialogContext);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ThemeColors.of(context).greenMain,
+                  backgroundColor: ThemeColors.of(context).success,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
                 ),
                 child: Text(
@@ -1470,6 +1470,7 @@ class _LiquidacaoAutomaticaConfigScreenState extends ConsumerState<LiquidacaoAut
     );
   }
 }
+
 
 
 

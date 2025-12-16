@@ -121,14 +121,14 @@ class AcoesFrequentesCard extends ConsumerWidget {
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [colors.orangeMain, colors.orangeDark],
+              colors: [colors.warning, colors.orangeDark],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             borderRadius: AppSpacing.borderRadiusSm,
             boxShadow: [
               BoxShadow(
-                color: colors.orangeMainLight,
+                color: colors.warningLight,
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -222,7 +222,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                   context: context,
                   icon: Icons.bar_chart_rounded,
                   label: 'Relatório',
-                  corPrimaria: colors.orangeMain,
+                  corPrimaria: colors.warning,
                   onTap: onVerrelatÃ³rio,
                 ),
               ),
@@ -282,7 +282,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
           icon: Icons.bar_chart_rounded,
           label: 'Ver Relatório do Dia',
           subtitle: 'Resumo de vendas',
-          corPrimaria: colors.orangeMain,
+          corPrimaria: colors.warning,
           corSecundaria: colors.orangeDark,
           onTap: onVerrelatÃ³rio,
         ),
@@ -499,6 +499,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -193,7 +193,7 @@ class CompactSyncCard extends ConsumerWidget {
                 AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).backgroundLight,
+                color: ThemeColors.of(context).surfaceSecondary,
                 borderRadius: BorderRadius.circular(
                   isMobile ? 8 : 10,
                 ),
@@ -317,6 +317,7 @@ class CompactSyncCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

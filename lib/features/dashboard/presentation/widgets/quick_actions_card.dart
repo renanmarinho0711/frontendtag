@@ -82,7 +82,7 @@ class QuickActionsCard extends StatelessWidget {
                   icon: Icons.add_shopping_cart_rounded,
                   label: 'Adicionar Produto',
                   subtitle: 'Cadastrar novo item no estoque',
-                  gradient: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueCyan],
+                  gradient: [ThemeColors.of(context).info, ThemeColors.of(context).blueCyan],
                   onTap: onAdicionarProduto,
                 ),
                 SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -109,7 +109,7 @@ class QuickActionsCard extends StatelessWidget {
                   icon: Icons.assessment_rounded,
                   label: 'Relatrios',
                   subtitle: 'Visualizar anlises e mtricas',
-                  gradient: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).yellowGold],
+                  gradient: [ThemeColors.of(context).warning, ThemeColors.of(context).yellowGold],
                   onTap: onrelatÃ³rios,
                 ),
               ],
@@ -220,6 +220,7 @@ class QuickActionsCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

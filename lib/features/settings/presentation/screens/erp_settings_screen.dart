@@ -39,7 +39,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
   
   // Opes de ERP disponveis
   final List<Map<String, dynamic>> _erpOptions = [
-    {'type': ERPIntegrationType.none, 'name': 'Nenhum', 'icon': Icons.block, 'color': ThemeColors.of(context).grey500},
+    {'type': ERPIntegrationType.none, 'name': 'Nenhum', 'icon': Icons.block, 'color': ThemeColors.of(context).textTertiary},
     {'type': ERPIntegrationType.sap, 'name': 'SAP Business One', 'icon': Icons.business, 'color': ThemeColors.of(context).erpSAP},
     {'type': ERPIntegrationType.totvs, 'name': 'TOTVS Protheus', 'icon': Icons.precision_manufacturing, 'color': ThemeColors.of(context).erpTOTVS},
     {'type': ERPIntegrationType.sage, 'name': 'Sage', 'icon': Icons.corporate_fare, 'color': ThemeColors.of(context).erpOracle},
@@ -162,7 +162,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     
     return Container(
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
       ),
       child: isLoading && !_isInitialized
           ? const Center(child: CircularProgressIndicator())
@@ -319,7 +319,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
         color: isConnected 
             ? ThemeColors.of(context).successLight
             : isNone 
-                ? ThemeColors.of(context).backgroundLight
+                ? ThemeColors.of(context).surfaceSecondary
                 : ThemeColors.of(context).warningLight,
         borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
         border: Border.all(
@@ -852,6 +852,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     }
   }
 }
+
 
 
 

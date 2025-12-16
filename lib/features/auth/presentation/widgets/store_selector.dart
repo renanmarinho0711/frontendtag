@@ -137,7 +137,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
               Icon(
                 Icons.storefront_rounded, 
                 size: 18, 
-                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey600,
+                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textSecondary,
               ),
               const SizedBox(width: 8),
               ConstrainedBox(
@@ -223,11 +223,11 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
                 isDense: true,
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: isChanging ? ThemeColors.of(context).grey500 : ThemeColors.of(context).primary,
+                  color: isChanging ? ThemeColors.of(context).textTertiary : ThemeColors.of(context).primary,
                 ),
                 hint: Text(
                   'Selecione uma loja',
-                  style: TextStyle(color: ThemeColors.of(context).grey600, fontSize: 13),
+                  style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 13),
                 ),
                 style: TextStyle(
                   color: ThemeColors.of(context).grey800,
@@ -539,7 +539,7 @@ class _StoreSelectorDialogState extends ConsumerState<StoreSelectorDialog> {
     return ListTile(
       leading: Icon(
         icon,
-        color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey500,
+        color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textTertiary,
       ),
       title: Text(
         title,
@@ -578,6 +578,7 @@ class _StoreSelectorDialogState extends ConsumerState<StoreSelectorDialog> {
     }
   }
 }
+
 
 
 

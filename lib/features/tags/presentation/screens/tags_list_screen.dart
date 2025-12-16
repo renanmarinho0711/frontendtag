@@ -131,8 +131,8 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
   }
 
   Color _getBatteryColor(int battery) {
-    if (battery >= 70) return ThemeColors.of(context).greenMain;
-    if (battery >= 30) return ThemeColors.of(context).orangeMain;
+    if (battery >= 70) return ThemeColors.of(context).success;
+    if (battery >= 30) return ThemeColors.of(context).warning;
     return ThemeColors.of(context).error;
   }
 
@@ -264,7 +264,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                   FloatingActionButton(
                     heroTag: 'sync',
                     onPressed: _showSyncDialog,
-                    backgroundColor: ThemeColors.of(context).blueMain,
+                    backgroundColor: ThemeColors.of(context).info,
                     child: Icon(
                       Icons.sync_rounded,
                       size: AppSizes.iconMediumLargeAlt.get(isMobile, isTablet),
@@ -1111,8 +1111,8 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                   _loadTags();
                 },
                 style: OutlinedButton.styleFrom(
-                  foregroundColor: ThemeColors.of(context).blueMain,
-                  side: BorderSide(color: ThemeColors.of(context).blueMain),
+                  foregroundColor: ThemeColors.of(context).info,
+                  side: BorderSide(color: ThemeColors.of(context).info),
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                     vertical: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -1185,7 +1185,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
               ),
             ],
           ),
-          backgroundColor: success ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+          backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -1239,7 +1239,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
               ),
             ],
           ),
-          backgroundColor: success ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+          backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -1253,14 +1253,14 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
-        icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).orangeMain, size: 48),
+        icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).warning, size: 48),
         title: const Text('Desvincular Tag'),
         content: Text('Deseja desvincular a tag ${tag.macAddress} do produto "${tag.productName}"?'),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancelar')),
           ElevatedButton(
             onPressed: () => Navigator.pop(context, true),
-            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).orangeMain),
+            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).warning),
             child: const Text('Desvincular'),
           ),
         ],
@@ -1273,7 +1273,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(success ? 'Tag desvinculada com sucesso!' : 'Erro ao desvincular tag'),
-            backgroundColor: success ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+            backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -1301,7 +1301,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
-        icon: Icon(Icons.sync_rounded, color: ThemeColors.of(context).blueMain, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
+        icon: Icon(Icons.sync_rounded, color: ThemeColors.of(context).info, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
         title: const Text('Sincronizar Todas'),
         content: const Text('Deseja sincronizar todas as tags com o servidor Minew?\n\nTempo estimado: ~3 minutos', textAlign: TextAlign.center),
         actions: [
@@ -1319,7 +1319,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                       const Expanded(child: Text('Sincronizando todas as tags...', overflow: TextOverflow.ellipsis)),
                     ],
                   ),
-                  backgroundColor: ThemeColors.of(context).blueMain,
+                  backgroundColor: ThemeColors.of(context).info,
                   behavior: SnackBarBehavior.floating,
                   duration: const Duration(seconds: 30),
                 ),
@@ -1336,13 +1336,13 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                     content: Text(result != null 
                         ? 'Sincronizao concluda: ${result.successCount} sucesso, ${result.failureCount} falhas'
                         : 'Erro na sincronizao'),
-                    backgroundColor: result != null ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+                    backgroundColor: result != null ? ThemeColors.of(context).success : ThemeColors.of(context).error,
                     behavior: SnackBarBehavior.floating,
                   ),
                 );
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).blueMain),
+            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).info),
             child: const Text('Sincronizar'),
           ),
         ],
@@ -1380,7 +1380,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
                         Text(success ? '${tag.macAddress} excluda' : 'Erro ao excluir tag'),
                       ],
                     ),
-                    backgroundColor: success ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+                    backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
                     behavior: SnackBarBehavior.floating,
                   ),
                 );
@@ -1394,6 +1394,7 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
     );
   }
 }
+
 
 
 

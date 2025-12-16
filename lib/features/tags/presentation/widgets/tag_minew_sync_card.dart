@@ -537,7 +537,7 @@ class TagTemperatureIndicator extends StatelessWidget {
     if (temperature! < 0) return ThemeColors.of(context).primary; // Muito frio
     if (temperature! < 10) return ThemeColors.of(context).cyanMain; // Frio
     if (temperature! < 30) return ThemeColors.of(context).success; // Normal
-    if (temperature! < 40) return ThemeColors.of(context).orangeMain; // Quente
+    if (temperature! < 40) return ThemeColors.of(context).warning; // Quente
     return ThemeColors.of(context).errorDark; // Muito quente
   }
 
@@ -548,6 +548,7 @@ class TagTemperatureIndicator extends StatelessWidget {
     return Icons.local_fire_department_rounded;
   }
 }
+
 
 
 

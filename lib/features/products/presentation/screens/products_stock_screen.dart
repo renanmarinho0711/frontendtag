@@ -256,7 +256,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               'Baixos',
               '$_estoquesBaixos',
               Icons.warning_rounded,
-              ThemeColors.of(context).orangeMain,
+              ThemeColors.of(context).warning,
               () => setState(() => _filterStatus = 'Baixo'),
             ),
           ),
@@ -270,7 +270,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               'Normais',
               '$_estoquesOk',
               Icons.check_circle_rounded,
-              ThemeColors.of(context).greenMain,
+              ThemeColors.of(context).success,
               () => setState(() => _filterStatus = 'Normal'),
             ),
           ),
@@ -630,7 +630,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                           IconButton(
                             icon: Icon(
                               Icons.add_circle_outline,
-                              color: ThemeColors.of(context).greenMain,
+                              color: ThemeColors.of(context).success,
                               size: AppSizes.iconMedium.get(isMobile, isTablet),
                             ),
                             onPressed: () => _registrarEntrada(item),
@@ -739,7 +739,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
           children: [
             Icon(
               tipo == 'entrada' ? Icons.add_circle_rounded : Icons.remove_circle_rounded,
-              color: tipo == 'entrada' ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+              color: tipo == 'entrada' ? ThemeColors.of(context).success : ThemeColors.of(context).error,
             ),
             SizedBox(width: AppSpacing.sm),
             Expanded(
@@ -832,7 +832,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: tipo == 'entrada' 
-                  ? ThemeColors.of(context).greenMain 
+                  ? ThemeColors.of(context).success 
                   : ThemeColors.of(context).error,
             ),
             child: const Text('Confirmar'),
@@ -892,7 +892,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
           ],
         ),
         backgroundColor: success
-            ? (tipo == 'entrada' ? ThemeColors.of(context).greenMain : ThemeColors.of(context).orangeMain)
+            ? (tipo == 'entrada' ? ThemeColors.of(context).success : ThemeColors.of(context).warning)
             : ThemeColors.of(context).error,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
@@ -968,7 +968,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             icon: const Icon(Icons.add_rounded, size: 18),
             label: const Text('Entrada'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).greenMain,
+              backgroundColor: ThemeColors.of(context).success,
               foregroundColor: ThemeColors.of(context).surface,
             ),
           ),
@@ -980,7 +980,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             icon: const Icon(Icons.remove_rounded, size: 18),
             label: const Text('Sa?da'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).orangeMain,
+              backgroundColor: ThemeColors.of(context).warning,
               foregroundColor: ThemeColors.of(context).surface,
             ),
           ),
@@ -1029,9 +1029,9 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
       case 'cr?tico':
         return ThemeColors.of(context).error;
       case 'baixo':
-        return ThemeColors.of(context).orangeMain;
+        return ThemeColors.of(context).warning;
       case 'normal':
-        return ThemeColors.of(context).greenMain;
+        return ThemeColors.of(context).success;
       default:
         return ThemeColors.of(context).textSecondary;
     }
@@ -1052,12 +1052,12 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               Container(
                 padding: const EdgeInsets.all(AppSpacing.sm),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(
                   Icons.swap_vert_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                 ),
               ),
               const SizedBox(width: AppSpacing.md),
@@ -1146,7 +1146,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                     children: [
                       Icon(
                         Icons.info_outline_rounded,
-                        color: ThemeColors.of(context).orangeMain,
+                        color: ThemeColors.of(context).warning,
                         size: 20,
                       ),
                       const SizedBox(width: AppSpacing.sm),
@@ -1214,7 +1214,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('${tipoSelecionado == 'entrada' ? 'Entrada' : 'Sa?da'} de $quantidade unidades registrada para ${_stockItems.length} produtos'),
-                      backgroundColor: ThemeColors.of(context).greenMain,
+                      backgroundColor: ThemeColors.of(context).success,
                       behavior: SnackBarBehavior.floating,
                     ),
                   );
@@ -1229,8 +1229,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               label: const Text('Confirmar'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: tipoSelecionado == 'entrada' 
-                    ? ThemeColors.of(context).greenMain 
-                    : ThemeColors.of(context).orangeMain,
+                    ? ThemeColors.of(context).success 
+                    : ThemeColors.of(context).warning,
                 foregroundColor: ThemeColors.of(context).surface,
               ),
             ),
@@ -1240,6 +1240,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
     );
   }
 }
+
 
 
 

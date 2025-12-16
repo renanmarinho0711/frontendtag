@@ -77,7 +77,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).blueMain,
+              backgroundColor: ThemeColors.of(context).info,
             ),
           Positioned(
             right: 0,
@@ -139,7 +139,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+              gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
             child: Icon(
@@ -210,7 +210,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
       child: TabBar(
         controller: _tabController,
         indicator: BoxDecoration(
-          gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+          gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
@@ -279,11 +279,11 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingLgAlt2.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
         borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueMain.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).info.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -372,12 +372,12 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
             Container(
               padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).blueMainLight,
+                color: ThemeColors.of(context).infoLight,
                 borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
               ),
               child: Icon(
                 Icons.schedule_rounded,
-                color: ThemeColors.of(context).blueMain,
+                color: ThemeColors.of(context).info,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
             ),
@@ -413,11 +413,11 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                 vertical: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+                gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
                 borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                 boxShadow: [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueMainLight,
+                    color: ThemeColors.of(context).infoLight,
                     blurRadius: isMobile ? 8 : 10,
                     offset: const Offset(0, 4),
                   ),
@@ -755,7 +755,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
                 padding: EdgeInsets.symmetric(
                   vertical: AppSizes.paddingMdAlt.get(isMobile, isTablet),
                 ),
-                backgroundColor: ThemeColors.of(context).greenMainDark,
+                backgroundColor: ThemeColors.of(context).successDark,
                 foregroundColor: ThemeColors.of(context).surface,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
               ),
@@ -972,7 +972,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: const ColorScheme.light(primary: ThemeColors.of(context).blueMain),
+            colorScheme: const ColorScheme.light(primary: ThemeColors.of(context).info),
           ),
           child: child!,
         );
@@ -1049,7 +1049,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueMain)),
+            const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).info)),
             SizedBox(height: AppSizes.paddingLgAlt2.get(isMobile, isTablet)),
             Text(
               'Executando auditoria',
@@ -1125,7 +1125,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
             ),
           ],
         ),
-        backgroundColor: hasError ? ThemeColors.of(context).error : ThemeColors.of(context).greenMain,
+        backgroundColor: hasError ? ThemeColors.of(context).error : ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
         action: hasError ? null : SnackBarAction(
@@ -1148,7 +1148,7 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet))),
         icon: Icon(
           Icons.verified_user_rounded,
-          color: ThemeColors.of(context).blueMain,
+          color: ThemeColors.of(context).info,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1241,13 +1241,14 @@ class _auditoriaAutomaticaConfigScreenState extends ConsumerState<auditoriaAutom
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).blueMain,
+        backgroundColor: ThemeColors.of(context).info,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
       ),
     );
   }
 }
+
 
 
 

@@ -320,7 +320,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   '??',
                   holidaysState.ajusteViagem,
                   Icons.flight_rounded,
-                  ThemeColors.of(context).blueMain,
+                  ThemeColors.of(context).info,
                   (v) => ref.read(longHolidaysProvider.notifier).setAjusteViagem(v),
                 ),
                 SizedBox(
@@ -331,7 +331,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   '??',
                   holidaysState.ajusteCasa,
                   Icons.home_rounded,
-                  ThemeColors.of(context).greenMain,
+                  ThemeColors.of(context).success,
                   (v) => ref.read(longHolidaysProvider.notifier).setAjusteCasa(v),
                 ),
                 SizedBox(
@@ -498,14 +498,14 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueMainLight,
+              color: ThemeColors.of(context).infoLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
               ),
             ),
             child: Icon(
               Icons.auto_awesome_rounded,
-              color: ThemeColors.of(context).blueMain,
+              color: ThemeColors.of(context).info,
               size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
             ),
           ),
@@ -552,7 +552,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
             child: Switch(
               value: holidaysState.deteccaoAutomatica,
               onChanged: (value) => ref.read(longHolidaysProvider.notifier).setDeteccaoAutomatica(value),
-              activeColor: ThemeColors.of(context).blueMain,
+              activeColor: ThemeColors.of(context).info,
             ),
           ),
         ],
@@ -759,14 +759,14 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).orangeMainLight,
+                  color: ThemeColors.of(context).warningLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.category_rounded,
-                  color: ThemeColors.of(context).orangeMain,
+                  color: ThemeColors.of(context).warning,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -791,7 +791,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
+                    colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 9 : 10,
@@ -1306,6 +1306,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
     );
   }
 }
+
 
 
 

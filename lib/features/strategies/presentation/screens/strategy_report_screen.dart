@@ -396,7 +396,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                       'Crescimento',
                       '+${crescimento.toStringAsFixed(0)}%',
                       Icons.trending_up_rounded,
-                      ThemeColors.of(context).greenMain,
+                      ThemeColors.of(context).success,
                     ),
                   ),
                   Container(width: 1, height: 40, color: ThemeColors.of(context).textSecondary),
@@ -421,10 +421,10 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     Color cor;
     switch (impacto) {
       case 'Alto':
-        cor = ThemeColors.of(context).greenMain;
+        cor = ThemeColors.of(context).success;
         break;
       case 'M�dio':
-        cor = ThemeColors.of(context).orangeMain;
+        cor = ThemeColors.of(context).warning;
         break;
       default:
         cor = ThemeColors.of(context).textSecondary;
@@ -557,7 +557,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       final melhorRoi = estrategiasComRoi.first;
       insights.add({
         'texto': '? ${melhorRoi.name} apresenta o melhor ROI (${melhorRoi.roi})',
-        'cor': ThemeColors.of(context).greenMain,
+        'cor': ThemeColors.of(context).success,
       });
     }
     
@@ -568,7 +568,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       final maisProdutos = estrategiasComProdutos.first;
       insights.add({
         'texto': '? ${maisProdutos.name} afeta mais produtos (${maisProdutos.products} itens)',
-        'cor': ThemeColors.of(context).blueMain,
+        'cor': ThemeColors.of(context).info,
       });
     }
     
@@ -578,7 +578,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       final sugestao = inativas.first;
       insights.add({
         'texto': '? Sugest�o: Ativar estrat�gia de ${sugestao.name} para aumentar vendas',
-        'cor': ThemeColors.of(context).orangeMain,
+        'cor': ThemeColors.of(context).warning,
       });
     }
     
@@ -806,7 +806,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             Text('Exportando relatório em Excel...'),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).greenMain,
+        backgroundColor: ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
@@ -921,6 +921,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     );
   }
 }
+
 
 
 

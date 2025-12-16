@@ -539,7 +539,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).blueMain.withValues(alpha: 0.4),
+              color: ThemeColors.of(context).info.withValues(alpha: 0.4),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -1235,7 +1235,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                     vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMainLight : ThemeColors.of(context).warningPastel,
+                    color: taxaSucesso >= 95 ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningPastel,
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                   ),
                   child: Text(
@@ -1249,7 +1249,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMainDark : ThemeColors.of(context).warningDark,
+                      color: taxaSucesso >= 95 ? ThemeColors.of(context).successDark : ThemeColors.of(context).warningDark,
                     ),
                   ),
                 ),
@@ -1261,11 +1261,11 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildBadge('${item['quantidade']} total', ThemeColors.of(context).blueMain),
+                _buildBadge('${item['quantidade']} total', ThemeColors.of(context).info),
                 SizedBox(
                   width: AppSizes.paddingXs.get(isMobile, isTablet),
                 ),
-                _buildBadge('${item['sucesso']} OK', ThemeColors.of(context).greenMain),
+                _buildBadge('${item['sucesso']} OK', ThemeColors.of(context).success),
                 if (item['falha'] > 0) ...[
                   SizedBox(
                     width: AppSizes.paddingXs.get(isMobile, isTablet),
@@ -1948,6 +1948,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
     );
   }
 }
+
 
 
 

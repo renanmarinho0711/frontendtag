@@ -74,7 +74,7 @@ class _ConfiguracoesNotificacoesScreenState
 
     return Container(
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -443,7 +443,7 @@ class _ConfiguracoesNotificacoesScreenState
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ? colorLight : ThemeColors.of(context).backgroundLight,
+        color: value ? colorLight : ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
         ),
@@ -459,7 +459,7 @@ class _ConfiguracoesNotificacoesScreenState
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: value ? colorLight : ThemeColors.of(context).backgroundLight,
+              color: value ? colorLight : ThemeColors.of(context).surfaceSecondary,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -635,7 +635,7 @@ class _ConfiguracoesNotificacoesScreenState
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: entry.value ? ThemeColors.of(context).primaryPastel : ThemeColors.of(context).backgroundLight,
+                  color: entry.value ? ThemeColors.of(context).primaryPastel : ThemeColors.of(context).surfaceSecondary,
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
                       context,
@@ -804,7 +804,7 @@ class _ConfiguracoesNotificacoesScreenState
               AppSizes.paddingMd.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: _naoPerturbar ?  ThemeColors.of(context).infoPastel : ThemeColors.of(context).backgroundLight,
+              color: _naoPerturbar ?  ThemeColors.of(context).infoPastel : ThemeColors.of(context).surfaceSecondary,
               borderRadius: BorderRadius.circular(
                 AppSizes.paddingLg.get(isMobile, isTablet),
               ),
@@ -822,7 +822,7 @@ class _ConfiguracoesNotificacoesScreenState
                   decoration: BoxDecoration(
                     color: _naoPerturbar
                         ? ThemeColors.of(context).infoLight
-                        : ThemeColors.of(context).backgroundLight,
+                        : ThemeColors.of(context).surfaceSecondary,
                     borderRadius: BorderRadius.circular(
                       ResponsiveHelper.getResponsiveBorderRadius(
                         context,
@@ -1203,7 +1203,7 @@ class _ConfiguracoesNotificacoesScreenState
                 AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).backgroundLight,
+                color: ThemeColors.of(context).surfaceSecondary,
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -1320,7 +1320,7 @@ class _ConfiguracoesNotificacoesScreenState
                 AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).backgroundLight,
+                color: ThemeColors.of(context).surfaceSecondary,
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -1819,6 +1819,7 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
+
 
 
 

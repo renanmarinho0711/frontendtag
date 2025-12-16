@@ -89,7 +89,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     if (lower.contains('limp')) return ThemeColors.of(context).blueCyan;
     if (lower.contains('higien')) return ThemeColors.of(context).blueLight;
     if (lower.contains('padar')) return ThemeColors.of(context).yellowGold;
-    return ThemeColors.of(context).blueMain;
+    return ThemeColors.of(context).info;
   }
 
   List<Color> _getGradientForCategory(String nome) {
@@ -100,7 +100,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     if (lower.contains('limp')) return [ThemeColors.of(context).blueCyan, ThemeColors.of(context).primary];
     if (lower.contains('higien')) return [ThemeColors.of(context).blueLight, ThemeColors.of(context).primary];
     if (lower.contains('padar')) return [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning];
-    return [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark];
+    return [ThemeColors.of(context).info, ThemeColors.of(context).blueDark];
   }
 
   @override
@@ -503,7 +503,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           color: isSelected ?  null : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet)),
           border: Border.all(
-            color: isSelected ? ThemeColors.of(context).transparent : ThemeColors.of(context).grey500.withValues(alpha: 0.4),
+            color: isSelected ? ThemeColors.of(context).transparent : ThemeColors.of(context).textTertiary.withValues(alpha: 0.4),
           ),
         ),
         child: Text(
@@ -909,7 +909,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                                   baseFontSize: 13,
                                   mobileFontSize: 12,
                                 ),
-                                color: ThemeColors.of(context).grey500.withValues(alpha: 0.7),
+                                color: ThemeColors.of(context).textTertiary.withValues(alpha: 0.7),
                               ),
                             ),
                             const SizedBox(width: 16),
@@ -1184,6 +1184,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     );
   }
 }
+
 
 
 

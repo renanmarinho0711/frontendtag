@@ -117,7 +117,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: action.isUrgent
                   ? action.color.withValues(alpha: 0.12)
-                  : ThemeColors.of(context).backgroundLight,
+                  : ThemeColors.of(context).surfaceSecondary,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: action.isUrgent
@@ -194,6 +194,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
     );
   }
 }
+
 
 
 

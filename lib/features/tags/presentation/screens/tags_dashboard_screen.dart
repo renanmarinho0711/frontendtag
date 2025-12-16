@@ -224,7 +224,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: _buildCurrentScreen(),
       floatingActionButton: _currentScreen == 'dashboard' 
           ? _buildContextualFAB()
@@ -1617,6 +1617,7 @@ class _MenuTagItem {
     this.badge,
   });
 }
+
 
 
 

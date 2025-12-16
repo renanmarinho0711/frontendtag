@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -53,7 +53,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: Container(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -223,7 +223,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
           Expanded(
             child: _buildTypeOption(
               'Importar Excel',
-              'M�ltiplas tags',
+              'M?ltiplas tags',
               Icons.upload_file_rounded,
               1,
             ),
@@ -356,7 +356,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                   width: AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Informa��es da Tag',
+                  'Informa??es da Tag',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -410,7 +410,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Campo obrigat�rio';
+                  return 'Campo obrigat?rio';
                 }
                 return null;
               },
@@ -432,7 +432,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                 ),
               ),
               decoration: InputDecoration(
-                labelText: 'Localiza��o F�sica (opcional)',
+                labelText: 'Localiza??o F?sica (opcional)',
                 labelStyle: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -471,7 +471,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
               ),
               maxLines: 3,
               decoration: InputDecoration(
-                labelText: 'Observa��es (opcional)',
+                labelText: 'Observa??es (opcional)',
                 labelStyle: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -480,7 +480,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                     tabletFontSize: 11,
                   ),
                 ),
-                hintText: 'Informa��es adicionais',
+                hintText: 'Informa??es adicionais',
                 prefixIcon: Icon(
                   Icons.note_rounded,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
@@ -617,7 +617,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                     SizedBox(
                       height: AppSizes.paddingBase.get(isMobile, isTablet),
                     ),
-                    _buildStep('1', 'Fa�a o download do template Excel'),
+                    _buildStep('1', 'Fa?a o download do template Excel'),
                     SizedBox(
                       height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                     ),
@@ -625,7 +625,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                     SizedBox(
                       height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                     ),
-                    _buildStep('3', 'Fa�a o upload do arquivo preenchido'),
+                    _buildStep('3', 'Fa?a o upload do arquivo preenchido'),
                   ],
                 ),
               ),
@@ -663,7 +663,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                             ),
                           ],
                         ),
-                        backgroundColor: ThemeColors.of(context).greenMain,
+                        backgroundColor: ThemeColors.of(context).success,
                         behavior: SnackBarBehavior.floating,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -691,7 +691,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                     padding: EdgeInsets.symmetric(
                       vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                     ),
-                    backgroundColor: ThemeColors.of(context).greenMain,
+                    backgroundColor: ThemeColors.of(context).success,
                     foregroundColor: ThemeColors.of(context).surface,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -761,7 +761,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                             ),
                           ],
                         ),
-                        backgroundColor: ThemeColors.of(context).greenMain,
+                        backgroundColor: ThemeColors.of(context).success,
                         behavior: SnackBarBehavior. floating,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1078,7 +1078,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                         ),
                       ],
                     ),
-                    backgroundColor: ThemeColors.of(context).orangeMain,
+                    backgroundColor: ThemeColors.of(context).warning,
                     behavior: SnackBarBehavior.floating,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1107,8 +1107,8 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
               padding: EdgeInsets.symmetric(
                 vertical: AppSizes.paddingSm.get(isMobile, isTablet),
               ),
-              foregroundColor: ThemeColors.of(context).orangeMain,
-              side: BorderSide(color: ThemeColors.of(context).orangeMain),
+              foregroundColor: ThemeColors.of(context).warning,
+              side: BorderSide(color: ThemeColors.of(context).warning),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
               ),
@@ -1133,7 +1133,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
       final success = await ref.read(tagsNotifierProvider.notifier).createTag(
         macAddress: _idController.text.trim(),
         storeId: storeId,
-        type: 0, // Tipo padr�o
+        type: 0, // Tipo padr?o
       );
       
       if (!mounted) return;
@@ -1199,7 +1199,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
                 ),
               ],
             ),
-            backgroundColor: ThemeColors.of(context).greenMain,
+            backgroundColor: ThemeColors.of(context).success,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
@@ -1228,6 +1228,7 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
     }
   }
 }
+
 
 
 

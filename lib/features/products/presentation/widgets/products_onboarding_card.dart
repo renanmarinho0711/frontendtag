@@ -156,7 +156,7 @@ class ProductsOnboardingCard extends StatelessWidget {
           icon: Icons.price_change_outlined,
           title: 'Produtos sem pre�o definido',
           subtitle: 'Voc� tem $produtosSemPreco produtos sem pre�o. Configure pre�os para exibir nas etiquetas.',
-          color: ThemeColors.of(context).orangeMain,
+          color: ThemeColors.of(context).warning,
           actions: [
             _ActionConfig('Definir Pre�os Agora', Icons.attach_money_rounded, onDefinirPrecos, true),
             _ActionConfig('Fazer depois', Icons.schedule_rounded, onDismiss ?? () {}, false),
@@ -256,6 +256,7 @@ class _ActionConfig {
 
   _ActionConfig(this.label, this.icon, this.onTap, this.isPrimary);
 }
+
 
 
 

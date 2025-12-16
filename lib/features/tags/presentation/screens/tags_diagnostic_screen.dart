@@ -51,7 +51,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       {
         'tipo': 'Bateria Baixa',
         'quantidade': lowBattery,
-        'cor': ThemeColors.of(context).orangeMain,
+        'cor': ThemeColors.of(context).warning,
         'icone': Icons.battery_alert_rounded,
         'descricao': 'Menos de 20% de carga',
         'filter': 'bateria',
@@ -161,7 +161,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     final tagsState = ref.watch(tagsNotifierProvider);
 
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: SafeArea(
         child: tagsState.when(
           loading: () => const Center(child: CircularProgressIndicator()),
@@ -218,7 +218,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
               icon: const Icon(Icons.refresh_rounded),
               label: const Text('Tentar Novamente'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: ThemeColors.of(context).blueMain,
+                backgroundColor: ThemeColors.of(context).info,
                 foregroundColor: ThemeColors.of(context).surface,
               ),
             ),
@@ -368,7 +368,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
           Icon(
             Icons.check_circle_outline_rounded,
             size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet),
-            color: ThemeColors.of(context).greenMain,
+            color: ThemeColors.of(context).success,
           ),
           SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
           Text(
@@ -505,8 +505,8 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                     ),
                     overflow: TextOverflow.ellipsis,
                     color: totalProblemas > 0
-                        ? ThemeColors.of(context).orangeMain
-                        : ThemeColors.of(context).greenMain,
+                        ? ThemeColors.of(context).warning
+                        : ThemeColors.of(context).success,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -540,7 +540,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         gradient: LinearGradient(
           colors: totalProblemas > 0
               ? [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning]
-              : [ThemeColors.of(context).greenMain, ThemeColors.of(context).tealMain],
+              : [ThemeColors.of(context).success, ThemeColors.of(context).tealMain],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -548,8 +548,8 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         boxShadow: [
           BoxShadow(
             color: (totalProblemas > 0
-                    ? ThemeColors.of(context).orangeMain
-                    : ThemeColors.of(context).greenMain)
+                    ? ThemeColors.of(context).warning
+                    : ThemeColors.of(context).success)
                 Light,
             blurRadius: 15,
             offset: const Offset(0, 8),
@@ -741,7 +741,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     final corPrioridade = prioridade == 'critica'
         ? ThemeColors.of(context).error
         : prioridade == 'alta'
-            ? ThemeColors.of(context).orangeMain
+            ? ThemeColors.of(context).warning
             : ThemeColors.of(context).warning;
 
     return Container(
@@ -966,7 +966,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
               const Expanded(child: Text('Diagn?stico atualizado!')),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).greenMain,
+          backgroundColor: ThemeColors.of(context).success,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
@@ -977,6 +977,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     }
   }
 }
+
 
 
 

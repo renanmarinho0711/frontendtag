@@ -168,7 +168,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       case AlertaSeveridade.critico:
         return ThemeColors.of(context).redMain;
       case AlertaSeveridade.atencao:
-        return ThemeColors.of(context).orangeMain;
+        return ThemeColors.of(context).warning;
       case AlertaSeveridade.aviso:
         return ThemeColors.of(context).warning;
     }
@@ -179,7 +179,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       case AlertaSeveridade.critico:
         return ThemeColors.of(context).redMain.withValues(alpha: 0.08);
       case AlertaSeveridade.atencao:
-        return ThemeColors.of(context).orangeMain.withValues(alpha: 0.08);
+        return ThemeColors.of(context).warning.withValues(alpha: 0.08);
       case AlertaSeveridade.aviso:
         return ThemeColors.of(context).warning.withValues(alpha: 0.08);
     }
@@ -314,7 +314,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                 width: double.infinity,
                 padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).backgroundLight,
+                  color: ThemeColors.of(context).surfaceSecondary,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(isMobile ? 16 : 20),
                     bottomRight: Radius.circular(isMobile ? 16 : 20),
@@ -476,6 +476,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
     );
   }
 }
+
 
 
 

@@ -1302,7 +1302,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             padding: const EdgeInsets.all(32),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).textSecondary, ThemeColors.of(context).grey600Light],
+                colors: [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textSecondaryLight],
               ),
               shape: BoxShape.circle,
             ),
@@ -1541,6 +1541,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
     );
   }
 }
+
 
 
 

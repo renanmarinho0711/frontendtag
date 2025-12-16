@@ -197,7 +197,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain],
+                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).info],
               ),
               borderRadius: BorderRadius.circular(
                 isMobile ? 12 : (isTablet ? 13 : 14),
@@ -734,7 +734,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         ),
         decoration: BoxDecoration(
           gradient: isSelected
-              ? LinearGradient(colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain])
+              ? LinearGradient(colors: [ThemeColors.of(context).primary, ThemeColors.of(context).info])
               : null,
           color: isSelected ? null : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1344,6 +1344,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
     }
   }
 }
+
 
 
 

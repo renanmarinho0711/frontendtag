@@ -150,7 +150,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
             padding: const EdgeInsets.all(9),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).warning],
+                colors: [ThemeColors.of(context).warning, ThemeColors.of(context).warning],
               ),
               borderRadius: BorderRadius.circular(8),
             ),
@@ -725,6 +725,7 @@ class _PrecificacaoSugestoesScreenState extends ConsumerState<PrecificacaoSugest
     );
   }
 }
+
 
 
 

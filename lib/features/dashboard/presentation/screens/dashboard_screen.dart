@@ -179,7 +179,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           break;
         default:
           icone = Icons.warning_rounded;
-          cor = ThemeColors.of(context).grey500;
+          cor = ThemeColors.of(context).textTertiary;
       }
       
       return {
@@ -567,7 +567,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         item['icon'],
                         color: isSelected
                             ? ThemeColors.of(context).surface
-                            : ThemeColors.of(context).grey600,
+                            : ThemeColors.of(context).textSecondary,
                         size: 24,
                       ),
                       const SizedBox(height: 4),
@@ -576,7 +576,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         style: TextStyle(
                           color: isSelected
                               ?  ThemeColors.of(context).surface
-                              : ThemeColors.of(context).grey600,
+                              : ThemeColors.of(context).textSecondary,
                           fontSize: 10,
                           fontWeight: isSelected
                               ? FontWeight.w600
@@ -709,7 +709,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         tabletFontSize: 10,
                       ),
                     overflow: TextOverflow.ellipsis,
-                      color: ThemeColors.of(context).grey600,
+                      color: ThemeColors.of(context).textSecondary,
                     ),
                   ),
                 ],
@@ -768,8 +768,8 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Buscar produtos, tags...',
-          hintStyle: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey500),
-          prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).grey400, size: 20),
+          hintStyle: TextStyle(fontSize: 13, color: ThemeColors.of(context).textTertiary),
+          prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).textTertiary, size: 20),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         ),
@@ -926,7 +926,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).grey700,
+                  color: ThemeColors.of(context).surfaceDark,
                 ),
               ),
             ),
@@ -964,7 +964,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         tabletFontSize: 8,
                       ),
                     overflow: TextOverflow.ellipsis,
-                      color: ThemeColors.of(context).grey600,
+                      color: ThemeColors.of(context).textSecondary,
                     ),
                   ),
                 ],
@@ -977,7 +977,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   tablet: 15,
                   desktop: 16,
                 ),
-                color: ThemeColors.of(context).grey600,
+                color: ThemeColors.of(context).textSecondary,
               ),
             ],
           ],
@@ -1007,7 +1007,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           Icon(
             icon,
             size: 20,
-            color: isDestructive ? ThemeColors.of(context).redMain : ThemeColors.of(context).grey700,
+            color: isDestructive ? ThemeColors.of(context).redMain : ThemeColors.of(context).surfaceDark,
           ),
           const SizedBox(width: 12),
           Text(
@@ -1103,7 +1103,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                 children: [
                   Icon(
                     _isRailExpanded ?  Icons.menu_open_rounded : Icons.menu_rounded,
-                    color: ThemeColors.of(context).grey700,
+                    color: ThemeColors.of(context).surfaceDark,
                     size: ResponsiveHelper.getResponsiveIconSize(
                       context,
                       tablet: 22,
@@ -1122,7 +1122,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       'Menu',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        color: ThemeColors.of(context).grey700,
+                        color: ThemeColors.of(context).surfaceDark,
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
                           baseFontSize: 14,
@@ -1201,7 +1201,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         children: [
                           Icon(
                             item['icon'],
-                            color: isSelected ?  ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
+                            color: isSelected ?  ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
                             size: ResponsiveHelper.getResponsiveIconSize(
                               context,
                               tablet: 20,
@@ -1220,7 +1220,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                               child: Text(
                                 item['title'],
                                 style: TextStyle(
-                                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey700,
+                                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).surfaceDark,
                                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -1591,7 +1591,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       Expanded(child: Text('Sugestes aplicadas com sucesso!')),
                     ],
                   ),
-                  backgroundColor: ThemeColors.of(context).greenMain,
+                  backgroundColor: ThemeColors.of(context).success,
                   behavior: SnackBarBehavior.floating,
                 ),
               );
@@ -1996,7 +1996,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                           mobileFontSize: 11,
                           tabletFontSize: 12,
                         ),
-                        color: ThemeColors.of(context).grey600,
+                        color: ThemeColors.of(context).textSecondary,
                         fontWeight: FontWeight.w600,
                       ),
                       maxLines: 2,
@@ -2128,7 +2128,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         mobileFontSize: 11,
                         tabletFontSize: 12,
                       ),
-                      color: ThemeColors.of(context).grey600,
+                      color: ThemeColors.of(context).textSecondary,
                       fontWeight: FontWeight.w600,
                     ),
                     maxLines: 1,
@@ -2185,7 +2185,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         mobileFontSize: 7,
                         tabletFontSize: 7,
                       ),
-                      color: ThemeColors.of(context).grey500,
+                      color: ThemeColors.of(context).textTertiary,
                       fontWeight: FontWeight.w500,
                     ),
                     maxLines: 1,
@@ -2912,7 +2912,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         _isEstrategiasExpanded
                             ? Icons.keyboard_arrow_up_rounded
                             : Icons.keyboard_arrow_down_rounded,
-                        color: ThemeColors.of(context).grey600,
+                        color: ThemeColors.of(context).textSecondary,
                         size: 24,
                       ),
                     ],
@@ -3058,7 +3058,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       mobileFontSize: 8,
                       tabletFontSize: 9,
                     ),
-                    color: ThemeColors.of(context).grey600,
+                    color: ThemeColors.of(context).textSecondary,
                   ),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
@@ -3388,7 +3388,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       tablet: 13,
                       desktop: 14,
                     ),
-                    color: ThemeColors.of(context).grey600,
+                    color: ThemeColors.of(context).textSecondary,
                   ),
                   SizedBox(
                     width: ResponsiveHelper.getResponsivePadding(
@@ -3409,7 +3409,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                           tabletFontSize: 10,
                         ),
                       overflow: TextOverflow.ellipsis,
-                        color: ThemeColors.of(context).grey600,
+                        color: ThemeColors.of(context).textSecondary,
                       ),
                     ),
                   ),
@@ -3436,7 +3436,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
             tablet: 17,
             desktop: 18,
           ),
-          color: ThemeColors.of(context).grey600,
+          color: ThemeColors.of(context).textSecondary,
         ),
         SizedBox(
           height: ResponsiveHelper.getResponsivePadding(
@@ -3468,7 +3468,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               mobileFontSize: 8,
               tabletFontSize: 9,
             ),
-            color: ThemeColors.of(context).grey600,
+            color: ThemeColors.of(context).textSecondary,
           ),
           overflow: TextOverflow.ellipsis,
         ),
@@ -3696,7 +3696,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         tablet: 15,
                         desktop: 16,
                       ),
-                      color: ThemeColors.of(context).grey700,
+                      color: ThemeColors.of(context).surfaceDark,
                     ),
                   ],
                 ),
@@ -4075,7 +4075,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
             const Expanded(child: Text('Sincronizando...')),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).blueMain,
+        backgroundColor: ThemeColors.of(context).info,
         behavior: SnackBarBehavior.floating,
         duration: const Duration(seconds: 3),
       ),
@@ -4090,14 +4090,14 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        icon: Icon(Icons.cloud_done_rounded, color: ThemeColors.of(context).greenMain, size: 48),
+        icon: Icon(Icons.cloud_done_rounded, color: ThemeColors.of(context).success, size: 48),
         title: const Text('Status do ERP'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildStatusRow('Conexo', 'Conectado', ThemeColors.of(context).greenMain),
+            _buildStatusRow('Conexo', 'Conectado', ThemeColors.of(context).success),
             const SizedBox(height: 8),
-            _buildStatusRow('ltima sincronizao', 'H 5 minutos', ThemeColors.of(context).blueMain),
+            _buildStatusRow('ltima sincronizao', 'H 5 minutos', ThemeColors.of(context).info),
             const SizedBox(height: 8),
             _buildStatusRow('Pendncias', '0 itens', ThemeColors.of(context).textSecondary),
           ],
@@ -4181,7 +4181,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
             const Expanded(child: Text('Dashboard atualizado!')),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).greenMain,
+        backgroundColor: ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
         duration: const Duration(seconds: 2),
       ),
@@ -4279,7 +4279,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                           mobileFontSize: 11,
                           tabletFontSize: 11.5,
                         ),
-                        color: ThemeColors.of(context).grey600,
+                        color: ThemeColors.of(context).textSecondary,
                       ),
                     ),
                   ],
@@ -4337,7 +4337,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                 mobileFontSize: 11,
                 tabletFontSize: 11.5,
               ),
-              color: ThemeColors.of(context).grey700,
+              color: ThemeColors.of(context).surfaceDark,
               height: 1.4,
             ),
           ),
@@ -4727,7 +4727,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       tabletFontSize: 11,
                     ),
                   overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).grey600,
+                    color: ThemeColors.of(context).textSecondary,
                   ),
                 ),
                 SizedBox(
@@ -4748,7 +4748,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       tabletFontSize: 10,
                     ),
                   overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).grey500,
+                    color: ThemeColors.of(context).textTertiary,
                   ),
                 ),
               ],
@@ -4992,13 +4992,13 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
           leading: Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: (isProduto ? ThemeColors.of(context).blueMain : ThemeColors.of(context).greenMaterial)
+              color: (isProduto ? ThemeColors.of(context).info : ThemeColors.of(context).greenMaterial)
                   Light,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
               isProduto ? Icons.inventory_2_rounded : Icons.sell_rounded,
-              color: isProduto ? ThemeColors.of(context).blueMain : ThemeColors.of(context).greenMaterial,
+              color: isProduto ? ThemeColors.of(context).info : ThemeColors.of(context).greenMaterial,
             ),
           ),
           title: Text(
@@ -5017,13 +5017,13 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                   r['preco'] ?? '',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).greenMain,
+                    color: ThemeColors.of(context).success,
                   ),
                 )
               : Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).greenMainLight,
+                    color: ThemeColors.of(context).successLight,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -5031,7 +5031,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
-                      color: ThemeColors.of(context).greenMain,
+                      color: ThemeColors.of(context).success,
                     ),
                   ),
                 ),
@@ -5043,6 +5043,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
     );
   }
 }
+
 
 
 

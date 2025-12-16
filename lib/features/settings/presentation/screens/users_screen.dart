@@ -72,7 +72,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
       children: [
         Container(
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).backgroundLight,
+            color: ThemeColors.of(context).surfaceSecondary,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -767,7 +767,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).backgroundLight,
+                    color: ThemeColors.of(context).surfaceSecondary,
                     borderRadius: BorderRadius.circular(
                       isMobile ? 8 : 10,
                     ),
@@ -820,7 +820,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
         AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : (isTablet ? 14 : 16),
         ),
@@ -1005,7 +1005,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
               ),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).backgroundLight,
+              color: ThemeColors.of(context).surfaceSecondary,
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -2112,6 +2112,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
     );
   }
 }
+
 
 
 

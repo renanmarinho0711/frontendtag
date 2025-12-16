@@ -110,7 +110,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                       children: [
                         CircularProgressIndicator(
                           value: completed / total,
-                          backgroundColor: ThemeColors.of(context).grey200,
+                          backgroundColor: ThemeColors.of(context).borderLight,
                           valueColor: AlwaysStoppedAnimation<Color>(
                             ThemeColors.of(context).onboardingProgress,
                           ),
@@ -135,7 +135,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
                   value: completed / total,
-                  backgroundColor: ThemeColors.of(context).grey200,
+                  backgroundColor: ThemeColors.of(context).borderLight,
                   valueColor: AlwaysStoppedAnimation<Color>(
                     ThemeColors.of(context).onboardingProgress,
                   ),
@@ -214,14 +214,14 @@ class OnboardingStepsCard extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           decoration: BoxDecoration(
             color: completed 
-                ? ThemeColors.of(context).greenMainLight
+                ? ThemeColors.of(context).successLight
                 : isNext
                     ? ThemeColors.of(context).greenMaterialLight
                     : ThemeColors.of(context).grey100,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: completed
-                  ? ThemeColors.of(context).greenMainLight
+                  ? ThemeColors.of(context).successLight
                   : isNext
                       ? ThemeColors.of(context).greenMaterialLight
                       : ThemeColors.of(context).grey300,
@@ -237,10 +237,10 @@ class OnboardingStepsCard extends ConsumerWidget {
                 height: 24,
                 decoration: BoxDecoration(
                   color: completed
-                      ? ThemeColors.of(context).greenMain
+                      ? ThemeColors.of(context).success
                       : isNext
                           ? ThemeColors.of(context).greenMaterial
-                          : ThemeColors.of(context).grey400,
+                          : ThemeColors.of(context).textTertiary,
                   shape: BoxShape.circle,
                 ),
                 child: Center(
@@ -264,7 +264,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                   fontSize: 12,
                   fontWeight: isNext ? FontWeight.bold : FontWeight.w500,
                   color: completed
-                      ? ThemeColors.of(context).greenMain
+                      ? ThemeColors.of(context).success
                       : isNext
                           ? ThemeColors.of(context).greenMaterial
                           : ThemeColors.of(context).textSecondary,
@@ -287,6 +287,7 @@ class OnboardingStepsCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

@@ -71,7 +71,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                 FloatingActionButton(
                   heroTag: 'add',
                   onPressed: _adicionarTime,
-                  backgroundColor: ThemeColors.of(context).blueMain,
+                  backgroundColor: ThemeColors.of(context).info,
                   child: Icon(
                     Icons.add_rounded,
                     size: AppSizes.iconLarge.get(isMobile, isTablet),
@@ -99,7 +99,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  backgroundColor: ThemeColors.of(context).blueMain,
+                  backgroundColor: ThemeColors.of(context).info,
                 ),
               ],
             ],
@@ -170,7 +170,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+              gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
             child: Icon(
@@ -241,7 +241,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
       child: TabBar(
         controller: _tabController,
         indicator: BoxDecoration(
-          gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+          gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
@@ -325,11 +325,11 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingLgAlt2.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
         borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueMain.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).info.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -458,7 +458,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
             children: [
               Icon(
                 Icons.access_time_rounded,
-                color: ThemeColors.of(context).blueMain,
+                color: ThemeColors.of(context).info,
                 size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -478,7 +478,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -487,7 +487,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
                     overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).blueMain,
+                    color: ThemeColors.of(context).info,
                   ),
                 ),
               ),
@@ -500,7 +500,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
             divisions: 11,
             label: '${sportsState.hoursInAdvance} horas antes',
             onChanged: (v) => ref.read(sportsTeamsProvider.notifier).setHoursInAdvance(v.toInt()),
-            activeColor: ThemeColors.of(context).blueMain,
+            activeColor: ThemeColors.of(context).info,
           ),
         ],
       ),
@@ -816,7 +816,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
                 Container(
                   padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark]),
+                    gradient: LinearGradient(colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark]),
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                   ),
                   child: Icon(
@@ -1043,7 +1043,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet))),
-        icon: Icon(Icons.add_rounded, color: ThemeColors.of(context).blueMain, size: AppSizes.iconHeroMd.get(isMobile, isTablet)),
+        icon: Icon(Icons.add_rounded, color: ThemeColors.of(context).info, size: AppSizes.iconHeroMd.get(isMobile, isTablet)),
         title: Text('Adicionar Time', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 17))),
         content: Text(
           'Em breve voc? poder? adicionar novos times para monitoramento personalizado.',
@@ -1068,7 +1068,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet))),
-        icon: Icon(Icons.sports_soccer_rounded, color: ThemeColors.of(context).blueMain, size: AppSizes.iconHeroMd.get(isMobile, isTablet)),
+        icon: Icon(Icons.sports_soccer_rounded, color: ThemeColors.of(context).info, size: AppSizes.iconHeroMd.get(isMobile, isTablet)),
         title: Text('Eventos Esportivos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 17))),
         content: SingleChildScrollView(
           child: Column(
@@ -1130,7 +1130,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).blueMain,
+          backgroundColor: ThemeColors.of(context).info,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
         ),
@@ -1138,6 +1138,7 @@ class _EventosEsportivosConfigScreenState extends ConsumerState<EventosEsportivo
     }
   }
 }
+
 
 
 

@@ -78,7 +78,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).orangeMain,
+              backgroundColor: ThemeColors.of(context).warning,
             ),
           Positioned(
             right: 0,
@@ -140,7 +140,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark]),
+              gradient: LinearGradient(colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark]),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
             child: Icon(
@@ -211,7 +211,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
       child: TabBar(
         controller: _tabController,
         indicator: BoxDecoration(
-          gradient: LinearGradient(colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark]),
+          gradient: LinearGradient(colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark]),
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
@@ -335,11 +335,11 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingLgAlt2.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark]),
         borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).warning.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -475,12 +475,12 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueMainLight,
+              color: ThemeColors.of(context).infoLight,
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
             child: Icon(
               Icons.filter_list_rounded,
-              color: ThemeColors.of(context).blueMain,
+              color: ThemeColors.of(context).info,
               size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
             ),
           ),
@@ -515,7 +515,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             child: Switch(
               value: state.apenasPereci,
               onChanged: (value) => notifier.setApenasPereci(value),
-              activeColor: ThemeColors.of(context).blueMain,
+              activeColor: ThemeColors.of(context).info,
             ),
           ),
         ],
@@ -621,12 +621,12 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenMainLight,
+                  color: ThemeColors.of(context).successLight,
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.category_rounded,
-                  color: ThemeColors.of(context).greenMain,
+                  color: ThemeColors.of(context).success,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -662,7 +662,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                 children: [
                   Icon(
                     Icons.check_circle_rounded,
-                    color: ThemeColors.of(context).greenMain,
+                    color: ThemeColors.of(context).success,
                     size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                   ),
                   SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1070,7 +1070,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet))),
         icon: Icon(
           Icons.auto_fix_high_rounded,
-          color: ThemeColors.of(context).orangeMain,
+          color: ThemeColors.of(context).warning,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1188,7 +1188,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).orangeMain,
+        backgroundColor: ThemeColors.of(context).warning,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
         duration: const Duration(seconds: 3),
@@ -1196,6 +1196,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
     );
   }
 }
+
 
 
 

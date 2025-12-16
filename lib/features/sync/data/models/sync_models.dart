@@ -1,16 +1,16 @@
-ï»¿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Modelos para o mï¿½dulo de Sincronizaï¿½ï¿½o
-/// Gerencia estado e histï¿½rico de sincronizaï¿½ï¿½es
+/// Modelos para o m?dulo de Sincroniza??o
+/// Gerencia estado e hist?rico de sincroniza??es
 
-/// Tipo de sincronizaï¿½ï¿½o
+/// Tipo de sincroniza??o
 enum SyncType {
-  full,       // Sincronizaï¿½ï¿½o completa (produtos + tags)
+  full,       // Sincroniza??o completa (produtos + tags)
   products,   // Apenas produtos (Produtos Novos na UI)
   tags,       // Apenas tags
-  prices,     // Apenas preï¿½os
+  prices,     // Apenas pre?os
 }
 
 extension SyncTypeExtension on SyncType {
@@ -23,7 +23,7 @@ extension SyncTypeExtension on SyncType {
       case SyncType.tags:
         return 'Tags';
       case SyncType.prices:
-        return 'Preï¿½os';
+        return 'Pre?os';
     }
   }
   
@@ -41,10 +41,10 @@ extension SyncTypeExtension on SyncType {
   }
 }
 
-/// Status de uma sincronizaï¿½ï¿½o
+/// Status de uma sincroniza??o
 enum SyncStatus {
   pending,    // Aguardando
-  running,    // Em execuï¿½ï¿½o
+  running,    // Em execu??o
   success,    // Sucesso
   partial,    // Parcial (alguns erros)
   failed,     // Falha
@@ -57,7 +57,7 @@ extension SyncStatusExtension on SyncStatus {
       case SyncStatus.pending:
         return 'Aguardando';
       case SyncStatus.running:
-        return 'Em execuï¿½ï¿½o';
+        return 'Em execu??o';
       case SyncStatus.success:
         return 'Sucesso';
       case SyncStatus.partial:
@@ -73,7 +73,7 @@ extension SyncStatusExtension on SyncStatus {
   Color get color {
     switch (this) {
       case SyncStatus.pending:
-        return ThemeColors.of(context).grey500;
+        return ThemeColors.of(context).textTertiary;
       case SyncStatus.running:
         return ThemeColors.of(context).primary;
       case SyncStatus.success:
@@ -83,11 +83,11 @@ extension SyncStatusExtension on SyncStatus {
       case SyncStatus.failed:
         return ThemeColors.of(context).statusBlocked; // Vermelho
       case SyncStatus.cancelled:
-        return ThemeColors.of(context).grey500;
+        return ThemeColors.of(context).textTertiary;
     }
   }
   
-  /// ï¿½cone associado ao status para uso na UI
+  /// ?cone associado ao status para uso na UI
   IconData get iconData {
     switch (this) {
       case SyncStatus.pending:
@@ -112,7 +112,7 @@ extension SyncStatusExtension on SyncStatus {
     this == SyncStatus.cancelled;
 }
 
-/// Registro de histï¿½rico de sincronizaï¿½ï¿½o
+/// Registro de hist?rico de sincroniza??o
 class SyncHistoryEntry {
   final String id;
   final SyncType type;
@@ -125,8 +125,8 @@ class SyncHistoryEntry {
   final int errorCount;
   final String? errorMessage;
   final Duration? duration;
-  final String? executedBy;       // Usuï¿½rio que executou
-  final String? details;          // Detalhes da sincronizaï¿½ï¿½o
+  final String? executedBy;       // Usu?rio que executou
+  final String? details;          // Detalhes da sincroniza??o
   final List<String> errors;      // Lista de erros
 
   const SyncHistoryEntry({
@@ -146,13 +146,13 @@ class SyncHistoryEntry {
     this.errors = const [],
   });
 
-  /// Cor baseada no status (getter de conveniï¿½ncia)
+  /// Cor baseada no status (getter de conveni?ncia)
   Color get color => status.color;
   
-  /// ï¿½cone baseado no status (getter de conveniï¿½ncia)
+  /// ?cone baseado no status (getter de conveni?ncia)
   IconData get iconData => status.iconData;
 
-  /// Duraï¿½ï¿½o formatada
+  /// Dura??o formatada
   String get durationFormatted {
     if (duration == null) return '-';
     final minutes = duration!.inMinutes;
@@ -239,7 +239,7 @@ class SyncHistoryEntry {
     final newStartedAt = startedAt ?? this.startedAt;
     final newCompletedAt = completedAt ?? this.completedAt;
     
-    // Validar que completedAt nÃ£o seja antes de startedAt
+    // Validar que completedAt não seja antes de startedAt
     if (newCompletedAt != null && newCompletedAt.isBefore(newStartedAt)) {
       throw ArgumentError('completedAt cannot be before startedAt');
     }
@@ -276,7 +276,7 @@ class SyncHistoryEntry {
   static SyncStatus _parseSyncStatus(dynamic value) {
     if (value is SyncStatus) return value;
     if (value is String) {
-      // Mapear labels em portuguï¿½s para status
+      // Mapear labels em portugu?s para status
       switch (value.toLowerCase()) {
         case 'sucesso':
           return SyncStatus.success;
@@ -290,7 +290,7 @@ class SyncHistoryEntry {
         case 'aguardando':
         case 'pendente':
           return SyncStatus.pending;
-        case 'em execuï¿½ï¿½o':
+        case 'em execu??o':
         case 'executando':
           return SyncStatus.running;
       }
@@ -303,7 +303,7 @@ class SyncHistoryEntry {
   }
 }
 
-/// Resultado de uma operaï¿½ï¿½o de sincronizaï¿½ï¿½o
+/// Resultado de uma opera??o de sincroniza??o
 class SyncResult {
   final bool success;
   final int totalProcessed;
@@ -374,7 +374,7 @@ class SyncResult {
   }
 }
 
-/// Configuraï¿½ï¿½es de sincronizaï¿½ï¿½o
+/// Configura??es de sincroniza??o
 class SyncSettings {
   final bool autoSync;
   final int autoSyncIntervalMinutes;
@@ -436,11 +436,11 @@ class SyncSettings {
 }
 
 // =============================================================================
-// MODELOS DE SINCRONIZAï¿½ï¿½O MINEW
+// MODELOS DE SINCRONIZA??O MINEW
 // Mapeados para os endpoints do SyncController no backend
 // =============================================================================
 
-/// Resultado de sincronizaï¿½ï¿½o com Minew Cloud
+/// Resultado de sincroniza??o com Minew Cloud
 /// Mapeado para: SyncResultDto do backend
 class MinewSyncResult {
   final bool success;
@@ -461,10 +461,10 @@ class MinewSyncResult {
     this.syncStatus = 'pending',
   });
 
-  /// Sincronizaï¿½ï¿½o bem sucedida (sem erros)
+  /// Sincroniza??o bem sucedida (sem erros)
   bool get isFullySuccessful => success && errorCount == 0;
 
-  /// Sincronizaï¿½ï¿½o parcial (com alguns erros)
+  /// Sincroniza??o parcial (com alguns erros)
   bool get isPartiallySuccessful => success && errorCount > 0;
 
   factory MinewSyncResult.fromJson(Map<String, dynamic> json) {
@@ -525,7 +525,7 @@ class MinewSyncResult {
   }
 }
 
-/// Resultado de vinculaï¿½ï¿½o tag-produto
+/// Resultado de vincula??o tag-produto
 /// Mapeado para: BindResultDto do backend
 class BindResultDto {
   final bool success;
@@ -558,8 +558,8 @@ class BindResultDto {
   }
 }
 
-/// Status detalhado de sincronizaï¿½ï¿½o
-/// Para exibiï¿½ï¿½o de status em tempo real na UI
+/// Status detalhado de sincroniza??o
+/// Para exibi??o de status em tempo real na UI
 class SyncStatusInfo {
   final String entityType; // product, tag, store
   final String entityId;
@@ -579,16 +579,16 @@ class SyncStatusInfo {
     this.progressPercent,
   });
 
-  /// Verifica se estï¿½ em processo de sincronizaï¿½ï¿½o
+  /// Verifica se est? em processo de sincroniza??o
   bool get isSyncing => status == 'syncing';
 
-  /// Verifica se estï¿½ sincronizado
+  /// Verifica se est? sincronizado
   bool get isSynced => status == 'synced';
 
   /// Verifica se tem erro
   bool get hasError => status == 'error';
 
-  /// Verifica se estï¿½ pendente
+  /// Verifica se est? pendente
   bool get isPending => status == 'pending';
 
   factory SyncStatusInfo.fromJson(Map<String, dynamic> json) {
@@ -606,7 +606,7 @@ class SyncStatusInfo {
   }
 }
 
-/// Request para sincronizaï¿½ï¿½o em lote de tags
+/// Request para sincroniza??o em lote de tags
 class BatchSyncTagsRequest {
   final String storeId;
   final List<String> macAddresses;
@@ -624,7 +624,7 @@ class BatchSyncTagsRequest {
   }
 }
 
-/// Request para sincronizaï¿½ï¿½o em lote de produtos
+/// Request para sincroniza??o em lote de produtos
 class BatchSyncProductsRequest {
   final String storeId;
   final List<String> productIds;
@@ -681,7 +681,7 @@ class ImportTagsRequest {
   }
 }
 
-/// Resultado de importaï¿½ï¿½o de tags
+/// Resultado de importa??o de tags
 class ImportTagsResult {
   final bool success;
   final String message;
@@ -718,11 +718,11 @@ class ImportTagsResult {
 }
 
 // =============================================================================
-// NOVOS MODELOS PARA INTEGRAÃ‡ÃƒO MINEW CLOUD
-// CompatÃ­veis com MinewStatsController e MinewStatsSyncService
+// NOVOS MODELOS PARA INTEGRAÇÃO MINEW CLOUD
+// Compatíveis com MinewStatsController e MinewStatsSyncService
 // =============================================================================
 
-/// EstatÃ­sticas da Minew Cloud para uma loja
+/// Estatísticas da Minew Cloud para uma loja
 class MinewStoreStats {
   final int totalTags;
   final int onlineTags;
@@ -780,11 +780,11 @@ class MinewStoreStats {
     if (onlinePercentage >= 90) return 'Excelente';
     if (onlinePercentage >= 70) return 'Bom';
     if (onlinePercentage >= 50) return 'Regular';
-    return 'CrÃ­tico';
+    return 'Crítico';
   }
 }
 
-/// Resultado de sincronizaÃ§Ã£o completa de uma loja
+/// Resultado de sincronização completa de uma loja
 class StoreSyncSummary {
   final String storeId;
   final String storeName;
@@ -830,7 +830,7 @@ class StoreSyncSummary {
   Duration get duration => Duration(milliseconds: durationMs.toInt());
 }
 
-/// Resultado de uma operaÃ§Ã£o de sync (tags ou gateways)
+/// Resultado de uma operação de sync (tags ou gateways)
 class SyncOperationResult {
   final int processed;
   final int updated;
@@ -851,7 +851,7 @@ class SyncOperationResult {
   }
 }
 
-/// Resultado de sincronizaÃ§Ã£o de stats
+/// Resultado de sincronização de stats
 class StatsSyncResult {
   final bool success;
   final String? message;
@@ -886,6 +886,7 @@ class StatsSyncResult {
 
   Duration get duration => Duration(milliseconds: durationMs.toInt());
 }
+
 
 
 

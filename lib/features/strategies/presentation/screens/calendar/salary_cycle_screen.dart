@@ -81,7 +81,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).greenMain,
+              backgroundColor: ThemeColors.of(context).success,
             ),
           Positioned(
             right: 0,
@@ -158,7 +158,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark],
+                colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
               ),
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
@@ -247,7 +247,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
         controller: _tabController,
         indicator: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark],
+            colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
@@ -314,7 +314,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
             'Dias 1-${state.diasPagamento}',
             state.ajusteInicio,
             Icons.trending_up_rounded,
-            ThemeColors.of(context).greenMain,
+            ThemeColors.of(context).success,
             (v) => ref.read(salaryCycleProvider.notifier).setAjusteInicio(v),
           ),
           SizedBox(
@@ -381,14 +381,14 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark],
+          colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 20 : (isTablet ? 22 : 24),
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).greenMain.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).success.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -543,14 +543,14 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueMainLight,
+                  color: ThemeColors.of(context).infoLight,
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.calendar_view_week_rounded,
-                  color: ThemeColors.of(context).blueMain,
+                  color: ThemeColors.of(context).info,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -597,7 +597,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                 child: Switch(
                   value: state.monitorarQuinzena,
                   onChanged: (value) => ref.read(salaryCycleProvider.notifier).setMonitorarQuinzena(value),
-                  activeColor: ThemeColors.of(context).blueMain,
+                  activeColor: ThemeColors.of(context).info,
                 ),
               ),
             ],
@@ -1011,10 +1011,10 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 double altura;
                 
                 if (isInicio || isQuinzena) {
-                  cor = ThemeColors.of(context).greenMain;
+                  cor = ThemeColors.of(context).success;
                   altura = 80.0;
                 } else if (isFim) {
-                  cor = ThemeColors.of(context).orangeMain;
+                  cor = ThemeColors.of(context).warning;
                   altura = 40.0;
                 } else {
                   cor = ThemeColors.of(context).textSecondaryOverlay40;
@@ -1040,9 +1040,9 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildLegenda(ThemeColors.of(context).greenMain, 'In?cio (+${state.ajusteInicio.toStringAsFixed(0)}%)'),
+              _buildLegenda(ThemeColors.of(context).success, 'In?cio (+${state.ajusteInicio.toStringAsFixed(0)}%)'),
               _buildLegenda(ThemeColors.of(context).textSecondary, 'Normal'),
-              _buildLegenda(ThemeColors.of(context).orangeMain, 'Fim (${state.ajusteFim.toStringAsFixed(0)}%)'),
+              _buildLegenda(ThemeColors.of(context).warning, 'Fim (${state.ajusteFim.toStringAsFixed(0)}%)'),
             ],
           ),
         ],
@@ -1278,7 +1278,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
         ),
         icon: Icon(
           Icons.attach_money_rounded,
-          color: ThemeColors.of(context).greenMain,
+          color: ThemeColors.of(context).success,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1446,7 +1446,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
             ),
           ],
         ),
-        backgroundColor: success ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
+        backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1455,6 +1455,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
     );
   }
 }
+
 
 
 

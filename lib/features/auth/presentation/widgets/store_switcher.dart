@@ -152,11 +152,11 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
         isDense: true,
         icon: Icon(
           Icons.keyboard_arrow_down_rounded,
-          color: isChanging ? ThemeColors.of(context).grey500 : ThemeColors.of(context).primary,
+          color: isChanging ? ThemeColors.of(context).textTertiary : ThemeColors.of(context).primary,
         ),
         hint: Text(
           'Selecione uma loja',
-          style: TextStyle(color: ThemeColors.of(context).grey600, fontSize: 14),
+          style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 14),
         ),
         items: stores.map((store) {
           return DropdownMenuItem<String>(
@@ -181,7 +181,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
                           store.cnpj ?? store.address ?? '',
                           style: TextStyle(
                             fontSize: 11,
-                            color: ThemeColors.of(context).grey600,
+                            color: ThemeColors.of(context).textSecondary,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -403,14 +403,14 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                         // Hierarquia: Cliente
                         Row(
                           children: [
-                            Icon(Icons.business_rounded, size: 14, color: ThemeColors.of(context).grey500),
+                            Icon(Icons.business_rounded, size: 14, color: ThemeColors.of(context).textTertiary),
                             const SizedBox(width: 4),
                             Flexible(
                               child: Text(
                                 clientName,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: ThemeColors.of(context).grey600,
+                                  color: ThemeColors.of(context).textSecondary,
                                   fontWeight: FontWeight.w500,
                                 ),
                                 maxLines: 1,
@@ -435,7 +435,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                         if (!isAllStoresMode && currentStore.address != null)
                           Text(
                             currentStore.address!,
-                            style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey500),
+                            style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textTertiary),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -456,7 +456,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                         ),
                         child: Icon(
                           Icons.keyboard_arrow_down_rounded,
-                          color: ThemeColors.of(context).grey600,
+                          color: ThemeColors.of(context).textSecondary,
                           size: 24,
                         ),
                       ),
@@ -482,7 +482,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     return Container(
       constraints: const BoxConstraints(maxHeight: 400), // Limita altura m�xima
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey500.withValues(alpha: 0.03),
+        color: ThemeColors.of(context).textTertiary.withValues(alpha: 0.03),
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(16)),
       ),
       child: Column(
@@ -509,7 +509,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: Text(
                               'ou selecione uma loja',
-                              style: TextStyle(fontSize: 11, color: ThemeColors.of(context).grey500),
+                              style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textTertiary),
                             ),
                           ),
                           Expanded(child: Container(height: 1, color: ThemeColors.of(context).grey300)),
@@ -615,7 +615,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
               ),
               child: Icon(
                 Icons.store_mall_directory_rounded,
-                color: isSelected ? ThemeColors.of(context).blueCyan : ThemeColors.of(context).grey600,
+                color: isSelected ? ThemeColors.of(context).blueCyan : ThemeColors.of(context).textSecondary,
                 size: 20,
               ),
             ),
@@ -659,7 +659,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                   ),
                   Text(
                     'Visualizar dados consolidados de todas as lojas',
-                    style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey600),
+                    style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary),
                   ),
                 ],
               ),
@@ -705,7 +705,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                 decoration: BoxDecoration(
                   color: isSelected 
                       ? ThemeColors.of(context).primaryOverlay20 
-                      : ThemeColors.of(context).grey500Light,
+                      : ThemeColors.of(context).textTertiaryLight,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -713,7 +713,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                     store.number ?? index.toString(),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey600,
+                      color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textSecondary,
                       fontSize: 12,
                     ),
                   ),
@@ -724,7 +724,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
               // �cone da loja
               Icon(
                 Icons.storefront_rounded,
-                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey500,
+                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textTertiary,
                 size: 18,
               ),
               const SizedBox(width: 8),
@@ -770,7 +770,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                     if (store.address != null)
                       Text(
                         store.address!,
-                        style: TextStyle(fontSize: 11, color: ThemeColors.of(context).grey500),
+                        style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textTertiary),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -897,6 +897,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     }
   }
 }
+
 
 
 

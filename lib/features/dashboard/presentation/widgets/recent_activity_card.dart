@@ -84,10 +84,10 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
   Color _getColorForAction(String action) {
     final lower = action.toLowerCase();
     if (lower.contains('produto') || lower.contains('product')) {
-      return ThemeColors.of(context).greenMain;
+      return ThemeColors.of(context).success;
     }
     if (lower.contains('sync') || lower.contains('sincroniza')) {
-      return ThemeColors.of(context).blueMain;
+      return ThemeColors.of(context).info;
     }
     if (lower.contains('tag') || lower.contains('label')) {
       return ThemeColors.of(context).blueCyan;
@@ -181,7 +181,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                     height: 24,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      color: ThemeColors.of(context).blueMain,
+                      color: ThemeColors.of(context).info,
                     ),
                   ),
                 ),
@@ -364,6 +364,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
     );
   }
 }
+
 
 
 

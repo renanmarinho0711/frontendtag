@@ -528,14 +528,14 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueMainLight,
+              color: ThemeColors.of(context).infoLight,
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
               ),
             ),
             child: Icon(
               Icons.restore_rounded,
-              color: ThemeColors.of(context).blueMain,
+              color: ThemeColors.of(context).info,
               size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
             ),
           ),
@@ -584,7 +584,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               onChanged: (value) {
                 ref.read(holidayEventsProvider.notifier).setRevertAfterEvent(value);
               },
-              activeColor: ThemeColors.of(context).blueMain,
+              activeColor: ThemeColors.of(context).info,
             ),
           ),
         ],
@@ -1051,7 +1051,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               ),
               decoration: BoxDecoration(
                 color: evento.isActive
-                    ? ThemeColors.of(context).greenMainLight
+                    ? ThemeColors.of(context).successLight
                     : ThemeColors.of(context).textSecondary,
                 borderRadius: BorderRadius.circular(
                   isMobile ? 9 : 10,
@@ -1060,7 +1060,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               child: Icon(
                 evento.isActive ? Icons.check_circle_rounded : Icons.cancel_rounded,
                 color: evento.isActive
-                    ? ThemeColors.of(context).greenMainDark
+                    ? ThemeColors.of(context).successDark
                     : ThemeColors.of(context).textSecondary,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
@@ -1528,6 +1528,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
     );
   }
 }
+
 
 
 

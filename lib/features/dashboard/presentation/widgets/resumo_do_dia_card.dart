@@ -70,7 +70,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark],
+                      colors: [ThemeColors.of(context).info, ThemeColors.of(context).blueDark],
                     ),
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -102,13 +102,13 @@ class ResumoDoDoaCard extends ConsumerWidget {
                     icon: Icon(
                       Icons.open_in_new_rounded,
                       size: 16,
-                      color: ThemeColors.of(context).blueMain,
+                      color: ThemeColors.of(context).info,
                     ),
                     label: Text(
                       'Ver mais',
                       style: TextStyle(
                         fontSize: 12,
-                        color: ThemeColors.of(context).blueMain,
+                        color: ThemeColors.of(context).info,
                       ),
                     ),
                     style: TextButton.styleFrom(
@@ -128,7 +128,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                     child: _buildMetricaCard(
                       context: context,
                       icon: Icons.attach_money_rounded,
-                      iconColor: ThemeColors.of(context).greenMain,
+                      iconColor: ThemeColors.of(context).success,
                       valor: _formatCurrency(lucroHoje),
                       label: 'Lucro Hoje',
                       onTap: onVerDashboardCompleto,
@@ -142,14 +142,14 @@ class ResumoDoDoaCard extends ConsumerWidget {
                           ? Icons.trending_up_rounded 
                           : Icons.trending_down_rounded,
                       iconColor: variacaoPositiva 
-                          ? ThemeColors.of(context).greenMain 
+                          ? ThemeColors.of(context).success 
                           : ThemeColors.of(context).redMain,
                       valor: variacao.startsWith('+') || variacao.startsWith('-') 
                           ? variacao 
                           : '+$variacao',
                       label: 'vs ontem',
                       valorColor: variacaoPositiva 
-                          ? ThemeColors.of(context).greenMain 
+                          ? ThemeColors.of(context).success 
                           : ThemeColors.of(context).redMain,
                     ),
                   ),
@@ -165,7 +165,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                     child: _buildMetricaCard(
                       context: context,
                       icon: Icons.inventory_2_rounded,
-                      iconColor: ThemeColors.of(context).blueMain,
+                      iconColor: ThemeColors.of(context).info,
                       valor: totalProdutos.toString(),
                       label: 'Produtos Ativos',
                       onTap: onVerProdutos,
@@ -341,6 +341,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
     );
   }
 }
+
 
 
 

@@ -59,7 +59,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
     );
 
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -610,7 +610,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
         borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueMainLight,
+            color: ThemeColors.of(context).infoLight,
             blurRadius: isMobile ? 10 : 12,
             offset: const Offset(0, 4),
           ),
@@ -1134,7 +1134,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildBadge('${item['quantidade']} total', ThemeColors.of(context).blueMain),
+                _buildBadge('${item['quantidade']} total', ThemeColors.of(context).info),
                 SizedBox(
                   width: AppSizes.paddingXs.get(isMobile, isTablet),
                 ),
@@ -1307,7 +1307,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildBadge('${item.totalCount} total', ThemeColors.of(context).blueMain),
+                _buildBadge('${item.totalCount} total', ThemeColors.of(context).info),
                 SizedBox(
                   width: AppSizes.paddingXs.get(isMobile, isTablet),
                 ),
@@ -1824,6 +1824,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
     );
   }
 }
+
 
 
 
