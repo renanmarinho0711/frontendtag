@@ -7,7 +7,6 @@ import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/settings/presentation/providers/settings_provider.dart';
 import 'package:tagbean/features/settings/data/models/settings_models.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Tela de configuraes de integrao ERP
 /// Permite configurar conexo com sistemas ERP externos
@@ -852,6 +851,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     }
   }
 }
+
 
 
 
