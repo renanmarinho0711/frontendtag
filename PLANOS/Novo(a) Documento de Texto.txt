@@ -1,0 +1,139 @@
+RELATÓRIO DE MIGRAÇÃO DE CORES - FRONTENDTAG
+Com base na análise do repositório, segue o relatório de migrações pendentes por módulo:
+
+🟢 MÓDULO: PRODUCTS
+lib/features/products/presentation/screens/products_list_screen.dart
+LINHA 225-226:
+
+Dart
+ESTÁ ASSIM:  backgroundColor: success ?  ThemeColors.of(context).brandPrimaryGreen :  ThemeColors.of(context).error,
+DEVE FICAR ASSIM: backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+LINHA 268-270:
+
+Dart
+ESTÁ ASSIM: backgroundColor: success ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors. of(context).error,
+DEVE FICAR ASSIM: backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+LINHA 313-314:
+
+Dart
+ESTÁ ASSIM: backgroundColor: deletedCount > 0 ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).error,
+DEVE FICAR ASSIM: backgroundColor:  deletedCount > 0 ?  ThemeColors.of(context).success : ThemeColors.of(context).error,
+LINHA 319:
+
+Dart
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).error,
+DEVE FICAR ASSIM: backgroundColor: ThemeColors. of(context).errorDark,
+LINHA 403:
+
+Dart
+ESTÁ ASSIM: color: ThemeColors.of(context).greenGradient,
+DEVE FICAR ASSIM: color: ThemeColors.of(context).success,
+LINHA 479:
+
+Dart
+ESTÁ ASSIM: color: ThemeColors. of(context).greenGradient,
+DEVE FICAR ASSIM: color: ThemeColors.of(context).success,
+LINHA 752-761:
+
+Dart
+ESTÁ ASSIM: gradient: LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [
+    ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.05),
+    ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.02),
+  ],
+),
+DEVE FICAR ASSIM: gradient: ThemeColors.of(context).gradientFilterCard,
+LINHA 761:
+
+Dart
+ESTÁ ASSIM: border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.15), width: 1),
+DEVE FICAR ASSIM: border:  Border.all(color: ThemeColors.of(context).borderSuccess, width: 1),
+LINHA 763-767:
+
+Dart
+ESTÁ ASSIM: boxShadow: [
+  BoxShadow(
+    color:  ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.08),
+    blurRadius: 12,
+    offset: const Offset(0, 4),
+  ),
+],
+DEVE FICAR ASSIM:  boxShadow: AppShadows.successCard,
+LINHA 784:
+
+Dart
+ESTÁ ASSIM: color: ThemeColors.of(context).textTertiary.withValues(alpha: 0.6),
+DEVE FICAR ASSIM: color:  ThemeColors.of(context).textPlaceholder,
+LINHA 800:
+
+Dart
+ESTÁ ASSIM: color: ThemeColors. of(context).brandPrimaryGreen. withValues(alpha: 0.1),
+DEVE FICAR ASSIM: color: ThemeColors.of(context).successLight,
+LINHA 817-825:
+
+Dart
+ESTÁ ASSIM: borderSide: BorderSide(color:  ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2))
+DEVE FICAR ASSIM: borderSide: BorderSide(color: ThemeColors.of(context).borderSuccess)
+🔵 MÓDULO: STRATEGIES
+lib/features/strategies/presentation/screens/ai_suggestions_screen.dart
+LINHA 33:
+
+Dart
+ESTÁ ASSIM: 'cor':  ThemeColors.of(context).greenMain,
+DEVE FICAR ASSIM: 'cor': ThemeColors.of(context).success,
+LINHA 43:
+
+Dart
+ESTÁ ASSIM: 'cor': ThemeColors.of(context).error,
+DEVE FICAR ASSIM: 'cor': ThemeColors.of(context).errorMain,
+LINHA 53:
+
+Dart
+ESTÁ ASSIM: 'cor': ThemeColors.of(context).blueMain,
+DEVE FICAR ASSIM: 'cor':  ThemeColors.of(context).info,
+LINHA 63:
+
+Dart
+ESTÁ ASSIM: 'cor': ThemeColors.of(context).greenMain,
+DEVE FICAR ASSIM: 'cor': ThemeColors.of(context).success,
+lib/features/strategies/presentation/screens/strategy_report_screen.dart
+LINHA 48-50:
+
+Dart
+ESTÁ ASSIM: backgroundColor: ThemeColors.of(context).primary,
+foregroundColor: ThemeColors.of(context).surface,
+DEVE FICAR ASSIM: backgroundColor: ThemeColors. of(context).appBarBackground,
+foregroundColor: ThemeColors.of(context).appBarForeground,
+LINHA 58:
+
+Dart
+ESTÁ ASSIM: color: ThemeColors.of(context).backgroundLight,
+DEVE FICAR ASSIM: color: ThemeColors. of(context).surfaceSecondary,
+🟠 MÓDULO: DASHBOARD
+lib/features/dashboard/presentation/screens/dashboard_screen. dart
+LINHA 37:
+
+Dart
+ESTÁ ASSIM: import 'package:tagbean/design_system/theme/theme_colors.dart';
+DEVE FICAR ASSIM:  // REMOVER - import duplicado/obsoleto
+NOTA: Este arquivo importa tanto theme_colors.dart quanto theme_colors_dynamic.dart. Deve usar apenas theme_colors_dynamic.dart via barrel design_system. dart.
+
+🔴 ARQUIVOS OBSOLETOS A REMOVER
+Arquivo	Motivo
+lib/design_system/theme/brand_colors.dart	Duplicado com brand. dart
+lib/design_system/theme/colors. dart	Migrar tokens para theme_colors_dynamic.dart
+lib/design_system/theme/gradients.dart	Migrar para dynamic_gradients.dart
+lib/design_system/theme/module_gradients.dart	Unificar em dynamic_gradients.dart
+lib/core/theme/	Pasta inteira - unificar em design_system/theme/
+lib/modules/	Pasta inteira - unificar em lib/features/
+📋 PADRÕES GLOBAIS A CORRIGIR EM TODOS OS MÓDULOS
+Padrão Errado	Correção
+.withValues(alpha: X)	Usar token com opacidade pré-definida
+.withOpacity(X)	Usar token com opacidade pré-definida
+brandPrimaryGreen	Usar success ou primary conforme contexto
+greenMain / greenGradient	Usar success
+blueMain	Usar info
+backgroundLight	Usar surfaceSecondary
+Import duplo de theme_colors.dart + theme_colors_dynamic.dart	Usar apenas design_system.dart

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -26,10 +26,10 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       'variacao': 6.7,
       'tipo': 'aumento',
       'confianca': 92,
-      'motivo': 'Demanda alta e concorr�ncia com pre�os elevados',
+      'motivo': 'Demanda alta e concorr?ncia com pre?os elevados',
       'impacto_vendas': '+8%',
       'impacto_margem': '+12%',
-      'cor': ThemeColors.of(context).greenMain,
+      'cor': ThemeColors.of(context).success,
     },
     {
       'produto': 'Arroz Tipo 1 5kg',
@@ -38,22 +38,22 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       'variacao': -8.0,
       'tipo': 'reducao',
       'confianca': 88,
-      'motivo': 'Concorr�ncia 15% mais barata, estoque alto',
+      'motivo': 'Concorr?ncia 15% mais barata, estoque alto',
       'impacto_vendas': '+22%',
       'impacto_margem': '-5%',
-      'cor': ThemeColors.of(context).error,
+      'cor': ThemeColors.of(context).errorMain,
     },
     {
-      'produto': 'Detergente L�quido',
+      'produto': 'Detergente L?quido',
       'preco_atual': 2.49,
       'preco_sugerido': 2.49,
       'variacao': 0.0,
       'tipo': 'manutencao',
       'confianca': 95,
-      'motivo': 'Pre�o competitivo, margem ideal',
+      'motivo': 'Pre?o competitivo, margem ideal',
       'impacto_vendas': '0%',
       'impacto_margem': '0%',
-      'cor': ThemeColors.of(context).blueMain,
+      'cor': ThemeColors.of(context).info,
     },
     {
       'produto': 'Cerveja Heineken',
@@ -62,22 +62,22 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       'variacao': 14.3,
       'tipo': 'aumento',
       'confianca': 85,
-      'motivo': 'Evento esportivo pr�ximo, pico de demanda esperado',
+      'motivo': 'Evento esportivo pr?ximo, pico de demanda esperado',
       'impacto_vendas': '+5%',
       'impacto_margem': '+18%',
-      'cor': ThemeColors.of(context).greenMain,
+      'cor': ThemeColors.of(context).success,
     },
     {
-      'produto': 'Macarr�o 500g',
+      'produto': 'Macarr?o 500g',
       'preco_atual': 4.59,
       'preco_sugerido': 4.20,
       'variacao': -8.5,
       'tipo': 'reducao',
       'confianca': 78,
-      'motivo': 'Produto parado h� 15 dias, acelerar giro',
+      'motivo': 'Produto parado h? 15 dias, acelerar giro',
       'impacto_vendas': '+18%',
       'impacto_margem': '-8%',
-      'cor': ThemeColors.of(context).error,
+      'cor': ThemeColors.of(context).errorMain,
     },
   ];
 
@@ -98,7 +98,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Sugest�es da IA',
+          'Sugest?es da IA',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -219,7 +219,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          'Filtrar Sugest�es',
+          'Filtrar Sugest?es',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -251,7 +251,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
               },
             ),
             RadioListTile<String>(
-              title: const Text('Redu��es'),
+              title: const Text('Redu??es'),
               value: 'reducao',
               groupValue: _filtroTipo,
               onChanged: (value) {
@@ -340,7 +340,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'An�lise Inteligente',
+                      'An?lise Inteligente',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -498,7 +498,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         ),
                       ),
                       Text(
-                        'Redu��es',
+                        'Redu??es',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -551,7 +551,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                 desktop: 8,
               ),
             ),
-            _buildFilterChip('Redu��es', 'reducao', Icons.trending_down_rounded),
+            _buildFilterChip('Redu??es', 'reducao', Icons.trending_down_rounded),
             SizedBox(
               width: ResponsiveHelper.getResponsiveSpacing(
                 context,
@@ -765,7 +765,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                               ),
                             ),
                             Text(
-                              'Confian�a: ${sugestao['confianca']}%',
+                              'Confian?a: ${sugestao['confianca']}%',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -803,7 +803,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pre�o Atual',
+                              'Pre?o Atual',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -857,7 +857,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pre�o Sugerido',
+                              'Pre?o Sugerido',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -1297,7 +1297,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
             height: AppSizes.spacingMdAlt.get(isMobile, isTablet),
           ),
           Text(
-            'Nenhuma sugest�o nesta categoria',
+            'Nenhuma sugest?o nesta categoria',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -1351,7 +1351,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Sugest�es atualizadas pela IA',
+                'Sugest?es atualizadas pela IA',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1387,7 +1387,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         title: Text(
-          'Aplicar Sugest�o',
+          'Aplicar Sugest?o',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1399,7 +1399,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         content: Text(
-          'Alterar pre�o de "${sugestao['produto']}" para R\$ ${sugestao['preco_sugerido'].toStringAsFixed(2)}?',
+          'Alterar pre?o de "${sugestao['produto']}" para R\$ ${sugestao['preco_sugerido'].toStringAsFixed(2)}?',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1447,7 +1447,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         width: AppSizes.spacingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Pre�o aplicado com sucesso',
+                        'Pre?o aplicado com sucesso',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1515,7 +1515,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
               width: AppSizes.spacingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Sugest�o rejeitada',
+              'Sugest?o rejeitada',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1567,7 +1567,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         content: Text(
-          'Aplicar ${_sugestoes.length} sugest�es da IA automaticamente?',
+          'Aplicar ${_sugestoes.length} sugest?es da IA automaticamente?',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1616,7 +1616,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         width: AppSizes.spacingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        '$total sugest�es aplicadas',
+                        '$total sugest?es aplicadas',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1659,6 +1659,10 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
     );
   }
 }
+
+
+
+
 
 
 

@@ -222,16 +222,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     ? 'Preo atualizado para ${productIds.length} produtos'
                     : 'Erro ao atualizar preos',
                 ),
-                backgroundColor: success ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).error,
-              ),
-            );
-          }
-        },
-      ),
-    );
-  }
-
-  void _showBatchChangeCategoryDialog() {
+                backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
     final currentStore = ref.read(currentStoreProvider);
     final storeId = currentStore?.id;
     
@@ -265,16 +256,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     ? 'Categoria atualizada para ${productIds.length} produtos'
                     : 'Erro ao atualizar categoria',
                 ),
-                backgroundColor: success ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).error,
-              ),
-            );
-          }
-        },
-      ),
-    );
-  }
-
-  void _showBatchDeleteDialog() {
+                backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -310,13 +292,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                         ? '$deletedCount produtos excludos'
                         : 'Erro ao excluir produtos',
                     ),
-                    backgroundColor: deletedCount > 0 ? ThemeColors.of(context).brandPrimaryGreen : ThemeColors.of(context).error,
-                  ),
-                );
-              }
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).error,
+                    backgroundColor: deletedCount > 0 ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+              backgroundColor: ThemeColors.of(context).errorDark,
             ),
             child: const Text('Excluir'),
           ),
@@ -400,7 +377,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           children: [
             RefreshIndicator(
               onRefresh: _loadProdutos,
-              color: ThemeColors.of(context).greenGradient,
+              color: ThemeColors.of(context).success,
               child: CustomScrollView(
                 controller: _scrollController,
                 physics: const AlwaysScrollableScrollPhysics(),
@@ -476,7 +453,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               body: SafeArea(
                 child: RefreshIndicator(
                   onRefresh: _loadProdutos,
-                  color: ThemeColors.of(context).greenGradient,
+                  color: ThemeColors.of(context).success,
                   child: CustomScrollView(
                     controller: _scrollController,
                     physics: const AlwaysScrollableScrollPhysics(),
@@ -749,23 +726,10 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
       margin: EdgeInsets.symmetric(horizontal: AppSizes.paddingMd.get(isMobile, isTablet)),
       padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.05),
-            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.02),
-          ],
-        ),
+        gradient: ThemeColors.of(context).gradientFilterCard,
         borderRadius: AppRadius.card,
-        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.15), width: 1),
-        boxShadow: [
-          BoxShadow(
-            color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.08),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
+        border: Border.all(color: ThemeColors.of(context).borderSuccess, width: 1),
+        boxShadow: AppShadows.successCard,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -781,7 +745,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
             decoration: InputDecoration(
               hintText: 'Buscar por nome ou cdigo...',
               hintStyle: TextStyle(
-                color: ThemeColors.of(context).textTertiary.withValues(alpha: 0.6),
+                color: ThemeColors.of(context).textPlaceholder,
                 fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
               ),
               prefixIcon: Container(

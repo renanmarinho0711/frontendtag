@@ -44,8 +44,8 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     return Scaffold(
       appBar: AppBar(
         title: const Text('Relatório de Estratégias'),
-        backgroundColor: ThemeColors.of(context).primary,
-        foregroundColor: ThemeColors.of(context).surface,
+        backgroundColor: ThemeColors.of(context).appBarBackground,
+        foregroundColor: ThemeColors.of(context).appBarForeground,
         elevation: 0,
         actions: [
           IconButton(
@@ -60,7 +60,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).backgroundLight,
+          color: ThemeColors.of(context).surfaceSecondary,
         ),
         child: ListView(
           padding: const EdgeInsets.all(16),
