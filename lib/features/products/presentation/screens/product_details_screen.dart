@@ -55,7 +55,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
     final isTablet = MediaQuery.of(context).size.width >= 600 && MediaQuery.of(context).size.width < 900;
 
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).backgroundLight,
+      backgroundColor: ThemeColors.of(context).surfaceSecondary,
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           // Header com botes Voltar, Editar e Menu
@@ -365,8 +365,8 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                                   onPressed: () => _showUnbindTagDialog(),
                                   style: OutlinedButton.styleFrom(
                                     padding: EdgeInsets.symmetric(vertical: 4),
-                                    side: BorderSide(color: ThemeColors.of(context).orangeMain),
-                                    foregroundColor: ThemeColors.of(context).orangeMain,
+                                    side: BorderSide(color: ThemeColors.of(context).warning),
+                                    foregroundColor: ThemeColors.of(context).warning,
                                   ),
                                   child: Text(
                                     'Desvincular',
@@ -442,7 +442,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             child: _buildQuickActionCard(
               icon: Icons.bar_chart_rounded,
               label: 'Ver\nVendas',
-              color: ThemeColors.of(context).orangeMain,
+              color: ThemeColors.of(context).warning,
               onTap: () => _showVendasDialog(),
               isMobile: isMobile,
               isTablet: isTablet,
@@ -968,7 +968,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                 SnackBar(content: Text('Tag desvinculada com sucesso')),
               );
             },
-            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).orangeMain),
+            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).warning),
             child: Text('Desvincular'),
           ),
         ],

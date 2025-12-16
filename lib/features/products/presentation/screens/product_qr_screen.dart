@@ -327,7 +327,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                           color: ThemeColors.of(context).borderLight,
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Icon(Icons.image_not_supported_rounded, size: 48, color: ThemeColors.of(context).grey500),
+                        child: Icon(Icons.image_not_supported_rounded, size: 48, color: ThemeColors.of(context).textTertiary),
                       ),
                     ),
                   ),
@@ -344,9 +344,9 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               // Cdigo
               Row(
                 children: [
-                  Icon(Icons.qr_code_rounded, size: 16, color: ThemeColors.of(context).grey500),
+                  Icon(Icons.qr_code_rounded, size: 16, color: ThemeColors.of(context).textTertiary),
                   SizedBox(width: AppSpacing.xs),
-                  Text(globalProduct.gtin, style: TextStyle(color: ThemeColors.of(context).grey600)),
+                  Text(globalProduct.gtin, style: TextStyle(color: ThemeColors.of(context).textSecondary)),
                 ],
               ),
               
@@ -355,9 +355,9 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                 SizedBox(height: AppSpacing.xs),
                 Row(
                   children: [
-                    Icon(Icons.business_rounded, size: 16, color: ThemeColors.of(context).grey500),
+                    Icon(Icons.business_rounded, size: 16, color: ThemeColors.of(context).textTertiary),
                     SizedBox(width: AppSpacing.xs),
-                    Text(globalProduct.brand!, style: TextStyle(color: ThemeColors.of(context).grey600)),
+                    Text(globalProduct.brand!, style: TextStyle(color: ThemeColors.of(context).textSecondary)),
                   ],
                 ),
               ],
@@ -367,9 +367,9 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                 SizedBox(height: AppSpacing.xs),
                 Row(
                   children: [
-                    Icon(Icons.category_rounded, size: 16, color: ThemeColors.of(context).grey500),
+                    Icon(Icons.category_rounded, size: 16, color: ThemeColors.of(context).textTertiary),
                     SizedBox(width: AppSpacing.xs),
-                    Text(globalProduct.category!, style: TextStyle(color: ThemeColors.of(context).grey600)),
+                    Text(globalProduct.category!, style: TextStyle(color: ThemeColors.of(context).textSecondary)),
                   ],
                 ),
               ],
@@ -804,7 +804,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(16),
       ),
       child: TabBar(
@@ -880,7 +880,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     return Container(
       padding: EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).backgroundLight,
+        color: ThemeColors.of(context).surfaceSecondary,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

@@ -213,7 +213,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
         children: [
           Container(
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).grey700,
+              color: ThemeColors.of(context).surfaceDark,
               borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
             ),
             child: IconButton(
