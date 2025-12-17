@@ -93,17 +93,17 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
           for (final e in eventsList) {
             events.add(HolidayEventModel(
               id: e['id']?.toString() ?? '',
-              name: e['name'] ?? e['nome'] ?? '',
+              name: (((e['name'] ?? e['nome']) as String?) ?? ''),
               emoji: e['emoji']?.toString() ?? '??',
               dateLabel: e['dateLabel']?.toString() ?? e['data']?.toString() ?? '',
               icon: Icons.celebration,
               color: _parseColor(e['color'] ?? e['cor']),
-              isActive: e['isActive'] ?? e['ativo'] ?? false,
-              adjustment: (e['adjustment'] ?? e['ajuste'] ?? 0).toDouble(),
-              daysInAdvance: e['daysInAdvance'] ?? e['diasAntecedencia'] ?? 7,
-              categories: e['categories'] is List 
-                  ? List<String>.from(e['categories']) 
-                  : (e['categorias'] is List ? List<String>.from(e['categorias']) : []),
+              isActive: (((e['isActive'] ?? e['ativo'] ?? false) as bool?) ?? false),
+              adjustment: ((e['adjustment'] ?? e['ajuste'] ?? 0) as num?)?.toDouble() ?? 0.0,
+              daysInAdvance: (((e['daysInAdvance'] ?? e['diasAntecedencia'] ?? 7) as int?) ?? 7),
+              categories: (e['categories'] is List 
+                  ? List<String>.from(e['categories'] as Iterable) 
+                  : (e['categorias'] is List ? List<String>.from(e['categorias'] as Iterable) : <String>[])),
               description: e['description']?.toString() ?? e['descricao']?.toString() ?? '',
               nextDate: e['nextDate']?.toString() ?? e['proximaData']?.toString() ?? '',
             ));
@@ -113,8 +113,8 @@ class HolidayEventsNotifier extends StateNotifier<HolidayEventsState> {
         state = state.copyWith(
           isLoading: false,
           events: events,
-          isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
-          revertAfterEvent: data['revertAfterEvent'] ?? data['reverterAposEvento'] ?? state.revertAfterEvent,
+          isStrategyActive: (((data['isActive'] ?? data['ativo']) as bool?) ?? state.isStrategyActive),
+          revertAfterEvent: (((data['revertAfterEvent'] ?? data['reverterAposEvento']) as bool?) ?? state.revertAfterEvent),
         );
       } else {
         state = state.copyWith(isLoading: false, events: []);
@@ -342,19 +342,19 @@ class SportsEventsNotifier extends StateNotifier<SportsEventsState> {
           for (final e in eventsList) {
             events.add(SportsEventModel(
               id: e['id']?.toString() ?? '',
-              name: e['name'] ?? e['nome'] ?? '',
+              name: (((e['name'] ?? e['nome']) as String?) ?? ''),
               emoji: e['emoji']?.toString() ?? '?',
-              type: e['type'] ?? e['tipo'] ?? '',
-              isActive: e['isActive'] ?? e['ativo'] ?? false,
-              adjustment: (e['adjustment'] ?? e['ajuste'] ?? 0).toDouble(),
+              type: (((e['type'] ?? e['tipo']) as String?) ?? ''),
+              isActive: (((e['isActive'] ?? e['ativo'] ?? false) as bool?) ?? false),
+              adjustment: ((e['adjustment'] ?? e['ajuste'] ?? 0) as num?)?.toDouble() ?? 0.0,
               date: e['date']?.toString() ?? e['data']?.toString() ?? '',
-              categories: e['categories'] is List 
-                  ? List<String>.from(e['categories']) 
-                  : (e['categorias'] is List ? List<String>.from(e['categorias']) : []),
+              categories: (e['categories'] is List 
+                  ? List<String>.from(e['categories'] as Iterable) 
+                  : (e['categorias'] is List ? List<String>.from(e['categorias'] as Iterable) : <String>[])),
               icon: Icons.sports_soccer,
               color: AppThemeColors.success,
               description: e['description']?.toString() ?? e['descricao']?.toString() ?? '',
-              expectedAudience: e['expectedAudience'] ?? e['públicoEsperado'] ?? 0,
+              expectedAudience: (((e['expectedAudience'] ?? e['públicoEsperado'] ?? 0) as int?) ?? 0),
             ));
           }
         }
@@ -362,7 +362,7 @@ class SportsEventsNotifier extends StateNotifier<SportsEventsState> {
         state = state.copyWith(
           isLoading: false,
           events: events,
-          isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
+          isStrategyActive: (((data['isActive'] ?? data['ativo']) as bool?) ?? state.isStrategyActive),
         );
       } else {
         state = state.copyWith(isLoading: false, events: []);
@@ -415,12 +415,12 @@ class SportsTeamsNotifier extends StateNotifier<SportsTeamsState> {
           for (final t in teamsList) {
             teams.add(SportsTeamModel(
               id: t['id']?.toString() ?? '',
-              name: t['name'] ?? t['nome'] ?? '',
-              isActive: t['isActive'] ?? t['ativo'] ?? false,
-              adjustment: (t['adjustment'] ?? t['ajuste'] ?? 0).toDouble(),
-              products: t['products'] is List 
-                  ? List<String>.from(t['products']) 
-                  : (t['produtos'] is List ? List<String>.from(t['produtos']) : []),
+              name: (((t['name'] ?? t['nome']) as String?) ?? ''),
+              isActive: (((t['isActive'] ?? t['ativo'] ?? false) as bool?) ?? false),
+              adjustment: ((t['adjustment'] ?? t['ajuste'] ?? 0) as num?)?.toDouble() ?? 0.0,
+              products: (t['products'] is List 
+                  ? List<String>.from(t['products'] as Iterable) 
+                  : (t['produtos'] is List ? List<String>.from(t['produtos'] as Iterable) : <String>[])),
               icon: Icons.sports_soccer,
               color: AppThemeColors.success,
               badge: t['badge']?.toString() ?? t['escudo']?.toString() ?? '?',
