@@ -62,20 +62,20 @@ class BatchOperationModel {
 
   factory BatchOperationModel.fromJson(Map<String, dynamic> json) {
     return BatchOperationModel(
-      id: json['id'] ?? '',
+      id: (((json['id'] ?? '') as String?) ?? ''),
       type: OperationType.values.firstWhere(
-        (t) => t.id == json['type'],
+        (t) => t.id == (json['type'] as String?),
         orElse: () => OperationType.updatePrices,
       ),
-      title: json['titulo'] ?? json['title'] as String,
-      subtitle: json['subtitulo'] ?? json['subtitle'] as String,
-      description: json['descricao'] ?? json['description'] as String,
-      detailedDescription: json['descricaoDetalhada'] ?? json['detailedDescription'] as String,
+      title: (((json['titulo'] ?? json['title']) as String?) ?? ''),
+      subtitle: (((json['subtitulo'] ?? json['subtitle']) as String?) ?? ''),
+      description: (((json['descricao'] ?? json['description']) as String?) ?? ''),
+      detailedDescription: (((json['descricaoDetalhada'] ?? json['detailedDescription']) as String?) ?? ''),
       gradientColors: (json['gradiente'] as List?)?.cast<Color>() ?? [],
-      hasTemplate: json['template'] ?? true,
+      hasTemplate: (((json['template'] ?? true) as bool?) ?? true),
       requiredColumns: (json['colunas'] as List?)?.cast<String>() ?? [],
-      example: json['exemplo'] ?? json['example'] as String,
-      templateUrl: json['templateUrl'],
+      example: (((json['exemplo'] ?? json['example']) as String?) ?? ''),
+      templateUrl: (json['templateUrl'] as String?),
     );
   }
 
@@ -117,12 +117,12 @@ class BulkOperationResultModel {
 
   factory BulkOperationResultModel.fromJson(Map<String, dynamic> json) {
     return BulkOperationResultModel(
-      success: json['success'] ?? false,
-      operation: json['operation'] ?? '',
-      totalRequested: json['totalRequested'] ?? 0,
-      totalProcessed: json['totalProcessed'] ?? 0,
-      succeeded: json['succeeded'] ?? 0,
-      failed: json['failed'] ?? 0,
+      success: (((json['success'] ?? false) as bool?) ?? false),
+      operation: (((json['operation'] ?? '') as String?) ?? ''),
+      totalRequested: (((json['totalRequested'] ?? 0) as int?) ?? 0),
+      totalProcessed: (((json['totalProcessed'] ?? 0) as int?) ?? 0),
+      succeeded: (((json['succeeded'] ?? 0) as int?) ?? 0),
+      failed: (((json['failed'] ?? 0) as int?) ?? 0),
       failedIds: (json['failedIds'] as List?)?.map((id) => id.toString()).toList() ?? [],
       errors: (json['errors'] as List?)?.map((e) => e.toString()).toList() ?? [],
     );
