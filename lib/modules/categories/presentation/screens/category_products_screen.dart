@@ -328,24 +328,24 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
-              stat['icon'],
-              color: stat['cor'],
+              (stat['icon'] as IconData?) ?? Icons.info,
+              color: (stat['cor'] as Color?) ?? const Color(0xFF2196F3),
               size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
             Text(
-              stat['valor'],
+              (stat['valor'] as String?) ?? '',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
-                color: stat['cor'],
+                color: (stat['cor'] as Color?) ?? const Color(0xFF2196F3),
                 letterSpacing: -0.5,
               ),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
             Text(
-              stat['label'],
+              (stat['label'] as String?) ?? '',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9, tabletFontSize: 9.5),
                 overflow: TextOverflow.ellipsis,
@@ -360,28 +360,28 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color).withValues(alpha: 0.1),
+                color: ((stat['cor'] as Color?) ?? const Color(0xFF2196F3)).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (stat['tipo'] == 'aumento')
+                  if ((stat['tipo'] as String?) == 'aumento')
                     Icon(
                       Icons.arrow_upward_rounded,
                       size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 9, tablet: 9.5, desktop: 10),
-                      color: stat['cor'],
+                      color: (stat['cor'] as Color?) ?? const Color(0xFF2196F3),
                     ),
-                  if (stat['tipo'] == 'aumento')
+                  if ((stat['tipo'] as String?) == 'aumento')
                     SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 2.5, tablet: 2.75, desktop: 3)),
                   Flexible(
                     child: Text(
-                      stat['mudanca'],
+                      (stat['mudanca'] as String?) ?? '',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 9, mobileFontSize: 8, tabletFontSize: 8.5),
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
-                        color: stat['cor'],
+                        color: (stat['cor'] as Color?) ?? const Color(0xFF2196F3),
                       ),
                     ),
                   ),
@@ -447,7 +447,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                   child: Container(
                     decoration: BoxDecoration(
                       gradient: isSelected
-                          ? LinearGradient(colors: categoria['gradiente'])
+                          ? LinearGradient(colors: (categoria['gradiente'] as List<Color>?) ?? [const Color(0xFF2196F3)])
                           : null,
                       color: isSelected ?  null : ThemeColors.of(context).surface,
                       borderRadius: BorderRadius.circular(AppSizes.paddingXl.get(isMobile, isTablet)),
@@ -458,7 +458,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       boxShadow: [
                         BoxShadow(
                           color: isSelected
-                              ? (categoria['cor'] as Color).withValues(alpha: 0.3)
+                              ? (((categoria['cor'] as Color?) ?? const Color(0xFF2196F3))).withValues(alpha: 0.3)
                               : ThemeColors.of(context).textPrimaryOverlay05,
                           blurRadius: isSelected ? 15 : 8,
                           offset: Offset(0, isSelected ? 8 : 4),
@@ -469,13 +469,13 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          categoria['icone'],
-                          color: isSelected ? ThemeColors.of(context).surface : categoria['cor'],
+                          (categoria['icone'] as IconData?) ?? Icons.info,
+                          color: isSelected ? ThemeColors.of(context).surface : (categoria['cor'] as Color?) ?? const Color(0xFF2196F3),
                           size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          categoria['nome'],
+                          (categoria['nome'] as String?) ?? '',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -495,11 +495,11 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? ThemeColors.of(context).surfaceOverlay20
-                                : categoria['cor'].withValues(alpha: 0.1),
+                                : (((categoria['cor'] as Color?) ?? const Color(0xFF2196F3))).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
-                            '${categoria['produtos']}',
+                            '${(categoria['produtos'] as int?) ?? 0}',
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -507,7 +507,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                 mobileFontSize: 10,
                               ),
                               fontWeight: FontWeight.bold,
-                              color: isSelected ? ThemeColors.of(context).surface : categoria['cor'],
+                              color: isSelected ? ThemeColors.of(context).surface : ((categoria['cor'] as Color?) ?? const Color(0xFF2196F3)),
                             ),
                           ),
                         ),
@@ -922,7 +922,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              produto['nome'],
+                              (produto['nome'] as String?) ?? '',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -936,7 +936,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                             ),
                             SizedBox(height: AppSizes.spacingXxsAlt.get(isMobile, isTablet)),
                             Text(
-                              produto['código'],
+                              (produto['código'] as String?) ?? '',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -954,7 +954,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                               children: [
                                 Flexible(
                                   child: Text(
-                                    'R\$ ${produto['preco'].toStringAsFixed(2)}',
+                                    'R\$ ${(((produto['preco'] ?? 0) as num?)?.toStringAsFixed(2)) ?? "0.00"}',
                                     style: TextStyle(
                                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                                         context,
@@ -962,7 +962,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                         mobileFontSize: 14,
                                       ),
                                       fontWeight: FontWeight.bold,
-                                      color: categoria['cor'],
+                                      color: (categoria['cor'] as Color?) ?? const Color(0xFF2196F3),
                                     ),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
@@ -978,7 +978,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: Text(
-                                    '${produto['estoque']}',
+                                    '${(((produto['estoque'] ?? 0) as int?) ?? 0)}',
                                     style: TextStyle(
                                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                                         context,
@@ -1006,7 +1006,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       width: 28,
                       height: 28,
                       decoration: BoxDecoration(
-                        color: isSelected ? categoria['cor'] : ThemeColors.of(context).surface,
+                        color: isSelected ? ((categoria['cor'] as Color?) ?? const Color(0xFF2196F3)) : ThemeColors.of(context).surface,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isSelected ? categoria['cor'] : ThemeColors.of(context).textSecondary,
