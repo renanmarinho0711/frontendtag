@@ -25,10 +25,10 @@ class FileValidationResult {
 
   factory FileValidationResult.fromJson(Map<String, dynamic> json) {
     return FileValidationResult(
-      isValid: json['isValid'] ?? false,
-      fileName: json['fileName'],
-      rowCount: json['rowCount'],
-      columnCount: json['columnCount'],
+      isValid: (((json['isValid'] ?? false) as bool?) ?? false),
+      fileName: (json['fileName'] as String?),
+      rowCount: (json['rowCount'] as int?),
+      columnCount: (json['columnCount'] as int?),
       detectedColumns: (json['detectedColumns'] as List?)
           ?.map((c) => c.toString())
           .toList() ?? [],
@@ -70,9 +70,9 @@ class FileValidationError {
 
   factory FileValidationError.fromJson(Map<String, dynamic> json) {
     return FileValidationError(
-      lineNumber: json['lineNumber'],
-      message: json['message'] ?? '',
-      field: json['field'],
+      lineNumber: (json['lineNumber'] as int?),
+      message: (((json['message'] ?? '') as String?) ?? ''),
+      field: (json['field'] as String?),
     );
   }
 
@@ -97,9 +97,9 @@ class FileValidationWarning {
 
   factory FileValidationWarning.fromJson(Map<String, dynamic> json) {
     return FileValidationWarning(
-      lineNumber: json['lineNumber'],
-      message: json['message'] ?? '',
-      suggestion: json['suggestion'],
+      lineNumber: (json['lineNumber'] as int?),
+      message: (((json['message'] ?? '') as String?) ?? ''),
+      suggestion: (json['suggestion'] as String?),
     );
   }
 

@@ -20,13 +20,13 @@ class JobStatusModel {
 
   factory JobStatusModel.fromJson(Map<String, dynamic> json) {
     return JobStatusModel(
-      id: json['id'] ?? '',
-      status: json['status'] ?? '',
-      progress: (json['progress'] ?? 0).toDouble(),
-      currentStep: json['currentStep'],
-      totalSteps: json['totalSteps'],
-      result: json['result'] as Map<String, dynamic>?,
-      error: json['error'],
+      id: (((json['id'] ?? '') as String?) ?? ''),
+      status: (((json['status'] ?? '') as String?) ?? ''),
+      progress: ((json['progress'] ?? 0) as num?)?.toDouble() ?? 0.0,
+      currentStep: (json['currentStep'] as String?),
+      totalSteps: (json['totalSteps'] as int?),
+      result: (json['result'] as Map<String, dynamic>?),
+      error: (json['error'] as String?),
     );
   }
 
@@ -73,20 +73,20 @@ class ScheduledOperation {
 
   factory ScheduledOperation.fromJson(Map<String, dynamic> json) {
     return ScheduledOperation(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      operationType: json['operationType'] ?? '',
-      dataType: json['dataType'] ?? '',
-      format: json['format'] ?? '',
-      cronExpression: json['cronExpression'] ?? '',
-      isActive: json['isActive'] ?? false,
-      lastRun: json['lastRun'] != null 
-          ? DateTime.tryParse(json['lastRun']) 
+      id: (((json['id'] ?? '') as String?) ?? ''),
+      name: (((json['name'] ?? '') as String?) ?? ''),
+      operationType: (((json['operationType'] ?? '') as String?) ?? ''),
+      dataType: (((json['dataType'] ?? '') as String?) ?? ''),
+      format: (((json['format'] ?? '') as String?) ?? ''),
+      cronExpression: (((json['cronExpression'] ?? '') as String?) ?? ''),
+      isActive: (((json['isActive'] ?? false) as bool?) ?? false),
+      lastRun: (json['lastRun'] as String?) != null
+          ? DateTime.tryParse(json['lastRun'] as String)
           : null,
-      nextRun: json['nextRun'] != null 
-          ? DateTime.tryParse(json['nextRun']) 
+      nextRun: (json['nextRun'] as String?) != null
+          ? DateTime.tryParse(json['nextRun'] as String)
           : null,
-      templateId: json['templateId'],
+      templateId: (json['templateId'] as String?),
     );
   }
 
