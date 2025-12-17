@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
 class ProductsSyncFooter extends StatelessWidget {
@@ -41,8 +40,8 @@ class ProductsSyncFooter extends StatelessWidget {
             padding: const EdgeInsets.all(AppSpacing.xs),
             decoration: BoxDecoration(
               color: isOnline
-                  ? ThemeColors.of(context).brandPrimaryGreenLight
-                  : ThemeColors.of(context).textTertiaryLight,
+                  ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
+                  : ThemeColors.of(context).textTertiary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -109,15 +108,14 @@ class ProductsSyncFooter extends StatelessWidget {
     if (difference.inMinutes < 1) {
       return 'Sincronizado agora';
     } else if (difference.inMinutes < 60) {
-      return 'Última sincroniza��o: h� ${difference.inMinutes} min';
+      return 'Última sincronização: hã ${difference.inMinutes} min';
     } else if (difference.inHours < 24) {
-      return 'Última sincroniza��o: h� ${difference.inHours}h�';
+      return 'Última sincronização: hã ${difference.inHours}hã';
     } else {
-      return 'Última sincroniza��o: ${lastSync!.day}/${lastSync!.month} às ${lastSync!.hour}:${lastSync!.minute.toString().padLeft(2, '0')}';
+      return 'Última sincronização: ${lastSync!.day}/${lastSync!.month} às ${lastSync!.hour}:${lastSync!.minute.toString().padLeft(2, '0')}';
     }
   }
 }
-
 
 
 

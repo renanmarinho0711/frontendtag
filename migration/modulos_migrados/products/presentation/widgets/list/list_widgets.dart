@@ -1,4 +1,4 @@
-// Barrel file para widgets da lista de produtos
+/// Barrel file para widgets da lista de produtos
 library list_widgets;
 
 export 'product_card.dart';

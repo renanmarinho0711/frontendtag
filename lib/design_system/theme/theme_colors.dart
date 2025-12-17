@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 /// ==============================================================================
-/// TEMA: FOREST GREEN - Verde Floresta
+/// TEMA: SKY BLUE - Azul Céu
 /// ==============================================================================
 ///
 /// Conceito Visual:
-/// Fundo branco, cards verde floresta sólido, natureza e crescimento
+/// Fundo branco, cards azul céu sólido, leveza e clareza
 /// Tema claro, moderno e estimulante para uso diurno, focado em produtividade e clareza.
 /// Cores vibrantes e frescas que transmitem energia, foco e progresso contínuo.
 /// Evita tons pesados ou monótonos, priorizando contraste e legibilidade.
@@ -150,6 +150,17 @@ class AppThemeColors {
   static const Color overlayDark = Color(0x80000000);
 
   // ===========================================================================
+  // 4.1. OVERLAYS BRANCOS PARA FUNDOS COLORIDOS (LOGIN, HEADERS GRADIENTES)
+  // ===========================================================================
+
+  // OVERLAY BRANCO PARA BADGE "PREÇO INTELIGENTE" NA TELA DE LOGIN
+  static const Color loginBadgeBackground = Color(0x33FFFFFF); // Branco 20%
+  // OVERLAY BRANCO PARA BORDA DO BADGE NA TELA DE LOGIN
+  static const Color loginBadgeBorder = Color(0x4DFFFFFF); // Branco 30%
+  // OVERLAY BRANCO PARA INDICADOR "SISTEMA ONLINE" NA TELA DE LOGIN
+  static const Color loginStatusBackground = Color(0x26FFFFFF); // Branco 15%
+
+  // ===========================================================================
   // 5. STATUS E FEEDBACK SEMÂNTICO - CORES VIBRANTES E CLARAS
   // ===========================================================================
 
@@ -162,13 +173,13 @@ class AppThemeColors {
   static const Color errorMain = Color(0xFFEF4444);
   static const Color urgent = Color(0xFFDC2626);
 
-  // --- INFORMAÇÃO ---
+  // --- INFORMAÇÀO ---
   static const Color infoBackground = Color(0xFFF0FDFA);
   static const Color infoLight = Color(0xFF5EEAD4);
   static const Color infoBorder = Color(0xFF99F6E4);
   static const Color infoText = Color(0xFF0F766E);
-  static const Color infoIcon = Color(0xFF15803D);
-  static const Color infoDark = Color(0xFF22C55E);
+  static const Color infoIcon = Color(0xFF06B6D4);
+  static const Color infoDark = Color(0xFF0EA5E9);
 
   // --- SUCESSO ---
   static const Color successBackground = Color(0xFFECFDF5);
@@ -177,7 +188,7 @@ class AppThemeColors {
   static const Color successBorder = Color(0xFFA7F3D0);
   static const Color success = Color(0xFF10B981);
   static const Color successGlow = Color(0x4D10B981);
-  static const Color successText = Color(0xFF16A34A);
+  static const Color successText = Color(0xFF0284C7);
   static const Color successIcon = Color(0xFF10B981);
   static const Color successDark2 = Color(0xFF047857);
 
@@ -189,50 +200,50 @@ class AppThemeColors {
   static const Color warningIcon = Color(0xFFF59E0B);
 
   // ===========================================================================
-  // 6. DASHBOARD E NAVEGAÇÃO - CORES DINÂMICAS E LEVES
+  // 6. DASHBOARD E NAVEGAÇÀO - CORES DINÂMICAS E LEVES
   // ===========================================================================
 
-  /// Cor primária para dashboard: Teal Fresh, estimulando foco e clareza.
-  static const Color primaryDashboard = Color(0xFF22C55E);
-  static const Color primaryDashboardDark = Color(0xFF16A34A);
+  /// Cor primária para dashboard: Purple, estimulando foco e clareza.
+  static const Color primaryDashboard = Color(0xFF6366F1);
+  static const Color primaryDashboardDark = Color(0xFF4F46E5);
 
   // AppBar
   static const Color dashboardAppBarBackground = Color(0xFFFFFFFF);
-  static const Color dashboardAppBarShadow = Color(0x1A0D9488);
+  static const Color dashboardAppBarShadow = Color(0x1A6366F1);
 
   // Menu Lateral (Drawer)
   static const Color dashboardDrawerBackground1 = Color(0xFFFFFFFF);
   static const Color dashboardDrawerBackground2 = Color(0xFFF9FAFB);
 
   // Elementos do Drawer
-  static const Color dashboardDrawerHeaderIcon = Color(0xFF22C55E);
+  static const Color dashboardDrawerHeaderIcon = Color(0xFF6366F1);
   static const Color dashboardDrawerHeaderIconBg = Color(0xFFF1F5F9);
   static const Color dashboardDrawerHeaderText = Color(0xFF111827);
   static const Color dashboardDrawerHeaderTextSecondary = Color(0xFF64748B);
   static const Color dashboardDrawerItemSelected = Color(0xFFF1F5F9);
   static const Color dashboardDrawerItemUnselected = transparent;
-  static const Color dashboardDrawerItemTextSelected = Color(0xFF22C55E);
+  static const Color dashboardDrawerItemTextSelected = Color(0xFF6366F1);
   static const Color dashboardDrawerItemTextUnselected = Color(0xFF64748B);
 
   // Bottom Navigation
   static const Color dashboardBottomNavBackground = Color(0xFFFFFFFF);
-  static const Color dashboardBottomNavShadow = Color(0x1A0D9488);
-  static const Color dashboardBottomNavIconSelected = Color(0xFF22C55E);
+  static const Color dashboardBottomNavShadow = Color(0x1A6366F1);
+  static const Color dashboardBottomNavIconSelected = Color(0xFF6366F1);
   static const Color dashboardBottomNavIconUnselected = Color(0xFF94A3B8);
-  static const Color dashboardBottomNavTextSelected = Color(0xFF22C55E);
+  static const Color dashboardBottomNavTextSelected = Color(0xFF6366F1);
   static const Color dashboardBottomNavTextUnselected = Color(0xFF94A3B8);
 
   // Navigation Rail
   static const Color dashboardRailBackground = Color(0xFFFFFFFF);
-  static const Color dashboardRailShadow = Color(0x1A0D9488);
+  static const Color dashboardRailShadow = Color(0x1A6366F1);
   static const Color dashboardRailToggleBackground = Color(0xFFF9FAFB);
   static const Color dashboardRailToggleIcon = Color(0xFF64748B);
   static const Color dashboardRailItemIconSelected = Color(0xFFFFFFFF);
   static const Color dashboardRailItemIconUnselected = Color(0xFF64748B);
-  static const Color dashboardRailItemTextSelected = Color(0xFF22C55E);
+  static const Color dashboardRailItemTextSelected = Color(0xFF6366F1);
   static const Color dashboardRailItemTextUnselected = Color(0xFF64748B);
 
-  static const Color dashboardLogoIconColor = Color(0xFF22C55E);
+  static const Color dashboardLogoIconColor = Color(0xFF6366F1);
 
   // Barra de Busca
   static const Color dashboardSearchBackground = Color(0xFFF9FAFB);
@@ -242,7 +253,7 @@ class AppThemeColors {
   // Notificações e Badges
   static const Color dashboardNotificationBackground = Color(0xFFF1F5F9);
   static const Color dashboardNotificationBadge = Color(0xFFEF4444);
-  static const Color dashboardNotificationIcon = Color(0xFF22C55E);
+  static const Color dashboardNotificationIcon = Color(0xFF6366F1);
 
   // Status de Conexão
   static const Color dashboardConnectionBackground = Color(0xFFF1F5F9);
@@ -254,7 +265,7 @@ class AppThemeColors {
   // User Menu
   static const Color dashboardUserMenuBackground1 = Color(0xFFFFFFFF);
   static const Color dashboardUserMenuBackground2 = Color(0xFFF9FAFB);
-  static const Color dashboardUserMenuAvatarBg = Color(0xFF22C55E);
+  static const Color dashboardUserMenuAvatarBg = Color(0xFF6366F1);
   static const Color dashboardUserMenuAvatarText = Color(0xFFFFFFFF);
   static const Color dashboardUserMenuText = Color(0xFF111827);
   static const Color dashboardUserMenuTextSecondary = Color(0xFF64748B);
@@ -266,7 +277,7 @@ class AppThemeColors {
   static const Color dashboardWelcomeText = Color(0xFF111827);
   static const Color dashboardWelcomeTextSecondary = Color(0xFF64748B);
   static const Color dashboardWelcomeTextTertiary = Color(0xFF94A3B8);
-  static const Color dashboardWelcomeIcon = Color(0xFF22C55E);
+  static const Color dashboardWelcomeIcon = Color(0xFF6366F1);
 
   // ===========================================================================
   // 7. CARDS E MÉTRICAS (KPIs) - DINÂMICOS E LEVES
@@ -281,7 +292,7 @@ class AppThemeColors {
   static const Color dashboardMetricsCardShadowOrange = Color(0x1AF59E0B);
 
   // Cores de Identidade das Métricas - vibrantes e claras
-  static const Color dashboardMetricsBlue = Color(0xFF15803D);
+  static const Color dashboardMetricsBlue = Color(0xFF06B6D4);
   static const Color dashboardMetricsPurple = Color(0xFF8B5CF6);
   static const Color dashboardMetricsRed = Color(0xFFEF4444);
   static const Color dashboardMetricsGreen = Color(0xFF10B981);
@@ -319,19 +330,19 @@ class AppThemeColors {
   // 8. CORES DE MÓDULOS - "PALETA MODERNA E DINÂMICA"
   // ===========================================================================
 
-  static const Color moduleDashboard = Color(0xFF22C55E);       // Teal Fresh
-  static const Color moduleDashboardDark = Color(0xFF16A34A);
+  static const Color moduleDashboard = Color(0xFF6366F1);       // Purple
+  static const Color moduleDashboardDark = Color(0xFF4F46E5);
 
-  static const Color moduleProdutos = Color(0xFF15803D);        // Fresh Cyan
-  static const Color moduleProdutosDark = Color(0xFF0D6F8B);
+  static const Color moduleProdutos = Color(0xFF8B5CF6);        // Purple Light
+  static const Color moduleProdutosDark = Color(0xFF7C3AED);
 
   static const Color moduleEtiquetas = Color(0xFF10B981);       // Emerald Green
   static const Color moduleEtiquetasDark = Color(0xFF0B7A57);
 
-  static const Color moduleEstrategias = Color(0xFF84CC16);     // Lime Green
-  static const Color moduleEstrategiasDark = Color(0xFF65A30D);
+  static const Color moduleEstrategias = Color(0xFF3B82F6);     // Blue
+  static const Color moduleEstrategiasDark = Color(0xFF2563EB);
 
-  static const Color moduleSincronizacao = Color(0xFF15803D);   // Fresh Cyan
+  static const Color moduleSincronizacao = Color(0xFF06B6D4);   // Cyan
   static const Color moduleSincronizacaoDark = Color(0xFF0891B2);
 
   static const Color modulePrecificacao = Color(0xFFF59E0B);    // Amber
@@ -340,8 +351,8 @@ class AppThemeColors {
   static const Color moduleCategorias = Color(0xFF10B981);      // Emerald Green
   static const Color moduleCategoriasDark = Color(0xFF0B7A57);
 
-  static const Color moduleImportacao = Color(0xFF22C55E);      // Teal Fresh
-  static const Color moduleImportacaoDark = Color(0xFF16A34A);
+  static const Color moduleImportacao = Color(0xFF6366F1);      // Purple
+  static const Color moduleImportacaoDark = Color(0xFF4F46E5);
 
   static const Color moduleRelatorios = Color(0xFF059669);      // Emerald Dark
   static const Color moduleRelatoriosDark = Color(0xFF047857);
@@ -353,20 +364,20 @@ class AppThemeColors {
   // 9. GRADIENTES - DINÂMICOS E MODERNOS
   // ===========================================================================
 
-  static const List<Color> produtosGradient = [Color(0xFF15803D), Color(0xFF0D6F8B)];
+  static const List<Color> produtosGradient = [Color(0xFF8B5CF6), Color(0xFF7C3AED)];
   static const List<Color> etiquetasGradient = [Color(0xFF10B981), Color(0xFF0B7A57)];
-  static const List<Color> estrategiasGradient = [Color(0xFF84CC16), Color(0xFF65A30D)];
-  static const List<Color> sincronizacaoGradient = [Color(0xFF15803D), Color(0xFF0891B2)];
+  static const List<Color> estrategiasGradient = [Color(0xFF3B82F6), Color(0xFF2563EB)];
+  static const List<Color> sincronizacaoGradient = [Color(0xFF06B6D4), Color(0xFF0891B2)];
   static const List<Color> precificacaoGradient = [Color(0xFFF59E0B), Color(0xFFD97706)];
   static const List<Color> categoriasGradient = [Color(0xFF10B981), Color(0xFF0B7A57)];
-  static const List<Color> importacaoGradient = [Color(0xFF22C55E), Color(0xFF16A34A)];
+  static const List<Color> importacaoGradient = [Color(0xFF6366F1), Color(0xFF4F46E5)];
   static const List<Color> relatoriosGradient = [Color(0xFF059669), Color(0xFF047857)];
   static const List<Color> configuracoesGradient = [Color(0xFF64748B), Color(0xFF475569)];
 
   static const List<Color> successGradient = [Color(0xFF10B981), Color(0xFF059669)];
   static const List<Color> warningGradient = [Color(0xFFF59E0B), Color(0xFFD97706)];
   static const List<Color> errorGradient = [Color(0xFFEF4444), Color(0xFFDC2626)];
-  static const List<Color> infoGradient = [Color(0xFF15803D), Color(0xFF22C55E)];
+  static const List<Color> infoGradient = [Color(0xFF6366F1), Color(0xFF8B5CF6)];
 
   // ===========================================================================
   // 10. ELEMENTOS DE UI GERAIS - "INTERATIVIDADE E FEEDBACK"
@@ -384,18 +395,18 @@ class AppThemeColors {
   // Menu de Usuário
   static const Color userMenuBackgroundStart = Color(0xFFFFFFFF);
   static const Color userMenuBackgroundEnd = Color(0xFFF9FAFB);
-  static const Color userMenuAvatarBackground = Color(0xFF22C55E);
+  static const Color userMenuAvatarBackground = Color(0xFF6366F1);
   static const Color userMenuAvatarText = Color(0xFFFFFFFF);
   static const Color userMenuHighlight = Color(0xFFF1F5F9);
   static const Color menuItemHover = Color(0xFFF9FAFB);
-  static const Color avatarBackground = Color(0xFF22C55E);
+  static const Color avatarBackground = Color(0xFF6366F1);
   static const Color avatarText = Color(0xFFFFFFFF);
   static const Color destructive = Color(0xFFEF4444);
 
   // Ícones
   static const Color iconDefault = Color(0xFF64748B);
   static const Color iconLight = Color(0xFF94A3B8);
-  static const Color iconOnSurface = Color(0xFF059669);
+  static const Color iconOnSurface = Color(0xFF6366F1);
   static const Color errorIcon = Color(0xFFEF4444);
 
   // ===========================================================================
@@ -405,7 +416,7 @@ class AppThemeColors {
   static const Color connectionOnline = Color(0xFF10B981);
   static const Color connectionOffline = Color(0xFFEF4444);
   static const Color connectionPending = Color(0xFFF59E0B);
-  static const Color connectionSyncing = Color(0xFF15803D);
+  static const Color connectionSyncing = Color(0xFF06B6D4);
 
   static const Color batteryHigh = Color(0xFF10B981);
   static const Color batteryMedium = Color(0xFFF59E0B);
@@ -415,7 +426,7 @@ class AppThemeColors {
   static const Color erpConnected = Color(0xFF10B981);
   static const Color erpDisconnected = Color(0xFFEF4444);
   static const Color erpError = Color(0xFFDC2626);
-  static const Color erpSyncing = Color(0xFF15803D);
+  static const Color erpSyncing = Color(0xFF06B6D4);
 
   static const Color tagOnline = Color(0xFF10B981);
   static const Color tagOffline = Color(0xFFEF4444);
@@ -431,7 +442,7 @@ class AppThemeColors {
   // 11. CORES DE CATEGORIAS - "VARIEDADE MODERNA"
   // ===========================================================================
 
-  static const Color categoryBebidas = Color(0xFF15803D);
+  static const Color categoryBebidas = Color(0xFF06B6D4);
   static const Color categoryBebidasDark = Color(0xFF0D6F8B);
 
   static const Color categoryMercearia = Color(0xFFF59E0B);
@@ -440,17 +451,17 @@ class AppThemeColors {
   static const Color categoryPereciveis = Color(0xFF10B981);
   static const Color categoryPereciveisDark = Color(0xFF0B7A57);
 
-  static const Color categoryLimpeza = Color(0xFF15803D);
+  static const Color categoryLimpeza = Color(0xFF06B6D4);
   static const Color categoryLimpezaDark = Color(0xFF0891B2);
 
   static const Color categoryHigiene = Color(0xFFEC4899);
   static const Color categoryHigieneDark = Color(0xFFDB2777);
 
-  static const Color categoryHortifruti = Color(0xFF84CC16);
+  static const Color categoryHortifruti = Color(0xFF3B82F6);
   static const Color categoryHortifrutiDark = Color(0xFF65A30D);
 
-  static const Color categoryFrios = Color(0xFF22C55E);
-  static const Color categoryFriosDark = Color(0xFF16A34A);
+  static const Color categoryFrios = Color(0xFF0EA5E9);
+  static const Color categoryFriosDark = Color(0xFF0284C7);
 
   static const Color categoryPadaria = Color(0xFFF97316);
   static const Color categoryPadariaDark = Color(0xFFEA580C);
@@ -462,12 +473,12 @@ class AppThemeColors {
   // 12. INTEGRAÇÕES (ERP BRANDING) - CORES MODERNAS
   // ===========================================================================
 
-  static const Color erpSAP = Color(0xFF15803D);
-  static const Color erpTOTVS = Color(0xFF15803D);
+  static const Color erpSAP = Color(0xFF06B6D4);
+  static const Color erpTOTVS = Color(0xFF06B6D4);
   static const Color erpOracle = Color(0xFFEF4444);
   static const Color erpSenior = Color(0xFF10B981);
-  static const Color erpSankhya = Color(0xFF84CC16);
-  static const Color erpOmie = Color(0xFF22C55E);
+  static const Color erpSankhya = Color(0xFF3B82F6);
+  static const Color erpOmie = Color(0xFF0EA5E9);
   static const Color erpBling = Color(0xFF64748B);
 
   // ===========================================================================
@@ -476,22 +487,9 @@ class AppThemeColors {
 
   static const Color roleSuperAdmin = Color(0xFFEF4444);
   static const Color roleAdmin = Color(0xFF10B981);
-  static const Color roleManager = Color(0xFF15803D);
+  static const Color roleManager = Color(0xFF06B6D4);
   static const Color roleOperator = Color(0xFFF59E0B);
   static const Color roleViewer = Color(0xFF64748B);
-  static const Color rolePlus = Color(0xFF6366F1);
-
-  // Sync Status
-  static const Color syncPending = Color(0xFFF59E0B);
-  static const Color syncSuccess = Color(0xFF10B981);
-  static const Color syncError = Color(0xFFEF4444);
-  static const Color syncWarning = Color(0xFFF59E0B);
-
-  // Clearance Status
-  static const Color clearancePending = Color(0xFFF59E0B);
-  static const Color clearanceApproved = Color(0xFF10B981);
-  static const Color clearanceRejected = Color(0xFFEF4444);
-  static const Color clearanceExpired = Color(0xFF6B7280);
 
   static const Color statusActive = Color(0xFF10B981);
   static const Color statusInactive = Color(0xFF94A3B8);
@@ -529,24 +527,24 @@ class AppThemeColors {
   static const Color error = Color(0xFFEF4444);
   static const Color warning = Color(0xFFF59E0B);
   static const Color warningDark = Color(0xFFD97706);
-  static const Color info = Color(0xFF15803D);
-  static const Color primary = Color(0xFF22C55E);
+  static const Color info = Color(0xFF6366F1);
+  static const Color primary = Color(0xFF6366F1);
   static const Color primaryMain = primary;
-  static const Color secondary = Color(0xFF15803D);
+  static const Color secondary = Color(0xFF8B5CF6);
 
   // Material Colors - DINÂMICOS E CLAROS
-  static const Color materialBlue = Color(0xFF15803D);
+  static const Color materialBlue = Color(0xFF3B82F6);
   static const Color materialPurple = Color(0xFF8B5CF6);
   static const Color materialRed = Color(0xFFEF4444);
   static const Color materialGreen = Color(0xFF10B981);
   static const Color materialOrange = Color(0xFFF59E0B);
-  static const Color materialTeal = Color(0xFF22C55E);
+  static const Color materialTeal = Color(0xFF6366F1);
 
   // Shades Auxiliares
   static const Color blue50 = Color(0xFFF0FDFF);
   static const Color blue100 = Color(0xFFE0F7FF);
   static const Color blue200 = Color(0xFF99F6E4);
-  static const Color blue = Color(0xFF15803D);
+  static const Color blue = Color(0xFF06B6D4);
 
   static const Color red50 = Color(0xFFFEF2F2);
   static const Color red100 = Color(0xFFFEE2E2);
@@ -575,28 +573,36 @@ class AppThemeColors {
   static const Color black26 = Color(0x421E293B);
   static const Color black12 = Color(0x1F1E293B);
 
-  // Brand Colors - Teal Fresh e Acentos
-  static const Color brandPrimaryTeal = Color(0xFF22C55E);
-  static const Color brandPrimaryTealDark = Color(0xFF16A34A);
-  static const Color brandPrimaryTealLight = Color(0xFF4ADE80);
-  static const Color brandAccentLime = Color(0xFF84CC16);
+  // ===========================================================================
+  // 14. CORES DA MARCA (BRAND) - ROXO/LAVANDA
+  // ===========================================================================
+
+  // COR PRIMÁRIA DA MARCA - Usada em botões principais, links, ícones de destaque
+  static const Color brandPrimaryTeal = Color(0xFF6366F1);
+  // COR PRIMÁRIA ESCURA - Usada em hover de botões, estados pressed
+  static const Color brandPrimaryTealDark = Color(0xFF4F46E5);
+  // COR PRIMÁRIA CLARA - Usada em backgrounds sutis, badges
+  static const Color brandPrimaryTealLight = Color(0xFF818CF8);
+  // COR DE ACENTO - Usada em destaques especiais, notificações
+  static const Color brandAccentLime = Color(0xFF8B5CF6);
 
   // Aliases de compatibilidade (para código legado que usa brandPrimaryGreen)
   static const Color brandPrimaryGreen = brandPrimaryTeal;
   static const Color brandPrimaryGreenDark = brandPrimaryTealDark;
   static const Color brandPrimaryGreenLight = brandPrimaryTealLight;
 
-  // Gradiente Principal: Teal Fresh vibrante
+  // GRADIENTE PRINCIPAL - Usado em headers, banners principais
   static const LinearGradient brandPrimaryGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xFF22C55E), Color(0xFF16A34A)],
+    colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
   );
 
+  // GRADIENTE DO FUNDO DA TELA DE LOGIN - Lavanda (topo) para Indigo (base)
   static const LinearGradient brandLoginGradient = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [Color(0xFF22C55E), Color(0xFF1E3A3A)],
+    colors: [Color(0xFFA78BFA), Color(0xFF6366F1)],
   );
 
   // ===========================================================================
@@ -604,32 +610,32 @@ class AppThemeColors {
   // ===========================================================================
 
   // Cards de Categoria
-  static const Color categoryVisualizar = Color(0xFF15803D);
+  static const Color categoryVisualizar = Color(0xFF06B6D4);
   static const Color categoryVisualizarDark = Color(0xFF0D6F8B);
 
   static const Color categoryNova = Color(0xFF10B981);
   static const Color categoryNovaDark = Color(0xFF0B7A57);
 
-  static const Color categoryProdutos = Color(0xFF22C55E);
-  static const Color categoryProdutosDark = Color(0xFF16A34A);
+  static const Color categoryProdutos = Color(0xFF0EA5E9);
+  static const Color categoryProdutosDark = Color(0xFF0284C7);
 
   static const Color categoryAdmin = Color(0xFF059669);
   static const Color categoryAdminDark = Color(0xFF047857);
 
-  static const Color categoryStats = Color(0xFF84CC16);
+  static const Color categoryStats = Color(0xFF3B82F6);
   static const Color categoryStatsDark = Color(0xFF65A30D);
 
-  static const Color categoryImportExport = Color(0xFF22C55E);
-  static const Color categoryImportExportDark = Color(0xFF16A34A);
+  static const Color categoryImportExport = Color(0xFF0EA5E9);
+  static const Color categoryImportExportDark = Color(0xFF0284C7);
 
   // Importação e Exportação - CORES DINÂMICAS
-  static const Color importProdutos = Color(0xFF15803D);
+  static const Color importProdutos = Color(0xFF06B6D4);
   static const Color importProdutosDark = Color(0xFF0D6F8B);
 
   static const Color importTags = Color(0xFF10B981);
   static const Color importTagsDark = Color(0xFF0B7A57);
 
-  static const Color exportProdutos = Color(0xFF84CC16);
+  static const Color exportProdutos = Color(0xFF3B82F6);
   static const Color exportProdutosDark = Color(0xFF65A30D);
 
   static const Color exportTags = Color(0xFF22C55E);
@@ -638,7 +644,7 @@ class AppThemeColors {
   static const Color batchOperations = Color(0xFFF59E0B);
   static const Color batchOperationsDark = Color(0xFFD97706);
 
-  static const Color importHistorico = Color(0xFF15803D);
+  static const Color importHistorico = Color(0xFF06B6D4);
   static const Color importHistoricoDark = Color(0xFF0891B2);
 
   // Stats Cards - Fundos claros e frescos
@@ -651,15 +657,15 @@ class AppThemeColors {
   static const Color statVendasBorder = Color(0xFFBBF7D0);
 
   static const Color statInsightsBackground = Color(0xFFF7FEE7);
-  static const Color statInsightsIcon = Color(0xFF84CC16);
+  static const Color statInsightsIcon = Color(0xFF3B82F6);
   static const Color statInsightsBorder = Color(0xFFD9F99D);
 
   static const Color statLogsBackground = Color(0xFFF0FDFA);
-  static const Color statLogsIcon = Color(0xFF15803D);
+  static const Color statLogsIcon = Color(0xFF06B6D4);
   static const Color statLogsBorder = Color(0xFF99F6E4);
 
   // Cards de Ações Rápidas - CORES VIBRANTES
-  static const Color quickActionTemplateBackground = Color(0xFF15803D);
+  static const Color quickActionTemplateBackground = Color(0xFF06B6D4);
   static const Color quickActionTemplateIcon = Color(0xFFFFFFFF);
   static const Color quickActionTemplateBorder = Color(0xFF0D6F8B);
 
@@ -667,13 +673,13 @@ class AppThemeColors {
   static const Color quickActionUploadIcon = Color(0xFFFFFFFF);
   static const Color quickActionUploadBorder = Color(0xFF0B7A57);
 
-  static const Color quickActionHistoricoBackground = Color(0xFF15803D);
+  static const Color quickActionHistoricoBackground = Color(0xFF06B6D4);
   static const Color quickActionHistoricoIcon = Color(0xFFFFFFFF);
   static const Color quickActionHistoricoBorder = Color(0xFF0891B2);
 
   // Cards de Ações - Estratégias
   static const Color strategyCardSugestoesBackground = Color(0xFFF7FEE7);
-  static const Color strategyCardSugestoesIcon = Color(0xFF84CC16);
+  static const Color strategyCardSugestoesIcon = Color(0xFF3B82F6);
   static const Color strategyCardSugestoesBorder = Color(0xFFD9F99D);
 
   static const Color strategyCardSecondaryBackground = Color(0xFFF1F5F9);
@@ -703,8 +709,8 @@ class AppThemeColors {
   // AÇÕES RÁPIDAS - BOTÕES VIBRANTES E FUNCIONAIS
   // ===========================================================================
 
-  static const Color quickActionExportarTudo = Color(0xFF15803D);
-  static const Color quickActionAgendar = Color(0xFF84CC16);
+  static const Color quickActionExportarTudo = Color(0xFF06B6D4);
+  static const Color quickActionAgendar = Color(0xFF3B82F6);
   static const Color quickActionEmail = Color(0xFF10B981);
 
   // ===========================================================================
@@ -714,7 +720,7 @@ class AppThemeColors {
   static const Color adminPanelBackground1 = Color(0xFFFFFFFF);
   static const Color adminPanelBackground2 = Color(0xFFF9FAFB);
 
-  static const Color adminPanelButtonLojas = Color(0xFF15803D);
+  static const Color adminPanelButtonLojas = Color(0xFF06B6D4);
   static const Color adminPanelButtonUsuarios = Color(0xFF10B981);
   static const Color adminPanelButtonConfig = Color(0xFF64748B);
 
@@ -726,26 +732,26 @@ class AppThemeColors {
   static const Color onboardingBackground2 = Color(0xFFE2E8F0);
   static const Color onboardingBorder = Color(0xFFCBD5E1);
 
-  static const Color onboardingIcon = Color(0xFF22C55E);
-  static const Color onboardingProgress = Color(0xFF16A34A);
+  static const Color onboardingIcon = Color(0xFF0EA5E9);
+  static const Color onboardingProgress = Color(0xFF0284C7);
 
-  static const Color onboardingStepCompleted = Color(0xFF22C55E);
-  static const Color onboardingStepPending = Color(0xFF15803D);
+  static const Color onboardingStepCompleted = Color(0xFF0EA5E9);
+  static const Color onboardingStepPending = Color(0xFF06B6D4);
   static const Color onboardingStepPendingBg = Color(0xFFF0FDFF);
 
   // ===========================================================================
-  // PRÓXIMO PASSO - INDICAÇÃO CLARA
+  // PRÓXIMO PASSO - INDICAÇÀO CLARA
   // ===========================================================================
 
   static const Color nextStepBackground1 = Color(0xFFF1F5F9);
   static const Color nextStepBackground2 = Color(0xFFE2E8F0);
   static const Color nextStepBorder = Color(0xFFCBD5E1);
-  static const Color nextStepIcon = Color(0xFF22C55E);
+  static const Color nextStepIcon = Color(0xFF0EA5E9);
   static const Color nextStepTitle = Color(0xFF111827);
 
   // Stats Importação - CORES FUNCIONAIS
   static const Color statProdutosBackground = Color(0xFFF0FDFF);
-  static const Color statProdutosIcon = Color(0xFF15803D);
+  static const Color statProdutosIcon = Color(0xFF06B6D4);
   static const Color statProdutosBorder = Color(0xFF99F6E4);
 
   static const Color statTagsESLBackground = Color(0xFFF1F5F9);
@@ -753,7 +759,7 @@ class AppThemeColors {
   static const Color statTagsESLBorder = Color(0xFFA7F3D0);
 
   static const Color statSyncBackground = Color(0xFFF0FDFF);
-  static const Color statSyncIcon = Color(0xFF15803D);
+  static const Color statSyncIcon = Color(0xFF06B6D4);
   static const Color statSyncBorder = Color(0xFF99F6E4);
 
   static const Color statPendentesBackground = Color(0xFFFFFBEB);
@@ -761,33 +767,33 @@ class AppThemeColors {
   static const Color statPendentesBorder = Color(0xFFFDE68A);
 
   // Relatórios - CORES DINÂMICAS
-  static const Color reportOperacional = Color(0xFF22C55E);
-  static const Color reportOperacionalDark = Color(0xFF16A34A);
+  static const Color reportOperacional = Color(0xFF0EA5E9);
+  static const Color reportOperacionalDark = Color(0xFF0284C7);
 
   static const Color reportVendas = Color(0xFF10B981);
   static const Color reportVendasDark = Color(0xFF0B7A57);
 
-  static const Color reportPerformance = Color(0xFF84CC16);
+  static const Color reportPerformance = Color(0xFF3B82F6);
   static const Color reportPerformanceDark = Color(0xFF65A30D);
 
-  static const Color reportauditoria = Color(0xFF15803D);
-  static const Color reportauditoriaDark = Color(0xFF0D6F8B);
+  static const Color reportAuditoria = Color(0xFF06B6D4);
+  static const Color reportAuditoriaDark = Color(0xFF0D6F8B);
 
   // ===========================================================================
-  // 16. PRECIFICAÇÃO E SINCRONIZAÇÃO - CORES FUNCIONAIS
+  // 16. PRECIFICAÇÀO E SINCRONIZAÇÀO - CORES FUNCIONAIS
   // ===========================================================================
 
-  static const Color pricingPercentage = Color(0xFF15803D);
+  static const Color pricingPercentage = Color(0xFF06B6D4);
   static const Color pricingPercentageDark = Color(0xFF0D6F8B);
   static const Color pricingFixedValue = Color(0xFF10B981);
   static const Color pricingFixedValueDark = Color(0xFF0B7A57);
-  static const Color pricingIndividual = Color(0xFF84CC16);
+  static const Color pricingIndividual = Color(0xFF3B82F6);
   static const Color pricingIndividualDark = Color(0xFF65A30D);
-  static const Color pricingMarginReview = Color(0xFF15803D);
+  static const Color pricingMarginReview = Color(0xFF06B6D4);
   static const Color pricingMarginReviewDark = Color(0xFF0891B2);
-  static const Color pricingDynamic = Color(0xFF22C55E);
-  static const Color pricingDynamicDark = Color(0xFF16A34A);
-  static const Color pricingHistory = Color(0xFF15803D);
+  static const Color pricingDynamic = Color(0xFF0EA5E9);
+  static const Color pricingDynamicDark = Color(0xFF0284C7);
+  static const Color pricingHistory = Color(0xFF06B6D4);
   static const Color pricingHistoryDark = Color(0xFF0D6F8B);
 
   static const Color syncComplete = Color(0xFF10B981);
@@ -796,8 +802,8 @@ class AppThemeColors {
   static const Color syncPricesOnlyDark = Color(0xFF34D399);
   static const Color syncNewProducts = Color(0xFF22C55E);
   static const Color syncNewProductsDark = Color(0xFF16A34A);
-  static const Color syncSettings = Color(0xFF22C55E);
-  static const Color syncSettingsDark = Color(0xFF16A34A);
+  static const Color syncSettings = Color(0xFF0EA5E9);
+  static const Color syncSettingsDark = Color(0xFF0284C7);
 
   // ===========================================================================
   // 17. ALERTA E HELPERS DE STATUS - CORES CLARAS E VIBRANTES
@@ -814,7 +820,7 @@ class AppThemeColors {
 
   static const Color tipCardBg = Color(0xFFF1F5F9);
   static const Color tipCardBorder = Color(0xFFA7F3D0);
-  static const Color tipCardText = Color(0xFF16A34A);
+  static const Color tipCardText = Color(0xFF0284C7);
 
   static const Color warningCardBg = Color(0xFFFFFBEB);
   static const Color warningCardBorder = Color(0xFFFDE68A);
@@ -822,7 +828,7 @@ class AppThemeColors {
 
   static const Color successCardBg = Color(0xFFECFDF5);
   static const Color successCardBorder = Color(0xFFA7F3D0);
-  static const Color successCardText = Color(0xFF16A34A);
+  static const Color successCardText = Color(0xFF0284C7);
 
   static const Color errorCardBg = Color(0xFFFEF2F2);
   static const Color errorCardBorder = Color(0xFFFECACA);
@@ -855,8 +861,8 @@ class AppThemeColors {
   static const Color darkInput = Color(0xFFF9FAFB);
   static const Color darkDropdown = Color(0xFFFFFFFF);
 
-  static const Color primaryDark = Color(0xFF16A34A);
-  static const Color primaryLight = Color(0xFF4ADE80);
+  static const Color primaryDark = Color(0xFF0284C7);
+  static const Color primaryLight = Color(0xFF38BDF8);
 
   // ===========================================================================
   // 19. PALETA EXPANDIDA - CORES MODERNAS E FUNCIONAIS
@@ -870,14 +876,14 @@ class AppThemeColors {
   static const Color statusBlueGreyLight = Color(0xFF94A3B8);
   static const Color statusBlueGreyBg = Color(0xFFF9FAFB);
 
-  static const Color gradientDarkTeal = Color(0xFF22C55E);
-  static const Color gradientDarkTealLight = Color(0xFF4ADE80);
+  static const Color gradientDarkTeal = Color(0xFF0EA5E9);
+  static const Color gradientDarkTealLight = Color(0xFF38BDF8);
 
   // Aliases de compatibilidade (para código legado que usa gradientDarkNavy)
   static const Color gradientDarkNavy = gradientDarkTeal;
   static const Color gradientDarkNavyLight = gradientDarkTealLight;
 
-  static const Color gradientSugestoesStart = Color(0xFF84CC16);
+  static const Color gradientSugestoesStart = Color(0xFF3B82F6);
   static const Color gradientSugestoesEnd = Color(0xFF10B981);
 
   static const Color gradientDarkStart = Color(0xFF10B981);
@@ -902,24 +908,24 @@ class AppThemeColors {
   static const Color purpleVibrant = Color(0xFFA855F7);
 
   static const Color greenMain = Color(0xFF10B981);
-  static const Color greenTeal = Color(0xFF15803D);
+  static const Color greenTeal = Color(0xFF06B6D4);
   static const Color greenGradient = Color(0xFF059669);
-  static const Color greenGradientEnd = Color(0xFF4ADE80);
+  static const Color greenGradientEnd = Color(0xFF38BDF8);
   static const Color greenMaterial = Color(0xFF10B981);
   static const Color successMaterial = Color(0xFF10B981);
   static const Color greenDark = Color(0xFF059669);
   static const Color greenLightMaterial = Color(0xFF6EE7B7);
 
-  static const Color blueMain = Color(0xFF15803D);
-  static const Color blueCyan = Color(0xFF15803D);
-  static const Color blueMaterial = Color(0xFF15803D);
+  static const Color blueMain = Color(0xFF06B6D4);
+  static const Color blueCyan = Color(0xFF06B6D4);
+  static const Color blueMaterial = Color(0xFF06B6D4);
   static const Color blueLight = Color(0xFF5EEAD4);
   static const Color blueDark = Color(0xFF0D6F8B);
-  static const Color blueIndigo = Color(0xFF16A34A);
+  static const Color blueIndigo = Color(0xFF0284C7);
 
-  static const Color cyanMain = Color(0xFF15803D);
+  static const Color cyanMain = Color(0xFF06B6D4);
   static const Color cyanDark = Color(0xFF0891B2);
-  static const Color tealMain = Color(0xFF15803D);
+  static const Color tealMain = Color(0xFF06B6D4);
   static const Color cyanGradientStart = Color(0xFF22D3EE);
   static const Color cyanGradientEnd = Color(0xFF0891B2);
 
@@ -977,7 +983,7 @@ class AppThemeColors {
   static const Color infoModuleBackgroundAlt = Color(0xFFE0F7FF);
   static const Color infoModuleBorder = Color(0xFF99F6E4);
   static const Color infoModuleText = Color(0xFF0F766E);
-  static const Color infoModuleIcon = Color(0xFF15803D);
+  static const Color infoModuleIcon = Color(0xFF06B6D4);
 
   static const Color suggestionCardStart = Color(0xFF10B981);
   static const Color suggestionCardEnd = Color(0xFF059669);

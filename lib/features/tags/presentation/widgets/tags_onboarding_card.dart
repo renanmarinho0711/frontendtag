@@ -4,17 +4,17 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Estados poss?veis do onboarding - compat?vel com tags_dashboard_screen.dart
+/// Estados possãveis do onboarding - compatível com tags_dashboard_screen.dart
 enum TagOnboardingState {
-  none,             // Tudo OK - n?o mostrar
+  none,             // Tudo OK - não mostrar
   noTags,           // Sem tags cadastradas
-  manyUnbound,      // >30% sem v?nculo
+  manyUnbound,      // >30% sem vãnculo
   manyOffline,      // >10% offline
-  lowBattery,       // Muitas com bateria baixa (extens?o do dashboard)
+  lowBattery,       // Muitas com bateria baixa (extensão do dashboard)
 }
 
-/// Card de onboarding contextual para o m?dulo Tags
-/// Exibe mensagens e a??es baseadas no estado atual das tags
+/// Card de onboarding contextual para o módulo Tags
+/// Exibe mensagens e ações baseadas no estado atual das tags
 class TagsOnboardingCard extends ConsumerWidget {
   final TagOnboardingState state;
   final VoidCallback? onPrimaryAction;
@@ -50,7 +50,7 @@ class TagsOnboardingCard extends ConsumerWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: config.gradientColors.firstLight,
+            color: config.gradientColors.first.withValues(alpha: 0.3),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -127,7 +127,7 @@ class TagsOnboardingCard extends ConsumerWidget {
                   ),
                   child: Text(
                     config.primaryActionLabel,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -164,7 +164,7 @@ class TagsOnboardingCard extends ConsumerWidget {
         return _OnboardingConfig(
           icon: Icons.label_off_rounded,
           title: 'Nenhuma etiqueta cadastrada',
-          subtitle: 'Importe suas primeiras etiquetas ESL para come?ar',
+          subtitle: 'Importe suas primeiras etiquetas ESL para começar',
           primaryActionLabel: 'Importar Tags',
           secondaryActionLabel: 'Adicionar Manual',
           gradientColors: [ThemeColors.of(context).blueCyan, ThemeColors.of(context).primary],
@@ -172,18 +172,18 @@ class TagsOnboardingCard extends ConsumerWidget {
       case TagOnboardingState.manyOffline:
         return _OnboardingConfig(
           icon: Icons.signal_wifi_off_rounded,
-          title: 'Tags sem comunica??o',
-          subtitle: 'Algumas etiquetas est?o offline h? mais de 2 horas',
+          title: 'Tags sem Comunicação',
+          subtitle: 'Algumas etiquetas estão offline hã mais de 2 horas',
           primaryActionLabel: 'Ver Offline',
-          secondaryActionLabel: 'Diagn?stico',
+          secondaryActionLabel: 'diagnóstico',
           gradientColors: [ThemeColors.of(context).error, ThemeColors.of(context).yellowGold],
         );
       case TagOnboardingState.lowBattery:
         return _OnboardingConfig(
           icon: Icons.battery_alert_rounded,
           title: 'Tags com bateria baixa',
-          subtitle: 'Algumas etiquetas precisam de aten??o',
-          primaryActionLabel: 'Ver Cr?ticas',
+          subtitle: 'Algumas etiquetas precisam de atenção',
+          primaryActionLabel: 'Ver Críticas',
           secondaryActionLabel: 'Ignorar',
           gradientColors: [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning],
         );
@@ -191,7 +191,7 @@ class TagsOnboardingCard extends ConsumerWidget {
         return _OnboardingConfig(
           icon: Icons.link_off_rounded,
           title: 'Tags sem produto vinculado',
-          subtitle: 'Vincule suas tags aos produtos para exibir pre?os',
+          subtitle: 'Vincule suas tags aos produtos para exibir preços',
           primaryActionLabel: 'Vincular Tags',
           secondaryActionLabel: 'Ver Lista',
           gradientColors: [ThemeColors.of(context).primary, ThemeColors.of(context).tealMain],
@@ -225,8 +225,6 @@ class _OnboardingConfig {
     required this.gradientColors,
   });
 }
-
-
 
 
 

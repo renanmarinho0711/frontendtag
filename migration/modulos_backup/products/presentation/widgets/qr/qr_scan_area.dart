@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
 /// Widget de área de escaneamento QR/NFC

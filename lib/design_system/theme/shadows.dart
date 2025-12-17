@@ -1,11 +1,10 @@
-mport 'package:flutter/material.dart';
-import 'theme_colors.dart';
-import 'theme_colors_dynamic.dart';
+import 'package:flutter/material.dart';
+import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-/// Sombras padronizadas da aplica��o
+/// Sombras padronizadas da aplicação
 /// 
 /// Centraliza todos os BoxShadow utilizados no app.
-/// Reduz repeti��o de c�digo e garante consist�ncia visual.
+/// Reduz repetição de código e garante consistência visual.
 /// 
 /// Uso:
 /// ```dart
@@ -41,7 +40,7 @@ class AppShadows {
     ),
   ];
 
-  // Sombras para bot�es
+  // Sombras para botões
   static List<BoxShadow> button = [
     BoxShadow(
       color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.3),
@@ -76,7 +75,7 @@ class AppShadows {
     ),
   ];
 
-  // Sem sombra (�til para estados hover/focus)
+  // Sem sombra (útil para estados hover/focus)
   static List<BoxShadow> none = [];
 
   // Sombra superior (para bottom navigation, etc)
@@ -106,7 +105,7 @@ class AppShadows {
     ),
   ];
 
-  // Sombra de sugest�o (glow verde da marca)
+  // Sombra de sugestão (glow verde da marca)
   static List<BoxShadow> suggestionGlow = [
     BoxShadow(
       color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.3),
@@ -117,7 +116,7 @@ class AppShadows {
 
   // ========== GRADIENT GLOWS ==========
 
-  /// Sombra com glow de gradiente prim�rio (roxo)
+  /// Sombra com glow de gradiente primário (roxo)
   static List<BoxShadow> primaryHeaderGlowMobile = [
     BoxShadow(
       color: AppThemeColors.moduleDashboard.withValues(alpha: 0.3),
@@ -134,7 +133,7 @@ class AppShadows {
     ),
   ];
 
-  /// Sombra com glow de estrat�gias (laranja)
+  /// Sombra com glow de estratégias (laranja)
   static List<BoxShadow> estrategiasGlowMobile = [
     BoxShadow(
       color: AppThemeColors.moduleEstrategiasDark.withValues(alpha: 0.08),
@@ -151,7 +150,7 @@ class AppShadows {
     ),
   ];
 
-  /// Sombra com glow de sugest�es IA (laranja/rosa)
+  /// Sombra com glow de sugestões IA (laranja/rosa)
   static List<BoxShadow> sugestoesGlowMobile = [
     BoxShadow(
       color: AppThemeColors.gradientSugestoesStart.withValues(alpha: 0.3),

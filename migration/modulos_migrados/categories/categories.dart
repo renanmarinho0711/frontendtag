@@ -1,4 +1,4 @@
-// TagBean Categories Feature
+/// TagBean Categories Feature
 /// 
 /// Feature de gerenciamento de categorias.
 /// 

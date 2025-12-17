@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/pricing/data/models/pricing_models.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
@@ -208,7 +207,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sugest?es da IA',
+                  'Sugestões da IA',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -222,7 +221,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                   ),
                 ),
                 Text(
-                  'Intelig?ncia artificial',
+                  'Inteligãncia artificial',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -285,7 +284,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueCyanLight,
+            color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 12,
@@ -340,7 +339,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'An?lise Inteligente',
+                      'Anãlise Inteligente',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -399,7 +398,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                 child: _buildResumoItem(
                   Icons.trending_down_rounded,
                   '$reducoes',
-                  'Redu??es',
+                  'Reduções',
                 ),
               ),
             ],
@@ -510,7 +509,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                 desktop: 8,
               ),
             ),
-            _buildFilterChip('Redu??es', 'reducao', Icons.trending_down_rounded),
+            _buildFilterChip('Reduções', 'reducao', Icons.trending_down_rounded),
             SizedBox(
               width: ResponsiveHelper.getResponsiveSpacing(
                 context,
@@ -547,7 +546,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
         ),
         decoration: BoxDecoration(
           color: isSelected
-              ? ThemeColors.of(context).blueCyanLight
+              ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.15)
               : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(
             isMobile ? 18 : 20,
@@ -627,12 +626,12 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: corLight,
+            color: cor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: corLight,
+              color: cor.withValues(alpha: 0.1),
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -696,7 +695,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
         AppSizes.paddingMdAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: corLight,
+        color: cor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(
             isMobile ? 12 : 14,
@@ -780,7 +779,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                       ),
                     ),
                     Text(
-                      'Confian?a: ${sugestao.confianca}%',
+                      'Confiança: ${sugestao.confianca}%',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -816,7 +815,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Pre?o Atual',
+                'PREÇO Atual',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -870,7 +869,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Pre?o Sugerido',
+                'PREÇO Sugerido',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -930,7 +929,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
         ),
       ),
       decoration: BoxDecoration(
-        color: corLight,
+        color: cor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(
           isMobile ? 7 : 8,
         ),
@@ -996,7 +995,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                 tablet: 17.5,
                 desktop: 18,
               ),
-              color: ThemeColors.of(context).orangeAmberDark,
+              color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
             ),
             SizedBox(
               width: ResponsiveHelper.getResponsiveSpacing(
@@ -1270,7 +1269,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
             height: AppSizes.spacingMdAlt.get(isMobile, isTablet),
           ),
           Text(
-            'Nenhuma sugest?o nesta categoria',
+            'Nenhuma suGestão nesta categoria',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -1296,7 +1295,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
     ref.read(aiSuggestionsProvider.notifier).regenerarSugestoes().then((_) {
       if (mounted) {
         _showSnackBar(
-          'Sugest?es atualizadas pela IA',
+          'Sugestões atualizadas pela IA',
           Icons.auto_awesome_rounded,
           ThemeColors.of(context).blueCyan,
         );
@@ -1316,7 +1315,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
           ),
         ),
         title: Text(
-          'Aplicar Sugest?o',
+          'Aplicar SuGestão',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1328,7 +1327,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
           ),
         ),
         content: Text(
-          'Alterar pre?o de "${sugestao.produtoNome}" para R\$ ${sugestao.precoSugerido.toStringAsFixed(2)}?',
+          'Alterar preço de "${sugestao.produtoNome}" para R\$ ${sugestao.precoSugerido.toStringAsFixed(2)}?',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1361,7 +1360,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                   .aplicarSugestao(sugestao.id);
               Navigator.pop(context);
               _showSnackBar(
-                'Pre?o aplicado com sucesso',
+                'PREÇO aplicado com sucesso',
                 Icons.check_circle_rounded,
                 ThemeColors.of(context).success,
               );
@@ -1394,7 +1393,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
   void _rejeitarSugestao(AiSuggestionModel sugestao) {
     ref.read(aiSuggestionsProvider.notifier).rejeitarSugestao(sugestao.id);
     _showSnackBar(
-      'Sugest?o rejeitada',
+      'SuGestão rejeitada',
       Icons.info_rounded,
       ThemeColors.of(context).textSecondary,
     );
@@ -1430,7 +1429,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
           ),
         ),
         content: Text(
-          'Aplicar $total sugest?es da IA automaticamente?',
+          'Aplicar $total sugestões da IA automaticamente?',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1461,7 +1460,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
               ref.read(aiSuggestionsProvider.notifier).aplicarTodasSugestoes();
               Navigator.pop(context);
               _showSnackBar(
-                '$total sugest?es aplicadas',
+                '$total sugestões aplicadas',
                 Icons.check_circle_rounded,
                 ThemeColors.of(context).success,
               );
@@ -1533,8 +1532,6 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
     );
   }
 }
-
-
 
 
 

@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class QuickActionsCard extends StatelessWidget {
   final VoidCallback onAdicionarProduto;
   final VoidCallback onAdicionarTag;
   final VoidCallback onSincronizar;
-  final VoidCallback onrelatÃ³rios;
+  final VoidCallback onRelatorios;
   
   const QuickActionsCard({
     super.key,
     required this.onAdicionarProduto,
     required this.onAdicionarTag,
     required this.onSincronizar,
-    required this.onrelatÃ³rios,
+    required this.onRelatorios,
   });
   
   @override
@@ -111,7 +110,7 @@ class QuickActionsCard extends StatelessWidget {
                   label: 'Relatórios',
                   subtitle: 'Visualizar análises e métricas',
                   gradient: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).yellowGold],
-                  onTap: onrelatÃ³rios,
+                  onTap: onRelatorios,
                 ),
               ],
             ),
@@ -188,7 +187,7 @@ class QuickActionsCard extends StatelessWidget {
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     subtitle,
                     style: TextStyle(

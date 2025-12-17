@@ -4,7 +4,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
+
 /// Widget de Scanner de Código de Barras usando a câmera do dispositivo
 /// 
 /// Usa a biblioteca mobile_scanner para leitura de:
@@ -37,7 +37,7 @@ class BarcodeScannerWidget extends StatefulWidget {
   final String subtitle;
   
   /// Cor primária do overlay
-  final Color primaryColor;
+  final Color? primaryColor;
   
   /// Se deve fechar automaticamente após detectar código
   final bool autoClose;
@@ -51,7 +51,7 @@ class BarcodeScannerWidget extends StatefulWidget {
     this.onClose,
     this.title = 'Escanear Código',
     this.subtitle = 'Posicione o código de barras dentro da área',
-    this.primaryColor = ThemeColors.of(context).brandPrimaryGreen,
+    this.primaryColor,
     this.autoClose = true,
     this.hapticFeedback = true,
   });
@@ -313,25 +313,25 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
         Positioned(
           top: 0,
           left: 0,
-          child: _buildCorner(color, topLeft: true),
+          child: _buildCorner(backgroundColor, topLeft: true),
         ),
         // Top-right
         Positioned(
           top: 0,
           right: 0,
-          child: _buildCorner(color, topRight: true),
+          child: _buildCorner(backgroundColor, topRight: true),
         ),
         // Bottom-left
         Positioned(
           bottom: 0,
           left: 0,
-          child: _buildCorner(color, bottomLeft: true),
+          child: _buildCorner(backgroundColor, bottomLeft: true),
         ),
         // Bottom-right
         Positioned(
           bottom: 0,
           right: 0,
-          child: _buildCorner(color, bottomRight: true),
+          child: _buildCorner(backgroundColor, bottomRight: true),
         ),
       ],
     );
@@ -364,7 +364,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
         padding: const EdgeInsets.all(AppSpacing.lg),
         decoration: BoxDecoration(
           color: ThemeColors.of(context).success,
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
           // boxShadow removido pois AppShadows não é const
         ),
         child: Row(
@@ -375,8 +375,8 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
               color: ThemeColors.of(context).surface,
               size: 24,
             ),
-            SizedBox(width: AppSpacing.sm),
-            Text(
+            const SizedBox(width: AppSpacing.sm),
+            const Text(
               'Código lido com sucesso!',
               style: AppTextStyles.buttonPrimary,
             ),
@@ -392,7 +392,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
     
     switch (error.errorCode) {
       case MobileScannerErrorCode.permissionDenied:
-        message = 'PermissÃ£o de câmera negada.\nAcesse as configurações para permitir.';
+        message = 'Permissão de câmera negada.\nAcesse as configurações para permitir.';
         icon = Icons.no_photography_rounded;
         break;
       case MobileScannerErrorCode.controllerAlreadyInitialized:

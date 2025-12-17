@@ -26,7 +26,7 @@ class StoreStats {
     this.importsWithErrors = 0,
   });
 
-  /// Tags online (estimativa: tags vinculadas sÃ£o consideradas online)
+  /// Tags online (estimativa: tags vinculadas são consideradas online)
   int get onlineTagsCount => boundTagsCount;
 
   /// Percentual de tags vinculadas

@@ -163,7 +163,7 @@ class _DrawerMenuItem extends StatelessWidget {
           children: [
             Icon(
               item['icon'],
-              color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
+              color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
               size: 22,
             ),
             const SizedBox(width: 16),
@@ -171,7 +171,7 @@ class _DrawerMenuItem extends StatelessWidget {
               child: Text(
                 item['title'],
                 style: TextStyle(
-                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).surfaceDark,
+                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey700,
                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                   fontSize: 14,
                 ),
@@ -184,9 +184,6 @@ class _DrawerMenuItem extends StatelessWidget {
     );
   }
 }
-
-
-
 
 
 

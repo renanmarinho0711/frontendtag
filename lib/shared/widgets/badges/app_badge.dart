@@ -1,5 +1,4 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Badge para exibir nmeros ou status
@@ -50,25 +49,25 @@ class AppBadge extends StatelessWidget {
       case 'online':
       case 'active':
       case 'success':
-        bgColor = ThemeColors.of(context).greenMaterial;
+        bgColor = const Color(0xFF4CAF50); // greenMaterial
         break;
       case 'offline':
       case 'inactive':
       case 'error':
-        bgColor = ThemeColors.of(context).redMain;
+        bgColor = const Color(0xFFE53935); // redMain
         break;
       case 'warning':
       case 'pending':
-        bgColor = ThemeColors.of(context).orangeMaterial;
+        bgColor = const Color(0xFFFF9800); // orangeMaterial
         break;
       default:
-        bgColor = ThemeColors.of(context).grey500;
+        bgColor = const Color(0xFF9E9E9E); // grey500
     }
 
     return AppBadge(
       text: status,
       backgroundColor: backgroundColor ?? bgColor,
-      textColor: textColor ?? ThemeColors.of(context).surface,
+      textColor: textColor ?? const Color(0xFFFFFFFF), // surface (white)
     );
   }
 
@@ -78,7 +77,7 @@ class AppBadge extends StatelessWidget {
     double size = 8,
   }) =>
       AppBadge(
-        backgroundColor: color ?? ThemeColors.of(context).redMain,
+        backgroundColor: color ?? const Color(0xFFE53935), // redMain
         size: size,
       );
 
@@ -104,8 +103,9 @@ class AppBadge extends StatelessWidget {
 
   Widget _buildBadge(BuildContext context) {
     final theme = Theme.of(context);
+    final colors = ThemeColors.of(context);
     final bgColor = backgroundColor ?? theme.colorScheme.error;
-    final fgColor = textColor ?? ThemeColors.of(context).surface;
+    final fgColor = textColor ?? colors.surface;
 
     // Se no tem texto nem count,  um dot
     if (text == null && count == null) {
@@ -199,6 +199,7 @@ class StatusBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final (color, label) = _getStatusInfo(status);
 
     if (!showLabel) {
@@ -208,9 +209,9 @@ class StatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: Color.alphaBlend(color.withValues(alpha: 0.1), ThemeColors.of(context).surface),
+        color: Color.alphaBlend(color.withValues(alpha: 0.1), colors.surface),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Color.alphaBlend(color.withValues(alpha: 0.3), ThemeColors.of(context).surface)),
+        border: Border.all(color: Color.alphaBlend(color.withValues(alpha: 0.3), colors.surface)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -240,29 +241,29 @@ class StatusBadge extends StatelessWidget {
   (Color, String) _getStatusInfo(String status) {
     switch (status.toLowerCase()) {
       case 'online':
-        return (ThemeColors.of(context).greenMaterial, 'Online');
+        return (const Color(0xFF4CAF50), 'Online'); // greenMaterial
       case 'offline':
-        return (ThemeColors.of(context).redMain, 'Offline');
+        return (const Color(0xFFE53935), 'Offline'); // redMain
       case 'active':
       case 'ativo':
-        return (ThemeColors.of(context).greenMaterial, 'Ativo');
+        return (const Color(0xFF4CAF50), 'Ativo'); // greenMaterial
       case 'inactive':
       case 'inativo':
-        return (ThemeColors.of(context).grey500, 'Inativo');
+        return (const Color(0xFF9E9E9E), 'Inativo'); // grey500
       case 'pending':
       case 'pendente':
-        return (ThemeColors.of(context).orangeMaterial, 'Pendente');
+        return (const Color(0xFFFF9800), 'Pendente'); // orangeMaterial
       case 'syncing':
       case 'sincronizando':
-        return (ThemeColors.of(context).blueMaterial, 'Sincronizando');
+        return (const Color(0xFF2196F3), 'Sincronizando'); // blueMaterial
       case 'error':
       case 'erro':
-        return (ThemeColors.of(context).redMain, 'Erro');
+        return (const Color(0xFFE53935), 'Erro'); // redMain
       case 'success':
       case 'sucesso':
-        return (ThemeColors.of(context).greenMaterial, 'Sucesso');
+        return (const Color(0xFF4CAF50), 'Sucesso'); // greenMaterial
       default:
-        return (ThemeColors.of(context).grey500, status);
+        return (const Color(0xFF9E9E9E), status); // grey500
     }
   }
 }

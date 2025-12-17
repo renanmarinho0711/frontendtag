@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/presentation/screens/strategies_results_screen.dart';
 import 'package:tagbean/features/strategies/presentation/screens/calendar/holidays_screen.dart';
@@ -24,7 +23,6 @@ import 'package:tagbean/features/strategies/presentation/providers/strategies_pr
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class EstrategiasConfigurarScreen extends ConsumerStatefulWidget {
   final StrategyModel estrategia;
@@ -45,7 +43,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
   String _filtroCategoria = 'todas';
   String _searchQuery = '';
   
-  // Cache de estrat�gias filtradas
+  // Cache de Estratégias filtradas
   List<StrategyModel>? _cachedEstrategiasFiltradas;
   String? _lastFiltroCategoria;
   String? _lastSearchQuery;
@@ -60,7 +58,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
     _tabController = TabController(length: 2, vsync: this);
     _animationController.forward();
     
-    // Inicializa o provider se ainda n�o foi inicializado
+    // Inicializa o provider se ainda não foi inicializado
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final state = ref.read(strategiesProvider);
       if (state.strategies.isEmpty) {
@@ -86,23 +84,23 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
         return const FeriadosProlongadosConfigScreen();
       case 'Ciclo de Salrio':
         return const CicloSalarioConfigScreen();
-      case 'Precifica��o por Temperatura':
+      case 'Precificação por Temperatura':
         return const TemperaturaConfigScreen();
       case 'Horrio de Pico':
         return const HorarioPicoConfigScreen();
-      case 'Liquida��o Automtica':
+      case 'LiquidAção Automtica':
         return const LiquidacaoAutomaticaConfigScreen();
       case 'Dynamic Markdown':
         return const DynamicMarkdownConfigScreen();
       case 'Previso com IA':
         return const PrevisaoIAConfigScreen();
-      case 'auditoria Automtica':
-        return const auditoriaAutomaticaConfigScreen();
-      case 'Mapa de Calor de Promo��es':
+      case 'Auditoria Automtica':
+        return const AuditoriaAutomaticaConfigScreen();
+      case 'Mapa de Calor de Promoções':
         return const MapaCalorConfigScreen();
       case 'Ranking Tempo Real':
         return const RankingTempoRealConfigScreen();
-      case 'Promo��es Relmpago':
+      case 'Promoções Relmpago':
         return const FlashPromosConfigScreen();
       case 'Rota Inteligente':
         return const SmartRouteConfigScreen();
@@ -117,7 +115,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
     }
   }
 
-  // OTIMIZA��O: Getter com cache
+  // OTIMIZAããO: Getter com cache
   List<StrategyModel> get _estrategiasFiltradas {
     final strategiesState = ref.read(strategiesProvider);
     final estrategias = strategiesState.strategies;
@@ -253,7 +251,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Estrat�gias Autom�ticas',
+                      'Estratégias Automáticas',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -271,7 +269,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                       height: AppSizes.paddingXxs.get(isMobile, isTablet),
                     ),
                     Text(
-                      'Inteligncia Artificial para Precifica��o',
+                      'Inteligncia Artificial para Precificação',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -330,11 +328,11 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Expanded(child: _buildMiniStat('$pausadas', 'Pausadas', Icons.pause_circle_rounded, ThemeColors.of(context).warning)),
+                    Expanded(child: _buildMiniStat('$pausadas', 'Pausadas', Icons.pause_circle_rounded, ThemeColors.of(context).orangeMain)),
                     SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                     Expanded(child: _buildMiniStat('$inativas', 'Inativas', Icons.cancel_rounded, ThemeColors.of(context).textSecondary)),
                     SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-                    Expanded(child: _buildMiniStat('${strategiesState.strategies.length}', 'Total', Icons.layers_rounded, ThemeColors.of(context).info)),
+                    Expanded(child: _buildMiniStat('${strategiesState.strategies.length}', 'Total', Icons.layers_rounded, ThemeColors.of(context).blueMain)),
                   ],
                 ),
               ],
@@ -478,7 +476,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
           ),
         ),
         labelColor: ThemeColors.of(context).surface,
-        unselectedLabelColor: ThemeColors.of(context).textSecondary,
+        unselectedLabelColor: ThemeColors.of(context).grey600,
         labelStyle: TextStyle(
           fontSize: ResponsiveHelper.getResponsiveFontSize(
             context,
@@ -544,7 +542,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                 ),
               ),
               decoration: InputDecoration(
-                hintText: 'Buscar estrat�gias...',
+                hintText: 'Buscar Estratégias...',
                 hintStyle: TextStyle(
                   color: ThemeColors.of(context).textSecondary,
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -631,7 +629,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).successLight,
+                    color: ThemeColors.of(context).success.withValues(alpha: 0.3),
                     blurRadius: isMobile ? 8 : 10,
                     offset: const Offset(0, 4),
                   ),
@@ -728,7 +726,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
           ),
           boxShadow: [
             BoxShadow(
-              color: estrategia.primaryColorLight,
+              color: estrategia.primaryColor.withValues(alpha: 0.3),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -883,12 +881,12 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isAtiva
-              ? Border.all(color: estrategia.primaryColorLight, width: 2)
+              ? Border.all(color: estrategia.primaryColor.withValues(alpha: 0.3), width: 2)
               : null,
           boxShadow: [
             BoxShadow(
               color: isAtiva
-                  ? estrategia.primaryColorLight
+                  ? estrategia.primaryColor.withValues(alpha: 0.1)
                   : ThemeColors.of(context).textPrimaryOverlay05,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
@@ -929,7 +927,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: estrategia.primaryColorLight,
+                              color: estrategia.primaryColor.withValues(alpha: 0.3),
                               blurRadius: isMobile ? 12 : 15,
                               offset: Offset(0, isMobile ? 4 : 6),
                             ),
@@ -1036,7 +1034,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                         AppSizes.paddingMdAlt.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: estrategia.primaryColorLight,
+                        color: estrategia.primaryColor.withValues(alpha: 0.05),
                         borderRadius: BorderRadius.circular(
                           isMobile ? 10 : 12,
                         ),
@@ -1049,7 +1047,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
                               'Impacto',
                               estrategia.impact,
                               Icons.trending_up_rounded,
-                              ThemeColors.of(context).success,
+                              ThemeColors.of(context).greenMain,
                             ),
                           ),
                           Container(
@@ -1164,7 +1162,7 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: (_currentTab == 0 ? ThemeColors.of(context).surface : color)Light,
+            color: (_currentTab == 0 ? ThemeColors.of(context).surface : color).withValues(alpha: 0.5),
             blurRadius: ResponsiveHelper.isMobile(context) ? 6 : 8,
             spreadRadius: ResponsiveHelper.isMobile(context) ? 1 : 2,
           ),
@@ -1280,8 +1278,6 @@ class _EstrategiasConfigurarScreenState extends ConsumerState<EstrategiasConfigu
     );
   }
 }
-
-
 
 
 

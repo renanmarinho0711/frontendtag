@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
-/// Se��o de a��es r�pidas para a tela de detalhes do produto
+/// Seção de ações Rápidas para a tela de detalhes do produto
 class QuickActionsSection extends StatelessWidget {
   final Color productColor;
   final bool hasTag;
@@ -68,7 +67,7 @@ class QuickActionsSection extends StatelessWidget {
           width: AppSizes.paddingBase.get(isMobile, isTablet),
         ),
         Text(
-          'A��es R�pidas',
+          'Ações Rápidas',
           style: AppTextStyles.h3.copyWith(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -89,7 +88,7 @@ class QuickActionsSection extends StatelessWidget {
         Expanded(
           child: QuickActionButton(
             icon: Icons.attach_money_rounded,
-            label: 'Alterar\nPre�o',
+            label: 'Alterar\nPREÇO',
             color: ThemeColors.of(context).brandPrimaryGreen,
             onTap: onChangePrice,
           ),
@@ -127,7 +126,7 @@ class QuickActionsSection extends StatelessWidget {
   }
 }
 
-/// Bot�o de a��o r�pida individual
+/// Botão de Ação rãpida individual
 class QuickActionButton extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -158,9 +157,9 @@ class QuickActionButton extends StatelessWidget {
             vertical: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: colorLight,
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: colorLight),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -188,7 +187,6 @@ class QuickActionButton extends StatelessWidget {
     );
   }
 }
-
 
 
 

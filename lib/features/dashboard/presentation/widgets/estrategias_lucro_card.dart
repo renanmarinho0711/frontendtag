@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
@@ -27,7 +28,7 @@ class EstrategiasLucroCard extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).successOverlay30,
+            color: ThemeColors.of(context).greenMainOverlay30,
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -89,7 +90,7 @@ class EstrategiasLucroCard extends StatelessWidget {
                         height: AppSizes.paddingMicro.get(isMobile, isTablet),
                       ),
                       Text(
-                        '${estrategiasData['ativas']} estratgias ativas',
+                        '${estratégiasData['ativas']} estratgias ativas',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -165,8 +166,8 @@ class EstrategiasLucroCard extends StatelessWidget {
                       context,
                       'Ganho Mensal',
                       Icons.calendar_month_rounded,
-                      'R\$ ${estrategiasData['ganho_mensal'].toStringAsFixed(2)}',
-                      'em ${estrategiasData['produtos_afetados']} produtos',
+                      'R\$ ${estratégiasData['ganho_mensal'].toStringAsFixed(2)}',
+                      'em ${estratégiasData['produtos_afetados']} produtos',
                     ),
                   ),
                   SizedBox(
@@ -182,7 +183,7 @@ class EstrategiasLucroCard extends StatelessWidget {
                       context,
                       'Ganho Hoje',
                       Icons.today_rounded,
-                      'R\$ ${estrategiasData['ganho_hoje'].toStringAsFixed(2)}',
+                      'R\$ ${estratégiasData['ganho_hoje'].toStringAsFixed(2)}',
                       '+15% vs. ontem',
                     ),
                   ),
@@ -301,8 +302,6 @@ class EstrategiasLucroCard extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

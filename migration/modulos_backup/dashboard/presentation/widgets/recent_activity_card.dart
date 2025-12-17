@@ -49,7 +49,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
         'description': report.descricao.isEmpty
             ? '${report.itensVerificados} itens verificados'
             : report.descricao,
-        'time': _formatTimeAgo(report.dataauditoria),
+        'time': _formatTimeAgo(report.dataAuditoria),
         'color': _getColorForAction(report.titulo),
       };
     }).toList();
@@ -176,7 +176,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
               Center(
                 child: Padding(
                   padding: EdgeInsets.all(AppSizes.paddingLg.get(isMobile, isTablet)),
-                  child: SizedBox(
+                  child: const SizedBox(
                     width: 24,
                     height: 24,
                     child: CircularProgressIndicator(
@@ -192,12 +192,12 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                   padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                   child: Column(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.cloud_off_rounded,
                         color: AppThemeColors.textSecondaryOverlay50,
                         size: 32,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'Não foi possível carregar atividades',
                         style: TextStyle(
@@ -211,10 +211,10 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       TextButton(
                         onPressed: () => ref.read(auditReportsProvider.notifier).loadReports(),
-                        child: Text('Tentar novamente'),
+                        child: const Text('Tentar novamente'),
                       ),
                     ],
                   ),
@@ -226,12 +226,12 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                   padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                   child: Column(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.inbox_rounded,
                         color: AppThemeColors.textSecondaryOverlay50,
                         size: 32,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'Nenhuma atividade recente',
                         style: TextStyle(

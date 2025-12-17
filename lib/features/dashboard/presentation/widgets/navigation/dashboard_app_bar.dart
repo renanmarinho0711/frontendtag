@@ -83,8 +83,8 @@ class DashboardAppBar extends ConsumerWidget {
             ],
             // Seletor de Loja - usa Expanded para ocupar espao disponvel
             if (!isMobile) const SizedBox(width: 8),
-            Expanded(
-              child: const StoreSelector(),
+            const Expanded(
+              child: StoreSelector(),
             ),
             
             // Search bar apenas para desktop grande
@@ -100,7 +100,7 @@ class DashboardAppBar extends ConsumerWidget {
             ],
             const SizedBox(width: 8),
             // Theme selector button
-            _AppBarThemeButton(),
+            const _AppBarThemeButton(),
             const SizedBox(width: 8),
             // Notification button
             _AppBarNotificationButton(
@@ -184,7 +184,7 @@ class DashboardAppBar extends ConsumerWidget {
               tabletFontSize: 10,
             ),
             overflow: TextOverflow.ellipsis,
-            color: ThemeColors.of(context).textSecondary,
+            color: ThemeColors.of(context).grey600,
           ),
         ),
       ],
@@ -203,8 +203,8 @@ class DashboardAppBar extends ConsumerWidget {
         child: TextField(
           decoration: InputDecoration(
             hintText: 'Buscar produtos, tags...',
-            hintStyle: TextStyle(fontSize: 13, color: ThemeColors.of(context).textTertiary),
-            prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).textTertiary, size: 20),
+            hintStyle: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey500),
+            prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).grey400, size: 20),
             border: InputBorder.none,
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
@@ -245,7 +245,7 @@ class DashboardAppBar extends ConsumerWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: ThemeColors.of(context).greenMaterialLight,
+                    color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.5),
                     blurRadius: 6,
                     spreadRadius: 2,
                   ),
@@ -326,7 +326,7 @@ class _AppBarNotificationButton extends ConsumerWidget {
   }
 }
 
-/// Menu de usurio da AppBar
+/// Menu de usuário da AppBar
 class _AppBarUserMenu extends StatelessWidget {
   final VoidCallback? onLogout;
   final VoidCallback? onProfileTap;
@@ -388,7 +388,7 @@ class _AppBarUserMenu extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).borderLight, ThemeColors.of(context).grey300],
+          colors: [ThemeColors.of(context).grey200, ThemeColors.of(context).grey300],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
       ),
@@ -408,7 +408,7 @@ class _AppBarUserMenu extends StatelessWidget {
                 ),
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
-                color: ThemeColors.of(context).surfaceDark,
+                color: ThemeColors.of(context).grey700,
               ),
             ),
           ),
@@ -446,7 +446,7 @@ class _AppBarUserMenu extends StatelessWidget {
                       tabletFontSize: 8,
                     ),
                     overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).textSecondary,
+                    color: ThemeColors.of(context).grey600,
                   ),
                 ),
               ],
@@ -459,7 +459,7 @@ class _AppBarUserMenu extends StatelessWidget {
                 tablet: 15,
                 desktop: 16,
               ),
-              color: ThemeColors.of(context).textSecondary,
+              color: ThemeColors.of(context).grey600,
             ),
           ],
         ],
@@ -482,7 +482,7 @@ class _AppBarUserMenu extends StatelessWidget {
           Icon(
             icon,
             size: 20,
-            color: isDestructive ? ThemeColors.of(context).redMain : ThemeColors.of(context).surfaceDark,
+            color: isDestructive ? ThemeColors.of(context).redMain : ThemeColors.of(context).grey700,
           ),
           const SizedBox(width: 12),
           Text(
@@ -512,13 +512,13 @@ class _AppBarThemeButton extends ConsumerWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            themeColors.primaryLight,
-            themeColors.secondaryLight,
+            themeColors.primary.withValues(alpha: 0.15),
+            themeColors.secondary.withValues(alpha: 0.15),
           ],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
         border: Border.all(
-          color: themeColors.primaryLight,
+          color: themeColors.primary.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -539,10 +539,6 @@ class _AppBarThemeButton extends ConsumerWidget {
     );
   }
 }
-
-
-
-
 
 
 

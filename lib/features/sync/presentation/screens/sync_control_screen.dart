@@ -3,15 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/sync/presentation/screens/sync_settings_screen.dart';
 import 'package:tagbean/features/sync/presentation/screens/sync_log_screen.dart';
 import 'package:tagbean/features/sync/presentation/providers/sync_provider.dart';
-import 'package:tagbean/features/sync/presentation/providers/minew_provider.dart';
-import 'package:tagbean/features/sync/presentation/widgets/minew_stats_card.dart';
 import 'package:tagbean/features/sync/data/models/sync_models.dart';
-import 'package:tagbean/features/sync/data/exceptions/sync_exceptions.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class SincronizacaoControleScreen extends ConsumerStatefulWidget {
   const SincronizacaoControleScreen({super.key});
@@ -24,10 +20,10 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     with SingleTickerProviderStateMixin, ResponsiveCache {
   late AnimationController _animationController;
 
-  // Obtm histrico do provider
+  // Obtm histórico do provider
   List<SyncHistoryEntry> get _historico => ref.watch(syncHistoryProvider);
   
-  // Obtm status de sincronizao do provider  
+  // Obtm status de sincronização do provider  
   bool get _sincronizando => ref.watch(isSyncingProvider);
   
   // Progresso atual (do provider)
@@ -51,8 +47,10 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).surface,
+      backgroundColor: colors.surface,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -83,11 +81,6 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                   SizedBox(
                     height: AppSizes.spacingMd.get(isMobile, isTablet),
                   ),
-                  // Widget reutiliz�vel de Minew Stats
-                  _buildMinewSection(),
-                  SizedBox(
-                    height: AppSizes.spacingMd.get(isMobile, isTablet),
-                  ),
                   _buildHistoricoCard(),
                 ],
               ),
@@ -99,6 +92,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildHeader() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -122,7 +116,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.4),
+            color: colors.textPrimary.withValues(alpha: 0.4),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -141,7 +135,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).surfaceOverlay20,
+              color: colors.surfaceOverlay20,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -153,7 +147,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             ),
             child: Icon(
               Icons.sync_rounded,
-              color: ThemeColors.of(context).surface,
+              color: colors.surface,
               size: AppSizes.iconMedium.get(isMobile, isTablet),
             ),
           ),
@@ -166,7 +160,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sincronizao',
+                  'Sincronização',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -176,7 +170,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                     ),
                     overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).surface,
+                    color: colors.surface,
                     letterSpacing: -0.5,
                   ),
                 ),
@@ -184,7 +178,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                   height: AppSizes.paddingXxs.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Controle de integrao com ERP',
+                  'Controle de integração com ERP',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -193,7 +187,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                       tabletFontSize: 11,
                     ),
                     overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).surfaceOverlay70,
+                    color: colors.surfaceOverlay70,
                     letterSpacing: 0.2,
                   ),
                 ),
@@ -206,11 +200,11 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).successLight,
+              color: colors.success.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
-              border: Border.all(color: ThemeColors.of(context).success.withValues(alpha: 0.4)),
+              border: Border.all(color: colors.success.withValues(alpha: 0.4)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -218,7 +212,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 Icon(
                   Icons.circle,
                   size: AppSizes.iconNano.get(isMobile, isTablet),
-                  color: ThemeColors.of(context).success,
+                  color: colors.success,
                 ),
                 SizedBox(
                   width: AppSizes.paddingXsAlt.get(isMobile, isTablet),
@@ -234,7 +228,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                     ),
                     overflow: TextOverflow.ellipsis,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).surface,
+                    color: colors.surface,
                   ),
                 ),
               ],
@@ -246,6 +240,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildInfoCard() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
@@ -259,13 +254,13 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTealLight],
+          colors: [colors.successPastel, colors.materialTeal.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 16,
         ),
         border: Border.all(
-          color: ThemeColors.of(context).successLight,
+          color: colors.successLight,
           width: 1.5,
         ),
       ),
@@ -276,14 +271,14 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               AppSizes.paddingSmAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).surface,
+              color: colors.surface,
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
             ),
             child: Icon(
               Icons.info_outline_rounded,
-              color: ThemeColors.of(context).successIcon,
+              color: colors.successIcon,
               size: AppSizes.iconMedium.get(isMobile, isTablet),
             ),
           ),
@@ -296,7 +291,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Sobre este Mdulo',
+                  'Sobre este Módulo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -305,7 +300,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                       tabletFontSize: 13,
                     ),
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).successText,
+                    color: colors.successText,
                     letterSpacing: -0.3,
                   ),
                 ),
@@ -313,7 +308,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                   height: AppSizes.extraSmallPadding.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Controle total da integrao com ERP, sincronizando produtos, preos e tags em tempo real com agendamentos automticos.',
+                  'Controle total da integração com ERP, sincronizando produtos, preços e tags em tempo real com agendamentos automáticos.',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -321,7 +316,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                       mobileFontSize: 11,
                       tabletFontSize: 11,
                     ),
-                    color: ThemeColors.of(context).successText,
+                    color: colors.successText,
                     height: 1.4,
                   ),
                 ),
@@ -334,6 +329,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildStatusCard() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -346,7 +342,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenTeal],
+          colors: [colors.success, colors.greenTeal],
         ),
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
@@ -358,7 +354,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).successLight,
+            color: colors.success.withValues(alpha: 0.3),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -380,7 +376,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                   AppSizes.paddingSmAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).surfaceOverlay20,
+                  color: colors.surfaceOverlay20,
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
                       context,
@@ -392,7 +388,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 ),
                 child: Icon(
                   Icons.cloud_done_rounded,
-                  color: ThemeColors.of(context).surface,
+                  color: colors.surface,
                   size: AppSizes.iconMedium.get(isMobile, isTablet),
                 ),
               ),
@@ -415,7 +411,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                         ),
                       overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
-                        color: ThemeColors.of(context).surface,
+                        color: colors.surface,
                         letterSpacing: -0.5,
                       ),
                     ),
@@ -431,7 +427,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                           mobileFontSize: 11,
                         ),
                       overflow: TextOverflow.ellipsis,
-                        color: ThemeColors.of(context).surfaceOverlay70,
+                        color: colors.surfaceOverlay70,
                       ),
                     ),
                   ],
@@ -447,7 +443,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               AppSizes.paddingMd.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).surfaceOverlay20,
+              color: colors.surfaceOverlay20,
               borderRadius: BorderRadius.circular(
                 AppSizes.paddingLg.get(isMobile, isTablet),
               ),
@@ -463,7 +459,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                     children: [
                       Icon(
                         Icons.access_time_rounded,
-                        color: ThemeColors.of(context).surfaceOverlay90,
+                        color: colors.surfaceOverlay90,
                         size: AppSizes.iconSmall.get(isMobile, isTablet),
                       ),
                       SizedBox(
@@ -480,11 +476,11 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: ThemeColors.of(context).surface,
+                          color: colors.surface,
                         ),
                       ),
                       Text(
-                        'ltima Sync',
+                        'Última Sync',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -492,7 +488,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                             mobileFontSize: 10,
                           ),
                           overflow: TextOverflow.ellipsis,
-                          color: ThemeColors.of(context).surfaceOverlay90,
+                          color: colors.surfaceOverlay90,
                         ),
                       ),
                     ],
@@ -501,7 +497,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 Container(
                   width: 1,
                   height: isMobile ? 50 : (isTablet ? 55 : 60),
-                  color: ThemeColors.of(context).surfaceOverlay30,
+                  color: colors.surfaceOverlay30,
                 ),
                 Expanded(
                   child: Column(
@@ -511,7 +507,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                     children: [
                       Icon(
                         Icons.schedule_rounded,
-                        color: ThemeColors.of(context).surfaceOverlay90,
+                        color: colors.surfaceOverlay90,
                         size: AppSizes.iconSmall.get(isMobile, isTablet),
                       ),
                       SizedBox(
@@ -528,7 +524,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: ThemeColors.of(context).surface,
+                          color: colors.surface,
                         ),
                       ),
                       Text(
@@ -540,7 +536,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                             mobileFontSize: 9,
                           ),
                         overflow: TextOverflow.ellipsis,
-                          color: ThemeColors.of(context).surfaceOverlay90,
+                          color: colors.surfaceOverlay90,
                         ),
                       ),
                     ],
@@ -549,7 +545,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 Container(
                   width: 1,
                   height: isMobile ? 50 : (isTablet ? 55 : 60),
-                  color: ThemeColors.of(context).surfaceOverlay30,
+                  color: colors.surfaceOverlay30,
                 ),
                 Expanded(
                   child: Column(
@@ -559,7 +555,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                     children: [
                       Icon(
                         Icons.timer_rounded,
-                        color: ThemeColors.of(context).surfaceOverlay90,
+                        color: colors.surfaceOverlay90,
                         size: AppSizes.iconSmall.get(isMobile, isTablet),
                       ),
                       SizedBox(
@@ -576,7 +572,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: ThemeColors.of(context).surface,
+                          color: colors.surface,
                         ),
                       ),
                       Text(
@@ -588,7 +584,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                             mobileFontSize: 9,
                           ),
                         overflow: TextOverflow.ellipsis,
-                          color: ThemeColors.of(context).surfaceOverlay90,
+                          color: colors.surfaceOverlay90,
                         ),
                       ),
                     ],
@@ -603,6 +599,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildResultadosCard() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -611,7 +608,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surface,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -622,7 +619,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimaryOverlay05,
+            color: colors.textPrimaryOverlay05,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -646,7 +643,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueDark],
+                    colors: [colors.primary, colors.blueDark],
                   ),
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
@@ -659,7 +656,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 ),
                 child: Icon(
                   Icons.assessment_rounded,
-                  color: ThemeColors.of(context).surface,
+                  color: colors.surface,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -668,7 +665,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               ),
               Expanded(
                 child: Text(
-                  'ltima Sincronizao',
+                  'Última Sincronização',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -714,19 +711,19 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             mainAxisSize: MainAxisSize.min,
             children: [
               Expanded(
-                child: _buildResultadoItem('1.234', 'Produtos', Icons.inventory_2_rounded, ThemeColors.of(context).primary),
+                child: _buildResultadoItem('1.234', 'Produtos', Icons.inventory_2_rounded, colors.primary),
               ),
               SizedBox(
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Expanded(
-                child: _buildResultadoItem('987', 'Tags', Icons.label_rounded, ThemeColors.of(context).success),
+                child: _buildResultadoItem('987', 'Tags', Icons.label_rounded, colors.success),
               ),
               SizedBox(
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Expanded(
-                child: _buildResultadoItem('0', 'Erros', Icons.error_rounded, ThemeColors.of(context).error),
+                child: _buildResultadoItem('0', 'Erros', Icons.error_rounded, colors.error),
               ),
             ],
           ),
@@ -736,6 +733,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildResultadoItem(String value, String label, IconData icon, Color color) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
@@ -743,7 +741,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -752,7 +750,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             desktop: 12,
           ),
         ),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -788,7 +786,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 mobileFontSize: 10,
               ),
             overflow: TextOverflow.ellipsis,
-              color: ThemeColors.of(context).textSecondary,
+              color: colors.textSecondary,
             ),
           ),
         ],
@@ -797,6 +795,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildAcoesRapidas() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -805,7 +804,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         AppSizes.paddingXlAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surface,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -816,7 +815,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.06),
+            color: colors.textPrimary.withValues(alpha: 0.06),
             blurRadius: isMobile ? 15 : 20,
             offset: const Offset(0, 4),
           ),
@@ -827,7 +826,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Aes Rpidas',
+            'Ações Rápidas',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -849,31 +848,31 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               'Sincronizar Tudo',
               'Sincronizar todos os dados com o ERP',
               Icons.sync_rounded,
-              [ThemeColors.of(context).syncComplete, ThemeColors.of(context).syncCompleteDark],
+              [colors.syncComplete, colors.syncCompleteDark],
               _iniciarSincronizacao,
             ),
             SizedBox(height: AppSizes.spacingBase.get(isMobile, isTablet)),
             _buildAcaoButtonHorizontal(
-              'Apenas Preos',
-              'Atualizar somente os preos dos produtos',
+              'Apenas Preços',
+              'Atualizar somente os preços dos produtos',
               Icons.attach_money_rounded,
-              [ThemeColors.of(context).syncPricesOnly, ThemeColors.of(context).syncPricesOnlyDark],
-              () => _sincronizarParcial('Preos'),
+              [colors.syncPricesOnly, colors.syncPricesOnlyDark],
+              () => _sincronizarParcial('Preços'),
             ),
             SizedBox(height: AppSizes.spacingBase.get(isMobile, isTablet)),
             _buildAcaoButtonHorizontal(
               'Produtos Novos',
               'Sincronizar apenas produtos novos',
               Icons.new_releases_rounded,
-              [ThemeColors.of(context).syncNewProducts, ThemeColors.of(context).syncNewProductsDark],
+              [colors.syncNewProducts, colors.syncNewProductsDark],
               () => _sincronizarParcial('Produtos Novos'),
             ),
             SizedBox(height: AppSizes.spacingBase.get(isMobile, isTablet)),
             _buildAcaoButtonHorizontal(
-              'Configuraes',
-              'Ajustar configuraes de sincronizao',
+              'Configurações',
+              'Ajustar configurações de sincronização',
               Icons.settings_rounded,
-              [ThemeColors.of(context).syncSettings, ThemeColors.of(context).syncSettingsDark],
+              [colors.syncSettings, colors.syncSettingsDark],
               () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -890,6 +889,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildAcaoButton(String label, IconData icon, List<Color> gradient, VoidCallback onPressed) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
@@ -900,7 +900,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: gradient[0]Light,
+            color: gradient[0].withValues(alpha: 0.3),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 10,
@@ -912,7 +912,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ],
       ),
       child: Material(
-        color: ThemeColors.of(context).transparent,
+        color: colors.transparent,
         child: InkWell(
           onTap: onPressed,
           borderRadius: BorderRadius.circular(
@@ -928,7 +928,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               children: [
                 Icon(
                   icon,
-                  color: ThemeColors.of(context).surface,
+                  color: colors.surface,
                   size: AppSizes.iconLarge.get(isMobile, isTablet),
                 ),
                 SizedBox(
@@ -944,7 +944,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                       mobileFontSize: 12,
                     ),
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).surface,
+                    color: colors.surface,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -963,6 +963,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     List<Color> gradient,
     VoidCallback onPressed,
   ) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -980,7 +981,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
           borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
           boxShadow: [
             BoxShadow(
-              color: gradient[0]Light,
+              color: gradient[0].withValues(alpha: 0.3),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -991,12 +992,12 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             Container(
               padding: EdgeInsets.all(AppSizes.paddingXs.get(isMobile, isTablet)),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).surfaceOverlay20,
+                color: colors.surfaceOverlay20,
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Icon(
                 icon,
-                color: ThemeColors.of(context).surface,
+                color: colors.surface,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
             ),
@@ -1016,11 +1017,11 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                         tabletFontSize: 13,
                       ),
                       fontWeight: FontWeight.w600,
-                      color: ThemeColors.of(context).surface,
+                      color: colors.surface,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     subtitle,
                     style: TextStyle(
@@ -1030,7 +1031,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                         mobileFontSize: 10,
                         tabletFontSize: 10,
                       ),
-                      color: ThemeColors.of(context).surface.withValues(alpha: 0.85),
+                      color: colors.surface.withValues(alpha: 0.85),
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -1039,7 +1040,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             ),
             Icon(
               Icons.arrow_forward_ios_rounded,
-              color: ThemeColors.of(context).surfaceOverlay80,
+              color: colors.surfaceOverlay80,
               size: ResponsiveHelper.getResponsiveIconSize(
                 context,
                 mobile: 16,
@@ -1053,89 +1054,8 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     );
   }
 
-  /// Se��o Minew Cloud - Usa widget reutiliz�vel MinewStatsCard
-  Widget _buildMinewSection() {
-    // Obt�m o storeId do contexto atual
-    final workContext = ref.watch(workContextProvider);
-    final storeId = workContext.context.currentStoreId;
-    
-    if (storeId == null) {
-      return const SizedBox.shrink();
-    }
-    
-    return MinewStatsCard(
-      storeId: storeId,
-      onSyncComplete: () => _syncMinewComplete(storeId),
-      onImportTags: () => _importMinewTags(storeId),
-    );
-  }
-
-  /// Executa sincroniza��o completa com Minew Cloud
-  Future<void> _syncMinewComplete(String storeId) async {
-    final syncNotifier = ref.read(syncProvider.notifier);
-    
-    final result = await syncNotifier.syncMinewComplete(storeId);
-    
-    if (result != null) {
-      // For�a refresh das stats
-      ref.read(minewStatsRefreshTriggerProvider.notifier).state++;
-      
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              'Sync completo! Tags: ${result.tagsSync?.updated ?? 0}, '
-              'Gateways: ${result.gatewaysSync?.updated ?? 0}',
-            ),
-            backgroundColor: ThemeColors.of(context).success,
-          ),
-        );
-      }
-    } else {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('Erro na sincroniza��o'),
-            backgroundColor: ThemeColors.of(context).error,
-          ),
-        );
-      }
-    }
-  }
-
-  /// Importa novas tags da Minew Cloud
-  Future<void> _importMinewTags(String storeId) async {
-    final syncNotifier = ref.read(syncProvider.notifier);
-    
-    final result = await syncNotifier.importMinewTags(storeId);
-    
-    if (result != null) {
-      // For�a refresh das stats
-      ref.read(minewStatsRefreshTriggerProvider.notifier).state++;
-      
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              'Importa��o conclu�da! ${result.updated} novas tags',
-            ),
-            backgroundColor: ThemeColors.of(context).success,
-          ),
-        );
-      }
-    } else {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('Erro ao importar tags'),
-            backgroundColor: ThemeColors.of(context).error,
-          ),
-        );
-      }
-    }
-  }
-
   Widget _buildHistoricoCard() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -1144,7 +1064,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         AppSizes.paddingXlAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surface,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -1155,7 +1075,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimaryOverlay05,
+            color: colors.textPrimaryOverlay05,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -1179,7 +1099,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textPrimary],
+                    colors: [colors.textSecondary, colors.textPrimary],
                   ),
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
@@ -1192,7 +1112,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 ),
                 child: Icon(
                   Icons.history_rounded,
-                  color: ThemeColors.of(context).surface,
+                  color: colors.surface,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                 ),
               ),
@@ -1200,7 +1120,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Histrico Recente',
+                'Histórico Recente',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1220,13 +1140,14 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
           if (_historico.isEmpty)
             _buildHistoricoEmpty()
           else
-            ..._historico.map((item) => _buildHistoricoItem(item)).toList(),
+            ..._historico.map((item) => _buildHistoricoItem(item)),
         ],
       ),
     );
   }
 
   Widget _buildHistoricoEmpty() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     
     return Container(
@@ -1239,30 +1160,30 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
           Icon(
             Icons.sync_disabled_rounded,
             size: isMobile ? 36 : 48,
-            color: ThemeColors.of(context).textSecondaryOverlay50,
+            color: colors.textSecondaryOverlay50,
           ),
           SizedBox(height: AppSizes.spacingBase.get(isMobile, isTablet)),
           Text(
-            'Nenhuma sincronizao realizada',
+            'Nenhuma sincronização realizada',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
                 baseFontSize: 14,
                 mobileFontSize: 13,
               ),
-              color: ThemeColors.of(context).textSecondary,
+              color: colors.textSecondary,
             ),
           ),
           SizedBox(height: AppSizes.spacingXs.get(isMobile, isTablet)),
           Text(
-            'Inicie uma sincronizao para ver o histrico aqui',
+            'Inicie uma sincronização para ver o histórico aqui',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
                 baseFontSize: 12,
                 mobileFontSize: 11,
               ),
-              color: ThemeColors.of(context).textSecondaryOverlay70,
+              color: colors.textSecondaryOverlay70,
             ),
           ),
         ],
@@ -1271,6 +1192,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   Widget _buildHistoricoItem(SyncHistoryEntry item) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final isSuccess = item.status == SyncStatus.success;
 
@@ -1282,12 +1204,12 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         AppSizes.paddingSm.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: isSuccess ? ThemeColors.of(context).successPastel : ThemeColors.of(context).errorPastel,
+        color: isSuccess ? colors.successPastel : colors.errorPastel,
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
         ),
         border: Border.all(
-          color: isSuccess ?  ThemeColors.of(context).successLight : ThemeColors.of(context).errorLight,
+          color: isSuccess ?  colors.successLight : colors.errorLight,
         ),
       ),
       child: Row(
@@ -1295,7 +1217,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
         children: [
           Icon(
             isSuccess ? Icons.check_circle_rounded : Icons.error_rounded,
-            color: isSuccess ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+            color: isSuccess ? colors.success : colors.error,
             size: AppSizes.iconLarge.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -1330,7 +1252,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                         vertical: AppSizes.paddingMicro2.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: isSuccess ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+                        color: isSuccess ? colors.success : colors.error,
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
@@ -1343,7 +1265,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: ThemeColors.of(context).surface,
+                          color: colors.surface,
                         ),
                       ),
                     ),
@@ -1361,7 +1283,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                       mobileFontSize: 11,
                     ),
                   overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).textSecondary,
+                    color: colors.textSecondary,
                   ),
                 ),
               ],
@@ -1392,7 +1314,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                     mobileFontSize: 9,
                   ),
                 overflow: TextOverflow.ellipsis,
-                  color: ThemeColors.of(context).textSecondary,
+                  color: colors.textSecondary,
                 ),
               ),
             ],
@@ -1403,6 +1325,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   void _iniciarSincronizacao() async {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final workContext = ref.read(workContextProvider);
     
@@ -1410,7 +1333,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text('Selecione uma loja antes de sincronizar'),
-          backgroundColor: ThemeColors.of(context).warning,
+          backgroundColor: colors.warning,
         ),
       );
       return;
@@ -1476,7 +1399,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
                   mobileFontSize: 11,
                 ),
               overflow: TextOverflow.ellipsis,
-                color: ThemeColors.of(context).textSecondary,
+                color: colors.textSecondary,
               ),
             ),
           ],
@@ -1484,7 +1407,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
       ),
     );
 
-    // Executa sincronizao real
+    // Executa sincronização real
     final result = await ref.read(syncProvider.notifier).syncTags(
       workContext.context.currentStoreId ?? '',
     );
@@ -1500,14 +1423,14 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             children: [
               Icon(
                 Icons.check_circle_rounded,
-                color: ThemeColors.of(context).surface,
+                color: colors.surface,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
               SizedBox(
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Sincronizao completa! ${result.successCount} itens processados.',
+                'Sincronização completa! ${result.successCount} itens processados.',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1519,7 +1442,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).success,
+          backgroundColor: colors.success,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
@@ -1541,7 +1464,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
             children: [
               Icon(
                 Icons.error_rounded,
-                color: ThemeColors.of(context).surface,
+                color: colors.surface,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
               SizedBox(
@@ -1560,7 +1483,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).error,
+          backgroundColor: colors.error,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
@@ -1578,6 +1501,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
   }
 
   void _sincronizarParcial(String tipo) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1590,7 +1514,7 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
               height: isMobile ? 16 : 18,
               child: CircularProgressIndicator(
                 strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface),
+                valueColor: AlwaysStoppedAnimation<Color>(colors.surface),
               ),
             ),
             SizedBox(
@@ -1624,9 +1548,6 @@ class _SincronizacaoControleScreenState extends ConsumerState<SincronizacaoContr
     );
   }
 }
-
-
-
 
 
 

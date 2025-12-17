@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 
 import 'package:tagbean/core/network/api_client.dart';
 import 'package:tagbean/core/network/api_response.dart';
@@ -40,7 +40,7 @@ class ImportExportRepository {
   }
 
   // ============================================================================
-  // PREVIEW E VALIDAÇÃO
+  // PREVIEW E VALIDAÇÀO
   // ============================================================================
 
   /// Preview de dados para importação
@@ -87,7 +87,7 @@ class ImportExportRepository {
   }
 
   // ============================================================================
-  // IMPORTAÇÃO
+  // IMPORTAÇÀO
   // ============================================================================
 
   /// Executa importação de dados via JSON
@@ -139,7 +139,7 @@ class ImportExportRepository {
   }
 
   // ============================================================================
-  // EXPORTAÇÃO
+  // EXPORTAÇÀO
   // ============================================================================
 
   /// Exporta dados
@@ -354,7 +354,6 @@ class ImportExportRepository {
     _apiService.dispose();
   }
 }
-
 
 
 

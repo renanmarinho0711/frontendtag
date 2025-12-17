@@ -50,11 +50,11 @@ class ResumoDoDoaCard extends ConsumerWidget {
       decoration: BoxDecoration(
         color: AppThemeColors.surface,
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppThemeColors.textPrimaryOverlay06,
             blurRadius: 20,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),
@@ -69,12 +69,12 @@ class ResumoDoDoaCard extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [AppThemeColors.blueMain, AppThemeColors.blueDark],
                     ),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.insights_rounded,
                     color: AppThemeColors.surface,
                     size: 20,
@@ -99,12 +99,12 @@ class ResumoDoDoaCard extends ConsumerWidget {
                 if (onVerDashboardCompleto != null)
                   TextButton.icon(
                     onPressed: onVerDashboardCompleto,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.open_in_new_rounded,
                       size: 16,
                       color: AppThemeColors.blueMain,
                     ),
-                    label: Text(
+                    label: const Text(
                       'Ver mais',
                       style: TextStyle(
                         fontSize: 12,
@@ -220,7 +220,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                 Icon(icon, color: iconColor, size: 18),
                 const Spacer(),
                 if (onTap != null)
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: AppThemeColors.textSecondaryOverlay40,
                     size: 12,
@@ -240,7 +240,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
             const SizedBox(height: 2),
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 11,
                 color: AppThemeColors.textSecondary,
                 fontWeight: FontWeight.w500,
@@ -280,7 +280,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                 Icon(icon, color: iconColor, size: 18),
                 const Spacer(),
                 if (onTap != null)
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: AppThemeColors.textSecondaryOverlay40,
                     size: 12,
@@ -292,7 +292,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
               children: [
                 Text(
                   valor,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: AppThemeColors.textPrimary,
@@ -304,7 +304,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
+                      const Text(
                         'Meta: 100%',
                         style: TextStyle(
                           fontSize: 9,
@@ -329,7 +329,7 @@ class ResumoDoDoaCard extends ConsumerWidget {
             const SizedBox(height: 2),
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 11,
                 color: AppThemeColors.textSecondary,
                 fontWeight: FontWeight.w500,

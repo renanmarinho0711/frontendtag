@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/tags/data/models/tag_model.dart';
 import 'package:tagbean/features/tags/presentation/providers/tags_provider.dart';
 import 'package:tagbean/features/sync/presentation/providers/sync_provider.dart';
@@ -32,15 +31,15 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
   /// Total de tags do provider
   int get _totalTags => ref.watch(tagsNotifierProvider).tags.length;
 
-  // Opera??es dispon?veis (configura??o est?tica)
-  static final List<Map<String, dynamic>> _operacoes = [
+  // Operações disponíveis (configuração dinâmica com tema)
+  List<Map<String, dynamic>> _getOperacoes(BuildContext context) => [
     {
       'id': 0,
       'titulo': 'Desassociar',
-      'subtitulo': 'Remover vnculo com produtos',
+      'subtitulo': 'Remover vínculo com produtos',
       'icone': Icons.link_off_rounded,
-      'cor': ThemeColors.of(context).warning,
-      'gradiente': [ThemeColors.of(context).warning, ThemeColors.of(context).warning],
+      'cor': ThemeColors.of(context).orangeMain,
+      'gradiente': [ThemeColors.of(context).orangeMain, ThemeColors.of(context).warning],
     },
     {
       'id': 1,
@@ -53,18 +52,18 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
     {
       'id': 2,
       'titulo': 'Sincronizar',
-      'subtitulo': 'Atualizar m?ltiplas tags',
+      'subtitulo': 'Atualizar múltiplas tags',
       'icone': Icons.sync_rounded,
-      'cor': ThemeColors.of(context).info,
-      'gradiente': [ThemeColors.of(context).info, ThemeColors.of(context).blueDark],
+      'cor': ThemeColors.of(context).blueMain,
+      'gradiente': [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark],
     },
   ];
 
-  // Obter tags dispon?veis do provider
+  // Obter tags disponíveis do provider
   List<TagModel> _getTagsDisponiveis(List<TagModel> allTags) {
     if (_categoriaFiltro == 'Associadas') {
       return allTags.where((t) => t.isBound).toList();
-    } else if (_categoriaFiltro == 'Dispon?veis') {
+    } else if (_categoriaFiltro == 'Disponíveis') {
       return allTags.where((t) => !t.isBound).toList();
     }
     return allTags;
@@ -125,7 +124,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
           children: [
             Icon(Icons.error_outline_rounded, size: 64, color: ThemeColors.of(context).error),
             SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
-            Text('Erro ao carregar tags', style: TextStyle(fontWeight: FontWeight.bold)),
+            const Text('Erro ao carregar tags', style: TextStyle(fontWeight: FontWeight.bold)),
             SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
             Text(error, textAlign: TextAlign.center),
             SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
@@ -210,7 +209,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Opera??es em Lote',
+                  'Operações em Lote',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -224,7 +223,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                 ),
                 Text(
-                  'Gerenciar m?ltiplas tags',
+                  'Gerenciar mãltiplas tags',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -260,9 +259,9 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: _operacoes.length,
+        itemCount: _getOperacoes(context).length,
         itemBuilder: (context, index) {
-          final op = _operacoes[index];
+          final op = _getOperacoes(context)[index];
           final isSelected = _operacaoSelecionada == op['id'];
           
           return TweenAnimationBuilder(
@@ -309,13 +308,13 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                     border: Border.all(
                       color: isSelected
                           ? ThemeColors.of(context).transparent
-                          : (op['cor'] as Color)Light,
+                          : (op['cor'] as Color).withValues(alpha: 0.3),
                       width: 2,
                     ),
                     boxShadow: [
                       BoxShadow(
                         color: isSelected
-                            ? (op['cor'] as Color)Light
+                            ? (op['cor'] as Color).withValues(alpha: 0.3)
                             : ThemeColors.of(context).textPrimaryOverlay05,
                         blurRadius: isMobile ? 15 : 20,
                         offset: Offset(0, isMobile ? 6 : 8),
@@ -333,7 +332,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         decoration: BoxDecoration(
                           color: isSelected
                               ? ThemeColors.of(context).surfaceOverlay20
-                              : (op['cor'] as Color)Light,
+                              : (op['cor'] as Color).withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
                         ),
                         child: Icon(
@@ -455,7 +454,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   Expanded(
                     child: Text(
-                      'Desassociar M?ltiplas Tags',
+                      'Desassociar Mãltiplas Tags',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -569,7 +568,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         AppSizes.paddingXs.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: isSelected ? ThemeColors.of(context).warning : ThemeColors.of(context).textSecondaryOverlay40,
+                        color: isSelected ? ThemeColors.of(context).orangeMain : ThemeColors.of(context).textSecondaryOverlay40,
                         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                       ),
                       child: Icon(
@@ -578,10 +577,10 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                       ),
                     ),
-                    activeColor: ThemeColors.of(context).warning,
+                    activeColor: ThemeColors.of(context).orangeMain,
                   ),
                 );
-              }).toList(),
+              }),
               SizedBox(
                 height: AppSizes.cardPadding.get(isMobile, isTablet),
               ),
@@ -630,7 +629,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         size: AppSizes.iconSmall.get(isMobile, isTablet),
                       ),
                       label: Text(
-                        'Executar Desassocia??o',
+                        'Executar DesassociAção',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -645,7 +644,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         padding: EdgeInsets.symmetric(
                           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                         ),
-                        backgroundColor: ThemeColors.of(context).warning,
+                        backgroundColor: ThemeColors.of(context).orangeMain,
                         foregroundColor: ThemeColors.of(context).surface,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -714,7 +713,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                     width: AppSizes.paddingBase.get(isMobile, isTablet),
                   ),
                   Text(
-                    'Excluir M?ltiplas Tags',
+                    'Excluir Mãltiplas Tags',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -733,7 +732,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 height: AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               Text(
-                'Escolha o m?todo de sele??o:',
+                'Escolha o método de seleção:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -756,7 +755,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                       'Upload Planilha',
                       'Importar lista',
                       Icons.upload_file_rounded,
-                      ThemeColors.of(context).info,
+                      ThemeColors.of(context).blueMain,
                     ),
                   ),
                   SizedBox(
@@ -764,7 +763,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   Expanded(
                     child: _buildExclusionMethod(
-                      'Sele??o Manual',
+                      'Seleção Manual',
                       'Escolher tags',
                       Icons.checklist_rounded,
                       ThemeColors.of(context).blueCyan,
@@ -797,7 +796,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                     ),
                     Expanded(
                       child: Text(
-                        'ATEN??O: Esta opera??o n?o pode ser desfeita!',
+                        'ATENÇÃO: Esta operação não pode ser desfeita!',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -853,9 +852,9 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
           AppSizes.paddingMdAlt.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: colorLight,
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(isMobile ? 14 : 16),
-          border: Border.all(color: colorLight),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -986,7 +985,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 height: AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               Text(
-                'Filtros para sele??o:',
+                'Filtros para seleção:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1002,7 +1001,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 height: AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               DropdownButtonFormField<String>(
-                value: _filtroSincronizar,
+                initialValue: _filtroSincronizar,
                 decoration: InputDecoration(
                   labelText: 'Status',
                   labelStyle: TextStyle(
@@ -1026,7 +1025,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   isDense: true,
                 ),
-                items: ['Todas', 'Associadas', 'Dispon?veis', 'Offline']
+                items: ['Todas', 'Associadas', 'Disponíveis', 'Offline']
                     .map((e) => DropdownMenuItem(
                           value: e,
                           child: Text(
@@ -1053,7 +1052,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 height: AppSizes.paddingSm.get(isMobile, isTablet),
               ),
               DropdownButtonFormField<String>(
-                value: _categoriaFiltro,
+                initialValue: _categoriaFiltro,
                 decoration: InputDecoration(
                   labelText: 'Categoria de Produtos',
                   labelStyle: TextStyle(
@@ -1128,7 +1127,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                           width: AppSizes.paddingXs.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Resumo da Sincroniza??o',
+                          'Resumo da Sincronização',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1184,10 +1183,10 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                               child: CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface)),
                             )
                           : Icon(Icons.sync_rounded, size: AppSizes.iconSmall.get(isMobile, isTablet)),
-                      label: Text(_processando ? 'Sincronizando...' : 'Executar Sincroniza??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
+                      label: Text(_processando ? 'Sincronizando...' : 'Executar Sincronização', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(vertical: AppSizes.paddingSm.get(isMobile, isTablet)),
-                        backgroundColor: ThemeColors.of(context).info,
+                        backgroundColor: ThemeColors.of(context).blueMain,
                         foregroundColor: ThemeColors.of(context).surface,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
                       ),
@@ -1219,8 +1218,8 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet))),
-        icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).warning, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
-        title: Text('Confirmar Desassocia??o', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
+        icon: Icon(Icons.link_off_rounded, color: ThemeColors.of(context).orangeMain, size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet)),
+        title: Text('Confirmar DesassociAção', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
         content: Text('Deseja desassociar ${_tagsDesassociar.length} tag(s) selecionada(s)?', textAlign: TextAlign.center, style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context), child: Text('Cancelar', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13)))),
@@ -1247,7 +1246,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   return;
                 }
                 
-                // Executar desassocia??o em lote via notifier
+                // Executar desassociAção em lote via notifier
                 final result = await ref.read(tagsNotifierProvider.notifier).batchUnbindTags(
                   storeId: storeId,
                   macAddresses: _tagsDesassociar.toList(),
@@ -1272,7 +1271,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                             ),
                           ],
                         ),
-                        backgroundColor: ThemeColors.of(context).warning,
+                        backgroundColor: ThemeColors.of(context).orangeMain,
                         behavior: SnackBarBehavior.floating,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
                       ),
@@ -1300,7 +1299,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                 }
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).warning, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))),
+            style: ElevatedButton.styleFrom(backgroundColor: ThemeColors.of(context).orangeMain, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)))),
             child: Text('Confirmar', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
           ),
         ],
@@ -1322,7 +1321,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
           setState(() => _processando = false);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Selecione uma loja primeiro'),
+              content: const Text('Selecione uma loja primeiro'),
               backgroundColor: ThemeColors.of(context).errorIcon,
             ),
           );
@@ -1330,7 +1329,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
         return;
       }
       
-      // Executar sincroniza??o real via provider
+      // Executar sincronização real via provider
       final result = await ref.read(syncProvider.notifier).syncTags(storeId);
       
       if (mounted) {
@@ -1346,13 +1345,13 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                   Flexible(
                     child: Text(
-                      'Sincroniza??o conclu?da! ${result.successCount} de ${result.totalProcessed} tags.',
+                      'Sincronização Concluída! ${result.successCount} de ${result.totalProcessed} tags.',
                       style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13)),
                     ),
                   ),
                 ],
               ),
-              backgroundColor: ThemeColors.of(context).info,
+              backgroundColor: ThemeColors.of(context).blueMain,
               behavior: SnackBarBehavior.floating,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
               duration: const Duration(seconds: 3),
@@ -1383,9 +1382,6 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
     }
   }
 }
-
-
-
 
 
 

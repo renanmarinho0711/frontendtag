@@ -75,7 +75,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
         backgroundColor: AppThemeColors.transparent,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
               colors: [AppThemeColors.greenMaterial, AppThemeColors.greenDark],
             ),
           ),
@@ -371,7 +371,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
                 const SizedBox(height: 4),
                 Text(
                   categoria.descricao ?? '',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     color: AppThemeColors.textSecondary,
                   ),
@@ -413,7 +413,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.edit_rounded, color: AppThemeColors.textSecondary, size: 20),
+                    icon: const Icon(Icons.edit_rounded, color: AppThemeColors.textSecondary, size: 20),
                     onPressed: () {
                       _navigatorKey.currentState?.push(
                         MaterialPageRoute(
@@ -483,14 +483,14 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             children: [
               Icon(
                 Icons.folder_special_rounded,
                 size: 18,
                 color: AppThemeColors.textSecondary,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8),
               Text(
                 'Subcategorias',
                 style: TextStyle(
@@ -508,7 +508,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
               final subcategorias = categoriesState.getSubcategories(categoria.id);
               
               if (subcategorias.isEmpty) {
-                return Text(
+                return const Text(
                   'Nenhuma subcategoria',
                   style: TextStyle(
                     fontSize: 13,
@@ -597,18 +597,18 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
         children: [
           Container(
             padding: const EdgeInsets.all(32),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppThemeColors.textSecondary,
               shape: BoxShape.circle,
             ),
-            child: Icon(
+            child: const Icon(
               Icons.category_outlined,
               size: 80,
               color: AppThemeColors.textSecondary,
             ),
           ),
           const SizedBox(height: 24),
-          Text(
+          const Text(
             'Nenhuma categoria encontrada',
             style: TextStyle(
               fontSize: 20,
@@ -621,7 +621,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
             searchQuery.isEmpty
                 ? 'Comece criando sua primeira categoria'
                 : 'Tente uma busca diferente',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               color: AppThemeColors.textSecondary,
             ),
@@ -662,7 +662,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           icon: const Icon(Icons.warning_rounded, color: AppThemeColors.redMain, size: 48),
           title: const Text(
-            'Confirmar ExclusÃ£o',
+            'Confirmar Exclusão',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           content: Text(

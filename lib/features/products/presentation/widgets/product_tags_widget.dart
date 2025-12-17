@@ -53,13 +53,13 @@ class ProductTagsWidget extends ConsumerWidget {
             const Icon(
               Icons.label_off_outlined,
               size: 48,
-              color: ThemeColors.of(context).textTertiary,
+              color: ThemeColors.of(context).grey400,
             ),
             const SizedBox(height: AppSpacing.sm),
             const Text(
               'Nenhuma tag vinculada',
               style: TextStyle(
-                color: ThemeColors.of(context).textSecondary,
+                color: ThemeColors.of(context).grey600,
                 fontSize: 14,
               ),
             ),
@@ -120,7 +120,7 @@ class ProductTagsWidget extends ConsumerWidget {
                 const SizedBox(width: AppSpacing.sm),
                 Text(
                   'Tags Vinculadas (${productTags.linkedTags.length})',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -158,7 +158,7 @@ class ProductTagsWidget extends ConsumerWidget {
               },
             ),
             
-          // Bot�o de sincronizar todos
+          // Botão de sincronizar todos
           if (productTags.linkedTags.isNotEmpty) ...[
             const Divider(height: 1),
             Padding(
@@ -168,7 +168,7 @@ class ProductTagsWidget extends ConsumerWidget {
                 child: OutlinedButton.icon(
                   onPressed: () => _syncAllTags(ref),
                   icon: const Icon(Icons.sync),
-                  label: const Text('Sincronizar Pre�o em Todas as Tags'),
+                  label: const Text('Sincronizar PREÇO em Todas as Tags'),
                 ),
               ),
             ),
@@ -183,7 +183,7 @@ class ProductTagsWidget extends ConsumerWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Desvincular Tag'),
-        content: Text('Deseja remover a vincula��o com a tag ${tag.tagMacAddress}?'),
+        content: Text('Deseja remover a vinculAção com a tag ${tag.tagMacAddress}?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
@@ -242,7 +242,7 @@ class _TagListItem extends StatelessWidget {
         children: [
           Text(
             tag.tagMacAddress,
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: 'monospace',
               fontWeight: FontWeight.w500,
             ),
@@ -252,7 +252,7 @@ class _TagListItem extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).blueCyanLight,
+                color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(4),
               ),
               child: const Text(
@@ -307,11 +307,11 @@ class _TagListItem extends StatelessWidget {
 
     switch (tag.syncStatus) {
       case TagSyncStatus.synced:
-        color = ThemeColors.of(context).success;
+        color = ThemeColors.of(context).greenMain;
         icon = Icons.check_circle;
         break;
       case TagSyncStatus.syncing:
-        color = ThemeColors.of(context).warning;
+        color = ThemeColors.of(context).orangeMain;
         icon = Icons.sync;
         break;
       case TagSyncStatus.error:
@@ -319,13 +319,13 @@ class _TagListItem extends StatelessWidget {
         icon = Icons.error;
         break;
       case TagSyncStatus.pending:
-        color = ThemeColors.of(context).textTertiary;
+        color = ThemeColors.of(context).grey500;
         icon = Icons.schedule;
         break;
     }
 
     return CircleAvatar(
-      backgroundColor: colorLight,
+      backgroundColor: color.withValues(alpha: 0.1),
       child: Icon(icon, color: color, size: 20),
     );
   }
@@ -341,22 +341,22 @@ class _TagListItem extends StatelessWidget {
       case TagSyncStatus.syncing:
         return 'Sincronizando...';
       case TagSyncStatus.error:
-        return 'Erro na sincroniza��o';
+        return 'Erro na sincronização';
       case TagSyncStatus.pending:
-        return 'Aguardando sincroniza��o';
+        return 'Aguardando sincronização';
     }
   }
 
   Color _getSyncStatusColor() {
     switch (tag.syncStatus) {
       case TagSyncStatus.synced:
-        return ThemeColors.of(context).success;
+        return ThemeColors.of(context).greenMain;
       case TagSyncStatus.syncing:
-        return ThemeColors.of(context).warning;
+        return ThemeColors.of(context).orangeMain;
       case TagSyncStatus.error:
         return ThemeColors.of(context).error;
       case TagSyncStatus.pending:
-        return ThemeColors.of(context).textTertiary;
+        return ThemeColors.of(context).grey500;
     }
   }
 
@@ -364,8 +364,6 @@ class _TagListItem extends StatelessWidget {
     return '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
   }
 }
-
-
 
 
 

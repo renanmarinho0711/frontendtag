@@ -8,16 +8,16 @@ import 'package:tagbean/features/auth/presentation/providers/work_context_provid
 import 'package:tagbean/shared/widgets/dialogs/confirmation_dialog.dart';
 import 'package:tagbean/shared/widgets/feedback/action_feedback.dart';
 
-/// Widget de sele��o de loja/contexto de trabalho
+/// Widget de seleção de loja/contexto de trabalho
 /// Exibe um dropdown estilo ComboBox para alternar entre lojas
 class StoreSelector extends ConsumerStatefulWidget {
   /// Se deve mostrar o indicador de loading
   final bool showLoading;
 
-  /// Callback quando o contexto � alterado
+  /// Callback quando o contexto é alterado
   final VoidCallback? onContextChanged;
 
-  /// Se est� em modo compacto (apenas �cone + nome)
+  /// Se estã em modo compacto (apenas ícone + nome)
   final bool compact;
 
   const StoreSelector({
@@ -40,7 +40,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
     final canSwitch = ref.watch(canSwitchStoreProvider);
     final isChanging = ref.watch(isChangingStoreProvider);
 
-    // Se n�o pode trocar de loja, mostrar apenas texto
+    // Se não pode trocar de loja, mostrar apenas texto
     if (!canSwitch) {
       return _buildReadOnly(context, workContextState.context);
     }
@@ -48,10 +48,10 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
     return _buildComboBox(context, workContextState, isChanging);
   }
 
-  /// Constr�i a vers�o somente leitura (quando n�o pode trocar)
+  /// Constrói a versão somente leitura (quando não pode trocar)
   Widget _buildReadOnly(BuildContext context, WorkContext workContext) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: Spacing.sm,
         vertical: Spacing.xs,
       ),
@@ -67,7 +67,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
             size: 18,
             color: ThemeColors.of(context).primary,
           ),
-          SizedBox(width: Spacing.xs),
+          const SizedBox(width: Spacing.xs),
           if (!widget.compact)
             Flexible(
               child: Text(
@@ -85,7 +85,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
     );
   }
 
-  /// Constr�i o ComboBox de sele��o de loja
+  /// Constrói o ComboBox de seleção de loja
   Widget _buildComboBox(
     BuildContext context,
     WorkContextState state,
@@ -95,7 +95,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
     final stores = workContext.availableStores;
     final currentStoreId = workContext.currentStoreId;
 
-    // Adicionar op��o "Todas as lojas" no in�cio se permitido
+    // Adicionar opção "Todas as lojas" no início se permitido
     final List<DropdownMenuItem<String>> items = [];
     
     if (workContext.canSwitchScope) {
@@ -137,7 +137,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
               Icon(
                 Icons.storefront_rounded, 
                 size: 18, 
-                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textSecondary,
+                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey600,
               ),
               const SizedBox(width: 8),
               ConstrainedBox(
@@ -190,7 +190,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // �cone da loja
+          // ícone da loja
           Container(
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
@@ -223,11 +223,11 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
                 isDense: true,
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: isChanging ? ThemeColors.of(context).textTertiary : ThemeColors.of(context).primary,
+                  color: isChanging ? ThemeColors.of(context).grey500 : ThemeColors.of(context).primary,
                 ),
                 hint: Text(
                   'Selecione uma loja',
-                  style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 13),
+                  style: TextStyle(color: ThemeColors.of(context).grey600, fontSize: 13),
                 ),
                 style: TextStyle(
                   color: ThemeColors.of(context).grey800,
@@ -248,11 +248,11 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
     );
   }
 
-  /// Quando uma loja � selecionada
+  /// Quando uma loja é selecionada
   Future<void> _onStoreSelected(String? value, WorkContext currentContext) async {
     if (value == null) return;
 
-    // Verificar se � a mesma loja
+    // Verificar se é a mesma loja
     if (value == 'all' && currentContext.isAllStores) return;
     if (value != 'all' && value == currentContext.currentStoreId && currentContext.isSingleStore) return;
 
@@ -275,17 +275,17 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
       newStoreName = store.name;
     }
 
-    // Mostrar popup de confirma��o usando ConfirmationDialog
+    // Mostrar popup de confirmação usando ConfirmationDialog
     final confirmed = await ConfirmationDialog.show(
       context: context,
       title: isAllStores ? 'Mudar para Todas as Lojas?' : 'Trocar de Loja?',
-      message: 'Voc� est� trocando de "$oldStoreName" para "$newStoreName".\n\n'
-          'Os seguintes dados ser�o recarregados:\n'
-          '� Produtos\n'
-          '� Tags/Etiquetas\n'
-          '� Pre�os e estrat�gias\n'
-          '� Dashboard\n\n'
-          'Nenhum dado ser� perdido.',
+      message: 'você estã trocando de "$oldStoreName" para "$newStoreName".\n\n'
+          'Os seguintes dados serão recarregados:\n'
+          'ã Produtos\n'
+          'ã Tags/Etiquetas\n'
+          'ã PREÇOs e Estratégias\n'
+          'ã Dashboard\n\n'
+          'Nenhum dado será perdido.',
       confirmText: 'Confirmar',
       cancelText: 'Cancelar',
       icon: isAllStores ? Icons.store_mall_directory_rounded : Icons.swap_horiz_rounded,
@@ -336,7 +336,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
     }
   }
 
-  /// Retorna o �cone baseado no escopo
+  /// Retorna o ícone baseado no escopo
   IconData _getIcon(WorkScope scope) {
     switch (scope) {
       case WorkScope.singleStore:
@@ -349,7 +349,7 @@ class _StoreSelectorState extends ConsumerState<StoreSelector> {
   }
 }
 
-/// Widget indicador de contexto atual (vers�o simplificada)
+/// Widget indicador de contexto atual (versão simplificada)
 class WorkContextBadge extends ConsumerWidget {
   const WorkContextBadge({super.key});
 
@@ -361,7 +361,7 @@ class WorkContextBadge extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: _getBackgroundColor(scope),
+        color: _getBackgroundColor(context, scope),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -370,7 +370,7 @@ class WorkContextBadge extends ConsumerWidget {
           Icon(
             _getIcon(scope),
             size: 16,
-            color: _getIconColor(scope),
+            color: _getIconColor(context, scope),
           ),
           const SizedBox(width: 6),
           Text(
@@ -378,7 +378,7 @@ class WorkContextBadge extends ConsumerWidget {
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w500,
-              color: _getIconColor(scope),
+              color: _getIconColor(context, scope),
             ),
           ),
         ],
@@ -397,7 +397,7 @@ class WorkContextBadge extends ConsumerWidget {
     }
   }
 
-  Color _getBackgroundColor(WorkScope scope) {
+  Color _getBackgroundColor(BuildContext context, WorkScope scope) {
     switch (scope) {
       case WorkScope.singleStore:
         return ThemeColors.of(context).overlay10;  // Usando overlay universal
@@ -408,7 +408,7 @@ class WorkContextBadge extends ConsumerWidget {
     }
   }
 
-  Color _getIconColor(WorkScope scope) {
+  Color _getIconColor(BuildContext context, WorkScope scope) {
     switch (scope) {
       case WorkScope.singleStore:
         return ThemeColors.of(context).blueDark;
@@ -420,14 +420,14 @@ class WorkContextBadge extends ConsumerWidget {
   }
 }
 
-/// Dialog para sele��o de loja (alternativa ao dropdown)
+/// Dialog para seleção de loja (alternativa ao dropdown)
 class StoreSelectorDialog extends ConsumerStatefulWidget {
   const StoreSelectorDialog({super.key});
 
   @override
   ConsumerState<StoreSelectorDialog> createState() => _StoreSelectorDialogState();
 
-  /// Mostra o dialog de sele��o de loja
+  /// Mostra o dialog de seleção de loja
   static Future<bool?> show(BuildContext context) {
     return showDialog<bool>(
       context: context,
@@ -467,7 +467,7 @@ class _StoreSelectorDialogState extends ConsumerState<StoreSelectorDialog> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Op��o "Todas as lojas"
+            // Opãão "Todas as lojas"
             if (workContext.canSwitchScope) ...[
               _buildOption(
                 title: 'Todas as lojas',
@@ -539,7 +539,7 @@ class _StoreSelectorDialogState extends ConsumerState<StoreSelectorDialog> {
     return ListTile(
       leading: Icon(
         icon,
-        color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textTertiary,
+        color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey500,
       ),
       title: Text(
         title,
@@ -578,7 +578,6 @@ class _StoreSelectorDialogState extends ConsumerState<StoreSelectorDialog> {
     }
   }
 }
-
 
 
 

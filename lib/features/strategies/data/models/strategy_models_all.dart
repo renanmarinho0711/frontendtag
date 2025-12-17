@@ -1,6 +1,6 @@
 /// Strategy Models - Barrel File
 /// 
-/// Este arquivo exporta todos os modelos de estratgia do m�dulo.
+/// Este arquivo exporta todos os modelos de estratgia do módulo.
 /// Permite importar todos os modelos com um nico import:
 /// 
 /// ```dart
@@ -23,7 +23,7 @@ export 'environmental_models.dart';
 // Modelos de horrios de pico e performance
 export 'performance_models.dart';
 
-// Modelos de liquida��o automtica (hide duplicates)
+// Modelos de liquidação automtica (hide duplicates)
 export 'clearance_models.dart' hide MarkdownRuleModel, MarkdownProductModel, MarkdownHistoryModel;
 
 // Modelos de markdown por validade (canonical MarkdownRuleModel, MarkdownProductModel)

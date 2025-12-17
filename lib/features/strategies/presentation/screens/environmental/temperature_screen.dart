@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/providers/environmental_provider.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 
@@ -90,7 +89,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).warning,
+              backgroundColor: ThemeColors.of(context).orangeMain,
             ),
           Positioned(
             right: 0,
@@ -165,7 +164,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
+                colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
               ),
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
@@ -186,7 +185,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Precifica??o por Temperatura',
+                  'Precificação por Temperatura',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -199,7 +198,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   ),
                 ),
                 Text(
-                  'Integra??o com Clima',
+                  'IntegrAção com Clima',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -254,7 +253,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         controller: _tabController,
         indicator: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
+            colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
@@ -291,7 +290,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               Icons.history_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Hist?rico',
+            text: 'Histórico',
           ),
         ],
       ),
@@ -370,14 +369,14 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
+          colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 20 : (isTablet ? 22 : 24),
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).warning.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -411,7 +410,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Integra??o com Clima',
+                  'IntegrAção com Clima',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -447,7 +446,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
             child: Switch(
               value: state.isStrategyActive,
               onChanged: (value) => ref.read(temperatureProvider.notifier).setStrategyActive(value),
-              activeColor: ThemeColors.of(context).surface,
+              activeThumbColor: ThemeColors.of(context).surface,
               activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
             ),
           ),
@@ -474,7 +473,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).infoLight,
+            color: ThemeColors.of(context).blueMain.withValues(alpha: 0.3),
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 8 : 10),
           ),
@@ -646,14 +645,14 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).infoLight,
+                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.cloud_rounded,
-                  color: ThemeColors.of(context).info,
+                  color: ThemeColors.of(context).blueMain,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -662,7 +661,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               ),
               Expanded(
                 child: Text(
-                  'Configura??o API',
+                  'ConfigurAção API',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -752,7 +751,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   mobileFontSize: 12,
                 ),
               ),
-              hintText: 'Ex: S?o Paulo',
+              hintText: 'Ex: São Paulo',
               prefixIcon: Icon(
                 Icons.location_city_rounded,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
@@ -825,7 +824,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).successLight],
+          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).success.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
@@ -848,7 +847,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Frequ?ncia de Atualiza??o',
+                'Frequãncia de AtualizAção',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -951,10 +950,10 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
           borderRadius: BorderRadius.circular(
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
-          border: Border.all(color: faixa.colorLight, width: 2),
+          border: Border.all(color: faixa.color.withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
-              color: faixa.colorLight,
+              color: faixa.color.withValues(alpha: 0.15),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -980,7 +979,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: faixa.colorLight,
+                        color: faixa.color.withValues(alpha: 0.3),
                         blurRadius: isMobile ? 10 : 12,
                         offset: const Offset(0, 4),
                       ),
@@ -1051,7 +1050,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [faixa.color, faixa.colorDark],
+                      colors: [faixa.color, faixa.color.withValues(alpha: 0.8)],
                     ),
                     borderRadius: BorderRadius.circular(
                       isMobile ? 10 : 12,
@@ -1088,9 +1087,9 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                       vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: faixa.colorLight,
+                      color: faixa.color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: faixa.colorLight),
+                      border: Border.all(color: faixa.color.withValues(alpha: 0.3)),
                     ),
                     child: Text(
                       p,
@@ -1267,14 +1266,14 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).info),
+            CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueMain),
             ),
             SizedBox(
               height: AppSizes.cardPadding.get(isMobile, isTablet),
             ),
             Text(
-              'Testando Conex?o',
+              'Testando Conexão',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1327,7 +1326,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Conex?o Bem-Sucedida!',
+                      'Conexão Bem-Sucedida!',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1354,7 +1353,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).success,
+          backgroundColor: ThemeColors.of(context).greenMain,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1375,11 +1374,11 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
         ),
         icon: Icon(
           Icons.wb_sunny_rounded,
-          color: ThemeColors.of(context).warning,
+          color: ThemeColors.of(context).orangeMain,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
-          'Precifica??o por Temperatura',
+          'Precificação por Temperatura',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1395,7 +1394,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Sistema inteligente que ajusta pre?os baseado na temperatura:',
+                'Sistema inteligente que ajusta preços baseado na temperatura:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1410,7 +1409,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? Integra??o com API OpenWeather em tempo real',
+                '? IntegrAção com API OpenWeather em tempo real',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1425,7 +1424,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre?os de bebidas geladas em dias quentes',
+                '? Aumenta preços de bebidas geladas em dias quentes',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1440,7 +1439,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Reduz pre?os de sorvetes em dias frios',
+                '? Reduz preços de sorvetes em dias frios',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1455,7 +1454,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre?os de bebidas quentes no frio',
+                '? Aumenta preços de bebidas quentes no frio',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1470,7 +1469,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Atualiza??es autom?ticas a cada 30 minutos',
+                '? Atualizações automáticas a cada 30 minutos',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1522,7 +1521,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Configura??es salvas com sucesso',
+                'Configurações salvas com sucesso',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1534,7 +1533,7 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).warning,
+          backgroundColor: ThemeColors.of(context).orangeMain,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1544,9 +1543,6 @@ class _TemperaturaConfigScreenState extends ConsumerState<TemperaturaConfigScree
     });
   }
 }
-
-
-
 
 
 

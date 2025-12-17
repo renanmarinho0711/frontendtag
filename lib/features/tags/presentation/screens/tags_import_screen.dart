@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-// import 'package:file_picker/file_picker.dart'; // Depend�ncia removida
+import 'package:file_picker/file_picker.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/tags/presentation/providers/tags_provider.dart';
 import 'package:tagbean/features/tags/data/models/tag_model.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
@@ -24,7 +23,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
     with SingleTickerProviderStateMixin, ResponsiveCache {
   String _formatoSelecionado = 'csv';
   bool _isImporting = false;
-  dynamic _arquivoSelecionado; // PlatformFile - comentado pois file_picker foi removido
+  PlatformFile? _arquivoSelecionado;
   List<TagImportItem> _parsedItems = [];
   bool _sobrescreverExistentes = true;
   bool _validarAntes = true;
@@ -32,7 +31,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
   double _progressoImportacao = 0.0;
   late AnimationController _uploadAnimationController;
   
-  // Histrico de importaes vem do backend via provider
+  // Histórico de importações vem do backend via provider
   List<Map<String, dynamic>> get _importacoesRecentes {
     final workContext = ref.read(workContextProvider);
     final storeId = workContext.context.currentStoreId ?? '';
@@ -108,7 +107,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Histrico de Importaes',
+                            'Histórico de Importações',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -245,7 +244,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
               borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).blueCyanLight,
+                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -455,7 +454,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueCyanLight,
+                    color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -539,7 +538,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).info.withValues(alpha: 0.4),
+              color: ThemeColors.of(context).blueMain.withValues(alpha: 0.4),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -678,7 +677,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             vertical: AppSizes.paddingXs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).blueCyanDark,
+                            color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.8),
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Row(
@@ -718,7 +717,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             vertical: AppSizes.paddingXs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).successIconDark,
+                            color: ThemeColors.of(context).successIcon.withValues(alpha: 0.8),
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Row(
@@ -963,7 +962,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
               ),
               Expanded(
                 child: Text(
-                  'Configuraes de Importao',
+                  'Configurações de Importação',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -1089,7 +1088,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: ThemeColors.of(context).infoDark,
+              activeThumbColor: ThemeColors.of(context).infoDark,
             ),
           ),
         ],
@@ -1235,7 +1234,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                     vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: taxaSucesso >= 95 ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningPastel,
+                    color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMain.withValues(alpha: 0.1) : ThemeColors.of(context).warningPastel,
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                   ),
                   child: Text(
@@ -1249,7 +1248,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: taxaSucesso >= 95 ? ThemeColors.of(context).successDark : ThemeColors.of(context).warningDark,
+                      color: taxaSucesso >= 95 ? ThemeColors.of(context).greenMain.withValues(alpha: 0.8) : ThemeColors.of(context).warningDark,
                     ),
                   ),
                 ),
@@ -1261,11 +1260,11 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildBadge('${item['quantidade']} total', ThemeColors.of(context).info),
+                _buildBadge('${item['quantidade']} total', ThemeColors.of(context).blueMain),
                 SizedBox(
                   width: AppSizes.paddingXs.get(isMobile, isTablet),
                 ),
-                _buildBadge('${item['sucesso']} OK', ThemeColors.of(context).success),
+                _buildBadge('${item['sucesso']} OK', ThemeColors.of(context).greenMain),
                 if (item['falha'] > 0) ...[
                   SizedBox(
                     width: AppSizes.paddingXs.get(isMobile, isTablet),
@@ -1312,7 +1311,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(isMobile ? 5 : 6),
       ),
       child: Text(
@@ -1349,7 +1348,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Erro ao ler arquivo'),
+                content: const Text('Erro ao ler arquivo'),
                 backgroundColor: ThemeColors.of(context).errorIcon,
               ),
             );
@@ -1365,7 +1364,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Arquivo vazio'),
+                content: const Text('Arquivo vazio'),
                 backgroundColor: ThemeColors.of(context).warningIcon,
               ),
             );
@@ -1383,7 +1382,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Coluna MAC Address no encontrada'),
+                content: const Text('Coluna MAC Address no encontrada'),
                 backgroundColor: ThemeColors.of(context).errorIcon,
               ),
             );
@@ -1472,7 +1471,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
     if (_parsedItems.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Selecione um arquivo com tags vlidas primeiro'),
+          content: const Text('Selecione um arquivo com tags vlidas primeiro'),
           backgroundColor: ThemeColors.of(context).warningIcon,
         ),
       );
@@ -1485,7 +1484,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
     if (storeId == null || storeId.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Selecione uma loja primeiro'),
+          content: const Text('Selecione uma loja primeiro'),
           backgroundColor: ThemeColors.of(context).errorIcon,
         ),
       );
@@ -1507,7 +1506,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
               size: AppSizes.iconMediumLargeAlt.get(isMobile, isTablet),
             ),
             SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-            Text('Confirmar Importao', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
+            Text('Confirmar Importação', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17))),
           ],
         ),
         content: Column(
@@ -1568,7 +1567,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                             Flexible(
                               child: Text(
-                                'Importao concluda! ${result.successCount} de ${result.totalProcessed} tags importadas.',
+                                'Importação concluda! ${result.successCount} de ${result.totalProcessed} tags importadas.',
                                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13)),
                               ),
                             ),
@@ -1589,7 +1588,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                     
                     // Atualizar lista de tags
                     ref.read(tagsNotifierProvider.notifier).refresh();
-                    // Invalidar histrico para recarregar
+                    // Invalidar histórico para recarregar
                     ref.invalidate(tagImportHistoryProvider(storeId));
                   } else {
                     final error = ref.read(tagsImportNotifierProvider).error;
@@ -1770,7 +1769,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                 ),
               ),
               Text(
-                ' Preo',
+                ' Preço',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1844,7 +1843,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
               width: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Limpar Histrico',
+              'Limpar Histórico',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1858,7 +1857,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
           ],
         ),
         content: Text(
-          'Deseja realmente limpar todo o histrico de importaes?',
+          'Deseja realmente limpar todo o histórico de importações?',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1903,7 +1902,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                         width: AppSizes.paddingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Histrico limpo!',
+                        'Histórico limpo!',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1948,9 +1947,6 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
     );
   }
 }
-
-
-
 
 
 

@@ -1,6 +1,5 @@
-mport 'package:flutter/material.dart';
-import 'theme_colors.dart';
-import 'theme_colors_dynamic.dart';
+import 'package:flutter/material.dart';
+import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 /// Classe helper para fontSize responsivo
 class ResponsiveFontSize {
@@ -22,22 +21,22 @@ class ResponsiveFontSize {
   }
 }
 
-/// Estilos de texto padronizados da aplica��o
+/// Estilos de texto padronizados da aplicação
 /// 
 /// Centraliza todos os estilos de texto base.
 /// Para adaptar para mobile/tablet, use .responsive() ou .copyWith()
 /// 
 /// Uso:
 /// ```dart
-/// Text('T�tulo', style: AppTextStyles.h1.responsive(isMobile))
+/// Text('Título', style: AppTextStyles.h1.responsive(isMobile))
 /// Text('Label', style: AppTextStyles.fieldLabel)
 /// ```
 class AppTextStyles {
   AppTextStyles._();
 
-  // ========== T�TULOS ==========
+  // ========== TÍTULOS ==========
   
-  /// T�tulo principal (Hero) - Desktop
+  /// Título principal (Hero) - Desktop
   static const TextStyle h1 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.w900,
@@ -45,7 +44,7 @@ class AppTextStyles {
     color: AppThemeColors.surface,
   );
 
-  /// T�tulo secund�rio - Desktop
+  /// Título secundário - Desktop
   static const TextStyle h2 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
@@ -53,7 +52,7 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
 
-  /// T�tulo terci�rio - Desktop
+  /// Título terciário - Desktop
   static const TextStyle h3 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
@@ -63,7 +62,7 @@ class AppTextStyles {
 
   // ========== LABELS ==========
   
-  /// Label para campos de formul�rio
+  /// Label para campos de formulário
   static const TextStyle fieldLabel = TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.w600,
@@ -78,9 +77,9 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
 
-  // ========== BOT�ES ==========
+  // ========== BOTÕES ==========
   
-  /// Texto de bot�es prim�rios
+  /// Texto de botões primários
   static const TextStyle buttonPrimary = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.bold,
@@ -88,7 +87,7 @@ class AppTextStyles {
     color: AppThemeColors.surface,
   );
 
-  /// Texto de bot�es de texto (TextButton)
+  /// Texto de botões de texto (TextButton)
   static const TextStyle buttonText = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
@@ -97,7 +96,7 @@ class AppTextStyles {
 
   // ========== CORPO DE TEXTO ==========
   
-  /// Texto corpo padr�o
+  /// Texto corpo padrão
   static const TextStyle body = TextStyle(
     fontSize: 14,
     color: AppThemeColors.textSecondary,
@@ -140,7 +139,7 @@ class AppTextStyles {
     color: AppThemeColors.surface,
   );
 
-  /// SubT�tulo/Slogan (ex: "PRE�O INTELIGENTE")
+  /// SubTítulo/Slogan (ex: "PREÇO INTELIGENTE")
   static const TextStyle subtitle = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w600,
@@ -156,7 +155,7 @@ class AppTextStyles {
     color: AppThemeColors.surface,
   );
 
-  /// Footer text secund�rio
+  /// Footer text secundário
   static const TextStyle footerSecondary = TextStyle(
     fontSize: 12,
     color: AppThemeColors.surface,
@@ -164,21 +163,21 @@ class AppTextStyles {
 
   // ========== HELPERS PARA INFO/DEMO ==========
   
-  /// Texto de informa��o (como credenciais demo) - T�tulo
+  /// Texto de informação (como credenciais demo) - Título
   static const TextStyle infoTitle = TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.bold,
     color: AppThemeColors.infoText,
   );
 
-  /// Texto de informa��o (como credenciais demo) - valor
+  /// Texto de informação (como credenciais demo) - valor
   static const TextStyle infoValue = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
     color: AppThemeColors.infoText,
   );
 
-  /// Texto de informa��o - label pequena
+  /// Texto de informação - label pequena
   static const TextStyle infoLabel = TextStyle(
     fontSize: 10,
     color: AppThemeColors.textTertiary,
@@ -186,35 +185,35 @@ class AppTextStyles {
 
   // ========== DASHBOARD STYLES ==========
   
-  /// T�tulo de cards no dashboard (branco, bold)
+  /// Título de cards no dashboard (branco, bold)
   static const TextStyle dashboardCardTitle = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.bold,
     color: AppThemeColors.white,
   );
   
-  /// SubT�tulo de cards no dashboard (branco transl�cido)
+  /// SubTítulo de cards no dashboard (branco translúcido)
   static const TextStyle dashboardCardSubtitle = TextStyle(
     fontSize: 8,
     fontWeight: FontWeight.w500,
     color: AppThemeColors.white70,
   );
   
-  /// Valor de m�trica grande (n�meros destacados)
+  /// Valor de métrica grande (números destacados)
   static const TextStyle metricValue = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
     color: AppThemeColors.white,
   );
   
-  /// Label de m�trica (acima ou abaixo do valor)
+  /// Label de métrica (acima ou abaixo do valor)
   static const TextStyle metricLabel = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
     color: AppThemeColors.white70,
   );
   
-  /// Valor de m�trica pequena
+  /// Valor de métrica pequena
   static const TextStyle metricValueSmall = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
@@ -228,7 +227,7 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
   
-  /// Valor num�rico de categoria
+  /// Valor numérico de categoria
   static const TextStyle categoryValue = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
@@ -255,14 +254,14 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
   
-  /// T�tulo (20-22-24)
+  /// Título (20-22-24)
   static const TextStyle title = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
     color: AppThemeColors.textPrimary,
   );
   
-  /// Heading/Cabe�alho (24-26-28)
+  /// Heading/Cabeçalho (24-26-28)
   static const TextStyle heading = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
@@ -271,35 +270,35 @@ class AppTextStyles {
 
   // ========== DASHBOARD SPECIFIC STYLES ==========
 
-  /// Valor de estat�stica (grande, destaque)
+  /// Valor de estatística (grande, destaque)
   static const TextStyle statValue = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
     letterSpacing: -0.5,
   );
 
-  /// Label de estat�stica (pequeno, secund�rio)
+  /// Label de estatística (pequeno, secundário)
   static const TextStyle statLabel = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w600,
     color: AppThemeColors.textSecondary,
   );
 
-  /// T�tulo de estrat�gia
+  /// Título de estratégia
   static const TextStyle strategyTitle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
     color: AppThemeColors.textPrimary,
   );
 
-  /// Valor de estrat�gia
+  /// Valor de estratégia
   static const TextStyle strategyValue = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
     letterSpacing: -0.5,
   );
 
-  /// Label de estrat�gia
+  /// Label de estratégia
   static const TextStyle strategyLabel = TextStyle(
     fontSize: 11,
     color: AppThemeColors.textSecondary,
@@ -314,7 +313,7 @@ class AppTextStyles {
 
   // ========== PRODUCT EDIT SPECIFIC STYLES ==========
 
-  /// T�tulo de se��o em card (ex: "Informa��es Gerais", "Precifica��o")
+  /// Título de seção em card (ex: "Informações Gerais", "Precificação")
   static const TextStyle sectionTitle = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
@@ -322,25 +321,25 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
 
-  /// Label de valor/pre�o em hist�rico
+  /// Label de valor/preço em histórico
   static const TextStyle valueLabel = TextStyle(
     fontSize: 11,
     color: AppThemeColors.textTertiary,
   );
 
-  /// Valor em hist�rico/card (ex: R$ 10,00)
+  /// Valor em histórico/card (ex: R$ 10,00)
   static const TextStyle valueText = TextStyle(
     fontSize: 12,
     color: AppThemeColors.textSecondary,
   );
 
-  /// Texto de a��o em dialogs (descri��o)
+  /// Texto de ação em dialogs (descrição)
   static const TextStyle dialogContent = TextStyle(
     fontSize: 14,
     color: AppThemeColors.textSecondary,
   );
 
-  /// T�tulo de dialog
+  /// Título de dialog
   static const TextStyle dialogTitle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
@@ -348,7 +347,7 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
 
-  /// Texto de bot�o em dialog/a��o
+  /// Texto de botão em dialog/ação
   static const TextStyle dialogButton = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
@@ -360,7 +359,7 @@ class AppTextStyles {
     color: AppThemeColors.textPrimary,
   );
 
-  /// Texto de contagem/badge (ex: "3 altera��es")
+  /// Texto de contagem/badge (ex: "3 alterações")
   static const TextStyle countLabel = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w600,
@@ -369,14 +368,14 @@ class AppTextStyles {
 
   // ========== SNACKBAR STYLES ==========
 
-  /// T�tulo em SnackBar (ex: "Produto Exclu�do!")
+  /// Título em SnackBar (ex: "Produto Excluído!")
   static const TextStyle snackbarTitle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.bold,
     color: AppThemeColors.surface,
   );
 
-  /// Mensagem em SnackBar (ex: "Altera��es salvas com sucesso")
+  /// Mensagem em SnackBar (ex: "Alterações salvas com sucesso")
   static const TextStyle snackbarMessage = TextStyle(
     fontSize: 12,
     color: AppThemeColors.surface,
@@ -384,7 +383,7 @@ class AppTextStyles {
 
   // ========== FORM CONTROLS ==========
 
-  /// Texto de dropdown (categoria, status, etc.) - vers�o aprimorada do dropdownItem
+  /// Texto de dropdown (categoria, status, etc.) - versão aprimorada do dropdownItem
   static const TextStyle dropdownText = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
@@ -401,14 +400,14 @@ class AppTextStyles {
     desktop: 14.0,
   );
   
-  /// 389x - 2� MAIS USADO
+  /// 389x - 2º MAIS USADO
   static const ResponsiveFontSize fontSizeBaseAlt = ResponsiveFontSize(
     mobile: 14.0,
     tablet: 13.0,
     desktop: 13.0,
   );
   
-  /// 337x - 3� MAIS USADO
+  /// 337x - 3º MAIS USADO
   static const ResponsiveFontSize fontSizeSm = ResponsiveFontSize(
     mobile: 12.0,
     tablet: 12.0,
@@ -695,7 +694,7 @@ class AppTextStyles {
     desktop: 22.0,
   );
   
-  // ===== V8.2 - FONT SIZE ADICIONAIS (124 ocorr�ncias!) =====
+  // ===== V8.2 - FONT SIZE ADICIONAIS (124 ocorrências!) =====
   
   /// 9x
   static const ResponsiveFontSize fontSizeMdAlt7 = ResponsiveFontSize(
@@ -888,21 +887,21 @@ class AppTextStyles {
 
   // ========== PRODUTOS DASHBOARD SPECIFIC ==========
 
-  /// Welcome section T�tulo principal
+  /// Welcome section Título principal
   static const ResponsiveFontSize fontSizeWelcomeTitle = ResponsiveFontSize(
     mobile: 14.0,
     tablet: 15.0,
     desktop: 16.0,
   );
 
-  /// Welcome section subT�tulo
+  /// Welcome section subTítulo
   static const ResponsiveFontSize fontSizeWelcomeSubtitle = ResponsiveFontSize(
     mobile: 9.0,
     tablet: 9.5,
     desktop: 10.0,
   );
 
-  /// Welcome metric value (n�meros grandes)
+  /// Welcome metric value (números grandes)
   static const ResponsiveFontSize fontSizeWelcomeMetricValue = ResponsiveFontSize(
     mobile: 24.0,
     tablet: 26.0,
@@ -923,7 +922,7 @@ class AppTextStyles {
     desktop: 18.0,
   );
 
-  /// Categoria info secund�ria
+  /// Categoria info secundária
   static const ResponsiveFontSize fontSizeCategoriaInfo = ResponsiveFontSize(
     mobile: 12.0,
     tablet: 12.5,
@@ -939,14 +938,14 @@ class AppTextStyles {
 
   // ========== DASHBOARD STAT CARDS ==========
 
-  /// Valor de estat�stica (n�meros grandes nos cards)
+  /// Valor de estatística (números grandes nos cards)
   static const ResponsiveFontSize fontSizeStatValue = ResponsiveFontSize(
     mobile: 18.0,
     tablet: 20.0,
     desktop: 22.0,
   );
 
-  /// Label de estat�stica
+  /// Label de estatística
   static const ResponsiveFontSize fontSizeStatLabel = ResponsiveFontSize(
     mobile: 11.0,
     tablet: 12.0,
@@ -962,7 +961,7 @@ class AppTextStyles {
 
   // ========== SECTION HEADERS ==========
 
-  /// T�tulo de se��o (ex: "Alertas Importantes")
+  /// Título de seção (ex: "Alertas Importantes")
   static const ResponsiveFontSize fontSizeSectionTitle = ResponsiveFontSize(
     mobile: 18.0,
     tablet: 20.0,
@@ -978,14 +977,14 @@ class AppTextStyles {
 
   // ========== ALERT CARDS ==========
 
-  /// T�tulo do alerta
+  /// Título do alerta
   static const ResponsiveFontSize fontSizeAlertTitle = ResponsiveFontSize(
     mobile: 12.0,
     tablet: 13.0,
     desktop: 14.0,
   );
 
-  /// Descri��o do alerta
+  /// Descrição do alerta
   static const ResponsiveFontSize fontSizeAlertDescription = ResponsiveFontSize(
     mobile: 10.0,
     tablet: 11.0,
@@ -1001,14 +1000,14 @@ class AppTextStyles {
 
   // ========== QUICK ACTION CARDS ==========
 
-  /// T�tulo da a��o
+  /// Título da ação
   static const ResponsiveFontSize fontSizeActionTitle = ResponsiveFontSize(
     mobile: 12.0,
     tablet: 13.0,
     desktop: 14.0,
   );
 
-  /// SubT�tulo da a��o
+  /// SubTítulo da ação
   static const ResponsiveFontSize fontSizeActionSubtitle = ResponsiveFontSize(
     mobile: 10.0,
     tablet: 11.0,
@@ -1024,7 +1023,7 @@ class AppTextStyles {
     desktop: 16.0,
   );
 
-  /// Info secund�ria da categoria (quantidade, tags)
+  /// Info secundária da categoria (quantidade, tags)
   static const ResponsiveFontSize fontSizeCategoryInfo = ResponsiveFontSize(
     mobile: 11.0,
     tablet: 12.0,
@@ -1055,10 +1054,10 @@ extension ResponsiveTextStyle on TextStyle {
   /// AppTextStyles.h1.responsive(isMobile, isTablet)
   /// ```
   TextStyle responsive(bool isMobile, [bool isTablet = false]) {
-    // Redu��o de 20% para mobile, 10% para tablet
+    // Redução de 20% para mobile, 10% para tablet
     final mobileFactor = isMobile ? 0.8 : (isTablet ? 0.9 : 1.0);
     
-    // Ajusta tamb�m letterSpacing proporcionalmente
+    // Ajusta também letterSpacing proporcionalmente
     final newLetterSpacing = (letterSpacing ?? 0) * mobileFactor;
     
     return copyWith(
@@ -1067,8 +1066,8 @@ extension ResponsiveTextStyle on TextStyle {
     );
   }
 
-  /// Vers�o simplificada para ajuste manual de tamanhos espec�ficos
-  /// �til para casos onde voc� precisa de controle granular (13/13/14)
+  /// Versão simplificada para ajuste manual de tamanhos específicos
+  /// Útil para casos onde você precisa de controle granular (13/13/14)
   /// 
   /// Uso:
   /// ```dart

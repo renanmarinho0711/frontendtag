@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
-/// Modelo para item do histrico de preos
+/// Modelo para item do histórico de preços
 class PriceHistoryItemData {
   final DateTime data;
   final double precoAnterior;
@@ -20,7 +19,7 @@ class PriceHistoryItemData {
   });
 }
 
-/// Card de histrico de preos do produto
+/// Card de histórico de preços do produto
 class PriceHistoryCard extends StatelessWidget {
   final List<PriceHistoryItemData> historico;
   final bool showAll;
@@ -125,7 +124,7 @@ class PriceHistoryCard extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            'Histrico de Preos',
+            'Histórico de Preços',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -145,7 +144,7 @@ class PriceHistoryCard extends StatelessWidget {
   Widget _buildEmptyState(BuildContext context, bool isMobile, bool isTablet) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(AppSpacing.lg),
+        padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
           children: [
             Icon(
@@ -155,7 +154,7 @@ class PriceHistoryCard extends StatelessWidget {
             ),
             const SizedBox(height: AppSpacing.md),
             Text(
-              'Nenhum histrico disponvel',
+              'Nenhum histórico disponvel',
               style: AppTextStyles.body.responsive(isMobile, isTablet).copyWith(
                     color: ThemeColors.of(context).textSecondary,
                   ),
@@ -318,7 +317,7 @@ class PriceHistoryCard extends StatelessWidget {
         label: Text(
           showAll
               ? 'Ver Menos'
-              : 'Ver Histrico Completo (${historico.length})',
+              : 'Ver Histórico Completo (${historico.length})',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,

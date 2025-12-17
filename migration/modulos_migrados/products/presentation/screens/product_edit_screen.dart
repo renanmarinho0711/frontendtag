@@ -7,7 +7,6 @@ import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/features/products/presentation/providers/products_state_provider.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Tela de edição de produto
 /// Aceita ProductModel para dados reais
 class ProdutosEditarScreen extends ConsumerStatefulWidget {
@@ -407,8 +406,8 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                       content: Row(
                         children: [
                           Icon(Icons.open_in_new_rounded, color: ThemeColors.of(context).surface),
-                          SizedBox(width: AppSpacing.md),
-                          Text('Abrindo detalhes da tag...'),
+                          const SizedBox(width: AppSpacing.md),
+                          const Text('Abrindo detalhes da tag...'),
                         ],
                       ),
                       backgroundColor: ThemeColors.of(context).success,
@@ -444,8 +443,8 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                       content: Row(
                         children: [
                           Icon(Icons.qr_code_scanner_rounded, color: ThemeColors.of(context).surface),
-                          SizedBox(width: AppSpacing.md),
-                          Text('Abrindo associação de tag...'),
+                          const SizedBox(width: AppSpacing.md),
+                          const Text('Abrindo associação de tag...'),
                         ],
                       ),
                       backgroundColor: ThemeColors.of(context).warning,
@@ -725,7 +724,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                   onSubmitted: () => _precoKgFocusNode.requestFocus(),
                 ),
               ),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: _buildTextField(context, controller: _precoKgController,
                   focusNode: _precoKgFocusNode,
@@ -782,7 +781,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           
           // Dropdown de categoria
           DropdownButtonFormField<String>(
-            value: _categoria,
+            initialValue: _categoria,
             style: _responsiveTextStyle(AppTextStyles.dropdownItem),
             decoration: InputDecoration(
               labelText: 'Categoria',
@@ -828,7 +827,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           
           // Dropdown de status
           DropdownButtonFormField<String>(
-            value: _status,
+            initialValue: _status,
             style: _responsiveTextStyle(AppTextStyles.dropdownItem),
             decoration: InputDecoration(
               labelText: 'Status',
@@ -1143,7 +1142,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
 
   Widget _buildDiscardDialog(BuildContext context) {
     return AlertDialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: AppRadius.dialog,
       ),
       icon: const Icon(
@@ -1251,7 +1250,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.dialog,
         ),
         icon: Icon(
@@ -1275,7 +1274,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               // TODO: Implementar desassociação via provider
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Tag desassociada com sucesso!'),
+                  content: const Text('Tag desassociada com sucesso!'),
                   backgroundColor: ThemeColors.of(context).warning,
                   behavior: SnackBarBehavior.floating,
                 ),

@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// BLOCO 1: Status Geral do Sistema

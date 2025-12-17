@@ -6,7 +6,6 @@ import 'package:tagbean/features/strategies/presentation/providers/strategies_pr
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class SugestoesIACard extends ConsumerWidget {
   const SugestoesIACard({super.key});
   

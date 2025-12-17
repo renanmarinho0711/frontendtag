@@ -5,7 +5,6 @@ import 'package:tagbean/features/import_export/data/models/import_export_models.
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class ExportacaoProdutosScreen extends ConsumerStatefulWidget {
   const ExportacaoProdutosScreen({super.key});
@@ -29,13 +28,13 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
   double get _uploadProgress => _state.exportProgress;
   String get _formatoSelecionado => _state.selectedFormat.id;
   
-  // Getters para resultado de exporta??o
+  // Getters para resultado de exportAção
   int get _totalExportados => _state.result?.recordCount ?? _state.totalProducts;
   int get _sucessos => _state.result?.success == true ? (_state.result?.recordCount ?? 0) : 0;
   int get _erros => _state.result?.success == false ? 1 : 0;
-  int get _ignorados => 0; // Exporta??o n?o tem ignorados
+  int get _ignorados => 0; // ExportAção não tem ignorados
   
-  final Map<String, Map<String, dynamic>> _formatos = {
+  Map<String, Map<String, dynamic>> _getFormatos(BuildContext context) => {
     'excel': {
       'nome': 'Excel',
       'icone': Icons.table_chart_rounded,
@@ -50,7 +49,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
     },
   };
 
-  // Hist?rico de exporta??es via provider
+  // Histórico de exportações via provider
   List<Map<String, dynamic>> get _historicoImportacoes {
     final history = _state.exportHistory;
     if (history.isEmpty) {
@@ -75,7 +74,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
     );
     _animationController.forward();
     
-    // Carregar hist?rico
+    // Carregar histórico
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _notifier.loadHistory();
     });
@@ -123,7 +122,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                         height: AppSizes.cardPadding.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Importa??es Recentes',
+                        'Importações Recentes',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -219,7 +218,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primaryLight,
+                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -381,7 +380,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
               ),
             ),
           ),
-          _buildStepIndicator(2, 'Conclu?do', Icons.check_circle_rounded, _currentStep >= 2),
+          _buildStepIndicator(2, 'Concluãdo', Icons.check_circle_rounded, _currentStep >= 2),
         ],
       ),
     );
@@ -419,7 +418,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
             boxShadow: isActive
                 ? [
                     BoxShadow(
-                      color: ThemeColors.of(context).primaryLight,
+                      color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                       blurRadius: isMobile ? 8 : 10,
                       offset: const Offset(0, 4),
                     ),
@@ -523,7 +522,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
-            children: _formatos.entries.map((entry) {
+            children: _getFormatos(context).entries.map((entry) {
               final formato = entry.value;
               final isSelected = _formatoSelecionado == entry.key;
               
@@ -559,7 +558,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                         boxShadow: isSelected
                             ? [
                                 BoxShadow(
-                                  color: (formato['cor'] as Color)Light,
+                                  color: (formato['cor'] as Color).withValues(alpha: 0.3),
                                   blurRadius: isMobile ? 10 : 12,
                                   offset: const Offset(0, 4),
                                 ),
@@ -623,7 +622,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
   Widget _buildStep1Card() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    final formato = _formatos[_formatoSelecionado]!;
+    final formato = _getFormatos(context)[_formatoSelecionado]!;
     
     return TweenAnimationBuilder(
       duration: const Duration(milliseconds: 500),
@@ -660,7 +659,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
               ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTealLight],
+                  colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTeal.withValues(alpha: 0.1)],
                 ),
                 shape: BoxShape.circle,
               ),
@@ -686,7 +685,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                 border: Border.all(color: ThemeColors.of(context).successLight),
               ),
               child: Text(
-                'ETAPA 1 - PREPARA??O',
+                'ETAPA 1 - PREPARAÇÃO',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -722,7 +721,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
               height: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Template com as colunas necess?rias para importa??o',
+              'Template com as colunas necessãrias para importação',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -769,9 +768,9 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                   SizedBox(
                     height: AppSizes.paddingSmAlt.get(isMobile, isTablet),
                   ),
-                  _buildColumnItem('C?digo de Barras', 'obrigat?rio'),
-                  _buildColumnItem('Nome do Produto', 'obrigat?rio'),
-                  _buildColumnItem('Pre?o', 'obrigat?rio'),
+                  _buildColumnItem('Cãdigo de Barras', 'obrigatório'),
+                  _buildColumnItem('Nome do Produto', 'obrigatório'),
+                  _buildColumnItem('PREÇO', 'obrigatório'),
                   _buildColumnItem('Categoria', 'opcional'),
                   _buildColumnItem('Estoque', 'opcional'),
                 ],
@@ -860,7 +859,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
 
   Widget _buildColumnItem(String nome, String status) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    final isObrigatorio = status == 'obrigat?rio';
+    final isObrigatorio = status == 'obrigatório';
     
     return Padding(
       padding: EdgeInsets.only(
@@ -897,7 +896,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
               vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: isObrigatorio ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textSecondary,
+              color: isObrigatorio ? ThemeColors.of(context).error.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
               borderRadius: BorderRadius.circular(
                 isMobile ? 5 : 6,
               ),
@@ -913,7 +912,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                 ),
               overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
-                color: isObrigatorio ? ThemeColors.of(context).errorDark : ThemeColors.of(context).textSecondaryOverlay70,
+                color: isObrigatorio ? ThemeColors.of(context).error.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondaryOverlay70,
               ),
             ),
           ),
@@ -952,7 +951,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
+                colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
               ),
               shape: BoxShape.circle,
             ),
@@ -1050,8 +1049,8 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                     ? null
                     : LinearGradient(
                         colors: [
-                          ThemeColors.of(context).blueCyanLight,
-                          ThemeColors.of(context).primaryLight,
+                          ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                          ThemeColors.of(context).primary.withValues(alpha: 0.1),
                         ],
                       ),
                 border: Border.all(
@@ -1086,7 +1085,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                           tablet: 4,
                           desktop: 4,
                         ),
-                        valueColor: const AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
+                        valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
                       ),
                     ),
                     SizedBox(
@@ -1121,7 +1120,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                           desktop: 8,
                         ),
                         backgroundColor: ThemeColors.of(context).textSecondary,
-                        valueColor: const AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
+                        valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
                       ),
                     ),
                   ] else ...[
@@ -1177,7 +1176,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                         ),
                       ),
                       child: Text(
-                        'M?ximo: 10 MB',
+                        'Mãximo: 10 MB',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1210,12 +1209,12 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeAmberLight, ThemeColors.of(context).orangeMaterialLight],
+          colors: [ThemeColors.of(context).orangeAmber.withValues(alpha: 0.1), ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : (isTablet ? 14 : 16),
         ),
-        border: Border.all(color: ThemeColors.of(context).orangeAmberLight),
+        border: Border.all(color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.3)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -1227,7 +1226,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
               Icon(
                 Icons.lightbulb_rounded,
                 size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
-                color: ThemeColors.of(context).orangeAmberDark,
+                color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
               ),
               SizedBox(
                 width: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -1243,7 +1242,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).orangeAmberDark,
+                  color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
                 ),
               ),
             ],
@@ -1251,10 +1250,10 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
           SizedBox(
             height: AppSizes.paddingSm.get(isMobile, isTablet),
           ),
-          _buildTipItem('C?digos de barras devem ser ?nicos'),
-          _buildTipItem('Pre?os devem usar ponto como separador decimal'),
-          _buildTipItem('Produtos duplicados ser?o ignorados'),
-          _buildTipItem('M?ximo de 1.000 produtos por arquivo'),
+          _buildTipItem('Cãdigos de barras devem ser únicos'),
+          _buildTipItem('PREÇOs devem usar ponto como separador decimal'),
+          _buildTipItem('Produtos duplicados serão ignorados'),
+          _buildTipItem('Mãximo de 1.000 produtos por arquivo'),
         ],
       ),
     );
@@ -1271,7 +1270,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
           Icon(
             Icons.check_circle_rounded,
             size: AppSizes.iconTiny.get(isMobile, isTablet),
-            color: ThemeColors.of(context).orangeAmberDark,
+            color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
           ),
           SizedBox(
             width: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -1403,7 +1402,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                     vertical: AppSizes.paddingXsAlt5.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: taxaSucesso >= 95 ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningPastel,
+                    color: taxaSucesso >= 95 ? ThemeColors.of(context).success.withValues(alpha: 0.1) : ThemeColors.of(context).warningPastel,
                     borderRadius: BorderRadius.circular(
                       isMobile ? 6 : 8,
                     ),
@@ -1419,7 +1418,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: taxaSucesso >= 95 ? ThemeColors.of(context).successDark : ThemeColors.of(context).warningDark,
+                      color: taxaSucesso >= 95 ? ThemeColors.of(context).success.withValues(alpha: 0.8) : ThemeColors.of(context).warningDark,
                     ),
                   ),
                 ),
@@ -1482,7 +1481,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(
           isMobile ? 5 : 6,
         ),
@@ -1506,7 +1505,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
 
   void _iniciarUpload() async {
     try {
-      // Iniciar exporta??o via provider (chama API real)
+      // Iniciar exportAção via provider (chama API real)
       await _notifier.exportProducts();
       
       // Se chegou aqui sem erro e completou com sucesso
@@ -1516,7 +1515,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
         _showErrorSnackBar(_state.errorMessage!);
       }
     } catch (e) {
-      _showErrorSnackBar('Erro na exporta??o: $e');
+      _showErrorSnackBar('Erro na exportAção: $e');
     }
   }
 
@@ -1763,10 +1762,6 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
     );
   }
 }
-
-
-
-
 
 
 

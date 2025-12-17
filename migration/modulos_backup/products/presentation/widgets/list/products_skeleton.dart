@@ -26,7 +26,7 @@ class ProductSkeletonCard extends StatelessWidget {
           Container(
             width: AppSizes.iconHeroMd.get(isMobile, isTablet),
             height: AppSizes.iconHeroMd.get(isMobile, isTablet),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppThemeColors.textSecondaryOverlay20,
               borderRadius: AppRadius.lg,
             ),
@@ -40,7 +40,7 @@ class ProductSkeletonCard extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   height: 16,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppThemeColors.textSecondaryOverlay20,
                     borderRadius: AppRadius.xxxs,
                   ),
@@ -50,7 +50,7 @@ class ProductSkeletonCard extends StatelessWidget {
                 Container(
                   width: 150,
                   height: 12,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppThemeColors.textSecondaryOverlay20,
                     borderRadius: AppRadius.xxxs,
                   ),
@@ -60,7 +60,7 @@ class ProductSkeletonCard extends StatelessWidget {
                 Container(
                   width: 80,
                   height: 12,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppThemeColors.textSecondaryOverlay20,
                     borderRadius: AppRadius.xxxs,
                   ),
@@ -72,7 +72,7 @@ class ProductSkeletonCard extends StatelessWidget {
           Container(
             width: 60,
             height: 20,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppThemeColors.textSecondaryOverlay20,
               borderRadius: AppRadius.xxxs,
             ),

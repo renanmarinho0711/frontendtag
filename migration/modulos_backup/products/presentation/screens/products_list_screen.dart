@@ -42,8 +42,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
   Set<String> _selectedProductIds = {};
   
   // Estado de ordenação e loading
-  String _sortMode = 'recentes'; // 'a-z', 'z-a', 'preco_crescente', 'preco_decrescente', 'recentes'
-  bool _isLoadingMore = false;
+  final String _sortMode = 'recentes'; // 'a-z', 'z-a', 'preco_crescente', 'preco_decrescente', 'recentes'
+  final bool _isLoadingMore = false;
 
   // Acesso rápido ao state do provider
   ProductsListState get _productsState => ref.watch(productsListRiverpodProvider);
@@ -276,11 +276,11 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Row(
+        title: const Row(
           children: [
             Icon(Icons.warning_rounded, color: AppThemeColors.error),
-            const SizedBox(width: AppSpacing.sm),
-            const Text('Excluir Produtos'),
+            SizedBox(width: AppSpacing.sm),
+            Text('Excluir Produtos'),
           ],
         ),
         content: Text(
@@ -517,7 +517,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       
                       _buildProductsList(isLoading, filteredProducts),
                       
-                      SliverToBoxAdapter(child: SizedBox(height: 100)),
+                      const SliverToBoxAdapter(child: SizedBox(height: 100)),
                     ],
                   ),
                 ),
@@ -556,7 +556,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               borderRadius: AppRadius.iconButtonMedium,
             ),
             child: IconButton(
-              icon: Icon(Icons.arrow_back_rounded, color: AppThemeColors.surface),
+              icon: const Icon(Icons.arrow_back_rounded, color: AppThemeColors.surface),
               iconSize: AppSizes.iconMedium.get(isMobile, isTablet),
               onPressed: () {
                 if (widget.onBack != null) {
@@ -571,7 +571,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppGradients.overlayWhite20,
               borderRadius: AppRadius.button,
             ),
@@ -651,7 +651,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           horizontal: AppSizes.paddingSmAlt.get(isMobile, isTablet),
           vertical: AppSizes.paddingXs.get(isMobile, isTablet),
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppGradients.overlayWhite20,
           borderRadius: AppRadius.sm,
         ),
@@ -783,7 +783,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
               ),
               prefixIcon: Container(
-                margin: EdgeInsets.only(left: AppSpacing.sm, right: AppSpacing.xs),
+                margin: const EdgeInsets.only(left: AppSpacing.sm, right: AppSpacing.xs),
                 child: Icon(
                   Icons.search_rounded,
                   color: AppThemeColors.brandPrimaryGreen,
@@ -793,7 +793,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               suffixIcon: state.searchQuery.isNotEmpty
                   ? IconButton(
                       icon: Container(
-                        padding: EdgeInsets.all(AppSpacing.xxs),
+                        padding: const EdgeInsets.all(AppSpacing.xxs),
                         decoration: BoxDecoration(
                           color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
@@ -818,7 +818,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 borderRadius: AppRadius.lg,
                 borderSide: BorderSide(color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.2)),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: AppRadius.lg,
                 borderSide: BorderSide(color: AppThemeColors.brandPrimaryGreen, width: 2),
               ),
@@ -837,7 +837,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
             children: [
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: state.filterCategoria,
+                  initialValue: state.filterCategoria,
                   style: TextStyle(
                     fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
                     color: AppThemeColors.textPrimary,
@@ -846,7 +846,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     labelText: 'Categoria',
                     labelStyle: TextStyle(fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
                     prefixIcon: Icon(Icons.category_rounded, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
-                    border: OutlineInputBorder(borderRadius: AppRadius.lg),
+                    border: const OutlineInputBorder(borderRadius: AppRadius.lg),
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingBase.get(isMobile, isTablet),
                       vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -869,7 +869,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: state.filterStatus,
+                  initialValue: state.filterStatus,
                   style: TextStyle(
                     fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
                     color: AppThemeColors.textPrimary,
@@ -878,7 +878,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     labelText: 'Status',
                     labelStyle: TextStyle(fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
                     prefixIcon: Icon(Icons.filter_list_rounded, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
-                    border: OutlineInputBorder(borderRadius: AppRadius.lg),
+                    border: const OutlineInputBorder(borderRadius: AppRadius.lg),
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingBase.get(isMobile, isTablet),
                       vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -935,8 +935,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               style: TextStyle(fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
             ),
             style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              shape: RoundedRectangleBorder(borderRadius: AppRadius.sm),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              shape: const RoundedRectangleBorder(borderRadius: AppRadius.sm),
             ),
           ),
         ],
@@ -954,7 +954,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
       deleteIcon: Icon(Icons.close_rounded, size: AppSizes.iconSmall.get(isMobile, isTablet)),
       onDeleted: onRemove,
       backgroundColor: AppThemeColors.successLight,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: AppRadius.sm,
         side: BorderSide(color: AppThemeColors.success),
       ),
@@ -1003,7 +1003,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                       height: 20,
                       child: CircularProgressIndicator(
@@ -1011,7 +1011,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                         valueColor: AlwaysStoppedAnimation<Color>(AppThemeColors.brandPrimaryGreen),
                       ),
                     ),
-                    SizedBox(width: AppSpacing.md),
+                    const SizedBox(width: AppSpacing.md),
                     Text(
                       'Carregando mais...',
                       style: TextStyle(
@@ -1125,10 +1125,10 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: AppSpacing.md),
+                                const SizedBox(height: AppSpacing.md),
                                 TextButton(
                                   onPressed: () => Navigator.pop(context),
-                                  child: Text('Fechar', style: TextStyle(color: AppThemeColors.surface)),
+                                  child: const Text('Fechar', style: TextStyle(color: AppThemeColors.surface)),
                                 ),
                               ],
                             ),
@@ -1184,12 +1184,12 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                         // Categoria â€¢ Código
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.category_rounded,
                               size: 12,
                               color: AppThemeColors.textSecondary,
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Flexible(
                               child: Text(
                                 produto.categoria,
@@ -1202,8 +1202,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                 maxLines: 1,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 6),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 6),
                               child: Text('â€¢', style: TextStyle(color: AppThemeColors.textSecondary, fontSize: 12)),
                             ),
                             Text(
@@ -1220,12 +1220,12 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                           SizedBox(height: AppSizes.paddingXxs.get(isMobile, isTablet)),
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.label_rounded,
                                 size: 11,
                                 color: AppThemeColors.successIcon,
                               ),
-                              SizedBox(width: 4),
+                              const SizedBox(width: 4),
                               Flexible(
                                 child: Text(
                                   'Tag vinculada: ${produto.tag}',
@@ -1269,7 +1269,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                 size: AppSizes.iconMicroAlt.get(isMobile, isTablet),
                                 color: AppThemeColors.warningDark,
                               ),
-                              SizedBox(width: AppSpacing.xxs),
+                              const SizedBox(width: AppSpacing.xxs),
                               Text(
                                 'Sem preço',
                                 style: TextStyle(
@@ -1313,7 +1313,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                               size: 10,
                               color: hasTag ? AppThemeColors.successIcon : AppThemeColors.warningDark,
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               hasTag ? 'Online' : 'Sem Tag',
                               style: TextStyle(
@@ -1366,7 +1366,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         color: AppThemeColors.textSecondary,
         size: AppSizes.iconMedium.get(isMobile, isTablet),
       ),
-      shape: RoundedRectangleBorder(borderRadius: AppRadius.lg),
+      shape: const RoundedRectangleBorder(borderRadius: AppRadius.lg),
       itemBuilder: (context) => <PopupMenuEntry<String>>[
         PopupMenuItem(
           child: Row(
@@ -1493,7 +1493,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(icon, size: 9, color: iconColor),
-          SizedBox(width: 3),
+          const SizedBox(width: 3),
           Text(
             label,
             style: TextStyle(
@@ -1621,7 +1621,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           Container(
             width: AppSizes.iconHeroMd.get(isMobile, isTablet),
             height: AppSizes.iconHeroMd.get(isMobile, isTablet),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppThemeColors.textSecondaryOverlay20,
               borderRadius: AppRadius.lg,
             ),
@@ -1634,7 +1634,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 Container(
                   width: double.infinity,
                   height: 16,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppThemeColors.textSecondaryOverlay20,
                     borderRadius: AppRadius.xxxs,
                   ),
@@ -1643,7 +1643,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 Container(
                   width: 150,
                   height: 12,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppThemeColors.textSecondaryOverlay20,
                     borderRadius: AppRadius.xxxs,
                   ),
@@ -1652,7 +1652,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 Container(
                   width: 80,
                   height: 12,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppThemeColors.textSecondaryOverlay20,
                     borderRadius: AppRadius.xxxs,
                   ),
@@ -1663,7 +1663,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           Container(
             width: 60,
             height: 20,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppThemeColors.textSecondaryOverlay20,
               borderRadius: AppRadius.xxxs,
             ),
@@ -1786,7 +1786,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                   },
                   style: OutlinedButton.styleFrom(
                     foregroundColor: AppThemeColors.greenMain,
-                    side: BorderSide(color: AppThemeColors.greenMain),
+                    side: const BorderSide(color: AppThemeColors.greenMain),
                     padding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingXl.get(isMobile, isTablet),
                       vertical: AppSizes.paddingMd.get(isMobile, isTablet),
@@ -1814,7 +1814,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     },
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppThemeColors.blueMain,
-                      side: BorderSide(color: AppThemeColors.blueMain),
+                      side: const BorderSide(color: AppThemeColors.blueMain),
                       padding: EdgeInsets.symmetric(
                         horizontal: AppSizes.paddingMd.get(isMobile, isTablet),
                         vertical: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -1867,17 +1867,17 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
       ),
       child: Row(
         children: [
-          Icon(Icons.error_outline_rounded, color: AppThemeColors.errorDark),
+          const Icon(Icons.error_outline_rounded, color: AppThemeColors.errorDark),
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
           Expanded(
             child: Text(
               error ?? 'Erro ao carregar produtos',
-              style: TextStyle(color: AppThemeColors.errorDark),
+              style: const TextStyle(color: AppThemeColors.errorDark),
             ),
           ),
           TextButton(
             onPressed: () => _productsNotifier.loadProducts(refresh: true),
-            child: Text('Tentar novamente'),
+            child: const Text('Tentar novamente'),
           ),
         ],
       ),
@@ -1903,12 +1903,12 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         }
       },
       backgroundColor: AppThemeColors.brandPrimaryGreen,
+      tooltip: 'Adicionar Produto',
       child: Icon(
         Icons.add_rounded,
         size: AppSizes.iconLarge.get(isMobile, isTablet),
         color: AppThemeColors.surface,
       ),
-      tooltip: 'Adicionar Produto',
     );
   }
 
@@ -1920,9 +1920,9 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: AppRadius.card),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.card),
         icon: Icon(Icons.warning_rounded, color: AppThemeColors.redMain, size: AppSizes.iconHeroSm.get(isMobile, isTablet)),
-        title: Text('Confirmar ExclusÃ£o', style: TextStyle(fontSize: AppTextStyles.fontSizeXlAlt.get(isMobile, isTablet))),
+        title: Text('Confirmar Exclusão', style: TextStyle(fontSize: AppTextStyles.fontSizeXlAlt.get(isMobile, isTablet))),
         content: Text(
           'Deseja realmente excluir "${produto.nome}"?\n\nEsta ação não pode ser desfeita.',
           textAlign: TextAlign.center,
@@ -1944,7 +1944,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       children: [
                         Container(
                           padding: EdgeInsets.all(AppSizes.paddingXs.get(isMobile, isTablet)),
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: AppThemeColors.surfaceOverlay20,
                             borderRadius: AppRadius.xs,
                           ),
@@ -1965,7 +1965,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     ),
                     backgroundColor: AppThemeColors.redMain,
                     behavior: SnackBarBehavior.floating,
-                    shape: RoundedRectangleBorder(borderRadius: AppRadius.lg),
+                    shape: const RoundedRectangleBorder(borderRadius: AppRadius.lg),
                     padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                   ),
                 );
@@ -1973,7 +1973,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppThemeColors.redMain,
-              shape: RoundedRectangleBorder(borderRadius: AppRadius.button),
+              shape: const RoundedRectangleBorder(borderRadius: AppRadius.button),
               padding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingXlAlt2.get(isMobile, isTablet),
                 vertical: AppSizes.paddingBaseAlt.get(isMobile, isTablet),
@@ -2210,7 +2210,7 @@ class _BatchPriceDialogState extends State<_BatchPriceDialog> {
         children: [
           Text(
             '${widget.selectedProducts.length} produtos selecionados',
-            style: TextStyle(color: AppThemeColors.textSecondary),
+            style: const TextStyle(color: AppThemeColors.textSecondary),
           ),
           const SizedBox(height: AppSpacing.lg),
           SegmentedButton<String>(
@@ -2293,7 +2293,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
           children: [
             Text(
               '${widget.selectedCount} produtos selecionados',
-              style: TextStyle(color: AppThemeColors.textSecondary),
+              style: const TextStyle(color: AppThemeColors.textSecondary),
             ),
             const SizedBox(height: AppSpacing.lg),
             const Text(
@@ -2337,7 +2337,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
                       ),
                     ),
                     trailing: isSelected 
-                      ? Icon(Icons.check_circle_rounded, color: AppThemeColors.brandPrimaryGreen)
+                      ? const Icon(Icons.check_circle_rounded, color: AppThemeColors.brandPrimaryGreen)
                       : null,
                     onTap: () => setState(() => _selectedCategory = category),
                     shape: RoundedRectangleBorder(

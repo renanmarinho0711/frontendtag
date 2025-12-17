@@ -1,16 +1,17 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tagbean/features/products/data/models/product_model.dart';
 import 'package:intl/intl.dart';
+import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-/// @deprecated Use [ProdutoRepository] ao invï¿½s desta classe.
+/// @deprecated Use [ProdutoRepository] ao invés desta classe.
 /// Esta classe usava dados mockados locais.
-/// A aplicaï¿½ï¿½o agora usa ProdutoRepository para comunicaï¿½ï¿½o com o backend.
+/// A aplicação agora usa ProdutoRepository para comunicação com o backend.
 /// 
-/// ATENï¿½ï¿½O: Esta classe serï¿½ removida em versï¿½es futuras.
+/// ATENÇÃO: Esta classe será removida em versões futuras.
 /// Migre para: `import 'package:tagbean/features/products/data/repositories/products_repository.dart';`
-@Deprecated('Use ProdutoRepository para comunicaï¿½ï¿½o com o backend. Esta classe serï¿½ removida.')
+@Deprecated('Use ProdutoRepository para comunicação com o backend. Esta classe será removida.')
 class ProdutoService {
   static const String _keyProdutos = 'produtos';
   
@@ -61,7 +62,7 @@ class ProdutoService {
     await salvarProdutos(produtos);
   }
 
-  // Buscar produto por cï¿½digo
+  // Buscar produto por código
   Future<ProdutoModel?> buscarProdutoPorCodigo(String codigo) async {
     final produtos = await carregarProdutos();
     try {
@@ -103,7 +104,7 @@ class ProdutoService {
     }
   }
 
-  // Obter estatï¿½sticas
+  // Obter estatísticas
   Future<Map<String, int>> getEstatisticas() async {
     final produtos = await carregarProdutos();
     
@@ -125,7 +126,7 @@ class ProdutoService {
     return formatter.format(now);
   }
 
-  // Produtos iniciais para demonstraï¿½ï¿½o
+  // Produtos iniciais para demonstração
   List<ProdutoModel> _getProdutosIniciais() {
     return [
       ProdutoModel(
@@ -138,6 +139,7 @@ class ProdutoService {
         status: 'Ativo',
         descricao: 'Cerveja pilsen premium',
         ultimaAtualizacao: '23/11/2025 10:30',
+        cor: AppThemeColors.primary,
         icone: Icons.local_drink_rounded,
         historicoPrecos: [
           HistoricoPreco(
@@ -162,15 +164,15 @@ class ProdutoService {
       ),
       ProdutoModel(
         codigo: '7899876543210',
-        nome: 'Arroz Tio Joï¿½o 5kg',
+        nome: 'Arroz Tio João 5kg',
         preco: 25.90,
         precoKg: 5.18,
         categoria: 'Mercearia',
         tag: 'TAG-015',
         status: 'Ativo',
-        descricao: 'Arroz tipo 1, grï¿½os longos',
+        descricao: 'Arroz tipo 1, grãos longos',
         ultimaAtualizacao: '23/11/2025 09:15',
-
+        cor: AppThemeColors.brownMain,
         icone: Icons.shopping_basket_rounded,
       ),
       ProdutoModel(
@@ -183,25 +185,25 @@ class ProdutoService {
         status: 'Sem Tag',
         descricao: 'Refrigerante cola 2 litros',
         ultimaAtualizacao: '21/11/2025 15:45',
+        cor: AppThemeColors.primary,
         icone: Icons.local_drink_rounded,
       ),
       ProdutoModel(
         codigo: '7891000100104',
-        nome: 'Feijï¿½o Preto 1kg',
+        nome: 'Feijão Preto 1kg',
         preco: 7.50,
         precoKg: 7.50,
         categoria: 'Mercearia',
         tag: 'TAG-032',
         status: 'Ativo',
-        descricao: 'Feijï¿½o preto tipo 1',
+        descricao: 'Feijão preto tipo 1',
         ultimaAtualizacao: '23/11/2025 08:00',
-        
+        cor: AppThemeColors.brownMain,
         icone: Icons.shopping_basket_rounded,
       ),
     ];
   }
 }
-
 
 
 

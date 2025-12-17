@@ -6,9 +6,7 @@ import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class CategoriasAdicionarScreen extends ConsumerStatefulWidget {
   const CategoriasAdicionarScreen({super.key});
 
@@ -625,7 +623,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
               filled: true,
               fillColor: ThemeColors.of(context).textSecondary,
             ),
-            value: _categoriaPai,
+            initialValue: _categoriaPai,
             items: [
               const DropdownMenuItem<String>(
                 value: null,
@@ -645,7 +643,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                         Text(e.nome),
                       ],
                     ),
-                  )).toList(),
+                  )),
             ],
             onChanged: (value) {
               setState(() => _categoriaPai = value);

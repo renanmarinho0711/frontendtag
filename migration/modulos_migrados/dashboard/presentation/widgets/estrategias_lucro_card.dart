@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class EstrategiasLucroCard extends StatelessWidget {
   final Map<String, dynamic> estrategiasData;
   

@@ -79,7 +79,7 @@ class TagBeanColors {
   // Sombras
   static List<BoxShadow> get cardShadow => [
     BoxShadow(
-      color: primaryGreen.withOpacity(0.15),
+      color: primaryGreen.withValues(alpha: 0.15),
       blurRadius: 20,
       offset: const Offset(0, 8),
     ),
@@ -87,7 +87,7 @@ class TagBeanColors {
   
   static List<BoxShadow> get buttonShadow => [
     BoxShadow(
-      color: primaryGreen.withOpacity(0.3),
+      color: primaryGreen.withValues(alpha: 0.3),
       blurRadius: 12,
       offset: const Offset(0, 4),
     ),
@@ -95,9 +95,10 @@ class TagBeanColors {
   
   // Método auxiliar para obter cor com opacidade
   static Color withOpacity(Color color, double opacity) {
-    return color.withOpacity(opacity);
+    return color.withValues(alpha: opacity);
   }
 }
+
 
 
 

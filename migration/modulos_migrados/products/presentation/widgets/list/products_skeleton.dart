@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Skeleton card para estado de carregamento da lista de produtos
 class ProductSkeletonCard extends StatelessWidget {
   const ProductSkeletonCard({super.key});

@@ -1,5 +1,4 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Indicador de progresso personalizado
@@ -84,10 +83,10 @@ class AppProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final effectiveColor = color ?? ThemeColors.of(context).primary;
+    final colors = ThemeColors.of(context);
+    final effectiveColor = color ?? colors.primary;
     final effectiveBgColor =
-        backgroundColor ?? ThemeColors.of(context).overlay20;
+        backgroundColor ?? colors.overlay20;
 
     switch (type) {
       case ProgressIndicatorType.circular:
@@ -276,12 +275,13 @@ class ProgressOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Stack(
       children: [
         child,
         if (isLoading)
           Container(
-            color: barrierColor ?? ThemeColors.of(context).overlayDark,
+            color: barrierColor ?? colors.overlayDark,
             child: Center(
               child: Card(
                 child: Padding(

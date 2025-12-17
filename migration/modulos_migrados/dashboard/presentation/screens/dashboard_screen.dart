@@ -19,7 +19,6 @@ import 'package:tagbean/features/auth/presentation/providers/work_context_provid
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/features/dashboard/presentation/widgets/welcome_section.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 // Novos widgets do dashboard reestruturado
 import 'package:tagbean/features/dashboard/presentation/widgets/alertas_acionaveis_card.dart';
 import 'package:tagbean/features/dashboard/presentation/widgets/acoes_frequentes_card.dart';
@@ -37,7 +36,6 @@ import 'package:tagbean/features/dashboard/presentation/widgets/recent_activity_
 import 'package:tagbean/features/dashboard/presentation/widgets/admin_panel_card.dart';
 // Widgets de navegação extraídos
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/navigation.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
   const DashboardScreen({super.key});
@@ -103,7 +101,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     {
       'icon': Icons.assessment_rounded,
       'title': 'Relatórios',
-      'gradient': [ThemeColors.of(context).modulerelatÃ³rios, ThemeColors.of(context).modulerelatÃ³riosDark]
+      'gradient': [ThemeColors.of(context).moduleRelatorios, ThemeColors.of(context).moduleRelatoriosDark]
     },
     {
       'icon': Icons.settings_rounded,
@@ -304,7 +302,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       case 7:
         return ImportacaoMenuScreen(key: _getScreenKey('importacao'));
       case 8:
-        return relatÃ³riosMenuScreen(key: _getScreenKey('relatÃ³rios'));
+        return RelatoriosMenuScreen(key: _getScreenKey('relatorios'));
       case 9:
         return ConfiguracoesMenuScreen(key: _getScreenKey('configuracoes'));
       default:
@@ -313,7 +311,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
   
   // OTIMIZAÇÃO REMOVIDA: Não recriar GlobalKeys (causava rebuilds completos das telas)
-  // GlobalKeys agora sÃ£o final e persistem durante toda vida útil do widget
+  // GlobalKeys agora são final e persistem durante toda vida útil do widget
 
   @override
   Widget build(BuildContext context) {
@@ -465,7 +463,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           children: [
             Text('TagBean - Sistema de Gestão de Etiquetas Eletrônicas'),
             SizedBox(height: 12),
-            Text('versÃ£o: 1.0.0'),
+            Text('Versão: 1.0.0'),
             SizedBox(height: 8),
             Text('Suporte: suporte@tagbean.com.br'),
           ],
@@ -1355,7 +1353,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           onVincularTag: () => _navigateTo(2),
           onAtualizarPrecos: () => _navigateTo(5),
           onAdicionarProduto: () => _navigateTo(1),
-          onVerrelatÃ³rio: () => _navigateTo(8),
+          onVerRelatorio: () => _navigateTo(8),
         ),
         SizedBox(height: spacing),
         
@@ -1402,7 +1400,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   onVincularTag: () => _navigateTo(2),
                   onAtualizarPrecos: () => _navigateTo(5),
                   onAdicionarProduto: () => _navigateTo(1),
-                  onVerrelatÃ³rio: () => _navigateTo(8),
+                  onVerRelatorio: () => _navigateTo(8),
                 ),
               ),
             ],
@@ -1461,7 +1459,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                     children: [
                       Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
                       const SizedBox(width: 12),
-                      Expanded(child: Text('Sugestões aplicadas com sucesso!')),
+                      const Expanded(child: Text('Sugestões aplicadas com sucesso!')),
                     ],
                   ),
                   backgroundColor: ThemeColors.of(context).greenMain,
@@ -1785,9 +1783,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     String value,
     IconData icon,
     List<Color> gradient,
-    String trend, {
-    bool isAlert = false,
-  }) {
+    String trend) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -2374,7 +2370,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               letterSpacing: -0.5,
             ),
           ),
-          SizedBox(height: 1),
+          const SizedBox(height: 1),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -2384,7 +2380,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   color: ThemeColors.of(context).surfaceOverlay80,
                   size: 7,
                 ),
-              if (title == 'Ganho Hoje') SizedBox(width: 2),
+              if (title == 'Ganho Hoje') const SizedBox(width: 2),
               Flexible(
                 child: Text(
                   subtitle,
@@ -2431,14 +2427,14 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [ThemeColors.of(context).modulerelatÃ³rios, ThemeColors.of(context).modulerelatÃ³riosDark],
+            colors: [ThemeColors.of(context).moduleRelatorios, ThemeColors.of(context).moduleRelatoriosDark],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).modulerelatÃ³rios.withValues(alpha: 0.3),
+              color: ThemeColors.of(context).moduleRelatorios.withValues(alpha: 0.3),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -2936,7 +2932,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               ],
             ),
           ),
-          SizedBox(width: 4),
+          const SizedBox(width: 4),
           Flexible(
             flex: 2,
             child: Column(
@@ -4136,7 +4132,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 2),
+                    const SizedBox(height: 2),
                     Text(
                       alerta['descricao'],
                       style: TextStyle(
@@ -4485,7 +4481,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   ),
                   if (alerta != _alertas.take(3).last) const Divider(),
                 ],
-              )).toList(),
+              )),
               if (_alertas.isEmpty) ...[
                 _buildNotificationItem(context, 'Sem alertas',
                   'Nenhum alerta pendente no momento',

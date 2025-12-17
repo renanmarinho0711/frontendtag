@@ -1,5 +1,6 @@
-// Web utilities that work across platforms
+/// Web utilities that work across platforms
 /// This file provides cross-platform implementations for web-specific features
+library;
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 

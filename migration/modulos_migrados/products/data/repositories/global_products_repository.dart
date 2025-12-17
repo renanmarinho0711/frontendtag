@@ -1,4 +1,4 @@
-mport 'package:tagbean/core/network/api_response.dart';
+import 'package:tagbean/core/network/api_response.dart';
 import 'package:tagbean/core/network/api_client.dart';
 
 /// Modelo de produto do catálogo global

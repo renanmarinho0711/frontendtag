@@ -1,4 +1,4 @@
-mport 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:tagbean/features/products/data/repositories/products_repository.dart';
 import 'package:tagbean/shared/models/models.dart';
 

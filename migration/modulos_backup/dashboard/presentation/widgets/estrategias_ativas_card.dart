@@ -6,7 +6,7 @@ import 'package:tagbean/features/strategies/presentation/providers/strategies_pr
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
 /// Card compacto de estratégias ativas
-/// Mostra visÃ£o consolidada das estratégias em funcionamento
+/// Mostra visão consolidada das estratégias em funcionamento
 class EstrategiasAtivasCard extends ConsumerWidget {
   final VoidCallback? onGerenciar;
 
@@ -89,12 +89,12 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [AppThemeColors.orangeMain, AppThemeColors.orangeDark],
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.auto_awesome_rounded,
                       color: AppThemeColors.surface,
                       size: 20,
@@ -107,13 +107,13 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                       children: [
                         Text(
                           '$totalAtivas estratégias ativas',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppThemeColors.textPrimary,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Gerando lucro automaticamente',
                           style: TextStyle(
                             fontSize: 11,
@@ -126,7 +126,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
+                      const Text(
                         'Impacto',
                         style: TextStyle(
                           fontSize: 10,
@@ -135,7 +135,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                       ),
                       Text(
                         '+${_formatCurrency(impactoMensal)}/mês',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppThemeColors.greenMain,
@@ -147,7 +147,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                   if (onGerenciar != null)
                     IconButton(
                       onPressed: onGerenciar,
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.settings_rounded,
                         color: AppThemeColors.orangeMain,
                         size: 22,
@@ -249,7 +249,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
           const SizedBox(height: 6),
           Text(
             nome,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w600,
               color: AppThemeColors.textPrimary,
@@ -285,7 +285,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.more_horiz_rounded,
             color: AppThemeColors.textSecondary,
             size: 24,
@@ -293,7 +293,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
           const SizedBox(height: 4),
           Text(
             '+$quantidade mais',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w600,
               color: AppThemeColors.textSecondary,

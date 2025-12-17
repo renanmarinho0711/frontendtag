@@ -9,7 +9,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class CategoriasListaScreen extends ConsumerStatefulWidget {
   const CategoriasListaScreen({super.key});
 
@@ -662,7 +661,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           icon: Icon(Icons.warning_rounded, color: ThemeColors.of(context).redMain, size: 48),
           title: const Text(
-            'Confirmar ExclusÃ£o',
+            'Confirmar Exclusão',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           content: Text(

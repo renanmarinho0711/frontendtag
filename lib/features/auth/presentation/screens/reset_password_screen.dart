@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/auth/presentation/screens/login_screen.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 
 class ResetPasswordScreen extends ConsumerStatefulWidget {
@@ -82,7 +81,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
 
     HapticFeedback.mediumImpact();
 
-    // Chama API real de redefini��o de senha
+    // Chama API real de redefiniãão de senha
     final success = await ref.read(authProvider.notifier).resetPassword(
       email: widget.emailOrUsername,
       token: _codeController.text.trim(),
@@ -121,7 +120,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
     } else {
       setState(() {
         _isLoading = false;
-        _errorMessage = ref.read(authProvider).errorMessage ?? 'Token inv�lido ou expirado';
+        _errorMessage = ref.read(authProvider).errorMessage ?? 'Token inválido ou expirado';
       });
     }
   }
@@ -257,9 +256,9 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
                   ),
                 ),
               ),
-              SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: AppSpacing.sm),
               Text(
-                'Digite o c�digo recebido e sua nova senha.',
+                'Digite o código recebido e sua nova senha.',
                 textAlign: TextAlign.center,
                 style: AppTextStyles.body.responsive(isMobile, isTablet).copyWith(
                   color: ThemeColors.of(context).textSecondary,
@@ -272,13 +271,13 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
               SizedBox(height: AppSizes.fieldToField.get(isMobile, isTablet)),
               _buildConfirmPasswordField(isMobile, isTablet),
               if (_errorMessage != null) ...[  
-                SizedBox(height: AppSpacing.md),
+                const SizedBox(height: AppSpacing.md),
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).errorLight,
+                    color: ThemeColors.of(context).error.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: ThemeColors.of(context).errorLight),
+                    border: Border.all(color: ThemeColors.of(context).error.withValues(alpha: 0.3)),
                   ),
                   child: Row(
                     children: [
@@ -316,9 +315,9 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: EdgeInsets.all(AppSpacing.xl),
+              padding: const EdgeInsets.all(AppSpacing.xl),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).brandPrimaryGreenLight,
+                color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -327,22 +326,22 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
                 color: ThemeColors.of(context).brandPrimaryGreen,
               ),
             ),
-            SizedBox(height: AppSpacing.xl),
+            const SizedBox(height: AppSpacing.xl),
             Text(
               'Senha Redefinida! ',
               style: AppTextStyles.h2.responsive(isMobile, isTablet).copyWith(
                 color: ThemeColors.of(context).brandPrimaryGreen,
               ),
             ),
-            SizedBox(height: AppSpacing.md),
+            const SizedBox(height: AppSpacing.md),
             Text(
-              'Sua senha foi alterada com sucesso. Voc� pode fazer login com sua nova senha.',
+              'Sua senha foi alterada com sucesso. você pode fazer login com sua nova senha.',
               textAlign: TextAlign.center,
               style: AppTextStyles.body.responsive(isMobile, isTablet).copyWith(
                 color: ThemeColors.of(context).textSecondary,
               ),
             ),
-            SizedBox(height: AppSpacing.xl),
+            const SizedBox(height: AppSpacing.xl),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -356,7 +355,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
                     ),
                   ),
                 ),
-                SizedBox(width: AppSpacing.md),
+                const SizedBox(width: AppSpacing.md),
                 Text(
                   'Redirecionando para o login...',
                   style: AppTextStyles.body.responsive(isMobile, isTablet).copyWith(
@@ -377,7 +376,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'C�digo de Verifica��o',
+          'Cãdigo de VerificAção',
           style: AppTextStyles.fieldLabel.responsive(isMobile, isTablet),
         ),
         const SizedBox(height: AppSizes.fieldLabelToInput),
@@ -428,10 +427,10 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Por favor, insira o c�digo';
+              return 'Por favor, insira o código';
             }
             if (value.length != 6) {
-              return 'O c�digo deve ter 6 d�gitos';
+              return 'O código deve ter 6 dígitos';
             }
             return null;
           },
@@ -515,7 +514,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
               return 'Por favor, insira uma senha';
             }
             if (value.length < 6) {
-              return 'A senha deve ter no m�nimo 6 caracteres';
+              return 'A senha deve ter no mínimo 6 caracteres';
             }
             return null;
           },
@@ -595,7 +594,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
               return 'Por favor, confirme sua senha';
             }
             if (value != _newPasswordController.text) {
-              return 'As senhas n�o coincidem';
+              return 'As senhas não coincidem';
             }
             return null;
           },
@@ -614,7 +613,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
           backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
           foregroundColor: ThemeColors.of(context).surface,
           elevation: 0,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
           disabledBackgroundColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.6),
@@ -643,7 +642,6 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen>
     );
   }
 }
-
 
 
 

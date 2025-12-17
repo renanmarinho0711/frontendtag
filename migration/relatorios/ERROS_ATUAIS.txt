@@ -1,4 +1,4 @@
-C:\temp_flutter\flutter\bin\flutter.bat : Package file_picker:linux references 
+﻿C:\temp_flutter\flutter\bin\flutter.bat : Package file_picker:linux references 
 file_picker:linux as the default plugin, but it does not provide an inline implementation.
 No linha:1 caractere:1
 + C:\temp_flutter\flutter\bin\flutter.bat analyze lib\modules 2>&1 | Ou ...

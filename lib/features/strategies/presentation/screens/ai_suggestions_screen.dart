@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class SugestoesIaScreen extends StatefulWidget {
   const SugestoesIaScreen({super.key});
@@ -16,9 +15,22 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
   bool _carregando = false;
   bool _showSpeedDial = false;
 
-  // TODO: BACKEND - GET /api/ia/estrategias/sugestoes
-  List<Map<String, dynamic>> get _sugestoes => _sugestoesMock;
-  static final List<Map<String, dynamic>> _sugestoesMock = [
+  // Helper para obter cor baseada no tipo
+  Color _getCorSugestao(BuildContext context, String tipo) {
+    switch (tipo) {
+      case 'aumento':
+        return ThemeColors.of(context).greenMain;
+      case 'reducao':
+        return ThemeColors.of(context).error;
+      case 'manutencao':
+        return ThemeColors.of(context).blueMain;
+      default:
+        return ThemeColors.of(context).textSecondary;
+    }
+  }
+
+  // TODO: BACKEND - GET /api/ia/estratégias/sugestoes
+  final List<Map<String, dynamic>> _sugestoes = [
     {
       'produto': 'Coca-Cola 2L',
       'preco_atual': 8.90,
@@ -26,10 +38,9 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       'variacao': 6.7,
       'tipo': 'aumento',
       'confianca': 92,
-      'motivo': 'Demanda alta e concorr?ncia com pre?os elevados',
+      'motivo': 'Demanda alta e concorrência com preços elevados',
       'impacto_vendas': '+8%',
       'impacto_margem': '+12%',
-      'cor': ThemeColors.of(context).success,
     },
     {
       'produto': 'Arroz Tipo 1 5kg',
@@ -38,22 +49,20 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       'variacao': -8.0,
       'tipo': 'reducao',
       'confianca': 88,
-      'motivo': 'Concorr?ncia 15% mais barata, estoque alto',
+      'motivo': 'Concorrência 15% mais barata, estoque alto',
       'impacto_vendas': '+22%',
       'impacto_margem': '-5%',
-      'cor': ThemeColors.of(context).errorMain,
     },
     {
-      'produto': 'Detergente L?quido',
+      'produto': 'Detergente Líquido',
       'preco_atual': 2.49,
       'preco_sugerido': 2.49,
       'variacao': 0.0,
       'tipo': 'manutencao',
       'confianca': 95,
-      'motivo': 'Pre?o competitivo, margem ideal',
+      'motivo': 'Preço competitivo, margem ideal',
       'impacto_vendas': '0%',
       'impacto_margem': '0%',
-      'cor': ThemeColors.of(context).info,
     },
     {
       'produto': 'Cerveja Heineken',
@@ -62,22 +71,20 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       'variacao': 14.3,
       'tipo': 'aumento',
       'confianca': 85,
-      'motivo': 'Evento esportivo pr?ximo, pico de demanda esperado',
+      'motivo': 'Evento esportivo próximo, pico de demanda esperado',
       'impacto_vendas': '+5%',
       'impacto_margem': '+18%',
-      'cor': ThemeColors.of(context).success,
     },
     {
-      'produto': 'Macarr?o 500g',
+      'produto': 'Macarrão 500g',
       'preco_atual': 4.59,
       'preco_sugerido': 4.20,
       'variacao': -8.5,
       'tipo': 'reducao',
       'confianca': 78,
-      'motivo': 'Produto parado h? 15 dias, acelerar giro',
+      'motivo': 'Produto parado há 15 dias, acelerar giro',
       'impacto_vendas': '+18%',
       'impacto_margem': '-8%',
-      'cor': ThemeColors.of(context).errorMain,
     },
   ];
 
@@ -98,7 +105,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Sugest?es da IA',
+          'Sugestões da IA',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -124,7 +131,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).surfaceSecondary,
+          color: ThemeColors.of(context).backgroundLight,
         ),
         child: _carregando
             ? _buildLoadingState()
@@ -171,7 +178,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                     _mostrarDialogoFiltro();
                     setState(() => _showSpeedDial = false);
                   },
-                  backgroundColor: ThemeColors.of(context).info,
+                  backgroundColor: ThemeColors.of(context).blueMain,
                   child: Icon(
                     Icons.filter_list_rounded,
                     size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
@@ -219,7 +226,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          'Filtrar Sugest?es',
+          'Filtrar Sugestões',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -251,7 +258,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
               },
             ),
             RadioListTile<String>(
-              title: const Text('Redu??es'),
+              title: const Text('Reduções'),
               value: 'reducao',
               groupValue: _filtroTipo,
               onChanged: (value) {
@@ -285,7 +292,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).primaryLight,
+            color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 12,
@@ -340,7 +347,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'An?lise Inteligente',
+                      'Anãlise Inteligente',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -498,7 +505,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         ),
                       ),
                       Text(
-                        'Redu??es',
+                        'Reduções',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -551,7 +558,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                 desktop: 8,
               ),
             ),
-            _buildFilterChip('Redu??es', 'reducao', Icons.trending_down_rounded),
+            _buildFilterChip('Reduções', 'reducao', Icons.trending_down_rounded),
             SizedBox(
               width: ResponsiveHelper.getResponsiveSpacing(
                 context,
@@ -587,7 +594,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         decoration: BoxDecoration(
-          color: isSelected ?  ThemeColors.of(context).primaryLight : ThemeColors.of(context).textSecondary,
+          color: isSelected ?  ThemeColors.of(context).primary.withValues(alpha: 0.15) : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(
             isMobile ? 18 : 20,
           ),
@@ -640,6 +647,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
   Widget _buildSugestaoCard(Map<String, dynamic> sugestao, int index) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
+    final cor = _getCorSugestao(context, sugestao['tipo']);
 
     return TweenAnimationBuilder(
       duration: Duration(milliseconds: 300 + (index * 50)),
@@ -657,12 +665,12 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: (sugestao['cor'] as Color)Light,
+            color: cor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (sugestao['cor'] as Color)Light,
+              color: cor.withValues(alpha: 0.1),
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -681,7 +689,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                 AppSizes.paddingMdAlt.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: (sugestao['cor'] as Color)Light,
+                color: cor.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(
                     isMobile ? 12 : 14,
@@ -702,7 +710,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                     ),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [sugestao['cor'], (sugestao['cor'] as Color).withValues(alpha: 0.7)],
+                        colors: [cor, cor.withValues(alpha: 0.7)],
                       ),
                       borderRadius: BorderRadius.circular(
                         isMobile ? 8 : 10,
@@ -765,7 +773,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                               ),
                             ),
                             Text(
-                              'Confian?a: ${sugestao['confianca']}%',
+                              'Confiança: ${sugestao['confianca']}%',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -803,7 +811,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pre?o Atual',
+                              'PREÇO Atual',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -845,7 +853,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       ),
                       Icon(
                         Icons.arrow_forward_rounded,
-                        color: sugestao['cor'],
+                        color: cor,
                         size: AppSizes.iconLargeAlt.get(isMobile, isTablet),
                       ),
                       SizedBox(
@@ -857,7 +865,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pre?o Sugerido',
+                              'PREÇO Sugerido',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -888,7 +896,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
-                                color: sugestao['cor'],
+                                color: cor,
                               ),
                             ),
                           ],
@@ -916,7 +924,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         ),
                       ),
                       decoration: BoxDecoration(
-                        color: (sugestao['cor'] as Color)Light,
+                        color: cor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(
                           isMobile ?  7 : 8,
                         ),
@@ -934,7 +942,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                               tablet: 15.5,
                               desktop: 16,
                             ),
-                            color: sugestao['cor'],
+                            color: cor,
                           ),
                           SizedBox(
                             width: ResponsiveHelper.getResponsiveSpacing(
@@ -955,7 +963,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                               ),
                             overflow: TextOverflow.ellipsis,
                               fontWeight: FontWeight.bold,
-                              color: sugestao['cor'],
+                              color: cor,
                             ),
                           ),
                         ],
@@ -980,7 +988,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                           tablet: 17.5,
                           desktop: 18,
                         ),
-                        color: ThemeColors.of(context).warningDark,
+                        color: ThemeColors.of(context).warning.withValues(alpha: 0.8),
                       ),
                       SizedBox(
                         width: ResponsiveHelper.getResponsiveSpacing(
@@ -1231,7 +1239,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: sugestao['cor'],
+                            backgroundColor: cor,
                             foregroundColor: ThemeColors.of(context).surface,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(
@@ -1258,7 +1266,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CircularProgressIndicator(
+          CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).primary),
           ),
           SizedBox(
@@ -1297,7 +1305,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
             height: AppSizes.spacingMdAlt.get(isMobile, isTablet),
           ),
           Text(
-            'Nenhuma sugest?o nesta categoria',
+            'Nenhuma suGestão nesta categoria',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -1351,7 +1359,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Sugest?es atualizadas pela IA',
+                'Sugestões atualizadas pela IA',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1377,6 +1385,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
 
   void _aplicarSugestao(Map<String, dynamic> sugestao) {
     final isMobile = ResponsiveHelper.isMobile(context);
+    final cor = _getCorSugestao(context, sugestao['tipo']);
 
     showDialog(
       context: context,
@@ -1387,7 +1396,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         title: Text(
-          'Aplicar Sugest?o',
+          'Aplicar SuGestão',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1399,7 +1408,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         content: Text(
-          'Alterar pre?o de "${sugestao['produto']}" para R\$ ${sugestao['preco_sugerido'].toStringAsFixed(2)}?',
+          'Alterar preço de "${sugestao['produto']}" para R\$ ${sugestao['preco_sugerido'].toStringAsFixed(2)}?',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1447,7 +1456,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         width: AppSizes.spacingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Pre?o aplicado com sucesso',
+                        'PREÇO aplicado com sucesso',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1459,7 +1468,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       ),
                     ],
                   ),
-                  backgroundColor: ThemeColors.of(context).success,
+                  backgroundColor: ThemeColors.of(context).greenMain,
                   behavior: SnackBarBehavior.floating,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
@@ -1470,7 +1479,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
               );
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: sugestao['cor'],
+              backgroundColor: cor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
                   isMobile ? 10 : 12,
@@ -1515,7 +1524,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
               width: AppSizes.spacingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Sugest?o rejeitada',
+              'SuGestão rejeitada',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1567,7 +1576,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
           ),
         ),
         content: Text(
-          'Aplicar ${_sugestoes.length} sugest?es da IA automaticamente?',
+          'Aplicar ${_sugestoes.length} sugestões da IA automaticamente?',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1616,7 +1625,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                         width: AppSizes.spacingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        '$total sugest?es aplicadas',
+                        '$total sugestões aplicadas',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1628,7 +1637,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       ),
                     ],
                   ),
-                  backgroundColor: ThemeColors.of(context).success,
+                  backgroundColor: ThemeColors.of(context).greenMain,
                   behavior: SnackBarBehavior.floating,
                 ),
               );
@@ -1659,13 +1668,6 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
     );
   }
 }
-
-
-
-
-
-
-
 
 
 

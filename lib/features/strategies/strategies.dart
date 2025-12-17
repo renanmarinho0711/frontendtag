@@ -1,4 +1,4 @@
-// TagBean Strategies Feature
+/// TagBean Strategies Feature
 library strategies;
 
 // Data Layer - Models

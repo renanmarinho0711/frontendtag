@@ -5,9 +5,8 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/strategies/presentation/providers/strategies_provider.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card compacto de estratégias ativas
-/// Mostra visÃ£o consolidada das estratégias em funcionamento
+/// Mostra visão consolidada das estratégias em funcionamento
 class EstrategiasAtivasCard extends ConsumerWidget {
   final VoidCallback? onGerenciar;
 

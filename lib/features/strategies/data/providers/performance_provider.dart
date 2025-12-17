@@ -3,13 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/repositories/strategies_repository.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 // ============================================================================
 // REPOSITORY PROVIDER
 // ============================================================================
 
-/// Provider do StrategiesRepository para estrat�gias de performance
+/// Provider do StrategiesRepository para estratégias de performance
 final performanceStrategiesRepositoryProvider = Provider<StrategiesRepository>((ref) {
   return StrategiesRepository();
 });
@@ -18,7 +17,7 @@ final performanceStrategiesRepositoryProvider = Provider<StrategiesRepository>((
 // AUTO CLEARANCE STATE
 // ============================================================================
 
-/// Estado da estrat�gia de Liquida��o Autom�tica
+/// Estado da estratégia de Liquidação Automática
 class AutoClearanceState {
   final List<ClearancePhaseModel> phases;
   final List<ClearanceProductModel> products;
@@ -50,7 +49,7 @@ class AutoClearanceState {
   /// Estado com erro
   factory AutoClearanceState.error(String message) => AutoClearanceState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma cópia com alterações
   AutoClearanceState copyWith({
     List<ClearancePhaseModel>? phases,
     List<ClearanceProductModel>? products,
@@ -77,20 +76,20 @@ class AutoClearanceState {
     );
   }
 
-  /// Retorna o total de produtos em liquida��o
+  /// Retorna o total de produtos em liquidação
   int get totalProductsInClearance => products.length;
 
   /// Retorna a margem formatada
   String get margemMinimaFormatted => '${margemMinima.toStringAsFixed(1)}%';
 
-  /// Calcula o capital empatado baseado nos produtos em liquida��o
-  /// Capital empatado = soma de (pre�o atual � estoque) de todos os produtos
+  /// Calcula o capital empatado baseado nos produtos em liquidação
+  /// Capital empatado = soma de (preço atual × estoque) de todos os produtos
   String get capitalEmpatado {
     if (products.isEmpty) return 'R\$ 0,00';
     
     double total = 0.0;
     for (final produto in products) {
-      // Extrai o valor num�rico do pre�o (remove "R$ " e converte v�rgula para ponto)
+      // Extrai o valor numérico do preço (remove "R$ " e converte vírgula para ponto)
       final precoStr = produto.precoAtual
           .replaceAll('R\$', '')
           .replaceAll('.', '')
@@ -144,7 +143,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
               titulo: p['titulo']?.toString() ?? p['nome']?.toString() ?? p['name']?.toString() ?? 'Fase ${i + 1}',
               dias: p['dias'] ?? p['days'] ?? 7,
               desconto: (p['desconto'] ?? p['discount'] ?? 0).toDouble(),
-              corKey: _parseColorKey(p['cor'] ?? p['color']) ?? 'error',
+              cor: _parseColor(p['cor'] ?? p['color']),
               icone: Icons.timer,
               descricao: p['descricao']?.toString() ?? p['description']?.toString() ?? '',
             ));
@@ -183,11 +182,6 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
     }
   }
 
-  String _parseColorKey(dynamic colorValue) {
-    if (colorValue is String) return colorValue;
-    return 'primary'; // Default
-  }
-
   Color _parseColor(dynamic colorValue) {
     if (colorValue == null) return const Color(0xFF2196F3);
     if (colorValue is String) {
@@ -200,7 +194,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
     return const Color(0xFF2196F3);
   }
 
-  /// Atualiza o status ativo da estrat�gia
+  /// Atualiza o status ativo da estratégia
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
   }
@@ -215,12 +209,12 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza a margem m�nima
+  /// Atualiza a margem mínima
   void setMargemMinima(double margem) {
     state = state.copyWith(margemMinima: margem);
   }
 
-  /// Atualiza a notifica��o de liquida��o
+  /// Atualiza a notificação de liquidação
   void setNotificarLiquidacao(bool notificar) {
     state = state.copyWith(notificarLiquidacao: notificar);
   }
@@ -270,7 +264,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
     state = state.copyWith(phases: updatedPhases);
   }
 
-  /// Salva as configura��es
+  /// Salva as configurações
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -278,8 +272,8 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
       if (strategies.isSuccess && strategies.data != null) {
         final clearanceStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.performance && 
-                 (s.name.toLowerCase().contains('liquida��o') || s.name.toLowerCase().contains('clearance')),
-          orElse: () => throw Exception('Estrat�gia de liquida��o n�o encontrada'),
+                 (s.name.toLowerCase().contains('liquidação') || s.name.toLowerCase().contains('clearance')),
+          orElse: () => throw Exception('Estratégia de liquidação não encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(clearanceStrategy.id, {
@@ -302,7 +296,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
     }
   }
 
-  /// Retorna a fase pelo �ndice
+  /// Retorna a fase pelo índice
   ClearancePhaseModel? getPhaseByIndex(int index) {
     if (index >= 0 && index < state.phases.length) {
       return state.phases[index];
@@ -321,7 +315,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
 // PROVIDER
 // ============================================================================
 
-/// Provider para a estrat�gia de Liquida��o Autom�tica
+/// Provider para a estratégia de Liquidação Automática
 final autoClearanceProvider = StateNotifierProvider<AutoClearanceNotifier, AutoClearanceState>(
   (ref) {
     final repository = ref.watch(performanceStrategiesRepositoryProvider);
@@ -335,7 +329,7 @@ final autoClearanceProvider = StateNotifierProvider<AutoClearanceNotifier, AutoC
 // DYNAMIC MARKDOWN STATE
 // ============================================================================
 
-/// Estado da estrat�gia de Dynamic Markdown (Redu��o por Validade)
+/// Estado da estratégia de Dynamic Markdown (Redução por Validade)
 class DynamicMarkdownState {
   final List<MarkdownRuleModel> rules;
   final List<MarkdownProductModel> products;
@@ -367,7 +361,7 @@ class DynamicMarkdownState {
   /// Estado com erro
   factory DynamicMarkdownState.error(String message) => DynamicMarkdownState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma cópia com alterações
   DynamicMarkdownState copyWith({
     List<MarkdownRuleModel>? rules,
     List<MarkdownProductModel>? products,
@@ -428,7 +422,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
               id: r['id']?.toString() ?? '',
               faixa: r['faixa']?.toString() ?? r['nome']?.toString() ?? r['name']?.toString() ?? '',
               desconto: (r['desconto'] ?? r['discount'] ?? 0).toDouble(),
-              corKey: _parseColorKey(r['cor'] ?? r['color']) ?? 'greenMain',
+              cor: _parseColor(r['cor'] ?? r['color']),
               icone: Icons.schedule,
               descricao: r['descricao']?.toString() ?? r['description']?.toString() ?? '',
             ));
@@ -478,7 +472,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
     return const Color(0xFF4CAF50);
   }
 
-  /// Atualiza o status ativo da estrat�gia
+  /// Atualiza o status ativo da estratégia
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
   }
@@ -493,12 +487,12 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza a op��o "apenas perec�veis"
+  /// Atualiza a opção "apenas perecíveis"
   void setApenasPereci(bool value) {
     state = state.copyWith(apenasPereci: value);
   }
 
-  /// Atualiza a op��o de notificar ajustes
+  /// Atualiza a opção de notificar ajustes
   void setNotificarAjustes(bool value) {
     state = state.copyWith(notificarAjustes: value);
   }
@@ -537,7 +531,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
     }
   }
 
-  /// Salva as configura��es
+  /// Salva as configurações
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -546,7 +540,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
         final markdownStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.performance && 
                  (s.name.toLowerCase().contains('markdown') || s.name.toLowerCase().contains('validade')),
-          orElse: () => throw Exception('Estrat�gia de markdown n�o encontrada'),
+          orElse: () => throw Exception('Estratégia de markdown não encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(markdownStrategy.id, {
@@ -577,24 +571,12 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
     }
   }
 
-  /// Retorna a regra pelo �ndice
+  /// Retorna a regra pelo índice
   MarkdownRuleModel? getRuleByIndex(int index) {
     if (index >= 0 && index < state.rules.length) {
       return state.rules[index];
     }
     return null;
-  }
-
-  String? _parseColorKey(dynamic colorValue) {
-    if (colorValue == null) return 'greenMain';
-    if (colorValue is String) {
-      final lower = colorValue.toLowerCase();
-      if (lower.contains('success') || lower.contains('green')) return 'success';
-      if (lower.contains('error') || lower.contains('red')) return 'error';
-      if (lower.contains('warning') || lower.contains('orange')) return 'warning';
-      if (lower.contains('info') || lower.contains('blue')) return 'info';
-    }
-    return 'greenMain';
   }
 }
 
@@ -602,7 +584,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
 // PROVIDER
 // ============================================================================
 
-/// Provider para a estrat�gia de Dynamic Markdown (Redu��o por Validade)
+/// Provider para a estratégia de Dynamic Markdown (Redução por Validade)
 final dynamicMarkdownProvider = StateNotifierProvider<DynamicMarkdownNotifier, DynamicMarkdownState>(
   (ref) {
     final repository = ref.watch(performanceStrategiesRepositoryProvider);
@@ -616,7 +598,7 @@ final dynamicMarkdownProvider = StateNotifierProvider<DynamicMarkdownNotifier, D
 // AI FORECAST STATE
 // ============================================================================
 
-/// Estado da estrat�gia de Previs�o com IA
+/// Estado da estratégia de Previsão com IA
 class AIForecastState {
   final List<ForecastPredictionModel> predictions;
   final List<ForecastFactorModel> factors;
@@ -648,7 +630,7 @@ class AIForecastState {
   /// Estado com erro
   factory AIForecastState.error(String message) => AIForecastState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma cópia com alterações
   AIForecastState copyWith({
     List<ForecastPredictionModel>? predictions,
     List<ForecastFactorModel>? factors,
@@ -675,10 +657,10 @@ class AIForecastState {
     );
   }
 
-  /// Retorna o total de previs�es
+  /// Retorna o total de previsões
   int get totalPredictions => predictions.length;
   
-  /// Aliases para compatibilidade com telas em ingl�s
+  /// Aliases para compatibilidade com telas em inglês
   bool get isEngineActive => motorAtivo;
   int get historicalPeriod => periodoHistorico;
   double get confidenceLevel => nivelConfianca;
@@ -689,10 +671,10 @@ class AIForecastState {
   /// Retorna a soma formatada dos pesos
   String get totalFactorWeightFormatted => '${totalFactorWeight.toStringAsFixed(0)}%';
 
-  /// Retorna o per�odo formatado
+  /// Retorna o período formatado
   String get periodoFormatted => '$periodoHistorico dias';
 
-  /// Retorna o n�vel de confian�a formatado
+  /// Retorna o nível de confiança formatado
   String get nivelConfiancaFormatted => '${nivelConfianca.toStringAsFixed(0)}%';
 }
 
@@ -728,9 +710,9 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
               previsao: p['previsao'] ?? p['demandaPrevista'] ?? p['predictedDemand'] ?? 0,
               confianca: ((p['confianca'] ?? p['confidence'] ?? 0) * 1).toInt(),
               tendencia: ForecastTrend.fromString(p['tendencia']?.toString() ?? p['trend']?.toString() ?? 'estavel'),
-              corKey: 'blueMain',
+              cor: const Color(0xFF2196F3),
               impacto: p['impacto']?.toString() ?? 'R\$ 0',
-              elasticidade: p['elasticidade']?.toString() ?? 'M�dia',
+              elasticidade: p['elasticidade']?.toString() ?? 'Média',
             ));
           }
         }
@@ -741,7 +723,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
               id: f['id']?.toString() ?? '',
               nome: f['nome'] ?? f['name'] ?? '',
               peso: (f['peso'] ?? f['weight'] ?? 0).toDouble(),
-              corKey: 'blueMain',
+              cor: const Color(0xFF2196F3),
               icone: Icons.analytics,
               descricao: f['descricao']?.toString() ?? f['description']?.toString() ?? '',
             ));
@@ -783,7 +765,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
     state = state.copyWith(motorAtivo: isActive);
   }
   
-  /// Alias para setMotorAtivo (compatibilidade ingl�s)
+  /// Alias para setMotorAtivo (compatibilidade inglês)
   void setEngineActive(bool isActive) => setMotorAtivo(isActive);
 
   /// Atualiza o estado expandido do FAB
@@ -796,20 +778,20 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza o per�odo hist�rico
+  /// Atualiza o período histórico
   void setPeriodoHistorico(int periodo) {
     state = state.copyWith(periodoHistorico: periodo);
   }
   
-  /// Alias para setPeriodoHistorico (compatibilidade ingl�s)
+  /// Alias para setPeriodoHistorico (compatibilidade inglês)
   void setHistoricalPeriod(int period) => setPeriodoHistorico(period);
 
-  /// Atualiza o n�vel de confian�a
+  /// Atualiza o nível de confiança
   void setNivelConfianca(double nivel) {
     state = state.copyWith(nivelConfianca: nivel);
   }
   
-  /// Alias para setNivelConfianca (compatibilidade ingl�s)
+  /// Alias para setNivelConfianca (compatibilidade inglês)
   void setConfidenceLevel(double level) => setNivelConfianca(level);
 
   /// Atualiza o peso de um fator
@@ -843,11 +825,11 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
       if (strategies.isSuccess && strategies.data != null) {
         final forecastStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.performance && 
-                 (s.name.toLowerCase().contains('previs�o') || s.name.toLowerCase().contains('forecast') || s.name.toLowerCase().contains('ia')),
-          orElse: () => throw Exception('Estrat�gia de previs�o n�o encontrada'),
+                 (s.name.toLowerCase().contains('previsão') || s.name.toLowerCase().contains('forecast') || s.name.toLowerCase().contains('ia')),
+          orElse: () => throw Exception('Estratégia de previsão não encontrada'),
         );
         
-        // Executa estrat�gia para treinar o modelo
+        // Executa estratégia para treinar o modelo
         await _repository.executeStrategy(forecastStrategy.id);
         
         // Recarrega dados para obter o novo status do modelo
@@ -863,7 +845,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
     state = state.copyWith(isTraining: false);
   }
 
-  /// Salva as configura��es
+  /// Salva as configurações
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -871,8 +853,8 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
       if (strategies.isSuccess && strategies.data != null) {
         final forecastStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.performance && 
-                 (s.name.toLowerCase().contains('previs�o') || s.name.toLowerCase().contains('forecast') || s.name.toLowerCase().contains('ia')),
-          orElse: () => throw Exception('Estrat�gia de previs�o n�o encontrada'),
+                 (s.name.toLowerCase().contains('previsão') || s.name.toLowerCase().contains('forecast') || s.name.toLowerCase().contains('ia')),
+          orElse: () => throw Exception('Estratégia de previsão não encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(forecastStrategy.id, {
@@ -901,7 +883,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
     }
   }
 
-  /// Retorna a previs�o pelo ID
+  /// Retorna a previsão pelo ID
   ForecastPredictionModel? getPredictionById(String id) {
     try {
       return state.predictions.firstWhere((pred) => pred.id == id);
@@ -915,7 +897,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
 // PROVIDER
 // ============================================================================
 
-/// Provider para a estrat�gia de Previs�o com IA
+/// Provider para a estratégia de Previsão com IA
 final aiForecastProvider = StateNotifierProvider<AIForecastNotifier, AIForecastState>(
   (ref) {
     final repository = ref.watch(performanceStrategiesRepositoryProvider);
@@ -929,11 +911,11 @@ final aiForecastProvider = StateNotifierProvider<AIForecastNotifier, AIForecastS
 // AUTO AUDIT STATE
 // ============================================================================
 
-/// Estado da estrat�gia de auditoria Autom�tica
+/// Estado da estratégia de Auditoria Automática
 class AutoAuditState {
   final Map<String, bool> verificacoes;
   final List<String> emailsAlertas;
-  final List<AuditRecordModel> ultimasauditorias;
+  final List<AuditRecordModel> ultimasAuditorias;
   final bool isLoading;
   final String? error;
   final bool auditoriaAtiva;
@@ -944,7 +926,7 @@ class AutoAuditState {
   const AutoAuditState({
     this.verificacoes = const {},
     this.emailsAlertas = const [],
-    this.ultimasauditorias = const [],
+    this.ultimasAuditorias = const [],
     this.isLoading = false,
     this.error,
     this.auditoriaAtiva = true,
@@ -959,11 +941,11 @@ class AutoAuditState {
   /// Estado com erro
   factory AutoAuditState.error(String message) => AutoAuditState(error: message);
 
-  /// Cria uma c�pia com altera��es
+  /// Cria uma cópia com alterações
   AutoAuditState copyWith({
     Map<String, bool>? verificacoes,
     List<String>? emailsAlertas,
-    List<AuditRecordModel>? ultimasauditorias,
+    List<AuditRecordModel>? ultimasAuditorias,
     bool? isLoading,
     String? error,
     bool? auditoriaAtiva,
@@ -974,7 +956,7 @@ class AutoAuditState {
     return AutoAuditState(
       verificacoes: verificacoes ?? this.verificacoes,
       emailsAlertas: emailsAlertas ?? this.emailsAlertas,
-      ultimasauditorias: ultimasauditorias ?? this.ultimasauditorias,
+      ultimasAuditorias: ultimasAuditorias ?? this.ultimasAuditorias,
       isLoading: isLoading ?? this.isLoading,
       error: error,
       auditoriaAtiva: auditoriaAtiva ?? this.auditoriaAtiva,
@@ -984,13 +966,13 @@ class AutoAuditState {
     );
   }
 
-  /// Retorna o total de verifica��es ativas
+  /// Retorna o total de verificações ativas
   int get totalVerificacoesAtivas => verificacoes.values.where((v) => v).length;
 
-  /// Retorna o total de verifica��es
+  /// Retorna o total de verificações
   int get totalVerificacoes => verificacoes.length;
 
-  /// Retorna o hor�rio formatado
+  /// Retorna o horário formatado
   String formatHorario(BuildContext context) => horarioExecucao.format(context);
 }
 
@@ -1014,7 +996,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
         final data = response.data!;
         final verificacoesMap = data['verificacoes'] ?? data['checks'] ?? {};
         final emailsList = data['emailsAlertas'] ?? data['alertEmails'] ?? [];
-        final auditoriasList = data['ultimasauditorias'] ?? data['recentAudits'] ?? [];
+        final auditoriasList = data['ultimasAuditorias'] ?? data['recentAudits'] ?? [];
         
         Map<String, bool> verificacoes = {};
         if (verificacoesMap is Map) {
@@ -1023,15 +1005,15 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
           });
         }
         
-        final ultimasauditorias = <AuditRecordModel>[];
+        final ultimasAuditorias = <AuditRecordModel>[];
         if (auditoriasList is List) {
           for (final a in auditoriasList) {
-            ultimasauditorias.add(AuditRecordModel(
+            ultimasAuditorias.add(AuditRecordModel(
               id: a['id']?.toString() ?? '',
               data: a['data']?.toString() ?? a['date']?.toString() ?? '',
               problemas: a['problemas'] ?? a['issues'] ?? 0,
               status: a['status']?.toString() ?? 'concluido',
-              corKey: 'success',
+              cor: const Color(0xFF4CAF50),
               detalhes: a['detalhes']?.toString() ?? a['details']?.toString() ?? '',
               duracao: a['duracao']?.toString() ?? a['duration']?.toString() ?? '',
               acoes: a['acoes']?.toString() ?? a['actions']?.toString() ?? '',
@@ -1055,12 +1037,12 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
           isLoading: false,
           verificacoes: verificacoes,
           emailsAlertas: emailsList is List ? List<String>.from(emailsList) : [],
-          ultimasauditorias: ultimasauditorias,
+          ultimasAuditorias: ultimasAuditorias,
           auditoriaAtiva: data['auditoriaAtiva'] ?? data['auditActive'] ?? state.auditoriaAtiva,
           horarioExecucao: horario,
         );
       } else {
-        state = state.copyWith(isLoading: false, ultimasauditorias: []);
+        state = state.copyWith(isLoading: false, ultimasAuditorias: []);
       }
     } catch (e) {
       state = state.copyWith(isLoading: false, error: e.toString());
@@ -1068,7 +1050,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
   }
 
   /// Atualiza o status ativo da auditoria
-  void setauditoriaAtiva(bool isActive) {
+  void setAuditoriaAtiva(bool isActive) {
     state = state.copyWith(auditoriaAtiva: isActive);
   }
 
@@ -1082,12 +1064,12 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza o hor�rio de execu��o
+  /// Atualiza o horário de execução
   void setHorarioExecucao(TimeOfDay horario) {
     state = state.copyWith(horarioExecucao: horario);
   }
 
-  /// Atualiza uma verifica��o
+  /// Atualiza uma verificação
   void setVerificacao(String verificacao, bool valor) {
     final updated = Map<String, bool>.from(state.verificacoes);
     updated[verificacao] = valor;
@@ -1108,13 +1090,13 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
     state = state.copyWith(emailsAlertas: updated);
   }
 
-  /// Define o estado de execu��o
+  /// Define o estado de execução
   void setExecutando(bool executando) {
     state = state.copyWith(executando: executando);
   }
 
   /// Executa auditoria manualmente
-  Future<void> executarauditoria() async {
+  Future<void> executarAuditoria() async {
     state = state.copyWith(executando: true);
     
     try {
@@ -1123,7 +1105,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
         final auditStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.performance && 
                  (s.name.toLowerCase().contains('auditoria') || s.name.toLowerCase().contains('audit')),
-          orElse: () => throw Exception('Estrat�gia de auditoria n�o encontrada'),
+          orElse: () => throw Exception('Estratégia de auditoria não encontrada'),
         );
         
         await _repository.executeStrategy(auditStrategy.id);
@@ -1136,7 +1118,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
     state = state.copyWith(executando: false);
   }
 
-  /// Salva as configura��es
+  /// Salva as configurações
   Future<void> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -1145,7 +1127,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
         final auditStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.performance && 
                  (s.name.toLowerCase().contains('auditoria') || s.name.toLowerCase().contains('audit')),
-          orElse: () => throw Exception('Estrat�gia de auditoria n�o encontrada'),
+          orElse: () => throw Exception('Estratégia de auditoria não encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(auditStrategy.id, {
@@ -1161,18 +1143,18 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
     }
   }
 
-  /// Retorna o �cone para uma verifica��o
+  /// Retorna o ícone para uma verificação
   IconData getIconForVerificacao(String verificacao) {
     switch (verificacao) {
       case 'Margens Negativas':
         return Icons.money_off_rounded;
       case 'Produtos Sem Movimento':
         return Icons.inventory_rounded;
-      case 'Pre�os Abaixo do Custo':
+      case 'Preços Abaixo do Custo':
         return Icons.trending_down_rounded;
       case 'Tags Offline':
         return Icons.wifi_off_rounded;
-      case 'Diverg�ncias de Estoque':
+      case 'Divergências de Estoque':
         return Icons.difference_rounded;
       case 'Produtos Sem Tag':
         return Icons.label_off_rounded;
@@ -1190,7 +1172,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
 // PROVIDER
 // ============================================================================
 
-/// Provider para a estrat�gia de auditoria Autom�tica
+/// Provider para a estratégia de Auditoria Automática
 final autoAuditProvider = StateNotifierProvider<AutoAuditNotifier, AutoAuditState>(
   (ref) {
     final repository = ref.watch(performanceStrategiesRepositoryProvider);
@@ -1199,7 +1181,6 @@ final autoAuditProvider = StateNotifierProvider<AutoAuditNotifier, AutoAuditStat
     return AutoAuditNotifier(repository, storeId);
   },
 );
-
 
 
 

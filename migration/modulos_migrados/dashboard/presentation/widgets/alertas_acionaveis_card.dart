@@ -5,7 +5,6 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Enumeração para severidade de alertas
 enum AlertaSeveridade {
   critico, // Vermelho - Ação imediata

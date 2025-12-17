@@ -5,7 +5,6 @@ import 'package:tagbean/features/categories/presentation/providers/categories_pr
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class CategoriasAdminScreen extends ConsumerStatefulWidget {
   const CategoriasAdminScreen({super.key});
@@ -16,14 +15,14 @@ class CategoriasAdminScreen extends ConsumerStatefulWidget {
 
 class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     with TickerProviderStateMixin, ResponsiveCache {
-  List<Map<String, dynamic>> _selectedItems = [];
+  final List<Map<String, dynamic>> _selectedItems = [];
   bool _isSelectMode = false;
   String _sortOrder = 'nome_asc';
   String _searchQuery = '';
   String _filtroStatus = 'todas';
   late TabController _tabController;
   
-  // Cache para otimiza��o
+  // Cache para otimizAção
   List<Map<String, dynamic>>? _cachedCategoriasFiltradas;
   String? _lastSearchQuery;
   String? _lastSortOrder;
@@ -49,7 +48,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     final allCategories = categoriesState.categories;
     
     return allCategories.map((cat) {
-      // Contar subcategorias: categorias que t�m esta como parentId
+      // Contar subcategorias: categorias que tãm esta como parentId
       final subcategoriasCount = allCategories.where((c) => c.parentId == cat.id).length;
       
       return {
@@ -87,7 +86,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     if (lower.contains('limp')) return ThemeColors.of(context).blueCyan;
     if (lower.contains('higien')) return ThemeColors.of(context).blueLight;
     if (lower.contains('padar')) return ThemeColors.of(context).yellowGold;
-    return ThemeColors.of(context).info;
+    return ThemeColors.of(context).blueMain;
   }
 
   List<Color> _getGradientForCategory(String nome) {
@@ -98,7 +97,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     if (lower.contains('limp')) return [ThemeColors.of(context).blueCyan, ThemeColors.of(context).primary];
     if (lower.contains('higien')) return [ThemeColors.of(context).blueLight, ThemeColors.of(context).primary];
     if (lower.contains('padar')) return [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning];
-    return [ThemeColors.of(context).info, ThemeColors.of(context).blueDark];
+    return [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark];
   }
 
   @override
@@ -107,7 +106,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     super.dispose();
   }
 
-  // OTIMIZA��O: Getter com cache - s� recalcula se filtros mudaram
+  // OTIMIZAããO: Getter com cache - sã recalcula se filtros mudaram
   List<Map<String, dynamic>> get _categoriasFiltradas {
     final categorias = _getCategorias();
     
@@ -135,13 +134,13 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     lista.sort((a, b) {
       switch (_sortOrder) {
         case 'nome_asc':
-          return a['nome'].compareTo(b['nome']);
+          return (a['nome'] as String).compareTo(b['nome'] as String);
         case 'nome_desc':
-          return b['nome'].compareTo(a['nome']);
+          return (b['nome'] as String).compareTo(a['nome'] as String);
         case 'produtos_asc':
-          return a['produtos'].compareTo(b['produtos']);
+          return (a['produtos'] as int).compareTo(b['produtos'] as int);
         case 'produtos_desc':
-          return b['produtos'].compareTo(a['produtos']);
+          return (b['produtos'] as int).compareTo(a['produtos'] as int);
         default:
           return 0;
       }
@@ -166,7 +165,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Administra��o Completa',
+          'AdministrAção Completa',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -244,7 +243,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).successLight,
+            color: ThemeColors.of(context).success.withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -438,7 +437,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
               fillColor: ThemeColors.of(context).textSecondary,
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: [
               Expanded(
@@ -501,7 +500,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           color: isSelected ?  null : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet)),
           border: Border.all(
-            color: isSelected ? ThemeColors.of(context).transparent : ThemeColors.of(context).textTertiary.withValues(alpha: 0.4),
+            color: isSelected ? ThemeColors.of(context).transparent : ThemeColors.of(context).grey500.withValues(alpha: 0.4),
           ),
         ),
         child: Text(
@@ -574,14 +573,14 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
       },
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: categoria['gradiente']),
+          gradient: LinearGradient(colors: (categoria['gradiente'] as List<dynamic>).cast<Color>()),
           borderRadius: BorderRadius.circular(
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isSelected ?  Border.all(color: ThemeColors.of(context).surface, width: 3) : null,
           boxShadow: [
             BoxShadow(
-              color: (categoria['cor'] as Color)Light,
+              color: (categoria['cor'] as Color).withValues(alpha: 0.3),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -635,7 +634,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           ),
                         ),
                         child: Icon(
-                          categoria['icone'],
+                          categoria['icone'] as IconData,
                           color: ThemeColors.of(context).surface,
                           size: ResponsiveHelper.getResponsiveIconSize(
                             context,
@@ -645,9 +644,9 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           ),
                         ),
                       ),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       Text(
-                        categoria['nome'],
+                        categoria['nome'] as String,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -661,9 +660,9 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 12,
                           vertical: 6,
                         ),
@@ -702,13 +701,13 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       child: isSelected
                           ? Icon(
                               Icons.check_rounded,
-                              color: categoria['cor'],
+                              color: categoria['cor'] as Color?,
                               size: 18,
                             )
                           : null,
                     ),
                   ),
-                if (! categoria['ativa'])
+                if (!(categoria['ativa'] as bool))
                   Positioned(
                     top: 8,
                     left: 8,
@@ -718,7 +717,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                         color: ThemeColors.of(context).error,
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Text(
+                      child: Text(
                         'INATIVA',
                         style: TextStyle(
                           color: ThemeColors.of(context).surface,
@@ -765,7 +764,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           boxShadow: [
             BoxShadow(
               color: isSelected
-                  ? ThemeColors.of(context).successLight
+                  ? ThemeColors.of(context).success.withValues(alpha: 0.2)
                   : ThemeColors.of(context).textPrimaryOverlay05,
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
@@ -817,7 +816,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                         shape: BoxShape.circle,
                       ),
                       child: isSelected
-                          ? const Icon(
+                          ? Icon(
                               Icons.check_rounded,
                               color: ThemeColors.of(context).surface,
                               size: 18,
@@ -828,25 +827,25 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                     width: AppSizes.iconHeroXl.get(isMobile, isTablet),
                     height: AppSizes.iconHeroXl.get(isMobile, isTablet),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: categoria['gradiente']),
+                      gradient: LinearGradient(colors: (categoria['gradiente'] as List<dynamic>).cast<Color>()),
                       borderRadius: BorderRadius.circular(
                         isMobile ? 14 : 16,
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: (categoria['cor'] as Color)Light,
+                          color: (categoria['cor'] as Color).withValues(alpha: 0.3),
                           blurRadius: 12,
                           offset: const Offset(0, 6),
                         ),
                       ],
                     ),
                     child: Icon(
-                      categoria['icone'],
+                      categoria['icone'] as IconData,
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -855,7 +854,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           children: [
                             Expanded(
                               child: Text(
-                                categoria['nome'],
+                                categoria['nome'] as String,
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -867,7 +866,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            if (! categoria['ativa'])
+                            if (!(categoria['ativa'] as bool))
                               Container(
                                 margin: const EdgeInsets.only(left: 8),
                                 padding: const EdgeInsets.symmetric(
@@ -875,7 +874,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                                   vertical: 4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: ThemeColors.of(context).errorLight,
+                                  color: ThemeColors.of(context).error.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(color: ThemeColors.of(context).error),
                                 ),
@@ -890,7 +889,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                               ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           children: [
                             Icon(
@@ -907,7 +906,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                                   baseFontSize: 13,
                                   mobileFontSize: 12,
                                 ),
-                                color: ThemeColors.of(context).textTertiary.withValues(alpha: 0.7),
+                                color: ThemeColors.of(context).grey500.withValues(alpha: 0.7),
                               ),
                             ),
                             const SizedBox(width: 16),
@@ -930,7 +929,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                             ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           'Atualizado em ${categoria['ultimaAtualizacao']}',
                           style: TextStyle(
@@ -969,14 +968,14 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           child: Row(
                             children: [
                               Icon(
-                                categoria['ativa']
+                                (categoria['ativa'] as bool)
                                     ? Icons.visibility_off_rounded
                                     : Icons.visibility_rounded,
                                 size: 20,
                                 color: ThemeColors.of(context).yellowGold,
                               ),
                               const SizedBox(width: 12),
-                              Text(categoria['ativa'] ? 'Desativar' : 'Ativar'),
+                              Text((categoria['ativa'] as bool) ? 'Desativar' : 'Ativar'),
                             ],
                           ),
                           onTap: () => Future.delayed(
@@ -1060,12 +1059,12 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
 
   void _toggleStatus(Map<String, dynamic> categoria) {
     setState(() {
-      categoria['ativa'] = !categoria['ativa'];
+      categoria['ativa'] = !(categoria['ativa'] as bool);
     });
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          '${categoria['nome']} ${categoria['ativa'] ? 'ativada' : 'desativada'}',
+          '${categoria['nome']} ${(categoria['ativa'] as bool) ? 'ativada' : 'desativada'}',
         ),
         behavior: SnackBarBehavior.floating,
       ),
@@ -1078,9 +1077,9 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).error, size: 48),
-        title: const Text('Confirmar Exclus�o'),
+        title: const Text('Confirmar Exclusão'),
         content: Text(
-          'Deseja realmente excluir "${categoria['nome']}"?\n\nEsta a��o n�o pode ser desfeita.',
+          'Deseja realmente excluir "${categoria['nome']}"?\n\nEsta Ação não pode ser desfeita.',
           textAlign: TextAlign.center,
         ),
         actions: [
@@ -1091,20 +1090,20 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           ElevatedButton(
             onPressed: () async {
               // Chamar backend para excluir
-              final success = await ref.read(categoriesProvider.notifier).deleteCategory(categoria['id']);
+              final success = await ref.read(categoriesProvider.notifier).deleteCategory(categoria['id'] as String);
               Navigator.pop(context);
               if (success) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('${categoria['nome']} exclu�da'),
+                    content: Text('${categoria['nome'] as String} excluãda'),
                     backgroundColor: ThemeColors.of(context).error,
                     behavior: SnackBarBehavior.floating,
                   ),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Erro ao excluir categoria'),
+                  SnackBar(
+                    content: const Text('Erro ao excluir categoria'),
                     backgroundColor: ThemeColors.of(context).error,
                     behavior: SnackBarBehavior.floating,
                   ),
@@ -1141,7 +1140,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
         icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).error, size: 48),
         title: const Text('Excluir em Lote'),
         content: Text(
-          'Deseja realmente excluir ${_selectedItems.length} categorias?\n\nEsta a��o n�o pode ser desfeita.',
+          'Deseja realmente excluir ${_selectedItems.length} categorias?\n\nEsta Ação não pode ser desfeita.',
           textAlign: TextAlign.center,
         ),
         actions: [
@@ -1153,7 +1152,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
             onPressed: () async {
               int deleted = 0;
               for (var item in _selectedItems) {
-                final success = await ref.read(categoriesProvider.notifier).deleteCategory(item['id']);
+                final success = await ref.read(categoriesProvider.notifier).deleteCategory(item['id'] as String);
                 if (success) deleted++;
               }
               setState(() {
@@ -1163,7 +1162,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('$deleted categorias exclu�das'),
+                  content: Text('$deleted categorias excluãdas'),
                   backgroundColor: ThemeColors.of(context).error,
                   behavior: SnackBarBehavior.floating,
                 ),
@@ -1182,10 +1181,6 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     );
   }
 }
-
-
-
-
 
 
 

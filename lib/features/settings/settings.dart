@@ -1,4 +1,4 @@
-// TagBean Settings Feature
+/// TagBean Settings Feature
 library settings;
 
 // Data Layer

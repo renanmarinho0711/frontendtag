@@ -1,5 +1,4 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Bottom Sheet personalizado reutilizvel
@@ -44,7 +43,7 @@ class AppBottomSheet extends StatelessWidget {
       isDismissible: isDismissible,
       enableDrag: enableDrag,
       isScrollControlled: isScrollControlled,
-      backgroundColor: ThemeColors.of(context).transparent,
+      backgroundColor: Colors.transparent,
       builder: (context) => AppBottomSheet(
         title: title,
         actions: actions,
@@ -119,7 +118,7 @@ class AppBottomSheet extends StatelessWidget {
                   onPressed: () => Navigator.of(context).pop(true),
                   style: isDanger
                       ? FilledButton.styleFrom(
-                          backgroundColor: ThemeColors.of(context).redMain,
+                          backgroundColor: const Color(0xFFE53935),
                         )
                       : null,
                   child: Text(confirmText),
@@ -204,6 +203,7 @@ class AppBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final colors = ThemeColors.of(context);
     final mediaQuery = MediaQuery.of(context);
 
     Widget content = child;
@@ -241,7 +241,7 @@ class AppBottomSheet extends StatelessWidget {
                 width: 32,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: Color.alphaBlend(theme.colorScheme.onSurface.withValues(alpha: 0.3), ThemeColors.of(context).surface),
+                  color: Color.alphaBlend(theme.colorScheme.onSurface.withValues(alpha: 0.3), colors.surface),
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -333,7 +333,7 @@ class FilterBottomSheet extends StatefulWidget {
     return showModalBottomSheet<Map<String, List<String>>>(
       context: context,
       isScrollControlled: true,
-      backgroundColor: ThemeColors.of(context).transparent,
+      backgroundColor: Colors.transparent,
       builder: (context) => FilterBottomSheet(
         filters: filters,
         selected: selected ?? {},

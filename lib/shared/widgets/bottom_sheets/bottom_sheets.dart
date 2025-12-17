@@ -1,4 +1,4 @@
-// Barrel file para exportar todos os bottom sheets
+/// Barrel file para exportar todos os bottom sheets
 library;
 
 export 'app_bottom_sheet.dart';

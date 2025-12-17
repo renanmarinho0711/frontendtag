@@ -4,7 +4,6 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de informações gerais do produto
 class ProductInfoCard extends StatelessWidget {
   final ProductModel product;

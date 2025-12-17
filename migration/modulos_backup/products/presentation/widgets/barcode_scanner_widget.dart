@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 /// Widget de Scanner de Código de Barras usando a câmera do dispositivo
 /// 
@@ -394,7 +393,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
     
     switch (error.errorCode) {
       case MobileScannerErrorCode.permissionDenied:
-        message = 'PermissÃ£o de câmera negada.\nAcesse as configurações para permitir.';
+        message = 'Permissão de câmera negada.\nAcesse as configurações para permitir.';
         icon = Icons.no_photography_rounded;
         break;
       case MobileScannerErrorCode.controllerAlreadyInitialized:

@@ -6,30 +6,29 @@ import 'package:tagbean/features/reports/presentation/screens/performance_report
 import 'package:tagbean/features/reports/presentation/screens/audit_report_screen.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 
-class relatÃ³riosMenuScreen extends ConsumerStatefulWidget {
-  const relatÃ³riosMenuScreen({super.key});
+class RelatoriosMenuScreen extends ConsumerStatefulWidget {
+  const RelatoriosMenuScreen({super.key});
 
   @override
-  ConsumerState<relatÃ³riosMenuScreen> createState() => _relatÃ³riosMenuScreenState();
+  ConsumerState<RelatoriosMenuScreen> createState() => _RelatoriosMenuScreenState();
 }
 
-class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScreen> with TickerProviderStateMixin, ResponsiveCache {
+class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> with TickerProviderStateMixin, ResponsiveCache {
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
   late AnimationController _animationController;
   late AnimationController _pulseController;
   int?  _hoveredIndex;
 
-  final List<Map<String, dynamic>> _relatÃ³rios = [
+  List<Map<String, dynamic>> _getRelatorios(BuildContext context) => [
     {
       'title': 'Operacionais',
       'subtitle': 'Status de tags e sincronizaes',
       'description': 'Monitore o status das ESLs em tempo real',
       'icon': Icons.settings_rounded,
       'gradient': [ThemeColors.of(context).reportOperacional, ThemeColors.of(context).reportOperacionalDark],
-      'screen': relatÃ³riosOperacionaisScreen(),
+      'screen': const RelatoriosOperacionaisScreen(),
       'stats': '142 tags online',
       'badge': 'Tempo Real',
       'alertas': 3,
@@ -40,7 +39,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
       'description': 'Produtos mais e menos vendidos do perodo',
       'icon': Icons.shopping_cart_rounded,
       'gradient': [ThemeColors.of(context).reportVendas, ThemeColors.of(context).reportVendasDark],
-      'screen': relatÃ³riosVendasScreen(),
+      'screen': const RelatoriosVendasScreen(),
       'stats': 'R\$ 103.5K',
       'badge': '+15%',
       'alertas': 0,
@@ -51,25 +50,25 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
       'description': 'Anlise de performance e oportunidades',
       'icon': Icons.trending_up_rounded,
       'gradient': [ThemeColors.of(context).reportPerformance, ThemeColors.of(context).reportPerformanceDark],
-      'screen': relatÃ³riosPerformanceScreen(),
+      'screen': const RelatoriosPerformanceScreen(),
       'stats': '80 insights',
       'badge': 'IA',
       'alertas': 18,
     },
     {
-      'title': 'auditoria',
-      'subtitle': 'Log de aes e alteraes',
-      'description': 'Histrico completo de operaes do sistema',
+      'title': 'Auditoria',
+      'subtitle': 'Log de ações e alteraes',
+      'description': 'Histórico completo de operações do sistema',
       'icon': Icons.fact_check_rounded,
-      'gradient': [ThemeColors.of(context).reportauditoria, ThemeColors.of(context).reportauditoriaDark],
-      'screen': relatÃ³riosauditoriaScreen(),
+      'gradient': [ThemeColors.of(context).reportAuditoria, ThemeColors.of(context).reportAuditoriaDark],
+      'screen': const RelatoriosAuditoriaScreen(),
       'stats': '1.247 logs',
       'badge': 'Seguro',
       'alertas': 0,
     },
   ];
 
-  final List<Map<String, dynamic>> _estatisticas = [
+  List<Map<String, dynamic>> _getEstatisticas(BuildContext context) => [
     {
       'label': 'Tags',
       'valor': '142',
@@ -391,7 +390,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                 SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
                 Expanded(
                   child: Text(
-                    'ltima atualizao: H 2 minutos',
+                    'Última atualizao: H 2 minutos',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                       overflow: TextOverflow.ellipsis,
@@ -406,7 +405,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                       vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 3.5, tablet: 3.75, desktop: 4),
                     ),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).primaryLight,
+                      color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
                     ),
                     child: Row(
@@ -449,7 +448,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).greenLightMaterialLight],
+          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).greenLightMaterial.withValues(alpha: 0.3)],
         ),
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
@@ -472,7 +471,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Sobre este Mdulo',
+                  'Sobre este Módulo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -527,7 +526,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
         borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).statsOverviewBackground2Light,
+            color: ThemeColors.of(context).statsOverviewBackground2.withValues(alpha: 0.5),
             blurRadius: isMobile ? 25 : 30,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -576,29 +575,29 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                   children: [
                     Row(
                       children: [
-                        Expanded(child: _buildEnhancedMiniStat(_estatisticas[0])),
+                        Expanded(child: _buildEnhancedMiniStat(_getEstatisticas(context)[0])),
                         SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 10)),
-                        Expanded(child: _buildEnhancedMiniStat(_estatisticas[1])),
+                        Expanded(child: _buildEnhancedMiniStat(_getEstatisticas(context)[1])),
                       ],
                     ),
                     SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 10)),
                     Row(
                       children: [
-                        Expanded(child: _buildEnhancedMiniStat(_estatisticas[2])),
+                        Expanded(child: _buildEnhancedMiniStat(_getEstatisticas(context)[2])),
                         SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 10)),
-                        Expanded(child: _buildEnhancedMiniStat(_estatisticas[3])),
+                        Expanded(child: _buildEnhancedMiniStat(_getEstatisticas(context)[3])),
                       ],
                     ),
                   ],
                 )
               : Row(
-                  children: _estatisticas.asMap().entries.map((entry) {
+                  children: _getEstatisticas(context).asMap().entries.map((entry) {
                     final index = entry.key;
                     final stat = entry.value;
                     
                     return Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(right: index < _estatisticas.length - 1 ? 12 : 0),
+                        padding: EdgeInsets.only(right: index < _getEstatisticas(context).length - 1 ? 12 : 0),
                         child: _buildEnhancedMiniStat(stat),
                       ),
                     );
@@ -873,14 +872,14 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
         mainAxisSpacing: AppSizes.spacingBase.get(isMobile, isTablet),
         childAspectRatio: isMobile ? 0.9 : 1.1,
       ),
-      itemCount: _relatÃ³rios.length,
+      itemCount: _getRelatorios(context).length,
       itemBuilder: (context, index) {
-        return _buildEnhancedReportCard(_relatÃ³rios[index], index);
+        return _buildEnhancedReportCard(_getRelatorios(context)[index], index);
       },
     );
   }
 
-  Widget _buildEnhancedReportCard(Map<String, dynamic> relatÃ³rio, int index) {
+  Widget _buildEnhancedReportCard(Map<String, dynamic> relatorio, int index) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -898,14 +897,14 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: relatÃ³rio['gradient'],
+            colors: relatorio['gradient'],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 20 : (isTablet ? 22 : 24),
           ),
           boxShadow: [
             BoxShadow(
-              color: (relatÃ³rio['gradient'][0] as Color)Light,
+              color: (relatorio['gradient'][0] as Color).withValues(alpha: 0.3),
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -929,7 +928,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
           child: InkWell(
             onTap: () {
               _navigatorKey.currentState?.push(
-                MaterialPageRoute(builder: (context) => relatÃ³rio['screen']),
+                MaterialPageRoute(builder: (context) => relatorio['screen']),
               );
             },
             borderRadius: BorderRadius.circular(
@@ -950,7 +949,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (relatÃ³rio['alertas'] > 0)
+                    if (relatorio['alertas'] > 0)
                       Align(
                         alignment: Alignment.topRight,
                         child: Container(
@@ -970,7 +969,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                             ),
                           ),
                           child: Text(
-                            '${relatÃ³rio['alertas']}',
+                            '${relatorio['alertas']}',
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -987,9 +986,9 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                     SizedBox(
                       height: ResponsiveHelper.getResponsiveSpacing(
                         context,
-                        mobile: relatÃ³rio['alertas'] > 0 ? 6 : 0,
-                        tablet: relatÃ³rio['alertas'] > 0 ? 8 : 0,
-                        desktop: relatÃ³rio['alertas'] > 0 ? 10 : 0,
+                        mobile: relatorio['alertas'] > 0 ? 6 : 0,
+                        tablet: relatorio['alertas'] > 0 ? 8 : 0,
+                        desktop: relatorio['alertas'] > 0 ? 10 : 0,
                       ),
                     ),
                     Container(
@@ -1008,7 +1007,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                         ),
                       ),
                       child: Icon(
-                        relatÃ³rio['icon'],
+                        relatorio['icon'],
                         color: ThemeColors.of(context).surface,
                         size: ResponsiveHelper.getResponsiveIconSize(
                           context,
@@ -1022,7 +1021,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                       height: AppSizes.spacingBaseAlt.get(isMobile, isTablet),
                     ),
                     Text(
-                      relatÃ³rio['title'],
+                      relatorio['title'],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1046,7 +1045,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
                       ),
                     ),
                     Text(
-                      relatÃ³rio['subtitle'],
+                      relatorio['subtitle'],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1088,7 +1087,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
         borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 18 : 20)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).quickActionsReportsBackground2Light,
+            color: ThemeColors.of(context).quickActionsReportsBackground2.withValues(alpha: 0.5),
             blurRadius: isMobile ? 25 : 30,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -1118,7 +1117,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  'Aes Rpidas',
+                  'Ações Rápidas',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15, tabletFontSize: 15.5),
                     fontWeight: FontWeight.bold,
@@ -1154,9 +1153,9 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
       child: Container(
         padding: EdgeInsets.symmetric(vertical: AppSizes.paddingSm.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: colorLight,
+          color: color.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-          border: Border.all(color: colorLight),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -1234,7 +1233,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
           ResponsiveSpacing.verticalMedium(context),
           _buildRecentItem('Vendas - ltimos 30 dias', 'H 5 min', Icons.shopping_cart_rounded, ThemeColors.of(context).success),
           _buildRecentItem('Performance - Anlise IA', 'H 1 hora', Icons.trending_up_rounded, ThemeColors.of(context).success),
-          _buildRecentItem('auditoria - Log completo', 'H 2 horas', Icons.fact_check_rounded, ThemeColors.of(context).primary),
+          _buildRecentItem('Auditoria - Log completo', 'H 2 horas', Icons.fact_check_rounded, ThemeColors.of(context).primary),
         ],
       ),
     );
@@ -1251,7 +1250,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
           Container(
             padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8)),
             decoration: BoxDecoration(
-              color: colorLight,
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
             ),
             child: Icon(
@@ -1297,7 +1296,7 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
 
   Widget _buildSpeedDial(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () => _mostrarSnackbar(context, 'Menu de aes'),
+      onPressed: () => _mostrarSnackbar(context, 'Menu de ações'),
       backgroundColor: ThemeColors.of(context).success,
       child: Icon(
         Icons.add_rounded,
@@ -1328,9 +1327,6 @@ class _relatÃ³riosMenuScreenState extends ConsumerState<relatÃ³riosMenuScree
     );
   }
 }
-
-
-
 
 
 

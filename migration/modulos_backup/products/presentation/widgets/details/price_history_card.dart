@@ -144,7 +144,7 @@ class PriceHistoryCard extends StatelessWidget {
   Widget _buildEmptyState(BuildContext context, bool isMobile, bool isTablet) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(AppSpacing.lg),
+        padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
           children: [
             Icon(
@@ -331,7 +331,7 @@ class PriceHistoryCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             vertical: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          side: BorderSide(color: AppThemeColors.borderLight),
+          side: const BorderSide(color: AppThemeColors.borderLight),
           shape: RoundedRectangleBorder(
             borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
           ),

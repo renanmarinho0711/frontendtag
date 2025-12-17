@@ -12,7 +12,6 @@ import 'package:tagbean/features/tags/presentation/screens/tags_batch_screen.dar
 import 'package:tagbean/features/categories/presentation/providers/categories_provider.dart';
 import 'package:tagbean/features/categories/data/models/category_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Tela de adição de novo produto com Wizard de 3 passos
 /// Conforme PROMOT PRODUTOS.txt:
 /// - Passo 1: Informações Básicas (Código, Nome, Categoria, Descrição)
@@ -647,7 +646,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(AppSpacing.md),
+                        padding: const EdgeInsets.all(AppSpacing.md),
                         decoration: BoxDecoration(
                           color: ThemeColors.of(context).blueMain,
                           borderRadius: AppRadius.sm,
@@ -1044,7 +1043,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(AppSpacing.lg),
+                      padding: const EdgeInsets.all(AppSpacing.lg),
                       decoration: BoxDecoration(
                         gradient: categoryTheme.gradient,
                         borderRadius: AppRadius.md,
@@ -1073,7 +1072,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                               fontSize: 18,
                             )),
                           ),
-                          SizedBox(height: AppSpacing.xs),
+                          const SizedBox(height: AppSpacing.xs),
                           Row(
                             children: [
                               Icon(
@@ -1081,7 +1080,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                                 size: 14,
                                 color: categoryTheme.color,
                               ),
-                              SizedBox(width: AppSpacing.xs),
+                              const SizedBox(width: AppSpacing.xs),
                               Text(
                                 _categoria,
                                 style: TextStyle(
@@ -1164,7 +1163,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 )),
               ),
               secondary: Container(
-                padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
+                padding: const EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
                 decoration: BoxDecoration(
                   color: _vincularTag 
                       ? ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1)
@@ -1434,7 +1433,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
 
   Widget _buildDiscardDialog(BuildContext context) {
     return AlertDialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: AppRadius.dialog,
       ),
       icon: const Icon(

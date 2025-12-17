@@ -5,7 +5,7 @@ import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 
-/// Tela de recupera��o de senha
+/// Tela de recuperação de senha
 class ForgotPasswordScreen extends ConsumerStatefulWidget {
   const ForgotPasswordScreen({super.key});
 
@@ -89,7 +89,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
-                        color: ThemeColors.of(context).neutralBlackLight,
+                        color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.2),
                         blurRadius: 30,
                         offset: const Offset(0, 10),
                       ),
@@ -112,7 +112,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // �cone
+          // ícone
           Container(
             width: 80,
             height: 80,
@@ -130,7 +130,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
             ),
           ),
 
-          // T�tulo
+          // Título
           Text(
             'Esqueceu a senha?',
             style: TextStyle(
@@ -141,9 +141,9 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           ),
           const SizedBox(height: 8),
 
-          // Descri��o
+          // Descrição
           Text(
-            'Digite seu email para receber as instru��es de recupera��o de senha.',
+            'Digite seu email para receber as instruções de recuperação de senha.',
             style: TextStyle(
               fontSize: 14,
               color: ThemeColors.of(context).textSecondary,
@@ -168,7 +168,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                 return 'Por favor, digite seu email';
               }
               if (!value.contains('@')) {
-                return 'Por favor, digite um email v�lido';
+                return 'Por favor, digite um email válido';
               }
               return null;
             },
@@ -180,9 +180,9 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).errorLight,
+                color: ThemeColors.of(context).error.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: ThemeColors.of(context).errorLight),
+                border: Border.all(color: ThemeColors.of(context).error.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
@@ -199,7 +199,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
             ),
           if (_errorMessage != null) const SizedBox(height: 16),
 
-          // Bot�o de enviar
+          // Botão de enviar
           SizedBox(
             height: 50,
             child: ElevatedButton(
@@ -211,7 +211,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 elevation: 3,
-                shadowColor: ThemeColors.of(context).brandPrimaryGreenLight,
+                shadowColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
               ),
               child: _isLoading
                   ? SizedBox(
@@ -222,8 +222,8 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                         valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface),
                       ),
                     )
-                  : Text(
-                      'Enviar instru��es',
+                  : const Text(
+                      'Enviar instruções',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -236,12 +236,12 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           // Voltar para login
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.arrow_back_rounded, size: 18),
-                const SizedBox(width: 8),
-                const Text('Voltar para o login'),
+                Icon(Icons.arrow_back_rounded, size: 18),
+                SizedBox(width: 8),
+                Text('Voltar para o login'),
               ],
             ),
           ),
@@ -254,23 +254,23 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // �cone de sucesso
+        // ícone de sucesso
         Container(
           width: 100,
           height: 100,
           margin: const EdgeInsets.only(bottom: 24),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).successLight,
+            color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Icon(
             Icons.mark_email_read_rounded,
-            color: ThemeColors.of(context).success,
+            color: ThemeColors.of(context).greenMain,
             size: 50,
           ),
         ),
 
-        // T�tulo
+        // Título
         const Text(
           'Email enviado!',
           style: TextStyle(
@@ -280,9 +280,9 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         ),
         const SizedBox(height: 12),
 
-        // Descri��o
+        // Descrição
         Text(
-          'Enviamos as instru��es de recupera��o para:\n${_emailController.text}',
+          'Enviamos as instruções de recuperação para:\n${_emailController.text}',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 14,
@@ -301,7 +301,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         ),
         const SizedBox(height: 32),
 
-        // Bot�o voltar para login
+        // Botão voltar para login
         SizedBox(
           width: double.infinity,
           height: 50,
@@ -313,7 +313,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              shadowColor: ThemeColors.of(context).brandPrimaryGreenLight,
+              shadowColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
             ),
             child: const Text(
               'Voltar para o login',
@@ -331,14 +331,12 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           onPressed: () {
             setState(() => _emailSent = false);
           },
-          child: const Text('N�o recebeu? Enviar novamente'),
+          child: const Text('Não recebeu? Enviar novamente'),
         ),
       ],
     );
   }
 }
-
-
 
 
 

@@ -1,7 +1,6 @@
-﻿import 'package:tagbean/core/network/api_response.dart';
+import 'package:tagbean/core/network/api_response.dart';
 import 'package:tagbean/core/network/api_client.dart';
 import 'package:tagbean/features/sync/data/models/sync_models.dart';
-import 'package:tagbean/features/sync/data/repositories/sync_history_repository.dart';
 import 'package:tagbean/features/tags/data/repositories/tags_repository.dart';
 
 /// Repositório para operações de Sincronização
@@ -9,15 +8,15 @@ import 'package:tagbean/features/tags/data/repositories/tags_repository.dart';
 class SyncRepository {
   final TagsRepository _tagsRepository;
   final ApiService _apiService;
-  final SyncHistoryRepository _historyRepository;
+  
+  // Cache local do histórico (até ter endpoint no backend)
+  final List<SyncHistoryEntry> _historyCache = [];
 
   SyncRepository({
     TagsRepository? tagsRepository,
     ApiService? apiService,
-    SyncHistoryRepository? historyRepository,
   }) : _tagsRepository = tagsRepository ?? TagsRepository(),
-       _apiService = apiService ?? ApiService(),
-       _historyRepository = historyRepository ?? SyncHistoryRepository();
+       _apiService = apiService ?? ApiService();
 
   /// Executa sincronização de tags
   /// Usa POST /api/tags/store/:storeId/sync
@@ -39,8 +38,8 @@ class SyncRepository {
           errors: batchResult.errors,
         );
         
-        // Adiciona ao histórico usando repositório
-        await _historyRepository.addEntry(SyncHistoryEntry(
+        // Adiciona ao histórico local
+        _addToHistory(SyncHistoryEntry(
           id: DateTime.now().millisecondsSinceEpoch.toString(),
           type: SyncType.tags,
           status: result.success ? SyncStatus.success : SyncStatus.failed,
@@ -107,7 +106,7 @@ class SyncRepository {
           errors: batchResult.errors,
         );
         
-        await _historyRepository.addEntry(SyncHistoryEntry(
+        _addToHistory(SyncHistoryEntry(
           id: DateTime.now().millisecondsSinceEpoch.toString(),
           type: SyncType.tags,
           status: result.success ? SyncStatus.success : SyncStatus.failed,
@@ -166,13 +165,17 @@ class SyncRepository {
   }
 
   /// Obtém o histórico de sincronizações
-  /// Delega para SyncHistoryRepository (com persistência)
+  /// Usa cache local (histórico é mantido em memória durante a sessão)
   Future<ApiResponse<List<SyncHistoryEntry>>> getHistory({
     int limit = 20,
   }) async {
     try {
-      final history = await _historyRepository.getHistory(limit: limit);
-      return ApiResponse.success(history);
+      // Retorna do cache local ordenado por data
+      final sortedHistory = List<SyncHistoryEntry>.from(_historyCache)
+        ..sort((a, b) => b.startedAt.compareTo(a.startedAt));
+      
+      final limited = sortedHistory.take(limit).toList();
+      return ApiResponse.success(limited);
     } catch (e) {
       return ApiResponse.failure('Erro ao obter histórico: $e');
     }
@@ -180,7 +183,12 @@ class SyncRepository {
 
   /// Obtém a última sincronização
   Future<SyncHistoryEntry?> getLastSync() async {
-    return await _historyRepository.getLastSync();
+    if (_historyCache.isEmpty) return null;
+    
+    final sorted = List<SyncHistoryEntry>.from(_historyCache)
+      ..sort((a, b) => b.startedAt.compareTo(a.startedAt));
+    
+    return sorted.first;
   }
 
   /// Testa a conexão com a API de sincronização
@@ -222,13 +230,23 @@ class SyncRepository {
     }
   }
 
-  /// Limpa o histórico (delega para repositório)
-  Future<void> clearHistory() async {
-    await _historyRepository.clearHistory();
+  /// Adiciona entrada ao histórico
+  void _addToHistory(SyncHistoryEntry entry) {
+    _historyCache.insert(0, entry);
+    
+    // Limitar tamanho do cache
+    if (_historyCache.length > 100) {
+      _historyCache.removeRange(100, _historyCache.length);
+    }
+  }
+
+  /// Limpa o histórico
+  void clearHistory() {
+    _historyCache.clear();
   }
 
   // ==========================================================================
-  // NOVOS MÉTODOS - SINCRONIZAÇÃO MINEW CLOUD
+  // NOVOS MÉTODOS - SINCRONIZAÇÀO MINEW CLOUD
   // Endpoints do SyncController no backend
   // ==========================================================================
 
@@ -444,7 +462,7 @@ class SyncRepository {
       final duration = DateTime.now().difference(startTime);
 
       // 3. Criar histórico
-      await _historyRepository.addEntry(SyncHistoryEntry(
+      _addToHistory(SyncHistoryEntry(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
         type: SyncType.full,
         status: totalErrors == 0 
@@ -477,167 +495,6 @@ class SyncRepository {
   void dispose() {
     _tagsRepository.dispose();
   }
-
-  // ==========================================================================
-  // NOVOS MÉTODOS - MINEW STATS SYNC
-  // Integração com MinewStatsController no backend
-  // ==========================================================================
-
-  /// Obtém estatísticas da loja diretamente da Minew Cloud
-  /// GET /api/minew/stats/{storeId}
-  Future<ApiResponse<MinewStoreStats>> getMinewStoreStats(String storeId) async {
-    try {
-      final response = await _apiService.get<Map<String, dynamic>>(
-        '/minew/stats/$storeId',
-        parser: (data) => data as Map<String, dynamic>,
-      );
-
-      if (response.isSuccess && response.data != null) {
-        final data = response.data!['data'] as Map<String, dynamic>?;
-        if (data != null) {
-          return ApiResponse.success(MinewStoreStats.fromJson(data));
-        }
-      }
-      return ApiResponse.failure(response.errorMessage ?? 'Erro ao obter stats');
-    } catch (e) {
-      return ApiResponse.failure('Erro ao obter estatísticas Minew: $e');
-    }
-  }
-
-  /// Sincronização completa da loja (tags + gateways + stats)
-  /// POST /api/minew/stats/{storeId}/sync
-  Future<ApiResponse<StoreSyncSummary>> syncMinewStoreComplete(String storeId) async {
-    final startTime = DateTime.now();
-    
-    try {
-      final response = await _apiService.post<Map<String, dynamic>>(
-        '/minew/stats/$storeId/sync',
-        parser: (data) => data as Map<String, dynamic>,
-      );
-
-      if (response.isSuccess && response.data != null) {
-        final data = response.data!['data'] as Map<String, dynamic>?;
-        if (data != null) {
-          final summary = StoreSyncSummary.fromJson(data);
-          
-          // Adiciona ao histórico usando repositório
-          await _historyRepository.addEntry(SyncHistoryEntry(
-            id: DateTime.now().millisecondsSinceEpoch.toString(),
-            type: SyncType.full,
-            status: response.data!['success'] == true 
-                ? SyncStatus.success 
-                : SyncStatus.partial,
-            startedAt: startTime,
-            completedAt: DateTime.now(),
-            tagsCount: summary.tagsSync?.processed ?? 0,
-            successCount: (summary.tagsSync?.updated ?? 0) + 
-                         (summary.gatewaysSync?.updated ?? 0),
-            errorCount: (summary.tagsSync?.errors ?? 0) + 
-                       (summary.gatewaysSync?.errors ?? 0),
-            duration: summary.duration,
-          ));
-          
-          return ApiResponse.success(summary);
-        }
-      }
-      return ApiResponse.failure(response.errorMessage ?? 'Erro na sincronização');
-    } catch (e) {
-      return ApiResponse.failure('Erro na sincronização completa: $e');
-    }
-  }
-
-  /// Sincroniza apenas status das tags
-  /// POST /api/minew/stats/{storeId}/sync/tags
-  Future<ApiResponse<StatsSyncResult>> syncMinewTags(String storeId) async {
-    final startTime = DateTime.now();
-    
-    try {
-      final response = await _apiService.post<Map<String, dynamic>>(
-        '/minew/stats/$storeId/sync/tags',
-        parser: (data) => data as Map<String, dynamic>,
-      );
-
-      if (response.isSuccess && response.data != null) {
-        final result = StatsSyncResult.fromJson(response.data!);
-        
-        await _historyRepository.addEntry(SyncHistoryEntry(
-          id: DateTime.now().millisecondsSinceEpoch.toString(),
-          type: SyncType.tags,
-          status: result.success ? SyncStatus.success : SyncStatus.partial,
-          startedAt: startTime,
-          completedAt: DateTime.now(),
-          tagsCount: result.processed,
-          successCount: result.updated,
-          errorCount: result.errors,
-          duration: result.duration,
-        ));
-        
-        return ApiResponse.success(result);
-      }
-      return ApiResponse.failure(response.errorMessage ?? 'Erro ao sincronizar tags');
-    } catch (e) {
-      return ApiResponse.failure('Erro ao sincronizar tags: $e');
-    }
-  }
-
-  /// Sincroniza apenas status dos gateways
-  /// POST /api/minew/stats/{storeId}/sync/gateways
-  Future<ApiResponse<StatsSyncResult>> syncMinewGateways(String storeId) async {
-    final startTime = DateTime.now();
-    
-    try {
-      final response = await _apiService.post<Map<String, dynamic>>(
-        '/minew/stats/$storeId/sync/gateways',
-        parser: (data) => data as Map<String, dynamic>,
-      );
-
-      if (response.isSuccess && response.data != null) {
-        final result = StatsSyncResult.fromJson(response.data!);
-        return ApiResponse.success(result);
-      }
-      return ApiResponse.failure(response.errorMessage ?? 'Erro ao sincronizar gateways');
-    } catch (e) {
-      return ApiResponse.failure('Erro ao sincronizar gateways: $e');
-    }
-  }
-
-  /// Importa novas tags da Minew Cloud para o banco local
-  /// POST /api/minew/stats/{storeId}/import/tags
-  Future<ApiResponse<StatsSyncResult>> importMinewTags(String storeId) async {
-    try {
-      final response = await _apiService.post<Map<String, dynamic>>(
-        '/minew/stats/$storeId/import/tags',
-        parser: (data) => data as Map<String, dynamic>,
-      );
-
-      if (response.isSuccess && response.data != null) {
-        final result = StatsSyncResult.fromJson(response.data!);
-        return ApiResponse.success(result);
-      }
-      return ApiResponse.failure(response.errorMessage ?? 'Erro ao importar tags');
-    } catch (e) {
-      return ApiResponse.failure('Erro ao importar tags: $e');
-    }
-  }
-
-  /// Importa novos gateways da Minew Cloud para o banco local
-  /// POST /api/minew/stats/{storeId}/import/gateways
-  Future<ApiResponse<StatsSyncResult>> importMinewGateways(String storeId) async {
-    try {
-      final response = await _apiService.post<Map<String, dynamic>>(
-        '/minew/stats/$storeId/import/gateways',
-        parser: (data) => data as Map<String, dynamic>,
-      );
-
-      if (response.isSuccess && response.data != null) {
-        final result = StatsSyncResult.fromJson(response.data!);
-        return ApiResponse.success(result);
-      }
-      return ApiResponse.failure(response.errorMessage ?? 'Erro ao importar gateways');
-    } catch (e) {
-      return ApiResponse.failure('Erro ao importar gateways: $e');
-    }
-  }
 }
 
 /// Resultado do teste de conexão
@@ -656,7 +513,6 @@ class SyncConnectionTestResult {
     required this.message,
   });
 }
-
 
 
 

@@ -5,14 +5,14 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 
-/// EnumeraÁ„o para severidade de alertas
+/// Enumera√ß√£o para severidade de alertas
 enum AlertaSeveridade {
-  critico, // Vermelho - AÁ„o imediata
+  critico, // Vermelho - A√ß√£o imediata
   atencao, // Laranja - Resolver hoje
   aviso,   // Amarelo - Pode esperar
 }
 
-/// Modelo de alerta acion·vel
+/// Modelo de alerta acion√°vel
 class AlertaAcionavel {
   final String id;
   final AlertaSeveridade severidade;
@@ -37,13 +37,13 @@ class AlertaAcionavel {
   });
 }
 
-/// Card de alertas acion·veis com hierarquia de cores e aÁıes diretas
-/// SÛ aparece se houver alertas - Mostra no m·ximo 3 alertas crÌticos primeiro
+/// Card de alertas acion√°veis com hierarquia de cores e a√ß√µes diretas
+/// S√≥ aparece se houver alertas - Mostra no m√°ximo 3 alertas cr√≠ticos primeiro
 class AlertasAcionaveisCard extends ConsumerStatefulWidget {
   final VoidCallback? onVerTodos;
   final List<AlertaAcionavel>? customAlertas;
   
-  // Callbacks para aÁıes de navegaÁ„o
+  // Callbacks para a√ß√µes de navega√ß√£o
   final VoidCallback? onVerTags;
   final VoidCallback? onVerProdutos;
   final VoidCallback? onVerProdutosSemPreco;
@@ -68,7 +68,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
   final Set<String> _ignorados = {};
 
   List<AlertaAcionavel> _buildAlertasFromProvider(List<DashboardAlert> providerAlerts) {
-    // Converte os alertas do provider para o novo formato acion·vel
+    // Converte os alertas do provider para o novo formato acion√°vel
     final List<AlertaAcionavel> alertas = [];
     
     // Agrupa alertas por tipo e conta
@@ -84,7 +84,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
         tagsOffline += alert.count;
       } else if (alertType.contains('battery') || alertType.contains('bateria')) {
         bateriasBaixas += alert.count;
-      } else if (alertType.contains('price') || alertType.contains('preco') || alertType.contains('preÁo')) {
+      } else if (alertType.contains('price') || alertType.contains('preco') || alertType.contains('pre√ßo')) {
         produtosSemPreco += alert.count;
       } else if (alertType.contains('sync') || alertType.contains('sinc')) {
         errosSync += alert.count;
@@ -93,7 +93,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       }
     }
     
-    // Tags Offline - CRÕTICO
+    // Tags Offline - CR√çTICO
     if (tagsOffline > 0) {
       alertas.add(AlertaAcionavel(
         id: 'tags_offline',
@@ -107,24 +107,24 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       ));
     }
     
-    // Erros de Sync - CRÕTICO
+    // Erros de Sync - CR√çTICO
     if (errosSync > 0) {
       alertas.add(AlertaAcionavel(
         id: 'sync_error',
         severidade: AlertaSeveridade.critico,
-        titulo: '$errosSync erros de sincronizaÁ„o',
+        titulo: '$errosSync erros de sincroniza√ß√£o',
         quantidade: errosSync,
         acaoPrincipal: 'Resolver',
         onAcaoPrincipal: widget.onVerTags,
       ));
     }
     
-    // Produtos sem preÁo - ATEN«√O
+    // Produtos sem pre√ßo - ATEN√á√ÄO
     if (produtosSemPreco > 0) {
       alertas.add(AlertaAcionavel(
         id: 'sem_preco',
         severidade: AlertaSeveridade.atencao,
-        titulo: '$produtosSemPreco produtos sem preÁo',
+        titulo: '$produtosSemPreco produtos sem pre√ßo',
         quantidade: produtosSemPreco,
         acaoPrincipal: 'Corrigir',
         acaoSecundaria: 'Ver Lista',
@@ -157,7 +157,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       ));
     }
     
-    // Ordena por severidade (crÌtico primeiro)
+    // Ordena por severidade (cr√≠tico primeiro)
     alertas.sort((a, b) => a.severidade.index.compareTo(b.severidade.index));
     
     return alertas;
@@ -168,7 +168,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       case AlertaSeveridade.critico:
         return ThemeColors.of(context).redMain;
       case AlertaSeveridade.atencao:
-        return ThemeColors.of(context).warning;
+        return ThemeColors.of(context).orangeMain;
       case AlertaSeveridade.aviso:
         return ThemeColors.of(context).warning;
     }
@@ -179,7 +179,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       case AlertaSeveridade.critico:
         return ThemeColors.of(context).redMain.withValues(alpha: 0.08);
       case AlertaSeveridade.atencao:
-        return ThemeColors.of(context).warning.withValues(alpha: 0.08);
+        return ThemeColors.of(context).orangeMain.withValues(alpha: 0.08);
       case AlertaSeveridade.aviso:
         return ThemeColors.of(context).warning.withValues(alpha: 0.08);
     }
@@ -199,9 +199,9 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
   String _getLabelSeveridade(AlertaSeveridade severidade) {
     switch (severidade) {
       case AlertaSeveridade.critico:
-        return 'CRÕTICO';
+        return 'CR√çTICO';
       case AlertaSeveridade.atencao:
-        return 'ATEN«√O';
+        return 'ATEN√á√ÄO';
       case AlertaSeveridade.aviso:
         return 'AVISO';
     }
@@ -212,19 +212,19 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
     
-    // ObtÈm alertas do provider ou usa customizados
+    // Obt√©m alertas do provider ou usa customizados
     final providerAlerts = ref.watch(dashboardAlertsProvider);
     final alertas = widget.customAlertas ?? _buildAlertasFromProvider(providerAlerts);
     
     // Filtra alertas ignorados
     final alertasAtivos = alertas.where((a) => !_ignorados.contains(a.id)).toList();
     
-    // Se n„o h· alertas, n„o mostra o card
+    // Se n√£o h√° alertas, n√£o mostra o card
     if (alertasAtivos.isEmpty) {
       return const SizedBox.shrink();
     }
     
-    // Mostra no m·ximo 3 alertas (ou todos se expandido)
+    // Mostra no m√°ximo 3 alertas (ou todos se expandido)
     final alertasVisiveis = _expanded ? alertasAtivos : alertasAtivos.take(3).toList();
     final temMaisAlertas = alertasAtivos.length > 3;
 
@@ -233,12 +233,12 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         border: Border.all(
-          color: _getCorSeveridade(alertasAtivos.first.severidade)Light,
+          color: _getCorSeveridade(alertasAtivos.first.severidade).withValues(alpha: 0.3),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: _getCorSeveridade(alertasAtivos.first.severidade)Light,
+            color: _getCorSeveridade(alertasAtivos.first.severidade).withValues(alpha: 0.1),
             blurRadius: 20,
             offset: const Offset(0, 6),
           ),
@@ -256,7 +256,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: _getCorSeveridade(alertasAtivos.first.severidade)Light,
+                    color: _getCorSeveridade(alertasAtivos.first.severidade).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(
@@ -271,7 +271,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Alertas Acion·veis',
+                        'Alertas Acion√°veis',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -284,7 +284,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                         ),
                       ),
                       Text(
-                        '${alertasAtivos.length} ${alertasAtivos.length == 1 ? 'item requer' : 'itens requerem'} atenÁ„o',
+                        '${alertasAtivos.length} ${alertasAtivos.length == 1 ? 'item requer' : 'itens requerem'} aten√ß√£o',
                         style: TextStyle(
                           fontSize: 12,
                           color: ThemeColors.of(context).textSecondary,
@@ -300,7 +300,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
           // Lista de alertas
           ...alertasVisiveis.map((alerta) => _buildAlertaItem(alerta, isMobile, isTablet)),
           
-          // Bot„o "Ver todos" se houver mais alertas
+          // Bot√£o "Ver todos" se houver mais alertas
           if (temMaisAlertas)
             InkWell(
               onTap: () {
@@ -314,7 +314,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                 width: double.infinity,
                 padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).surfaceSecondary,
+                  color: ThemeColors.of(context).backgroundLight,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(isMobile ? 16 : 20),
                     bottomRight: Radius.circular(isMobile ? 16 : 20),
@@ -363,7 +363,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
       decoration: BoxDecoration(
         color: corFundo,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: corLight),
+        border: Border.all(color: cor.withValues(alpha: 0.2)),
       ),
       child: Row(
         children: [
@@ -395,7 +395,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
           ),
           const SizedBox(width: 12),
           
-          // TÌtulo do alerta
+          // T√≠tulo do alerta
           Expanded(
             child: Text(
               alerta.titulo,
@@ -409,7 +409,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
           ),
           const SizedBox(width: 8),
           
-          // Botıes de aÁ„o em container flexÌvel
+          // Bot√µes de a√ß√£o em container flex√≠vel
           Flexible(
             flex: 0,
             child: Row(
@@ -448,14 +448,14 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                     ),
                     child: Text(
                       alerta.acaoPrincipal!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                 
-                // Bot„o ignorar
+                // Bot√£o ignorar
                 if (alerta.onIgnorar != null && !isMobile)
                   IconButton(
                     onPressed: alerta.onIgnorar,
@@ -476,9 +476,6 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
     );
   }
 }
-
-
-
 
 
 

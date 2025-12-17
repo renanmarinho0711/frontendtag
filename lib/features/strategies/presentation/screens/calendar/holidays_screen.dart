@@ -3,15 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/categories/presentation/providers/categories_provider.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/providers/calendar_provider.dart';
 
-/// Tela de configura??o de Datas Comemorativas
+/// Tela de configurAção de Datas Comemorativas
 /// 
-/// Esta tela permite ao usu?rio configurar eventos sazonais para ajustes
-/// autom?ticos de pre?o durante feriados e datas comemorativas.
+/// Esta tela permite ao Usuário configurar eventos sazonais para ajustes
+/// Automáticos de preço durante feriados e datas comemorativas.
 /// 
 /// Migrada para usar:
 /// - ConsumerStatefulWidget + Riverpod
@@ -79,7 +78,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
   }
 
   Widget _buildLoadingState() {
-    return const Center(
+    return Center(
       child: CircularProgressIndicator(
         color: ThemeColors.of(context).error,
       ),
@@ -254,7 +253,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                   ),
                 ),
                 Text(
-                  'Estrat?gia de Calend?rio',
+                  'Estratãgia de Calendãrio',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -336,7 +335,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               Icons.calendar_month_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Calend?rio',
+            text: 'Calendãrio',
           ),
         ],
       ),
@@ -493,7 +492,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               onChanged: (value) {
                 ref.read(holidayEventsProvider.notifier).setStrategyActive(value);
               },
-              activeColor: ThemeColors.of(context).surface,
+              activeThumbColor: ThemeColors.of(context).surface,
               activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
             ),
           ),
@@ -528,14 +527,14 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).infoLight,
+              color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
               ),
             ),
             child: Icon(
               Icons.restore_rounded,
-              color: ThemeColors.of(context).info,
+              color: ThemeColors.of(context).blueMain,
               size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
             ),
           ),
@@ -548,7 +547,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Reverter Ap?s Evento',
+                  'Reverter Apãs Evento',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -563,7 +562,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                   height: AppSizes.paddingXxs.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Voltar pre?os ao normal ap?s a data',
+                  'Voltar preços ao normal apãs a data',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -584,7 +583,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               onChanged: (value) {
                 ref.read(holidayEventsProvider.notifier).setRevertAfterEvent(value);
               },
-              activeColor: ThemeColors.of(context).info,
+              activeThumbColor: ThemeColors.of(context).blueMain,
             ),
           ),
         ],
@@ -609,12 +608,12 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: evento.colorLight,
+            color: evento.color.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: evento.colorLight,
+              color: evento.color.withValues(alpha: 0.15),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -644,7 +643,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                       onChanged: (value) {
                         ref.read(holidayEventsProvider.notifier).toggleEventActive(evento.id, value);
                       },
-                      activeColor: evento.color,
+                      activeThumbColor: evento.color,
                     ),
                   ),
                 ],
@@ -660,7 +659,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _buildConfigRow(
-                      'Ajuste de Pre?o',
+                      'Ajuste de PREÇO',
                       evento.adjustmentFormatted,
                       Icons.trending_up_rounded,
                       evento.color,
@@ -670,7 +669,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                       height: AppSizes.paddingBase.get(isMobile, isTablet),
                     ),
                     _buildConfigRow(
-                      'Dias de Anteced?ncia',
+                      'Dias de Antecedãncia',
                       '${evento.daysInAdvance} dias',
                       Icons.access_time_rounded,
                       evento.color,
@@ -713,7 +712,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
         ),
         boxShadow: [
           BoxShadow(
-            color: evento.colorLight,
+            color: evento.color.withValues(alpha: 0.3),
             blurRadius: isMobile ? 10 : 12,
             offset: const Offset(0, 4),
           ),
@@ -829,11 +828,11 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
           AppSizes.paddingSm.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: colorLight,
+          color: color.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
           ),
-          border: Border.all(color: colorLight),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -909,7 +908,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: evento.isActive
-                ? [evento.colorLight, evento.colorLight]
+                ? [evento.color.withValues(alpha: 0.1), evento.color.withValues(alpha: 0.05)]
                 : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textSecondary],
           ),
           borderRadius: BorderRadius.circular(
@@ -917,7 +916,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
           ),
           border: Border.all(
             color: evento.isActive
-                ? evento.colorLight
+                ? evento.color.withValues(alpha: 0.3)
                 : ThemeColors.of(context).textSecondary,
             width: 2,
           ),
@@ -1024,7 +1023,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: evento.colorLight,
+                        color: evento.color.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
@@ -1051,7 +1050,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               ),
               decoration: BoxDecoration(
                 color: evento.isActive
-                    ? ThemeColors.of(context).successLight
+                    ? ThemeColors.of(context).greenMain.withValues(alpha: 0.1)
                     : ThemeColors.of(context).textSecondary,
                 borderRadius: BorderRadius.circular(
                   isMobile ? 9 : 10,
@@ -1060,7 +1059,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               child: Icon(
                 evento.isActive ? Icons.check_circle_rounded : Icons.cancel_rounded,
                 color: evento.isActive
-                    ? ThemeColors.of(context).successDark
+                    ? ThemeColors.of(context).greenMain.withValues(alpha: 0.8)
                     : ThemeColors.of(context).textSecondary,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
@@ -1082,7 +1081,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
             borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet)),
           ),
           title: Text(
-            'Ajuste de Pre?o',
+            'Ajuste de PREÇO',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -1180,7 +1179,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
             borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet)),
           ),
           title: Text(
-            'Dias de Anteced?ncia',
+            'Dias de Antecedãncia',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -1194,7 +1193,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Com quantos dias de anteced?ncia aplicar ajuste?',
+                'Com quantos dias de antecedãncia aplicar ajuste?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1271,10 +1270,10 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
     // Usa categorias do backend
     final categoriesState = ref.read(categoriesProvider);
     final categoriasBackend = categoriesState.categories.map((c) => c.nome).toList();
-    // Se n?o houver categorias, usa lista padr?o para UX
+    // Se não houver categorias, usa lista padrão para UX
     final categorias = categoriasBackend.isNotEmpty 
         ? [...categoriasBackend, 'Todos']
-        : ['Bebidas', 'Mercearia', 'Perec?veis', 'Limpeza', 'Chocolates', 'Panetones', 'Presentes', 'Todos'];
+        : ['Bebidas', 'Mercearia', 'Perecãveis', 'Limpeza', 'Chocolates', 'Panetones', 'Presentes', 'Todos'];
     final selecionadas = List<String>.from(evento.categories);
 
     showDialog(
@@ -1401,7 +1400,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Configure eventos sazonais para ajustes autom?ticos:',
+                'Configure eventos sazonais para ajustes Automáticos:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1419,15 +1418,15 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
               SizedBox(
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
-              _buildInfoItem('? Aplica ajustes com anteced?ncia configur?vel'),
+              _buildInfoItem('? Aplica ajustes com antecedãncia configurãvel'),
               SizedBox(
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
-              _buildInfoItem('? Reverte pre?os automaticamente ap?s o evento'),
+              _buildInfoItem('? Reverte preços automaticamente apãs o evento'),
               SizedBox(
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
-              _buildInfoItem('? Maximiza vendas em per?odos de alta demanda'),
+              _buildInfoItem('? Maximiza vendas em períodos de alta demanda'),
             ],
           ),
         ),
@@ -1490,7 +1489,7 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    success ? 'Configura??es Salvas!' : 'Erro ao Salvar',
+                    success ? 'Configurações Salvas!' : 'Erro ao Salvar',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1528,9 +1527,6 @@ class _DatasComemorativasConfigScreenState extends ConsumerState<DatasComemorati
     );
   }
 }
-
-
-
 
 
 

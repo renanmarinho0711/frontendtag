@@ -159,8 +159,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           content: Row(
             children: [
               Container(
-                padding: EdgeInsets.all(AppSpacing.sm),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(AppSpacing.sm),
+                decoration: const BoxDecoration(
                   color: AppThemeColors.surfaceOverlay20,
                   borderRadius: AppRadius.sm,
                 ),
@@ -170,7 +170,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: 20,
                 ),
               ),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               const Text(
                 'Sincronizado com sucesso!',
                 style: TextStyle(fontWeight: FontWeight.w600),
@@ -179,7 +179,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           ),
           backgroundColor: AppThemeColors.greenMain,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
+          shape: const RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
           duration: const Duration(seconds: 2),
         ),
       );
@@ -305,10 +305,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   color: AppThemeColors.surfaceOverlay90,
                   size: 14,
                 ),
-                SizedBox(width: 4),
+                const SizedBox(width: 4),
                 Text(
                   _isSyncing ? 'Sincronizando...' : _syncTimeAgo,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     color: AppThemeColors.surfaceOverlay90,
                     fontWeight: FontWeight.w500,
@@ -317,7 +317,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ],
             ),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           
           // Botão Sincronizar
           IconButton(
@@ -366,7 +366,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               children: [
                 Icon(Icons.settings_rounded, color: AppThemeColors.brandPrimaryGreen),
                 SizedBox(width: 12),
@@ -383,14 +383,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 ),
               ],
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             ListTile(
-              leading: Icon(Icons.visibility_rounded, color: AppThemeColors.blueMaterial),
-              title: Text('Mostrar onboarding'),
-              subtitle: Text('Exibir dicas e sugestões'),
+              leading: const Icon(Icons.visibility_rounded, color: AppThemeColors.blueMaterial),
+              title: const Text('Mostrar onboarding'),
+              subtitle: const Text('Exibir dicas e sugestões'),
               trailing: Switch(
                 value: _showOnboarding,
-                activeColor: AppThemeColors.brandPrimaryGreen,
+                activeThumbColor: AppThemeColors.brandPrimaryGreen,
                 onChanged: (value) async {
                   final prefs = await SharedPreferences.getInstance();
                   await prefs.setBool('products_show_onboarding', value);
@@ -400,10 +400,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ),
             ListTile(
-              leading: Icon(Icons.sync_rounded, color: AppThemeColors.orangeMain),
-              title: Text('Sincronização automática'),
-              subtitle: Text('Atualizar ao abrir'),
-              trailing: Icon(Icons.chevron_right_rounded),
+              leading: const Icon(Icons.sync_rounded, color: AppThemeColors.orangeMain),
+              title: const Text('Sincronização automática'),
+              subtitle: const Text('Atualizar ao abrir'),
+              trailing: const Icon(Icons.chevron_right_rounded),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -497,13 +497,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             Container(
               width: 40,
               height: 4,
-              margin: EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
                 color: AppThemeColors.textSecondaryOverlay30,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
-            Text(
+            const Text(
               'Ações Rápidas',
               style: TextStyle(
                 fontSize: 18,
@@ -511,7 +511,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 color: AppThemeColors.textPrimary,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildQuickMenuItem(
               icon: Icons.add_circle_outline_rounded,
               label: 'Adicionar Produto',
@@ -562,7 +562,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }) {
     return ListTile(
       leading: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: cor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
@@ -571,14 +571,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       ),
       title: Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w600,
           color: AppThemeColors.textPrimary,
         ),
       ),
-      trailing: Icon(Icons.chevron_right_rounded, color: AppThemeColors.textSecondary),
+      trailing: const Icon(Icons.chevron_right_rounded, color: AppThemeColors.textSecondary),
       onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     );
   }
@@ -634,12 +634,12 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 children: [
                   // SEÃ‡ÃƒO 2: Busca Global
                   _buildBuscaGlobal(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
                   // SEÃ‡ÃƒO 3: Onboarding Contextual (condicional)
                   if (_shouldShowOnboarding) ...[
                     _buildOnboardingContextual(),
-                    SizedBox(height: AppSpacing.lg),
+                    const SizedBox(height: AppSpacing.lg),
                   ],
                   
                   // SEÃ‡ÃƒO 4: Resumo do Catálogo (5 cards clicáveis)
@@ -647,19 +647,19 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     _buildLoadingStats()
                   else
                     _buildResumoCatalogo(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
                   // SEÃ‡ÃƒO 5: Ações Rápidas + Produtos em Destaque (2 colunas)
                   _buildAcoesEDestaques(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
                   // SEÃ‡ÃƒO 6: Categorias
                   _buildCategoriasSection(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
                   // SEÃ‡ÃƒO 7: Mapa do Módulo (todos os menus disponíveis)
                   _buildMapaModulo(),
-                  SizedBox(height: AppSpacing.xl),
+                  const SizedBox(height: AppSpacing.xl),
                 ],
               ),
             ),
@@ -674,7 +674,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
       child: Row(
         children: [
           Expanded(
@@ -704,13 +704,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     color: AppThemeColors.textTertiary,
                     fontSize: isMobile ? 13 : 14,
                   ),
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.search_rounded,
                     color: AppThemeColors.brandPrimaryGreen,
                     size: 22,
                   ),
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                 ),
                 onSubmitted: (value) {
                   if (value.isNotEmpty) {
@@ -721,7 +721,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           // Botão Scanner
           Material(
             color: AppThemeColors.brandPrimaryGreen,
@@ -730,8 +730,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               onTap: () => setState(() => _currentScreen = 'qr'),
               borderRadius: BorderRadius.circular(14),
               child: Container(
-                padding: EdgeInsets.all(14),
-                child: Icon(
+                padding: const EdgeInsets.all(14),
+                child: const Icon(
                   Icons.qr_code_scanner_rounded,
                   color: AppThemeColors.surface,
                   size: 24,
@@ -749,7 +749,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     final isMobile = ResponsiveHelper.isMobile(context);
     
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -766,18 +766,18 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.lightbulb_rounded,
                   color: AppThemeColors.brandPrimaryGreen,
                   size: 20,
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(
                   'Próximo Passo',
@@ -790,14 +790,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
               IconButton(
                 onPressed: _dismissOnboarding,
-                icon: Icon(Icons.close_rounded, size: 20),
+                icon: const Icon(Icons.close_rounded, size: 20),
                 color: AppThemeColors.textSecondary,
                 padding: EdgeInsets.zero,
-                constraints: BoxConstraints(),
+                constraints: const BoxConstraints(),
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Text(
             _onboardingMessage,
             style: TextStyle(
@@ -805,7 +805,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               color: AppThemeColors.textSecondary,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             children: [
               Expanded(
@@ -820,19 +820,19 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppThemeColors.brandPrimaryGreen,
                     foregroundColor: AppThemeColors.surface,
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   ),
                   child: Text(
                     _totalProdutos == 0 ? 'Adicionar Primeiro Produto' : 'Vincular Tags',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               TextButton(
                 onPressed: _dismissOnboarding,
-                child: Text(
+                child: const Text(
                   'Fazer Depois',
                   style: TextStyle(color: AppThemeColors.textSecondary),
                 ),
@@ -850,7 +850,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppThemeColors.surface,
         borderRadius: BorderRadius.circular(16),
@@ -873,7 +873,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               color: AppThemeColors.textPrimary,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           // Grid de 5 cards - usando Row para desktop, Wrap para mobile
           if (isMobile)
             Wrap(
@@ -942,7 +942,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Com Tag',
@@ -955,7 +955,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Sem Tag',
@@ -969,7 +969,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Estoque',
@@ -979,7 +979,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     onTap: () => setState(() => _currentScreen = 'estoque'),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Categorias',
@@ -1033,11 +1033,11 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   children: [
                     Icon(icon, color: cor, size: isMobile ? 18 : 22),
                     if (showAlert) ...[
-                      SizedBox(width: 4),
+                      const SizedBox(width: 4),
                       Container(
                         width: 8,
                         height: 8,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: AppThemeColors.redMain,
                           shape: BoxShape.circle,
                         ),
@@ -1045,7 +1045,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     ],
                   ],
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
@@ -1057,7 +1057,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     ),
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   label,
                   style: TextStyle(
@@ -1066,7 +1066,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Icon(
                   Icons.arrow_forward_rounded,
                   color: cor.withValues(alpha: 0.6),
@@ -1080,7 +1080,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     );
   }
 
-  /// versÃ£o expandida para Row (desktop)
+  /// Versão expandida para Row (desktop)
   Widget _buildStatClickableExpanded({
     required String label,
     required String valor,
@@ -1095,7 +1095,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [cor.withValues(alpha: 0.12), cor.withValues(alpha: 0.06)],
@@ -1112,11 +1112,11 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 children: [
                   Icon(icon, color: cor, size: 20),
                   if (showAlert) ...[
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Container(
                       width: 6,
                       height: 6,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppThemeColors.redMain,
                         shape: BoxShape.circle,
                       ),
@@ -1124,7 +1124,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   ],
                 ],
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
@@ -1136,16 +1136,16 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   ),
                 ),
               ),
-              SizedBox(height: 2),
+              const SizedBox(height: 2),
               Text(
                 label,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 11,
                   color: AppThemeColors.textSecondary,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 2),
+              const SizedBox(height: 2),
               Icon(
                 Icons.arrow_forward_rounded,
                 color: cor.withValues(alpha: 0.6),
@@ -1165,7 +1165,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         color: AppThemeColors.surface,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Center(
+      child: const Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -1190,7 +1190,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       return Column(
         children: [
           _buildAcoesRapidasCard(),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _buildProdutosDestaqueCard(),
         ],
       );
@@ -1201,7 +1201,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(child: _buildAcoesRapidasCard()),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         Expanded(child: _buildProdutosDestaqueCard()),
       ],
     );
@@ -1267,8 +1267,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         children: [
           Row(
             children: [
-              Icon(Icons.flash_on_rounded, color: AppThemeColors.brandPrimaryGreen, size: 20),
-              SizedBox(width: 8),
+              const Icon(Icons.flash_on_rounded, color: AppThemeColors.brandPrimaryGreen, size: 20),
+              const SizedBox(width: 8),
               Flexible(
                 child: Text(
                   'Ações Rápidas',
@@ -1282,8 +1282,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          SizedBox(height: 12),
-          ...acoes.map((acao) => _buildAcaoItem(acao)).toList(),
+          const SizedBox(height: 12),
+          ...acoes.map((acao) => _buildAcaoItem(acao)),
         ],
       ),
     );
@@ -1301,7 +1301,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           onTap: () => setState(() => _currentScreen = acao['screen'] as String),
           borderRadius: BorderRadius.circular(12),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
               color: cor.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
@@ -1310,21 +1310,21 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             child: Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: cor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(acao['icon'] as IconData, color: cor, size: 20),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         acao['label'] as String,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           color: AppThemeColors.textPrimary,
                           fontSize: 13,
@@ -1334,7 +1334,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                       ),
                       Text(
                         acao['subtitle'] as String,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 11,
                           color: AppThemeColors.textSecondary,
                         ),
@@ -1346,21 +1346,21 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 ),
                 if (badge != null)
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: AppThemeColors.redMain,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
                       '$badge',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppThemeColors.surface,
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Icon(Icons.chevron_right_rounded, color: cor.withValues(alpha: 0.6), size: 20),
               ],
             ),
@@ -1379,11 +1379,11 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       decoration: BoxDecoration(
         color: AppThemeColors.surface,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: AppThemeColors.textPrimaryOverlay05,
             blurRadius: 8,
-            offset: const Offset(0, 2),
+            offset: Offset(0, 2),
           ),
         ],
       ),
@@ -1394,8 +1394,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           // Título
           Row(
             children: [
-              Icon(Icons.star_rounded, color: AppThemeColors.orangeMain, size: 18),
-              SizedBox(width: 6),
+              const Icon(Icons.star_rounded, color: AppThemeColors.orangeMain, size: 18),
+              const SizedBox(width: 6),
               Expanded(
                 child: Text(
                   'Produtos em Destaque',
@@ -1409,11 +1409,11 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           
           // Seção: Atualizados Recentemente
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppThemeColors.blueMaterial.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(10),
@@ -1423,7 +1423,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Row(
+                const Row(
                   children: [
                     Icon(Icons.schedule_rounded, color: AppThemeColors.blueMaterial, size: 14),
                     SizedBox(width: 4),
@@ -1440,9 +1440,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 if (recentProducts.isEmpty)
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.symmetric(vertical: 12),
                     child: Center(
                       child: Text(
@@ -1466,17 +1466,17 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                             color: AppThemeColors.backgroundLight,
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.inventory_2_rounded,
                             color: AppThemeColors.textSecondary,
                             size: 14,
                           ),
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         Expanded(
                           child: Text(
                             produto.nome,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppThemeColors.textPrimary,
@@ -1485,32 +1485,31 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        if (produto.preco != null)
-                          Text(
-                            'R\$ ${produto.preco!.toStringAsFixed(2)}',
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                              color: AppThemeColors.brandPrimaryGreen,
-                            ),
+                        Text(
+                          'R\$ ${produto.preco.toStringAsFixed(2)}',
+                          style: const TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: AppThemeColors.brandPrimaryGreen,
                           ),
+                        ),
                       ],
                     ),
-                  )).toList(),
+                  )),
               ],
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           
           // Botão Ver Histórico
           Center(
             child: TextButton.icon(
               onPressed: () => setState(() => _currentScreen = 'lista'),
-              icon: Icon(Icons.history_rounded, size: 14),
-              label: Text('Ver Histórico Completo', style: TextStyle(fontSize: 11)),
+              icon: const Icon(Icons.history_rounded, size: 14),
+              label: const Text('Ver Histórico Completo', style: TextStyle(fontSize: 11)),
               style: TextButton.styleFrom(
                 foregroundColor: AppThemeColors.blueMaterial,
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               ),
             ),
           ),
@@ -1543,8 +1542,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         children: [
           Row(
             children: [
-              Icon(Icons.category_rounded, color: AppThemeColors.cyanMain, size: 20),
-              SizedBox(width: 8),
+              const Icon(Icons.category_rounded, color: AppThemeColors.cyanMain, size: 20),
+              const SizedBox(width: 8),
               Expanded(
                 child: Text(
                   'Categorias',
@@ -1560,17 +1559,17 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 onPressed: () {
                   // TODO: Abrir modal de nova categoria
                 },
-                icon: Icon(Icons.add_rounded, size: 18),
-                label: Text('Nova'),
+                icon: const Icon(Icons.add_rounded, size: 18),
+                label: const Text('Nova'),
                 style: TextButton.styleFrom(
                   foregroundColor: AppThemeColors.brandPrimaryGreen,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           if (categorias.isEmpty)
-            Center(
+            const Center(
               child: Padding(
                 padding: EdgeInsets.all(24),
                 child: Column(
@@ -1612,7 +1611,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                       decoration: BoxDecoration(
                         color: cat.cor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
@@ -1622,7 +1621,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(cat.icone, color: cat.cor, size: 18),
-                          SizedBox(width: 6),
+                          const SizedBox(width: 6),
                           Text(
                             cat.nome,
                             style: TextStyle(
@@ -1631,9 +1630,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                               fontSize: isMobile ? 12 : 13,
                             ),
                           ),
-                          SizedBox(width: 6),
+                          const SizedBox(width: 6),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
                               color: cat.cor.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(8),
@@ -1677,7 +1676,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     final menus = [
       _ModuloMenuItem(
         titulo: 'Dashboard',
-        subtitulo: 'VisÃ£o geral',
+        subtitulo: 'Visão geral',
         icone: Icons.dashboard_rounded,
         cor: AppThemeColors.brandPrimaryGreen,
         onTap: () => setState(() => _currentScreen = 'dashboard'),
@@ -1725,7 +1724,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: () {
           // Scroll para seção de categorias ou modal
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Role para ver as categorias acima')),
+            const SnackBar(content: Text('Role para ver as categorias acima')),
           );
         },
       ),
@@ -1736,7 +1735,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         cor: AppThemeColors.blueIndigo,
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('Relatórios em desenvolvimento'),
               backgroundColor: AppThemeColors.info,
             ),
@@ -1760,7 +1759,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
@@ -1771,7 +1770,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: isMobile ? 18 : 20,
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1797,7 +1796,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           // Grid de cards compactos - calculando tamanho baseado na largura
           LayoutBuilder(
@@ -1805,7 +1804,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               // Calcular tamanho do card baseado na largura disponível
               final availableWidth = constraints.maxWidth;
               final cardsPerRow = isMobile ? 4 : 8; // 4 em mobile, 8 em desktop
-              final spacing = 8.0;
+              const spacing = 8.0;
               final totalSpacing = spacing * (cardsPerRow - 1);
               final cardWidth = (availableWidth - totalSpacing) / cardsPerRow;
               final cardHeight = cardWidth * 0.85; // Proporção mais quadrada
@@ -1833,7 +1832,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: menu.onTap,
         borderRadius: BorderRadius.circular(8),
         child: Container(
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: menu.cor.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
@@ -1846,7 +1845,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               Flexible(
                 flex: 2,
                 child: Container(
-                  padding: EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(3),
                   decoration: BoxDecoration(
                     color: menu.cor.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
@@ -1857,14 +1856,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   ),
                 ),
               ),
-              SizedBox(height: 1),
+              const SizedBox(height: 1),
               Flexible(
                 flex: 1,
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
                     menu.titulo,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w600,
                       color: AppThemeColors.textPrimary,
@@ -1881,7 +1880,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   fit: BoxFit.scaleDown,
                   child: Text(
                     menu.subtitulo,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 8,
                       color: AppThemeColors.textSecondary,
                     ),
@@ -1906,7 +1905,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: menu.onTap,
         borderRadius: BorderRadius.circular(8),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
           decoration: BoxDecoration(
             color: menu.cor.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
@@ -1919,7 +1918,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: menu.cor.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
@@ -1930,10 +1929,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: 22,
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 menu.titulo,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                   color: AppThemeColors.textPrimary,
@@ -1944,7 +1943,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
               Text(
                 menu.subtitulo,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 11,
                   color: AppThemeColors.textSecondary,
                 ),

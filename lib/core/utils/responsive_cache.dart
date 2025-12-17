@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
-/// OTIMIZAÇÃO: Cache de valores responsivos para evitar múltiplas chamadas MediaQuery
+/// OTIMIZAÇÀO: Cache de valores responsivos para evitar múltiplas chamadas MediaQuery
 /// Use este mixin em StatefulWidgets que fazem muitas chamadas ao ResponsiveHelper
 /// 
 /// GANHO: -800 MediaQuery calls por rebuild, +50% performance

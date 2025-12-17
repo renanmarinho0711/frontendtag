@@ -1,4 +1,4 @@
-// Barrel file para widgets de estado
+/// Arquivo barril para widgets de estado
 library;
 
 export 'empty_state.dart';

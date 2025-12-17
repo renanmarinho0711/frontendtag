@@ -1,7 +1,7 @@
-// Strategy Models - Barrel File (Compatibilidade)
+/// Strategy Models - Barrel File (Compatibilidade)
 /// 
-/// Este arquivo mant�m compatibilidade com imports existentes.
-/// O c�digo foi dividido em m�dulos menores para melhor manuten��o.
+/// Este arquivo mantêm compatibilidade com imports existentes.
+/// O código foi dividido em módulos menores para melhor manutenção.
 /// 
 /// Arquivos modulares:
 /// - strategy_base_models.dart: Enums e StrategyModel principal
@@ -20,7 +20,7 @@
 /// `dart
 /// import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 /// `
-/// Ou importe m�dulos especficos para melhor tree-shaking:
+/// Ou importe módulos especficos para melhor tree-shaking:
 /// `dart
 /// import 'package:tagbean/features/strategies/data/models/calendar_models.dart';
 /// `

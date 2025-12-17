@@ -4,7 +4,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/categories/presentation/providers/categories_provider.dart';
 import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 
 class CategoriasEditarScreen extends ConsumerStatefulWidget {
@@ -39,10 +38,18 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
     Icons.kitchen_rounded,
   ];
 
-  // Mapeamento de cores: será inicializado no build
-  late List<Color> _coresDisponiveis;
+  List<Color> _getCoresDisponiveis(BuildContext context) => [
+    ThemeColors.of(context).primary,
+    ThemeColors.of(context).success,
+    ThemeColors.of(context).yellowGold,
+    ThemeColors.of(context).blueCyan,
+    ThemeColors.of(context).blueLight,
+    ThemeColors.of(context).brownMain,
+    ThemeColors.of(context).cyanMain,
+    ThemeColors.of(context).error,
+  ];
 
-  // Mapeamento de �cones para strings
+  // Mapeamento de ícones para strings
   final Map<IconData, String> _iconeParaString = {
     Icons.local_drink_rounded: 'local_drink_rounded',
     Icons.shopping_basket_rounded: 'shopping_basket_rounded',
@@ -67,24 +74,6 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
     _iconeSelecionadoString = widget.categoria.icone;
     _iconeSelecionado = widget.categoria.iconData;
     _corSelecionada = widget.categoria.cor;
-
-    // Inicializar cores disponíveis
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        setState(() {
-          _coresDisponiveis = [
-            ThemeColors.of(context).primary,
-            ThemeColors.of(context).success,
-            ThemeColors.of(context).yellowGold,
-            ThemeColors.of(context).blueCyan,
-            ThemeColors.of(context).blueLight,
-            ThemeColors.of(context).brownMain,
-            ThemeColors.of(context).cyanMain,
-            ThemeColors.of(context).error,
-          ];
-        });
-      }
-    });
 
     _nomeController.addListener(() => setState(() => _alteracoesFeitas = true));
     _descricaoController
@@ -249,7 +238,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                 vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).yellowGoldLight,
+                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(
                   isMobile ? 7 : 8,
                 ),
@@ -313,7 +302,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Informa��es B�sicas',
+            'Informações Básicas',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -374,7 +363,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
               ),
             ),
             decoration: InputDecoration(
-              labelText: 'Descri��o',
+              labelText: 'Descrição',
               hintText: 'Descreva esta categoria',
               labelStyle: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -434,7 +423,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Personaliza��o Visual',
+            'PersonalizAção Visual',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -451,7 +440,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
             height: AppSizes.paddingXs.get(isMobile, isTablet),
           ),
           Text(
-            'Escolha um �cone e uma cor para identificar sua categoria',
+            'Escolha um ícone e uma cor para identificar sua categoria',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -466,7 +455,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
             height: AppSizes.padding2Xl.get(isMobile, isTablet),
           ),
           Text(
-            '�cone',
+            'ícone',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -503,7 +492,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                   ),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? _corSelecionadaLight
+                        ? _corSelecionada.withValues(alpha: 0.1)
                         : ThemeColors.of(context).textSecondary,
                     border: Border.all(
                       color: isSelected
@@ -547,7 +536,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
           Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: _coresDisponiveis.map((cor) {
+            children: _getCoresDisponiveis(context).map((cor) {
               final isSelected = _corSelecionada == cor;
               final size = AppSizes.iconHeroMd.get(isMobile, isTablet);
               return InkWell(
@@ -578,7 +567,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                     boxShadow: isSelected
                         ? [
                             BoxShadow(
-                              color: corLight,
+                              color: cor.withValues(alpha: 0.5),
                               blurRadius: isMobile ? 8 : 12,
                               offset: const Offset(0, 4),
                             ),
@@ -874,15 +863,15 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      _corSelecionadaLight,
-                      _corSelecionadaLight,
+                      _corSelecionada.withValues(alpha: 0.1),
+                      _corSelecionada.withValues(alpha: 0.05),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                   border: Border.all(
-                    color: _corSelecionadaLight,
+                    color: _corSelecionada.withValues(alpha: 0.3),
                   ),
                 ),
                 child: Row(
@@ -985,7 +974,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                     size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
                   ),
                   label: Text(
-                    'Salvar Altera��es',
+                    'Salvar Alterações',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1076,7 +1065,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                     ),
                   ),
                   label: Text(
-                    'Salvar Altera��es',
+                    'Salvar Alterações',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1127,7 +1116,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
           ),
         ),
         title: Text(
-          'Descartar Altera��es?',
+          'Descartar Alterações?',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1140,7 +1129,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
           textAlign: TextAlign.center,
         ),
         content: Text(
-          'Voc� fez altera��es que n�o foram salvas.\n\n'
+          'você fez alterações que não foram salvas.\n\n'
           'Deseja realmente sair sem salvar? ',
           textAlign: TextAlign.center,
           style: TextStyle(
@@ -1212,7 +1201,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'O nome da categoria � obrigat�rio',
+                'O nome da categoria é obrigatório',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1256,7 +1245,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
 
       if (!mounted) return;
 
-      Navigator.pop(context, true); // Retorna true para indicar que houve atualiza��o
+      Navigator.pop(context, true); // Retorna true para indicar que houve atualizAção
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Row(
@@ -1369,9 +1358,6 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
     }
   }
 }
-
-
-
 
 
 

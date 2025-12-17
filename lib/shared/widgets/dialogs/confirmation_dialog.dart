@@ -1,5 +1,4 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Dialog de confirmao
@@ -99,6 +98,7 @@ class ConfirmationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final colors = ThemeColors.of(context);
     final buttonColor = isDangerous
         ? theme.colorScheme.error
         : (confirmColor ?? theme.primaryColor);
@@ -119,13 +119,13 @@ class ConfirmationDialog extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: isDangerous ? ThemeColors.of(context).redPastel : Color.alphaBlend(ThemeColors.of(context).surface.withValues(alpha: 0.9), buttonColor),
+                    color: isDangerous ? colors.redPastel : Color.alphaBlend(colors.surface.withValues(alpha: 0.9), buttonColor),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     icon ?? (isDangerous ? Icons.warning_amber_outlined : Icons.help_outline),
                     size: 40,
-                    color: isDangerous ? ThemeColors.of(context).redMain : buttonColor,
+                    color: isDangerous ? colors.redMain : buttonColor,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -146,7 +146,7 @@ class ConfirmationDialog extends StatelessWidget {
               Text(
                 message,
                 style: theme.textTheme.bodyMedium?.copyWith(
-                  color: ThemeColors.of(context).grey600,
+                  color: colors.grey600,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -171,7 +171,7 @@ class ConfirmationDialog extends StatelessWidget {
                       onPressed: () => Navigator.of(context).pop(true),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: buttonColor,
-                        foregroundColor: ThemeColors.of(context).surface,
+                        foregroundColor: colors.surface,
                         padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
                       child: Text(confirmText),
@@ -219,6 +219,7 @@ class OptionsDialog<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final colors = ThemeColors.of(context);
 
     return Dialog(
       shape: RoundedRectangleBorder(
@@ -245,7 +246,7 @@ class OptionsDialog<T> extends StatelessWidget {
                 Text(
                   message!,
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: ThemeColors.of(context).grey600,
+                    color: colors.grey600,
                   ),
                 ),
               ],

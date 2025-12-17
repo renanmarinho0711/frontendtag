@@ -9,7 +9,6 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/presentation/providers/products_state_provider.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Tela de importação em massa de produtos
 /// Conectada ao productImportProvider para gerenciamento de estado
 class ProdutosImportarScreen extends ConsumerStatefulWidget {
@@ -118,9 +117,9 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               }
             },
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Container(
-            padding: EdgeInsets.all(AppSpacing.md),
+            padding: const EdgeInsets.all(AppSpacing.md),
             decoration: BoxDecoration(
               color: ThemeColors.of(context).surfaceOverlay20,
               borderRadius: AppRadius.md,
@@ -131,7 +130,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               size: AppSizes.iconMedium.get(isMobile, isTablet),
             ),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,7 +180,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
 
     return Container(
       margin: AppSizes.paddingMd.toEdgeInsetsHorizontal(isMobile, isTablet),
-      padding: EdgeInsets.all(AppSpacing.md),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: AppRadius.card,
@@ -207,7 +206,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             ],
           ),
           if (_step == 3) ...[
-            SizedBox(height: AppSpacing.md),
+            const SizedBox(height: AppSpacing.md),
             ClipRRect(
               borderRadius: AppRadius.xs,
               child: LinearProgressIndicator(
@@ -217,7 +216,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 minHeight: 8,
               ),
             ),
-            SizedBox(height: AppSpacing.sm),
+            const SizedBox(height: AppSpacing.sm),
             Text(
               '$_linhasProcessadas de $_totalLinhas processados',
               style: TextStyle(
@@ -265,7 +264,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   ),
                 ),
         ),
-        SizedBox(height: AppSpacing.xxs),
+        const SizedBox(height: AppSpacing.xxs),
         Text(
           label,
           style: TextStyle(
@@ -281,7 +280,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
   Widget _buildStepConnector(BuildContext context, bool completed) {
     return Container(
       height: 2,
-      margin: EdgeInsets.only(bottom: AppSpacing.lg),
+      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
       decoration: BoxDecoration(
         gradient: completed ? AppGradients.blueCyan : null,
         color: completed ? null : ThemeColors.of(context).textSecondaryOverlay30,
@@ -312,7 +311,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     return Column(
       children: [
         _buildInfoCard(context),
-        SizedBox(height: AppSpacing.xl),
+        const SizedBox(height: AppSpacing.xl),
         Container(
           padding: AppSizes.paddingXl.toEdgeInsetsAll(isMobile, isTablet),
           decoration: BoxDecoration(
@@ -337,7 +336,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 size: AppSizes.iconHeroLg.get(isMobile, isTablet),
                 color: ThemeColors.of(context).blueCyan,
               ),
-              SizedBox(height: AppSpacing.xl),
+              const SizedBox(height: AppSpacing.xl),
               Text(
                 'Arraste o arquivo aqui',
                 style: TextStyle(
@@ -345,7 +344,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: AppSpacing.sm),
               Text(
                 'ou clique para selecionar',
                 style: TextStyle(
@@ -353,7 +352,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   color: ThemeColors.of(context).textSecondary,
                 ),
               ),
-              SizedBox(height: AppSpacing.xl),
+              const SizedBox(height: AppSpacing.xl),
               ElevatedButton.icon(
                 onPressed: _selecionarArquivo,
                 icon: const Icon(Icons.attach_file_rounded),
@@ -364,12 +363,12 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                     horizontal: AppSizes.paddingXxl.get(isMobile, isTablet),
                     vertical: AppSizes.paddingLg.get(isMobile, isTablet),
                   ),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: AppRadius.button,
                   ),
                 ),
               ),
-              SizedBox(height: AppSpacing.lg),
+              const SizedBox(height: AppSpacing.lg),
               Text(
                 'Formatos aceitos: CSV, XLS, XLSX',
                 style: TextStyle(
@@ -380,7 +379,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             ],
           ),
         ),
-        SizedBox(height: AppSpacing.xl),
+        const SizedBox(height: AppSpacing.xl),
         OutlinedButton.icon(
           onPressed: _baixarTemplate,
           icon: const Icon(Icons.download_rounded),
@@ -391,7 +390,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               vertical: AppSizes.paddingMd.get(isMobile, isTablet),
             ),
             side: BorderSide(color: ThemeColors.of(context).blueCyan),
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: AppRadius.button,
             ),
           ),
@@ -406,7 +405,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                      MediaQuery.of(context).size.width < 900;
 
     return Container(
-      padding: EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).infoBackground,
         borderRadius: AppRadius.card,
@@ -421,7 +420,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 Icons.info_outline_rounded,
                 color: ThemeColors.of(context).infoDark,
               ),
-              SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 'Formato do Arquivo',
                 style: TextStyle(
@@ -432,12 +431,12 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.md),
+          const SizedBox(height: AppSpacing.md),
           Text(
             'Seu arquivo CSV deve conter as seguintes colunas:',
             style: TextStyle(fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet)),
           ),
-          SizedBox(height: AppSpacing.sm),
+          const SizedBox(height: AppSpacing.sm),
           _buildInfoItem(context, 'codigo', 'Código de barras (mínimo 8 dígitos)'),
           _buildInfoItem(context, 'nome', 'Nome do produto (obrigatório)'),
           _buildInfoItem(context, 'preco', 'Preço unitário (formato: 9.99)'),
@@ -455,7 +454,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                      MediaQuery.of(context).size.width < 900;
 
     return Padding(
-      padding: EdgeInsets.only(left: AppSpacing.lg, top: AppSpacing.xs),
+      padding: const EdgeInsets.only(left: AppSpacing.lg, top: AppSpacing.xs),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -466,7 +465,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               fontSize: AppTextStyles.fontSizeLg.get(isMobile, isTablet),
             ),
           ),
-          SizedBox(width: AppSpacing.xxs),
+          const SizedBox(width: AppSpacing.xxs),
           Expanded(
             child: RichText(
               text: TextSpan(
@@ -502,7 +501,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(AppSpacing.lg),
+          padding: const EdgeInsets.all(AppSpacing.lg),
           decoration: BoxDecoration(
             color: ThemeColors.of(context).surface,
             borderRadius: AppRadius.card,
@@ -517,7 +516,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
           child: Row(
             children: [
               const Icon(Icons.description_rounded, color: ThemeColors.of(context).blueCyan),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -542,7 +541,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             ],
           ),
         ),
-        SizedBox(height: AppSpacing.xl),
+        const SizedBox(height: AppSpacing.xl),
         Row(
           children: [
             Expanded(
@@ -552,7 +551,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 ThemeColors.of(context).greenMain,
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildStatCard(context, 'Erros',
                 '$_invalidosNoPreview',
@@ -562,7 +561,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             ),
           ],
         ),
-        SizedBox(height: AppSpacing.xl),
+        const SizedBox(height: AppSpacing.xl),
         Text(
           'Preview dos Dados',
           style: TextStyle(
@@ -570,9 +569,9 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         ..._previewDados.map((item) => _buildPreviewItem(context, item)),
-        SizedBox(height: AppSpacing.xxl),
+        const SizedBox(height: AppSpacing.xxl),
         Row(
           children: [
             Expanded(
@@ -584,14 +583,14 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingLg.get(isMobile, isTablet),
                   ),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: AppRadius.button,
                   ),
                 ),
                 child: const Text('Voltar'),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               flex: 2,
               child: ElevatedButton(
@@ -602,7 +601,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingLg.get(isMobile, isTablet),
                   ),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: AppRadius.button,
                   ),
                 ),
@@ -630,7 +629,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
       child: Column(
         children: [
           Icon(icon, color: color, size: AppSizes.iconLarge.get(isMobile, isTablet)),
-          SizedBox(height: AppSpacing.sm),
+          const SizedBox(height: AppSpacing.sm),
           Text(
             value,
             style: TextStyle(
@@ -657,8 +656,8 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                      MediaQuery.of(context).size.width < 900;
 
     return Container(
-      margin: EdgeInsets.only(bottom: AppSpacing.md),
-      padding: EdgeInsets.all(AppSpacing.md),
+      margin: const EdgeInsets.only(bottom: AppSpacing.md),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: AppRadius.lg,
@@ -686,7 +685,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
               ),
-              SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Text(
                   item.nome,
@@ -697,7 +696,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: AppSpacing.sm,
                   vertical: 4,
                 ),
@@ -716,7 +715,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          const SizedBox(height: AppSpacing.sm),
           Wrap(
             spacing: AppSpacing.sm,
             runSpacing: AppSpacing.xs,
@@ -728,9 +727,9 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             ],
           ),
           if (!item.valido && item.erro != null) ...[
-            SizedBox(height: AppSpacing.sm),
+            const SizedBox(height: AppSpacing.sm),
             Container(
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).errorBackground,
                 borderRadius: AppRadius.sm,
@@ -742,7 +741,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                     size: AppSizes.iconSmall.get(isMobile, isTablet),
                     color: ThemeColors.of(context).errorDark,
                   ),
-                  SizedBox(width: AppSpacing.xs),
+                  const SizedBox(width: AppSpacing.xs),
                   Expanded(
                     child: Text(
                       item.erro!,
@@ -767,7 +766,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                      MediaQuery.of(context).size.width < 900;
                      
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.sm,
         vertical: 4,
       ),
@@ -807,7 +806,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(AppSpacing.xxl),
+            padding: const EdgeInsets.all(AppSpacing.xxl),
             decoration: BoxDecoration(
               color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
               shape: BoxShape.circle,
@@ -817,7 +816,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).brandPrimaryGreen),
             ),
           ),
-          SizedBox(height: AppSpacing.xxl),
+          const SizedBox(height: AppSpacing.xxl),
           Text(
             'Importando produtos...',
             style: TextStyle(
@@ -825,7 +824,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: AppSpacing.sm),
+          const SizedBox(height: AppSpacing.sm),
           Text(
             'Aguarde enquanto processamos os dados',
             style: TextStyle(
@@ -833,7 +832,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
               color: ThemeColors.of(context).textSecondary,
             ),
           ),
-          SizedBox(height: AppSpacing.xl),
+          const SizedBox(height: AppSpacing.xl),
           Text(
             '$_linhasProcessadas de $_totalLinhas',
             style: TextStyle(
@@ -855,7 +854,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(AppSpacing.xxl),
+          padding: const EdgeInsets.all(AppSpacing.xxl),
           decoration: BoxDecoration(
             color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
             shape: BoxShape.circle,
@@ -866,7 +865,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             color: ThemeColors.of(context).greenMain,
           ),
         ),
-        SizedBox(height: AppSpacing.xxl),
+        const SizedBox(height: AppSpacing.xxl),
         Text(
           'Importação Concluída!',
           style: TextStyle(
@@ -875,7 +874,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             color: ThemeColors.of(context).greenMain,
           ),
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         Text(
           'Processo finalizado com sucesso',
           style: TextStyle(
@@ -883,9 +882,9 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             color: ThemeColors.of(context).textSecondary,
           ),
         ),
-        SizedBox(height: AppSpacing.xxl),
+        const SizedBox(height: AppSpacing.xxl),
         Container(
-          padding: EdgeInsets.all(AppSpacing.xl),
+          padding: const EdgeInsets.all(AppSpacing.xl),
           decoration: BoxDecoration(
             color: ThemeColors.of(context).surface,
             borderRadius: AppRadius.card,
@@ -904,13 +903,13 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                 Icons.list_alt_rounded,
                 ThemeColors.of(context).blueCyan,
               ),
-              Divider(height: AppSpacing.xl),
+              const Divider(height: AppSpacing.xl),
               _buildResultItem(context, 'Importados com Sucesso',
                 '$_sucessos',
                 Icons.check_circle_rounded,
                 ThemeColors.of(context).greenMain,
               ),
-              Divider(height: AppSpacing.xl),
+              const Divider(height: AppSpacing.xl),
               _buildResultItem(context, 'Erros',
                 '$_erros',
                 Icons.error_rounded,
@@ -919,25 +918,25 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
             ],
           ),
         ),
-        SizedBox(height: AppSpacing.xxl),
+        const SizedBox(height: AppSpacing.xxl),
         Row(
           children: [
             Expanded(
               child: OutlinedButton.icon(
-                onPressed: _baixarrelatÃ³rio,
+                onPressed: _baixarRelatorio,
                 icon: const Icon(Icons.download_rounded),
                 label: const Text('Baixar Relatório'),
                 style: OutlinedButton.styleFrom(
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingLg.get(isMobile, isTablet),
                   ),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: AppRadius.button,
                   ),
                 ),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: ElevatedButton.icon(
                 onPressed: () {
@@ -946,7 +945,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                       content: Row(
                         children: [
                           const Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
-                          SizedBox(width: AppSpacing.md),
+                          const SizedBox(width: AppSpacing.md),
                           Expanded(
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -975,7 +974,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                       ),
                       backgroundColor: ThemeColors.of(context).greenMain,
                       behavior: SnackBarBehavior.floating,
-                      shape: RoundedRectangleBorder(
+                      shape: const RoundedRectangleBorder(
                         borderRadius: AppRadius.lg,
                       ),
                       duration: const Duration(seconds: 5),
@@ -993,7 +992,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingLg.get(isMobile, isTablet),
                   ),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: AppRadius.button,
                   ),
                 ),
@@ -1013,7 +1012,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     return Row(
       children: [
         Icon(icon, color: color, size: AppSizes.iconMedium.get(isMobile, isTablet)),
-        SizedBox(width: AppSpacing.md),
+        const SizedBox(width: AppSpacing.md),
         Expanded(
           child: Text(
             label,
@@ -1067,7 +1066,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         records = await _parseCSV(file.bytes!);
       } else {
         // Para Excel, por enquanto só suportamos CSV
-        _showErrorSnackBar('Por enquanto, apenas arquivos CSV sÃ£o suportados');
+        _showErrorSnackBar('Por enquanto, apenas arquivos CSV são suportados');
         return;
       }
       
@@ -1096,7 +1095,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         return [];
       }
       
-      // Primeira linha sÃ£o os headers
+      // Primeira linha são os headers
       final headers = csvTable.first.map((e) => e.toString().trim().toLowerCase()).toList();
       
       // Converter cada linha em um Map
@@ -1139,13 +1138,13 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
         content: Row(
           children: [
             Icon(Icons.download_rounded, color: ThemeColors.of(context).surface),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             const Text('Baixando modelo CSV...'),
           ],
         ),
         backgroundColor: ThemeColors.of(context).blueCyan,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.lg,
         ),
       ),
@@ -1165,19 +1164,19 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
     HapticFeedback.heavyImpact();
   }
 
-  void _baixarrelatÃ³rio() {
+  void _baixarRelatorio() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Row(
           children: [
             Icon(Icons.description_rounded, color: ThemeColors.of(context).surface),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             const Text('Baixando relatório de importação...'),
           ],
         ),
         backgroundColor: ThemeColors.of(context).greenMain,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.lg,
         ),
       ),

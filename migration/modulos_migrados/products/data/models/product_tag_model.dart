@@ -1,4 +1,4 @@
-// Modelo para vinculação Produto-Tag (N:N)
+/// Modelo para vinculação Produto-Tag (N:N)
 /// Um produto pode ter múltiplas tags vinculadas
 class ProductTagModel {
   final int id;

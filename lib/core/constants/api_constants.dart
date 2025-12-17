@@ -1,4 +1,4 @@
-// Constantes para integração com API Backend (.NET Core)
+/// Constantes para integração com API Backend (.NET Core)
 /// Endpoints mapeados conforme TagBean.Api Controllers
 class ApiConstants {
   // Prevent instantiation
@@ -25,119 +25,206 @@ class ApiConstants {
     'Accept': 'application/json',
   };
 
-  // ============================================================================
-  // ENDPOINTS - MAPEADOS CONFORME BACKEND .NET
-  // ============================================================================
-
-  // === AUTENTICAÇÃO (AuthController) ===
-  static const String login = '/auth/login';
-  static const String register = '/auth/register';
-  static const String refreshToken = '/auth/refresh';
-  static const String changePassword = '/auth/change-password';
-  static const String authUsers = '/auth/users';
-  static String authUserById(String id) => '/auth/users/$id';
-
-  // === CLIENTES (ClientsController) - PlatformAdmin only ===
-  static const String clients = '/clients';
-  static String clientById(String id) => '/clients/$id';
-  static String clientDeactivate(String id) => '/clients/$id/deactivate';
-
-  // === LOJAS (StoresController) ===
-  static const String stores = '/stores';
-  static String storeById(String id) => '/stores/$id';
-  static String storeStats(String id) => '/stores/$id/stats';
-  static String storeStatistics(String id) => '/stores/$id/statistics';
-  static const String storesPaged = '/stores/paged';
-
-  // === PRODUTOS (ProductsController) ===
-  static const String products = '/products';
-  static String productById(String id) => '/products/$id';
-  static String productsByStore(String storeId) => '/products/store/$storeId';
-  static String productsPagedByStore(String storeId) => '/products/store/$storeId/paged';
-  static String productTags(String id) => '/products/$id/tags';
-  static String productPrice(String id) => '/products/$id/price';
-  static const String produtosSearch = '/products/search';
-  static const String productsBatch = '/products/batch';
-  // Novos endpoints (conforme relatório de mapeamento)
-  static String productStock(String id) => '/products/$id/stock';
-  static String productsStatisticsByStore(String storeId) => '/products/store/$storeId/statistics';
-  static String productsStockByStore(String storeId) => '/products/store/$storeId/stock';
-
-  // === ETIQUETAS/TAGS (TagsController) ===
-  static const String tags = '/tags';
-  static String tagByMac(String mac) => '/tags/$mac';
-  static String tagsByStore(String storeId) => '/tags/store/$storeId';
-  static String tagsPagedByStore(String storeId) => '/tags/store/$storeId/paged';
-  static String tagsAvailable(String storeId) => '/tags/store/$storeId/available';
-  static String tagsBound(String storeId) => '/tags/store/$storeId/bound';
-  static String tagsStoreSync(String storeId) => '/tags/store/$storeId/sync';
-  static String tagBinding(String mac) => '/tags/$mac/binding';
-  static String tagBind(String mac) => '/tags/$mac/bind';
-  static String tagUnbind(String mac) => '/tags/$mac/unbind';
-  static String tagFlash(String mac) => '/tags/$mac/flash';
-  static String tagRefresh(String mac) => '/tags/$mac/refresh';
-  static const String tagsBatch = '/tags/batch';
-  static const String tagsBatchBind = '/tags/batch/bind';
-  static const String tagsBatchUnbind = '/tags/batch/unbind';
-  static const String tagsBatchRefresh = '/tags/batch/refresh';
-
-  // === GATEWAYS (GatewaysController) ===
-  static String gatewaysByStore(String storeId) => '/stores/$storeId/gateways';
-  static String gatewayStatus(String storeId, String gatewayId) => 
-      '/stores/$storeId/gateways/$gatewayId/status';
-  static String gatewayReboot(String storeId, String gatewayId) => 
-      '/stores/$storeId/gateways/$gatewayId/reboot';
-  static String gatewaysSync(String storeId) => '/stores/$storeId/gateways/sync';
-
-  // === ESTRATÉGIAS (StrategiesController) ===
-  static const String strategies = '/strategies';
-  static String strategyById(String id) => '/strategies/$id';
-  static String strategiesByStore(String storeId) => '/strategies/store/$storeId';
-  static String strategyActivate(String id) => '/strategies/$id/activate';
-  static String strategyDeactivate(String id) => '/strategies/$id/deactivate';
-  static String strategyExecute(String id) => '/strategies/$id/execute';
-
-  // === TEMPLATES (TemplatesController) ===
-  static const String templates = '/templates';
-  static String templateById(String id) => '/templates/$id';
-  static String templatesByStore(String storeId) => '/templates/store/$storeId';
-  static const String templatesDefault = '/templates/default';
-
-  // === USUÁRIOS (UsersController) ===
-  static const String users = '/users';
-  static String userById(String id) => '/users/$id';
-  static String userRoles(String id, String roleName) => '/users/$id/roles/$roleName';
-
-  // === BACKUP (BackupController) ===
-  static const String backup = '/backup';
-  static String backupById(String id) => '/backup/$id';
-  static String backupRestore(String id) => '/backup/$id/restore';
-  static String backupDownload(String id) => '/backup/$id/download';
-  static const String backupConfig = '/backup/config';
-  static const String backupCleanup = '/backup/cleanup';
-
-  // === CALLBACKS (CallbacksController) - Para webhooks Minew ===
-  static const String callbacks = '/callbacks';
-
-  // === WORK CONTEXT ===
-  static const String workContext = '/auth/work-context';
-  static const String workContextSwitch = '/auth/work-context/switch';
-
-  // ============================================================================
-  // ENDPOINTS LEGADOS (mantidos para compatibilidade)
-  // ============================================================================
-  
-  // Produtos (aliases)
+  // Endpoints legados (dados)
   static const String produtos = '/products';
   static String produtoById(String id) => '/products/$id';
-  
-  // Etiquetas (aliases)  
   static const String etiquetas = '/tags';
   static String etiquetaByMac(String mac) => '/tags/$mac';
-
-  // Estratégias (aliases)
   static const String estrategias = '/strategies';
   static String estrategiaById(String id) => '/strategies/$id';
+
+  // ============================================================================
+  // MÉTODOS DE COMPATIBILIDADE (mapeamento de nomes antigos para novos)
+  // ============================================================================
+  
+  // Dashboard
+  static String storeStats(String storeId) => stores.stats(storeId);
+  static String strategiesByStore(String storeId) => '/stores/$storeId/strategies';
+  static String productsByStore(String storeId) => '/stores/$storeId/products';
+  static String tagsByStore(String storeId) => tags.byStore(storeId);
+  
+  // Products
+  static const String productsBatch = '/products/batch';
+  static String productsStatisticsByStore(String storeId) => '/products/statistics?storeId=$storeId';
+  static String productsStockByStore(String storeId) => '/products/stock?storeId=$storeId';
+  static String productStock(String productId) => '/products/$productId/stock';
+  static const String produtosSearch = '/products/search';
+  
+  // Tags
+  static String tagsPagedByStore(String storeId) => tags.pagedByStore(storeId);
+  static String tagsAvailable(String storeId) => tags.available(storeId);
+  static String tagsBound(String storeId) => tags.bound(storeId);
+  static String tagBinding(String macAddress) => tags.binding(macAddress);
+  static String tagBind(String macAddress) => tags.bind(macAddress);
+  static String tagUnbind(String macAddress) => tags.unbind(macAddress);
+  static const String tagsBatchBind = '/tags/batch/bind';
+  static const String tagsBatchUnbind = '/tags/batch/unbind';
+  static String tagFlash(String macAddress) => tags.flash(macAddress);
+  static String tagRefresh(String macAddress) => tags.refresh(macAddress);
+  static const String tagsBatchRefresh = '/tags/batch/refresh';
+  static String tagsStoreSync(String storeId) => tags.storeSync(storeId);
+  static const String tagsBatch = '/tags/batch';
+  
+  // Backup
+  static String backupById(String backupId) => backup.byId(backupId);
+  static String backupRestore(String backupId) => backup.restore(backupId);
+  static const String backupConfig = '/backup/config';
+  static const String backupCleanup = '/backup/cleanup';
+  static String backupDownload(String backupId) => backup.download(backupId);
+
+  // ============================================================================
+  // ENDPOINTS ORGANIZADOS POR DOMÍNIO
+  // ============================================================================
+  static const auth = AuthEndpoints();
+  static const clients = ClientsEndpoints();
+  static const stores = StoresEndpoints();
+  static const products = ProductsEndpoints();
+  static const tags = TagsEndpoints();
+  static const gateways = GatewaysEndpoints();
+  static const strategies = StrategiesEndpoints();
+  static const templates = TemplatesEndpoints();
+  static const users = UsersEndpoints();
+  static const backup = BackupEndpoints();
+  static const workContext = WorkContextEndpoints();
+}
+
+/// Endpoints de Autenticação (AuthController)
+class AuthEndpoints {
+  const AuthEndpoints();
+
+  String get login => '/auth/login';
+  String get register => '/auth/register';
+  String get refreshToken => '/auth/refresh';
+  String get changePassword => '/auth/change-password';
+  String get users => '/auth/users';
+  String userById(String id) => '/auth/users/$id';
+  String get workContext => '/auth/work-context';
+  String get workContextSwitch => '/auth/work-context/switch';
+}
+
+/// Endpoints de Clientes (ClientsController) - PlatformAdmin only
+class ClientsEndpoints {
+  const ClientsEndpoints();
+
+  String get list => '/clients';
+  String byId(String id) => '/clients/$id';
+  String deactivate(String id) => '/clients/$id/deactivate';
+}
+
+/// Endpoints de Lojas (StoresController)
+class StoresEndpoints {
+  const StoresEndpoints();
+
+  String get list => '/stores';
+  String get paged => '/stores/paged';
+  String byId(String id) => '/stores/$id';
+  String stats(String id) => '/stores/$id/stats';
+  String statistics(String id) => '/stores/$id/statistics';
+}
+
+/// Endpoints de Produtos (ProductsController)
+class ProductsEndpoints {
+  const ProductsEndpoints();
+
+  String get list => '/products';
+  String get search => '/products/search';
+  String get batch => '/products/batch';
+  String byId(String id) => '/products/$id';
+  String byStore(String storeId) => '/products/store/$storeId';
+  String pagedByStore(String storeId) => '/products/store/$storeId/paged';
+  String tags(String id) => '/products/$id/tags';
+  String price(String id) => '/products/$id/price';
+  String stock(String id) => '/products/$id/stock';
+  String statisticsByStore(String storeId) => '/products/store/$storeId/statistics';
+  String stockByStore(String storeId) => '/products/store/$storeId/stock';
+}
+
+/// Endpoints de Tags/Etiquetas (TagsController)
+class TagsEndpoints {
+  const TagsEndpoints();
+
+  String get list => '/tags';
+  String get batch => '/tags/batch';
+  String get batchBind => '/tags/batch/bind';
+  String get batchUnbind => '/tags/batch/unbind';
+  String get batchRefresh => '/tags/batch/refresh';
+  String get callbacks => '/callbacks';
+  
+  String byMac(String mac) => '/tags/$mac';
+  String binding(String mac) => '/tags/$mac/binding';
+  String bind(String mac) => '/tags/$mac/bind';
+  String unbind(String mac) => '/tags/$mac/unbind';
+  String flash(String mac) => '/tags/$mac/flash';
+  String refresh(String mac) => '/tags/$mac/refresh';
+  
+  String byStore(String storeId) => '/tags/store/$storeId';
+  String pagedByStore(String storeId) => '/tags/store/$storeId/paged';
+  String available(String storeId) => '/tags/store/$storeId/available';
+  String bound(String storeId) => '/tags/store/$storeId/bound';
+  String storeSync(String storeId) => '/tags/store/$storeId/sync';
+}
+
+/// Endpoints de Gateways (GatewaysController)
+class GatewaysEndpoints {
+  const GatewaysEndpoints();
+
+  String byStore(String storeId) => '/stores/$storeId/gateways';
+  String status(String storeId, String gatewayId) => 
+      '/stores/$storeId/gateways/$gatewayId/status';
+  String reboot(String storeId, String gatewayId) => 
+      '/stores/$storeId/gateways/$gatewayId/reboot';
+  String sync(String storeId) => '/stores/$storeId/gateways/sync';
+}
+
+/// Endpoints de Estratégias (StrategiesController)
+class StrategiesEndpoints {
+  const StrategiesEndpoints();
+
+  String get list => '/strategies';
+  String byId(String id) => '/strategies/$id';
+  String byStore(String storeId) => '/strategies/store/$storeId';
+  String activate(String id) => '/strategies/$id/activate';
+  String deactivate(String id) => '/strategies/$id/deactivate';
+  String execute(String id) => '/strategies/$id/execute';
+}
+
+/// Endpoints de Templates (TemplatesController)
+class TemplatesEndpoints {
+  const TemplatesEndpoints();
+
+  String get list => '/templates';
+  String get defaults => '/templates/default';
+  String byId(String id) => '/templates/$id';
+  String byStore(String storeId) => '/templates/store/$storeId';
+}
+
+/// Endpoints de Usuários (UsersController)
+class UsersEndpoints {
+  const UsersEndpoints();
+
+  String get list => '/users';
+  String byId(String id) => '/users/$id';
+  String roles(String id, String roleName) => '/users/$id/roles/$roleName';
+}
+
+/// Endpoints de Backup (BackupController)
+class BackupEndpoints {
+  const BackupEndpoints();
+
+  String get list => '/backup';
+  String get config => '/backup/config';
+  String get cleanup => '/backup/cleanup';
+  String byId(String id) => '/backup/$id';
+  String restore(String id) => '/backup/$id/restore';
+  String download(String id) => '/backup/$id/download';
+}
+
+/// Endpoints de Work Context
+class WorkContextEndpoints {
+  const WorkContextEndpoints();
+
+  String get context => '/auth/work-context';
+  String get contextSwitch => '/auth/work-context/switch';
 }
 
 

@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 /// ==============================================================================
-/// TEMA: SUMMER BEACH - Tema VerÃ£o Praia
+/// TEMA: SUMMER BEACH - Tema Verão Praia
 /// ==============================================================================
 ///
 /// Conceito Visual:
-/// Azul oceano, areia e sol - cores vibrantes de verÃ£o
+/// Azul oceano, areia e sol - cores vibrantes de verão
 /// Tema claro, moderno e estimulante para uso diurno, focado em produtividade e clareza.
-/// Cores vibrantes e frescas que transmitem energia, foco e progresso contÃ­nuo.
-/// Evita tons pesados ou monÃ³tonos, priorizando contraste e legibilidade.
+/// Cores vibrantes e frescas que transmitem energia, foco e progresso contínuo.
+/// Evita tons pesados ou monótonos, priorizando contraste e legibilidade.
 /// 
 /// Paleta Base:
-/// - PrimÃ¡ria (Teal Fresh): #0D9488  (vibrante e refrescante)
-/// - SecundÃ¡ria (Fresh Cyan): #06B6D4 (dinamismo e energia)
-/// - TerciÃ¡ria (Emerald Green): #10B981 (crescimento e sucesso)
+/// - Primária (Teal Fresh): #0D9488  (vibrante e refrescante)
+/// - Secundária (Fresh Cyan): #06B6D4 (dinamismo e energia)
+/// - Terciária (Emerald Green): #10B981 (crescimento e sucesso)
 /// - Acento (Lime Green): #84CC16 (destaque e vitalidade)
 /// - Fundos: Branco puro #FFFFFF e cinzas muito claros (#F8FAFC, #F1F5F9)
 /// - Texto principal: Cinza escuro #1E293B (alto contraste)
-/// - Texto secundÃ¡rio: Cinza mÃ©dio #64748B
-/// - Texto terciÃ¡rio: Cinza claro #94A3B8
+/// - Texto secundário: Cinza médio #64748B
+/// - Texto terciário: Cinza claro #94A3B8
 ///
 /// ==============================================================================
 
@@ -26,22 +26,22 @@ class AppThemeColors {
   AppThemeColors._();
 
   // ===========================================================================
-  // 1. SUPERFÃCIES E FUNDOS (BACKGROUNDS) - "CLAREZA E FRESCOR DIURNO"
+  // 1. SUPERFÍCIES E FUNDOS (BACKGROUNDS) - "CLAREZA E FRESCOR DIURNO"
   // ===========================================================================
 
-  /// Fundo principal claro (Scaffold). Branco puro para mÃ¡xima clareza.
+  /// Fundo principal claro (Scaffold). Branco puro para máxima clareza.
   static const Color backgroundLight = Color(0xFFFFF8E1);
 
-  /// SuperfÃ­cie elevada (Cards, Modais). Branco puro para destaque sutil.
+  /// Superfície elevada (Cards, Modais). Branco puro para destaque sutil.
   static const Color surface = Color(0xFFFFF8E1);
 
-  /// SuperfÃ­cie variante (Sidebars, AppBars). Cinza muito claro para leve separaÃ§Ã£o.
+  /// Superfície variante (Sidebars, AppBars). Cinza muito claro para leve separação.
   static const Color surfaceVariant = Color(0xFFFFECB3);
 
-  /// Fundo de inputs (Campos de texto). Cinza clarÃ­ssimo para conforto visual.
+  /// Fundo de inputs (Campos de texto). Cinza claríssimo para conforto visual.
   static const Color inputBackground = Color(0xFFFFECB3);
 
-  /// Fundo secundÃ¡rio para Ã¡reas de separaÃ§Ã£o. Cinza claro e neutro.
+  /// Fundo secundário para áreas de separação. Cinza claro e neutro.
   static const Color backgroundMedium = Color(0xFFFFE082);
 
   /// Fundo escuro para contraste suave, mantendo leveza.
@@ -51,7 +51,7 @@ class AppThemeColors {
   static const Color transparent = Color(0x00000000);
 
   // ===========================================================================
-  // 1.1. OVERLAYS PRÃ‰-DEFINIDOS - OPACIDADES (Preto com transparÃªncia)
+  // 1.1. OVERLAYS PRÉ-DEFINIDOS - OPACIDADES (Preto com transparência)
   // ===========================================================================
 
   static const Color surfaceOverlay10 = Color(0x1A000000);
@@ -110,10 +110,10 @@ class AppThemeColors {
   /// Texto principal: Cinza escuro para alto contraste e legibilidade.
   static const Color textPrimary = Color(0xFF01579B);
 
-  /// Texto secundÃ¡rio: Cinza mÃ©dio para hierarquia visual clara.
+  /// Texto secundário: Cinza médio para hierarquia visual clara.
   static const Color textSecondary = Color(0xFF0277BD);
 
-  /// Texto terciÃ¡rio: Cinza claro para legendas e detalhes sutis.
+  /// Texto terciário: Cinza claro para legendas e detalhes sutis.
   static const Color textTertiary = Color(0xFF94A3B8);
 
   /// Texto claro para placeholders e estados desabilitados.
@@ -126,19 +126,19 @@ class AppThemeColors {
   // 3. BORDAS E DIVISORES - "LINHAS SUAVES E FUNCIONAIS"
   // ===========================================================================
 
-  /// Borda padrÃ£o: cinza claro para separaÃ§Ã£o discreta.
+  /// Borda padrão: cinza claro para separação discreta.
   static const Color border = Color(0xFFE2E8F0);
 
-  /// Borda clara para Ã¡reas menos destacadas.
+  /// Borda clara para áreas menos destacadas.
   static const Color borderLight = Color(0xFFFFE082);
 
-  /// Borda mÃ©dia para elementos interativos.
+  /// Borda média para elementos interativos.
   static const Color borderMedium = Color(0xFFCBD5E1);
 
   /// Borda escura para destaque sutil.
   static const Color borderDark = Color(0xFF0277BD);
 
-  /// Divisor padrÃ£o: cinza claro para separar conteÃºdo.
+  /// Divisor padrão: cinza claro para separar conteúdo.
   static const Color divider = Color(0xFFE2E8F0);
 
   // ===========================================================================
@@ -150,7 +150,7 @@ class AppThemeColors {
   static const Color overlayDark = Color(0x80000000);
 
   // ===========================================================================
-  // 5. STATUS E FEEDBACK SEMÃ‚NTICO - CORES VIBRANTES E CLARAS
+  // 5. STATUS E FEEDBACK SEMÂNTICO - CORES VIBRANTES E CLARAS
   // ===========================================================================
 
   // --- ERRO ---
@@ -162,7 +162,7 @@ class AppThemeColors {
   static const Color errorMain = Color(0xFFEF4444);
   static const Color urgent = Color(0xFFDC2626);
 
-  // --- INFORMAÃ‡ÃƒO ---
+  // --- INFORMAÇÀO ---
   static const Color infoBackground = Color(0xFFF0FDFA);
   static const Color infoLight = Color(0xFF5EEAD4);
   static const Color infoBorder = Color(0xFF99F6E4);
@@ -189,10 +189,10 @@ class AppThemeColors {
   static const Color warningIcon = Color(0xFFF59E0B);
 
   // ===========================================================================
-  // 6. DASHBOARD E NAVEGAÃ‡ÃƒO - CORES DINÃ‚MICAS E LEVES
+  // 6. DASHBOARD E NAVEGAÇÀO - CORES DINÂMICAS E LEVES
   // ===========================================================================
 
-  /// Cor primÃ¡ria para dashboard: Teal Fresh, estimulando foco e clareza.
+  /// Cor primária para dashboard: Teal Fresh, estimulando foco e clareza.
   static const Color primaryDashboard = Color(0xFF0288D1);
   static const Color primaryDashboardDark = Color(0xFF01579B);
 
@@ -239,12 +239,12 @@ class AppThemeColors {
   static const Color dashboardSearchHint = Color(0xFF94A3B8);
   static const Color dashboardSearchIcon = Color(0xFF0277BD);
 
-  // NotificaÃ§Ãµes e Badges
+  // Notificações e Badges
   static const Color dashboardNotificationBackground = Color(0xFFFFE082);
   static const Color dashboardNotificationBadge = Color(0xFFEF4444);
   static const Color dashboardNotificationIcon = Color(0xFF0288D1);
 
-  // Status de ConexÃ£o
+  // Status de Conexão
   static const Color dashboardConnectionBackground = Color(0xFFFFE082);
   static const Color dashboardConnectionBorder = Color(0xFFCBD5E1);
   static const Color dashboardConnectionDot = Color(0xFF00C853);
@@ -269,7 +269,7 @@ class AppThemeColors {
   static const Color dashboardWelcomeIcon = Color(0xFF0288D1);
 
   // ===========================================================================
-  // 7. CARDS E MÃ‰TRICAS (KPIs) - DINÃ‚MICOS E LEVES
+  // 7. CARDS E MÉTRICAS (KPIs) - DINÂMICOS E LEVES
   // ===========================================================================
 
   static const Color dashboardMetricsCardBackground = Color(0xFFFFF8E1);
@@ -280,7 +280,7 @@ class AppThemeColors {
   static const Color dashboardMetricsCardShadowGreen = Color(0x1A10B981);
   static const Color dashboardMetricsCardShadowOrange = Color(0x1AF59E0B);
 
-  // Cores de Identidade das MÃ©tricas - vibrantes e claras
+  // Cores de Identidade das Métricas - vibrantes e claras
   static const Color dashboardMetricsBlue = Color(0xFF00BCD4);
   static const Color dashboardMetricsPurple = Color(0xFF8B5CF6);
   static const Color dashboardMetricsRed = Color(0xFFEF4444);
@@ -309,14 +309,14 @@ class AppThemeColors {
   static const Color dashboardMetricsValueText = Color(0xFF01579B);
   static const Color dashboardMetricsLabelText = Color(0xFF0277BD);
 
-  // Cards GenÃ©ricos
+  // Cards Genéricos
   static const Color dashboardCardBackground = Color(0xFFFFF8E1);
   static const Color dashboardCardShadow = Color(0x1A0D9488);
   static const Color dashboardCardTitle = Color(0xFF01579B);
   static const Color dashboardCardSubtitle = Color(0xFF0277BD);
 
   // ===========================================================================
-  // 8. CORES DE MÃ“DULOS - "PALETA MODERNA E DINÃ‚MICA"
+  // 8. CORES DE MÓDULOS - "PALETA MODERNA E DINÂMICA"
   // ===========================================================================
 
   static const Color moduleDashboard = Color(0xFF0288D1);       // Teal Fresh
@@ -343,14 +343,14 @@ class AppThemeColors {
   static const Color moduleImportacao = Color(0xFF0288D1);      // Teal Fresh
   static const Color moduleImportacaoDark = Color(0xFF01579B);
 
-  static const Color modulerelatÃ³rios = Color(0xFF059669);      // Emerald Dark
-  static const Color modulerelatÃ³riosDark = Color(0xFF047857);
+  static const Color moduleRelatorios = Color(0xFF059669);      // Emerald Dark
+  static const Color moduleRelatoriosDark = Color(0xFF047857);
 
-  static const Color moduleConfiguracoes = Color(0xFF0277BD);   // Cinza mÃ©dio
+  static const Color moduleConfiguracoes = Color(0xFF0277BD);   // Cinza médio
   static const Color moduleConfiguracoesDark = Color(0xFF475569);
 
   // ===========================================================================
-  // 9. GRADIENTES - DINÃ‚MICOS E MODERNOS
+  // 9. GRADIENTES - DINÂMICOS E MODERNOS
   // ===========================================================================
 
   static const List<Color> produtosGradient = [Color(0xFF00BCD4), Color(0xFF0D6F8B)];
@@ -360,7 +360,7 @@ class AppThemeColors {
   static const List<Color> precificacaoGradient = [Color(0xFFF59E0B), Color(0xFFD97706)];
   static const List<Color> categoriasGradient = [Color(0xFF00C853), Color(0xFF0B7A57)];
   static const List<Color> importacaoGradient = [Color(0xFF0288D1), Color(0xFF01579B)];
-  static const List<Color> relatÃ³riosGradient = [Color(0xFF059669), Color(0xFF047857)];
+  static const List<Color> relatoriosGradient = [Color(0xFF059669), Color(0xFF047857)];
   static const List<Color> configuracoesGradient = [Color(0xFF0277BD), Color(0xFF475569)];
 
   static const List<Color> successGradient = [Color(0xFF00C853), Color(0xFF059669)];
@@ -381,7 +381,7 @@ class AppThemeColors {
   static const Color surfaceTinted = Color(0xFFFFE082);
   static const Color surfaceTintedDark = Color(0xFFE2E8F0);
 
-  // Menu de UsuÃ¡rio
+  // Menu de Usuário
   static const Color userMenuBackgroundStart = Color(0xFFFFF8E1);
   static const Color userMenuBackgroundEnd = Color(0xFFFFECB3);
   static const Color userMenuAvatarBackground = Color(0xFF0288D1);
@@ -392,14 +392,14 @@ class AppThemeColors {
   static const Color avatarText = Color(0xFFFFF8E1);
   static const Color destructive = Color(0xFFEF4444);
 
-  // Ãcones
+  // Ícones
   static const Color iconDefault = Color(0xFF0277BD);
   static const Color iconLight = Color(0xFF94A3B8);
   static const Color iconOnSurface = Color(0xFF059669);
   static const Color errorIcon = Color(0xFFEF4444);
 
   // ===========================================================================
-  // 10.1. CORES CONDICIONAIS E ESTADOS DINÃ‚MICOS
+  // 10.1. CORES CONDICIONAIS E ESTADOS DINÂMICOS
   // ===========================================================================
 
   static const Color connectionOnline = Color(0xFF00C853);
@@ -459,7 +459,7 @@ class AppThemeColors {
   static const Color categoryPetDark = Color(0xFF7C3AED);
 
   // ===========================================================================
-  // 12. INTEGRAÃ‡Ã•ES (ERP BRANDING) - CORES MODERNAS
+  // 12. INTEGRAÇÕES (ERP BRANDING) - CORES MODERNAS
   // ===========================================================================
 
   static const Color erpSAP = Color(0xFF00BCD4);
@@ -471,7 +471,7 @@ class AppThemeColors {
   static const Color erpBling = Color(0xFF0277BD);
 
   // ===========================================================================
-  // 13. ROLES E STATUS DE USUÃRIO - CORES FUNCIONAIS
+  // 13. ROLES E STATUS DE USUÁRIO - CORES FUNCIONAIS
   // ===========================================================================
 
   static const Color roleSuperAdmin = Color(0xFFEF4444);
@@ -479,24 +479,11 @@ class AppThemeColors {
   static const Color roleManager = Color(0xFF00BCD4);
   static const Color roleOperator = Color(0xFFF59E0B);
   static const Color roleViewer = Color(0xFF0277BD);
-  static const Color rolePlus = Color(0xFF6366F1);
 
   static const Color statusActive = Color(0xFF00C853);
   static const Color statusInactive = Color(0xFF94A3B8);
   static const Color statusPending = Color(0xFFF59E0B);
   static const Color statusBlocked = Color(0xFFEF4444);
-
-  // Sync Status
-  static const Color syncPending = Color(0xFFF59E0B);
-  static const Color syncSuccess = Color(0xFF10B981);
-  static const Color syncError = Color(0xFFEF4444);
-  static const Color syncWarning = Color(0xFFF59E0B);
-
-  // Clearance Status
-  static const Color clearancePending = Color(0xFFF59E0B);
-  static const Color clearanceApproved = Color(0xFF10B981);
-  static const Color clearanceRejected = Color(0xFFEF4444);
-  static const Color clearanceExpired = Color(0xFF6B7280);
 
   // ===========================================================================
   // 14. HELPERS E PALETAS AUXILIARES - CINZAS E VERDES SUAVES
@@ -518,7 +505,7 @@ class AppThemeColors {
 
   static const Color grey500Overlay10 = Color(0x1A64748B);
 
-  // BÃ¡sicos
+  // Básicos
   static const Color neutralWhite = Color(0xFFFFF8E1);
   static const Color neutralBlack = Color(0xFF01579B);
 
@@ -534,7 +521,7 @@ class AppThemeColors {
   static const Color primaryMain = primary;
   static const Color secondary = Color(0xFF00BCD4);
 
-  // Material Colors - DINÃ‚MICOS E CLAROS
+  // Material Colors - DINÂMICOS E CLAROS
   static const Color materialBlue = Color(0xFF00BCD4);
   static const Color materialPurple = Color(0xFF8B5CF6);
   static const Color materialRed = Color(0xFFEF4444);
@@ -581,7 +568,7 @@ class AppThemeColors {
   static const Color brandPrimaryTealLight = Color(0xFF4FC3F7);
   static const Color brandAccentLime = Color(0xFFFF6F00);
 
-  // Aliases de compatibilidade (para cÃ³digo legado que usa brandPrimaryGreen)
+  // Aliases de compatibilidade (para código legado que usa brandPrimaryGreen)
   static const Color brandPrimaryGreen = brandPrimaryTeal;
   static const Color brandPrimaryGreenDark = brandPrimaryTealDark;
   static const Color brandPrimaryGreenLight = brandPrimaryTealLight;
@@ -600,7 +587,7 @@ class AppThemeColors {
   );
 
   // ===========================================================================
-  // 15. ELEMENTOS DE TELAS ESPECÃFICAS - CORES FUNCIONAIS
+  // 15. ELEMENTOS DE TELAS ESPECÍFICAS - CORES FUNCIONAIS
   // ===========================================================================
 
   // Cards de Categoria
@@ -622,7 +609,7 @@ class AppThemeColors {
   static const Color categoryImportExport = Color(0xFF0288D1);
   static const Color categoryImportExportDark = Color(0xFF01579B);
 
-  // ImportaÃ§Ã£o e ExportaÃ§Ã£o - CORES DINÃ‚MICAS
+  // Importação e Exportação - CORES DINÂMICAS
   static const Color importProdutos = Color(0xFF00BCD4);
   static const Color importProdutosDark = Color(0xFF0D6F8B);
 
@@ -658,7 +645,7 @@ class AppThemeColors {
   static const Color statLogsIcon = Color(0xFF00BCD4);
   static const Color statLogsBorder = Color(0xFF99F6E4);
 
-  // Cards de AÃ§Ãµes RÃ¡pidas - CORES VIBRANTES
+  // Cards de Ações Rápidas - CORES VIBRANTES
   static const Color quickActionTemplateBackground = Color(0xFF00BCD4);
   static const Color quickActionTemplateIcon = Color(0xFFFFF8E1);
   static const Color quickActionTemplateBorder = Color(0xFF0D6F8B);
@@ -671,7 +658,7 @@ class AppThemeColors {
   static const Color quickActionHistoricoIcon = Color(0xFFFFF8E1);
   static const Color quickActionHistoricoBorder = Color(0xFF0097A7);
 
-  // Cards de AÃ§Ãµes - EstratÃ©gias
+  // Cards de Ações - Estratégias
   static const Color strategyCardSugestoesBackground = Color(0xFFF7FEE7);
   static const Color strategyCardSugestoesIcon = Color(0xFFFF6F00);
   static const Color strategyCardSugestoesBorder = Color(0xFFD9F99D);
@@ -700,7 +687,7 @@ class AppThemeColors {
   static const Color statsOverviewImportBackground2 = Color(0xFFE0F7FF);
 
   // ===========================================================================
-  // AÃ‡Ã•ES RÃPIDAS - BOTÃ•ES VIBRANTES E FUNCIONAIS
+  // AÇÕES RÁPIDAS - BOTÕES VIBRANTES E FUNCIONAIS
   // ===========================================================================
 
   static const Color quickActionExportarTudo = Color(0xFF00BCD4);
@@ -734,7 +721,7 @@ class AppThemeColors {
   static const Color onboardingStepPendingBg = Color(0xFFF0FDFF);
 
   // ===========================================================================
-  // PRÃ“XIMO PASSO - INDICAÃ‡ÃƒO CLARA
+  // PRÓXIMO PASSO - INDICAÇÀO CLARA
   // ===========================================================================
 
   static const Color nextStepBackground1 = Color(0xFFFFE082);
@@ -743,7 +730,7 @@ class AppThemeColors {
   static const Color nextStepIcon = Color(0xFF0288D1);
   static const Color nextStepTitle = Color(0xFF01579B);
 
-  // Stats ImportaÃ§Ã£o - CORES FUNCIONAIS
+  // Stats Importação - CORES FUNCIONAIS
   static const Color statProdutosBackground = Color(0xFFF0FDFF);
   static const Color statProdutosIcon = Color(0xFF00BCD4);
   static const Color statProdutosBorder = Color(0xFF99F6E4);
@@ -760,7 +747,7 @@ class AppThemeColors {
   static const Color statPendentesIcon = Color(0xFFF59E0B);
   static const Color statPendentesBorder = Color(0xFFFDE68A);
 
-  // RelatÃ³rios - CORES DINÃ‚MICAS
+  // Relatórios - CORES DINÂMICAS
   static const Color reportOperacional = Color(0xFF0288D1);
   static const Color reportOperacionalDark = Color(0xFF01579B);
 
@@ -770,11 +757,11 @@ class AppThemeColors {
   static const Color reportPerformance = Color(0xFFFF6F00);
   static const Color reportPerformanceDark = Color(0xFFFF5722);
 
-  static const Color reportauditoria = Color(0xFF00BCD4);
-  static const Color reportauditoriaDark = Color(0xFF0D6F8B);
+  static const Color reportAuditoria = Color(0xFF00BCD4);
+  static const Color reportAuditoriaDark = Color(0xFF0D6F8B);
 
   // ===========================================================================
-  // 16. PRECIFICAÃ‡ÃƒO E SINCRONIZAÃ‡ÃƒO - CORES FUNCIONAIS
+  // 16. PRECIFICAÇÀO E SINCRONIZAÇÀO - CORES FUNCIONAIS
   // ===========================================================================
 
   static const Color pricingPercentage = Color(0xFF00BCD4);
@@ -873,7 +860,7 @@ class AppThemeColors {
   static const Color gradientDarkTeal = Color(0xFF0288D1);
   static const Color gradientDarkTealLight = Color(0xFF4FC3F7);
 
-  // Aliases de compatibilidade (para cÃ³digo legado que usa gradientDarkNavy)
+  // Aliases de compatibilidade (para código legado que usa gradientDarkNavy)
   static const Color gradientDarkNavy = gradientDarkTeal;
   static const Color gradientDarkNavyLight = gradientDarkTealLight;
 
@@ -1107,6 +1094,5 @@ class AppThemeColors {
   static const Color blueCyanOverlay20 = Color(0x3306B6D4);
   static const Color blueCyanOverlay30 = Color(0x4D06B6D4);
 }
-
 
 

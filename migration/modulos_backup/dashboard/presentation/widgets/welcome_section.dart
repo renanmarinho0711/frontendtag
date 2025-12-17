@@ -72,7 +72,7 @@ class WelcomeSection extends ConsumerWidget {
             child: Container(
               width: 200,
               height: 200,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
@@ -274,7 +274,7 @@ class WelcomeSection extends ConsumerWidget {
                             Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.calendar_month_rounded,
                                   color: AppThemeColors.blueMaterial,
                                   size: 16,
@@ -284,7 +284,7 @@ class WelcomeSection extends ConsumerWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Ganho Mensal',
                                       style: TextStyle(
                                         color: AppThemeColors.surfaceOverlay70,
@@ -294,7 +294,7 @@ class WelcomeSection extends ConsumerWidget {
                                     ),
                                     Text(
                                       formatCurrency(stats.monthlyGain),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: AppThemeColors.surface,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w700,
@@ -310,7 +310,7 @@ class WelcomeSection extends ConsumerWidget {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.today_rounded,
                                 color: AppThemeColors.greenMaterial,
                                 size: 16,
@@ -320,7 +320,7 @@ class WelcomeSection extends ConsumerWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Ganho Hoje',
                                     style: TextStyle(
                                       color: AppThemeColors.surfaceOverlay70,
@@ -333,7 +333,7 @@ class WelcomeSection extends ConsumerWidget {
                                     children: [
                                       Text(
                                         formatCurrency(stats.todayGain),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           color: AppThemeColors.surface,
                                           fontSize: 16,
                                           fontWeight: FontWeight.w700,
@@ -364,7 +364,7 @@ class WelcomeSection extends ConsumerWidget {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.trending_up_rounded,
                                 color: AppThemeColors.greenMaterial,
                                 size: 16,
@@ -374,7 +374,7 @@ class WelcomeSection extends ConsumerWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Desempenho Hoje',
                                     style: TextStyle(
                                       color: AppThemeColors.surfaceOverlay70,
@@ -386,7 +386,7 @@ class WelcomeSection extends ConsumerWidget {
                                     storeStats.todaySalesCount > 0
                                         ? '${storeStats.todaySalesCount} vendas'
                                         : 'Sem vendas',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: AppThemeColors.surface,
                                       fontSize: 16,
                                       fontWeight: FontWeight.w700,

@@ -8,7 +8,6 @@ import 'package:tagbean/features/strategies/presentation/providers/strategies_pr
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class EstrategiasResultadosScreen extends ConsumerStatefulWidget {
   final StrategyModel estrategia;
@@ -25,27 +24,27 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
   late TabController _tabController;
   String _periodoSelecionado = '30dias';
 
-  /// Obt�m estat�sticas do per�odo do backend
+  /// Obtãm estatísticas do período do backend
   StrategyPeriodStats? get _periodStats {
     final providerKey = '${widget.estrategia.id}:$_periodoSelecionado';
     final asyncValue = ref.watch(strategyPeriodStatsProvider(providerKey));
     return asyncValue.valueOrNull;
   }
 
-  /// Dados do per�odo formatados para a UI
+  /// Dados do período formatados para a UI
   Map<String, dynamic> get _dadosAtuais {
     final stats = _periodStats;
     if (stats == null) {
-      // Valores padr�o enquanto carrega
+      // Valores padrão enquanto carrega
       return {
         'produtosImpactados': 0,
         'variacaoVendas': '0%',
         'variacaoFaturamento': 'R\$ 0',
         'ticketMedio': 'R\$ 0',
         'variacaoTicket': '0%',
-        'conversao': '0%',
+        'conversão': '0%',
         'variacaoEconomia': '0%',
-        'variacaoConversao': '0%',
+        'variacaoConversão': '0%',
         'totalVendas': 0,
         'totalFaturamento': 'R\$ 0',
         'economia': 'R\$ 0',
@@ -59,9 +58,9 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
       'variacaoFaturamento': stats.totalFaturamentoFormatted,
       'ticketMedio': stats.ticketMedioFormatted,
       'variacaoTicket': stats.variacaoTicketFormatted,
-      'conversao': stats.conversaoFormatted,
+      'conversão': stats.conversaoFormatted,
       'variacaoEconomia': stats.variacaoEconomiaFormatted,
-      'variacaoConversao': stats.variacaoConversaoFormatted,
+      'variacaoConversão': stats.variacaoConversaoFormatted,
       'totalVendas': stats.totalSales,
       'totalFaturamento': stats.totalFaturamentoFormatted,
       'economia': stats.economiaFormatted,
@@ -70,12 +69,12 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
     };
   }
 
-  /// Calcula varia��o do per�odo anterior (estimativa baseada nos dados atuais)
+  /// Calcula variAção do período anterior (estimativa baseada nos dados atuais)
   String _calcularVariacaoAnterior(String tipo) {
     final stats = _periodStats;
     if (stats == null) return '0%';
     
-    // A varia��o anterior � estimada como 70% da varia��o atual
+    // A variAção anterior é estimada como 70% da variAção atual
     // (assumindo que houve melhoria progressiva)
     switch (tipo) {
       case 'vendas':
@@ -88,7 +87,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
         final atual = stats.revenueVariation - stats.salesVariation;
         final anterior = atual * 0.7;
         return '${anterior >= 0 ? '+' : ''}${anterior.toStringAsFixed(0)}%';
-      case 'conversao':
+      case 'conversão':
         final atual = stats.conversionRate / 10;
         final anterior = atual * 0.7;
         return '${anterior >= 0 ? '+' : ''}${anterior.toStringAsFixed(0)}%';
@@ -103,13 +102,13 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
     return asyncValue.valueOrNull ?? [];
   }
 
-  /// Hist�rico de execu��es do backend
+  /// Histórico de execuções do backend
   List<StrategyExecution> get _execucoes {
     final asyncValue = ref.watch(strategyExecutionHistoryProvider(widget.estrategia.id));
     return asyncValue.valueOrNull ?? [];
   }
 
-  /// Dados de vendas di�rias para o gr�fico
+  /// Dados de vendas diãrias para o gráfico
   List<DailySalesData> get _dailySalesData {
     final days = _periodoSelecionado == '7dias' ? 7 : (_periodoSelecionado == '30dias' ? 7 : 14);
     final providerKey = '${widget.estrategia.id}:$days';
@@ -255,7 +254,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Resultados da Estrat�gia',
+                  'Resultados da Estratãgia',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -452,7 +451,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               Icons.dashboard_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: isMobile ? 'Geral' : 'Vis�o Geral',
+            text: isMobile ? 'Geral' : 'Visão Geral',
           ),
           Tab(
             icon: Icon(
@@ -466,7 +465,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               Icons.history_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Hist�rico',
+            text: 'Histórico',
           ),
         ],
       ),
@@ -532,7 +531,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               ),
               const SizedBox(height: 16),
               Text(
-                'Nenhuma execu��o registrada',
+                'Nenhuma execução registrada',
                 style: TextStyle(
                   color: ThemeColors.of(context).textSecondary,
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 14),
@@ -569,7 +568,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
         ),
         boxShadow: [
           BoxShadow(
-            color: widget.estrategia.primaryColorLight,
+            color: widget.estrategia.primaryColor.withValues(alpha: 0.2),
             blurRadius: isMobile ? 6 : 8,
             offset: const Offset(0, 2),
           ),
@@ -614,7 +613,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                   ),
                 ),
                 Text(
-                  'An�lise de Impacto',
+                  'Anãlise de Impacto',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -764,7 +763,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
           _dadosAtuais['variacaoFaturamento'],
         ),
         _buildMetricCard(
-          'Ticket M�dio',
+          'Ticket Mãdio',
           _dadosAtuais['ticketMedio'],
           Icons.receipt_long_rounded,
           [ThemeColors.of(context).blueCyan, ThemeColors.of(context).blueLight],
@@ -775,7 +774,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
           _dadosAtuais['roi'],
           Icons.show_chart_rounded,
           [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning],
-          _dadosAtuais['conversao'],
+          _dadosAtuais['conversão'],
         ),
         _buildMetricCard(
           'Economia',
@@ -785,11 +784,11 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
           _dadosAtuais['variacaoEconomia'],
         ),
         _buildMetricCard(
-          'Convers�o',
-          _dadosAtuais['conversao'],
+          'Conversão',
+          _dadosAtuais['conversão'],
           Icons.trending_up_rounded,
           [ThemeColors.of(context).error, ThemeColors.of(context).errorDark],
-          _dadosAtuais['variacaoConversao'],
+          _dadosAtuais['variacaoConversão'],
         ),
       ],
     );
@@ -816,7 +815,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
         ),
         boxShadow: [
           BoxShadow(
-            color: gradient[0]Light,
+            color: gradient[0].withValues(alpha: 0.1),
             blurRadius: isMobile ? 6 : 8,
             offset: const Offset(0, 2),
           ),
@@ -963,7 +962,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               ),
               Expanded(
                 child: Text(
-                  'Evolu��o de Vendas',
+                  'Evolução de Vendas',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -986,7 +985,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
-                  '�ltimos 7 dias',
+                  'últimos 7 dias',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -1060,7 +1059,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: widget.estrategia.primaryColorLight,
+                                color: widget.estrategia.primaryColor.withValues(alpha: 0.3),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),
@@ -1128,7 +1127,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Compara��o com Per�odo Anterior',
+                'ComparAção com Perãodo Anterior',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1153,11 +1152,11 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          _buildComparisonRow('Ticket M�dio', _calcularVariacaoAnterior('ticket'), _dadosAtuais['variacaoTicket'], true),
+          _buildComparisonRow('Ticket Mãdio', _calcularVariacaoAnterior('ticket'), _dadosAtuais['variacaoTicket'], true),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          _buildComparisonRow('Convers�o', _calcularVariacaoAnterior('conversao'), _dadosAtuais['variacaoConversao'], true),
+          _buildComparisonRow('Conversão', _calcularVariacaoAnterior('conversão'), _dadosAtuais['variacaoConversão'], true),
         ],
       ),
     );
@@ -1266,7 +1265,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: isPositive ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+                  color: isPositive ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
                 ),
               ),
             ],
@@ -1361,7 +1360,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               final index = entry.key;
               final produto = entry.value;
               return _buildProductItem(produto, index + 1);
-            }).toList(),
+            }),
         ],
       ),
     );
@@ -1380,7 +1379,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: posicao == 1
-              ?  [ThemeColors.of(context).warningLight, ThemeColors.of(context).warningDarkLight]
+              ?  [ThemeColors.of(context).warning.withValues(alpha: 0.1), ThemeColors.of(context).warningDark.withValues(alpha: 0.1)]
               : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textSecondary],
         ),
         borderRadius: BorderRadius.circular(
@@ -1412,7 +1411,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                 colors: posicao == 1
                     ? [ThemeColors.of(context).warning, ThemeColors.of(context).warningDark]
                     : posicao == 2
-                        ? [ThemeColors.of(context).textTertiary, ThemeColors.of(context).textSecondary]
+                        ? [ThemeColors.of(context).grey400, ThemeColors.of(context).grey600]
                         : posicao == 3
                             ? [ThemeColors.of(context).brownMain, ThemeColors.of(context).brownDark]
                             : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textSecondary],
@@ -1420,7 +1419,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: (posicao == 1 ?  ThemeColors.of(context).warning : ThemeColors.of(context).textSecondary)Light,
+                  color: (posicao == 1 ?  ThemeColors.of(context).warning : ThemeColors.of(context).textSecondary).withValues(alpha: 0.3),
                   blurRadius: isMobile ? 8 : 10,
                   offset: const Offset(0, 4),
                 ),
@@ -1646,15 +1645,15 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
           SizedBox(
             height: AppSizes.cardPadding.get(isMobile, isTablet),
           ),
-          _buildCategoryBar('Bebidas', 0.35, ThemeColors.of(context).info),
+          _buildCategoryBar('Bebidas', 0.35, ThemeColors.of(context).blueMain),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          _buildCategoryBar('Mercearia', 0.28, ThemeColors.of(context).success),
+          _buildCategoryBar('Mercearia', 0.28, ThemeColors.of(context).greenMain),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
-          _buildCategoryBar('Perec�veis', 0.22, ThemeColors.of(context).warning),
+          _buildCategoryBar('Perecãveis', 0.22, ThemeColors.of(context).orangeMain),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
@@ -1746,7 +1745,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
             isMobile ? 12 : (isTablet ? 14 : 16),
           ),
           border: Border.all(
-            color: isSuccess ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningLight,
+            color: isSuccess ? ThemeColors.of(context).greenMain.withValues(alpha: 0.3) : ThemeColors.of(context).warningLight,
             width: 1.5,
           ),
           boxShadow: [
@@ -1776,8 +1775,8 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: isSuccess
-                      ? [ThemeColors.of(context).success, ThemeColors.of(context).successIcon]
-                      : [ThemeColors.of(context).warning, ThemeColors.of(context).warningDark],
+                      ? [ThemeColors.of(context).greenMain, ThemeColors.of(context).successIcon]
+                      : [ThemeColors.of(context).orangeMain, ThemeColors.of(context).warningDark],
                 ),
                 borderRadius: BorderRadius.circular(
                   isMobile ? 10 : 12,
@@ -1810,7 +1809,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
                           ),
                         overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.bold,
-                          color: isSuccess ? ThemeColors.of(context).success : ThemeColors.of(context).warning,
+                          color: isSuccess ? ThemeColors.of(context).greenMain : ThemeColors.of(context).orangeMain,
                         ),
                       ),
                       SizedBox(
@@ -1908,7 +1907,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
     );
   }
 
-  /// Formata a data para exibi��o
+  /// Formata a data para exibição
   String _formatDateTime(DateTime dateTime) {
     final day = dateTime.day.toString().padLeft(2, '0');
     final month = dateTime.month.toString().padLeft(2, '0');
@@ -1935,7 +1934,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               width: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Exportando relat�rio em CSV...',
+              'Exportando relatãrio em CSV...',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1955,22 +1954,22 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
       ),
     );
 
-    // Gerar CSV real com dados do relat�rio
+    // Gerar CSV real com dados do relatãrio
     final dados = _dadosAtuais;
     final csvContent = StringBuffer();
-    csvContent.writeln('Relat�rio de Estrat�gia - ${widget.estrategia.name}');
-    csvContent.writeln('Data de Exporta��o,${DateTime.now().toIso8601String()}');
-    csvContent.writeln('Per�odo,${_periodoSelecionado}');
+    csvContent.writeln('Relatãrio de Estratãgia - ${widget.estrategia.name}');
+    csvContent.writeln('Data de ExportAção,${DateTime.now().toIso8601String()}');
+    csvContent.writeln('Perãodo,$_periodoSelecionado');
     csvContent.writeln('');
-    csvContent.writeln('M�trica,Valor');
+    csvContent.writeln('Mãtrica,Valor');
     csvContent.writeln('Produtos Impactados,${dados['produtosImpactados']}');
-    csvContent.writeln('Varia��o Vendas,${dados['variacaoVendas']}');
+    csvContent.writeln('VariAção Vendas,${dados['variacaoVendas']}');
     csvContent.writeln('Total Faturamento,${dados['totalFaturamento']}');
-    csvContent.writeln('Ticket M�dio,${dados['ticketMedio']}');
-    csvContent.writeln('Taxa de Convers�o,${dados['conversao']}');
+    csvContent.writeln('Ticket Mãdio,${dados['ticketMedio']}');
+    csvContent.writeln('Taxa de Conversão,${dados['conversao']}');
     csvContent.writeln('Total Vendas,${dados['totalVendas']}');
     csvContent.writeln('ROI,${dados['roi']}');
-    csvContent.writeln('Execu��es,${dados['execucoes']}');
+    csvContent.writeln('Execuções,${dados['execucoes']}');
     
     // Download do arquivo
     final bytes = utf8.encode(csvContent.toString());
@@ -1991,7 +1990,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
               width: AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Relat�rio exportado com sucesso!',
+              'Relatãrio exportado com sucesso!',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -2003,7 +2002,7 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).success,
+        backgroundColor: ThemeColors.of(context).greenMain,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -2012,8 +2011,6 @@ class _EstrategiasResultadosScreenState extends ConsumerState<EstrategiasResulta
     );
   }
 }
-
-
 
 
 

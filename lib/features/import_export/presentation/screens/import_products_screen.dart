@@ -6,7 +6,6 @@ import 'package:tagbean/features/import_export/data/models/import_export_models.
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class ImportacaoProdutosScreen extends ConsumerStatefulWidget {
   const ImportacaoProdutosScreen({super.key});
@@ -24,13 +23,13 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
   ImportProductsState get _state => ref.watch(importProductsProvider);
   ImportProductsNotifier get _notifier => ref.read(importProductsProvider.notifier);
   
-  // Getters para compatibilidade com c?digo existente
+  // Getters para compatibilidade com código existente
   int get _currentStep => _state.currentStep;
   bool get _uploading => _state.isUploading;
   double get _uploadProgress => _state.uploadProgress;
   String get _formatoSelecionado => _state.selectedFormat.id;
   
-  final Map<String, Map<String, dynamic>> _formatos = {
+  Map<String, Map<String, dynamic>> _getFormatos(BuildContext context) => {
     'excel': {
       'nome': 'Excel',
       'icone': Icons.table_chart_rounded,
@@ -45,7 +44,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
     },
   };
 
-  // Hist?rico de importa??es via provider
+  // Histórico de importações via provider
   List<Map<String, dynamic>> get _historicoImportacoes {
     final history = _state.importHistory;
     if (history.isEmpty) {
@@ -111,7 +110,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                       _buildInfoCard(),
                       ResponsiveSpacing.verticalLarge(context),
                       Text(
-                        'Importa??es Recentes',
+                        'Importações Recentes',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -213,7 +212,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primaryLight,
+                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -379,7 +378,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               ),
             ),
           ),
-          _buildStepIndicator(2, 'Conclu?do', Icons.check_circle_rounded, _currentStep >= 2),
+          _buildStepIndicator(2, 'Concluãdo', Icons.check_circle_rounded, _currentStep >= 2),
         ],
       ),
     );
@@ -416,7 +415,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
             boxShadow: isActive
                 ? [
                     BoxShadow(
-                      color: ThemeColors.of(context).primaryLight,
+                      color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                       blurRadius: isMobile ? 8 : 10,
                       offset: const Offset(0, 4),
                     ),
@@ -526,7 +525,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
           ResponsiveSpacing.verticalMedium(context),
           Row(
             mainAxisSize: MainAxisSize.min,
-            children: _formatos.entries.map((entry) {
+            children: _getFormatos(context).entries.map((entry) {
               final formato = entry.value;
               final isSelected = _formatoSelecionado == entry.key;
 
@@ -558,7 +557,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                         boxShadow: isSelected
                             ? [
                                 BoxShadow(
-                                  color: (formato['cor'] as Color)Light,
+                                  color: (formato['cor'] as Color).withValues(alpha: 0.3),
                                   blurRadius: isMobile ? 10 : 12,
                                   offset: const Offset(0, 4),
                                 ),
@@ -625,7 +624,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
   }
 
   Widget _buildStep1Card() {
-    final formato = _formatos[_formatoSelecionado]!;
+    final formato = _getFormatos(context)[_formatoSelecionado]!;
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -664,7 +663,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTealLight],
+                  colors: [ThemeColors.of(context).successPastel, ThemeColors.of(context).materialTeal.withValues(alpha: 0.1)],
                 ),
                 shape: BoxShape.circle,
               ),
@@ -691,7 +690,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                 border: Border.all(color: ThemeColors.of(context).successLight),
               ),
               child: Text(
-                'ETAPA 1 - PREPARA??O',
+                'ETAPA 1 - PREPARAÇÃO',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -727,7 +726,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               height: AppSizes.spacingBase.get(isMobile, isTablet),
             ),
             Text(
-              'Template com as colunas necess?rias para importa??o',
+              'Template com as colunas necessãrias para importação',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -770,9 +769,9 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                   SizedBox(
                     height: AppSizes.spacingSmAlt.get(isMobile, isTablet),
                   ),
-                  _buildColumnItem('C?digo de Barras', 'obrigat?rio'),
-                  _buildColumnItem('Nome do Produto', 'obrigat?rio'),
-                  _buildColumnItem('Pre?o', 'obrigat?rio'),
+                  _buildColumnItem('Cãdigo de Barras', 'obrigatório'),
+                  _buildColumnItem('Nome do Produto', 'obrigatório'),
+                  _buildColumnItem('PREÇO', 'obrigatório'),
                   _buildColumnItem('Categoria', 'opcional'),
                   _buildColumnItem('Estoque', 'opcional'),
                 ],
@@ -837,7 +836,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
   }
 
   Widget _buildColumnItem(String nome, String status) {
-    final isObrigatorio = status == 'obrigat?rio';
+    final isObrigatorio = status == 'obrigatório';
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Padding(
@@ -900,7 +899,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               ),
             ),
             decoration: BoxDecoration(
-              color: isObrigatorio ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textSecondary,
+              color: isObrigatorio ? ThemeColors.of(context).error.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
               borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
             ),
             child: Text(
@@ -914,7 +913,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                 ),
               overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
-                color: isObrigatorio ? ThemeColors.of(context).errorDark : ThemeColors.of(context).textSecondaryOverlay70,
+                color: isObrigatorio ? ThemeColors.of(context).error.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondaryOverlay70,
               ),
             ),
           ),
@@ -953,7 +952,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
+                colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
               ),
               shape: BoxShape.circle,
             ),
@@ -1048,8 +1047,8 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                     ? null
                     : LinearGradient(
                         colors: [
-                          ThemeColors.of(context).blueCyanLight,
-                          ThemeColors.of(context).primaryLight,
+                          ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                          ThemeColors.of(context).primary.withValues(alpha: 0.1),
                         ],
                       ),
                 border: Border.all(
@@ -1075,7 +1074,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                         tablet: 60,
                         desktop: 64,
                       ),
-                      child: const CircularProgressIndicator(
+                      child: CircularProgressIndicator(
                         strokeWidth: 4,
                         valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
                       ),
@@ -1103,7 +1102,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                         value: _uploadProgress,
                         minHeight: isMobile ? 7 : 8,
                         backgroundColor: ThemeColors.of(context).textSecondary,
-                        valueColor: const AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
+                        valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
                       ),
                     ),
                   ] else ...[
@@ -1165,7 +1164,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                         borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                       ),
                       child: Text(
-                        'M?ximo: 10 MB',
+                        'Mãximo: 10 MB',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1198,12 +1197,12 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).orangeAmberLight, ThemeColors.of(context).orangeMaterialLight],
+          colors: [ThemeColors.of(context).orangeAmber.withValues(alpha: 0.1), ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
         ),
-        border: Border.all(color: ThemeColors.of(context).orangeAmberLight),
+        border: Border.all(color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.3)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -1215,7 +1214,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               Icon(
                 Icons.lightbulb_rounded,
                 size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
-                color: ThemeColors.of(context).orangeAmberDark,
+                color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
               ),
               SizedBox(
                 width: ResponsiveHelper.getResponsivePadding(
@@ -1236,7 +1235,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).orangeAmberDark,
+                  color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
                 ),
               ),
             ],
@@ -1244,10 +1243,10 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
           SizedBox(
             height: AppSizes.spacingSm.get(isMobile, isTablet),
           ),
-          _buildTipItem('C?digos de barras devem ser ?nicos'),
-          _buildTipItem('Pre?os devem usar ponto como separador decimal'),
-          _buildTipItem('Produtos duplicados ser?o ignorados'),
-          _buildTipItem('M?ximo de 1.000 produtos por arquivo'),
+          _buildTipItem('Cãdigos de barras devem ser únicos'),
+          _buildTipItem('PREÇOs devem usar ponto como separador decimal'),
+          _buildTipItem('Produtos duplicados serão ignorados'),
+          _buildTipItem('Mãximo de 1.000 produtos por arquivo'),
         ],
       ),
     );
@@ -1276,7 +1275,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
               tablet: 15.5,
               desktop: 16,
             ),
-            color: ThemeColors.of(context).orangeAmberDark,
+            color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.8),
           ),
           SizedBox(
             width: ResponsiveHelper.getResponsivePadding(
@@ -1431,7 +1430,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: taxaSucesso >= 95 ? ThemeColors.of(context).successLight : ThemeColors.of(context).warningPastel,
+                    color: taxaSucesso >= 95 ? ThemeColors.of(context).success.withValues(alpha: 0.1) : ThemeColors.of(context).warningPastel,
                     borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                   ),
                   child: Text(
@@ -1445,7 +1444,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: taxaSucesso >= 95 ? ThemeColors.of(context).successDark : ThemeColors.of(context).warningDark,
+                      color: taxaSucesso >= 95 ? ThemeColors.of(context).success.withValues(alpha: 0.8) : ThemeColors.of(context).warningDark,
                     ),
                   ),
                 ),
@@ -1535,7 +1534,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
         ),
       ),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(isMobile ? 5 : 6),
       ),
       child: Text(
@@ -1790,10 +1789,6 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
     );
   }
 }
-
-
-
-
 
 
 

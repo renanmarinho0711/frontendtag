@@ -44,14 +44,14 @@ class OportunidadesLucroCard extends ConsumerWidget {
         .where((s) => s.tipo == 'aumento')
         .fold(0.0, (sum, s) => sum + (s.precoSugerido - s.precoAtual));
 
-    // Se não há sugestões, mostra versÃ£o compacta
+    // Se não há sugestões, mostra versão compacta
     if (totalSugestoes == 0) {
       return _buildEmptyState(context, isMobile, isTablet);
     }
 
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
@@ -83,22 +83,22 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [
                         AppThemeColors.greenMaterial,
                         AppThemeColors.orangeMain,
                       ],
                     ),
                     borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: AppThemeColors.greenMaterialOverlay30,
                         blurRadius: 10,
-                        offset: const Offset(0, 4),
+                        offset: Offset(0, 4),
                       ),
                     ],
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.auto_awesome_rounded,
                     color: AppThemeColors.surface,
                     size: 22,
@@ -128,12 +128,12 @@ class OportunidadesLucroCard extends ConsumerWidget {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 colors: [AppThemeColors.greenMaterial, AppThemeColors.orangeMain],
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Text(
+                            child: const Text(
                               'IA',
                               style: TextStyle(
                                 fontSize: 9,
@@ -147,7 +147,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
                       const SizedBox(height: 2),
                       Text(
                         'A IA identificou $totalSugestoes oportunidades',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           color: AppThemeColors.textSecondary,
                         ),
@@ -205,8 +205,8 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Expanded(
                   child: OutlinedButton.icon(
                     onPressed: onRevisarSugestoes,
-                    icon: Icon(Icons.visibility_rounded, size: 18),
-                    label: Text(
+                    icon: const Icon(Icons.visibility_rounded, size: 18),
+                    label: const Text(
                       'Revisar Sugestões',
                       style: TextStyle(fontSize: 13),
                     ),
@@ -224,8 +224,8 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: onAplicarAutomatico,
-                    icon: Icon(Icons.bolt_rounded, size: 18),
-                    label: Text(
+                    icon: const Icon(Icons.bolt_rounded, size: 18),
+                    label: const Text(
                       'Aplicar Todos',
                       style: TextStyle(fontSize: 13),
                     ),
@@ -267,14 +267,14 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 color: AppThemeColors.greenMaterial.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.auto_awesome_rounded,
                 color: AppThemeColors.greenMaterial,
                 size: 22,
               ),
             ),
             const SizedBox(width: 14),
-            Expanded(
+            const Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -296,7 +296,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 ],
               ),
             ),
-            Icon(
+            const Icon(
               Icons.check_circle_rounded,
               color: AppThemeColors.greenMain,
               size: 24,
@@ -340,7 +340,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
           ),
           Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 10,
               color: AppThemeColors.textSecondary,
             ),

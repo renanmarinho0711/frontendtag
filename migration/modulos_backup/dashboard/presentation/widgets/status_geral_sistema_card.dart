@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -56,7 +56,7 @@ class StatusGeralSistemaCard extends ConsumerWidget {
           // Título
           Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.monitor_heart_rounded,
                 color: AppThemeColors.greenMaterial,
                 size: 20,

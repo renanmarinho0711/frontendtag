@@ -6,8 +6,6 @@ import 'package:tagbean/features/products/data/repositories/products_repository.
 import 'package:tagbean/features/tags/data/repositories/tags_repository.dart';
 import 'package:tagbean/features/tags/data/models/tag_model.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-import 'package:tagbean/design_system/theme/category_themes.dart';
 
 // =============================================================================
 // TYPE ALIASES FOR BACKWARD COMPATIBILITY
@@ -16,8 +14,8 @@ import 'package:tagbean/design_system/theme/category_themes.dart';
 /// Alias para StockItem (compatibilidade)
 typedef StockItemModel = StockItem;
 
-// Nota: PriceHistoryItem e PriceHistoryModel s?o definidos em product_models.dart
-// O import j? traz essas defini??es, ent?o n?o precisamos redefinir aqui
+// Nota: PriceHistoryItem e PriceHistoryModel são definidos em product_models.dart
+// O import jã traz essas definiãães, então não precisamos redefinir aqui
 
 // =============================================================================
 // PRODUCTS LIST STATE
@@ -145,10 +143,10 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
           );
         }
       } else {
-        // Reposit?rio n?o dispon?vel - mostrar erro
+        // Repositãrio não disponível - mostrar erro
         state = state.copyWith(
           status: LoadingStatus.error,
-          error: 'Reposit?rio de produtos n?o configurado',
+          error: 'Repositãrio de produtos não configurado',
         );
       }
     } catch (e) {
@@ -159,7 +157,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
     }
   }
 
-  /// Carrega mais produtos (pagina??o)
+  /// Carrega mais produtos (paginação)
   Future<void> loadMoreProducts() async {
     if (!state.hasMorePages || state.status == LoadingStatus.loading) return;
     await loadProducts();
@@ -288,7 +286,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
     }
   }
 
-  /// Exclui m?ltiplos produtos em lote
+  /// Exclui mãltiplos produtos em lote
   Future<int> deleteProductsInBatch(List<String> productIds) async {
     if (productIds.isEmpty) return 0;
     
@@ -325,7 +323,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
     }
   }
 
-  /// Atualiza pre?os em lote
+  /// Atualiza preços em lote
   /// PUT /api/products/batch (ATUALIZADO para usar novo endpoint consolidado)
   Future<bool> updatePricesInBatch({
     required List<String> productIds,
@@ -339,7 +337,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
     try {
       if (_repository != null) {
         if (storeId == null || storeId.isEmpty) {
-          state = state.copyWith(error: 'StoreId ? obrigat?rio para opera??es em lote');
+          state = state.copyWith(error: 'StoreId é obrigatório para operações em lote');
           return false;
         }
         // Usa o novo endpoint consolidado
@@ -351,7 +349,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
           percentualDesconto: percentageDecrease,
         );
         if (response.isSuccess) {
-          // Recarrega produtos para ter os pre?os atualizados
+          // Recarrega produtos para ter os preços atualizados
           await loadProducts(refresh: true);
           return true;
         }
@@ -377,7 +375,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
         return true;
       }
     } catch (e) {
-      state = state.copyWith(error: 'Erro ao atualizar pre?os: $e');
+      state = state.copyWith(error: 'Erro ao atualizar preços: $e');
       return false;
     }
   }
@@ -394,7 +392,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
     try {
       if (_repository != null) {
         if (storeId == null || storeId.isEmpty) {
-          state = state.copyWith(error: 'StoreId ? obrigat?rio para opera??es em lote');
+          state = state.copyWith(error: 'StoreId é obrigatório para operações em lote');
           return false;
         }
         // Usa o novo endpoint consolidado
@@ -438,7 +436,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
     try {
       if (_repository != null) {
         if (storeId == null || storeId.isEmpty) {
-          state = state.copyWith(error: 'StoreId ? obrigat?rio para opera??es em lote');
+          state = state.copyWith(error: 'StoreId é obrigatório para operações em lote');
           return false;
         }
         final response = await _repository!.atualizarProdutosEmLote(
@@ -612,7 +610,7 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
     _currentStoreId = storeId;
   }
 
-  /// Carrega estat?sticas do backend
+  /// Carrega estatísticas do backend
   /// GET /api/products/store/{storeId}/statistics (ATUALIZADO)
   Future<void> loadStatistics({String? storeId}) async {
     state = state.copyWith(status: LoadingStatus.loading);
@@ -644,7 +642,7 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
             tagsDisponiveis: data['availableTags'] ?? data['tagsDisponiveis'] ?? 0,
           );
 
-          // Carregar estat?sticas por categoria se dispon?vel
+          // Carregar estatísticas por categoria se disponível
           final categoryList = data['categoryStats'] as List?;
           List<ProductCategoryStatsModel>? categoryStats;
           if (categoryList != null) {
@@ -671,7 +669,7 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
         }
       }
 
-      // Fallback: valores zerados se n?o houver reposit?rio ou resposta
+      // Fallback: valores zerados se não houver repositãrio ou resposta
       state = state.copyWith(
         status: LoadingStatus.success,
         statistics: ProductStatisticsModel(
@@ -703,7 +701,7 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
     final lower = nome.toLowerCase();
     if (lower.contains('bebida')) return CategoryThemes.bebidas.icon;
     if (lower.contains('mercearia')) return CategoryThemes.mercearia.icon;
-    if (lower.contains('perec?') || lower.contains('pereci')) return CategoryThemes.pereciveis.icon;
+    if (lower.contains('perecã') || lower.contains('pereci')) return CategoryThemes.pereciveis.icon;
     if (lower.contains('limpeza')) return CategoryThemes.limpeza.icon;
     if (lower.contains('higiene')) return CategoryThemes.higiene.icon;
     if (lower.contains('hortifruti')) return CategoryThemes.hortifruti.icon;
@@ -717,14 +715,14 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
     final lower = nome.toLowerCase();
     if (lower.contains('bebida')) return CategoryThemes.bebidas.color;
     if (lower.contains('mercearia')) return CategoryThemes.mercearia.color;
-    if (lower.contains('perec?') || lower.contains('pereci')) return CategoryThemes.pereciveis.color;
+    if (lower.contains('perecã') || lower.contains('pereci')) return CategoryThemes.pereciveis.color;
     if (lower.contains('limpeza')) return CategoryThemes.limpeza.color;
     if (lower.contains('higiene')) return CategoryThemes.higiene.color;
     if (lower.contains('hortifruti')) return CategoryThemes.hortifruti.color;
     if (lower.contains('frios')) return CategoryThemes.frios.color;
     if (lower.contains('padaria')) return CategoryThemes.padaria.color;
     if (lower.contains('pet')) return CategoryThemes.pet.color;
-    return ThemeColors.of(context).textTertiary;
+    return AppThemeColors.grey500;
   }
 
   List<Color> _getCategoryGradient(String nome) {
@@ -732,7 +730,7 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
     return [color, color];
   }
 
-  /// Atualiza estat?sticas baseado na lista de produtos
+  /// Atualiza estatísticas baseado na lista de produtos
   void updateFromProducts(List<ProductModel> products) {
     final comTag = products.where((p) => p.hasTag).length;
     final semTag = products.where((p) => !p.hasTag).length;
@@ -764,8 +762,8 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
 // PRODUCT DETAILS STATE
 // =============================================================================
 
-// Nota: PriceHistoryModel ? definido em product_models.dart
-// O fromJson agora suporta tanto campos em portugu?s quanto em ingl?s
+// Nota: PriceHistoryModel é definido em product_models.dart
+// O fromJson agora suporta tanto campos em português quanto em inglás
 
 class ProductDetails {
   final ProductModel product;
@@ -833,7 +831,7 @@ class ProductDetailsNotifier extends StateNotifier<ProductDetailsState> {
         if (response.isSuccess && response.data != null) {
           final product = ProductModel.fromProduto(response.data!);
           
-          // Buscar hist?rico de pre?os do backend
+          // Buscar histórico de preços do backend
           List<PriceHistoryModel> historicoPrecos = [];
           try {
             final historyResponse = await _repository!.getHistoricoPrecos(productId);
@@ -843,11 +841,11 @@ class ProductDetailsNotifier extends StateNotifier<ProductDetailsState> {
                   .toList();
             }
           } catch (e) {
-            // Se falhar ao buscar hist?rico, continua sem ele
-            debugPrint('Erro ao buscar hist?rico de pre?os: $e');
+            // Se falhar ao buscar histórico, continua sem ele
+            debugPrint('Erro ao buscar histórico de preços: $e');
           }
           
-          // Buscar estat?sticas de vendas do backend
+          // Buscar estatísticas de vendas do backend
           Map<String, dynamic>? estatisticas;
           try {
             final statsResponse = await _repository!.getProductStatistics(productId);
@@ -855,8 +853,8 @@ class ProductDetailsNotifier extends StateNotifier<ProductDetailsState> {
               estatisticas = statsResponse.data;
             }
           } catch (e) {
-            // Se falhar ao buscar estat?sticas, continua sem elas
-            debugPrint('Erro ao buscar estat?sticas: $e');
+            // Se falhar ao buscar estatísticas, continua sem elas
+            debugPrint('Erro ao buscar estatísticas: $e');
           }
           
           state = state.copyWith(
@@ -874,7 +872,7 @@ class ProductDetailsNotifier extends StateNotifier<ProductDetailsState> {
       // Fallback: Sem dados
       state = state.copyWith(
         status: LoadingStatus.error,
-        error: 'Produto n?o encontrado',
+        error: 'Produto não encontrado',
       );
     } catch (e) {
       state = state.copyWith(
@@ -941,7 +939,7 @@ class StockItem {
 
   String get statusEstoque {
     if (esgotado || estoqueAtual <= 0) return 'Esgotado';
-    if (emAlerta || estoqueAtual <= estoqueMinimo) return 'Cr?tico';
+    if (emAlerta || estoqueAtual <= estoqueMinimo) return 'Crãtico';
     if (estoqueAtual <= estoqueMinimo * 1.5) return 'Baixo';
     return 'OK';
   }
@@ -955,10 +953,21 @@ class StockItem {
 
   Color get statusColor {
     switch (statusEstoque) {
-      case 'Esgotado': return ThemeColors.of(context).errorIcon;
-      case 'Cr?tico': return ThemeColors.of(context).errorIcon;
-      case 'Baixo': return ThemeColors.of(context).warningIcon;
-      default: return ThemeColors.of(context).successIcon;
+      case 'Esgotado': return AppThemeColors.errorIcon;
+      case 'Crítico': return AppThemeColors.errorIcon;
+      case 'Baixo': return AppThemeColors.warningIcon;
+      default: return AppThemeColors.successIcon;
+    }
+  }
+
+  /// Obtém a cor dinâmica do status (requer BuildContext)
+  Color dynamicStatusColor(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    switch (statusEstoque) {
+      case 'Esgotado': return colors.errorIcon;
+      case 'Crítico': return colors.errorIcon;
+      case 'Baixo': return colors.warningIcon;
+      default: return colors.successIcon;
     }
   }
 
@@ -1108,7 +1117,7 @@ class StockNotifier extends StateNotifier<StockState> {
         }
       }
 
-      // Fallback: lista vazia se n?o houver reposit?rio ou resposta
+      // Fallback: lista vazia se não houver repositãrio ou resposta
       state = state.copyWith(
         status: LoadingStatus.success,
         items: [],
@@ -1345,20 +1354,20 @@ class ProductImportNotifier extends StateNotifier<ProductImportState> {
         final row = data[i];
         final erros = <String>[];
         
-        // Valida??es
-        if ((row['codigo']?.toString().length ?? 0) < 8) {
-          erros.add('C?digo curto (m?n 8)');
+        // Validações
+        if ((row['código']?.toString().length ?? 0) < 8) {
+          erros.add('Cãdigo curto (mãn 8)');
         }
         if (row['nome']?.toString().isEmpty ?? true) {
-          erros.add('Nome obrigat?rio');
+          erros.add('Nome obrigatório');
         }
         if (double.tryParse(row['preco']?.toString() ?? '') == null) {
-          erros.add('Pre?o inv?lido');
+          erros.add('PREÇO inválido');
         }
         
         previewItems.add(ImportPreviewItem(
           linha: i + 1,
-          codigo: row['codigo']?.toString() ?? '',
+          codigo: row['código']?.toString() ?? '',
           nome: row['nome']?.toString() ?? '',
           preco: row['preco']?.toString() ?? '',
           categoria: row['categoria']?.toString() ?? '',
@@ -1382,7 +1391,7 @@ class ProductImportNotifier extends StateNotifier<ProductImportState> {
     }
   }
 
-  /// Executa importa??o
+  /// Executa importação
   Future<void> executeImport({required String storeId}) async {
     state = state.copyWith(
       status: LoadingStatus.loading,
@@ -1438,13 +1447,13 @@ class ProductImportNotifier extends StateNotifier<ProductImportState> {
               erros++;
             }
           } else {
-            // Reposit?rio n?o dispon?vel
+            // Repositãrio não disponível
             resultItems.add(ImportResultItem(
               linha: item.linha,
               codigo: item.codigo,
               nome: item.nome,
               sucesso: false,
-              erro: 'Reposit?rio n?o configurado',
+              erro: 'Repositãrio não configurado',
             ));
             erros++;
           }
@@ -1607,10 +1616,10 @@ class TagBindingNotifier extends StateNotifier<TagBindingState> {
           return false;
         }
       } else {
-        // Reposit?rio n?o dispon?vel
+        // Repositãrio não disponível
         state = state.copyWith(
           status: LoadingStatus.error,
-          error: 'Reposit?rio de tags n?o configurado ou dados incompletos',
+          error: 'Repositãrio de tags não configurado ou dados incompletos',
         );
         return false;
       }
@@ -1726,17 +1735,17 @@ class TagBindingNotifier extends StateNotifier<TagBindingState> {
 // RIVERPOD PROVIDERS
 // =============================================================================
 
-/// Provider do Repository de Produtos (conectado ? API)
+/// Provider do Repository de Produtos (conectado é API)
 final produtoRepositoryProvider = Provider<ProdutoRepository>((ref) {
   return ProdutoRepository();
 });
 
-/// Provider do Repository de Tags (conectado ? API)
+/// Provider do Repository de Tags (conectado é API)
 final tagsRepositoryProvider = Provider<TagsRepository>((ref) {
   return TagsRepository();
 });
 
-/// Provider de lista de produtos (Riverpod StateNotifier) - CONECTADO ? API
+/// Provider de lista de produtos (Riverpod StateNotifier) - CONECTADO é API
 final productsListRiverpodProvider = StateNotifierProvider<ProductsListNotifier, ProductsListState>(
   (ref) {
     final repository = ref.watch(produtoRepositoryProvider);
@@ -1744,7 +1753,7 @@ final productsListRiverpodProvider = StateNotifierProvider<ProductsListNotifier,
   },
 );
 
-/// Provider de estat?sticas de produtos (Riverpod StateNotifier) - CONECTADO ? API
+/// Provider de estatísticas de produtos (Riverpod StateNotifier) - CONECTADO é API
 final productStatisticsRiverpodProvider = StateNotifierProvider<ProductStatisticsNotifier, ProductStatisticsState>(
   (ref) {
     final repository = ref.watch(produtoRepositoryProvider);
@@ -1762,13 +1771,13 @@ final stockRiverpodProvider = StateNotifierProvider<StockNotifier, StockState>(
   (ref) => StockNotifier(),
 );
 
-/// Provider de importa??o de produtos
+/// Provider de importação de produtos
 final productImportProvider = StateNotifierProvider<ProductImportNotifier, ProductImportState>(
   (ref) => ProductImportNotifier(),
 );
 
 
-/// Provider de vincula??o Tag/QR - CONECTADO ? API
+/// Provider de vinculAção Tag/QR - CONECTADO é API
 final tagBindingProvider = StateNotifierProvider<TagBindingNotifier, TagBindingState>(
   (ref) {
     final tagsRepository = ref.watch(tagsRepositoryProvider);
@@ -1776,8 +1785,6 @@ final tagBindingProvider = StateNotifierProvider<TagBindingNotifier, TagBindingS
     return TagBindingNotifier(tagsRepository, produtoRepository);
   },
 );
-
-
 
 
 

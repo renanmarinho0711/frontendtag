@@ -44,7 +44,7 @@ class OnboardingStepsCard extends ConsumerWidget {
     return Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
@@ -70,7 +70,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                       color: AppThemeColors.onboardingIcon.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.rocket_launch_rounded,
                       color: AppThemeColors.onboardingIcon,
                       size: 20,
@@ -81,7 +81,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'PRIMEIROS PASSOS',
                           style: TextStyle(
                             fontSize: 12,
@@ -93,7 +93,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                         const SizedBox(height: 2),
                         Text(
                           '$completed de $total concluídos',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 11,
                             color: AppThemeColors.textSecondary,
                           ),
@@ -111,7 +111,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                         CircularProgressIndicator(
                           value: completed / total,
                           backgroundColor: AppThemeColors.grey200,
-                          valueColor: AlwaysStoppedAnimation<Color>(
+                          valueColor: const AlwaysStoppedAnimation<Color>(
                             AppThemeColors.onboardingProgress,
                           ),
                           strokeWidth: 4,
@@ -136,7 +136,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                 child: LinearProgressIndicator(
                   value: completed / total,
                   backgroundColor: AppThemeColors.grey200,
-                  valueColor: AlwaysStoppedAnimation<Color>(
+                  valueColor: const AlwaysStoppedAnimation<Color>(
                     AppThemeColors.onboardingProgress,
                   ),
                   minHeight: 6,
@@ -274,7 +274,7 @@ class OnboardingStepsCard extends ConsumerWidget {
               // Botão de ação para próximo passo
               if (isNext) ...[
                 const SizedBox(width: 4),
-                Icon(
+                const Icon(
                   Icons.arrow_forward_rounded,
                   size: 14,
                   color: AppThemeColors.greenMaterial,

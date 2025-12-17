@@ -5,7 +5,6 @@ import 'package:tagbean/features/categories/presentation/providers/categories_pr
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class CategoriasAdminScreen extends ConsumerStatefulWidget {
   const CategoriasAdminScreen({super.key});
@@ -16,7 +15,7 @@ class CategoriasAdminScreen extends ConsumerStatefulWidget {
 
 class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     with TickerProviderStateMixin, ResponsiveCache {
-  List<Map<String, dynamic>> _selectedItems = [];
+  final List<Map<String, dynamic>> _selectedItems = [];
   bool _isSelectMode = false;
   String _sortOrder = 'nome_asc';
   String _searchQuery = '';
@@ -424,11 +423,11 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                   : null,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-                borderSide: BorderSide(color: AppThemeColors.textSecondary),
+                borderSide: const BorderSide(color: AppThemeColors.textSecondary),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-                borderSide: BorderSide(color: AppThemeColors.textSecondary),
+                borderSide: const BorderSide(color: AppThemeColors.textSecondary),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -438,7 +437,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
               fillColor: AppThemeColors.textSecondary,
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: [
               Expanded(
@@ -457,7 +456,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
               ),
               const SizedBox(width: 8),
               PopupMenuButton<String>(
-                icon: Icon(
+                icon: const Icon(
                   Icons.sort_rounded,
                   color: AppThemeColors.textSecondary,
                 ),
@@ -645,7 +644,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           ),
                         ),
                       ),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       Text(
                         categoria['nome'],
                         textAlign: TextAlign.center,
@@ -661,9 +660,9 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 12,
                           vertical: 6,
                         ),
@@ -846,7 +845,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -879,7 +878,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(color: AppThemeColors.redMain),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   'INATIVA',
                                   style: TextStyle(
                                     fontSize: 10,
@@ -890,10 +889,10 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                               ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.inventory_2_rounded,
                               size: 16,
                               color: AppThemeColors.textSecondary,
@@ -911,7 +910,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                               ),
                             ),
                             const SizedBox(width: 16),
-                            Icon(
+                            const Icon(
                               Icons.folder_rounded,
                               size: 16,
                               color: AppThemeColors.textSecondary,
@@ -930,7 +929,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                             ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           'Atualizado em ${categoria['ultimaAtualizacao']}',
                           style: TextStyle(
@@ -947,17 +946,17 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                   ),
                   if (!_isSelectMode)
                     PopupMenuButton(
-                      icon: Icon(Icons.more_vert_rounded, color: AppThemeColors.textSecondary),
+                      icon: const Icon(Icons.more_vert_rounded, color: AppThemeColors.textSecondary),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                       itemBuilder: (context) => [
                         PopupMenuItem(
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(Icons.edit_rounded, size: 20, color: AppThemeColors.blueMaterial),
-                              const SizedBox(width: 12),
-                              const Text('Editar'),
+                              SizedBox(width: 12),
+                              Text('Editar'),
                             ],
                           ),
                           onTap: () => Future.delayed(
@@ -985,11 +984,11 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           ),
                         ),
                         PopupMenuItem(
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(Icons.delete_rounded, size: 20, color: AppThemeColors.redMain),
-                              const SizedBox(width: 12),
-                              const Text('Excluir'),
+                              SizedBox(width: 12),
+                              Text('Excluir'),
                             ],
                           ),
                           onTap: () => Future.delayed(
@@ -1015,20 +1014,20 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
         children: [
           Container(
             padding: const EdgeInsets.all(32),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: AppThemeColors.categoriasGradient,
               ),
               shape: BoxShape.circle,
             ),
-            child: Icon(
+            child: const Icon(
               Icons.search_off_rounded,
               size: 64,
               color: AppThemeColors.textSecondary,
             ),
           ),
           const SizedBox(height: 24),
-          Text(
+          const Text(
             'Nenhuma categoria encontrada',
             style: TextStyle(
               fontSize: 20,
@@ -1037,7 +1036,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
             ),
           ),
           const SizedBox(height: 8),
-          Text(
+          const Text(
             'Tente ajustar os filtros de busca',
             style: TextStyle(
               fontSize: 14,
@@ -1078,7 +1077,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: const Icon(Icons.warning_rounded, color: AppThemeColors.redMain, size: 48),
-        title: const Text('Confirmar ExclusÃ£o'),
+        title: const Text('Confirmar Exclusão'),
         content: Text(
           'Deseja realmente excluir "${categoria['nome']}"?\n\nEsta ação não pode ser desfeita.',
           textAlign: TextAlign.center,

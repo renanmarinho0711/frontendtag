@@ -64,7 +64,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             elevation: 0,
             backgroundColor: AppThemeColors.surface,
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_rounded, color: AppThemeColors.textPrimary),
+              icon: const Icon(Icons.arrow_back_rounded, color: AppThemeColors.textPrimary),
               onPressed: () => Navigator.pop(context),
             ),
             actions: [
@@ -77,8 +77,8 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                     ),
                   );
                 },
-                icon: Icon(Icons.edit_rounded, size: 18, color: AppThemeColors.brandPrimaryGreen),
-                label: Text(
+                icon: const Icon(Icons.edit_rounded, size: 18, color: AppThemeColors.brandPrimaryGreen),
+                label: const Text(
                   'Editar',
                   style: TextStyle(
                     color: AppThemeColors.brandPrimaryGreen,
@@ -88,10 +88,10 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
               ),
               // Menu contextual
               PopupMenuButton<String>(
-                icon: Icon(Icons.more_vert_rounded, color: AppThemeColors.textPrimary),
-                shape: RoundedRectangleBorder(borderRadius: AppRadius.lg),
+                icon: const Icon(Icons.more_vert_rounded, color: AppThemeColors.textPrimary),
+                shape: const RoundedRectangleBorder(borderRadius: AppRadius.lg),
                 itemBuilder: (context) => [
-                  PopupMenuItem(
+                  const PopupMenuItem(
                     value: 'duplicate',
                     child: Row(
                       children: [
@@ -101,7 +101,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                       ],
                     ),
                   ),
-                  PopupMenuItem(
+                  const PopupMenuItem(
                     value: 'share',
                     child: Row(
                       children: [
@@ -111,8 +111,8 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                       ],
                     ),
                   ),
-                  PopupMenuDivider(),
-                  PopupMenuItem(
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
                     value: 'delete',
                     child: Row(
                       children: [
@@ -155,7 +155,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                   fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
                   fontWeight: FontWeight.normal,
                 ),
-                tabs: [
+                tabs: const [
                   Tab(text: 'Informações'),
                   Tab(text: 'Estoque'),
                   Tab(text: 'Histórico'),
@@ -166,7 +166,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
           ),
         ],
         body: _isLoading
-            ? Center(child: CircularProgressIndicator(color: AppThemeColors.brandPrimaryGreen))
+            ? const Center(child: CircularProgressIndicator(color: AppThemeColors.brandPrimaryGreen))
             : TabBarView(
                 controller: _tabController,
                 children: [
@@ -244,7 +244,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                 Row(
                   children: [
                     Icon(Icons.category_rounded, size: 14, color: _product.cor),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Text(
                       _product.categoria,
                       style: TextStyle(
@@ -321,7 +321,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                                       ? AppThemeColors.successIcon
                                       : AppThemeColors.warningDark,
                                 ),
-                                SizedBox(width: 4),
+                                const SizedBox(width: 4),
                                 Text(
                                   _product.hasTag ? _product.tag ?? 'TAG-XXX' : 'Sem Tag',
                                   style: TextStyle(
@@ -334,7 +334,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                                 ),
                               ],
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Row(
                               children: [
                                 Icon(
@@ -344,7 +344,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                                       ? AppThemeColors.successIcon
                                       : AppThemeColors.warningDark,
                                 ),
-                                SizedBox(width: 4),
+                                const SizedBox(width: 4),
                                 Text(
                                   _product.hasTag ? 'Online' : 'Offline',
                                   style: TextStyle(
@@ -363,8 +363,8 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                                 child: OutlinedButton(
                                   onPressed: () => _showUnbindTagDialog(),
                                   style: OutlinedButton.styleFrom(
-                                    padding: EdgeInsets.symmetric(vertical: 4),
-                                    side: BorderSide(color: AppThemeColors.orangeMain),
+                                    padding: const EdgeInsets.symmetric(vertical: 4),
+                                    side: const BorderSide(color: AppThemeColors.orangeMain),
                                     foregroundColor: AppThemeColors.orangeMain,
                                   ),
                                   child: Text(
@@ -584,17 +584,17 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
 
   Widget _buildInfoItem(String label, String value, IconData icon) {
     return Padding(
-      padding: EdgeInsets.only(bottom: AppSpacing.sm),
+      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(icon, size: 16, color: AppThemeColors.textSecondary),
-          SizedBox(width: AppSpacing.sm),
+          const SizedBox(width: AppSpacing.sm),
           Expanded(
             flex: 2,
             child: Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
                 color: AppThemeColors.textSecondary,
                 fontWeight: FontWeight.w500,
@@ -605,7 +605,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             flex: 3,
             child: Text(
               value,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
                 color: AppThemeColors.textPrimary,
                 fontWeight: FontWeight.w600,
@@ -639,7 +639,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                     color: AppThemeColors.surfaceOverlay90,
                   ),
                 ),
-                SizedBox(height: AppSpacing.sm),
+                const SizedBox(height: AppSpacing.sm),
                 Text(
                   '${_product.estoque ?? 0}',
                   style: TextStyle(
@@ -648,27 +648,27 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                     color: AppThemeColors.surface,
                   ),
                 ),
-                SizedBox(height: AppSpacing.md),
+                const SizedBox(height: AppSpacing.md),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton.icon(
                       onPressed: () => _showEstoqueDialog(isEntrada: true),
-                      icon: Icon(Icons.add_rounded),
-                      label: Text('Entrada'),
+                      icon: const Icon(Icons.add_rounded),
+                      label: const Text('Entrada'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppThemeColors.surface,
                         foregroundColor: _product.cor,
                       ),
                     ),
-                    SizedBox(width: AppSpacing.md),
+                    const SizedBox(width: AppSpacing.md),
                     OutlinedButton.icon(
                       onPressed: () => _showEstoqueDialog(isEntrada: false),
-                      icon: Icon(Icons.remove_rounded),
-                      label: Text('Saída'),
+                      icon: const Icon(Icons.remove_rounded),
+                      label: const Text('Saída'),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: AppThemeColors.surface,
-                        side: BorderSide(color: AppThemeColors.surface),
+                        side: const BorderSide(color: AppThemeColors.surface),
                       ),
                     ),
                   ],
@@ -688,8 +688,8 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             ),
             child: Row(
               children: [
-                Icon(Icons.warning_amber_rounded, color: AppThemeColors.warning),
-                SizedBox(width: AppSpacing.md),
+                const Icon(Icons.warning_amber_rounded, color: AppThemeColors.warning),
+                const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -714,7 +714,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Alterar'),
+                  child: const Text('Alterar'),
                 ),
               ],
             ),
@@ -740,7 +740,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: Center(
                     child: Text(
                       'Gráfico de movimentações\n(a ser implementado)',
@@ -781,12 +781,12 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                 padding: EdgeInsets.all(AppSizes.paddingXl.get(isMobile, isTablet)),
                 child: Column(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.history_rounded,
                       size: 64,
                       color: AppThemeColors.textSecondaryOverlay30,
                     ),
-                    SizedBox(height: AppSpacing.md),
+                    const SizedBox(height: AppSpacing.md),
                     Text(
                       'Nenhuma alteração registrada',
                       style: TextStyle(
@@ -801,9 +801,9 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
           else
             ListView.separated(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: historicoPrecos.length,
-              separatorBuilder: (_, __) => SizedBox(height: AppSpacing.sm),
+              separatorBuilder: (_, __) => const SizedBox(height: AppSpacing.sm),
               itemBuilder: (context, index) {
                 final item = historicoPrecos[index];
                 return Container(
@@ -816,18 +816,18 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                   child: Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(AppSpacing.sm),
+                        padding: const EdgeInsets.all(AppSpacing.sm),
                         decoration: BoxDecoration(
                           color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.attach_money_rounded,
                           color: AppThemeColors.brandPrimaryGreen,
                           size: 20,
                         ),
                       ),
-                      SizedBox(width: AppSpacing.md),
+                      const SizedBox(width: AppSpacing.md),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -899,12 +899,12 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
               padding: EdgeInsets.all(AppSizes.paddingXl.get(isMobile, isTablet)),
               child: Column(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.auto_awesome_rounded,
                     size: 64,
                     color: AppThemeColors.textSecondaryOverlay30,
                   ),
-                  SizedBox(height: AppSpacing.md),
+                  const SizedBox(height: AppSpacing.md),
                   Text(
                     'Nenhuma estratégia ativa',
                     style: TextStyle(
@@ -912,11 +912,11 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
                       color: AppThemeColors.textSecondary,
                     ),
                   ),
-                  SizedBox(height: AppSpacing.md),
+                  const SizedBox(height: AppSpacing.md),
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.add_rounded),
-                    label: Text('Criar Estratégia'),
+                    icon: const Icon(Icons.add_rounded),
+                    label: const Text('Criar Estratégia'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppThemeColors.brandPrimaryGreen,
                     ),
@@ -935,12 +935,12 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
     switch (action) {
       case 'duplicate':
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Duplicando produto...')),
+          const SnackBar(content: Text('Duplicando produto...')),
         );
         break;
       case 'share':
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Compartilhando produto...')),
+          const SnackBar(content: Text('Compartilhando produto...')),
         );
         break;
       case 'delete':
@@ -953,22 +953,22 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Desvincular Tag'),
+        title: const Text('Desvincular Tag'),
         content: Text('Deseja remover a vinculação da tag "${_product.tag}" deste produto?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Tag desvinculada com sucesso')),
+                const SnackBar(content: Text('Tag desvinculada com sucesso')),
               );
             },
             style: ElevatedButton.styleFrom(backgroundColor: AppThemeColors.orangeMain),
-            child: Text('Desvincular'),
+            child: const Text('Desvincular'),
           ),
         ],
       ),
@@ -980,11 +980,11 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Alterar Preço'),
+        title: const Text('Alterar Preço'),
         content: TextField(
           controller: controller,
-          keyboardType: TextInputType.numberWithOptions(decimal: true),
-          decoration: InputDecoration(
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          decoration: const InputDecoration(
             labelText: 'Novo Preço',
             prefixText: 'R\$ ',
             border: OutlineInputBorder(),
@@ -993,16 +993,16 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Preço atualizado com sucesso')),
+                const SnackBar(content: Text('Preço atualizado com sucesso')),
               );
             },
-            child: Text('Salvar'),
+            child: const Text('Salvar'),
           ),
         ],
       ),
@@ -1018,7 +1018,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
         content: TextField(
           controller: controller,
           keyboardType: TextInputType.number,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Quantidade',
             border: OutlineInputBorder(),
           ),
@@ -1026,16 +1026,16 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Estoque atualizado com sucesso')),
+                const SnackBar(content: Text('Estoque atualizado com sucesso')),
               );
             },
-            child: Text('Confirmar'),
+            child: const Text('Confirmar'),
           ),
         ],
       ),
@@ -1046,12 +1046,12 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Relatório de Vendas'),
-        content: Text('Funcionalidade em desenvolvimento.\n\nEm breve você poderá visualizar o histórico de vendas deste produto.'),
+        title: const Text('Relatório de Vendas'),
+        content: const Text('Funcionalidade em desenvolvimento.\n\nEm breve você poderá visualizar o histórico de vendas deste produto.'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Fechar'),
+            child: const Text('Fechar'),
           ),
         ],
       ),
@@ -1062,27 +1062,27 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        icon: Icon(Icons.warning_rounded, color: AppThemeColors.error, size: 48),
-        title: Text('Confirmar ExclusÃ£o'),
+        icon: const Icon(Icons.warning_rounded, color: AppThemeColors.error, size: 48),
+        title: const Text('Confirmar Exclusão'),
         content: Text('Deseja realmente excluir "${_product.nome}"?\n\nEsta ação não pode ser desfeita.'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context); // Volta para lista
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
+                const SnackBar(
                   content: Text('Produto excluído com sucesso'),
                   backgroundColor: AppThemeColors.error,
                 ),
               );
             },
             style: ElevatedButton.styleFrom(backgroundColor: AppThemeColors.error),
-            child: Text('Excluir'),
+            child: const Text('Excluir'),
           ),
         ],
       ),

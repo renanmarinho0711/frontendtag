@@ -5,7 +5,6 @@ import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/features/sync/presentation/providers/sync_provider.dart';
 import 'package:tagbean/features/sync/data/models/sync_models.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'dart:convert';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:tagbean/core/utils/web_utils.dart';
@@ -29,7 +28,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   String _lastFiltroStatus = 'Todos';
   String _lastFiltroTipo = 'Todos';
 
-  // Obt?m logs do provider
+  // Obtãm logs do provider
   List<SyncHistoryEntry> get _logs => ref.watch(syncHistoryProvider);
 
   // Getter com cache para logs filtrados
@@ -72,8 +71,10 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).surface,
+      backgroundColor: colors.surface,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -113,12 +114,13 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
           overflow: TextOverflow.ellipsis,
           ),
         ),
-        backgroundColor: ThemeColors.of(context).primary,
+        backgroundColor: colors.primary,
       ),
     );
   }
 
   Widget _buildModernAppBar() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
@@ -130,7 +132,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         vertical: AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surface,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -141,7 +143,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimaryOverlay05,
+            color: colors.textPrimaryOverlay05,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -157,7 +159,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         children: [
           Container(
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).textSecondary,
+              color: colors.textSecondary,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -170,7 +172,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back_rounded,
-                color: ThemeColors.of(context).textSecondary,
+                color: colors.textSecondary,
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
               onPressed: () => Navigator.pop(context),
@@ -185,7 +187,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textPrimary],
+                colors: [colors.textSecondary, colors.textPrimary],
               ),
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
@@ -198,7 +200,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             ),
             child: Icon(
               Icons.history_rounded,
-              color: ThemeColors.of(context).surface,
+              color: colors.surface,
               size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
             ),
           ),
@@ -211,7 +213,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Log de Sincroniza??o',
+                  'Log de Sincronização',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -225,7 +227,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                   ),
                 ),
                 Text(
-                  'Hist?rico detalhado',
+                  'Histórico detalhado',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -233,7 +235,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                       mobileFontSize: 11,
                     ),
                   overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).textSecondary,
+                    color: colors.textSecondary,
                   ),
                 ),
               ],
@@ -245,6 +247,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildStatsHeader() {
+    final colors = ThemeColors.of(context);
     final sucesso = _logs.where((l) => l.status == SyncStatus.success).length;
     final parcial = _logs.where((l) => l.status == SyncStatus.partial).length;
     final falha = _logs.where((l) => l.status == SyncStatus.failed).length;
@@ -261,7 +264,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surface,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -272,7 +275,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimaryOverlay05,
+            color: colors.textPrimaryOverlay05,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -287,23 +290,23 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         mainAxisSize: MainAxisSize.min,
         children: [
           Expanded(
-            child: _buildStatItem('$sucesso', 'Sucesso', Icons.check_circle_rounded, ThemeColors.of(context).success),
+            child: _buildStatItem('$sucesso', 'Sucesso', Icons.check_circle_rounded, colors.success),
           ),
           Container(
             width: 1,
             height: isMobile ? 45 : 50,
-            color: ThemeColors.of(context).textSecondary,
+            color: colors.textSecondary,
           ),
           Expanded(
-            child: _buildStatItem('$parcial', 'Parcial', Icons.warning_rounded, ThemeColors.of(context).orangeMaterial),
+            child: _buildStatItem('$parcial', 'Parcial', Icons.warning_rounded, colors.orangeMaterial),
           ),
           Container(
             width: 1,
             height: isMobile ? 45 : 50,
-            color: ThemeColors.of(context).textSecondary,
+            color: colors.textSecondary,
           ),
           Expanded(
-            child: _buildStatItem('$falha', 'Falha', Icons.error_rounded, ThemeColors.of(context).error),
+            child: _buildStatItem('$falha', 'Falha', Icons.error_rounded, colors.error),
           ),
         ],
       ),
@@ -311,6 +314,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildStatItem(String value, String label, IconData icon, Color color) {
+    final colors = ThemeColors.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -345,7 +349,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               mobileFontSize: 9,
             ),
           overflow: TextOverflow.ellipsis,
-            color: ThemeColors.of(context).textSecondaryOverlay70,
+            color: colors.textSecondaryOverlay70,
           ),
         ),
       ],
@@ -353,6 +357,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildFilterBar() {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
@@ -366,7 +371,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         AppSizes.paddingMdAlt2.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surface,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
             context,
@@ -377,7 +382,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).textPrimaryOverlay05,
+            color: colors.textPrimaryOverlay05,
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -397,7 +402,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               Icon(
                 Icons.filter_list_rounded,
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
-                color: ThemeColors.of(context).textSecondary,
+                color: colors.textSecondary,
               ),
               SizedBox(
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
@@ -480,14 +485,14 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               ),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _filtroStatus,
+                  initialValue: _filtroStatus,
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
                       baseFontSize: 12,
                       mobileFontSize: 11,
                     ),
-                    color: ThemeColors.of(context).textPrimary,
+                    color: colors.textPrimary,
                   ),
                   decoration: InputDecoration(
                     labelText: 'Status',
@@ -534,14 +539,14 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               ),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _filtroTipo,
+                  initialValue: _filtroTipo,
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
                       baseFontSize: 12,
                       mobileFontSize: 11,
                     ),
-                    color: ThemeColors.of(context).textPrimary,
+                    color: colors.textPrimary,
                   ),
                   decoration: InputDecoration(
                     labelText: 'Tipo',
@@ -572,7 +577,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                     ),
                     isDense: true,
                   ),
-                  items: ['Todos', 'Completa', 'Pre?os', 'Produtos Novos', 'Tags']
+                  items: ['Todos', 'Completa', 'PREÇOs', 'Produtos Novos', 'Tags']
                       .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                       .toList(),
                   onChanged: (value) {
@@ -591,6 +596,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildLogCard(SyncHistoryEntry log, int index) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final logColor = log.color;
     final logIcon = log.iconData;
@@ -609,7 +615,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
           bottom: AppSizes.spacingBase.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).surface,
+          color: colors.surface,
           borderRadius: BorderRadius.circular(
             ResponsiveHelper.getResponsiveBorderRadius(
               context,
@@ -619,12 +625,12 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             ),
           ),
           border: Border.all(
-            color: logColorLight,
+            color: logColor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: logColorLight,
+              color: logColor.withValues(alpha: 0.1),
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 15,
@@ -636,7 +642,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
           ],
         ),
         child: Theme(
-          data: Theme.of(context).copyWith(dividerColor: ThemeColors.of(context).transparent),
+          data: Theme.of(context).copyWith(dividerColor: colors.transparent),
           child: ExpansionTile(
             tilePadding: EdgeInsets.all(
               AppSizes.paddingMdAlt.get(isMobile, isTablet),
@@ -664,7 +670,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: logColorLight,
+                    color: logColor.withValues(alpha: 0.3),
                     blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                       context,
                       mobile: 10,
@@ -677,7 +683,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               ),
               child: Icon(
                 logIcon,
-                color: ThemeColors.of(context).surface,
+                color: colors.surface,
                 size: AppSizes.iconLarge.get(isMobile, isTablet),
               ),
             ),
@@ -710,7 +716,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: logColorLight,
+                    color: logColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(
                       ResponsiveHelper.getResponsiveBorderRadius(
                         context,
@@ -752,7 +758,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                       mobileFontSize: 11,
                     ),
                   overflow: TextOverflow.ellipsis,
-                    color: ThemeColors.of(context).textSecondaryOverlay70,
+                    color: colors.textSecondaryOverlay70,
                   ),
                 ),
                 SizedBox(
@@ -780,7 +786,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                   AppSizes.paddingMdAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).textSecondary,
+                  color: colors.textSecondary,
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
                       context,
@@ -800,7 +806,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                         Icon(
                           Icons.person_rounded,
                           size: AppSizes.iconTiny.get(isMobile, isTablet),
-                          color: ThemeColors.of(context).textSecondary,
+                          color: colors.textSecondary,
                         ),
                         SizedBox(
                           width: AppSizes.spacingXs.get(isMobile, isTablet),
@@ -815,7 +821,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                             ),
                           overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
-                            color: ThemeColors.of(context).textPrimary,
+                            color: colors.textPrimary,
                           ),
                         ),
                       ],
@@ -833,21 +839,21 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                         ),
                       overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
-                        color: ThemeColors.of(context).textPrimary,
+                        color: colors.textPrimary,
                       ),
                     ),
                     SizedBox(
                       height: AppSizes.spacingXsAlt2.get(isMobile, isTablet),
                     ),
                     Text(
-                      log.details ?? 'Nenhum detalhe dispon?vel.',
+                      log.details ?? 'Nenhum detalhe disponível.',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
                           baseFontSize: 12,
                           mobileFontSize: 11,
                         ),
-                        color: ThemeColors.of(context).textSecondary,
+                        color: colors.textSecondary,
                         height: 1.4,
                       ),
                     ),
@@ -859,7 +865,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                         AppSizes.paddingBase.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: ThemeColors.of(context).surface,
+                        color: colors.surface,
                         borderRadius: BorderRadius.circular(
                           ResponsiveHelper.getResponsiveBorderRadius(
                             context,
@@ -868,7 +874,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                             desktop: 10,
                           ),
                         ),
-                        border: Border.all(color: ThemeColors.of(context).textSecondary),
+                        border: Border.all(color: colors.textSecondary),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -891,7 +897,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                                   tablet: 29,
                                   desktop: 30,
                                 ),
-                                color: ThemeColors.of(context).textSecondary,
+                                color: colors.textSecondary,
                               ),
                               Expanded(
                                 child: _buildDetailItem(
@@ -908,7 +914,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                                   tablet: 29,
                                   desktop: 30,
                                 ),
-                                color: ThemeColors.of(context).textSecondary,
+                                color: colors.textSecondary,
                               ),
                               Expanded(
                                 child: _buildDetailItem(
@@ -992,7 +998,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                                 vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
                               ),
                               backgroundColor: logColor,
-                              foregroundColor: ThemeColors.of(context).surface,
+                              foregroundColor: colors.surface,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(
                                   ResponsiveHelper.getResponsiveBorderRadius(
@@ -1019,13 +1025,14 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildMiniChip(IconData icon, String text) {
+    final colors = ThemeColors.of(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(
           icon,
           size: AppSizes.iconMicro.get(isMobile, isTablet),
-          color: ThemeColors.of(context).textSecondary,
+          color: colors.textSecondary,
         ),
         SizedBox(
           width: AppSizes.spacingXxsAlt.get(isMobile, isTablet),
@@ -1039,7 +1046,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               mobileFontSize: 10,
             ),
           overflow: TextOverflow.ellipsis,
-            color: ThemeColors.of(context).textSecondary,
+            color: colors.textSecondary,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -1048,13 +1055,14 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildDetailItem(String label, String value, IconData icon) {
+    final colors = ThemeColors.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(
           icon,
           size: AppSizes.iconSmall.get(isMobile, isTablet),
-          color: ThemeColors.of(context).primary,
+          color: colors.primary,
         ),
         SizedBox(
           height: AppSizes.spacingXxsAlt.get(isMobile, isTablet),
@@ -1080,7 +1088,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               mobileFontSize: 9,
             ),
           overflow: TextOverflow.ellipsis,
-            color: ThemeColors.of(context).textSecondary,
+            color: colors.textSecondary,
           ),
         ),
       ],
@@ -1088,6 +1096,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   void _verDetalhesCompletos(SyncHistoryEntry log) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
     final logColor = log.color;
     final logIcon = log.iconData;
@@ -1140,11 +1149,11 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
               _buildInfoRow('Data/Hora:', log.formattedDate),
               _buildInfoRow('Tipo:', log.type.label),
               _buildInfoRow('Status:', log.status.label),
-              _buildInfoRow('Usu?rio:', log.executedBy ?? 'Sistema'),
+              _buildInfoRow('Usuário:', log.executedBy ?? 'Sistema'),
               _buildInfoRow('Produtos:', '${log.productsCount}'),
               _buildInfoRow('Tags:', '${log.tagsCount}'),
               _buildInfoRow('Erros:', '${log.errorCount}'),
-              _buildInfoRow('Dura??o:', log.durationFormatted),
+              _buildInfoRow('DurAção:', log.durationFormatted),
               SizedBox(
                 height: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
@@ -1162,21 +1171,21 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).textPrimary,
+                  color: colors.textPrimary,
                 ),
               ),
               SizedBox(
                 height: AppSizes.spacingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                log.details ?? 'Nenhum detalhe dispon?vel.',
+                log.details ?? 'Nenhum detalhe disponível.',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     dialogContext,
                     baseFontSize: 12,
                     mobileFontSize: 11,
                   ),
-                  color: ThemeColors.of(context).textSecondary,
+                  color: colors.textSecondary,
                 ),
               ),
               if (log.errors.isNotEmpty) ...[
@@ -1196,7 +1205,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                       mobileFontSize: 11,
                     ),
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.of(context).error,
+                    color: colors.error,
                   ),
                 ),
                 SizedBox(
@@ -1212,7 +1221,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                       Icon(
                         Icons.error_outline_rounded,
                         size: AppSizes.iconTiny.get(isMobile, isTablet),
-                        color: ThemeColors.of(context).error,
+                        color: colors.error,
                       ),
                       SizedBox(
                         width: AppSizes.spacingXs.get(isMobile, isTablet),
@@ -1226,7 +1235,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                               baseFontSize: 11,
                               mobileFontSize: 10,
                             ),
-                            color: ThemeColors.of(context).textSecondary,
+                            color: colors.textSecondary,
                           ),
                         ),
                       ),
@@ -1258,6 +1267,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   Widget _buildInfoRow(String label, String value) {
+    final colors = ThemeColors.of(context);
     return Padding(
       padding: EdgeInsets.only(
         bottom: AppSizes.spacingXsAlt2.get(isMobile, isTablet),
@@ -1274,7 +1284,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
                 mobileFontSize: 11,
               ),
             overflow: TextOverflow.ellipsis,
-              color: ThemeColors.of(context).textSecondary,
+              color: colors.textSecondary,
             ),
           ),
           Text(
@@ -1295,6 +1305,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   void _exportarLogIndividual(SyncHistoryEntry log) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1304,7 +1315,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
           children: [
             Icon(
               Icons.download_rounded,
-              color: ThemeColors.of(context).surface,
+              color: colors.surface,
               size: AppSizes.iconSmallMediumAlt.get(isMobile, isTablet),
             ),
             SizedBox(
@@ -1342,6 +1353,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
   }
 
   void _exportarLog() async {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1351,7 +1363,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
           children: [
             Icon(
               Icons.download_rounded,
-              color: ThemeColors.of(context).surface,
+              color: colors.surface,
               size: AppSizes.iconSmallMediumAlt.get(isMobile, isTablet),
             ),
             SizedBox(
@@ -1370,7 +1382,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).primary,
+        backgroundColor: colors.primary,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
@@ -1385,7 +1397,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
       ),
     );
 
-    // Gerar dados do log para exporta??o
+    // Gerar dados do log para exportAção
     final syncState = ref.read(syncProvider);
     final history = syncState.history;
     
@@ -1393,30 +1405,30 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Nenhum log dispon?vel para exportar'),
-          backgroundColor: ThemeColors.of(context).warningIcon,
+          content: const Text('Nenhum log disponível para exportar'),
+          backgroundColor: colors.warningIcon,
         ),
       );
       return;
     }
     
-    // Converter hist?rico para texto
+    // Converter histórico para texto
     final buffer = StringBuffer();
-    buffer.writeln('=== LOG DE SINCRONIZA??O TAGBEAN ===');
+    buffer.writeln('=== LOG DE SINCRONIZAããO TAGBEAN ===');
     buffer.writeln('Gerado em: ${DateTime.now().toString()}');
     buffer.writeln('Total de registros: ${history.length}');
     buffer.writeln('');
     
     for (final entry in history) {
-      buffer.writeln('--- Sincroniza??o ${entry.id} ---');
+      buffer.writeln('--- Sincronização ${entry.id} ---');
       buffer.writeln('Tipo: ${entry.type.name}');
       buffer.writeln('Status: ${entry.status.name}');
       buffer.writeln('Iniciado: ${entry.startedAt}');
-      buffer.writeln('Conclu?do: ${entry.completedAt}');
+      buffer.writeln('Concluãdo: ${entry.completedAt}');
       buffer.writeln('Tags: ${entry.tagsCount}');
       buffer.writeln('Sucesso: ${entry.successCount}');
       buffer.writeln('Erros: ${entry.errorCount}');
-      buffer.writeln('Dura??o: ${entry.duration?.inSeconds ?? 0}s');
+      buffer.writeln('DurAção: ${entry.duration?.inSeconds ?? 0}s');
       buffer.writeln('');
     }
     
@@ -1435,7 +1447,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
           children: [
             Icon(
               Icons.check_circle_rounded,
-              color: ThemeColors.of(context).surface,
+              color: colors.surface,
               size: AppSizes.iconSmallMediumAlt.get(isMobile, isTablet),
             ),
             SizedBox(
@@ -1454,7 +1466,7 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).success,
+        backgroundColor: colors.success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
@@ -1470,8 +1482,6 @@ class _SincronizacaoLogScreenState extends ConsumerState<SincronizacaoLogScreen>
     );
   }
 }
-
-
 
 
 

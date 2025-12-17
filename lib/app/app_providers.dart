@@ -1,16 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/services/navigation_service.dart';
-// import '../core/services/feedback_service.dart'; // ❌ DESATIVADO - Arquivo removido da arquitetura
+import '../core/services/feedback_service.dart';
 import '../core/storage/storage_service.dart';
 
 // =============================================================================
-// PROVIDERS GLOBAIS DA APLICAÇÃO
+// PROVIDERS GLOBAIS DA APLICAÇÀO
 // =============================================================================
 
-/// Provider do serviço de armazenamento local (SharedPreferences)
-/// 
-/// Responsável por: Persitência de dados locais (preferências do usuário, cache, etc)
+/// Provider do serviço de armazenamento local
 /// 
 /// Uso:
 /// ```dart
@@ -22,56 +20,47 @@ final storageServiceProvider = Provider<StorageService>((ref) {
 });
 
 // =============================================================================
-// ESTADO GLOBAL DA APLICAÇÃO
+// ESTADO GLOBAL DA APLICAÇÀO
 // =============================================================================
 
 /// Provider de estado de conexão de rede
-/// Rastreia se o app está online ou offline
 final isOnlineProvider = StateProvider<bool>((ref) => true);
 
 /// Provider de estado de carregamento global
-/// Usado para mostrar/esconder indicador de progresso em toda a app
 final globalLoadingProvider = StateProvider<bool>((ref) => false);
 
 /// Provider de mensagem de carregamento global
-/// Exibe mensagem customizada durante operações longas
 final globalLoadingMessageProvider = StateProvider<String?>((ref) => null);
 
 // =============================================================================
-// PROVIDERS DE INICIALIZAÇÃO
+// PROVIDERS DE INICIALIZAÇÀO
 // =============================================================================
 
-/// Provider que indica se o app foi inicializado com sucesso
-/// Usado para evitar múltiplas inicializações
+/// Provider que indica se o app foi inicializado
 final appInitializedProvider = StateProvider<bool>((ref) => false);
 
 /// Provider de erro de inicialização
-/// Armazena qualquer erro que ocorra durante o boot da aplicação
 final appInitErrorProvider = StateProvider<String?>((ref) => null);
 
 // =============================================================================
-// HELPERS - EXTENSÕES PARA ACESSO FACILITADO
+// HELPERS
 // =============================================================================
 
-/// ExtensÃ£o para facilitar acesso aos providers globais em Widgets
-/// 
-/// Exemplo de uso:
-/// ```dart
-/// ref.navigator.push('/dashboard');
-/// ref.storage.getString('key');
-/// ref.showGlobalLoading('Carregando...');
-/// ```
+/// Extensão para facilitar acesso aos providers globais
 extension GlobalProvidersRef on WidgetRef {
-  /// Obtém o NavigationService para gerenciar navegação
+  /// Obtém o NavigationService
   NavigationService get navigator => read(navigationServiceProvider);
 
-  /// Obtém o StorageService para persistência de dados
+  /// Obtém o FeedbackService
+  FeedbackService get feedback => read(feedbackServiceProvider);
+
+  /// Obtém o StorageService
   StorageService get storage => read(storageServiceProvider);
 
-  /// Verifica se o app está online
+  /// Verifica se está online
   bool get isOnline => watch(isOnlineProvider);
 
-  /// Exibe loading global com mensagem opcional
+  /// Exibe loading global
   void showGlobalLoading([String? message]) {
     read(globalLoadingProvider.notifier).state = true;
     read(globalLoadingMessageProvider.notifier).state = message;
@@ -84,21 +73,15 @@ extension GlobalProvidersRef on WidgetRef {
   }
 }
 
-/// ExtensÃ£o para Ref (usado dentro de providers)
-/// 
-/// Permite acesso aos serviços globais dentro de providers
-/// Exemplo:
-/// ```dart
-/// final myProvider = StateNotifierProvider((ref) {
-///   ref.navigator.push('/home');
-///   return MyStateNotifier();
-/// });
-/// ```
+/// Extensão para Ref (usado em providers)
 extension GlobalProvidersRefProvider on Ref {
-  /// Obtém o NavigationService para gerenciar navegação
+  /// Obtém o NavigationService
   NavigationService get navigator => read(navigationServiceProvider);
 
-  /// Obtém o StorageService para persistência de dados
+  /// Obtém o FeedbackService
+  FeedbackService get feedback => read(feedbackServiceProvider);
+
+  /// Obtém o StorageService
   StorageService get storage => read(storageServiceProvider);
 }
 

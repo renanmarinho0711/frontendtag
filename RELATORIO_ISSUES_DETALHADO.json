@@ -1,0 +1,603 @@
+{
+  "resumoGeral": {
+    "totalIssues": 1993,
+    "errors": 1716,
+    "warnings": 0,
+    "info": 277,
+    "percentualErrors": "86.1%",
+    "percentualWarnings": "0.0%",
+    "percentualInfo": "13.9%"
+  },
+  "top15ArquivosComIssues": [
+    {
+      "arquivo": "features/import_export/data/models/import_export_models.dart",
+      "totalIssues": 196,
+      "distribuicao": {
+        "errors": 196,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 196
+        }
+      ]
+    },
+    {
+      "arquivo": "modules/dashboard/presentation/screens/dashboard_screen.dart",
+      "totalIssues": 108,
+      "distribuicao": {
+        "errors": 80,
+        "warnings": 0,
+        "infos": 28
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 25
+        },
+        {
+          "codigo": "deprecated_member_use",
+          "ocorrencias": 24
+        },
+        {
+          "codigo": "const_eval_method_invocation",
+          "ocorrencias": 20
+        },
+        {
+          "codigo": "implicit_this_reference_in_initializer",
+          "ocorrencias": 19
+        },
+        {
+          "codigo": "undefined_identifier",
+          "ocorrencias": 4
+        }
+      ]
+    },
+    {
+      "arquivo": "modules/products/presentation/screens/products_list_screen.dart",
+      "totalIssues": 59,
+      "distribuicao": {
+        "errors": 42,
+        "warnings": 0,
+        "infos": 17
+      },
+      "topCodigos": [
+        {
+          "codigo": "use_build_context_synchronously",
+          "ocorrencias": 17
+        },
+        {
+          "codigo": "undefined_method",
+          "ocorrencias": 16
+        },
+        {
+          "codigo": "expected_token",
+          "ocorrencias": 11
+        },
+        {
+          "codigo": "extra_positional_arguments_could_be_named",
+          "ocorrencias": 8
+        },
+        {
+          "codigo": "invocation_of_non_function_expression",
+          "ocorrencias": 4
+        }
+      ]
+    },
+    {
+      "arquivo": "features/strategies/data/providers/calendar_provider.dart",
+      "totalIssues": 54,
+      "distribuicao": {
+        "errors": 54,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 54
+        }
+      ]
+    },
+    {
+      "arquivo": "features/strategies/data/providers/visual_provider.dart",
+      "totalIssues": 49,
+      "distribuicao": {
+        "errors": 49,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 49
+        }
+      ]
+    },
+    {
+      "arquivo": "features/strategies/data/repositories/strategies_repository.dart",
+      "totalIssues": 48,
+      "distribuicao": {
+        "errors": 48,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 48
+        }
+      ]
+    },
+    {
+      "arquivo": "features/strategies/data/providers/cross_selling_provider.dart",
+      "totalIssues": 44,
+      "distribuicao": {
+        "errors": 44,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 44
+        }
+      ]
+    },
+    {
+      "arquivo": "modules/dashboard/presentation/widgets/navigation/dashboard_navigation_rail.dart",
+      "totalIssues": 43,
+      "distribuicao": {
+        "errors": 43,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "const_eval_method_invocation",
+          "ocorrencias": 20
+        },
+        {
+          "codigo": "undefined_identifier",
+          "ocorrencias": 20
+        },
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 3
+        }
+      ]
+    },
+    {
+      "arquivo": "modules/categories/presentation/screens/category_products_screen.dart",
+      "totalIssues": 39,
+      "distribuicao": {
+        "errors": 39,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 34
+        },
+        {
+          "codigo": "const_eval_method_invocation",
+          "ocorrencias": 3
+        },
+        {
+          "codigo": "invalid_assignment",
+          "ocorrencias": 1
+        },
+        {
+          "codigo": "const_eval_method_invocationwarning",
+          "ocorrencias": 1
+        }
+      ]
+    },
+    {
+      "arquivo": "modules/categories/presentation/screens/categories_stats_screen.dart",
+      "totalIssues": 35,
+      "distribuicao": {
+        "errors": 35,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 20
+        },
+        {
+          "codigo": "non_bool_condition",
+          "ocorrencias": 10
+        },
+        {
+          "codigo": "return_of_invalid_type_from_closure",
+          "ocorrencias": 2
+        },
+        {
+          "codigo": "undefined_identifier",
+          "ocorrencias": 1
+        },
+        {
+          "codigo": "non_bool_conditionwarning",
+          "ocorrencias": 1
+        }
+      ]
+    },
+    {
+      "arquivo": "features/strategies/data/providers/performance_provider.dart",
+      "totalIssues": 32,
+      "distribuicao": {
+        "errors": 32,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 32
+        }
+      ]
+    },
+    {
+      "arquivo": "features/import_export/presentation/screens/batch_operations_screen.dart",
+      "totalIssues": 31,
+      "distribuicao": {
+        "errors": 25,
+        "warnings": 0,
+        "infos": 6
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 24
+        },
+        {
+          "codigo": "use_build_context_synchronously",
+          "ocorrencias": 6
+        },
+        {
+          "codigo": "non_bool_condition",
+          "ocorrencias": 1
+        }
+      ]
+    },
+    {
+      "arquivo": "features/reports/presentation/providers/reports_provider.dart",
+      "totalIssues": 31,
+      "distribuicao": {
+        "errors": 31,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 31
+        }
+      ]
+    },
+    {
+      "arquivo": "features/products/data/models/product_tag_model.dart",
+      "totalIssues": 30,
+      "distribuicao": {
+        "errors": 30,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 30
+        }
+      ]
+    },
+    {
+      "arquivo": "modules/products/data/models/product_tag_model.dart",
+      "totalIssues": 30,
+      "distribuicao": {
+        "errors": 30,
+        "warnings": 0,
+        "infos": 0
+      },
+      "topCodigos": [
+        {
+          "codigo": "argument_type_not_assignable",
+          "ocorrencias": 30
+        }
+      ]
+    }
+  ],
+  "padroesMaisComuns": [
+    {
+      "padrao": "argument_type_not_assignable",
+      "totalOcorrencias": 1208,
+      "percentual": "60.6%",
+      "distribuicao": {
+        "errors": 1208,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/dashboard/presentation/widgets/compact_metrics_grid.dart:460:30 | The argument type 'dynamic' can't be assigned to the parameter type 'C"
+    },
+    {
+      "padrao": "use_build_context_synchronously",
+      "totalOcorrencias": 161,
+      "percentual": "8.1%",
+      "distribuicao": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 161
+      },
+      "exemplo": "  features/categories/presentation/screens/categories_admin_screen.dart:1094:29 | Don't use 'BuildContext's across async gaps"
+    },
+    {
+      "padrao": "undefined_identifier",
+      "totalOcorrencias": 118,
+      "percentual": "5.9%",
+      "distribuicao": {
+        "errors": 118,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/dashboard/presentation/widgets/estrategias_lucro_card.dart:93:28 | Undefined name 'estrat├®giasData'"
+    },
+    {
+      "padrao": "const_eval_method_invocation",
+      "totalOcorrencias": 106,
+      "percentual": "5.3%",
+      "distribuicao": {
+        "errors": 106,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/pricing/presentation/screens/ai_suggestions_screen.dart:1234:47 | Methods can't be invoked in constant expressions"
+    },
+    {
+      "padrao": "deprecated_member_use",
+      "totalOcorrencias": 59,
+      "percentual": "3.0%",
+      "distribuicao": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 59
+      },
+      "exemplo": "  core/utils/web_utils_web.dart:2:1 | 'dart:html' is deprecated and shouldn't be used. Use package:web and d"
+    },
+    {
+      "padrao": "undefined_method",
+      "totalOcorrencias": 45,
+      "percentual": "2.3%",
+      "distribuicao": {
+        "errors": 45,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  app/app.dart:75:12 | The method 'ThemeColors' isn't defined for the type 'TagBeanApp'"
+    },
+    {
+      "padrao": "non_bool_condition",
+      "totalOcorrencias": 41,
+      "percentual": "2.1%",
+      "distribuicao": {
+        "errors": 41,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/dashboard/presentation/widgets/compact_metrics_grid.dart:370:19 | Conditions must have a static type of 'bool'"
+    },
+    {
+      "padrao": "implicit_this_reference_in_initializer",
+      "totalOcorrencias": 32,
+      "percentual": "1.6%",
+      "distribuicao": {
+        "errors": 32,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  modules/categories/presentation/screens/category_add_screen.dart:26:42 | The instance member 'context' can't be accessed in an initializer"
+    },
+    {
+      "padrao": "deprecated_member_use_from_same_package",
+      "totalOcorrencias": 29,
+      "percentual": "1.5%",
+      "distribuicao": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 29
+      },
+      "exemplo": "  features/auth/data/models/user_model.dart:55:11 | 'storeId' is deprecated and shouldn't be used. Use availableStores par"
+    },
+    {
+      "padrao": "expected_token",
+      "totalOcorrencias": 26,
+      "percentual": "1.3%",
+      "distribuicao": {
+        "errors": 26,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/dashboard/presentation/widgets/compact_metrics_grid.dart:404:20 | Expected to find ':'"
+    },
+    {
+      "padrao": "undefined_getter",
+      "totalOcorrencias": 17,
+      "percentual": "0.9%",
+      "distribuicao": {
+        "errors": 17,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/settings/presentation/screens/notifications_screen_backup.dart:488:54 | The getter 'purpleMaterial' isn't defined for the type 'ThemeColorsDat"
+    },
+    {
+      "padrao": "argument_type_not_assignablewarning",
+      "totalOcorrencias": 16,
+      "percentual": "0.8%",
+      "distribuicao": {
+        "errors": 16,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/dashboard/presentation/widgets/navigation/dashboard_mobile_bottom_nav.dart:95:19 | The argument type 'dynamic' can't be assigned to the parameter type 'S"
+    },
+    {
+      "padrao": "extra_positional_arguments_could_be_named",
+      "totalOcorrencias": 16,
+      "percentual": "0.8%",
+      "distribuicao": {
+        "errors": 16,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  modules/categories/presentation/screens/categories_list_screen.dart:163:54 | Too many positional arguments: 0 expected, but 1 found"
+    },
+    {
+      "padrao": "use_build_context_synchronouslywarning",
+      "totalOcorrencias": 14,
+      "percentual": "0.7%",
+      "distribuicao": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 14
+      },
+      "exemplo": "  features/categories/presentation/screens/categories_admin_screen.dart:1166:51 | Don't use 'BuildContext's across async gaps"
+    },
+    {
+      "padrao": "illegal_character",
+      "totalOcorrencias": 14,
+      "percentual": "0.7%",
+      "distribuicao": {
+        "errors": 14,
+        "warnings": 0,
+        "infos": 0
+      },
+      "exemplo": "  features/dashboard/presentation/widgets/estrategias_lucro_card.dart:93:34 | Illegal character '233'"
+    }
+  ],
+  "diretoriosComMaisIssues": [
+    {
+      "diretorio": "features/strategies",
+      "totalIssues": 324,
+      "percentual": "16.3%"
+    },
+    {
+      "diretorio": "modules/products",
+      "totalIssues": 292,
+      "percentual": "14.7%"
+    },
+    {
+      "diretorio": "features/import_export",
+      "totalIssues": 283,
+      "percentual": "14.2%"
+    },
+    {
+      "diretorio": "features/products",
+      "totalIssues": 219,
+      "percentual": "11.0%"
+    },
+    {
+      "diretorio": "modules/dashboard",
+      "totalIssues": 209,
+      "percentual": "10.5%"
+    },
+    {
+      "diretorio": "features/settings",
+      "totalIssues": 167,
+      "percentual": "8.4%"
+    },
+    {
+      "diretorio": "modules/categories",
+      "totalIssues": 145,
+      "percentual": "7.3%"
+    },
+    {
+      "diretorio": "features/reports",
+      "totalIssues": 110,
+      "percentual": "5.5%"
+    },
+    {
+      "diretorio": "features/tags",
+      "totalIssues": 96,
+      "percentual": "4.8%"
+    },
+    {
+      "diretorio": "features/pricing",
+      "totalIssues": 69,
+      "percentual": "3.5%"
+    },
+    {
+      "diretorio": "features/dashboard",
+      "totalIssues": 30,
+      "percentual": "1.5%"
+    },
+    {
+      "diretorio": "shared",
+      "totalIssues": 13,
+      "percentual": "0.7%"
+    },
+    {
+      "diretorio": "features/categories",
+      "totalIssues": 12,
+      "percentual": "0.6%"
+    },
+    {
+      "diretorio": "features/sync",
+      "totalIssues": 11,
+      "percentual": "0.6%"
+    },
+    {
+      "diretorio": "features/auth",
+      "totalIssues": 8,
+      "percentual": "0.4%"
+    },
+    {
+      "diretorio": "app",
+      "totalIssues": 2,
+      "percentual": "0.1%"
+    },
+    {
+      "diretorio": "design_system",
+      "totalIssues": 2,
+      "percentual": "0.1%"
+    },
+    {
+      "diretorio": "core",
+      "totalIssues": 1,
+      "percentual": "0.1%"
+    }
+  ],
+  "recomendacoes": [
+    "🔴 CRÍTICO: 1716 erros impedem compilação (86.1% de 1993)",
+    "🟡 MEDIUM: 0 warnings degradam qualidade (0.0%)",
+    "🔵 LOW: 277 infos sobre deprecações/boas práticas (13.9%)",
+    "",
+    "📊 CONCENTRAÇÃO GEOGRÁFICA:",
+    "  🎯 Principal: features/strategies com 324 issues (16.3%)",
+    "  🎯 Secundário: modules/products com 292 issues (14.7%)",
+    "  🎯 Terciário: features/import_export com 283 issues (14.2%)",
+    "",
+    "⚡ PADRÕES CRÍTICOS DETECTADOS:",
+    "  1️⃣ 'argument_type_not_assignable' = 1208 × (60.6%)",
+    "  2️⃣ 'use_build_context_synchronously' = 161 × (8.1%)",
+    "  3️⃣ 'undefined_identifier' = 118 × (5.9%)",
+    "",
+    "🎯 AÇÕES IMEDIATAS (Ordem de Impacto):",
+    "  ① TIPAGEM: 'argument_type_not_assignable' → Converter dynamic em tipos específicos",
+    "  ② UNDEFINED: Resolver undefined_identifier em widgets → Check imports & scope",
+    "  ③ ENCODING: Caracteres especiais em nomes → UTF-8 validation",
+    "  ④ CONST: const_eval_method_invocation → Late init ou refactoring",
+    "  ⑤ IMPORTS: Circular dependencies → Restructure arquitetura",
+    "",
+    "📈 PLANO DE LONGO PRAZO:",
+    "  • Implementar Riverpod/Provider com type-safety",
+    "  • Adicionar strict linting rules (analysis_options.yaml)",
+    "  • Refatorar models com freezed/json_serializable",
+    "  • Code generation para eliminar boilerplate",
+    "  • Testes unitários para type safety",
+    "  • CI/CD com análise automática antes do merge"
+  ]
+}

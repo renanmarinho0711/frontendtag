@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Widget de área de escaneamento QR/NFC
 /// Área visual onde o usuário deve posicionar o código
 /// 
@@ -192,7 +191,7 @@ class QrScanArea extends StatelessWidget {
                   valueColor: AlwaysStoppedAnimation(ThemeColors.of(context).surface),
                 ),
               ),
-              SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 'Escaneando...',
                 style: TextStyle(

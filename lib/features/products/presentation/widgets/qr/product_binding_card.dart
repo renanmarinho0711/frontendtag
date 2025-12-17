@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
 /// Card de produto para lista de pendentes/vinculados
@@ -29,12 +28,12 @@ class ProductBindingCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isPendente 
-            ? ThemeColors.of(context).warningLight
-            : ThemeColors.of(context).successLight,
+            ? ThemeColors.of(context).warning.withValues(alpha: 0.3)
+            : ThemeColors.of(context).success.withValues(alpha: 0.3),
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -52,11 +51,11 @@ class ProductBindingCard extends StatelessWidget {
                 // Imagem do produto
                 _buildProductImage(context),
                 const SizedBox(width: AppSpacing.lg),
-                // Informa��es
+                // Informações
                 Expanded(
                   child: _buildProductInfo(context),
                 ),
-                // A��es
+                // Ações
                 _buildActions(context),
               ],
             ),
@@ -71,7 +70,7 @@ class ProductBindingCard extends StatelessWidget {
       width: 60,
       height: 60,
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: ThemeColors.of(context).border),
       ),
@@ -114,7 +113,7 @@ class ProductBindingCard extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: AppSpacing.xs),
-        // C�digo
+        // Cãdigo
         Row(
           children: [
             Icon(
@@ -133,7 +132,7 @@ class ProductBindingCard extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AppSpacing.xs),
-        // Pre�o ou Tag
+        // PREÇO ou Tag
         if (isPendente)
           _buildPriceChip(context)
         else
@@ -146,7 +145,7 @@ class ProductBindingCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).brandPrimaryGreenLight,
+        color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(
@@ -164,7 +163,7 @@ class ProductBindingCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).successLight,
+        color: ThemeColors.of(context).success.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -194,7 +193,7 @@ class ProductBindingCard extends StatelessWidget {
       return IconButton(
         onPressed: onBindTag,
         style: IconButton.styleFrom(
-          backgroundColor: ThemeColors.of(context).brandPrimaryGreenLight,
+          backgroundColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -209,7 +208,7 @@ class ProductBindingCard extends StatelessWidget {
       return IconButton(
         onPressed: onUnbindTag,
         style: IconButton.styleFrom(
-          backgroundColor: ThemeColors.of(context).warningLight,
+          backgroundColor: ThemeColors.of(context).warning.withValues(alpha: 0.1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -223,8 +222,6 @@ class ProductBindingCard extends StatelessWidget {
     }
   }
 }
-
-
 
 
 

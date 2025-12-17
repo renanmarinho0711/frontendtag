@@ -11,7 +11,7 @@ enum RecentTagStatus {
   bateriaBaixa,
 }
 
-/// Tag recente para exibi??o
+/// Tag recente para exibição
 class RecentTagItem {
   final String id;
   final String nfcId;
@@ -103,7 +103,7 @@ class RecentTagsCard extends StatelessWidget {
 
           // Lista de tags
           if (recentTags.isEmpty)
-            _buildEmptyState(isMobile)
+            _buildEmptyState(context, isMobile)
           else
             ...recentTags.take(5).map((tag) => Padding(
               padding: const EdgeInsets.only(bottom: 8),
@@ -114,7 +114,7 @@ class RecentTagsCard extends StatelessWidget {
     );
   }
 
-  Widget _buildEmptyState(bool isMobile) {
+  Widget _buildEmptyState(BuildContext context, bool isMobile) {
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
@@ -151,17 +151,17 @@ class RecentTagsCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(isMobile ? 10 : 12),
           decoration: BoxDecoration(
-            color: statusColorLight,
+            color: statusColor.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: statusColorLight),
+            border: Border.all(color: statusColor.withValues(alpha: 0.15)),
           ),
           child: Row(
             children: [
-              // ?cone NFC
+              // ícone NFC
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: statusColorLight,
+                  color: statusColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -198,7 +198,7 @@ class RecentTagsCard extends StatelessWidget {
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: statusColorLight,
+                            color: statusColor.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
@@ -317,14 +317,12 @@ class RecentTagsCard extends StatelessWidget {
     final difference = now.difference(dateTime);
 
     if (difference.inMinutes < 1) return 'Agora';
-    if (difference.inMinutes < 60) return '${difference.inMinutes}min atr?s';
-    if (difference.inHours < 24) return '${difference.inHours}h? atr?s';
-    if (difference.inDays < 7) return '${difference.inDays}d atr?s';
+    if (difference.inMinutes < 60) return '${difference.inMinutes}min atrãs';
+    if (difference.inHours < 24) return '${difference.inHours}hã atrãs';
+    if (difference.inDays < 7) return '${difference.inDays}d atrãs';
     return '${dateTime.day}/${dateTime.month}';
   }
 }
-
-
 
 
 

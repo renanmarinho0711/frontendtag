@@ -142,7 +142,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
         title: Row(
           children: [
             Container(
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 color: (isTag ? AppThemeColors.blueMaterial : AppThemeColors.blueCyan).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
@@ -152,7 +152,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                 color: isTag ? AppThemeColors.blueMaterial : AppThemeColors.blueCyan,
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Text(isTag ? 'Inserir Tag' : 'Inserir Código'),
           ],
         ),
@@ -272,7 +272,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           mainAxisSize: MainAxisSize.min,
           children: [
             const CircularProgressIndicator(),
-            SizedBox(height: AppSpacing.lg),
+            const SizedBox(height: AppSpacing.lg),
             Text(message, textAlign: TextAlign.center),
           ],
         ),
@@ -292,14 +292,14 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
         title: Row(
           children: [
             Container(
-              padding: EdgeInsets.all(AppSpacing.sm),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 color: AppThemeColors.success.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Icon(Icons.cloud_download_rounded, color: AppThemeColors.success),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             const Expanded(child: Text('Produto Encontrado!')),
           ],
         ),
@@ -330,31 +330,31 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                     ),
                   ),
                 ),
-              SizedBox(height: AppSpacing.lg),
+              const SizedBox(height: AppSpacing.lg),
               
               // Nome
               Text(
                 globalProduct.name,
                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
-              SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: AppSpacing.sm),
               
               // Código
               Row(
                 children: [
                   const Icon(Icons.qr_code_rounded, size: 16, color: AppThemeColors.grey500),
-                  SizedBox(width: AppSpacing.xs),
+                  const SizedBox(width: AppSpacing.xs),
                   Text(globalProduct.gtin, style: const TextStyle(color: AppThemeColors.grey600)),
                 ],
               ),
               
               // Marca
               if (globalProduct.brand != null) ...[
-                SizedBox(height: AppSpacing.xs),
+                const SizedBox(height: AppSpacing.xs),
                 Row(
                   children: [
                     const Icon(Icons.business_rounded, size: 16, color: AppThemeColors.grey500),
-                    SizedBox(width: AppSpacing.xs),
+                    const SizedBox(width: AppSpacing.xs),
                     Text(globalProduct.brand!, style: const TextStyle(color: AppThemeColors.grey600)),
                   ],
                 ),
@@ -362,11 +362,11 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               
               // Categoria
               if (globalProduct.category != null) ...[
-                SizedBox(height: AppSpacing.xs),
+                const SizedBox(height: AppSpacing.xs),
                 Row(
                   children: [
                     const Icon(Icons.category_rounded, size: 16, color: AppThemeColors.grey500),
-                    SizedBox(width: AppSpacing.xs),
+                    const SizedBox(width: AppSpacing.xs),
                     Text(globalProduct.category!, style: const TextStyle(color: AppThemeColors.grey600)),
                   ],
                 ),
@@ -376,7 +376,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               
               // Campo de preço
               const Text('Defina o preço para sua loja:', style: TextStyle(fontWeight: FontWeight.w500)),
-              SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: AppSpacing.sm),
               TextField(
                 controller: precoController,
                 keyboardType: const TextInputType.numberWithOptions(decimal: true),
@@ -387,19 +387,19 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                 ),
               ),
               
-              SizedBox(height: AppSpacing.md),
+              const SizedBox(height: AppSpacing.md),
               Container(
-                padding: EdgeInsets.all(AppSpacing.md),
+                padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
                   color: AppThemeColors.info.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: AppThemeColors.info.withValues(alpha: 0.3)),
                 ),
-                child: Row(
+                child: const Row(
                   children: [
-                    const Icon(Icons.info_outline_rounded, size: 20, color: AppThemeColors.info),
+                    Icon(Icons.info_outline_rounded, size: 20, color: AppThemeColors.info),
                     SizedBox(width: AppSpacing.sm),
-                    const Expanded(
+                    Expanded(
                       child: Text(
                         'Este produto será adicionado ao seu catálogo local.',
                         style: TextStyle(fontSize: 12, color: AppThemeColors.info),
@@ -443,8 +443,8 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
       if (storeId.isEmpty) {
         if (mounted) Navigator.of(context).pop();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('Erro: Nenhuma loja selecionada'),
+          const SnackBar(
+            content: Text('Erro: Nenhuma loja selecionada'),
             backgroundColor: AppThemeColors.redMain,
           ),
         );
@@ -470,7 +470,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               content: Row(
                 children: [
                   const Icon(Icons.check_circle_rounded, color: AppThemeColors.surface),
-                  SizedBox(width: AppSpacing.md),
+                  const SizedBox(width: AppSpacing.md),
                   Expanded(child: Text('${globalProduct.name} importado com sucesso!')),
                 ],
               ),
@@ -505,9 +505,9 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               'O código "$codigo" não foi encontrado na sua loja nem no catálogo global.',
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: AppSpacing.lg),
+            const SizedBox(height: AppSpacing.lg),
             Container(
-              padding: EdgeInsets.all(AppSpacing.md),
+              padding: const EdgeInsets.all(AppSpacing.md),
               decoration: BoxDecoration(
                 color: AppThemeColors.info.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
@@ -570,12 +570,12 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Row(
               children: [
-                const Icon(Icons.check_circle_rounded, color: AppThemeColors.surface),
+                Icon(Icons.check_circle_rounded, color: AppThemeColors.surface),
                 SizedBox(width: AppSpacing.md),
-                const Text('Vinculação realizada com sucesso!'),
+                Text('Vinculação realizada com sucesso!'),
               ],
             ),
             backgroundColor: AppThemeColors.success,
@@ -654,7 +654,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           content: Row(
             children: [
               const Icon(Icons.error_outline_rounded, color: AppThemeColors.surface),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               Expanded(child: Text(message)),
             ],
           ),
@@ -720,16 +720,16 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               backgroundColor: AppThemeColors.surfaceOverlay20,
             ),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Container(
-            padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
+            padding: const EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
             decoration: BoxDecoration(
               color: AppThemeColors.surfaceOverlay20,
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Icon(Icons.qr_code_scanner_rounded, color: AppThemeColors.surface, size: 24),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -742,7 +742,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                     color: AppThemeColors.surface,
                   ),
                 ),
-                Text(
+                const Text(
                   'Associar etiquetas eletrônicas',
                   style: TextStyle(
                     fontSize: 12,
@@ -758,7 +758,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
             label: 'Pendentes',
             color: AppThemeColors.warning,
           ),
-          SizedBox(width: AppSpacing.sm),
+          const SizedBox(width: AppSpacing.sm),
           _buildStatBadge(
             value: '${_produtosVinculados.length}',
             label: 'Vinculados',
@@ -788,7 +788,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           ),
           Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 10,
               color: AppThemeColors.surfaceOverlay80,
             ),
@@ -818,10 +818,10 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
         unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
         dividerColor: AppThemeColors.transparent,
         tabs: [
-          Tab(
+          const Tab(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Icon(Icons.qr_code_scanner_rounded, size: 18),
                 SizedBox(width: AppSpacing.xs),
                 Text('Escanear'),
@@ -833,7 +833,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(Icons.pending_actions_rounded, size: 18),
-                SizedBox(width: AppSpacing.xs),
+                const SizedBox(width: AppSpacing.xs),
                 Text('Pendentes (${_produtosPendentes.length})'),
               ],
             ),
@@ -843,7 +843,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(Icons.link_rounded, size: 18),
-                SizedBox(width: AppSpacing.xs),
+                const SizedBox(width: AppSpacing.xs),
                 Text('Vinculados (${_produtosVinculados.length})'),
               ],
             ),
@@ -859,12 +859,12 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
 
   Widget _buildTabEscanear() {
     return SingleChildScrollView(
-      padding: EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       child: Column(
         children: [
           // Indicador de progresso
           _buildProgressIndicator(),
-          SizedBox(height: AppSpacing.lg),
+          const SizedBox(height: AppSpacing.lg),
           // Conteúdo baseado no passo atual
           if (_step == 1) _buildStepScanTag(),
           if (_step == 2) _buildStepScanProduto(),
@@ -876,7 +876,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
 
   Widget _buildProgressIndicator() {
     return Container(
-      padding: EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         color: AppThemeColors.backgroundLight,
         borderRadius: BorderRadius.circular(16),
@@ -908,7 +908,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           ),
           child: Icon(icon, color: color, size: 20),
         ),
-        SizedBox(height: AppSpacing.xs),
+        const SizedBox(height: AppSpacing.xs),
         Text(
           label,
           style: TextStyle(
@@ -941,7 +941,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           icon: Icons.label_rounded,
           color: AppThemeColors.blueMaterial,
         ),
-        SizedBox(height: AppSpacing.lg),
+        const SizedBox(height: AppSpacing.lg),
         QrScanArea(
           isScanning: _scanning,
           hasCapture: _tagId != null,
@@ -967,10 +967,10 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           icon: Icons.inventory_2_rounded,
           color: AppThemeColors.blueCyan,
         ),
-        SizedBox(height: AppSpacing.sm),
+        const SizedBox(height: AppSpacing.sm),
         // Badge da tag capturada
         _buildCapturedBadge('Tag', _tagId ?? '', AppThemeColors.blueMaterial),
-        SizedBox(height: AppSpacing.lg),
+        const SizedBox(height: AppSpacing.lg),
         QrScanArea(
           isScanning: _scanning,
           hasCapture: _produto != null,
@@ -983,7 +983,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           onManualInput: () => _inserirManualmente(false),
           onOpenCamera: _abrirCameraProduto,
         ),
-        SizedBox(height: AppSpacing.lg),
+        const SizedBox(height: AppSpacing.lg),
         // Ou selecionar da lista
         OutlinedButton.icon(
           onPressed: () => _tabController.animateTo(1),
@@ -1015,7 +1015,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     required Color color,
   }) {
     return Container(
-      padding: EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
@@ -1024,21 +1024,21 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
+            padding: const EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 24),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppThemeColors.textPrimary,
@@ -1046,7 +1046,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
                 ),
                 Text(
                   subtitle,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 13,
                     color: AppThemeColors.textSecondary,
                   ),
@@ -1071,7 +1071,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.check_circle_rounded, color: color, size: 18),
-          SizedBox(width: AppSpacing.sm),
+          const SizedBox(width: AppSpacing.sm),
           Text(
             '$label: ',
             style: TextStyle(
@@ -1081,7 +1081,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
           ),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
               color: AppThemeColors.textPrimary,
@@ -1102,7 +1102,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     }
 
     return ListView.builder(
-      padding: EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       itemCount: _produtosPendentes.length,
       itemBuilder: (context, index) {
         final produto = _produtosPendentes[index];
@@ -1128,7 +1128,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     }
 
     return ListView.builder(
-      padding: EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       itemCount: _produtosVinculados.length,
       itemBuilder: (context, index) {
         final produto = _produtosVinculados[index];

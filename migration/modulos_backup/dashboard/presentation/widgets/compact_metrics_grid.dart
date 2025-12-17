@@ -1,8 +1,7 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 
@@ -92,7 +91,7 @@ class CompactMetricsGrid extends ConsumerWidget {
               padding: const EdgeInsets.only(bottom: 8),
               child: LinearProgressIndicator(
                 backgroundColor: AppThemeColors.blueMaterial.withValues(alpha: 0.1),
-                valueColor: AlwaysStoppedAnimation<Color>(AppThemeColors.blueMaterial),
+                valueColor: const AlwaysStoppedAnimation<Color>(AppThemeColors.blueMaterial),
               ),
             ),
           if (dashboardState.hasError)
@@ -100,7 +99,7 @@ class CompactMetricsGrid extends ConsumerWidget {
               padding: const EdgeInsets.only(bottom: 8),
               child: Text(
                 dashboardState.errorMessage ?? 'Erro ao carregar dados',
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppThemeColors.redMain,
                   fontSize: 11,
                 ),

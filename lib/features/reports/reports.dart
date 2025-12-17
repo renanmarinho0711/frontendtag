@@ -1,4 +1,4 @@
-// TagBean Reports Feature
+/// TagBean Reports Feature
 library reports;
 
 export 'presentation/screens/audit_report_screen.dart';

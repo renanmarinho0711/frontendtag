@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/pricing/data/models/pricing_models.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
@@ -25,11 +24,11 @@ class _PrecificacaoDinamicaScreenState
   DynamicPricingConfigModel get _config => _state.config;
   bool get _carregando => _state.status == LoadingStatus.loading;
   
-  /// Hist?rico de ajustes conectado ao provider
+  /// Histórico de ajustes conectado ao provider
   PricingHistoryState get _historyState => ref.watch(pricingHistoryProvider);
   List<PricingHistoryModel> get _historicoAjustes => _historyState.history.take(5).toList();
 
-  /// Calcula ajustes por tipo usando o hist?rico do backend
+  /// Calcula ajustes por tipo usando o histórico do backend
   int _getAjustesHojePorTipo(String tipo) {
     final hoje = DateTime.now();
     return _historyState.history.where((h) {
@@ -46,7 +45,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'competitividade',
       'nome': 'Competitividade',
-      'descricao': 'Ajusta pre?os baseado na concorr?ncia',
+      'descricao': 'Ajusta preços baseado na concorrência',
       'ativa': _config.considerarConcorrencia,
       'peso': 40,
       'cor': ThemeColors.of(context).primary,
@@ -56,7 +55,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'demanda',
       'nome': 'Demanda',
-      'descricao': 'Pre?os aumentam com alta procura',
+      'descricao': 'PREÇOs aumentam com alta procura',
       'ativa': _config.considerarDemanda,
       'peso': 30,
       'cor': ThemeColors.of(context).success,
@@ -66,7 +65,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'estoque',
       'nome': 'Estoque',
-      'descricao': 'Reduz pre?os para produtos parados',
+      'descricao': 'Reduz preços para produtos parados',
       'ativa': _config.ativo, // Usa status geral do dynamic pricing
       'peso': 20,
       'cor': ThemeColors.of(context).orangeMaterial,
@@ -76,7 +75,7 @@ class _PrecificacaoDinamicaScreenState
     {
       'id': 'sazonalidade',
       'nome': 'Sazonalidade',
-      'descricao': 'Considera ?pocas e eventos',
+      'descricao': 'Considera épocas e eventos',
       'ativa': _config.considerarSazonalidade,
       'peso': 10,
       'cor': ThemeColors.of(context).blueCyan,
@@ -142,7 +141,7 @@ class _PrecificacaoDinamicaScreenState
                         const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4),
                           child: Text(
-                            'Regras de Precifica??o',
+                            'Regras de Precificação',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -218,13 +217,13 @@ class _PrecificacaoDinamicaScreenState
             child: Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 22),
           ),
           const SizedBox(width: 10),
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Precifica??o Din?mica',
+                const Text(
+                  'Precificação Dinâmica',
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -232,7 +231,7 @@ class _PrecificacaoDinamicaScreenState
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'Ajustes autom?ticos',
+                  'Ajustes Automáticos',
                   style:
                       TextStyle(fontSize: 11, color: ThemeColors.of(context).textSecondary),
                   overflow: TextOverflow.ellipsis,
@@ -264,7 +263,7 @@ class _PrecificacaoDinamicaScreenState
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).greenTealLight,
+            color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -280,7 +279,7 @@ class _PrecificacaoDinamicaScreenState
                   color: ThemeColors.of(context).surfaceOverlay20,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.auto_graph_rounded,
                   color: ThemeColors.of(context).surface,
                   size: 28,
@@ -291,8 +290,8 @@ class _PrecificacaoDinamicaScreenState
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Sistema Autom?tico',
+                    Text(
+                      'Sistema Automãtico',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -316,7 +315,7 @@ class _PrecificacaoDinamicaScreenState
                 onChanged: (value) {
                   ref.read(dynamicPricingProvider.notifier).toggleAtivo();
                 },
-                activeColor: ThemeColors.of(context).surface,
+                activeThumbColor: ThemeColors.of(context).surface,
                 activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
               ),
             ],
@@ -405,10 +404,10 @@ class _PrecificacaoDinamicaScreenState
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTealLight,
+                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.settings_rounded,
                   color: ThemeColors.of(context).greenTeal,
                   size: 22,
@@ -416,7 +415,7 @@ class _PrecificacaoDinamicaScreenState
               ),
               const SizedBox(width: 12),
               const Text(
-                'Configura??es Gerais',
+                'Configurações Gerais',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -427,16 +426,16 @@ class _PrecificacaoDinamicaScreenState
           ),
           const SizedBox(height: 20),
 
-          // Margem M?nima
+          // Margem Mínima
           _buildConfigRow(
-            'Margem M?nima',
+            'Margem Mínima',
             '${_config.margemMinima.toStringAsFixed(0)}%',
           ),
           const SizedBox(height: 8),
 
-          // Margem M?xima
+          // Margem Mãxima
           _buildConfigRow(
-            'Margem M?xima',
+            'Margem Mãxima',
             '${_config.margemMaxima.toStringAsFixed(0)}%',
           ),
           const SizedBox(height: 16),
@@ -444,7 +443,7 @@ class _PrecificacaoDinamicaScreenState
           // Sensibilidade
           Row(
             children: [
-              const Icon(Icons.tune_rounded,
+              Icon(Icons.tune_rounded,
                   size: 22, color: ThemeColors.of(context).greenTeal),
               const SizedBox(width: 10),
               const Expanded(
@@ -457,7 +456,7 @@ class _PrecificacaoDinamicaScreenState
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTealLight,
+                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -491,9 +490,9 @@ class _PrecificacaoDinamicaScreenState
           const Divider(),
           const SizedBox(height: 16),
 
-          // Op??es
+          // Opções
           _buildSwitchOption(
-            'Respeitar Margem M?nima',
+            'Respeitar Margem Mínima',
             'Nunca reduzir abaixo da margem configurada',
             Icons.shield_rounded,
             _respeitarMargemMinima,
@@ -501,7 +500,7 @@ class _PrecificacaoDinamicaScreenState
           ),
           const SizedBox(height: 12),
           _buildSwitchOption(
-            'Notifica??es',
+            'Notificações',
             'Alertar sobre ajustes significativos',
             Icons.notifications_rounded,
             _notificacoes,
@@ -515,19 +514,19 @@ class _PrecificacaoDinamicaScreenState
   Widget _buildConfigRow(String label, String value) {
     return Row(
       children: [
-        const Icon(Icons.percent_rounded,
+        Icon(Icons.percent_rounded,
             size: 20, color: ThemeColors.of(context).greenTeal),
         const SizedBox(width: 10),
         Expanded(
           child: Text(
             label,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).greenTealLight,
+            color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
@@ -555,7 +554,7 @@ class _PrecificacaoDinamicaScreenState
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -574,7 +573,7 @@ class _PrecificacaoDinamicaScreenState
         Switch(
           value: value,
           onChanged: onChanged,
-          activeColor: ThemeColors.of(context).greenTeal,
+          activeThumbColor: ThemeColors.of(context).greenTeal,
         ),
       ],
     );
@@ -600,12 +599,12 @@ class _PrecificacaoDinamicaScreenState
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: (regra['cor'] as Color)Light,
+            color: (regra['cor'] as Color).withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (regra['cor'] as Color)Light,
+              color: (regra['cor'] as Color).withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 4),
             ),
@@ -640,7 +639,7 @@ class _PrecificacaoDinamicaScreenState
                     children: [
                       Text(
                         regra['nome'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           letterSpacing: -0.3,
@@ -664,7 +663,7 @@ class _PrecificacaoDinamicaScreenState
                       regra['ativa'] = value;
                     });
                   },
-                  activeColor: regra['cor'] as Color,
+                  activeThumbColor: regra['cor'] as Color,
                 ),
               ],
             ),
@@ -674,7 +673,7 @@ class _PrecificacaoDinamicaScreenState
               const SizedBox(height: 16),
               Row(
                 children: [
-                  const Icon(Icons.fitness_center_rounded,
+                  Icon(Icons.fitness_center_rounded,
                       size: 20, color: ThemeColors.of(context).textSecondary),
                   const SizedBox(width: 8),
                   const Text(
@@ -710,11 +709,11 @@ class _PrecificacaoDinamicaScreenState
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Row(
+                  Row(
                     children: [
                       Icon(Icons.flash_on_rounded,
                           size: 18, color: ThemeColors.of(context).textSecondary),
-                      SizedBox(width: 6),
+                      const SizedBox(width: 6),
                       Text(
                         'Ajustes hoje:',
                         style: TextStyle(
@@ -746,7 +745,7 @@ class _PrecificacaoDinamicaScreenState
   // ===========================================================================
 
   Widget _buildLoadingState() {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -754,9 +753,9 @@ class _PrecificacaoDinamicaScreenState
             valueColor:
                 AlwaysStoppedAnimation<Color>(ThemeColors.of(context).greenTeal),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
-            'Carregando configura??es...',
+            'Carregando configurações...',
             style: TextStyle(
               fontSize: 16,
               color: ThemeColors.of(context).textSecondary,
@@ -780,9 +779,9 @@ class _PrecificacaoDinamicaScreenState
 
   String _getSensibilidadeDescricao() {
     if (_sensibilidade <= 25) return 'Ajustes pequenos e cautelosos';
-    if (_sensibilidade <= 50) return 'Equil?brio entre cautela e agilidade';
-    if (_sensibilidade <= 75) return 'Ajustes r?pidos e significativos';
-    return 'Mudan?as r?pidas e grandes varia??es';
+    if (_sensibilidade <= 50) return 'Equilíbrio entre cautela e agilidade';
+    if (_sensibilidade <= 75) return 'Ajustes rápidos e significativos';
+    return 'Mudanãas Rápidas e grandes variações';
   }
 
   // ===========================================================================
@@ -798,7 +797,7 @@ class _PrecificacaoDinamicaScreenState
         height: MediaQuery.sizeOf(context).height * 0.7,
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
         ),
         child: Column(
           children: [
@@ -818,7 +817,7 @@ class _PrecificacaoDinamicaScreenState
                   Icon(Icons.history_rounded, size: 28),
                   SizedBox(width: 12),
                   Text(
-                    'Hist?rico de Ajustes',
+                    'Histórico de Ajustes',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -840,7 +839,7 @@ class _PrecificacaoDinamicaScreenState
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'Nenhum ajuste de pre?o registrado',
+                            'Nenhum ajuste de preço registrado',
                             style: TextStyle(
                               color: ThemeColors.of(context).textSecondary,
                               fontSize: 14,
@@ -879,7 +878,7 @@ class _PrecificacaoDinamicaScreenState
       decoration: BoxDecoration(
         color: ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: corLight),
+        border: Border.all(color: cor.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -889,7 +888,7 @@ class _PrecificacaoDinamicaScreenState
               Expanded(
                 child: Text(
                   produto,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
@@ -901,7 +900,7 @@ class _PrecificacaoDinamicaScreenState
                         AppSizes.extraSmallPadding.get(isMobile, isTablet),
                     vertical: 3),
                 decoration: BoxDecoration(
-                  color: corLight,
+                  color: cor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -948,7 +947,7 @@ class _PrecificacaoDinamicaScreenState
     );
   }
 
-  /// Formata a data como tempo relativo (ex: "2 horas atr?s")
+  /// Formata a data como tempo relativo (ex: "2 horas atrãs")
   String _formatTimeAgo(DateTime date) {
     final now = DateTime.now();
     final difference = now.difference(date);
@@ -956,11 +955,11 @@ class _PrecificacaoDinamicaScreenState
     if (difference.inMinutes < 1) {
       return 'Agora';
     } else if (difference.inMinutes < 60) {
-      return '${difference.inMinutes} min atr?s';
+      return '${difference.inMinutes} min atrãs';
     } else if (difference.inHours < 24) {
-      return '${difference.inHours} hora${difference.inHours > 1 ? 's' : ''} atr?s';
+      return '${difference.inHours} hora${difference.inHours > 1 ? 's' : ''} atrãs';
     } else if (difference.inDays < 7) {
-      return '${difference.inDays} dia${difference.inDays > 1 ? 's' : ''} atr?s';
+      return '${difference.inDays} dia${difference.inDays > 1 ? 's' : ''} atrãs';
     } else {
       return '${date.day}/${date.month}/${date.year}';
     }
@@ -982,11 +981,11 @@ class _PrecificacaoDinamicaScreenState
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Row(
+            content: Row(
               children: [
                 Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
-                SizedBox(width: 12),
-                Text('Configura??es salvas com sucesso'),
+                const SizedBox(width: 12),
+                const Text('Configurações salvas com sucesso'),
               ],
             ),
             backgroundColor: ThemeColors.of(context).greenTeal,
@@ -999,8 +998,6 @@ class _PrecificacaoDinamicaScreenState
     });
   }
 }
-
-
 
 
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
 class CatalogStat {
@@ -56,7 +55,7 @@ class ProductsCatalogSummary extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Vis�o Geral',
+                'Visão Geral',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
                   fontWeight: FontWeight.bold,
@@ -127,7 +126,7 @@ class ProductsCatalogSummary extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: stat.isWarning
-                    ? Color.alphaBlend(stat.colorLight, ThemeColors.of(context).surface)
+                    ? Color.alphaBlend(stat.color.withValues(alpha: 0.5), ThemeColors.of(context).surface)
                     : Color.alphaBlend(stat.color.withValues(alpha: 0.25), ThemeColors.of(context).surface),
                 width: stat.isWarning ? 2 : 1.5,
               ),
@@ -180,7 +179,6 @@ class ProductsCatalogSummary extends StatelessWidget {
     );
   }
 }
-
 
 
 

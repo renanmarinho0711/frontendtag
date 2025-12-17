@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
 class QuickAction {
@@ -59,7 +58,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'A��es R�pidas',
+                      'Ações Rápidas',
                       style: TextStyle(
                         fontSize: isMobile ? 15 : 18,
                         fontWeight: FontWeight.bold,
@@ -70,7 +69,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
                     ),
                     const SizedBox(height: AppSpacing.xxs),
                     Text(
-                      'O que voc� mais faz',
+                      'O que você mais faz',
                       style: TextStyle(
                         fontSize: isMobile ? 11 : 13,
                         color: ThemeColors.of(context).textTertiary,
@@ -117,7 +116,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: action.isUrgent
                   ? action.color.withValues(alpha: 0.12)
-                  : ThemeColors.of(context).surfaceSecondary,
+                  : ThemeColors.of(context).backgroundLight,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: action.isUrgent
@@ -131,7 +130,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
-                    color: action.colorLight,
+                    color: action.color.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(action.icon, color: action.color, size: 20),
@@ -167,7 +166,7 @@ class ProductsQuickActionsCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: action.colorLight,
+                      color: action.color.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
@@ -194,8 +193,6 @@ class ProductsQuickActionsCard extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

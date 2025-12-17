@@ -5,27 +5,26 @@ import 'dart:math' as math;
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/reports/presentation/providers/reports_provider.dart';
 import 'package:tagbean/features/reports/data/models/report_models.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 import 'package:tagbean/features/tags/presentation/providers/tags_provider.dart';
 
-class relatÃ³riosOperacionaisScreen extends ConsumerStatefulWidget {
-  const relatÃ³riosOperacionaisScreen({super.key});
+class RelatoriosOperacionaisScreen extends ConsumerStatefulWidget {
+  const RelatoriosOperacionaisScreen({super.key});
 
   @override
-  ConsumerState<relatÃ³riosOperacionaisScreen> createState() => _relatÃ³riosOperacionaisScreenState();
+  ConsumerState<RelatoriosOperacionaisScreen> createState() => _RelatoriosOperacionaisScreenState();
 }
 
-class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosOperacionaisScreen>
+class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperacionaisScreen>
     with TickerProviderStateMixin, ResponsiveCache {
   late AnimationController _animationController;
   late AnimationController _refreshController;
   String _periodoSelecionado = '30 dias';
   bool _autoRefresh = true;
 
-  /// Obt�m o storeId do usu�rio logado
+  /// Obtãm o storeId do Usuário logado
   String get _storeId {
     final authState = ref.read(authProvider);
     return authState.user?.storeId ?? authState.user?.clientId ?? 'default';
@@ -35,7 +34,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
   OperationalReportsState get _operationalState => ref.watch(operationalReportsProvider);
   
   // Converte os modelos do provider para o formato Map esperado pelos widgets
-  List<Map<String, dynamic>> get _relatÃ³rios {
+  List<Map<String, dynamic>> get _relatorios {
     if (_operationalState.reports.isEmpty) {
       return [];
     }
@@ -49,7 +48,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
         'valorNumerico': report.percentualMeta,
         'total': 100,
         'percentual': report.percentualMeta,
-        'detalhes': '� ${report.titulo}\n� Per�odo: ${report.periodo}\n� Meta: ${report.percentualMeta.toStringAsFixed(1)}%',
+        'detalhes': 'ã ${report.titulo}\nã Perãodo: ${report.periodo}\nã Meta: ${report.percentualMeta.toStringAsFixed(1)}%',
         'trend': report.trend == ReportTrend.up ? 'up' : (report.trend == ReportTrend.down ? 'down' : 'stable'),
         'change': report.trend == ReportTrend.up ? '+5%' : (report.trend == ReportTrend.down ? '-5%' : '0%'),
         'prioridade': report.percentualMeta >= 80 ? 'normal' : 'alta',
@@ -152,7 +151,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
       );
     }
     
-    if (_relatÃ³rios.isEmpty) {
+    if (_relatorios.isEmpty) {
       return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -160,12 +159,12 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
             Icon(Icons.dashboard_outlined, size: 64, color: ThemeColors.of(context).textSecondary),
             const SizedBox(height: 16),
             Text(
-              'Nenhum dado operacional dispon�vel',
+              'Nenhum dado operacional disponível',
               style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
-              'Os dados operacionais ser�o exibidos quando houver atividade',
+              'Os dados operacionais serão exibidos quando houver atividade',
               style: TextStyle(color: ThemeColors.of(context).textSecondaryOverlay70, fontSize: 14),
             ),
           ],
@@ -193,12 +192,12 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                 desktopHorizontal: 24,
                 desktopVertical: 24,
               ),
-              itemCount: _relatÃ³rios.length + 1,
+              itemCount: _relatorios.length + 1,
               itemBuilder: (context, index) {
-                if (index == _relatÃ³rios.length) {
+                if (index == _relatorios.length) {
                   return _buildFooterInfo();
                 }
-                return _buildEnhancedReportCard(_relatÃ³rios[index], index);
+                return _buildEnhancedReportCard(_relatorios[index], index);
               },
             ),
           ],
@@ -279,7 +278,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primaryLight,
+                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -300,7 +299,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Relat�rios Operacionais',
+                  'Relatórios Operacionais',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -322,7 +321,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                   ),
                 ),
                 Text(
-                  'Monitoramento de Tags e Sincroniza��o',
+                  'Monitoramento de Tags e Sincronização',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -501,7 +500,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                     vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8),
                   ),
                   decoration: BoxDecoration(
-                    color: _autoRefresh ? ThemeColors.of(context).successLight : ThemeColors.of(context).surfaceOverlay20,
+                    color: _autoRefresh ? ThemeColors.of(context).success.withValues(alpha: 0.3) : ThemeColors.of(context).surfaceOverlay20,
                     borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                     border: Border.all(
                       color: _autoRefresh ? ThemeColors.of(context).success : ThemeColors.of(context).surfaceOverlay40,
@@ -537,7 +536,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
             ],
           ),
           ResponsiveSpacing.verticalMedium(context),
-          // Estat�sticas de tags do backend
+          // Estatãsticas de tags do backend
           Consumer(
             builder: (context, ref, child) {
               final statsAsync = ref.watch(tagStatsProvider(_storeId));
@@ -660,7 +659,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
           ),
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
           Text(
-            'Per�odo:',
+            'Perãodo:',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
             overflow: TextOverflow.ellipsis,
@@ -670,7 +669,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
           Expanded(
             child: DropdownButtonFormField<String>(
-              value: _periodoSelecionado,
+              initialValue: _periodoSelecionado,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                 color: ThemeColors.of(context).textPrimary,
@@ -709,7 +708,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
     );
   }
 
-  Widget _buildEnhancedReportCard(Map<String, dynamic> relatÃ³rio, int index) {
+  Widget _buildEnhancedReportCard(Map<String, dynamic> relatorio, int index) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -730,12 +729,12 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
           border: Border.all(
-            color: (relatÃ³rio['cor'] as Color)Light,
+            color: (relatorio['cor'] as Color).withValues(alpha: 0.3),
             width: isMobile ? 1.5 : 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (relatÃ³rio['cor'] as Color)Light,
+              color: (relatorio['cor'] as Color).withValues(alpha: 0.15),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 6 : 8),
             ),
@@ -759,8 +758,8 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    relatÃ³rio['cor'],
-                    (relatÃ³rio['cor'] as Color).withValues(alpha: 0.7),
+                    relatorio['cor'],
+                    (relatorio['cor'] as Color).withValues(alpha: 0.7),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -768,14 +767,14 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                 borderRadius: BorderRadius.circular(AppSizes.paddingXl.get(isMobile, isTablet)),
                 boxShadow: [
                   BoxShadow(
-                    color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.4),
+                    color: (relatorio['cor'] as Color).withValues(alpha: 0.4),
                     blurRadius: isMobile ? 12 : 15,
                     offset: Offset(0, isMobile ? 5 : 6),
                   ),
                 ],
               ),
               child: Icon(
-                relatÃ³rio['icone'],
+                relatorio['icone'],
                 color: ThemeColors.of(context).surface,
                 size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
               ),
@@ -789,7 +788,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        relatÃ³rio['titulo'],
+                        relatorio['titulo'],
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -813,7 +812,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                           ),
                           SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
                           Text(
-                            relatÃ³rio['ultimaAtualizacao'],
+                            relatorio['ultimaAtualizacao'],
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -833,9 +832,9 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    _buildTrendIndicator(relatÃ³rio['trend'], relatÃ³rio['change']),
+                    _buildTrendIndicator(relatorio['trend'], relatorio['change']),
                     SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
-                    _buildPriorityBadge(relatÃ³rio['prioridade']),
+                    _buildPriorityBadge(relatorio['prioridade']),
                   ],
                 ),
               ],
@@ -846,7 +845,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
               children: [
                 SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
                 Text(
-                  relatÃ³rio['subtitulo'],
+                  relatorio['subtitulo'],
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                   overflow: TextOverflow.ellipsis,
@@ -864,13 +863,13 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              (relatÃ³rio['cor'] as Color)Light,
-                              (relatÃ³rio['cor'] as Color)Light,
+                              (relatorio['cor'] as Color).withValues(alpha: 0.15),
+                              (relatorio['cor'] as Color).withValues(alpha: 0.05),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                           border: Border.all(
-                            color: (relatÃ³rio['cor'] as Color)Light,
+                            color: (relatorio['cor'] as Color).withValues(alpha: 0.3),
                           ),
                         ),
                         child: Column(
@@ -878,7 +877,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              relatÃ³rio['valor'],
+                              relatorio['valor'],
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -888,13 +887,13 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
-                                color: relatÃ³rio['cor'],
+                                color: relatorio['cor'],
                                 letterSpacing: -0.5,
                               ),
                             ),
                             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
                             Text(
-                              'de ${relatÃ³rio['total']} total',
+                              'de ${relatorio['total']} total',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -934,7 +933,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                                 ),
                               ),
                               Text(
-                                '${relatÃ³rio['percentual'].toStringAsFixed(1)}%',
+                                '${relatorio['percentual'].toStringAsFixed(1)}%',
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -944,7 +943,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                                   ),
                                 overflow: TextOverflow.ellipsis,
                                   fontWeight: FontWeight.bold,
-                                  color: relatÃ³rio['cor'],
+                                  color: relatorio['cor'],
                                 ),
                               ),
                             ],
@@ -953,9 +952,9 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                           ClipRRect(
                             borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                             child: LinearProgressIndicator(
-                              value: relatÃ³rio['percentual'] / 100,
+                              value: relatorio['percentual'] / 100,
                               backgroundColor: ThemeColors.of(context).textSecondary,
-                              valueColor: AlwaysStoppedAnimation<Color>(relatÃ³rio['cor']),
+                              valueColor: AlwaysStoppedAnimation<Color>(relatorio['cor']),
                               minHeight: isMobile ? 7 : 8,
                             ),
                           ),
@@ -988,18 +987,18 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                         Container(
                           padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 9, tablet: 9.5, desktop: 10)),
                           decoration: BoxDecoration(
-                            color: (relatÃ³rio['cor'] as Color)Light,
+                            color: (relatorio['cor'] as Color).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Icon(
                             Icons.analytics_rounded,
                             size: AppSizes.iconSmall.get(isMobile, isTablet),
-                            color: relatÃ³rio['cor'],
+                            color: relatorio['cor'],
                           ),
                         ),
                         SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                         Text(
-                          'An�lise Detalhada',
+                          'Anãlise Detalhada',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14, tabletFontSize: 14.5),
                           overflow: TextOverflow.ellipsis,
@@ -1018,7 +1017,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                         border: Border.all(color: ThemeColors.of(context).textSecondary),
                       ),
                       child: Text(
-                        relatÃ³rio['detalhes'],
+                        relatorio['detalhes'],
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                         overflow: TextOverflow.ellipsis,
@@ -1033,16 +1032,16 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                       children: [
                         Expanded(
                           child: OutlinedButton.icon(
-                            onPressed: () => _exportarrelatÃ³rio(relatÃ³rio['titulo']),
+                            onPressed: () => _exportarRelatorio(relatorio['titulo']),
                             icon: Icon(
                               Icons.download_rounded,
                               size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 15, tablet: 15.5, desktop: 16),
-                              color: relatÃ³rio['cor'],
+                              color: relatorio['cor'],
                             ),
                             label: Text(
                               'Exportar',
                               style: TextStyle(
-                                color: relatÃ³rio['cor'],
+                                color: relatorio['cor'],
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                               overflow: TextOverflow.ellipsis,
                               ),
@@ -1051,7 +1050,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                               padding: EdgeInsets.symmetric(
                                 vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                               ),
-                              side: BorderSide(color: relatÃ³rio['cor'], width: isMobile ? 1.25 : 1.5),
+                              side: BorderSide(color: relatorio['cor'], width: isMobile ? 1.25 : 1.5),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                               ),
@@ -1061,7 +1060,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                         SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                         Expanded(
                           child: ElevatedButton.icon(
-                            onPressed: () => _verMaisDetalhes(relatÃ³rio['titulo']),
+                            onPressed: () => _verMaisDetalhes(relatorio['titulo']),
                             icon: Icon(
                               Icons.visibility_rounded,
                               size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 15, tablet: 15.5, desktop: 16),
@@ -1077,7 +1076,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
                               padding: EdgeInsets.symmetric(
                                 vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                               ),
-                              backgroundColor: relatÃ³rio['cor'],
+                              backgroundColor: relatorio['cor'],
                               foregroundColor: ThemeColors.of(context).surface,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1122,9 +1121,9 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
         vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 5, tablet: 5.5, desktop: 6),
       ),
       decoration: BoxDecoration(
-        color: trendColorLight,
+        color: trendColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-        border: Border.all(color: trendColorLight),
+        border: Border.all(color: trendColor.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -1161,7 +1160,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
         break;
       case 'media':
         badgeColor = ThemeColors.of(context).yellowGold;
-        badgeText = 'M�DIA';
+        badgeText = 'MãDIA';
         break;
       case 'baixa':
         badgeColor = ThemeColors.of(context).primary;
@@ -1178,7 +1177,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
         vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 3.5, tablet: 3.75, desktop: 4),
       ),
       decoration: BoxDecoration(
-        color: badgeColorLight,
+        color: badgeColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
       ),
       child: Text(
@@ -1203,7 +1202,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
       padding: EdgeInsets.all(AppSizes.paddingLgAlt.get(isMobile, isTablet)),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: ThemeColors.of(context).relatÃ³riosGradient,
+          colors: ThemeColors.of(context).relatoriosGradient,
         ),
         borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
       ),
@@ -1227,7 +1226,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
           ),
           SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 5, tablet: 5.5, desktop: 6)),
           Text(
-            'Pr�xima atualiza��o em 30 segundos',
+            'Próxima atualizAção em 30 segundos',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 11, mobileFontSize: 10, tabletFontSize: 10.5),
             overflow: TextOverflow.ellipsis,
@@ -1252,12 +1251,12 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: const Row(
+          content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
-              SizedBox(width: 12),
-              Text('Dados atualizados com sucesso!'),
+              const SizedBox(width: 12),
+              const Text('Dados atualizados com sucesso!'),
             ],
           ),
           backgroundColor: ThemeColors.of(context).success.withValues(alpha: 0.7),
@@ -1268,7 +1267,7 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
     }
   }
 
-  void _exportarrelatÃ³rio(String titulo) {
+  void _exportarRelatorio(String titulo) {
     final isMobile = ResponsiveHelper.isMobile(context);
     
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1308,7 +1307,6 @@ class _relatÃ³riosOperacionaisScreenState extends ConsumerState<relatÃ³riosO
     );
   }
 }
-
 
 
 

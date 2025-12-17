@@ -5,9 +5,7 @@ import 'package:tagbean/features/categories/presentation/providers/categories_pr
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class CategoriasAdminScreen extends ConsumerStatefulWidget {
   const CategoriasAdminScreen({super.key});
 
@@ -17,7 +15,7 @@ class CategoriasAdminScreen extends ConsumerStatefulWidget {
 
 class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
     with TickerProviderStateMixin, ResponsiveCache {
-  List<Map<String, dynamic>> _selectedItems = [];
+  final List<Map<String, dynamic>> _selectedItems = [];
   bool _isSelectMode = false;
   String _sortOrder = 'nome_asc';
   String _searchQuery = '';
@@ -439,7 +437,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
               fillColor: ThemeColors.of(context).textSecondary,
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: [
               Expanded(
@@ -646,7 +644,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           ),
                         ),
                       ),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       Text(
                         categoria['nome'],
                         textAlign: TextAlign.center,
@@ -662,9 +660,9 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 12,
                           vertical: 6,
                         ),
@@ -847,7 +845,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -891,7 +889,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                               ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           children: [
                             Icon(
@@ -931,7 +929,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                             ),
                           ],
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           'Atualizado em ${categoria['ultimaAtualizacao']}',
                           style: TextStyle(
@@ -1079,7 +1077,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: Icon(Icons.warning_rounded, color: ThemeColors.of(context).redMain, size: 48),
-        title: const Text('Confirmar ExclusÃ£o'),
+        title: const Text('Confirmar Exclusão'),
         content: Text(
           'Deseja realmente excluir "${categoria['nome']}"?\n\nEsta ação não pode ser desfeita.',
           textAlign: TextAlign.center,
@@ -1105,7 +1103,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Erro ao excluir categoria'),
+                    content: const Text('Erro ao excluir categoria'),
                     backgroundColor: ThemeColors.of(context).redMain,
                     behavior: SnackBarBehavior.floating,
                   ),

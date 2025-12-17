@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// BLOCO 7: Centro de Scanner (Para Mobile)
-/// Acesso rápido às funções de scanner que sÃ£o o core do sistema
+/// Acesso rápido às funções de scanner que são o core do sistema
 class ScannerCentralCard extends StatelessWidget {
   final VoidCallback? onAbrirScanner;
   final VoidCallback? onScanearTag;

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/providers/visual_provider.dart';
 
@@ -77,7 +76,7 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
           const SizedBox(width: 16),
           Container(padding: const EdgeInsets.all(10), decoration: BoxDecoration(gradient: LinearGradient(colors: [ThemeColors.of(context).error, ThemeColors.of(context).redDark]), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 24)),
           const SizedBox(width: 12),
-          const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Flash Promos', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)), Text('Ofertas rel?mpago nas ESLs', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
+          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Text('Flash Promos', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)), Text('Ofertas relâmpago nas ESLs', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
           IconButton(icon: const Icon(Icons.info_outline_rounded), onPressed: _showInfoDialog, color: ThemeColors.of(context).textSecondary),
         ],
       ),
@@ -95,8 +94,8 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
         indicatorSize: TabBarIndicatorSize.tab,
         labelColor: ThemeColors.of(context).surface,
         unselectedLabelColor: ThemeColors.of(context).textSecondary,
-        labelStyle: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-          Tab(icon: Icon(Icons.settings_rounded, size: 18), text: 'Configura??o'), Tab(icon: Icon(Icons.flash_on_rounded, size: 18), text: 'Promo??es')
+        labelStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+        tabs: const [Tab(icon: Icon(Icons.settings_rounded, size: 18), text: 'ConfigurAção'), Tab(icon: Icon(Icons.flash_on_rounded, size: 18), text: 'Promoções')],
       ),
     );
   }
@@ -118,7 +117,7 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                Container(padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), decoration: BoxDecoration(color: ThemeColors.of(context).errorLight, borderRadius: BorderRadius.circular(12), border: Border.all(color: ThemeColors.of(context).error, width: 2)), child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.flash_on_rounded, size: 20, color: ThemeColors.of(context).error), const SizedBox(width: 8), Text('${state.promocoes.where((p) => p.ativa).length} promo??es ativas', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: ThemeColors.of(context).error))])),
+                Container(padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), decoration: BoxDecoration(color: ThemeColors.of(context).error.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12), border: Border.all(color: ThemeColors.of(context).error, width: 2)), child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.flash_on_rounded, size: 20, color: ThemeColors.of(context).error), const SizedBox(width: 8), Text('${state.promocoes.where((p) => p.ativa).length} promoções ativas', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: ThemeColors.of(context).error))])),
                 const SizedBox(height: 16),
                 ListView.builder(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), itemCount: state.promocoes.length, itemBuilder: (context, index) => Padding(padding: const EdgeInsets.only(bottom: 16), child: _buildPromoCard(state.promocoes[index], index))),
               ],
@@ -137,8 +136,8 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
         children: [
           Container(padding: const EdgeInsets.all(16), decoration: BoxDecoration(color: ThemeColors.of(context).surfaceOverlay20, borderRadius: BorderRadius.circular(16)), child: Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 24)),
           const SizedBox(width: 16),
-          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Text('Flash Promos', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface, letterSpacing: -0.8)), const SizedBox(height: 6), Text(state.isStrategyActive ? 'Promo??es rel?mpago ativas' : 'Sistema inativo', style: TextStyle(fontSize: 13, color: ThemeColors.of(context).surfaceOverlay70))])),
-          Transform.scale(scale: 1.1, child: Switch(value: state.isStrategyActive, onChanged: (value) => ref.read(flashPromosProvider.notifier).setStrategyActive(value), activeColor: ThemeColors.of(context).surface, activeTrackColor: ThemeColors.of(context).surfaceOverlay50)),
+          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Flash Promos', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface, letterSpacing: -0.8)), const SizedBox(height: 6), Text(state.isStrategyActive ? 'Promoções relâmpago ativas' : 'Sistema inativo', style: TextStyle(fontSize: 13, color: ThemeColors.of(context).surfaceOverlay70))])),
+          Transform.scale(scale: 1.1, child: Switch(value: state.isStrategyActive, onChanged: (value) => ref.read(flashPromosProvider.notifier).setStrategyActive(value), activeThumbColor: ThemeColors.of(context).surface, activeTrackColor: ThemeColors.of(context).surfaceOverlay50)),
         ],
       ),
     );
@@ -151,12 +150,12 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            child: Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).infoLight, borderRadius: BorderRadius.circular(12)), child: const Icon(Icons.timer_rounded, color: ThemeColors.of(context).info, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Dura??o das Promo??es', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))])
+          Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.timer_rounded, color: ThemeColors.of(context).blueMain, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('DurAção das Promoções', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))]),
           const SizedBox(height: 24),
-          Row(children: [const Icon(Icons.hourglass_top_rounded, size: 24, color: ThemeColors.of(context).info), const SizedBox(width: 12), const Expanded(child: Text('Dura??o Padr?o', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).infoLight, borderRadius: BorderRadius.circular(8)), child: Text('${state.duracaoMinutos} min', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).info)))]),
-          Slider(value: state.duracaoMinutos.toDouble(), min: 5, max: 60, divisions: 11, label: '${state.duracaoMinutos} min', onChanged: (value) => ref.read(flashPromosProvider.notifier).setDuracaoMinutos(value.toInt()), activeColor: ThemeColors.of(context).info),
+          Row(children: [Icon(Icons.hourglass_top_rounded, size: 24, color: ThemeColors.of(context).blueMain), const SizedBox(width: 12), const Expanded(child: Text('DurAção Padrão', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)), child: Text('${state.duracaoMinutos} min', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).blueMain)))]),
+          Slider(value: state.duracaoMinutos.toDouble(), min: 5, max: 60, divisions: 11, label: '${state.duracaoMinutos} min', onChanged: (value) => ref.read(flashPromosProvider.notifier).setDuracaoMinutos(value.toInt()), activeColor: ThemeColors.of(context).blueMain),
           const SizedBox(height: 24),
-          Row(children: [const Icon(Icons.speed_rounded, size: 24, color: ThemeColors.of(context).blueCyan), const SizedBox(width: 12), const Expanded(child: Text('Intensidade LED', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).blueCyanLight, borderRadius: BorderRadius.circular(8)), child: Text('${state.intensidadeLed}%', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).blueCyan)))]),
+          Row(children: [Icon(Icons.speed_rounded, size: 24, color: ThemeColors.of(context).blueCyan), const SizedBox(width: 12), const Expanded(child: Text('Intensidade LED', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)), child: Text('${state.intensidadeLed}%', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).blueCyan)))]),
           Slider(value: state.intensidadeLed.toDouble(), min: 0, max: 100, divisions: 10, label: '${state.intensidadeLed}%', onChanged: (value) => ref.read(flashPromosProvider.notifier).setIntensidadeLed(value.toInt()), activeColor: ThemeColors.of(context).blueCyan),
         ],
       ),
@@ -170,12 +169,12 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            child: Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).orangeDarkLight, borderRadius: BorderRadius.circular(12)), child: const Icon(Icons.schedule_rounded, color: ThemeColors.of(context).orangeDark, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Hor?rios Autom?ticos', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))])
+          Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).orangeDark.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.schedule_rounded, color: ThemeColors.of(context).orangeDark, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Horários Automãticos', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))]),
           const SizedBox(height: 12),
           Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: state.horariosAtivos.map((h) => Container(padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10), decoration: BoxDecoration(gradient: LinearGradient(colors: [ThemeColors.of(context).orangeDark, ThemeColors.of(context).orangeDeep]), borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: ThemeColors.of(context).orangeDarkLight, blurRadius: 8, offset: const Offset(0, 3))]), child: Row(mainAxisSize: MainAxisSize.min, children: [Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 16), const SizedBox(width: 6), Text(h, style: TextStyle(color: ThemeColors.of(context).surface, fontWeight: FontWeight.w600, fontSize: 13))]))).toList(),
+            children: state.horariosAtivos.map((h) => Container(padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10), decoration: BoxDecoration(gradient: LinearGradient(colors: [ThemeColors.of(context).orangeDark, ThemeColors.of(context).orangeDeep]), borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: ThemeColors.of(context).orangeDark.withValues(alpha: 0.3), blurRadius: 8, offset: const Offset(0, 3))]), child: Row(mainAxisSize: MainAxisSize.min, children: [Icon(Icons.check_rounded, color: ThemeColors.of(context).surface, size: 16), const SizedBox(width: 6), Text(h, style: TextStyle(color: ThemeColors.of(context).surface, fontWeight: FontWeight.w600, fontSize: 13))]))).toList(),
           ),
         ],
       ),
@@ -187,11 +186,11 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(color: ThemeColors.of(context).surface, borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: ThemeColors.of(context).textPrimaryOverlay05, blurRadius: 20, offset: const Offset(0, 4))]),
       child: Column(children: [
-        _buildSwitchOption('Notificar Clientes', 'Enviar push notification aos clientes pr?ximos', Icons.notifications_active_rounded, state.notificarClientes, (value) => ref.read(flashPromosProvider.notifier).setNotificarClientes(value)),
+        _buildSwitchOption('Notificar Clientes', 'Enviar push notification aos clientes prãximos', Icons.notifications_active_rounded, state.notificarClientes, (value) => ref.read(flashPromosProvider.notifier).setNotificarClientes(value)),
         const SizedBox(height: 12),
-        _buildSwitchOption('Contagem Regressiva', 'Exibir timer na ESL durante promo??o', Icons.timer_rounded, state.contagemRegressiva, (value) => ref.read(flashPromosProvider.notifier).setContagemRegressiva(value)),
+        _buildSwitchOption('Contagem Regressiva', 'Exibir timer na ESL durante promoãão', Icons.timer_rounded, state.contagemRegressiva, (value) => ref.read(flashPromosProvider.notifier).setContagemRegressiva(value)),
         const SizedBox(height: 12),
-        _buildSwitchOption('Anima??o Piscante', 'LED piscante para chamar aten??o', Icons.lightbulb_rounded, state.animacaoPiscante, (value) => ref.read(flashPromosProvider.notifier).setAnimacaoPiscante(value)),
+        _buildSwitchOption('AnimAção Piscante', 'LED piscante para chamar atenção', Icons.lightbulb_rounded, state.animacaoPiscante, (value) => ref.read(flashPromosProvider.notifier).setAnimacaoPiscante(value)),
       ]),
     );
   }
@@ -199,12 +198,12 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
   Widget _buildSwitchOption(String title, String subtitle, IconData icon, bool value, Function(bool) onChanged) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(color: value ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textSecondary, borderRadius: BorderRadius.circular(12), border: Border.all(color: value ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textSecondary)),
+      decoration: BoxDecoration(color: value ? ThemeColors.of(context).error.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary, borderRadius: BorderRadius.circular(12), border: Border.all(color: value ? ThemeColors.of(context).error.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary)),
       child: Row(children: [
         Icon(icon, color: value ? ThemeColors.of(context).error : ThemeColors.of(context).textSecondary, size: 24),
         const SizedBox(width: 14),
-        Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(title, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)), const SizedBox(height: 4), Text(subtitle, style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
-        Transform.scale(scale: 0.95, child: Switch(value: value, onChanged: onChanged, activeColor: ThemeColors.of(context).error)),
+        Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(title, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)), const SizedBox(height: 4), Text(subtitle, style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
+        Transform.scale(scale: 0.95, child: Switch(value: value, onChanged: onChanged, activeThumbColor: ThemeColors.of(context).error)),
       ]),
     );
   }
@@ -216,22 +215,22 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
       builder: (context, double value, child) => Transform.scale(scale: 0.8 + (0.2 * value), child: Opacity(opacity: value, child: child)),
       child: Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(color: ThemeColors.of(context).surface, borderRadius: BorderRadius.circular(16), border: Border.all(color: promo.ativa ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textSecondary, width: 2), boxShadow: [BoxShadow(color: promo.ativa ? ThemeColors.of(context).errorLight : ThemeColors.of(context).textPrimaryOverlay05, blurRadius: 20, offset: const Offset(0, 6))]),
+        decoration: BoxDecoration(color: ThemeColors.of(context).surface, borderRadius: BorderRadius.circular(16), border: Border.all(color: promo.ativa ? ThemeColors.of(context).error.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary, width: 2), boxShadow: [BoxShadow(color: promo.ativa ? ThemeColors.of(context).error.withValues(alpha: 0.2) : ThemeColors.of(context).textPrimaryOverlay05, blurRadius: 20, offset: const Offset(0, 6))]),
         child: Column(children: [
           Row(children: [
-            Container(width: 60, height: 60, decoration: BoxDecoration(gradient: promo.ativa ? LinearGradient(colors: [ThemeColors.of(context).error, ThemeColors.of(context).redDark]) : LinearGradient(colors: [ThemeColors.of(context).textTertiary, ThemeColors.of(context).textTertiary]), borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: (promo.ativa ? ThemeColors.of(context).error : ThemeColors.of(context).textTertiary)Light, blurRadius: 12, offset: const Offset(0, 4))]), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.flash_on_rounded, color: ThemeColors.of(context).surface, size: 24), const SizedBox(height: 2), Text('${promo.desconto}%', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface))])),
+            Container(width: 60, height: 60, decoration: BoxDecoration(gradient: promo.ativa ? LinearGradient(colors: [ThemeColors.of(context).error, ThemeColors.of(context).redDark]) : LinearGradient(colors: [ThemeColors.of(context).grey400, ThemeColors.of(context).grey500]), borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: (promo.ativa ? ThemeColors.of(context).error : ThemeColors.of(context).grey500).withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 4))]), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.flash_on_rounded, color: ThemeColors.of(context).surface, size: 24), const SizedBox(height: 2), Text('${promo.desconto}%', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface))])),
             const SizedBox(width: 16),
-            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(promo.nome, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: -0.3), maxLines: 1, overflow: TextOverflow.ellipsis), const SizedBox(height: 6), Row(children: [Icon(Icons.access_time_rounded, size: 14, color: ThemeColors.of(context).textSecondary), const SizedBox(width: 4), Text('${promo.duracaoMinutos} min restantes', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])])),
-            Switch(value: promo.ativa, onChanged: (value) => ref.read(flashPromosProvider.notifier).togglePromoAtiva(promo.id), activeColor: ThemeColors.of(context).error),
+            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(promo.nome, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: -0.3), maxLines: 1, overflow: TextOverflow.ellipsis), const SizedBox(height: 6), Row(children: [Icon(Icons.access_time_rounded, size: 14, color: ThemeColors.of(context).textSecondary), const SizedBox(width: 4), Text('${promo.duracaoMinutos} min restantes', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])])),
+            Switch(value: promo.ativa, onChanged: (value) => ref.read(flashPromosProvider.notifier).togglePromoAtiva(promo.id), activeThumbColor: ThemeColors.of(context).error),
           ]),
           const SizedBox(height: 12),
           Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(color: ThemeColors.of(context).textSecondary, borderRadius: BorderRadius.circular(12)),
             child: Row(children: [
-              Expanded(child: Column(children: [Icon(Icons.attach_money_rounded, size: 20, color: promo.ativa ? ThemeColors.of(context).error : ThemeColors.of(context).textTertiary), const SizedBox(height: 4), Text('R\$ ${promo.precoOriginal.toStringAsFixed(2)}', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: ThemeColors.of(context).textSecondary, decoration: TextDecoration.lineThrough)), Text('R\$ ${promo.precoPromo.toStringAsFixed(2)}', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: promo.ativa ? ThemeColors.of(context).error : ThemeColors.of(context).textTertiary))])),
+              Expanded(child: Column(children: [Icon(Icons.attach_money_rounded, size: 20, color: promo.ativa ? ThemeColors.of(context).error : ThemeColors.of(context).grey500), const SizedBox(height: 4), Text('R\$ ${promo.precoOriginal.toStringAsFixed(2)}', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: ThemeColors.of(context).textSecondary, decoration: TextDecoration.lineThrough)), Text('R\$ ${promo.precoPromo.toStringAsFixed(2)}', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: promo.ativa ? ThemeColors.of(context).error : ThemeColors.of(context).grey500))])),
               Container(width: 1, height: 50, color: ThemeColors.of(context).textSecondary),
-              Expanded(child: Column(children: [Icon(Icons.shopping_cart_rounded, size: 20, color: promo.ativa ? ThemeColors.of(context).success : ThemeColors.of(context).textTertiary), const SizedBox(height: 4), Text('${promo.vendas}', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: promo.ativa ? ThemeColors.of(context).success : ThemeColors.of(context).textTertiary)), const Text('vendas', style: TextStyle(fontSize: 10, color: ThemeColors.of(context).textSecondary))])),
+              Expanded(child: Column(children: [Icon(Icons.shopping_cart_rounded, size: 20, color: promo.ativa ? ThemeColors.of(context).greenMain : ThemeColors.of(context).grey500), const SizedBox(height: 4), Text('${promo.vendas}', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: promo.ativa ? ThemeColors.of(context).greenMain : ThemeColors.of(context).grey500)), Text('vendas', style: TextStyle(fontSize: 10, color: ThemeColors.of(context).textSecondary))])),
             ]),
           ),
         ]),
@@ -240,18 +239,15 @@ class _FlashPromosConfigScreenState extends ConsumerState<FlashPromosConfigScree
   }
 
   void _showInfoDialog() {
-    showDialog(context: context, builder: (context) => AlertDialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).error, size: 56), title: const Text('Flash Promos'), content: const SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Crie promo??es rel?mpago com urg?ncia:', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)), SizedBox(height: 16), Text(' Ofertas por tempo limitado', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Contagem regressiva nas ESLs', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' LED piscante para urg?ncia', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Notifica??o push para clientes', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Aumenta convers?o em 30-50%', style: TextStyle(fontSize: 13, height: 1.5))])), actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Entendi'))]));
+    showDialog(context: context, builder: (context) => AlertDialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).error, size: 56), title: const Text('Flash Promos'), content: const SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Crie promoções relâmpago com urgência:', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)), SizedBox(height: 16), Text(' Ofertas por tempo limitado', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Contagem regressiva nas ESLs', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' LED piscante para urgência', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' NotificAção push para clientes', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Aumenta conversão em 30-50%', style: TextStyle(fontSize: 13, height: 1.5))])), actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Entendi'))]));
   }
 
   void _salvarConfiguracoes() async {
     await ref.read(flashPromosProvider.notifier).salvarConfiguracoes();
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: const Row(children: [Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface), SizedBox(width: 12), Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [Text('Configura??es Salvas!', style: TextStyle(fontWeight: FontWeight.bold)), Text('Flash promos configuradas', style: TextStyle(fontSize: 12))]))]), backgroundColor: ThemeColors.of(context).error, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Row(children: [Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface), const SizedBox(width: 12), const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [Text('Configurações Salvas!', style: TextStyle(fontWeight: FontWeight.bold)), Text('Flash promos configuradas', style: TextStyle(fontSize: 12))]))]), backgroundColor: ThemeColors.of(context).error, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))));
   }
 }
-
-
-
 
 
 

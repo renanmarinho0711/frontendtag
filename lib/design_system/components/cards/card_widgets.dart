@@ -1,9 +1,8 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Card com gradiente padr�o reutiliz�vel
+/// Card com gradiente padrão reutilizãvel
 class GradientCard extends StatelessWidget {
   final List<Color> gradient;
   final Widget child;
@@ -26,6 +25,7 @@ class GradientCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final card = Container(
       margin: margin,
       decoration: BoxDecoration(
@@ -39,14 +39,14 @@ class GradientCard extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: AppThemeColors.primaryOverlay30,
+            color: colors.primaryOverlay30,
             blurRadius: elevation ?? ResponsiveHelper.getResponsiveElevation(context) * 2,
             offset: const Offset(0, 4),
           ),
         ],
       ),
       child: Material(
-        color: AppThemeColors.transparent,
+        color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(
@@ -64,7 +64,7 @@ class GradientCard extends StatelessWidget {
   }
 }
 
-/// Card de estat�stica reutiliz�vel
+/// Card de estatãstica reutilizãvel
 class StatCard extends StatelessWidget {
   final String label;
   final String value;
@@ -85,6 +85,7 @@ class StatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return GradientCard(
@@ -101,7 +102,7 @@ class StatCard extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                    color: AppThemeColors.white70,
+                    color: colors.white70,
                     fontSize: isMobile ? 12 : 13,
                     fontWeight: FontWeight.w500,
                   ),
@@ -111,7 +112,7 @@ class StatCard extends StatelessWidget {
               ),
               Icon(
                 icon,
-                color: AppThemeColors.white70,
+                color: colors.white70,
                 size: isMobile ? 20 : 24,
               ),
             ],
@@ -120,7 +121,7 @@ class StatCard extends StatelessWidget {
           Text(
             value,
             style: TextStyle(
-              color: AppThemeColors.surface,
+              color: colors.surface,
               fontSize: isMobile ? 20 : 24,
               fontWeight: FontWeight.bold,
             ),
@@ -132,7 +133,7 @@ class StatCard extends StatelessWidget {
             Text(
               subtitle!,
               style: TextStyle(
-                color: AppThemeColors.white70,
+                color: colors.white70,
                 fontSize: isMobile ? 11 : 12,
                 fontWeight: FontWeight.w400,
               ),
@@ -146,7 +147,7 @@ class StatCard extends StatelessWidget {
   }
 }
 
-/// Card de menu reutiliz�vel
+/// Card de menu reutilizãvel
 class MenuCard extends StatelessWidget {
   final String title;
   final String? subtitle;
@@ -169,6 +170,7 @@ class MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Opacity(
@@ -181,12 +183,12 @@ class MenuCard extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(isMobile ? 10 : 12),
               decoration: BoxDecoration(
-                color: AppThemeColors.surfaceOverlay20,
+                color: colors.surfaceOverlay20,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
                 icon,
-                color: AppThemeColors.surface,
+                color: colors.surface,
                 size: isMobile ? 24 : 28,
               ),
             ),
@@ -199,7 +201,7 @@ class MenuCard extends StatelessWidget {
                   Text(
                     title,
                     style: TextStyle(
-                      color: AppThemeColors.surface,
+                      color: colors.surface,
                       fontSize: isMobile ? 15 : 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -211,7 +213,7 @@ class MenuCard extends StatelessWidget {
                     Text(
                       subtitle!,
                       style: TextStyle(
-                        color: AppThemeColors.white70,
+                        color: colors.white70,
                         fontSize: isMobile ? 12 : 13,
                       ),
                       maxLines: 2,
@@ -228,7 +230,7 @@ class MenuCard extends StatelessWidget {
               SizedBox(width: isMobile ? 8 : 12),
               Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: AppThemeColors.white70,
+                color: colors.white70,
                 size: isMobile ? 16 : 18,
               ),
             ],
@@ -239,7 +241,7 @@ class MenuCard extends StatelessWidget {
   }
 }
 
-/// Card de informa��o reutiliz�vel
+/// Card de informAção reutilizãvel
 class InfoCard extends StatelessWidget {
   final String title;
   final String? subtitle;
@@ -260,11 +262,12 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Card(
       elevation: ResponsiveHelper.getResponsiveElevation(context),
-      color: backgroundColor ?? AppThemeColors.surface,
+      color: backgroundColor ?? colors.surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(context),
@@ -289,7 +292,7 @@ class InfoCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
                   fontWeight: FontWeight.bold,
-                  color: AppThemeColors.textPrimary,
+                  color: colors.textPrimary,
                 ),
               ),
               if (subtitle != null) ...[
@@ -298,7 +301,7 @@ class InfoCard extends StatelessWidget {
                   subtitle!,
                   style: TextStyle(
                     fontSize: isMobile ? 13 : 14,
-                    color: AppThemeColors.textSecondary,
+                    color: colors.textSecondary,
                   ),
                 ),
               ],
@@ -331,6 +334,7 @@ class EmptyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Center(
@@ -350,7 +354,7 @@ class EmptyCard extends StatelessWidget {
               Icon(
                 icon,
                 size: isMobile ? 64 : 80,
-                color: AppThemeColors.grey300,
+                color: colors.grey300,
               ),
             SizedBox(height: isMobile ? 16 : 20),
             Text(
@@ -358,7 +362,7 @@ class EmptyCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: isMobile ? 16 : 18,
                 fontWeight: FontWeight.w600,
-                color: AppThemeColors.textSecondary,
+                color: colors.textSecondary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -368,7 +372,7 @@ class EmptyCard extends StatelessWidget {
                 subtitle!,
                 style: TextStyle(
                   fontSize: isMobile ? 13 : 14,
-                  color: AppThemeColors.textSecondaryOverlay70,
+                  color: colors.textSecondaryOverlay70,
                 ),
                 textAlign: TextAlign.center,
               ),

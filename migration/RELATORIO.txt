@@ -1,4 +1,4 @@
- que você está fazendo:
+O que você está fazendo:
 Você está migrando um sistema Flutter de cores estáticas (AppThemeColors. xxx) para cores dinâmicas (ThemeColors.of(context).xxx) usando um InheritedWidget, permitindo que o usuário troque o tema de cores em tempo real.
 
 Arquitetura:

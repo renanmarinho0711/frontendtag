@@ -1,236 +1,471 @@
 import 'package:tagbean/core/constants/api_constants.dart';
+
 import 'package:tagbean/core/network/api_client.dart';
+
 import 'package:tagbean/core/network/api_response.dart';
+
 import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 
+
+
 /// Repositrio para dados do Dashboard
+
 /// Combina dados de mltiplos endpoints do backend
+
 class DashboardRepository {
+
   final ApiService _apiService;
 
+
+
   DashboardRepository({ApiService? apiService})
+
       : _apiService = apiService ?? ApiService();
 
+
+
   /// Obtm estatsticas da loja
+
   /// GET /api/stores/:storeId/stats
+
   Future<ApiResponse<StoreStats>> getStoreStats(String storeId) async {
+
     return await _apiService.get<StoreStats>(
+
       ApiConstants.storeStats(storeId),
-      parser: (data) => StoreStats.fromJson(data),
+
+      parser: (data) => StoreStats.fromJson(data as Map<String, dynamic>? ?? {}),
+
     );
+
   }
 
+
+
   /// Obtm estatsticas de estratgias (da loja)
+
   /// GET /api/strategies/store/:storeId + agregao
+
   Future<ApiResponse<StrategiesStats>> getStrategiesStats(String storeId) async {
+
     try {
+
       // Busca estratgias da loja
+
       final response = await _apiService.get<List<dynamic>>(
+
         ApiConstants.strategiesByStore(storeId),
+
         parser: (data) => data is List ? data : [],
+
       );
 
+
+
       if (response.isSuccess && response.data != null) {
+
         final strategies = response.data!;
+
         
+
         // Calcula estatsticas agregadas
+
         final activeStrategies = strategies.where((s) => s['isActive'] == true).toList();
+
         double totalMonthlyGain = 0.0;
+
         double totalTodayGain = 0.0;
+
         int totalProducts = 0;
+
+
 
         final strategyDetails = <StrategyDetails>[];
 
+
+
         for (final strategy in activeStrategies) {
+
           final gain = (strategy['estimatedGain'] as num?)?.toDouble() ?? 0.0;
+
           final products = strategy['affectedProductsCount'] as int? ?? 0;
+
           
+
           totalMonthlyGain += gain;
+
           totalTodayGain += gain / 30; // Estimativa diria
+
           totalProducts += products;
 
+
+
           strategyDetails.add(StrategyDetails(
+
             id: strategy['id'] as String? ?? '',
+
             name: strategy['name'] as String? ?? '',
+
             status: strategy['isActive'] == true ? 'Ativa' : 'Inativa',
+
             gain: gain,
+
             productsCount: products,
+
             colorValue: _getColorForStrategy(strategy['type'] as String?),
+
           ));
+
         }
+
+
 
         // Calcula crescimento baseado em ganho dirio vs mensal
+
         // Nota: Quando disponvel, usar endpoint GET /api/dashboard/stats para fornecer crescimento real
+
         // Por enquanto, calcula proporo entre ganho dirio e mensal estimado
+
         final growth = totalMonthlyGain > 0 ? '+${((totalTodayGain / totalMonthlyGain) * 100).toStringAsFixed(1)}%' : '0%';
 
+
+
         final stats = StrategiesStats(
+
           activeCount: activeStrategies.length,
+
           affectedProductsCount: totalProducts,
+
           monthlyGain: totalMonthlyGain,
+
           todayGain: totalTodayGain,
+
           growthPercentage: growth,
+
           strategies: strategyDetails,
+
         );
 
+
+
         return ApiResponse.success(stats);
+
       }
+
+
 
       return ApiResponse.error(response.errorMessage ?? 'Erro ao buscar estratgias');
+
     } catch (e) {
+
       return ApiResponse.error('Erro ao calcular estatsticas: $e');
+
     }
+
   }
+
+
 
   /// Gera alertas baseado nos dados
-  /// Combina informaes de mltiplos endpoints
+
+  /// Combina informações de mltiplos endpoints
+
   Future<ApiResponse<List<DashboardAlert>>> getAlerts(String storeId) async {
+
     try {
+
       final alerts = <DashboardAlert>[];
 
+
+
       // Busca produtos para verificar problemas
+
       final productsResponse = await _apiService.get<List<dynamic>>(
+
         ApiConstants.productsByStore(storeId),
+
         parser: (data) => data is List ? data : [],
+
       );
+
+
 
       if (productsResponse.isSuccess && productsResponse.data != null) {
+
         final products = productsResponse.data!;
+
         
-        // Alerta: Produtos sem preo
+
+        // Alerta: Produtos sem preço
+
         final noPrice = products.where((p) => 
+
             (p['preco'] as num?)?.toDouble() == 0 || p['preco'] == null).length;
+
         if (noPrice > 0) {
+
           alerts.add(DashboardAlert(
-            type: 'Produtos sem preo',
+
+            type: 'Produtos sem preço',
+
             count: noPrice,
+
             description: '$noPrice itens',
+
             iconCodePoint: 0xe8ae, // Icons.money_off_rounded
-            colorValue: 0xFFFF9800, // ThemeColors.of(context).orangeMaterial
-            details: 'Produtos cadastrados sem preo de venda definido. Isso impede a sincronizao com as tags ESL.',
+
+            colorValue: 0xFFFF9800, // AppThemeColors.orangeMaterial
+
+            details: 'Produtos cadastrados sem preço de venda definido. Isso impede a sincronização com as tags ESL.',
+
           ));
+
         }
+
+
 
         // Alerta: Margem negativa
+
         final negativaMargin = products.where((p) {
+
           final preco = (p['preco'] as num?)?.toDouble() ?? 0;
+
           final custo = (p['precoCusto'] as num?)?.toDouble() ?? 0;
+
           return custo > 0 && preco < custo;
+
         }).length;
+
         
+
         if (negativaMargin > 0) {
+
           alerts.add(DashboardAlert(
+
             type: 'Margem negativa',
+
             count: negativaMargin,
+
             description: '$negativaMargin produtos',
+
             iconCodePoint: 0xe8e2, // Icons.trending_down_rounded
-            colorValue: 0xFFFF5722, // ThemeColors.of(context).urgent
-            details: 'Produtos com preo de venda menor que o custo. Ajuste urgente necessrio.',
+
+            colorValue: 0xFFFF5722, // AppThemeColors.urgent
+
+            details: 'Produtos com preço de venda menor que o custo. Ajuste urgente necessrio.',
+
           ));
+
         }
+
       }
+
+
 
       // Busca tags para verificar problemas
+
       final tagsResponse = await _apiService.get<List<dynamic>>(
+
         ApiConstants.tagsByStore(storeId),
+
         parser: (data) => data is List ? data : [],
+
       );
+
+
 
       if (tagsResponse.isSuccess && tagsResponse.data != null) {
+
         final tags = tagsResponse.data!;
+
         
+
         // Alerta: Tags offline (status = 2)
+
         final offlineTags = tags.where((t) => t['status'] == 2).length;
+
         if (offlineTags > 0) {
+
           alerts.add(DashboardAlert(
+
             type: 'Tags offline',
+
             count: offlineTags,
+
             description: '$offlineTags tags h mais de 24h',
+
             iconCodePoint: 0xe69a, // Icons.signal_wifi_off_rounded
-            colorValue: 0xFFF44336, // ThemeColors.of(context).redMain
+
+            colorValue: 0xFFF44336, // AppThemeColors.redMain
+
             details: 'Tags ESL no esto respondendo h mais de 24 horas. Verifique a conexo e bateria.',
+
           ));
+
         }
+
+
 
         // Alerta: Bateria baixa (batteryLevel < 20)
+
         final lowBattery = tags.where((t) => 
+
             (t['batteryLevel'] as int? ?? 100) < 20).length;
+
         if (lowBattery > 0) {
+
           alerts.add(DashboardAlert(
+
             type: 'Bateria baixa',
+
             count: lowBattery,
+
             description: '$lowBattery tags',
+
             iconCodePoint: 0xe19c, // Icons.battery_alert_rounded
-            colorValue: 0xFFF57C00, // ThemeColors.of(context).warning (warning)
+
+            colorValue: 0xFFF57C00, // AppThemeColors.orangeMain (warning)
+
             details: 'Tags com bateria baixa. Considere substituir as baterias em breve.',
+
           ));
+
         }
+
       }
+
+
 
       return ApiResponse.success(alerts);
+
     } catch (e) {
+
       return ApiResponse.error('Erro ao gerar alertas: $e');
+
     }
+
   }
+
+
 
   /// Carrega todos os dados do dashboard de uma vez
+
   Future<ApiResponse<DashboardData>> loadDashboardData(String storeId) async {
+
     try {
+
       // Executa todas as requisies em paralelo
+
       final results = await Future.wait([
+
         getStoreStats(storeId),
+
         getStrategiesStats(storeId),
+
         getAlerts(storeId),
+
       ]);
 
+
+
       final storeStatsResult = results[0] as ApiResponse<StoreStats>;
+
       final strategiesResult = results[1] as ApiResponse<StrategiesStats>;
+
       final alertsResult = results[2] as ApiResponse<List<DashboardAlert>>;
 
+
+
       // Constri o DashboardData com os resultados
+
       final dashboardData = DashboardData(
+
         storeStats: storeStatsResult.data ?? StoreStats.empty,
+
         strategiesStats: strategiesResult.data ?? StrategiesStats.empty,
+
         alerts: alertsResult.data ?? [],
+
         lastUpdate: DateTime.now(),
+
       );
 
+
+
       // Se pelo menos um teve sucesso, retorna os dados
+
       if (storeStatsResult.isSuccess || strategiesResult.isSuccess) {
+
         return ApiResponse.success(dashboardData);
+
       }
 
+
+
       return ApiResponse.error('Erro ao carregar dados do dashboard');
+
     } catch (e) {
+
       return ApiResponse.error('Erro ao carregar dashboard: $e');
+
     }
+
   }
+
+
 
   /// Retorna cor baseada no tipo de estratgia
+
   int _getColorForStrategy(String? type) {
+
     switch (type?.toLowerCase()) {
+
       case 'dynamicpricing':
+
       case 'dynamic_pricing':
+
         return 0xFF4CAF50; // Green
+
       case 'markdown':
+
       case 'markdown_auto':
+
         return 0xFF2196F3; // Blue
+
       case 'minimummargin':
+
       case 'minimum_margin':
+
         return 0xFFFF9800; // Orange
+
       case 'competitive':
+
       case 'competitividade':
+
         return 0xFF9C27B0; // Purple
+
       default:
+
         return 0xFF607D8B; // BlueGrey
+
     }
+
   }
 
+
+
   /// Libera recursos
+
   void dispose() {
+
     _apiService.dispose();
+
   }
+
 }
+
+
+
 
 
 

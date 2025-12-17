@@ -1,4 +1,4 @@
-// TagBean Products Feature
+/// TagBean Products Feature
 library products;
 
 // Data Layer

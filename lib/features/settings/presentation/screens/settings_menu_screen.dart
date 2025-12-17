@@ -8,7 +8,6 @@ import 'package:tagbean/features/settings/presentation/screens/notifications_scr
 import 'package:tagbean/features/settings/presentation/screens/backup_screen.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 
 class ConfiguracoesMenuScreen extends ConsumerStatefulWidget {
@@ -23,7 +22,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
   late AnimationController _animationController;
 
   // ============================================================================
-  // MENU ITEMS DINMICO (baseado na role do usurio)
+  // MENU ITEMS DINMICO (baseado na role do usuário)
   // ============================================================================
   List<Map<String, dynamic>> _getMenuItems() {
     final user = ref.read(authProvider).user;
@@ -69,18 +68,18 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
     if (isClientAdmin || isPlatformAdmin) {
       items.add({
         'icon': Icons.integration_instructions_rounded,
-        'title': 'Integrao ERP',
-        'subtitle': 'Conexo Totvs e sincronizao',
+        'title': 'Integração ERP',
+        'subtitle': 'Conexão Totvs e sincronização',
         'gradient': [ThemeColors.of(context).moduleSincronizacao, ThemeColors.of(context).moduleSincronizacaoDark], // Azul Cyan
         'screen': const ConfiguracoesERPScreen(),
       });
     }
     
-    // === USURIOS E PERMISSES (StoreManager e acima) ===
+    // === Usuários E Permissões (StoreManager e acima) ===
     if (isStoreManager || isClientAdmin || isPlatformAdmin) {
       items.add({
         'icon': Icons.people_rounded,
-        'title': 'Usurios e Permisses',
+        'title': 'Usuários e Permissões',
         'subtitle': 'Gerenciar acessos ao sistema',
         'gradient': [ThemeColors.of(context).moduleEstrategias, ThemeColors.of(context).moduleEstrategiasDark], // Dourado
         'screen': const ConfiguracoesUsuariosScreen(),
@@ -90,7 +89,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
     // === NOTIFICAES (todos os nveis) ===
     items.add({
       'icon': Icons.notifications_rounded,
-      'title': 'Notificaes',
+      'title': 'Notificações',
       'subtitle': 'Email, SMS e alertas push',
       'gradient': [ThemeColors.of(context).moduleRelatorios, ThemeColors.of(context).moduleRelatoriosDark], // Laranja/Vermelho
       'screen': const ConfiguracoesNotificacoesScreen(),
@@ -100,8 +99,8 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
     if (isClientAdmin || isPlatformAdmin) {
       items.add({
         'icon': Icons.backup_rounded,
-        'title': 'Backup e Segurana',
-        'subtitle': 'Backups automticos e logs',
+        'title': 'Backup e Segurança',
+        'subtitle': 'Backups automáticos e logs',
         'gradient': [ThemeColors.of(context).blueCyan, ThemeColors.of(context).blueLight], // Ciano
         'screen': const ConfiguracoesBackupScreen(),
       });
@@ -162,7 +161,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                         children: [
                           ...menuItems.asMap().entries.map((entry) {
                             return _buildMenuItem(entry.value, entry.key);
-                          }).toList(),
+                          }),
                           SizedBox(
                             height: AppSizes.paddingMd.get(isMobile, isTablet),
                           ),
@@ -255,7 +254,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Configuraes',
+                  'Configurações',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -294,7 +293,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
               vertical: AppSizes.extraSmallPadding.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).successLight,
+              color: ThemeColors.of(context).success.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -348,7 +347,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).blueIndigoLight],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).blueIndigo.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
@@ -371,7 +370,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Sobre este Mdulo',
+                  'Sobre este Módulo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -388,7 +387,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                   height: AppSizes.extraSmallPadding.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Personalize preferncias do sistema, gerencie perfil, aparncia, notificaes e configuraes avanadas.',
+                  'Personalize preferncias do sistema, gerencie perfil, aparncia, notificaes e configurações avanadas.',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -436,7 +435,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
           ),
           boxShadow: [
             BoxShadow(
-              color: (item['gradient'][0] as Color)Light,
+              color: (item['gradient'][0] as Color).withValues(alpha: 0.3),
               blurRadius: isMobile ? 18 : 22,
               offset: const Offset(0, 6),
             ),
@@ -710,11 +709,11 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
         vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : 20,
         ),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -806,7 +805,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                 height: AppSizes.paddingXs.get(isMobile, isTablet),
               ),
           Text(
-            'Aes irreversveis que afetam todo o sistema',
+            'Ações irreversveis que afetam todo o sistema',
             textAlign: TextAlign.center,
             maxLines: 2,
             style: TextStyle(
@@ -833,7 +832,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).errorLight,
+                  color: ThemeColors.of(context).error.withValues(alpha: 0.5),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 ),
@@ -872,7 +871,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                       ),
                       Flexible(
                         child: Text(
-                          'Resetar Configuraes',
+                          'Resetar Configurações',
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -936,7 +935,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
             'Este software  licenciado para uso comercial.   '
             'Todos os direitos reservados.\n\n'
             'Licena vlida at: 31/12/2026\n'
-            'Usurios permitidos: Ilimitado\n'
+            'Usuários permitidos: Ilimitado\n'
             'Estabelecimentos: 1',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1160,7 +1159,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
           size: AppSizes.iconHeroSm.get(isMobile, isTablet),
         ),
         title: Text(
-          'Resetar Configuraes? ',
+          'Resetar Configurações? ',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1172,7 +1171,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
           ),
         ),
         content: Text(
-          'Esta ao ir restaurar todas as configuraes para os valores padro.\n\n'
+          'Esta ao ir restaurar todas as configurações para os valores padro.\n\n'
           'Seus dados (produtos, tags, etc.) no sero afetados.\n\n'
           'Deseja continuar?',
           textAlign: TextAlign.center,
@@ -1220,7 +1219,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                         width: AppSizes.paddingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Configuraes resetadas com sucesso',
+                        'Configurações resetadas com sucesso',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1300,7 +1299,7 @@ class _ClientsManagementPlaceholder extends StatelessWidget {
             Icon(
               Icons.business_rounded,
               size: 80,
-              color: ThemeColors.of(context).successLight,
+              color: ThemeColors.of(context).success.withValues(alpha: 0.5),
             ),
             const SizedBox(height: 24),
             Text(
@@ -1324,7 +1323,7 @@ class _ClientsManagementPlaceholder extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).successLight,
+                color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
@@ -1374,7 +1373,7 @@ class _StoresManagementPlaceholder extends StatelessWidget {
             Icon(
               Icons.storefront_rounded,
               size: 80,
-              color: ThemeColors.of(context).successLight,
+              color: ThemeColors.of(context).success.withValues(alpha: 0.5),
             ),
             const SizedBox(height: 24),
             Text(
@@ -1398,7 +1397,7 @@ class _StoresManagementPlaceholder extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).successLight,
+                color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
@@ -1427,9 +1426,6 @@ class _StoresManagementPlaceholder extends StatelessWidget {
     );
   }
 }
-
-
-
 
 
 

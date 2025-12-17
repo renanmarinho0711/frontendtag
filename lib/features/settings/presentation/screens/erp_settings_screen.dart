@@ -3,11 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/settings/presentation/providers/settings_provider.dart';
 import 'package:tagbean/features/settings/data/models/settings_models.dart';
 
-/// Tela de configuraes de integrao ERP
+/// Tela de configurações de integração ERP
 /// Permite configurar conexo com sistemas ERP externos
 class ConfiguracoesERPScreen extends ConsumerStatefulWidget {
   const ConfiguracoesERPScreen({super.key});
@@ -36,16 +35,19 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
   ERPSettingsModel get _settings => _state.settings;
   
   // Opes de ERP disponveis
-  final List<Map<String, dynamic>> _erpOptions = [
-    {'type': ERPIntegrationType.none, 'name': 'Nenhum', 'icon': Icons.block, 'color': ThemeColors.of(context).textTertiary},
-    {'type': ERPIntegrationType.sap, 'name': 'SAP Business One', 'icon': Icons.business, 'color': ThemeColors.of(context).erpSAP},
-    {'type': ERPIntegrationType.totvs, 'name': 'TOTVS Protheus', 'icon': Icons.precision_manufacturing, 'color': ThemeColors.of(context).erpTOTVS},
-    {'type': ERPIntegrationType.sage, 'name': 'Sage', 'icon': Icons.corporate_fare, 'color': ThemeColors.of(context).erpOracle},
-    {'type': ERPIntegrationType.oracle, 'name': 'Oracle NetSuite', 'icon': Icons.cloud, 'color': ThemeColors.of(context).erpSenior},
-    {'type': ERPIntegrationType.bling, 'name': 'Bling', 'icon': Icons.shopping_bag, 'color': ThemeColors.of(context).erpSankhya},
-    {'type': ERPIntegrationType.tiny, 'name': 'Tiny ERP', 'icon': Icons.inventory_2, 'color': ThemeColors.of(context).erpOmie},
-    {'type': ERPIntegrationType.custom, 'name': 'API Customizada', 'icon': Icons.code, 'color': ThemeColors.of(context).erpBling},
-  ];
+  List<Map<String, dynamic>> _getErpOptions(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    return [
+      {'type': ERPIntegrationType.none, 'name': 'Nenhum', 'icon': Icons.block, 'color': colors.grey500},
+      {'type': ERPIntegrationType.sap, 'name': 'SAP Business One', 'icon': Icons.business, 'color': colors.erpSAP},
+      {'type': ERPIntegrationType.totvs, 'name': 'TOTVS Protheus', 'icon': Icons.precision_manufacturing, 'color': colors.erpTOTVS},
+      {'type': ERPIntegrationType.sage, 'name': 'Sage', 'icon': Icons.corporate_fare, 'color': colors.erpOracle},
+      {'type': ERPIntegrationType.oracle, 'name': 'Oracle NetSuite', 'icon': Icons.cloud, 'color': colors.erpSenior},
+      {'type': ERPIntegrationType.bling, 'name': 'Bling', 'icon': Icons.shopping_bag, 'color': colors.erpSankhya},
+      {'type': ERPIntegrationType.tiny, 'name': 'Tiny ERP', 'icon': Icons.inventory_2, 'color': colors.erpOmie},
+      {'type': ERPIntegrationType.custom, 'name': 'API Customizada', 'icon': Icons.code, 'color': colors.erpBling},
+    ];
+  }
   
   final List<Map<String, dynamic>> _syncIntervalOptions = [
     {'value': 5, 'label': '5 minutos'},
@@ -103,7 +105,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     final success = await _notifier.saveSettings();
     
     if (success) {
-      _showSuccessSnackBar('Configuraes salvas com sucesso!');
+      _showSuccessSnackBar('Configurações salvas com sucesso!');
     } else {
       _showErrorSnackBar(_state.errorMessage ?? 'Erro ao salvar');
     }
@@ -122,7 +124,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     final success = await _notifier.testConnection();
     
     if (success) {
-      _showSuccessSnackBar('Conexo testada com sucesso!');
+      _showSuccessSnackBar('Conexão testada com sucesso!');
     } else {
       _showErrorSnackBar(_settings.lastError ?? 'Falha na conexo');
     }
@@ -160,7 +162,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     
     return Container(
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
       ),
       child: isLoading && !_isInitialized
           ? const Center(child: CircularProgressIndicator())
@@ -269,7 +271,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Integrao ERP',
+                  'Integração ERP',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -305,9 +307,10 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
   }
 
   Widget _buildConnectionStatusCard(bool isConnected) {
-    final selectedErp = _erpOptions.firstWhere(
+    final erpOptions = _getErpOptions(context);
+    final selectedErp = erpOptions.firstWhere(
       (e) => e['type'] == _settings.tipo,
-      orElse: () => _erpOptions.first,
+      orElse: () => erpOptions.first,
     );
     final isNone = _settings.tipo == ERPIntegrationType.none;
     
@@ -315,10 +318,10 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
       padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
       decoration: BoxDecoration(
         color: isConnected 
-            ? ThemeColors.of(context).successLight
+            ? ThemeColors.of(context).success.withValues(alpha: 0.1)
             : isNone 
-                ? ThemeColors.of(context).surfaceSecondary
-                : ThemeColors.of(context).warningLight,
+                ? ThemeColors.of(context).backgroundLight
+                : ThemeColors.of(context).warning.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
         border: Border.all(
           color: isConnected 
@@ -334,7 +337,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: (selectedErp['color'] as Color)Light,
+              color: (selectedErp['color'] as Color).withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(
@@ -376,7 +379,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
                 if (_settings.lastSync != null) ...[
                   const SizedBox(height: 4),
                   Text(
-                    'ltima sinc: ${_formatDateTime(_settings.lastSync!)}',
+                    'Última sinc: ${_formatDateTime(_settings.lastSync!)}',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -436,7 +439,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           Wrap(
             spacing: AppSizes.paddingSm.get(isMobile, isTablet),
             runSpacing: AppSizes.paddingSm.get(isMobile, isTablet),
-            children: _erpOptions.map((erp) => _buildERPOption(erp)).toList(),
+            children: _getErpOptions(context).map((erp) => _buildERPOption(erp)).toList(),
           ),
         ],
       ),
@@ -457,7 +460,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: isSelected ? colorLight : ThemeColors.of(context).transparent,
+          color: isSelected ? color.withValues(alpha: 0.2) : ThemeColors.of(context).transparent,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected ? color : ThemeColors.of(context).textSecondaryOverlay30,
@@ -528,8 +531,8 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
           _buildTextField(
             controller: _usuarioController,
-            label: 'Usurio (opcional)',
-            hint: 'Usurio de acesso',
+            label: 'Usuário (opcional)',
+            hint: 'Usuário de acesso',
             icon: Icons.person,
           ),
           SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
@@ -550,7 +553,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
             child: ElevatedButton.icon(
               onPressed: isTesting ? null : _testConnection,
               icon: isTesting 
-                  ? const SizedBox(
+                  ? SizedBox(
                       width: 20,
                       height: 20,
                       child: CircularProgressIndicator(strokeWidth: 2, color: ThemeColors.of(context).surface),
@@ -573,12 +576,12 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
 
   Widget _buildSyncOptionsCard() {
     return _buildCard(
-      title: 'Opes de Sincronizao',
+      title: 'Opes de Sincronização',
       icon: Icons.sync,
       child: Column(
         children: [
           _buildSwitchTile(
-            title: 'Sincronizao Automtica',
+            title: 'Sincronização Automtica',
             subtitle: 'Sincronizar periodicamente com o ERP',
             value: _settings.autoSync,
             onChanged: (value) => _notifier.toggleAutoSync(),
@@ -642,7 +645,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
         borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -656,7 +659,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).successLight,
+                  color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -778,7 +781,7 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: ThemeColors.of(context).success,
+            activeThumbColor: ThemeColors.of(context).success,
           ),
         ],
       ),
@@ -814,17 +817,17 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
           child: ElevatedButton.icon(
             onPressed: _state.hasChanges && !isLoading ? _saveSettings : null,
             icon: isLoading 
-                ? const SizedBox(
+                ? SizedBox(
                     width: 20,
                     height: 20,
                     child: CircularProgressIndicator(strokeWidth: 2, color: ThemeColors.of(context).surface),
                   )
                 : const Icon(Icons.save),
-            label: Text(isLoading ? 'Salvando...' : 'Salvar Configuraes'),
+            label: Text(isLoading ? 'Salvando...' : 'Salvar Configurações'),
             style: ElevatedButton.styleFrom(
               backgroundColor: ThemeColors.of(context).success,
               foregroundColor: ThemeColors.of(context).surface,
-              disabledBackgroundColor: ThemeColors.of(context).successLight,
+              disabledBackgroundColor: ThemeColors.of(context).success.withValues(alpha: 0.5),
               padding: EdgeInsets.symmetric(
                 vertical: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
@@ -850,11 +853,6 @@ class _ConfiguracoesERPScreenState extends ConsumerState<ConfiguracoesERPScreen>
     }
   }
 }
-
-
-
-
-
 
 
 

@@ -79,14 +79,14 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                   color: AppThemeColors.infoBackground,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.history_rounded,
                   color: AppThemeColors.blueDark,
                   size: 18,
                 ),
               ),
               const SizedBox(width: 10),
-              Expanded(
+              const Expanded(
                 child: Text(
                   'Atividade Recente',
                   style: TextStyle(
@@ -101,7 +101,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                 onPressed: () {
                   ref.read(auditReportsProvider.notifier).loadReports();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.refresh_rounded,
                   size: 18,
                   color: AppThemeColors.textSecondary,
@@ -117,7 +117,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                     minimumSize: Size.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
@@ -127,7 +127,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                           color: AppThemeColors.greenMaterial,
                         ),
                       ),
-                      const SizedBox(width: 2),
+                      SizedBox(width: 2),
                       Icon(
                         Icons.arrow_forward_ios_rounded,
                         size: 10,
@@ -153,7 +153,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
     
     for (final report in state.reports) {
       activities.add({
-        'time': _formatRelativeTime(report.dataauditoria),
+        'time': _formatRelativeTime(report.dataAuditoria),
         'icon': _getIconForType(report.titulo),
         'color': _getColorForType(report.titulo, report.hasProblems),
         'description': report.descricao.isNotEmpty ? report.descricao : report.titulo,
@@ -244,7 +244,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
             width: 60,
             child: Text(
               activity['time'] as String,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 11,
                 color: AppThemeColors.textSecondary,
               ),
@@ -268,7 +268,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
           Expanded(
             child: Text(
               activity['description'] as String,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 color: AppThemeColors.textPrimary,
                 height: 1.3,
@@ -300,14 +300,14 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                   color: AppThemeColors.infoBackground,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.history_rounded,
                   color: AppThemeColors.blueDark,
                   size: 18,
                 ),
               ),
               const SizedBox(width: 10),
-              Text(
+              const Text(
                 'Atividade Recente',
                 style: TextStyle(
                   fontSize: 14,
@@ -326,7 +326,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
             ),
           ),
           const SizedBox(height: 8),
-          Text(
+          const Text(
             'Carregando atividades...',
             style: TextStyle(
               fontSize: 12,
@@ -356,14 +356,14 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                   color: AppThemeColors.infoBackground,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.history_rounded,
                   color: AppThemeColors.blueDark,
                   size: 18,
                 ),
               ),
               const SizedBox(width: 10),
-              Text(
+              const Text(
                 'Atividade Recente',
                 style: TextStyle(
                   fontSize: 14,
@@ -376,7 +376,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
                 onPressed: () {
                   ref.read(auditReportsProvider.notifier).loadReports();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.refresh_rounded,
                   size: 18,
                   color: AppThemeColors.textSecondary,
@@ -387,13 +387,13 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
             ],
           ),
           const SizedBox(height: 16),
-          Icon(
+          const Icon(
             Icons.inbox_rounded,
             size: 40,
             color: AppThemeColors.textSecondaryOverlay50,
           ),
           const SizedBox(height: 8),
-          Text(
+          const Text(
             'Nenhuma atividade recente',
             style: TextStyle(
               fontSize: 13,
@@ -401,7 +401,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
             ),
           ),
           const SizedBox(height: 4),
-          Text(
+          const Text(
             'As ações do sistema aparecerão aqui',
             style: TextStyle(
               fontSize: 11,

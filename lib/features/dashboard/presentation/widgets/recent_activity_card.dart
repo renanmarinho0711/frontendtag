@@ -49,7 +49,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
         'description': report.descricao.isEmpty
             ? '${report.itensVerificados} itens verificados'
             : report.descricao,
-        'time': _formatTimeAgo(report.dataauditoria),
+        'time': _formatTimeAgo(report.dataAuditoria),
         'color': _getColorForAction(report.titulo),
       };
     }).toList();
@@ -69,10 +69,10 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
     if (lower.contains('categoria') || lower.contains('category')) {
       return Icons.category_rounded;
     }
-    if (lower.contains('preo') || lower.contains('price')) {
+    if (lower.contains('preço') || lower.contains('price')) {
       return Icons.attach_money_rounded;
     }
-    if (lower.contains('usurio') || lower.contains('user') || lower.contains('login')) {
+    if (lower.contains('usuário') || lower.contains('user') || lower.contains('login')) {
       return Icons.person_rounded;
     }
     if (lower.contains('config') || lower.contains('setting')) {
@@ -84,10 +84,10 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
   Color _getColorForAction(String action) {
     final lower = action.toLowerCase();
     if (lower.contains('produto') || lower.contains('product')) {
-      return ThemeColors.of(context).success;
+      return ThemeColors.of(context).greenMain;
     }
     if (lower.contains('sync') || lower.contains('sincroniza')) {
-      return ThemeColors.of(context).info;
+      return ThemeColors.of(context).blueMain;
     }
     if (lower.contains('tag') || lower.contains('label')) {
       return ThemeColors.of(context).blueCyan;
@@ -95,7 +95,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
     if (lower.contains('categoria') || lower.contains('category')) {
       return ThemeColors.of(context).yellowGold;
     }
-    if (lower.contains('preo') || lower.contains('price')) {
+    if (lower.contains('preço') || lower.contains('price')) {
       return ThemeColors.of(context).greenDark;
     }
     return ThemeColors.of(context).textSecondary;
@@ -181,7 +181,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                     height: 24,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      color: ThemeColors.of(context).info,
+                      color: ThemeColors.of(context).blueMain,
                     ),
                   ),
                 ),
@@ -197,7 +197,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         color: ThemeColors.of(context).textSecondaryOverlay50,
                         size: 32,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'No foi possvel carregar atividades',
                         style: TextStyle(
@@ -211,10 +211,10 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       TextButton(
                         onPressed: () => ref.read(auditReportsProvider.notifier).loadReports(),
-                        child: Text('Tentar novamente'),
+                        child: const Text('Tentar novamente'),
                       ),
                     ],
                   ),
@@ -231,7 +231,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         color: ThemeColors.of(context).textSecondaryOverlay50,
                         size: 32,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'Nenhuma atividade recente',
                         style: TextStyle(
@@ -294,7 +294,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
             AppSizes.paddingSmAlt.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: colorLight,
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(
               isMobile ? 8 : 10,
             ),
@@ -364,8 +364,6 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
     );
   }
 }
-
-
 
 
 

@@ -1,4 +1,4 @@
-﻿import 'package:tagbean/core/network/api_client.dart';
+import 'package:tagbean/core/network/api_client.dart';
 import 'package:tagbean/core/network/api_response.dart';
 
 /// Repository para gerenciamento de precificação
@@ -23,7 +23,7 @@ class PricingRepository {
   }
 
   // =========================================================================
-  // SIMULAÇÃO E AJUSTES
+  // SIMULAÇÀO E AJUSTES
   // =========================================================================
 
   /// Simula ajuste de preços sem aplicar
@@ -246,7 +246,7 @@ class PricingRepository {
   }
 
   // =========================================================================
-  // OTIMIZAÇÃO
+  // OTIMIZAÇÀO
   // =========================================================================
 
   /// Obtém sugestões de otimização de preços
@@ -293,7 +293,7 @@ class PricingRepository {
   }
 
   // =========================================================================
-  // PRECIFICAÇÃO DINÂMICA
+  // PRECIFICAÇÀO DINÂMICA
   // =========================================================================
 
   /// Obtém configuração de precificação dinâmica
@@ -322,7 +322,6 @@ class PricingRepository {
     _apiService.dispose();
   }
 }
-
 
 
 

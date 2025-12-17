@@ -1,4 +1,4 @@
-// Barrel file para widgets de detalhes do produto
+/// Barrel file para widgets de detalhes do produto
 library details_widgets;
 
 export 'quick_actions_section.dart';

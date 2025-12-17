@@ -104,14 +104,14 @@ class NextActionCard extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
+                        const Row(
                           children: [
                             Icon(
                               Icons.lightbulb_rounded,
                               size: 14,
                               color: AppThemeColors.amberDark,
                             ),
-                            const SizedBox(width: 4),
+                            SizedBox(width: 4),
                             Text(
                               'PRÓXIMO PASSO RECOMENDADO',
                               style: TextStyle(
@@ -142,7 +142,7 @@ class NextActionCard extends ConsumerWidget {
               // Descrição
               Text(
                 suggestion['description'] as String,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 13,
                   color: AppThemeColors.textSecondary,
                   height: 1.4,
@@ -187,14 +187,14 @@ class NextActionCard extends ConsumerWidget {
                       // Feedback visual
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Row(
+                          content: const Row(
                             children: [
                               Icon(Icons.schedule_rounded, color: AppThemeColors.surface, size: 20),
-                              const SizedBox(width: 12),
+                              SizedBox(width: 12),
                               Expanded(
                                 child: Text(
                                   'Lembraremos você mais tarde',
-                                  style: const TextStyle(fontWeight: FontWeight.w500),
+                                  style: TextStyle(fontWeight: FontWeight.w500),
                                 ),
                               ),
                             ],
@@ -214,7 +214,7 @@ class NextActionCard extends ConsumerWidget {
                         vertical: 12,
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Fazer depois',
                       style: TextStyle(
                         color: AppThemeColors.textSecondary,

@@ -1,4 +1,4 @@
-// Modelos de Cross-Selling para Estrat�gias
+/// Modelos de Cross-Selling para Estrat�gias
 /// 
 /// Este arquivo cont�m os modelos relacionados a estrat�gias de cross-selling:
 /// sugest�es de produtos vizinhos, trilhas de ofertas e combos inteligentes.
@@ -7,7 +7,6 @@ library;
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-import '../../../../design_system/theme/theme_colors.dart';
 import 'strategy_base_models.dart';
 
 // ============================================================================
@@ -24,7 +23,7 @@ class NearbyProductSuggestionModel {
   final int correlacao;
   final String distancia;
   final int conversao;
-  final String corKey; // Semantic color key
+  final Color cor;
   final int vendas;
   final IconData icone;
 
@@ -35,7 +34,7 @@ class NearbyProductSuggestionModel {
     required this.correlacao,
     required this.distancia,
     required this.conversao,
-    required this.corKey,
+    required this.cor,
     required this.vendas,
     required this.icone,
   });
@@ -47,7 +46,7 @@ class NearbyProductSuggestionModel {
     int? correlacao,
     String? distancia,
     int? conversao,
-    String? corKey,
+    Color? cor,
     int? vendas,
     IconData? icone,
   }) {
@@ -58,20 +57,28 @@ class NearbyProductSuggestionModel {
       correlacao: correlacao ?? this.correlacao,
       distancia: distancia ?? this.distancia,
       conversao: conversao ?? this.conversao,
-      corKey: corKey ?? this.corKey,
+      cor: cor ?? this.cor,
       vendas: vendas ?? this.vendas,
       icone: icone ?? this.icone,
     );
   }
 
-  /// Correla��o formatada
+  /// Correlação formatada
   String get correlacaoFormatted => '$correlacao%';
 
-  /// Convers�o formatada
+  /// Conversão formatada
   String get conversaoFormatted => '$conversao%';
 
   /// Vendas formatadas
   String get vendasFormatted => '$vendas vendas';
+
+  /// Obtém a cor dinâmica baseada na correlação (requer BuildContext)
+  Color dynamicColor(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    if (correlacao >= 80) return colors.success;
+    if (correlacao >= 50) return colors.primary;
+    return colors.warning;
+  }
 
   factory NearbyProductSuggestionModel.fromJson(Map<String, dynamic> json) {
     return NearbyProductSuggestionModel(
@@ -80,8 +87,8 @@ class NearbyProductSuggestionModel {
       sugere: json['sugere'] as String? ?? json['suggests'] as String? ?? '',
       correlacao: json['correlacao'] as int? ?? json['correlation'] as int? ?? 0,
       distancia: json['distancia'] as String? ?? json['distance'] as String? ?? '',
-      conversao: json['conversao'] as int? ?? json['conversion'] as int? ?? 0,
-      corKey: _parseColorKey(json['cor'] ?? json['color']) ?? 'blueMain',
+      conversao: json['conversão'] as int? ?? json['conversion'] as int? ?? 0,
+      cor: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
       vendas: json['vendas'] as int? ?? json['sales'] as int? ?? 0,
       icone: _parseNearbyIcon(json['icone'] ?? json['icon']),
     );
@@ -94,7 +101,7 @@ class NearbyProductSuggestionModel {
       'sugere': sugere,
       'correlacao': correlacao,
       'distancia': distancia,
-      'conversao': conversao,
+      'conversão': conversao,
       'vendas': vendas,
     };
   }
@@ -115,7 +122,7 @@ class OffersTrailModel {
   final List<String> corredores;
   final bool ativa;
   final int conversao;
-  final String corKey; // Semantic color key
+  final Color cor;
   final IconData icone;
   final int vendas;
   final String ticketMedio;
@@ -127,7 +134,7 @@ class OffersTrailModel {
     required this.corredores,
     required this.ativa,
     required this.conversao,
-    required this.corKey,
+    required this.cor,
     required this.icone,
     required this.vendas,
     required this.ticketMedio,
@@ -140,7 +147,7 @@ class OffersTrailModel {
     List<String>? corredores,
     bool? ativa,
     int? conversao,
-    String? corKey,
+    Color? cor,
     IconData? icone,
     int? vendas,
     String? ticketMedio,
@@ -152,14 +159,14 @@ class OffersTrailModel {
       corredores: corredores ?? this.corredores,
       ativa: ativa ?? this.ativa,
       conversao: conversao ?? this.conversao,
-      corKey: corKey ?? this.corKey,
+      cor: cor ?? this.cor,
       icone: icone ?? this.icone,
       vendas: vendas ?? this.vendas,
       ticketMedio: ticketMedio ?? this.ticketMedio,
     );
   }
 
-  /// Convers�o formatada
+  /// Conversão formatada
   String get conversaoFormatted => '$conversao%';
 
   /// Total de produtos na trilha
@@ -167,6 +174,16 @@ class OffersTrailModel {
 
   /// Vendas formatadas
   String get vendasFormatted => '$vendas vendas';
+
+  /// Obtém a cor dinâmica baseada no status (requer BuildContext)
+  Color dynamicColor(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    if (ativa) {
+      if (conversao >= 50) return colors.success;
+      return colors.primary;
+    }
+    return colors.grey500;
+  }
 
   factory OffersTrailModel.fromJson(Map<String, dynamic> json) {
     return OffersTrailModel(
@@ -177,8 +194,8 @@ class OffersTrailModel {
       corredores: (json['corredores'] as List<dynamic>?)?.cast<String>() ?? 
                   (json['aisles'] as List<dynamic>?)?.cast<String>() ?? [],
       ativa: json['ativa'] as bool? ?? json['active'] as bool? ?? false,
-      conversao: json['conversao'] as int? ?? json['conversion'] as int? ?? 0,
-      corKey: _parseColorKey(json['cor'] ?? json['color']) ?? 'blueMain',
+      conversao: json['conversão'] as int? ?? json['conversion'] as int? ?? 0,
+      cor: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
       icone: _parseTrailIcon(json['icone'] ?? json['icon']),
       vendas: json['vendas'] as int? ?? json['sales'] as int? ?? 0,
       ticketMedio: json['ticket_medio'] as String? ?? json['avgTicket'] as String? ?? 'R\$ 0',
@@ -192,7 +209,7 @@ class OffersTrailModel {
       'produtos': produtos,
       'corredores': corredores,
       'ativa': ativa,
-      'conversao': conversao,
+      'conversão': conversao,
       'vendas': vendas,
       'ticketMedio': ticketMedio,
     };
@@ -217,7 +234,7 @@ class SmartComboModel {
   final double economia;
   final int vendas;
   final int conversao;
-  final String corKey; // Semantic color key
+  final Color cor;
   final bool ativo;
   final IconData icone;
   final double margem;
@@ -232,7 +249,7 @@ class SmartComboModel {
     required this.economia,
     required this.vendas,
     required this.conversao,
-    required this.corKey,
+    required this.cor,
     required this.ativo,
     required this.icone,
     required this.margem,
@@ -248,7 +265,7 @@ class SmartComboModel {
     double? economia,
     int? vendas,
     int? conversao,
-    String? corKey,
+    Color? cor,
     bool? ativo,
     IconData? icone,
     double? margem,
@@ -263,7 +280,7 @@ class SmartComboModel {
       economia: economia ?? this.economia,
       vendas: vendas ?? this.vendas,
       conversao: conversao ?? this.conversao,
-      corKey: corKey ?? this.corKey,
+      cor: cor ?? this.cor,
       ativo: ativo ?? this.ativo,
       icone: icone ?? this.icone,
       margem: margem ?? this.margem,
@@ -285,7 +302,7 @@ class SmartComboModel {
   /// Economia percentual formatada
   String get economiaPercentFormatted => '${economiaPercent.toStringAsFixed(0)}%';
 
-  /// Convers�o formatada
+  /// Conversão formatada
   String get conversaoFormatted => '$conversao%';
 
   /// Margem formatada
@@ -296,6 +313,16 @@ class SmartComboModel {
 
   /// Vendas formatadas
   String get vendasFormatted => '$vendas vendas';
+
+  /// Obtém a cor dinâmica baseada no status (requer BuildContext)
+  Color dynamicColor(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    if (ativo) {
+      if (margem >= 20) return colors.success;
+      return colors.primary;
+    }
+    return colors.grey500;
+  }
 
   factory SmartComboModel.fromJson(Map<String, dynamic> json) {
     return SmartComboModel(
@@ -311,8 +338,8 @@ class SmartComboModel {
       economia: (json['economia'] as num?)?.toDouble() ?? 
                 (json['savings'] as num?)?.toDouble() ?? 0.0,
       vendas: json['vendas'] as int? ?? json['sales'] as int? ?? 0,
-      conversao: json['conversao'] as int? ?? json['conversion'] as int? ?? 0,
-      corKey: _parseColorKey(json['cor'] ?? json['color']) ?? 'blueMain',
+      conversao: json['conversão'] as int? ?? json['conversion'] as int? ?? 0,
+      cor: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
       ativo: json['ativo'] as bool? ?? json['active'] as bool? ?? false,
       icone: _parseComboIcon(json['icone'] ?? json['icon']),
       margem: (json['margem'] as num?)?.toDouble() ?? 
@@ -330,7 +357,7 @@ class SmartComboModel {
       'precoCombo': precoCombo,
       'economia': economia,
       'vendas': vendas,
-      'conversao': conversao,
+      'conversão': conversao,
       'ativo': ativo,
       'margem': margem,
     };
@@ -340,12 +367,6 @@ class SmartComboModel {
     if (icon is IconData) return icon;
     return Icons.card_giftcard_rounded;
   }
-}
-
-/// Helper para parsear color key
-String _parseColorKey(dynamic value) {
-  if (value is String) return value;
-  return 'primary'; // Default
 }
 
 

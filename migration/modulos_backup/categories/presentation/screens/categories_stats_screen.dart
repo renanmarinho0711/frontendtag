@@ -171,7 +171,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: _exportarrelatÃ³rio,
+        onPressed: _exportarRelatorio,
         icon: const Icon(Icons.file_download_rounded),
         label: const Text('Exportar'),
         backgroundColor: AppThemeColors.greenMaterial,
@@ -633,7 +633,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(
                   'Distribuição por Categoria',
@@ -658,7 +658,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               desktop: 32,
             ),
           ),
-          ..._categorias.map((cat) => _buildDistributionBar(cat)).toList(),
+          ..._categorias.map((cat) => _buildDistributionBar(cat)),
         ],
       ),
     );
@@ -708,7 +708,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: TweenAnimationBuilder(
@@ -781,7 +781,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Top 5 Categorias',
                 style: TextStyle(
@@ -803,7 +803,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
             final index = entry.key;
             final cat = entry.value;
             return _buildRankingItem(cat, index + 1);
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -813,7 +813,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: EdgeInsets.all(
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
@@ -865,13 +865,13 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               ),
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Icon(
             categoria['icone'],
             color: categoria['cor'],
             size: 24,
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1000,7 +1000,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       size: AppSizes.iconLarge.get(isMobile, isTablet),
                     ),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1065,7 +1065,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                           AppThemeColors.blueMaterial,
                         ),
                       ),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: _buildMetricBox(
                           'Faturamento',
@@ -1076,7 +1076,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   Row(
                     children: [
                       Expanded(
@@ -1087,7 +1087,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                           AppThemeColors.yellowGold,
                         ),
                       ),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: _buildMetricBox(
                           'Margem',
@@ -1098,7 +1098,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
@@ -1244,7 +1244,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   size: AppSizes.iconMedium.get(isMobile, isTablet),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Ranking de Crescimento',
                 style: TextStyle(
@@ -1267,7 +1267,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               desktop: 28,
             ),
           ),
-          ... sortedByGrowth.map((cat) => _buildGrowthItem(cat)).toList(),
+          ... sortedByGrowth.map((cat) => _buildGrowthItem(cat)),
         ],
       ),
     );
@@ -1277,7 +1277,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     final isPositive = categoria['crescimento'] > 0;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isPositive ?  AppThemeColors.successPastel : AppThemeColors.errorPastel,
@@ -1293,7 +1293,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
             color: categoria['cor'],
             size: 24,
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
               categoria['nome'],
@@ -1386,7 +1386,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Performance Comparativa',
                 style: TextStyle(
@@ -1413,7 +1413,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                 final height = (cat['percentual'] / 100) * 180;
                 return TweenAnimationBuilder(
                   duration: const Duration(milliseconds: 1000),
-                  tween: Tween<double>(begin: 0, end: height),
+                  tween: Tween<double>(begin: 0, end: constraints?.minHeight),
                   builder: (context, double animatedHeight, child) {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -1542,7 +1542,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         AppSizes.paddingXxlAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           colors: [AppThemeColors.primaryPastel, AppThemeColors.infoPastel],
         ),
         borderRadius: BorderRadius.circular(
@@ -1555,12 +1555,12 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         children: [
           Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.lightbulb_rounded,
                 color: AppThemeColors.primaryDark,
                 size: 28,
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Insights Principais',
                 style: TextStyle(
@@ -1575,12 +1575,12 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               ),
             ],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ...insights.map((insight) => _buildInsightItem(
             insight['icon'] as IconData,
             insight['text'] as String,
             insight['color'] as Color,
-          )).toList(),
+          )),
         ],
       ),
     );
@@ -1588,7 +1588,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
 
   Widget _buildInsightItem(IconData icon, String text, Color color) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppThemeColors.surface,
@@ -1598,7 +1598,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       child: Row(
         children: [
           Icon(icon, color: color, size: 20),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
               text,
@@ -1617,7 +1617,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     );
   }
 
-  void _exportarrelatÃ³rio() {
+  void _exportarRelatorio() {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(

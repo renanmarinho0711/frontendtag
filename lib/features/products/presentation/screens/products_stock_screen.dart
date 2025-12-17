@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/products/presentation/providers/products_state_provider.dart';
 import 'package:tagbean/core/enums/loading_status.dart';
@@ -41,7 +40,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
     final items = _stockState.filteredItems;
     if (_filterStatus == 'Todos') return items;
     return items.where((item) {
-      if (_filterStatus == 'Cr?tico') return item.statusEstoque == 'Cr?tico' || item.statusEstoque == 'Esgotado';
+      if (_filterStatus == 'Crítico') return item.statusEstoque == 'Crítico' || item.statusEstoque == 'Esgotado';
       if (_filterStatus == 'Baixo') return item.statusEstoque == 'Baixo';
       if (_filterStatus == 'Normal') return item.statusEstoque == 'OK';
       return true;
@@ -126,7 +125,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _abrirMovimentacaoGlobal,
         icon: const Icon(Icons.swap_vert_rounded),
-        label: const Text('Nova Movimenta??o'),
+        label: const Text('Nova Movimentação'),
         backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
       ),
     );
@@ -150,8 +149,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(
-      margin: EdgeInsets.all(AppSpacing.md),
-      padding: EdgeInsets.all(AppSpacing.lg),
+      margin: const EdgeInsets.all(AppSpacing.md),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
@@ -162,7 +161,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: ThemeColors.of(context).surface,
             ),
@@ -174,9 +173,9 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               }
             },
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Container(
-            padding: EdgeInsets.all(AppSpacing.md),
+            padding: const EdgeInsets.all(AppSpacing.md),
             decoration: BoxDecoration(
               color: ThemeColors.of(context).surfaceOverlay20,
               borderRadius: AppRadius.lg,
@@ -187,7 +186,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               size: AppSizes.iconLarge.get(isMobile, isTablet),
             ),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,7 +206,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               ],
             ),
           ),
-          // Bot?o de atualizar
+          // Botão de atualizar
           IconButton(
             icon: Icon(
               Icons.refresh_rounded,
@@ -228,8 +227,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
 
   Widget _buildStats() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: AppSpacing.md),
-      padding: EdgeInsets.all(AppSpacing.lg),
+      margin: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: AppRadius.card,
@@ -239,11 +238,11 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
         children: [
           Expanded(
             child: _buildStatItem(
-              'Cr?ticos',
+              'Críticos',
               '$_estoquesCriticos',
               Icons.error_rounded,
               ThemeColors.of(context).error,
-              () => setState(() => _filterStatus = 'Cr?tico'),
+              () => setState(() => _filterStatus = 'Crítico'),
             ),
           ),
           Container(
@@ -256,7 +255,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               'Baixos',
               '$_estoquesBaixos',
               Icons.warning_rounded,
-              ThemeColors.of(context).warning,
+              ThemeColors.of(context).orangeMain,
               () => setState(() => _filterStatus = 'Baixo'),
             ),
           ),
@@ -270,7 +269,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               'Normais',
               '$_estoquesOk',
               Icons.check_circle_rounded,
-              ThemeColors.of(context).success,
+              ThemeColors.of(context).greenMain,
               () => setState(() => _filterStatus = 'Normal'),
             ),
           ),
@@ -290,11 +289,11 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
       onTap: onTap,
       borderRadius: AppRadius.lg,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: AppSpacing.sm),
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
         child: Column(
           children: [
             Icon(icon, color: color, size: AppSizes.iconLarge.get(false, false)),
-            SizedBox(height: AppSpacing.xs),
+            const SizedBox(height: AppSpacing.xs),
             Text(
               value,
               style: AppTextStyles.h2.responsive(false, false).copyWith(
@@ -315,8 +314,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
 
   Widget _buildFilters() {
     return Container(
-      margin: EdgeInsets.all(AppSpacing.md),
-      padding: EdgeInsets.all(AppSpacing.md),
+      margin: const EdgeInsets.all(AppSpacing.md),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: AppRadius.card,
@@ -338,10 +337,10 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                       },
                     )
                   : null,
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                 borderRadius: AppRadius.lg,
               ),
-              contentPadding: EdgeInsets.symmetric(
+              contentPadding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.md,
                 vertical: AppSpacing.sm,
               ),
@@ -349,7 +348,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             ),
             onChanged: _onSearchChanged,
           ),
-          SizedBox(height: AppSpacing.md),
+          const SizedBox(height: AppSpacing.md),
           Row(
             children: [
               Icon(
@@ -357,18 +356,18 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 size: AppSizes.iconMedium.get(false, false),
                 color: ThemeColors.of(context).textSecondary,
               ),
-              SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 'Status:',
                 style: AppTextStyles.fieldLabel.responsive(false, false).copyWith(
                   color: ThemeColors.of(context).textSecondary,
                 ),
               ),
-              SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Wrap(
                   spacing: AppSpacing.sm,
-                  children: ['Todos', 'Cr?tico', 'Baixo', 'Normal'].map((status) {
+                  children: ['Todos', 'Crítico', 'Baixo', 'Normal'].map((status) {
                     final isSelected = _filterStatus == status;
                     return FilterChip(
                       label: Text(status),
@@ -377,7 +376,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                         setState(() => _filterStatus = status);
                       },
                       backgroundColor: ThemeColors.of(context).textSecondaryOverlay10,
-                      selectedColor: ThemeColors.of(context).brandPrimaryGreenLight,
+                      selectedColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2),
                       checkmarkColor: ThemeColors.of(context).brandPrimaryGreen,
                       labelStyle: AppTextStyles.small.responsive(false, false).copyWith(
                         fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
@@ -404,7 +403,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
     
     switch (item.statusEstoque) {
       case 'Esgotado':
-      case 'Cr?tico':
+      case 'Crítico':
         statusIcon = Icons.error_rounded;
         statusLabel = item.statusEstoque.toUpperCase();
         break;
@@ -427,17 +426,17 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
         );
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: AppSpacing.md),
+        margin: const EdgeInsets.only(bottom: AppSpacing.md),
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: AppRadius.card,
           border: Border.all(
-            color: statusColorLight,
+            color: statusColor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: statusColorLight,
+              color: statusColor.withValues(alpha: 0.1),
               blurRadius: 12,
               offset: const Offset(0, 4),
             ),
@@ -449,13 +448,13 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             onTap: () => _abrirDetalhesEstoque(item),
             borderRadius: AppRadius.card,
             child: Padding(
-              padding: EdgeInsets.all(AppSpacing.md),
+              padding: const EdgeInsets.all(AppSpacing.md),
               child: Column(
                 children: [
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(AppSpacing.md),
+                        padding: const EdgeInsets.all(AppSpacing.md),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
@@ -471,7 +470,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                           size: AppSizes.iconLarge.get(isMobile, isTablet),
                         ),
                       ),
-                      SizedBox(width: AppSpacing.md),
+                      const SizedBox(width: AppSpacing.md),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -484,16 +483,16 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
-                            SizedBox(height: AppSpacing.xxs),
+                            const SizedBox(height: AppSpacing.xxs),
                             Row(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                     horizontal: AppSpacing.sm,
                                     vertical: AppSpacing.xxs / 2,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: (item.cor ?? ThemeColors.of(context).primaryMain)Light,
+                                    color: (item.cor ?? ThemeColors.of(context).primaryMain).withValues(alpha: 0.1),
                                     borderRadius: AppRadius.xs,
                                   ),
                                   child: Text(
@@ -504,13 +503,13 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: AppSpacing.sm),
+                                const SizedBox(width: AppSpacing.sm),
                                 Icon(
                                   Icons.qr_code_rounded,
                                   size: AppSizes.iconExtraSmall.get(isMobile, isTablet),
                                   color: ThemeColors.of(context).textSecondary,
                                 ),
-                                SizedBox(width: AppSpacing.xxs),
+                                const SizedBox(width: AppSpacing.xxs),
                                 Expanded(
                                   child: Text(
                                     item.productId,
@@ -526,19 +525,19 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: AppSpacing.md,
                           vertical: AppSpacing.sm,
                         ),
                         decoration: BoxDecoration(
-                          color: statusColorLight,
+                          color: statusColor.withValues(alpha: 0.1),
                           borderRadius: AppRadius.sm,
                           border: Border.all(color: statusColor),
                         ),
                         child: Row(
                           children: [
                             Icon(statusIcon, color: statusColor, size: AppSizes.iconTiny.get(isMobile, isTablet)),
-                            SizedBox(width: AppSpacing.xxs),
+                            const SizedBox(width: AppSpacing.xxs),
                             Text(
                               statusLabel,
                               style: AppTextStyles.caption.responsive(false, false).copyWith(
@@ -551,9 +550,9 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSpacing.md),
+                  const SizedBox(height: AppSpacing.md),
                   Container(
-                    padding: EdgeInsets.all(AppSpacing.md),
+                    padding: const EdgeInsets.all(AppSpacing.md),
                     decoration: BoxDecoration(
                       color: ThemeColors.of(context).textSecondaryOverlay05,
                       borderRadius: AppRadius.lg,
@@ -574,7 +573,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                         ),
                         Expanded(
                           child: _buildStockInfo(
-                            'M?nimo',
+                            'Mãnimo',
                             '${item.estoqueMinimo} ${item.unidade}',
                             Icons.warning_amber_rounded,
                           ),
@@ -594,7 +593,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                       ],
                     ),
                   ),
-                  SizedBox(height: AppSpacing.sm),
+                  const SizedBox(height: AppSpacing.sm),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -605,11 +604,11 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                             size: AppSizes.iconExtraSmall.get(isMobile, isTablet),
                             color: ThemeColors.of(context).textSecondary,
                           ),
-                          SizedBox(width: AppSpacing.xxs),
+                          const SizedBox(width: AppSpacing.xxs),
                           Text(
                             item.ultimaMovimentacao != null
-                                ? '�ltima mov: ${_formatDate(item.ultimaMovimentacao!)}'
-                                : 'Sem movimenta??es',
+                                ? 'Ãltima mov: ${_formatDate(item.ultimaMovimentacao!)}'
+                                : 'Sem movimentações',
                             style: AppTextStyles.caption.responsive(false, false).copyWith(
                               color: ThemeColors.of(context).textSecondary,
                             ),
@@ -625,12 +624,12 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                               size: AppSizes.iconMedium.get(isMobile, isTablet),
                             ),
                             onPressed: () => _registrarSaida(item),
-                            tooltip: 'Registrar Sa?da',
+                            tooltip: 'Registrar Saãda',
                           ),
                           IconButton(
                             icon: Icon(
                               Icons.add_circle_outline,
-                              color: ThemeColors.of(context).success,
+                              color: ThemeColors.of(context).greenMain,
                               size: AppSizes.iconMedium.get(isMobile, isTablet),
                             ),
                             onPressed: () => _registrarEntrada(item),
@@ -661,7 +660,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
           size: AppSizes.iconMedium.get(false, false),
           color: ThemeColors.of(context).textSecondary,
         ),
-        SizedBox(height: AppSpacing.xxs),
+        const SizedBox(height: AppSpacing.xxs),
         Text(
           value,
           style: AppTextStyles.body.responsive(false, false).copyWith(
@@ -695,14 +694,14 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                   size: AppSizes.iconHero3Xl.get(false, false),
                   color: ThemeColors.of(context).textSecondaryOverlay50,
                 ),
-                SizedBox(height: AppSpacing.xl),
+                const SizedBox(height: AppSpacing.xl),
                 Text(
                   'Nenhum produto encontrado',
                   style: AppTextStyles.h3.responsive(false, false).copyWith(
                     color: ThemeColors.of(context).textSecondary,
                   ),
                 ),
-                SizedBox(height: AppSpacing.sm),
+                const SizedBox(height: AppSpacing.sm),
                 Text(
                   'Ajuste os filtros de busca',
                   style: AppTextStyles.body.responsive(false, false).copyWith(
@@ -732,19 +731,19 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.card,
         ),
         title: Row(
           children: [
             Icon(
               tipo == 'entrada' ? Icons.add_circle_rounded : Icons.remove_circle_rounded,
-              color: tipo == 'entrada' ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+              color: tipo == 'entrada' ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
             ),
-            SizedBox(width: AppSpacing.sm),
+            const SizedBox(width: AppSpacing.sm),
             Expanded(
               child: Text(
-                tipo == 'entrada' ? 'Entrada de Estoque' : 'Sa?da de Estoque',
+                tipo == 'entrada' ? 'Entrada de Estoque' : 'Saãda de Estoque',
                 style: AppTextStyles.h3.responsive(false, false),
               ),
             ),
@@ -756,15 +755,15 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(AppSpacing.md),
+                padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
-                  color: (item.cor ?? ThemeColors.of(context).primaryMain)Light,
+                  color: (item.cor ?? ThemeColors.of(context).primaryMain).withValues(alpha: 0.1),
                   borderRadius: AppRadius.lg,
                 ),
                 child: Row(
                   children: [
                     Icon(item.icone ?? Icons.inventory_2_rounded, color: item.cor ?? ThemeColors.of(context).primaryMain),
-                    SizedBox(width: AppSpacing.sm),
+                    const SizedBox(width: AppSpacing.sm),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -787,28 +786,28 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                   ],
                 ),
               ),
-              SizedBox(height: AppSpacing.lg),
+              const SizedBox(height: AppSpacing.lg),
               TextField(
                 controller: quantidadeController,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Quantidade',
                   hintText: 'Digite a quantidade',
-                  prefixIcon: const Icon(Icons.dialpad_rounded),
+                  prefixIcon: Icon(Icons.dialpad_rounded),
                   border: OutlineInputBorder(
                     borderRadius: AppRadius.lg,
                   ),
                 ),
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               ),
-              SizedBox(height: AppSpacing.md),
+              const SizedBox(height: AppSpacing.md),
               TextField(
                 controller: motivoController,
                 maxLines: 3,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Motivo (opcional)',
-                  hintText: 'Descreva o motivo da movimenta??o',
-                  prefixIcon: const Icon(Icons.description_rounded),
+                  hintText: 'Descreva o motivo da movimentAÃ§ão',
+                  prefixIcon: Icon(Icons.description_rounded),
                   border: OutlineInputBorder(
                     borderRadius: AppRadius.lg,
                   ),
@@ -832,7 +831,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: tipo == 'entrada' 
-                  ? ThemeColors.of(context).success 
+                  ? ThemeColors.of(context).greenMain 
                   : ThemeColors.of(context).error,
             ),
             child: const Text('Confirmar'),
@@ -867,7 +866,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               success ? Icons.check_circle_rounded : Icons.error_rounded,
               color: ThemeColors.of(context).surface,
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -875,8 +874,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 children: [
                   Text(
                     success 
-                        ? (tipo == 'entrada' ? 'Entrada Registrada!' : 'Sa?da Registrada!')
-                        : 'Erro ao registrar movimenta??o',
+                        ? (tipo == 'entrada' ? 'Entrada Registrada!' : 'Saãda Registrada!')
+                        : 'Erro ao registrar movimentAÃ§ão',
                     style: AppTextStyles.body.responsive(false, false).copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -892,10 +891,10 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
           ],
         ),
         backgroundColor: success
-            ? (tipo == 'entrada' ? ThemeColors.of(context).success : ThemeColors.of(context).warning)
+            ? (tipo == 'entrada' ? ThemeColors.of(context).greenMain : ThemeColors.of(context).orangeMain)
             : ThemeColors.of(context).error,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.lg,
         ),
       ),
@@ -912,7 +911,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             Container(
               padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
-                color: _getStatusColor(item.status)Light,
+                color: _getStatusColor(item.status).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
@@ -927,7 +926,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 children: [
                   Text(
                     item.nome,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -945,12 +944,12 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             mainAxisSize: MainAxisSize.min,
             children: [
               _buildDetalheRow('Quantidade Atual', '${item.quantidade} un'),
-              _buildDetalheRow('Estoque M?nimo', '${item.estoqueMinimo} un'),
-              _buildDetalheRow('Estoque M?ximo', '${item.estoqueMaximo} un'),
+              _buildDetalheRow('Estoque Mãnimo', '${item.estoqueMinimo} un'),
+              _buildDetalheRow('Estoque Mãximo', '${item.estoqueMaximo} un'),
               _buildDetalheRow('Status', item.status),
-              _buildDetalheRow('�ltima Atualiza??o', _formatarData(item.ultimaAtualizacao)),
+              _buildDetalheRow('Ãltima AtualizAÃ§ão', _formatarData(item.ultimaAtualizacao)),
               const Divider(height: 24),
-              _buildDetalheRow('Valor Unit?rio', _formatarMoeda(item.valorUnitario)),
+              _buildDetalheRow('Valor Unitãrio', _formatarMoeda(item.valorUnitario)),
               _buildDetalheRow('Valor Total', _formatarMoeda(item.valorTotal)),
             ],
           ),
@@ -968,7 +967,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
             icon: const Icon(Icons.add_rounded, size: 18),
             label: const Text('Entrada'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).success,
+              backgroundColor: ThemeColors.of(context).greenMain,
               foregroundColor: ThemeColors.of(context).surface,
             ),
           ),
@@ -978,9 +977,9 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               _mostrarDialogoMovimentacao(item, 'saida');
             },
             icon: const Icon(Icons.remove_rounded, size: 18),
-            label: const Text('Sa?da'),
+            label: const Text('Saãda'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).warning,
+              backgroundColor: ThemeColors.of(context).orangeMain,
               foregroundColor: ThemeColors.of(context).surface,
             ),
           ),
@@ -1004,7 +1003,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
           ),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w600,
             ),
@@ -1026,12 +1025,12 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
 
   Color _getStatusColor(String status) {
     switch (status.toLowerCase()) {
-      case 'cr?tico':
+      case 'crãtico':
         return ThemeColors.of(context).error;
       case 'baixo':
-        return ThemeColors.of(context).warning;
+        return ThemeColors.of(context).orangeMain;
       case 'normal':
-        return ThemeColors.of(context).success;
+        return ThemeColors.of(context).greenMain;
       default:
         return ThemeColors.of(context).textSecondary;
     }
@@ -1040,7 +1039,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
   void _abrirMovimentacaoGlobal() {
     final TextEditingController quantidadeController = TextEditingController();
     String tipoSelecionado = 'entrada';
-    String motivoSelecionado = 'Reposi??o';
+    String motivoSelecionado = 'Reposição';
     
     showDialog(
       context: context,
@@ -1052,16 +1051,16 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               Container(
                 padding: const EdgeInsets.all(AppSpacing.sm),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).infoLight,
+                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.swap_vert_rounded,
-                  color: ThemeColors.of(context).info,
+                  color: ThemeColors.of(context).blueMain,
                 ),
               ),
               const SizedBox(width: AppSpacing.md),
-              const Text('Movimenta??o em Massa'),
+              const Text('Movimentação em Massa'),
             ],
           ),
           content: SingleChildScrollView(
@@ -1070,7 +1069,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Selecione o tipo de movimenta??o:',
+                  'Selecione o tipo de movimentAÃ§ão:',
                   style: TextStyle(
                     fontSize: 13,
                     color: ThemeColors.of(context).textSecondary,
@@ -1091,8 +1090,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                     ),
                     Expanded(
                       child: RadioListTile<String>(
-                        title: const Text('Sa?da', style: TextStyle(fontSize: 14)),
-                        value: 'sa?da',
+                        title: const Text('Saãda', style: TextStyle(fontSize: 14)),
+                        value: 'saãda',
                         groupValue: tipoSelecionado,
                         onChanged: (value) => setDialogState(() => tipoSelecionado = value!),
                         contentPadding: EdgeInsets.zero,
@@ -1103,7 +1102,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 ),
                 const SizedBox(height: AppSpacing.lg),
                 DropdownButtonFormField<String>(
-                  value: motivoSelecionado,
+                  initialValue: motivoSelecionado,
                   decoration: InputDecoration(
                     labelText: 'Motivo',
                     border: OutlineInputBorder(
@@ -1112,11 +1111,11 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                     contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   ),
                   items: [
-                    'Reposi??o',
-                    'Ajuste de invent?rio',
-                    'Devolu??o',
+                    'Reposição',
+                    'Ajuste de inventãrio',
+                    'Devolução',
                     'Perda/Avaria',
-                    'Transfer?ncia',
+                    'Transferãncia',
                     'Venda',
                     'Outro',
                   ].map((m) => DropdownMenuItem(value: m, child: Text(m))).toList(),
@@ -1146,13 +1145,13 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                     children: [
                       Icon(
                         Icons.info_outline_rounded,
-                        color: ThemeColors.of(context).warning,
+                        color: ThemeColors.of(context).orangeMain,
                         size: 20,
                       ),
                       const SizedBox(width: AppSpacing.sm),
                       Expanded(
                         child: Text(
-                          'A movimenta??o ser? aplicada a todos os ${_stockItems.length} produtos listados.',
+                          'A movimentAÃ§ão serÃ¡ aplicada a todos os ${_stockItems.length} produtos listados.',
                           style: TextStyle(
                             fontSize: 12,
                             color: ThemeColors.of(context).textPrimary,
@@ -1176,7 +1175,7 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 if (quantidade == null || quantidade <= 0) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Informe uma quantidade v?lida'),
+                      content: Text('Informe uma quantidade vãlida'),
                       behavior: SnackBarBehavior.floating,
                     ),
                   );
@@ -1185,12 +1184,12 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 
                 Navigator.pop(context);
                 
-                // Executar movimenta??o em massa via API
+                // Executar movimentAÃ§ão em massa via API
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 16,
                           height: 16,
                           child: CircularProgressIndicator(
@@ -1213,8 +1212,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
                 if (mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('${tipoSelecionado == 'entrada' ? 'Entrada' : 'Sa?da'} de $quantidade unidades registrada para ${_stockItems.length} produtos'),
-                      backgroundColor: ThemeColors.of(context).success,
+                      content: Text('${tipoSelecionado == 'entrada' ? 'Entrada' : 'SaÃÂ£da'} de $quantidade unidades registrada para ${_stockItems.length} produtos'),
+                      backgroundColor: ThemeColors.of(context).greenMain,
                       behavior: SnackBarBehavior.floating,
                     ),
                   );
@@ -1229,8 +1228,8 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
               label: const Text('Confirmar'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: tipoSelecionado == 'entrada' 
-                    ? ThemeColors.of(context).success 
-                    : ThemeColors.of(context).warning,
+                    ? ThemeColors.of(context).greenMain 
+                    : ThemeColors.of(context).orangeMain,
                 foregroundColor: ThemeColors.of(context).surface,
               ),
             ),
@@ -1240,9 +1239,6 @@ class _ProdutosEstoqueScreenState extends ConsumerState<ProdutosEstoqueScreen>
     );
   }
 }
-
-
-
 
 
 

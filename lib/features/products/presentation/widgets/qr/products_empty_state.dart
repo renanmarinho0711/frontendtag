@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Widget de estado vazio para listas de produtos
 class ProductsEmptyState extends StatelessWidget {
@@ -34,7 +33,7 @@ class ProductsEmptyState extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(AppSpacing.xl),
               decoration: BoxDecoration(
-                color: colorLight,
+                color: color.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -86,11 +85,11 @@ class ProductsEmptyState extends StatelessWidget {
 
   /// Factory para estado de nenhum produto pendente
   factory ProductsEmptyState.pendentes({VoidCallback? onImport}) {
-    return ProductsEmptyState(
+    return const ProductsEmptyState(
       icon: Icons.check_circle_outline_rounded,
       title: 'Todos vinculados!',
-      subtitle: 'Todos os produtos j� possuem tags vinculadas.',
-      // iconColor: Removed hardcoded color - uses ThemeColors.of(context).textTertiary
+      subtitle: 'Todos os produtos jã possuem tags vinculadas.',
+      iconColor: Color(0xFF4CAF50),
     );
   }
 
@@ -98,24 +97,23 @@ class ProductsEmptyState extends StatelessWidget {
   factory ProductsEmptyState.vinculados({VoidCallback? onScan}) {
     return ProductsEmptyState(
       icon: Icons.label_off_rounded,
-      title: 'Nenhuma vinculação',
-      subtitle: 'Ainda não há produtos vinculados a tags. Escaneie para começar.',
+      title: 'Nenhuma vinculAção',
+      subtitle: 'Ainda não hã produtos vinculados a tags. Escaneie para começar.',
       actionLabel: 'Escanear',
       onAction: onScan,
-      // iconColor: Removed hardcoded color - uses ThemeColors.of(context).textTertiary
+      iconColor: const Color(0xFFFF9800),
     );
   }
 
   /// Factory para estado de carregando
   factory ProductsEmptyState.loading() {
-    return ProductsEmptyState(
+    return const ProductsEmptyState(
       icon: Icons.hourglass_empty_rounded,
       title: 'Carregando...',
       subtitle: 'Buscando produtos...',
     );
   }
 }
-
 
 
 

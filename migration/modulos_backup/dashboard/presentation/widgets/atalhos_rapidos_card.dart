@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -51,13 +51,13 @@ class AtalhosRapidosCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.keyboard_rounded,
                 color: AppThemeColors.textSecondary,
                 size: 16,
               ),
               const SizedBox(width: 8),
-              Text(
+              const Text(
                 'ATALHOS RÁPIDOS',
                 style: TextStyle(
                   fontSize: 11,
@@ -70,8 +70,8 @@ class AtalhosRapidosCard extends StatelessWidget {
               InkWell(
                 onTap: () => _showAllShortcuts(context),
                 borderRadius: BorderRadius.circular(4),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                   child: Text(
                     'Ver Todos',
                     style: TextStyle(
@@ -118,14 +118,14 @@ class AtalhosRapidosCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             children: [
               Icon(
                 Icons.touch_app_rounded,
                 color: AppThemeColors.textSecondary,
                 size: 16,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8),
               Text(
                 'GESTOS',
                 style: TextStyle(
@@ -171,7 +171,7 @@ class AtalhosRapidosCard extends StatelessWidget {
               ),
               child: Text(
                 keys,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w600,
                   color: AppThemeColors.grey700,
@@ -182,7 +182,7 @@ class AtalhosRapidosCard extends StatelessWidget {
             const SizedBox(width: 6),
             Text(
               action,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 11,
                 color: AppThemeColors.textSecondary,
               ),
@@ -203,7 +203,7 @@ class AtalhosRapidosCard extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             '$gesture: $action',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               color: AppThemeColors.textSecondary,
             ),
@@ -218,11 +218,11 @@ class AtalhosRapidosCard extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Row(
+        title: const Row(
           children: [
             Icon(Icons.keyboard_rounded, color: AppThemeColors.greenMaterial),
-            const SizedBox(width: 12),
-            const Text('Atalhos de Teclado'),
+            SizedBox(width: 12),
+            Text('Atalhos de Teclado'),
           ],
         ),
         content: SingleChildScrollView(
@@ -267,7 +267,7 @@ class AtalhosRapidosCard extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.bold,
             color: AppThemeColors.textSecondary,
@@ -288,7 +288,7 @@ class AtalhosRapidosCard extends StatelessWidget {
                 ),
                 child: Text(
                   s.$1,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'monospace',
@@ -300,7 +300,7 @@ class AtalhosRapidosCard extends StatelessWidget {
               const SizedBox(width: 12),
               Text(
                 s.$2,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 13,
                   color: AppThemeColors.textPrimary,
                 ),

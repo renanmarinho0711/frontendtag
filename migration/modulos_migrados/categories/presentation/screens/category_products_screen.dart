@@ -3,9 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class CategoriasProdutosScreen extends ConsumerStatefulWidget {
   const CategoriasProdutosScreen({super.key});
 
@@ -18,7 +16,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
   late TabController _tabController;
   String _categoriaSelecionada = 'Bebidas';
   String _searchQuery = '';
-  List<Map<String, dynamic>> _selectedProducts = [];
+  final List<Map<String, dynamic>> _selectedProducts = [];
   bool _isSelectMode = false;
   
   // Cache para produtos filtrados
@@ -476,7 +474,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           color: isSelected ? ThemeColors.of(context).surface : categoria['cor'],
                           size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           categoria['nome'],
                           textAlign: TextAlign.center,
@@ -492,7 +490,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 4),
+                        const SizedBox(height: 4),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
@@ -1253,7 +1251,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                             size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 14, tablet: 16, desktop: 18),
                             color: ThemeColors.of(context).textSecondary,
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             '${produto['estoque']}',
                             style: TextStyle(
@@ -1437,7 +1435,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                   );
                 },
               );
-            }).toList(),
+            }),
           ],
         ),
         actions: [
@@ -1478,7 +1476,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Produtos desvinculados'),
+                  content: const Text('Produtos desvinculados'),
                   backgroundColor: ThemeColors.of(context).redMain,
                   behavior: SnackBarBehavior.floating,
                 ),
@@ -1521,7 +1519,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Produto desvinculado'),
+                  content: const Text('Produto desvinculado'),
                   backgroundColor: ThemeColors.of(context).redMain,
                   behavior: SnackBarBehavior.floating,
                 ),

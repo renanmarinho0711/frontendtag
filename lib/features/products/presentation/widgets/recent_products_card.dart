@@ -74,7 +74,7 @@ class RecentProductsCard extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                           Text(
-                            'Últimas atualiza��es',
+                            'Últimas atualizações',
                             style: TextStyle(
                               fontSize: isMobile ? 11 : 12,
                               color: ThemeColors.of(context).textTertiary,
@@ -95,7 +95,7 @@ class RecentProductsCard extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            isMobile ? 'Ver tudo' : 'Ver hist�rico completo',
+                            isMobile ? 'Ver tudo' : 'Ver histórico completo',
                             style: TextStyle(
                               color: ThemeColors.of(context).brandPrimaryGreen,
                               fontWeight: FontWeight.w600,
@@ -130,9 +130,9 @@ class RecentProductsCard extends StatelessWidget {
     );
   }
 
-  /// Constr�i um item de produto conforme o prompt:
+  /// Constrói um item de produto conforme o prompt:
   /// 🖼️ Coca-Cola 2L
-  ///    R$ 12,90 • Bebidas • h� 5 min
+  ///    R$ 12,90 • Bebidas • hã 5 min
   ///    [Editar] [Vincular Tag]    →
   Widget _buildProductItem(BuildContext context, ProductModel product, {bool isLast = false}) {
     final isMobile = ResponsiveHelper.isMobile(context);
@@ -150,7 +150,7 @@ class RecentProductsCard extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(isMobile ? 12 : 14),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).surfaceSecondary,
+              color: ThemeColors.of(context).backgroundLight,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: ThemeColors.of(context).border),
             ),
@@ -161,7 +161,7 @@ class RecentProductsCard extends StatelessWidget {
                   width: isMobile ? 48 : 56,
                   height: isMobile ? 48 : 56,
                   decoration: BoxDecoration(
-                    color: ThemeColors.of(context).brandPrimaryGreenLight,
+                    color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: product.imagem != null && product.imagem!.isNotEmpty
@@ -202,7 +202,7 @@ class RecentProductsCard extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: AppSpacing.xs),
-                      // R$ 12,90 • Bebidas • h� 5 min
+                      // R$ 12,90 • Bebidas • hã 5 min
                       Wrap(
                         spacing: 4,
                         runSpacing: 2,
@@ -257,7 +257,7 @@ class RecentProductsCard extends StatelessWidget {
                             _buildActionChip(
                               label: 'Vincular Tag',
                               icon: Icons.link_rounded,
-                              color: ThemeColors.of(context).warning,
+                              color: ThemeColors.of(context).orangeMain,
                               onTap: () => onBindTag?.call(product),
                             ),
                         ],
@@ -291,9 +291,9 @@ class RecentProductsCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
-          color: colorLight,
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: colorLight),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -318,9 +318,9 @@ class RecentProductsCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).brandPrimaryGreenLight,
+        color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreenLight),
+        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -349,18 +349,16 @@ class RecentProductsCard extends StatelessWidget {
     if (difference.inMinutes < 1) {
       return 'Agora mesmo';
     } else if (difference.inMinutes < 60) {
-      return 'H� ${difference.inMinutes} min';
+      return 'Hã ${difference.inMinutes} min';
     } else if (difference.inHours < 24) {
-      return 'H� ${difference.inHours}h�';
+      return 'Hã ${difference.inHours}hã';
     } else if (difference.inDays < 7) {
-      return 'H� ${difference.inDays} dias';
+      return 'Hã ${difference.inDays} dias';
     } else {
       return '${date.day}/${date.month}/${date.year}';
     }
   }
 }
-
-
 
 
 

@@ -3,14 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/repositories/strategies_repository.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-import 'package:tagbean/design_system/theme/app_theme.dart';
+import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 // ============================================================================
 // REPOSITORY PROVIDER
 // ============================================================================
 
-/// Provider do StrategiesRepository para estrat?gias ambientais
+/// Provider do StrategiesRepository para estratégias ambientais
 final environmentalStrategiesRepositoryProvider = Provider<StrategiesRepository>((ref) {
   return StrategiesRepository();
 });
@@ -55,7 +54,7 @@ class TemperatureState {
   /// Estado com erro
   factory TemperatureState.error(String message) => TemperatureState(error: message);
 
-  /// Cria uma cpia com altera??es
+  /// Cria uma cpia com alterações
   TemperatureState copyWith({
     List<TemperatureRangeModel>? temperatureRanges,
     List<TemperatureHistoryModel>? history,
@@ -127,7 +126,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
                   ? List<String>.from(r['products']) 
                   : (r['produtos'] is List ? List<String>.from(r['produtos']) : []),
               icon: Icons.thermostat,
-              colorKey: _parseColorKey(r['color'] ?? r['cor']) ?? 'primary',
+              color: _parseColor(r['color'] ?? r['cor']),
               description: r['description']?.toString() ?? r['descricao']?.toString() ?? '',
             ));
           }
@@ -165,16 +164,16 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
     }
   }
 
-  String? _parseColorKey(dynamic colorValue) {
-    if (colorValue == null) return 'primary';
+  Color _parseColor(dynamic colorValue) {
+    if (colorValue == null) return AppThemeColors.primary;
     if (colorValue is String) {
-      final lower = colorValue.toLowerCase();
-      if (lower.contains('success') || lower.contains('green')) return 'success';
-      if (lower.contains('error') || lower.contains('red')) return 'error';
-      if (lower.contains('warning') || lower.contains('orange')) return 'warning';
-      if (lower.contains('info') || lower.contains('blue')) return 'info';
+      try {
+        return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+      } catch (_) {
+        return AppThemeColors.primary;
+      }
     }
-    return 'primary';
+    return AppThemeColors.primary;
   }
 
   /// Atualiza o status ativo da estratgia
@@ -212,7 +211,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
     state = state.copyWith(currentTemperature: temperature);
   }
 
-  /// Atualiza a condi??o atual
+  /// Atualiza a condição atual
   void setCurrentCondition(String condition) {
     state = state.copyWith(currentCondition: condition);
   }
@@ -243,7 +242,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
         final tempStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.environmental && 
                  s.name.toLowerCase().contains('temperatura'),
-          orElse: () => throw Exception('Estratgia de temperatura n?o encontrada'),
+          orElse: () => throw Exception('Estratgia de temperatura não encontrada'),
         );
         
         // Executa a estratgia para testar conexo
@@ -259,7 +258,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
     }
   }
 
-  /// Salva as configura??es
+  /// Salva as configurações
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -268,7 +267,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
         final tempStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.environmental && 
                  s.name.toLowerCase().contains('temperatura'),
-          orElse: () => throw Exception('Estratgia de temperatura n?o encontrada'),
+          orElse: () => throw Exception('Estratgia de temperatura não encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(tempStrategy.id, {
@@ -348,7 +347,7 @@ class PeakHoursState {
   /// Estado com erro
   factory PeakHoursState.error(String message) => PeakHoursState(error: message);
 
-  /// Cria uma cpia com altera??es
+  /// Cria uma cpia com alterações
   PeakHoursState copyWith({
     List<PeakHourModel>? peakHours,
     List<WeekDayModel>? weekDays,
@@ -414,7 +413,7 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
               tipo: p['tipo']?.toString() ?? 'pico',
               ajuste: (p['ajuste'] ?? p['adjustment'] ?? 0).toDouble(),
               icone: Icons.access_time,
-              corKey: _parseColorKey(p['color'] ?? p['cor']) ?? 'blueMain',
+              cor: _parseColor(p['color'] ?? p['cor']),
               descricao: p['descricao']?.toString() ?? p['description']?.toString() ?? '',
               produtos: p['produtos'] is List 
                   ? List<String>.from(p['produtos']) 
@@ -463,6 +462,18 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
     }
   }
 
+  Color _parseColor(dynamic colorValue) {
+    if (colorValue == null) return AppThemeColors.orangeMaterial;
+    if (colorValue is String) {
+      try {
+        return Color(int.parse(colorValue.replaceFirst('#', '0xFF')));
+      } catch (_) {
+        return AppThemeColors.orangeMaterial;
+      }
+    }
+    return AppThemeColors.orangeMaterial;
+  }
+
   /// Atualiza o status ativo da estratgia
   void setStrategyActive(bool isActive) {
     state = state.copyWith(isStrategyActive: isActive);
@@ -478,12 +489,12 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
     state = state.copyWith(fabExpanded: expanded);
   }
 
-  /// Atualiza a op??o de aplicar em finais de semana
+  /// Atualiza a opção de aplicar em finais de semana
   void setAplicarFinaisSemana(bool value) {
     state = state.copyWith(aplicarFinaisSemana: value);
   }
 
-  /// Atualiza a op??o de notificar ajustes
+  /// Atualiza a opção de notificar ajustes
   void setNotificarAjustes(bool value) {
     state = state.copyWith(notificarAjustes: value);
   }
@@ -510,7 +521,7 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
     state = state.copyWith(peakHours: updatedPeakHours);
   }
 
-  /// Salva as configura??es
+  /// Salva as configurações
   Future<bool> saveConfigurations() async {
     state = state.copyWith(isLoading: true);
     try {
@@ -519,7 +530,7 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
         final peakStrategy = strategies.data!.firstWhere(
           (s) => s.category == StrategyCategory.environmental && 
                  (s.name.toLowerCase().contains('pico') || s.name.toLowerCase().contains('peak')),
-          orElse: () => throw Exception('Estratgia de horrio de pico n?o encontrada'),
+          orElse: () => throw Exception('Estratgia de horrio de pico não encontrada'),
         );
         
         await _repository.updateStrategyConfiguration(peakStrategy.id, {
@@ -552,18 +563,6 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
   Future<void> refresh() async {
     await loadFromBackend();
   }
-
-  String? _parseColorKey(dynamic colorValue) {
-    if (colorValue == null) return 'blueMain';
-    if (colorValue is String) {
-      final lower = colorValue.toLowerCase();
-      if (lower.contains('success') || lower.contains('green')) return 'success';
-      if (lower.contains('error') || lower.contains('red')) return 'error';
-      if (lower.contains('warning') || lower.contains('orange')) return 'warning';
-      if (lower.contains('info') || lower.contains('blue')) return 'info';
-    }
-    return 'blueMain';
-  }
 }
 
 // ============================================================================
@@ -580,8 +579,6 @@ final peakHoursProvider =
     return PeakHoursNotifier(repository, storeId);
   },
 );
-
-
 
 
 

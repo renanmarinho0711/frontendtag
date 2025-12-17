@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
@@ -245,7 +245,7 @@ class ProductTagCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             vertical: AppSizes.paddingSm.get(isMobile, isTablet),
           ),
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
         ),
@@ -292,7 +292,7 @@ class ProductTagCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             vertical: AppSizes.paddingSm.get(isMobile, isTablet),
           ),
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
         ),

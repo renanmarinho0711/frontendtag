@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/pricing/data/models/pricing_models.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
@@ -196,7 +195,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                   ),
                 ),
                 Text(
-                  'Alterar pre?os em %',
+                  'Alterar preços em %',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -278,7 +277,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Configura??o do Ajuste',
+                'ConfigurAção do Ajuste',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -328,7 +327,7 @@ class _PrecificacaoAjustePorcentagemScreenState
               ),
               Expanded(
                 child: _buildTipoButton(
-                  'Redu??o',
+                  'Redução',
                   Icons.trending_down_rounded,
                   1,
                   ThemeColors.of(context).error,
@@ -367,8 +366,8 @@ class _PrecificacaoAjustePorcentagemScreenState
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
               ),
               helperText: _tipoAjuste == 0
-                  ? 'Valor que ser? acrescido aos pre?os'
-                  : 'Valor que ser? descontado dos pre?os',
+                  ? 'Valor que será acrescido aos preços'
+                  : 'Valor que será descontado dos preços',
               helperStyle: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -419,7 +418,7 @@ class _PrecificacaoAjustePorcentagemScreenState
           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: isSelected ? colorLight : ThemeColors.of(context).textSecondaryOverlay10,
+          color: isSelected ? color.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondaryOverlay10,
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
           ),
@@ -526,7 +525,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Sele??o de Produtos',
+                'Seleção de Produtos',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -567,7 +566,7 @@ class _PrecificacaoAjustePorcentagemScreenState
                       ),
                     )
                   : const Icon(Icons.calculate_rounded),
-              label: Text(_calculando ? 'Calculando...' : 'Calcular Pr?via'),
+              label: Text(_calculando ? 'Calculando...' : 'Calcular Prãvia'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: ThemeColors.of(context).blueCyan,
                 foregroundColor: ThemeColors.of(context).surface,
@@ -607,7 +606,7 @@ class _PrecificacaoAjustePorcentagemScreenState
       child: Container(
         padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: isSelected ? ThemeColors.of(context).primaryLightLight : ThemeColors.of(context).transparent,
+          color: isSelected ? ThemeColors.of(context).primaryLight.withValues(alpha: 0.2) : ThemeColors.of(context).transparent,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textSecondaryOverlay30,
@@ -664,10 +663,10 @@ class _PrecificacaoAjustePorcentagemScreenState
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 18 : 20),
-        border: Border.all(color: ThemeColors.of(context).blueCyanLight),
+        border: Border.all(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueCyanLight,
+            color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
             blurRadius: 15,
             offset: const Offset(0, 4),
           ),
@@ -690,7 +689,7 @@ class _PrecificacaoAjustePorcentagemScreenState
               ),
               const SizedBox(width: 12),
               const Text(
-                'Pr?via do Ajuste',
+                'Prãvia do Ajuste',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -783,8 +782,6 @@ class _PrecificacaoAjustePorcentagemScreenState
     );
   }
 }
-
-
 
 
 

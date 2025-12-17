@@ -186,7 +186,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
       decoration: BoxDecoration(
         border: isLast
             ? null
-            : Border(bottom: BorderSide(color: AppThemeColors.border, width: 1)),
+            : const Border(bottom: BorderSide(color: AppThemeColors.border, width: 1)),
       ),
       child: Row(
         children: [

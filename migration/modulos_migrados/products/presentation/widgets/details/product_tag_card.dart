@@ -3,7 +3,6 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card exibindo informações de tag vinculada ao produto
 class ProductTagCard extends StatelessWidget {
   final ProductModel product;
@@ -222,8 +221,8 @@ class ProductTagCard extends StatelessWidget {
                   children: [
                     Icon(Icons.open_in_new_rounded,
                         color: ThemeColors.of(context).surface),
-                    SizedBox(width: AppSpacing.md),
-                    Text('Abrindo detalhes da tag...'),
+                    const SizedBox(width: AppSpacing.md),
+                    const Text('Abrindo detalhes da tag...'),
                   ],
                 ),
                 backgroundColor: ThemeColors.of(context).success,
@@ -246,7 +245,7 @@ class ProductTagCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             vertical: AppSizes.paddingSm.get(isMobile, isTablet),
           ),
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
         ),
@@ -269,8 +268,8 @@ class ProductTagCard extends StatelessWidget {
                   children: [
                     Icon(Icons.qr_code_scanner_rounded,
                         color: ThemeColors.of(context).surface),
-                    SizedBox(width: AppSpacing.md),
-                    Text('Abrindo associação de tag...'),
+                    const SizedBox(width: AppSpacing.md),
+                    const Text('Abrindo associação de tag...'),
                   ],
                 ),
                 backgroundColor: ThemeColors.of(context).warning,
@@ -293,7 +292,7 @@ class ProductTagCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             vertical: AppSizes.paddingSm.get(isMobile, isTablet),
           ),
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
         ),

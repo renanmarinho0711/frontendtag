@@ -44,7 +44,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
         .where((s) => s.tipo == 'aumento')
         .fold(0.0, (sum, s) => sum + (s.precoSugerido - s.precoAtual));
 
-    // Se não há sugestões, mostra versÃ£o compacta
+    // Se não há sugestões, mostra versão compacta
     if (totalSugestoes == 0) {
       return _buildEmptyState(context, isMobile, isTablet);
     }
@@ -56,7 +56,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
           end: Alignment.bottomRight,
           colors: [
             ThemeColors.of(context).greenMaterialOverlay05,
-            ThemeColors.of(context).warningOverlay03,
+            ThemeColors.of(context).orangeMainOverlay03,
           ],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
@@ -86,7 +86,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
                     gradient: LinearGradient(
                       colors: [
                         ThemeColors.of(context).greenMaterial,
-                        ThemeColors.of(context).warning,
+                        ThemeColors.of(context).orangeMain,
                       ],
                     ),
                     borderRadius: BorderRadius.circular(12),
@@ -129,7 +129,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                colors: [ThemeColors.of(context).greenMaterial, ThemeColors.of(context).warning],
+                                colors: [ThemeColors.of(context).greenMaterial, ThemeColors.of(context).orangeMain],
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -166,10 +166,10 @@ class OportunidadesLucroCard extends ConsumerWidget {
                   child: _buildNumeroChave(
                     context: context,
                     icon: Icons.trending_up_rounded,
-                    iconColor: ThemeColors.of(context).success,
+                    iconColor: ThemeColors.of(context).greenMain,
                     valor: '$produtosSubir',
                     label: 'podem subir',
-                    bgColor: ThemeColors.of(context).success.withValues(alpha: 0.08),
+                    bgColor: ThemeColors.of(context).greenMain.withValues(alpha: 0.08),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -177,10 +177,10 @@ class OportunidadesLucroCard extends ConsumerWidget {
                   child: _buildNumeroChave(
                     context: context,
                     icon: Icons.trending_down_rounded,
-                    iconColor: ThemeColors.of(context).warning,
+                    iconColor: ThemeColors.of(context).orangeMain,
                     valor: '$produtosBaixar',
                     label: 'devem baixar',
-                    bgColor: ThemeColors.of(context).warning.withValues(alpha: 0.08),
+                    bgColor: ThemeColors.of(context).orangeMain.withValues(alpha: 0.08),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -205,8 +205,8 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Expanded(
                   child: OutlinedButton.icon(
                     onPressed: onRevisarSugestoes,
-                    icon: Icon(Icons.visibility_rounded, size: 18),
-                    label: Text(
+                    icon: const Icon(Icons.visibility_rounded, size: 18),
+                    label: const Text(
                       'Revisar Sugestões',
                       style: TextStyle(fontSize: 13),
                     ),
@@ -224,8 +224,8 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: onAplicarAutomatico,
-                    icon: Icon(Icons.bolt_rounded, size: 18),
-                    label: Text(
+                    icon: const Icon(Icons.bolt_rounded, size: 18),
+                    label: const Text(
                       'Aplicar Todos',
                       style: TextStyle(fontSize: 13),
                     ),
@@ -254,7 +254,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         border: Border.all(
-          color: ThemeColors.of(context).greenMaterialLight,
+          color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1),
         ),
       ),
       child: Padding(
@@ -264,7 +264,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).greenMaterialLight,
+                color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -298,7 +298,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
             ),
             Icon(
               Icons.check_circle_rounded,
-              color: ThemeColors.of(context).success,
+              color: ThemeColors.of(context).greenMain,
               size: 24,
             ),
           ],
@@ -322,7 +322,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
         color: bgColor,
         borderRadius: BorderRadius.circular(12),
         border: destaque 
-            ? Border.all(color: iconColorLight, width: 1.5) 
+            ? Border.all(color: iconColor.withValues(alpha: 0.3), width: 1.5) 
             : null,
       ),
       child: Column(
@@ -351,8 +351,6 @@ class OportunidadesLucroCard extends ConsumerWidget {
     );
   }
 }
-
-
 
 
 

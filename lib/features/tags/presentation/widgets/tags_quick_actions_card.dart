@@ -3,7 +3,7 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// A??o r?pida para tags
+/// Ação rãpida para tags
 class TagQuickAction {
   final String id;
   final String label;
@@ -22,7 +22,7 @@ class TagQuickAction {
   });
 }
 
-/// Card de a??es r?pidas para tags
+/// Card de ações Rápidas para tags
 class TagsQuickActionsCard extends StatelessWidget {
   final List<TagQuickAction> actions;
 
@@ -62,7 +62,7 @@ class TagsQuickActionsCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                'A??es R?pidas',
+                'Ações Rápidas',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
                   fontWeight: FontWeight.bold,
@@ -73,7 +73,7 @@ class TagsQuickActionsCard extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
-          // Grid de a??es
+          // Grid de ações
           Wrap(
             spacing: 12,
             runSpacing: 12,
@@ -107,7 +107,7 @@ class TagsQuickActionsCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: action.color.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: action.colorLight),
+            border: Border.all(color: action.color.withValues(alpha: 0.2)),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -118,7 +118,7 @@ class TagsQuickActionsCard extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(isMobile ? 10 : 12),
                     decoration: BoxDecoration(
-                      color: action.colorLight,
+                      color: action.color.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
@@ -141,7 +141,7 @@ class TagsQuickActionsCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
-                              color: ThemeColors.of(context).errorLight,
+                              color: ThemeColors.of(context).error.withValues(alpha: 0.3),
                               blurRadius: 4,
                               offset: const Offset(0, 2),
                             ),
@@ -181,8 +181,6 @@ class TagsQuickActionsCard extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

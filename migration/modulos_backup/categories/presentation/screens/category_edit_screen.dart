@@ -5,7 +5,6 @@ import 'package:tagbean/features/categories/presentation/providers/categories_pr
 import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class CategoriasEditarScreen extends ConsumerStatefulWidget {
   final CategoryModel categoria;
@@ -956,7 +955,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                     padding: EdgeInsets.symmetric(
                       vertical: AppSizes.paddingLgAlt3.get(isMobile, isTablet),
                     ),
-                    side: BorderSide(color: AppThemeColors.textSecondary),
+                    side: const BorderSide(color: AppThemeColors.textSecondary),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                         isMobile ? 12 : 16,
@@ -1044,7 +1043,7 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
                         desktop: 18,
                       ),
                     ),
-                    side: BorderSide(
+                    side: const BorderSide(
                         color: AppThemeColors.textSecondaryOverlay60),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),

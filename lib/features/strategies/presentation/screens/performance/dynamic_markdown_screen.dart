@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/providers/performance_provider.dart';
 
@@ -78,7 +77,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).warning,
+              backgroundColor: ThemeColors.of(context).orangeMain,
             ),
           Positioned(
             right: 0,
@@ -140,7 +139,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSmAlt3.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark]),
+              gradient: LinearGradient(colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark]),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
             child: Icon(
@@ -165,7 +164,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                   ),
                 ),
                 Text(
-                  'Redu??o por Validade',
+                  'Redução por Validade',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                     overflow: TextOverflow.ellipsis,
@@ -211,7 +210,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
       child: TabBar(
         controller: _tabController,
         indicator: BoxDecoration(
-          gradient: LinearGradient(colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark]),
+          gradient: LinearGradient(colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark]),
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
@@ -303,7 +302,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  '${state.products.length} produtos com desconto autom?tico ativo',
+                  '${state.products.length} produtos com desconto Automático ativo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                     overflow: TextOverflow.ellipsis,
@@ -335,11 +334,11 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingLgAlt2.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark]),
         borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).warning.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -367,7 +366,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Redu??o Autom?tica',
+                  'Redução Automática',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 17, mobileFontSize: 16),
                     overflow: TextOverflow.ellipsis,
@@ -393,7 +392,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             child: Switch(
               value: state.isStrategyActive,
               onChanged: (value) => notifier.setStrategyActive(value),
-              activeColor: ThemeColors.of(context).surface,
+              activeThumbColor: ThemeColors.of(context).surface,
               activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
             ),
           ),
@@ -428,7 +427,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Redu??o Progressiva Inteligente',
+                  'Redução Progressiva Inteligente',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                     overflow: TextOverflow.ellipsis,
@@ -437,7 +436,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                 ),
                 SizedBox(height: AppSizes.paddingXsAlt.get(isMobile, isTablet)),
                 Text(
-                  'Pre?os s?o ajustados automaticamente conforme a data de validade se aproxima, maximizando vendas e reduzindo perdas',
+                  'PREÇOs são ajustados automaticamente conforme a data de validade se aproxima, maximizando vendas e reduzindo perdas',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11),
                     overflow: TextOverflow.ellipsis,
@@ -475,12 +474,12 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).infoLight,
+              color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
             child: Icon(
               Icons.filter_list_rounded,
-              color: ThemeColors.of(context).info,
+              color: ThemeColors.of(context).blueMain,
               size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
             ),
           ),
@@ -491,7 +490,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Aplicar Apenas em Perec?veis',
+                  'Aplicar Apenas em Perecãveis',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15),
                     overflow: TextOverflow.ellipsis,
@@ -515,7 +514,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             child: Switch(
               value: state.apenasPereci,
               onChanged: (value) => notifier.setApenasPereci(value),
-              activeColor: ThemeColors.of(context).info,
+              activeThumbColor: ThemeColors.of(context).blueMain,
             ),
           ),
         ],
@@ -546,7 +545,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueCyanLight,
+              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
             ),
             child: Icon(
@@ -562,7 +561,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Notificar Ajustes de Pre?o',
+                  'Notificar Ajustes de PREÇO',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15),
                     overflow: TextOverflow.ellipsis,
@@ -586,7 +585,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             child: Switch(
               value: state.notificarAjustes,
               onChanged: (value) => notifier.setNotificarAjustes(value),
-              activeColor: ThemeColors.of(context).blueCyan,
+              activeThumbColor: ThemeColors.of(context).blueCyan,
             ),
           ),
         ],
@@ -621,19 +620,19 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               Container(
                 padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).successLight,
+                  color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.category_rounded,
-                  color: ThemeColors.of(context).success,
+                  color: ThemeColors.of(context).greenMain,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
               SizedBox(width: AppSizes.paddingSm.get(isMobile, isTablet)),
               Expanded(
                 child: Text(
-                  'Categorias Perec?veis',
+                  'Categorias Perecãveis',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14),
                     overflow: TextOverflow.ellipsis,
@@ -662,7 +661,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                 children: [
                   Icon(
                     Icons.check_circle_rounded,
-                    color: ThemeColors.of(context).success,
+                    color: ThemeColors.of(context).greenMain,
                     size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                   ),
                   SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -701,10 +700,10 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
-          border: Border.all(color: rule.corLight, width: 2),
+          border: Border.all(color: rule.cor.withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
-              color: rule.corLight,
+              color: rule.cor.withValues(alpha: 0.15),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -723,7 +722,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                     borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: rule.corLight,
+                        color: rule.cor.withValues(alpha: 0.3),
                         blurRadius: isMobile ? 10 : 12,
                         offset: const Offset(0, 4),
                       ),
@@ -768,11 +767,11 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                     vertical: AppSizes.paddingSmAlt3.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [rule.cor, rule.corDark]),
+                    gradient: LinearGradient(colors: [rule.cor, rule.cor.withValues(alpha: 0.8)]),
                     borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: rule.corLight,
+                        color: rule.cor.withValues(alpha: 0.3),
                         blurRadius: isMobile ? 8 : 10,
                         offset: const Offset(0, 4),
                       ),
@@ -831,7 +830,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                           vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                         ),
                         decoration: BoxDecoration(
-                          color: rule.corLight,
+                          color: rule.cor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -884,10 +883,10 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 16 : (isTablet ? 17 : 18)),
-          border: Border.all(color: statusColorLight, width: 2),
+          border: Border.all(color: statusColor.withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
-              color: statusColorLight,
+              color: statusColor.withValues(alpha: 0.15),
               blurRadius: isMobile ? 12 : 15,
               offset: Offset(0, isMobile ? 4 : 5),
             ),
@@ -944,9 +943,9 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                     vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: statusColorLight,
+                    color: statusColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-                    border: Border.all(color: statusColorLight),
+                    border: Border.all(color: statusColor.withValues(alpha: 0.3)),
                   ),
                   child: Text(
                     produto.diasRestantesFormatted,
@@ -970,7 +969,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Pre?o Original',
+                        'PREÇO Original',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9),
                           overflow: TextOverflow.ellipsis,
@@ -1002,7 +1001,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        'Pre?o com Desconto',
+                        'PREÇO com Desconto',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9),
                           overflow: TextOverflow.ellipsis,
@@ -1031,7 +1030,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                 vertical: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: statusColorLight,
+                color: statusColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -1070,7 +1069,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingLgAlt.get(isMobile, isTablet))),
         icon: Icon(
           Icons.auto_fix_high_rounded,
-          color: ThemeColors.of(context).warning,
+          color: ThemeColors.of(context).orangeMain,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
@@ -1084,7 +1083,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Sistema inteligente de redu??o de pre?os baseado em validade:',
+                'Sistema inteligente de redução de preços baseado em validade:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
                   overflow: TextOverflow.ellipsis,
@@ -1093,7 +1092,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               ),
               SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
               Text(
-                '? Detecta automaticamente produtos pr?ximos ao vencimento',
+                '? Detecta automaticamente produtos prãximos ao vencimento',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
               ),
@@ -1111,13 +1110,13 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
               ),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
               Text(
-                '? Tags ESL s?o atualizadas em tempo real',
+                '? Tags ESL são atualizadas em tempo real',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
               ),
               SizedBox(height: AppSizes.paddingXsAlt2.get(isMobile, isTablet)),
               Text(
-                '? Redu??o de 60-80% em perdas por vencimento',
+                '? Redução de 60-80% em perdas por vencimento',
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12),
                 overflow: TextOverflow.ellipsis, height: 1.5),
               ),
@@ -1169,7 +1168,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Configura??es Salvas!',
+                    'Configurações Salvas!',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
@@ -1188,7 +1187,7 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
             ),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).warning,
+        backgroundColor: ThemeColors.of(context).orangeMain,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet))),
         duration: const Duration(seconds: 3),
@@ -1196,9 +1195,6 @@ class _DynamicMarkdownConfigScreenState extends ConsumerState<DynamicMarkdownCon
     );
   }
 }
-
-
-
 
 
 

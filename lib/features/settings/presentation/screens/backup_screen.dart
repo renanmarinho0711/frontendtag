@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/settings/presentation/providers/backup_provider.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:intl/intl.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:tagbean/core/utils/web_utils.dart';
 
 class ConfiguracoesBackupScreen extends ConsumerStatefulWidget {
@@ -21,7 +21,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
   bool _includeTags = true;
   bool _includeSettings = true;
   bool _includeStrategies = true;
-  bool _isImporting = false;
+  final bool _isImporting = false;
 
   @override
   void initState() {
@@ -53,14 +53,14 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
       if (next.successMessage != null && next.successMessage != previous?.successMessage) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            child: Row(
+            content: Row(
               children: [
                 Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
                 const SizedBox(width: 12),
                 Expanded(child: Text(next.successMessage!)),
               ],
             ),
-            backgroundColor: ThemeColors.of(context).success,
+            backgroundColor: ThemeColors.of(context).greenMain,
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -70,7 +70,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
 
     return Container(
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
       ),
       child: Scaffold(
         backgroundColor: ThemeColors.of(context).transparent,
@@ -224,7 +224,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
   Widget _buildHeaderSection(BackupState state) {
     final lastBackup = state.lastBackup;
     final lastBackupText = lastBackup != null
-        ? 'ltimo backup: ${DateFormat('dd/MM/yyyy HH:mm').format(lastBackup.createdAt)}'
+        ? 'Último backup: ${DateFormat('dd/MM/yyyy HH:mm').format(lastBackup.createdAt)}'
         : 'Nenhum backup realizado';
 
     return Container(
@@ -232,8 +232,8 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ThemeColors.of(context).info,
-            ThemeColors.of(context).infoDark,
+            ThemeColors.of(context).blueMain,
+            ThemeColors.of(context).blueMain.withValues(alpha: 0.8),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
@@ -257,7 +257,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'Backup de Dados',
                   style: TextStyle(
                     fontSize: 18,
@@ -299,7 +299,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -313,12 +313,12 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).successLight,
+                  color: ThemeColors.of(context).greenMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.cloud_upload_rounded,
-                  color: ThemeColors.of(context).success,
+                  color: ThemeColors.of(context).greenMain,
                 ),
               ),
               const SizedBox(width: 12),
@@ -332,7 +332,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             ],
           ),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             'Exporte todos os dados da sua loja para um arquivo seguro.',
             style: TextStyle(
               fontSize: 13,
@@ -347,7 +347,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             child: ElevatedButton.icon(
               onPressed: state.isCreating ? null : _createBackup,
               icon: state.isCreating
-                  ? const SizedBox(
+                  ? SizedBox(
                       width: 18,
                       height: 18,
                       child: CircularProgressIndicator(
@@ -358,7 +358,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   : const Icon(Icons.download_rounded, size: 18),
               label: Text(state.isCreating ? 'Criando backup...' : 'Criar Backup'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: ThemeColors.of(context).success,
+                backgroundColor: ThemeColors.of(context).greenMain,
                 foregroundColor: ThemeColors.of(context).surface,
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
@@ -378,7 +378,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         _buildCheckboxTile('Produtos', Icons.inventory_2_rounded, _includeProducts, (v) => setState(() => _includeProducts = v ?? true)),
         _buildCheckboxTile('Categorias', Icons.category_rounded, _includeCategories, (v) => setState(() => _includeCategories = v ?? true)),
         _buildCheckboxTile('Etiquetas', Icons.label_rounded, _includeTags, (v) => setState(() => _includeTags = v ?? true)),
-        _buildCheckboxTile('Configuraes', Icons.settings_rounded, _includeSettings, (v) => setState(() => _includeSettings = v ?? true)),
+        _buildCheckboxTile('Configurações', Icons.settings_rounded, _includeSettings, (v) => setState(() => _includeSettings = v ?? true)),
         _buildCheckboxTile('Estratgias', Icons.auto_awesome_rounded, _includeStrategies, (v) => setState(() => _includeStrategies = v ?? true)),
       ],
     );
@@ -391,11 +391,11 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         children: [
           Icon(icon, size: 18, color: ThemeColors.of(context).textSecondary),
           const SizedBox(width: 8),
-          Expanded(child: Text(title, style: TextStyle(fontSize: 13))),
+          Expanded(child: Text(title, style: const TextStyle(fontSize: 13))),
           Checkbox(
             value: value,
             onChanged: onChanged,
-            activeColor: ThemeColors.of(context).success,
+            activeColor: ThemeColors.of(context).greenMain,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
         ],
@@ -411,7 +411,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -425,12 +425,12 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).warningLight,
+                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.cloud_download_rounded,
-                  color: ThemeColors.of(context).warning,
+                  color: ThemeColors.of(context).orangeMain,
                 ),
               ),
               const SizedBox(width: 12),
@@ -444,7 +444,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             ],
           ),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             'Restaure dados de um backup anteriormente criado.',
             style: TextStyle(
               fontSize: 13,
@@ -458,11 +458,11 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               color: ThemeColors.of(context).warningPastel,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Row(
+            child: Row(
               children: [
-                Icon(Icons.warning_rounded, color: ThemeColors.of(context).warning, size: 20),
-                SizedBox(width: 8),
-                Expanded(
+                Icon(Icons.warning_rounded, color: ThemeColors.of(context).orangeMain, size: 20),
+                const SizedBox(width: 8),
+                const Expanded(
                   child: Text(
                     'A restaurao substituir os dados atuais. Faa um backup antes.',
                     style: TextStyle(fontSize: 12),
@@ -485,8 +485,8 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   : const Icon(Icons.upload_file_rounded, size: 18),
               label: Text(_isImporting ? 'Importando...' : 'Selecionar Arquivo'),
               style: OutlinedButton.styleFrom(
-                foregroundColor: ThemeColors.of(context).warning,
-                side: BorderSide(color: ThemeColors.of(context).warning),
+                foregroundColor: ThemeColors.of(context).orangeMain,
+                side: BorderSide(color: ThemeColors.of(context).orangeMain),
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -512,7 +512,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -529,10 +529,10 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).successLight,
+                      color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.schedule_rounded,
                       color: ThemeColors.of(context).success,
                     ),
@@ -554,7 +554,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                     autoBackupEnabled: value,
                   );
                 },
-                activeColor: ThemeColors.of(context).success,
+                activeThumbColor: ThemeColors.of(context).success,
               ),
             ],
           ),
@@ -590,18 +590,18 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             children: [
               Icon(icon, size: 18, color: ThemeColors.of(context).textSecondary),
               const SizedBox(width: 12),
-              Text(label, style: TextStyle(fontSize: 13)),
+              Text(label, style: const TextStyle(fontSize: 13)),
             ],
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).surfaceSecondary,
+              color: ThemeColors.of(context).backgroundLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
               value,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),
@@ -620,7 +620,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -637,17 +637,17 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).infoLight,
+                      color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.history_rounded,
-                      color: ThemeColors.of(context).info,
+                      color: ThemeColors.of(context).blueMain,
                     ),
                   ),
                   const SizedBox(width: 12),
                   const Text(
-                    'Histrico de Backups',
+                    'Histórico de Backups',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -667,7 +667,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
                   label: const Text('Limpar antigos'),
                   style: TextButton.styleFrom(
                     foregroundColor: ThemeColors.of(context).textSecondary,
-                    textStyle: TextStyle(fontSize: 12),
+                    textStyle: const TextStyle(fontSize: 12),
                   ),
                 ),
             ],
@@ -711,7 +711,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -728,7 +728,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               children: [
                 Text(
                   backup.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 13,
                   ),
@@ -769,7 +769,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             icon: Icon(
               Icons.restore_rounded, 
               size: 18,
-              color: state.isRestoring ? ThemeColors.of(context).textSecondary : ThemeColors.of(context).warning,
+              color: state.isRestoring ? ThemeColors.of(context).textSecondary : ThemeColors.of(context).orangeMain,
             ),
             onPressed: state.isRestoring ? null : () => _confirmRestore(backup),
             padding: EdgeInsets.zero,
@@ -807,7 +807,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
           ElevatedButton(
             onPressed: () => Navigator.pop(context, true),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).warning,
+              backgroundColor: ThemeColors.of(context).orangeMain,
             ),
             child: const Text('Restaurar'),
           ),
@@ -875,14 +875,14 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
           context: context,
           builder: (context) => AlertDialog(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            icon: Icon(Icons.restore, color: ThemeColors.of(context).warning, size: 48),
+            icon: Icon(Icons.restore, color: ThemeColors.of(context).orangeMain, size: 48),
             title: const Text('Restaurar Backup'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text('Arquivo selecionado: $fileName'),
                 const SizedBox(height: 16),
-                const Text(
+                Text(
                   'Esta ao ir substituir os dados atuais pelos dados do backup. Esta ao no pode ser desfeita.',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: ThemeColors.of(context).textSecondary),
@@ -897,7 +897,7 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
               ElevatedButton(
                 onPressed: () => Navigator.pop(context, true),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ThemeColors.of(context).warning,
+                  backgroundColor: ThemeColors.of(context).orangeMain,
                 ),
                 child: const Text('Restaurar'),
               ),
@@ -930,9 +930,9 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             // TODO: Enviar bytes para API de restore
             // await ref.read(backupNotifierProvider.notifier).restoreFromBytes(file.bytes!);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Upload de backup para restaurao em implementao'),
-                backgroundColor: ThemeColors.of(context).warning,
+              SnackBar(
+                content: const Text('Upload de backup para restaurao em implementao'),
+                backgroundColor: ThemeColors.of(context).orangeMain,
                 behavior: SnackBarBehavior.floating,
               ),
             );
@@ -941,9 +941,9 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
             // TODO: Enviar arquivo para API de restore
             // await ref.read(backupNotifierProvider.notifier).restoreFromFile(file.path!);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Restaurao de arquivo local em implementao'),
-                backgroundColor: ThemeColors.of(context).warning,
+              SnackBar(
+                content: const Text('Restaurao de arquivo local em implementao'),
+                backgroundColor: ThemeColors.of(context).orangeMain,
                 behavior: SnackBarBehavior.floating,
               ),
             );
@@ -961,9 +961,6 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
     }
   }
 }
-
-
-
 
 
 

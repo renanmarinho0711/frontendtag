@@ -136,7 +136,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
             const SizedBox(height: 8),
             Text(
               _currentPhase,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white70,
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
@@ -144,7 +144,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
             ),
             Text(
               _currentTest,
-              style: TextStyle(color: Colors.white, fontSize: 14),
+              style: const TextStyle(color: Colors.white, fontSize: 14),
             ),
           ],
         ],
@@ -266,7 +266,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
           leading: const Icon(Icons.folder, color: Colors.deepPurple),
           title: Text(
             result.name,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
       );
@@ -324,7 +324,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
         children: [
           SizedBox(
             width: 80,
-            child: Text('$label:', style: TextStyle(fontWeight: FontWeight.bold)),
+            child: Text('$label:', style: const TextStyle(fontWeight: FontWeight.bold)),
           ),
           Expanded(child: Text(value)),
         ],
@@ -347,7 +347,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('$label:', style: TextStyle(fontWeight: FontWeight.bold)),
+        Text('$label:', style: const TextStyle(fontWeight: FontWeight.bold)),
         Container(
           margin: const EdgeInsets.only(top: 4, bottom: 8),
           padding: const EdgeInsets.all(8),
@@ -360,7 +360,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
           child: SingleChildScrollView(
             child: Text(
               formatted,
-              style: TextStyle(fontFamily: 'monospace', fontSize: 11),
+              style: const TextStyle(fontFamily: 'monospace', fontSize: 11),
             ),
           ),
         ),
@@ -382,8 +382,11 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
     setState(() {
       _results.add(result);
       if (!result.isHeader) {
-        if (result.success) _passed++;
-        else _failed++;
+        if (result.success) {
+          _passed++;
+        } else {
+          _failed++;
+        }
       }
     });
     _scrollToBottom();
@@ -627,12 +630,12 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
   }
 
   // ============================================================
-  // FASE 2: AUTENTICAÇÃO
+  // FASE 2: AUTENTICAÇÀO
   // ============================================================
 
   Future<void> _runAuthPhase() async {
     setState(() => _isRunning = true);
-    _addHeader('🔐 FASE 2: AUTENTICAÇÃO - Testes de login e segurança');
+    _addHeader('🔐 FASE 2: AUTENTICAÇÀO - Testes de login e segurança');
 
     // Testes já cobertos no setup, adicionar apenas erros
     await _testRequest(
@@ -792,7 +795,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
 
   Future<void> _runProfilePhase() async {
     setState(() => _isRunning = true);
-    _addHeader('👥 FASE 4: PERFIS - Testes de permissÃ£o por tipo de usuário');
+    _addHeader('👥 FASE 4: PERFIS - Testes de permissão por tipo de usuário');
 
     // === PLATFORM ADMIN (TUDO) ===
     _addHeader('👑 PlatformAdmin - Dono da TagBean');
@@ -1296,7 +1299,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
             const SizedBox(height: 16),
             Text(
               'Taxa de sucesso: $percentage%',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),
@@ -1313,7 +1316,7 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
   Widget _buildSummaryColumn(String emoji, String value, String label, Color color) {
     return Column(
       children: [
-        Text(emoji, style: TextStyle(fontSize: 24)),
+        Text(emoji, style: const TextStyle(fontSize: 24)),
         Text(
           value,
           style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: color),

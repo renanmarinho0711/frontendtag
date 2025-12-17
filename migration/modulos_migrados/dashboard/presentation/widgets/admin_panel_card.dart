@@ -4,7 +4,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de Painel Administrativo
 /// Mostra opções de gestão baseadas na role do usuário:
 /// - PlatformAdmin: Gerenciar Clientes, Todas as Lojas, Todos os Usuários
@@ -232,7 +231,7 @@ class AdminPanelCard extends ConsumerWidget {
           context: context,
           icon: Icons.storefront_rounded,
           label: isPlatformAdmin ? 'Todas as Lojas' : 'Gerenciar Lojas',
-          subtitle: isPlatformAdmin ? 'VisÃ£o global' : 'Lojas da empresa',
+          subtitle: isPlatformAdmin ? 'Visão global' : 'Lojas da empresa',
           onTap: onGerenciarLojas,
         ),
       ),

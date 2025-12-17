@@ -7,16 +7,16 @@ import 'package:tagbean/features/auth/presentation/providers/work_context_provid
 import 'package:tagbean/shared/widgets/dialogs/confirmation_dialog.dart';
 import 'package:tagbean/shared/widgets/feedback/action_feedback.dart';
 
-/// Widget de sele��o de loja com dropdown e bot�o de confirma��o
-/// Exibe a loja atual e permite trocar para outra loja dispon�vel
+/// Widget de seleção de loja com dropdown e botão de confirmação
+/// Exibe a loja atual e permite trocar para outra loja disponível
 class StoreSwitcher extends ConsumerStatefulWidget {
-  /// Callback executado quando a loja � trocada com sucesso
+  /// Callback executado quando a loja é trocada com sucesso
   final VoidCallback? onStoreChanged;
 
   /// Se deve mostrar em modo compacto (apenas dropdown)
   final bool compact;
 
-  /// Se deve mostrar o bot�o de confirma��o
+  /// Se deve mostrar o botão de confirmação
   final bool showConfirmButton;
 
   const StoreSwitcher({
@@ -51,12 +51,12 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
     final stores = workContext.availableStores;
     final isChanging = ref.watch(isChangingStoreProvider);
 
-    // Se n�o tem m�ltiplas lojas, n�o mostrar o seletor
+    // Se não tem mãltiplas lojas, não mostrar o seletor
     if (stores.length <= 1) {
       return _buildSingleStoreDisplay(workContext);
     }
 
-    // Atualizar sele��o se o contexto mudou externamente
+    // Atualizar seleção se o contexto mudou externamente
     if (_selectedStoreId != workContext.currentStoreId && !_isLoading) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) {
@@ -75,7 +75,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
         border: Border.all(color: ThemeColors.of(context).primaryOverlay20),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -84,7 +84,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // �cone da loja
+          // ícone da loja
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -99,12 +99,12 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
           ),
           const SizedBox(width: 12),
 
-          // Dropdown de sele��o
+          // Dropdown de seleção
           Flexible(
             child: _buildDropdown(stores, isChanging),
           ),
 
-          // Bot�o de confirma��o
+          // Botão de confirmação
           if (widget.showConfirmButton && _hasSelectionChanged(workContext)) ...[
             const SizedBox(width: 8),
             _buildConfirmButton(isChanging),
@@ -114,7 +114,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
     );
   }
 
-  /// Exibe apenas o nome da loja quando h� apenas uma
+  /// Exibe apenas o nome da loja quando hã apenas uma
   Widget _buildSingleStoreDisplay(WorkContext workContext) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -143,7 +143,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
     );
   }
 
-  /// Constr�i o dropdown de sele��o
+  /// Constrói o dropdown de seleção
   Widget _buildDropdown(List<StoreInfo> stores, bool isChanging) {
     return DropdownButtonHideUnderline(
       child: DropdownButton<String>(
@@ -152,11 +152,11 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
         isDense: true,
         icon: Icon(
           Icons.keyboard_arrow_down_rounded,
-          color: isChanging ? ThemeColors.of(context).textTertiary : ThemeColors.of(context).primary,
+          color: isChanging ? ThemeColors.of(context).grey500 : ThemeColors.of(context).primary,
         ),
         hint: Text(
           'Selecione uma loja',
-          style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 14),
+          style: TextStyle(color: ThemeColors.of(context).grey600, fontSize: 14),
         ),
         items: stores.map((store) {
           return DropdownMenuItem<String>(
@@ -170,7 +170,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
                     children: [
                       Text(
                         store.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -181,7 +181,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
                           store.cnpj ?? store.address ?? '',
                           style: TextStyle(
                             fontSize: 11,
-                            color: ThemeColors.of(context).textSecondary,
+                            color: ThemeColors.of(context).grey600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -198,7 +198,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
                 setState(() {
                   _selectedStoreId = value;
                 });
-                // Se n�o tem bot�o de confirma��o, trocar imediatamente
+                // Se não tem botão de confirmação, trocar imediatamente
                 if (!widget.showConfirmButton && value != null) {
                   _confirmChange();
                 }
@@ -207,7 +207,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
     );
   }
 
-  /// Constr�i o bot�o de confirma��o
+  /// Constrói o botão de confirmação
   Widget _buildConfirmButton(bool isChanging) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
@@ -223,7 +223,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
           elevation: 0,
         ),
         child: _isLoading || isChanging
-            ? const SizedBox(
+            ? SizedBox(
                 width: 18,
                 height: 18,
                 child: CircularProgressIndicator(
@@ -243,7 +243,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
     );
   }
 
-  /// Verifica se a sele��o foi alterada
+  /// Verifica se a seleção foi alterada
   bool _hasSelectionChanged(WorkContext workContext) {
     return _selectedStoreId != null &&
         _selectedStoreId != workContext.currentStoreId;
@@ -293,7 +293,7 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
               ),
             ),
           );
-          // Reverter sele��o
+          // Reverter seleção
           setState(() {
             _selectedStoreId = ref.read(currentWorkContextProvider).currentStoreId;
           });
@@ -308,10 +308,10 @@ class _StoreSwitcherState extends ConsumerState<StoreSwitcher> {
 }
 
 /// Widget de card para troca de loja no dashboard
-/// Vers�o com dropdown hier�rquico expans�vel
-/// Mostra: Cliente > Lojas com op��o "Todas as lojas" para admins
+/// Versão com dropdown hierárquico expansível
+/// Mostra: Cliente > Lojas com opção "Todas as lojas" para admins
 class StoreSwitcherCard extends ConsumerStatefulWidget {
-  /// Callback executado quando a loja � trocada com sucesso
+  /// Callback executado quando a loja é trocada com sucesso
   final VoidCallback? onStoreChanged;
 
   const StoreSwitcherCard({
@@ -326,7 +326,7 @@ class StoreSwitcherCard extends ConsumerStatefulWidget {
 class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
   String? _selectedStoreId;
   bool _isLoading = false;
-  bool _isExpanded = false; // Controla se a lista est� expandida
+  bool _isExpanded = false; // Controla se a lista estã expandida
 
   @override
   void initState() {
@@ -347,17 +347,17 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     final canManageAll = workContext.canManageAllStores;
     final clientName = workContext.clientName ?? 'Empresa';
 
-    // Sempre mostrar o card para usu�rios com acesso a lojas
+    // Sempre mostrar o card para Usuários com acesso a lojas
     // (mesmo com 1 loja, mostra o contexto atual)
 
-    // Verifica se est� em modo "Todas as lojas"
+    // Verifica se estã em modo "Todas as lojas"
     final isAllStoresMode = _selectedStoreId == 'ALL_STORES' || 
         (workContext.workScope == WorkScope.allStores && _selectedStoreId == null);
 
     // Encontra a loja atual selecionada
     final currentStore = stores.firstWhere(
       (s) => s.id == (isAllStoresMode ? workContext.currentStoreId : _selectedStoreId),
-      orElse: () => stores.isNotEmpty ? stores.first : StoreInfo(id: '', name: 'Nenhuma loja', isActive: false),
+      orElse: () => stores.isNotEmpty ? stores.first : const StoreInfo(id: '', name: 'Nenhuma loja', isActive: false),
     );
 
     return Card(
@@ -366,7 +366,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Header clic�vel (sempre vis�vel)
+          // Header clicãvel (sempre visível)
           InkWell(
             onTap: stores.length > 1 || canManageAll ? () {
               setState(() => _isExpanded = !_isExpanded);
@@ -376,7 +376,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  // �cone principal
+                  // ícone principal
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -403,14 +403,14 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                         // Hierarquia: Cliente
                         Row(
                           children: [
-                            Icon(Icons.business_rounded, size: 14, color: ThemeColors.of(context).textTertiary),
+                            Icon(Icons.business_rounded, size: 14, color: ThemeColors.of(context).grey500),
                             const SizedBox(width: 4),
                             Flexible(
                               child: Text(
                                 clientName,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: ThemeColors.of(context).textSecondary,
+                                  color: ThemeColors.of(context).grey600,
                                   fontWeight: FontWeight.w500,
                                 ),
                                 maxLines: 1,
@@ -435,7 +435,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                         if (!isAllStoresMode && currentStore.address != null)
                           Text(
                             currentStore.address!,
-                            style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textTertiary),
+                            style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey500),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -443,7 +443,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                     ),
                   ),
                   
-                  // Seta de expans�o (se tem m�ltiplas op��es)
+                  // Seta de expansão (se tem mãltiplas opções)
                   if (stores.length > 1 || canManageAll)
                     AnimatedRotation(
                       turns: _isExpanded ? 0.5 : 0,
@@ -456,7 +456,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                         ),
                         child: Icon(
                           Icons.keyboard_arrow_down_rounded,
-                          color: ThemeColors.of(context).textSecondary,
+                          color: ThemeColors.of(context).grey600,
                           size: 24,
                         ),
                       ),
@@ -466,7 +466,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
             ),
           ),
           
-          // Lista expand�vel de lojas
+          // Lista expandãvel de lojas
           AnimatedCrossFade(
             firstChild: const SizedBox.shrink(),
             secondChild: _buildExpandedContent(stores, workContext, isChanging, canManageAll),
@@ -480,9 +480,9 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
 
   Widget _buildExpandedContent(List<StoreInfo> stores, WorkContext workContext, bool isChanging, bool canManageAll) {
     return Container(
-      constraints: const BoxConstraints(maxHeight: 400), // Limita altura m�xima
+      constraints: const BoxConstraints(maxHeight: 400), // Limita altura mãxima
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).textTertiary.withValues(alpha: 0.03),
+        color: ThemeColors.of(context).grey500.withValues(alpha: 0.03),
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(16)),
       ),
       child: Column(
@@ -496,7 +496,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Op��o "Todas as lojas" (apenas para admins)
+                  // Opãão "Todas as lojas" (apenas para admins)
                   if (canManageAll) ...[
                     _buildAllStoresOption(workContext, isChanging),
                     const SizedBox(height: 8),
@@ -509,7 +509,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: Text(
                               'ou selecione uma loja',
-                              style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textTertiary),
+                              style: TextStyle(fontSize: 11, color: ThemeColors.of(context).grey500),
                             ),
                           ),
                           Expanded(child: Container(height: 1, color: ThemeColors.of(context).grey300)),
@@ -526,7 +526,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                     return _buildStoreOption(store, workContext, isChanging, index + 1, stores.length);
                   }),
                   
-                  // Bot�o de confirma��o
+                  // Botão de confirmação
                   if (_hasSelectionChanged(workContext)) ...[
                     const SizedBox(height: 12),
                     SizedBox(
@@ -542,7 +542,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                           ),
                         ),
                         child: _isLoading || isChanging
-                            ? const Row(
+                            ? Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -554,8 +554,8 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                                       valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface),
                                     ),
                                   ),
-                                  SizedBox(width: 8),
-                                  Text('Alterando...'),
+                                  const SizedBox(width: 8),
+                                  const Text('Alterando...'),
                                 ],
                               )
                             : const Row(
@@ -579,7 +579,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     );
   }
 
-  /// Op��o "Todas as lojas" para administradores
+  /// Opãão "Todas as lojas" para administradores
   Widget _buildAllStoresOption(WorkContext workContext, bool isChanging) {
     final isSelected = _selectedStoreId == 'ALL_STORES';
     final isCurrent = workContext.workScope == WorkScope.allStores;
@@ -615,7 +615,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
               ),
               child: Icon(
                 Icons.store_mall_directory_rounded,
-                color: isSelected ? ThemeColors.of(context).blueCyan : ThemeColors.of(context).textSecondary,
+                color: isSelected ? ThemeColors.of(context).blueCyan : ThemeColors.of(context).grey600,
                 size: 20,
               ),
             ),
@@ -643,10 +643,10 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                           margin: const EdgeInsets.only(left: 8),
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).successLight,
+                            color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Text(
+                          child: Text(
                             'Atual',
                             style: TextStyle(
                               color: ThemeColors.of(context).success,
@@ -659,7 +659,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                   ),
                   Text(
                     'Visualizar dados consolidados de todas as lojas',
-                    style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary),
+                    style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey600),
                   ),
                 ],
               ),
@@ -698,14 +698,14 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
           ),
           child: Row(
             children: [
-              // N�mero da loja na hierarquia
+              // Nãmero da loja na hierarquia
               Container(
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
                   color: isSelected 
                       ? ThemeColors.of(context).primaryOverlay20 
-                      : ThemeColors.of(context).textTertiaryLight,
+                      : ThemeColors.of(context).grey500.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -713,7 +713,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                     store.number ?? index.toString(),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textSecondary,
+                      color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey600,
                       fontSize: 12,
                     ),
                   ),
@@ -721,10 +721,10 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
               ),
               const SizedBox(width: 12),
               
-              // �cone da loja
+              // ícone da loja
               Icon(
                 Icons.storefront_rounded,
-                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).textTertiary,
+                color: isSelected ? ThemeColors.of(context).primary : ThemeColors.of(context).grey500,
                 size: 18,
               ),
               const SizedBox(width: 8),
@@ -753,10 +753,10 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                             margin: const EdgeInsets.only(left: 8),
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: ThemeColors.of(context).successLight,
+                              color: ThemeColors.of(context).success.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: const Text(
+                            child: Text(
                               'Atual',
                               style: TextStyle(
                                 color: ThemeColors.of(context).success,
@@ -770,7 +770,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                     if (store.address != null)
                       Text(
                         store.address!,
-                        style: TextStyle(fontSize: 11, color: ThemeColors.of(context).textTertiary),
+                        style: TextStyle(fontSize: 11, color: ThemeColors.of(context).grey500),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -778,7 +778,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
                 ),
               ),
 
-              // Indicador de sele��o
+              // Indicador de seleção
               if (isSelected)
                 Icon(Icons.check_circle, color: ThemeColors.of(context).primary, size: 22),
             ],
@@ -824,19 +824,19 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     final confirmed = await ConfirmationDialog.show(
       context: context,
       title: isAllStores ? 'Mudar para Todas as Lojas?' : 'Trocar de Loja?',
-      message: 'Voc� est� trocando de "$oldStoreName" para "$selectedStoreName".\n\n'
-          'Os seguintes dados ser�o recarregados:\n'
-          '� Produtos\n'
-          '� Tags/Etiquetas\n'
-          '� Pre�os e estrat�gias\n'
-          '� Dashboard\n\n'
-          'Nenhum dado ser� perdido.',
+      message: 'você estã trocando de "$oldStoreName" para "$selectedStoreName".\n\n'
+          'Os seguintes dados serão recarregados:\n'
+          'ã Produtos\n'
+          'ã Tags/Etiquetas\n'
+          'ã PREÇOs e Estratégias\n'
+          'ã Dashboard\n\n'
+          'Nenhum dado será perdido.',
       confirmText: 'Confirmar',
       cancelText: 'Cancelar',
       icon: isAllStores ? Icons.store_mall_directory_rounded : Icons.swap_horiz_rounded,
     );
 
-    // Se n�o confirmou, restaurar sele��o anterior e sair
+    // Se não confirmou, restaurar seleção anterior e sair
     if (!confirmed) {
       setState(() {
         _selectedStoreId = workContext.currentStoreId;
@@ -844,7 +844,7 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
       return;
     }
 
-    // Prosseguir com a mudan�a
+    // Prosseguir com a mudança
     setState(() => _isLoading = true);
 
     try {
@@ -897,8 +897,6 @@ class _StoreSwitcherCardState extends ConsumerState<StoreSwitcherCard> {
     }
   }
 }
-
-
 
 
 

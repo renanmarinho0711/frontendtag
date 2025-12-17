@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de produto para lista de pendentes/vinculados
 class ProductBindingCard extends StatelessWidget {
   final ProductModel produto;

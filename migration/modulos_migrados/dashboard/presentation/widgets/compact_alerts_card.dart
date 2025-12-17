@@ -5,7 +5,6 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card compacto de alertas que usa dados do DashboardProvider
 /// Mostra a quantidade de alertas pendentes e permite navegar para detalhes
 class CompactAlertsCard extends ConsumerWidget {

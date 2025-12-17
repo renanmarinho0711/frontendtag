@@ -8,7 +8,6 @@ import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class CategoriasListaScreen extends ConsumerStatefulWidget {
   const CategoriasListaScreen({super.key});
@@ -256,7 +255,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
               vertical: AppSizes.extraSmallPadding.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).blueCyanLight,
+              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -320,7 +319,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: categoria.corLight,
+              color: categoria.cor.withValues(alpha: 0.1),
               blurRadius: 20,
               offset: const Offset(0, 4),
             ),
@@ -345,7 +344,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: categoria.corLight,
+                      color: categoria.cor.withValues(alpha: 0.3),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
@@ -360,7 +359,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
             ),
             title: Text(
               categoria.nome,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 letterSpacing: -0.5,
@@ -450,7 +449,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -524,7 +523,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
                 children: subcategorias.map((sub) => Chip(
                   avatar: Icon(sub.iconData, size: 16, color: sub.cor),
                   label: Text(sub.nome),
-                  backgroundColor: sub.corLight,
+                  backgroundColor: sub.cor.withValues(alpha: 0.1),
                   labelStyle: TextStyle(color: sub.cor, fontSize: 12),
                 )).toList(),
               );
@@ -638,7 +637,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
         context: context,
         builder: (context) => AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          icon: const Icon(Icons.block_rounded, color: ThemeColors.of(context).yellowGold, size: 48),
+          icon: Icon(Icons.block_rounded, color: ThemeColors.of(context).yellowGold, size: 48),
           title: const Text(
             'No  possvel excluir',
             style: TextStyle(fontWeight: FontWeight.bold),
@@ -705,7 +704,6 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
     }
   }
 }
-
 
 
 

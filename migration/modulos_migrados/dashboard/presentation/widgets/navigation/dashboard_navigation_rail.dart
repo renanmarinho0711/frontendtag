@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 
@@ -58,7 +58,7 @@ class DashboardNavigationRail extends StatelessWidget {
     {
       'icon': Icons.assessment_rounded,
       'title': 'Relatórios',
-      'gradient': [ThemeColors.of(context).modulerelatÃ³rios, ThemeColors.of(context).modulerelatÃ³riosDark]
+      'gradient': [ThemeColors.of(context).moduleRelatorios, ThemeColors.of(context).moduleRelatoriosDark]
     },
     {
       'icon': Icons.settings_rounded,

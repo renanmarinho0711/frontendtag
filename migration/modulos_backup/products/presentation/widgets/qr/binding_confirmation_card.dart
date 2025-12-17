@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
@@ -117,9 +117,9 @@ class BindingConfirmationCard extends StatelessWidget {
           color: AppThemeColors.blueMaterial,
         ),
         // Conector
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: const Icon(
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: Icon(
             Icons.sync_alt_rounded,
             color: AppThemeColors.brandPrimaryGreen,
             size: 28,
@@ -172,7 +172,7 @@ class BindingConfirmationCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.xs),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppThemeColors.textPrimary,
@@ -275,12 +275,12 @@ class BindingConfirmationCard extends StatelessWidget {
                     valueColor: AlwaysStoppedAnimation(AppThemeColors.surface),
                   ),
                 )
-              : Row(
+              : const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.check_rounded, color: AppThemeColors.surface),
-                    const SizedBox(width: AppSpacing.sm),
-                    const Text(
+                    Icon(Icons.check_rounded, color: AppThemeColors.surface),
+                    SizedBox(width: AppSpacing.sm),
+                    Text(
                       'Confirmar',
                       style: TextStyle(
                         color: AppThemeColors.surface,

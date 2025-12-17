@@ -161,7 +161,7 @@ class AppThemeColors {
   static const Color errorMain = Color(0xFFEF4444);
   static const Color urgent = Color(0xFFDC2626);
 
-  // --- INFORMAÇÃO ---
+  // --- INFORMAÇÀO ---
   static const Color infoBackground = Color(0xFFF0FDFA);
   static const Color infoLight = Color(0xFF5EEAD4);
   static const Color infoBorder = Color(0xFF99F6E4);
@@ -188,7 +188,7 @@ class AppThemeColors {
   static const Color warningIcon = Color(0xFFF59E0B);
 
   // ===========================================================================
-  // 6. DASHBOARD E NAVEGAÇÃO - CORES DINÂMICAS E LEVES
+  // 6. DASHBOARD E NAVEGAÇÀO - CORES DINÂMICAS E LEVES
   // ===========================================================================
 
   /// Cor primária para dashboard: Teal Fresh, estimulando foco e clareza.
@@ -342,8 +342,8 @@ class AppThemeColors {
   static const Color moduleImportacao = Color(0xFF0D9488);      // Teal Fresh
   static const Color moduleImportacaoDark = Color(0xFF065F46);
 
-  static const Color modulerelatÃ³rios = Color(0xFF059669);      // Emerald Dark
-  static const Color modulerelatÃ³riosDark = Color(0xFF047857);
+  static const Color moduleRelatorios = Color(0xFF059669);      // Emerald Dark
+  static const Color moduleRelatoriosDark = Color(0xFF047857);
 
   static const Color moduleConfiguracoes = Color(0xFF64748B);   // Cinza médio
   static const Color moduleConfiguracoesDark = Color(0xFF475569);
@@ -359,7 +359,7 @@ class AppThemeColors {
   static const List<Color> precificacaoGradient = [Color(0xFFF59E0B), Color(0xFFD97706)];
   static const List<Color> categoriasGradient = [Color(0xFF10B981), Color(0xFF0B7A57)];
   static const List<Color> importacaoGradient = [Color(0xFF0D9488), Color(0xFF065F46)];
-  static const List<Color> relatÃ³riosGradient = [Color(0xFF059669), Color(0xFF047857)];
+  static const List<Color> relatoriosGradient = [Color(0xFF059669), Color(0xFF047857)];
   static const List<Color> configuracoesGradient = [Color(0xFF64748B), Color(0xFF475569)];
 
   static const List<Color> successGradient = [Color(0xFF10B981), Color(0xFF059669)];
@@ -720,7 +720,7 @@ class AppThemeColors {
   static const Color onboardingStepPendingBg = Color(0xFFF0FDFF);
 
   // ===========================================================================
-  // PRÓXIMO PASSO - INDICAÇÃO CLARA
+  // PRÓXIMO PASSO - INDICAÇÀO CLARA
   // ===========================================================================
 
   static const Color nextStepBackground1 = Color(0xFFF1F5F9);
@@ -756,11 +756,11 @@ class AppThemeColors {
   static const Color reportPerformance = Color(0xFF84CC16);
   static const Color reportPerformanceDark = Color(0xFF65A30D);
 
-  static const Color reportauditoria = Color(0xFF06B6D4);
-  static const Color reportauditoriaDark = Color(0xFF0D6F8B);
+  static const Color reportAuditoria = Color(0xFF06B6D4);
+  static const Color reportAuditoriaDark = Color(0xFF0D6F8B);
 
   // ===========================================================================
-  // 16. PRECIFICAÇÃO E SINCRONIZAÇÃO - CORES FUNCIONAIS
+  // 16. PRECIFICAÇÀO E SINCRONIZAÇÀO - CORES FUNCIONAIS
   // ===========================================================================
 
   static const Color pricingPercentage = Color(0xFF06B6D4);

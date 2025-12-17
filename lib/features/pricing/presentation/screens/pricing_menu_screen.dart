@@ -9,7 +9,6 @@ import 'package:tagbean/features/pricing/presentation/screens/adjustments_histor
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
 class PrecificacaoMenuScreen extends ConsumerStatefulWidget {
@@ -24,48 +23,48 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
   late AnimationController _animationController;
   // NOTA: _selectedScreen e _selectedTitle removidos (mortos)
 
-  // Opcoes de menu fixas (sem cores - ser�o aplicadas dinamicamente)
-  static const List<Map<String, dynamic>> _opcoes = [
+  // Opes de menu dinmicas
+  List<Map<String, dynamic>> _getOpcoes(BuildContext context) => [
     {
       'titulo': 'Ajuste por Porcentagem',
       'subtitulo': 'Aumentar ou diminuir em %',
       'icone': Icons.percent_rounded,
-      'colorKey': 'pricingPercentage',
+      'gradiente': [ThemeColors.of(context).pricingPercentage, ThemeColors.of(context).pricingPercentageDark],
       'destaque': false,
     },
     {
       'titulo': 'Ajuste por Valor Fixo',
       'subtitulo': 'Aumentar ou diminuir em R\$',
       'icone': Icons.attach_money_rounded,
-      'colorKey': 'pricingFixedValue',
+      'gradiente': [ThemeColors.of(context).pricingFixedValue, ThemeColors.of(context).pricingFixedValueDark],
       'destaque': false,
     },
     {
       'titulo': 'Ajuste Individual',
       'subtitulo': 'Alterar produto especfico',
       'icone': Icons.edit_rounded,
-      'colorKey': 'pricingIndividual',
+      'gradiente': [ThemeColors.of(context).pricingIndividual, ThemeColors.of(context).pricingIndividualDark],
       'destaque': false,
     },
     {
       'titulo': 'Reviso de Margens',
       'subtitulo': 'Analisar e ajustar margens',
       'icone': Icons.trending_up_rounded,
-      'colorKey': 'pricingMarginReview',
+      'gradiente': [ThemeColors.of(context).pricingMarginReview, ThemeColors.of(context).pricingMarginReviewDark],
       'destaque': false,
     },
     {
-      'titulo': 'Precificao Dinmica',
+      'titulo': 'precificação Dinmica',
       'subtitulo': 'Ajuste automtico por IA',
       'icone': Icons.auto_graph_rounded,
-      'colorKey': 'pricingDynamic',
+      'gradiente': [ThemeColors.of(context).pricingDynamic, ThemeColors.of(context).pricingDynamicDark],
       'destaque': false,
     },
     {
-      'titulo': 'Histrico de Ajustes',
+      'titulo': 'Histórico de Ajustes',
       'subtitulo': 'Ver mudanas anteriores',
       'icone': Icons.history_rounded,
-      'colorKey': 'pricingHistory',
+      'gradiente': [ThemeColors.of(context).pricingHistory, ThemeColors.of(context).pricingHistoryDark],
       'destaque': false,
     },
   ];
@@ -188,9 +187,9 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                                   mainAxisSpacing: AppSizes.paddingBase.get(isMobile, isTablet),
                                   childAspectRatio: isMobile ? 0.9 : 1.1,
                                 ),
-                                itemCount: _opcoes.length,
+                                itemCount: _getOpcoes(context).length,
                                 itemBuilder: (context, index) {
-                                  return _buildOptionCard(_opcoes[index], index);
+                                  return _buildOptionCard(_getOpcoes(context)[index], index);
                                 },
                               ),
                             ],
@@ -284,7 +283,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Precificao',
+                  'precificação',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -302,7 +301,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                   height: AppSizes.paddingXxs.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Gesto inteligente de preos',
+                  'Gesto inteligente de preços',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -324,7 +323,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).orangeAmberLight,
+              color: ThemeColors.of(context).orangeAmber.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
@@ -418,7 +417,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sobre este Mdulo',
+                  'Sobre este Módulo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -441,7 +440,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                   ),
                 ),
                 Text(
-                  'Ajuste preos de forma inteligente com ferramentas avanadas para otimizar margens.',
+                  'Ajuste preços de forma inteligente com ferramentas avanadas para otimizar margens.',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -462,7 +461,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
     );
   }
 
-  /// Card de alertas de precificao (produtos sem preo, margem negativa)
+  /// Card de alertas de precificação (produtos sem preço, margem negativa)
   /// Usa dados reais do dashboard provider
   Widget _buildAlertasCard() {
     final isMobile = ResponsiveHelper.isMobile(context);
@@ -475,13 +474,13 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
     // Constri alertas baseado nos dados reais
     final alertas = <Map<String, dynamic>>[];
     
-    // Alerta de produtos sem preo
+    // Alerta de produtos sem preço
     final produtosSemPreco = storeStats.productsWithoutPrice;
     if (produtosSemPreco > 0) {
       alertas.add({
         'tipo': 'warning',
-        'titulo': 'Produtos sem preo',
-        'descricao': '$produtosSemPreco ${produtosSemPreco == 1 ? 'produto precisa' : 'produtos precisam'} de preo definido',
+        'titulo': 'Produtos sem preço',
+        'descricao': '$produtosSemPreco ${produtosSemPreco == 1 ? 'produto precisa' : 'produtos precisam'} de preço definido',
         'icone': Icons.money_off_rounded,
         'cor': ThemeColors.of(context).warning,
         'acao': 'Ver Produtos',
@@ -501,7 +500,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
         alertas.add({
           'tipo': 'error',
           'titulo': 'Margem negativa',
-          'descricao': '$count ${count == 1 ? 'produto' : 'produtos'} com preo abaixo do custo',
+          'descricao': '$count ${count == 1 ? 'produto' : 'produtos'} com preço abaixo do custo',
           'icone': Icons.trending_down_rounded,
           'cor': ThemeColors.of(context).error,
           'acao': 'Corrigir',
@@ -526,10 +525,10 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
             AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: (alerta['cor'] as Color)Light,
+            color: (alerta['cor'] as Color).withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: (alerta['cor'] as Color)Light,
+              color: (alerta['cor'] as Color).withValues(alpha: 0.3),
               width: 1.5,
             ),
           ),
@@ -540,7 +539,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                   AppSizes.paddingSmAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: (alerta['cor'] as Color)Light,
+                  color: (alerta['cor'] as Color).withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -598,7 +597,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                 ),
                 child: Text(
                   alerta['acao'] as String,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ],
@@ -691,13 +690,13 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              (stat['cor'] as Color)Light,
-              (stat['cor'] as Color)Light,
+              (stat['cor'] as Color).withValues(alpha: 0.1),
+              (stat['cor'] as Color).withValues(alpha: 0.05),
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: (stat['cor'] as Color)Light,
+            color: (stat['cor'] as Color).withValues(alpha: 0.3),
             width: isMobile ? 1.25 : 1.5,
           ),
         ),
@@ -737,7 +736,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color)Light,
+                color: (stat['cor'] as Color).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -796,7 +795,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
           ),
           boxShadow: [
             BoxShadow(
-              color: (opcao['gradiente'][0] as Color)Light,
+              color: (opcao['gradiente'][0] as Color).withValues(alpha: 0.3),
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
                 context,
                 mobile: 12,
@@ -830,9 +829,9 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                 destino = const AjusteIndividualScreen();
               } else if (titulo == 'Reviso de Margens') {
                 destino = const RevisaoMargensScreen();
-              } else if (titulo == 'Precificao Dinmica') {
+              } else if (titulo == 'precificação Dinmica') {
                 destino = const PrecificacaoDinamicaScreen();
-              } else if (titulo == 'Histrico de Ajustes') {
+              } else if (titulo == 'Histórico de Ajustes') {
                 destino = const HistoricoAjustesScreen();
               }
               
@@ -953,7 +952,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 18 : 20,
@@ -997,7 +996,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Dicas de Precificao',
+                'Dicas de precificação',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1016,7 +1015,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
           SizedBox(
             height: AppSizes.paddingMdAlt.get(isMobile, isTablet),
           ),
-          _buildDicaItem('Sempre revise as sugestes antes de aplicar'),
+          _buildDicaItem('Sempre revise as Sugestões antes de aplicar'),
           _buildDicaItem('Considere a sazonalidade dos produtos'),
           _buildDicaItem('Monitore a concorrncia regularmente'),
           _buildDicaItem('Margem ideal varia entre 25% e 45%'),
@@ -1133,7 +1132,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                   ),
                 ),
                 Text(
-                  'Veja o guia completo de precificao',
+                  'Veja o guia completo de precificação',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -1174,8 +1173,6 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
     );
   }
 }
-
-
 
 
 

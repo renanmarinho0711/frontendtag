@@ -108,7 +108,7 @@ class ProductsEmptyState extends StatelessWidget {
 
   /// Factory para estado de carregando
   factory ProductsEmptyState.loading() {
-    return ProductsEmptyState(
+    return const ProductsEmptyState(
       icon: Icons.hourglass_empty_rounded,
       title: 'Carregando...',
       subtitle: 'Buscando produtos...',

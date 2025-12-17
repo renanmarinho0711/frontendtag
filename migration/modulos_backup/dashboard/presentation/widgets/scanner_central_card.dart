@@ -3,7 +3,7 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
 /// BLOCO 7: Centro de Scanner (Para Mobile)
-/// Acesso rápido às funções de scanner que sÃ£o o core do sistema
+/// Acesso rápido às funções de scanner que são o core do sistema
 class ScannerCentralCard extends StatelessWidget {
   final VoidCallback? onAbrirScanner;
   final VoidCallback? onScanearTag;
@@ -26,7 +26,7 @@ class ScannerCentralCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(isMobile ? 12 : 20),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           colors: [
             AppThemeColors.greenMaterial,
             AppThemeColors.greenDark,

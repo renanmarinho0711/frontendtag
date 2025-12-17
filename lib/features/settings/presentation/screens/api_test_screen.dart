@@ -96,7 +96,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
             const SizedBox(height: 12),
             LinearProgressIndicator(value: _total > 0 ? (_passed + _failed) / _total : null),
             const SizedBox(height: 8),
-            Text('Executando: $_currentTest', style: TextStyle(fontSize: 12)),
+            Text('Executando: $_currentTest', style: const TextStyle(fontSize: 12)),
           ],
         ],
       ),
@@ -148,7 +148,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
           ElevatedButton.icon(
             onPressed: _isRunning ? null : _runPermissionTests,
             icon: const Icon(Icons.security),
-            label: const Text('Testes de PermissÃ£o'),
+            label: const Text('Testes de Permissão'),
           ),
           ElevatedButton.icon(
             onPressed: _isRunning ? null : _runCrudTests,
@@ -236,7 +236,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
                     color: Colors.grey.shade100,
                     child: Text(
                       _formatJson(result.requestBody),
-                      style: TextStyle(fontFamily: 'monospace', fontSize: 11),
+                      style: const TextStyle(fontFamily: 'monospace', fontSize: 11),
                     ),
                   ),
                 ],
@@ -250,7 +250,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
                     child: SingleChildScrollView(
                       child: Text(
                         _formatJson(result.responseBody),
-                        style: TextStyle(fontFamily: 'monospace', fontSize: 11),
+                        style: const TextStyle(fontFamily: 'monospace', fontSize: 11),
                       ),
                     ),
                   ),
@@ -273,7 +273,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
             width: 80,
             child: Text(
               '$label:',
-              style: TextStyle(fontWeight: FontWeight.w500),
+              style: const TextStyle(fontWeight: FontWeight.w500),
             ),
           ),
           Expanded(child: Text(value)),
@@ -342,7 +342,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
   }
 
   // ============================================================
-  // 1. TESTES DE AUTENTICAÇÃO
+  // 1. TESTES DE AUTENTICAÇÀO
   // ============================================================
 
   Future<void> _runAuthTests() async {
@@ -540,7 +540,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
   }
 
   // ============================================================
-  // 2. TESTES DE PERMISsÃ£o POR PERFIL
+  // 2. TESTES DE PERMISSÀO POR PERFIL
   // ============================================================
 
   Future<void> _runPermissionTests() async {
@@ -748,7 +748,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
         'number': '999',
         'name': 'Loja Teste ClientAdmin',
         'address': 'Rua Teste, 123',
-        'city': 'sÃ£o Paulo',
+        'city': 'São Paulo',
         'state': 'SP',
         'zipCode': '01234-567',
       },
@@ -1006,7 +1006,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
         'email': 'teste${DateTime.now().millisecondsSinceEpoch}@teste.com',
         'phone': '(11) 99999-9999',
         'address': 'Rua Teste',
-        'city': 'sÃ£o Paulo',
+        'city': 'São Paulo',
         'state': 'SP',
         'zipCode': '01234-567',
         'maxStores': 5,
@@ -1031,7 +1031,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
   }
 
   // ============================================================
-  // 4. TESTES DE ERRO E VALIDAÇÃO
+  // 4. TESTES DE ERRO E VALIDAÇÀO
   // ============================================================
 
   Future<void> _runErrorTests() async {
@@ -1047,7 +1047,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
 
     final token = _tokens['PlatformAdmin']!;
 
-    // ---- ERROS DE VALIDAÇÃO ----
+    // ---- ERROS DE VALIDAÇÀO ----
 
     await _testRequest(
       name: 'Erro - Criar produto sem nome',
@@ -1133,7 +1133,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
       expectedStatus: 400,
     );
 
-    // ---- ERROS DE RECURSO NÃO ENCONTRADO ----
+    // ---- ERROS DE RECURSO NÀO ENCONTRADO ----
 
     await _testRequest(
       name: 'Erro 404 - Produto inexistente',
@@ -1210,7 +1210,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
       expectedStatus: 409, // Conflict
     );
 
-    // ---- ERROS DE MÉTODO NÃO PERMITIDO ----
+    // ---- ERROS DE MÉTODO NÀO PERMITIDO ----
 
     await _testRequest(
       name: 'Erro 405 - DELETE não permitido',
@@ -1223,7 +1223,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
       expectedStatus: 405,
     );
 
-    // ---- TESTES DE LIMITE/PAGINAÇÃO ----
+    // ---- TESTES DE LIMITE/PAGINAÇÀO ----
 
     await _testRequest(
       name: 'Paginação - Listar com limite',
@@ -1393,19 +1393,19 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
               children: [
                 Column(
                   children: [
-                    Text('$_passed', style: TextStyle(fontSize: 32, color: Colors.green, fontWeight: FontWeight.bold)),
+                    Text('$_passed', style: const TextStyle(fontSize: 32, color: Colors.green, fontWeight: FontWeight.bold)),
                     const Text('Passou'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_failed', style: TextStyle(fontSize: 32, color: Colors.red, fontWeight: FontWeight.bold)),
+                    Text('$_failed', style: const TextStyle(fontSize: 32, color: Colors.red, fontWeight: FontWeight.bold)),
                     const Text('Falhou'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_total', style: TextStyle(fontSize: 32, color: Colors.blue, fontWeight: FontWeight.bold)),
+                    Text('$_total', style: const TextStyle(fontSize: 32, color: Colors.blue, fontWeight: FontWeight.bold)),
                     const Text('Total'),
                   ],
                 ),
@@ -1414,7 +1414,7 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
             const SizedBox(height: 16),
             Text(
               'Taxa de sucesso: ${(_passed / _total * 100).toStringAsFixed(1)}%',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

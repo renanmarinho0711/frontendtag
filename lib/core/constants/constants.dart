@@ -1,4 +1,4 @@
-// Barrel file para exportar constantes
+/// Barrel file para exportar constantes
 library;
 
 export 'app_constants.dart';

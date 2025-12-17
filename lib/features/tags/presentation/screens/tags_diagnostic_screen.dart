@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/tags/data/models/tag_model.dart';
 import 'package:tagbean/features/tags/presentation/providers/tags_provider.dart';
 import 'package:tagbean/features/tags/presentation/screens/tag_edit_screen.dart';
@@ -39,7 +38,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     super.dispose();
   }
 
-  // Calcular estat?sticas de problemas baseadas nas tags reais
+  // Calcular estatísticas de problemas baseadas nas tags reais
   List<Map<String, dynamic>> _getProblemas(List<TagModel> tags) {
     final lowBattery =
         tags.where((t) => t.batteryLevel < 20 && t.batteryLevel > 0).length;
@@ -51,21 +50,21 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       {
         'tipo': 'Bateria Baixa',
         'quantidade': lowBattery,
-        'cor': ThemeColors.of(context).warning,
+        'cor': ThemeColors.of(context).orangeMain,
         'icone': Icons.battery_alert_rounded,
         'descricao': 'Menos de 20% de carga',
         'filter': 'bateria',
       },
       {
-        'tipo': 'Sem Comunica??o',
+        'tipo': 'Sem ComunicAção',
         'quantidade': offline,
         'cor': ThemeColors.of(context).error,
         'icone': Icons.signal_wifi_off_rounded,
-        'descricao': 'Offline h? mais de 2h',
+        'descricao': 'Offline hã mais de 2h',
         'filter': 'offline',
       },
       {
-        'tipo': 'N?o Vinculadas',
+        'tipo': 'Não Vinculadas',
         'quantidade': unbound,
         'cor': ThemeColors.of(context).warning,
         'icone': Icons.link_off_rounded,
@@ -73,7 +72,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         'filter': 'unbound',
       },
       {
-        'tipo': 'Bateria Cr?tica',
+        'tipo': 'Bateria Crãtica',
         'quantidade': criticalBattery,
         'cor': ThemeColors.of(context).error,
         'icone': Icons.battery_0_bar_rounded,
@@ -134,15 +133,15 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
   String _getProblemaDescricao(TagModel tag) {
     final problemas = <String>[];
     if (tag.batteryLevel <= 5) {
-      problemas.add('Bateria Cr?tica (${tag.batteryLevel}%)');
+      problemas.add('Bateria Crãtica (${tag.batteryLevel}%)');
     } else if (tag.batteryLevel < 20) {
       problemas.add('Bateria Baixa (${tag.batteryLevel}%)');
     }
     if (tag.status == TagStatus.offline) {
-      problemas.add('Sem Comunica??o');
+      problemas.add('Sem ComunicAção');
     }
     if (!tag.isBound) {
-      problemas.add('N?o Vinculada');
+      problemas.add('Não Vinculada');
     }
     return problemas.isNotEmpty ? problemas.join(', ') : 'Verificar';
   }
@@ -151,9 +150,9 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     if (lastSync == null) return 'Nunca';
     final diff = DateTime.now().difference(lastSync);
     if (diff.inMinutes < 1) return 'Agora';
-    if (diff.inMinutes < 60) return '${diff.inMinutes}min atr?s';
-    if (diff.inHours < 24) return '${diff.inHours}h? atr?s';
-    return '${diff.inDays}d atr?s';
+    if (diff.inMinutes < 60) return '${diff.inMinutes}min atrãs';
+    if (diff.inHours < 24) return '${diff.inHours}hã atrãs';
+    return '${diff.inDays}d atrãs';
   }
 
   @override
@@ -161,7 +160,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     final tagsState = ref.watch(tagsNotifierProvider);
 
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).surfaceSecondary,
+      backgroundColor: ThemeColors.of(context).backgroundLight,
       body: SafeArea(
         child: tagsState.when(
           loading: () => const Center(child: CircularProgressIndicator()),
@@ -218,7 +217,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
               icon: const Icon(Icons.refresh_rounded),
               label: const Text('Tentar Novamente'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: ThemeColors.of(context).info,
+                backgroundColor: ThemeColors.of(context).blueMain,
                 foregroundColor: ThemeColors.of(context).surface,
               ),
             ),
@@ -280,7 +279,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   children: [
                     Expanded(
                       child: Text(
-                        'Tags Cr?ticas',
+                        'Tags Críticas',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -368,7 +367,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
           Icon(
             Icons.check_circle_outline_rounded,
             size: AppSizes.iconHeroSmAlt.get(isMobile, isTablet),
-            color: ThemeColors.of(context).success,
+            color: ThemeColors.of(context).greenMain,
           ),
           SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
           Text(
@@ -386,7 +385,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
           ),
           SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
           Text(
-            'Todas as tags est?o funcionando normalmente.',
+            'Todas as tags estão funcionando normalmente.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -395,7 +394,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 mobileFontSize: 12,
                 tabletFontSize: 13,
               ),
-              color: ThemeColors.of(context).successIconDark,
+              color: ThemeColors.of(context).successIcon.withValues(alpha: 0.8),
             ),
           ),
         ],
@@ -427,7 +426,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       ),
       child: Row(
         children: [
-          // Bot?o de voltar
+          // Botão de voltar
           if (widget.onBack != null) ...[            Container(
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).tealMain,
@@ -456,7 +455,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   AppSizes.paddingLg.get(isMobile, isTablet)),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).errorLight,
+                  color: ThemeColors.of(context).error.withValues(alpha: 0.3),
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -476,7 +475,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Diagn?stico de Tags',
+                  'diagnóstico de Tags',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -505,8 +504,8 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                     ),
                     overflow: TextOverflow.ellipsis,
                     color: totalProblemas > 0
-                        ? ThemeColors.of(context).warning
-                        : ThemeColors.of(context).success,
+                        ? ThemeColors.of(context).orangeMain
+                        : ThemeColors.of(context).greenMain,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -540,7 +539,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         gradient: LinearGradient(
           colors: totalProblemas > 0
               ? [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning]
-              : [ThemeColors.of(context).success, ThemeColors.of(context).tealMain],
+              : [ThemeColors.of(context).greenMain, ThemeColors.of(context).tealMain],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -548,9 +547,9 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
         boxShadow: [
           BoxShadow(
             color: (totalProblemas > 0
-                    ? ThemeColors.of(context).warning
-                    : ThemeColors.of(context).success)
-                Light,
+                    ? ThemeColors.of(context).orangeMain
+                    : ThemeColors.of(context).greenMain)
+                .withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -566,7 +565,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   'Online', online.toString(), Icons.wifi_rounded),
               _buildResumoItem(
                   'Problemas', totalProblemas.toString(), Icons.warning_rounded),
-              _buildResumoItem('Sa?de', '$percentOk%', Icons.favorite_rounded),
+              _buildResumoItem('Saãde', '$percentOk%', Icons.favorite_rounded),
             ],
           ),
         ],
@@ -617,8 +616,8 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       {'id': 'todos', 'label': 'Todos'},
       {'id': 'bateria', 'label': 'Bateria Baixa'},
       {'id': 'offline', 'label': 'Offline'},
-      {'id': 'unbound', 'label': 'N?o Vinculadas'},
-      {'id': 'critica', 'label': 'Cr?ticos'},
+      {'id': 'unbound', 'label': 'Não Vinculadas'},
+      {'id': 'critica', 'label': 'Crãticos'},
     ];
 
     return SingleChildScrollView(
@@ -690,9 +689,9 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       child: Container(
         padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: corLight,
+          color: cor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(isMobile ? 14 : 16),
-          border: Border.all(color: corLight),
+          border: Border.all(color: cor.withValues(alpha: 0.3)),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -741,7 +740,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     final corPrioridade = prioridade == 'critica'
         ? ThemeColors.of(context).error
         : prioridade == 'alta'
-            ? ThemeColors.of(context).warning
+            ? ThemeColors.of(context).orangeMain
             : ThemeColors.of(context).warning;
 
     return Container(
@@ -751,7 +750,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 14 : 16),
-        border: Border.all(color: corPrioridadeLight),
+        border: Border.all(color: corPrioridade.withValues(alpha: 0.3)),
         boxShadow: [
           BoxShadow(
             color: ThemeColors.of(context).textPrimaryOverlay05,
@@ -777,12 +776,12 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 ),
               ),
               SizedBox(width: AppSizes.paddingMd.get(isMobile, isTablet)),
-              // ?cone de bateria
+              // ícone de bateria
               Container(
                 padding:
                     EdgeInsets.all(AppSizes.paddingXs.get(isMobile, isTablet)),
                 decoration: BoxDecoration(
-                  color: corPrioridadeLight,
+                  color: corPrioridade.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(
                       AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
@@ -793,7 +792,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 ),
               ),
               SizedBox(width: AppSizes.paddingMd.get(isMobile, isTablet)),
-              // Informa??es
+              // Informações
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -823,7 +822,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                                 AppSizes.paddingXxs.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
-                            color: corPrioridadeLight,
+                            color: corPrioridade.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
@@ -871,7 +870,7 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                   ],
                 ),
               ),
-              // ?ltima atualiza??o
+              // Última atualizAção
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -963,10 +962,10 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
                 size: AppSizes.iconMediumSmall.get(isMobile, isTablet),
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-              const Expanded(child: Text('Diagn?stico atualizado!')),
+              const Expanded(child: Text('diagnóstico atualizado!')),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).success,
+          backgroundColor: ThemeColors.of(context).greenMain,
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
@@ -977,9 +976,6 @@ class _TagsDiagnosticoScreenState extends ConsumerState<TagsDiagnosticoScreen>
     }
   }
 }
-
-
-
 
 
 

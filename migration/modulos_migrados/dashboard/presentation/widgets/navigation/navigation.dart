@@ -1,4 +1,4 @@
-// Widgets de navegação do Dashboard
+/// Widgets de navegação do Dashboard
 /// 
 /// Exporta todos os componentes de navegação extraídos
 library;

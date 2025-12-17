@@ -1,4 +1,4 @@
-// TagBean Dashboard Feature
+/// TagBean Dashboard Feature
 /// 
 /// Feature do painel principal.
 /// 

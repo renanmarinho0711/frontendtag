@@ -1,4 +1,4 @@
-// Barrel file para widgets de cards
+/// Barrel file para widgets de cards
 library;
 
 export 'app_card.dart';

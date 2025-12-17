@@ -4,7 +4,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class WelcomeSection extends ConsumerWidget {
   final String userName;
   

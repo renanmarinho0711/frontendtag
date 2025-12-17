@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
-/// Card de confirma??o de vincula??o tag-produto
+/// Card de confirmação de vinculAção tag-produto
 class BindingConfirmationCard extends StatelessWidget {
   final String? tagId;
   final ProductModel? produto;
@@ -32,7 +31,7 @@ class BindingConfirmationCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).brandPrimaryGreenLight,
+            color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -44,13 +43,13 @@ class BindingConfirmationCard extends StatelessWidget {
           // Header
           _buildHeader(context),
           const SizedBox(height: AppSpacing.xl),
-          // Conex?o visual
+          // Conexão visual
           _buildConnectionVisual(context),
           const SizedBox(height: AppSpacing.xl),
           // Detalhes
           _buildDetails(context),
           const SizedBox(height: AppSpacing.xl),
-          // Bot?es
+          // Botães
           _buildButtons(context),
         ],
       ),
@@ -74,7 +73,7 @@ class BindingConfirmationCard extends StatelessWidget {
             gradient: LinearGradient(
               colors: [
                 ThemeColors.of(context).brandPrimaryGreen,
-                ThemeColors.of(context).brandPrimaryGreenDark,
+                ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.8),
               ],
             ),
             shape: BoxShape.circle,
@@ -87,7 +86,7 @@ class BindingConfirmationCard extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.lg),
         Text(
-          'Confirmar Vincula??o',
+          'Confirmar VinculAção',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -150,16 +149,16 @@ class BindingConfirmationCard extends StatelessWidget {
       width: 130,
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
           Container(
             padding: const EdgeInsets.all(AppSpacing.sm),
             decoration: BoxDecoration(
-              color: colorLight,
+              color: color.withValues(alpha: 0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: color, size: 20),
@@ -196,14 +195,14 @@ class BindingConfirmationCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         children: [
-          _buildDetailRow(context, 'C?digo', produto!.codigo),
+          _buildDetailRow(context, 'Cãdigo', produto!.codigo),
           const Divider(height: 16),
-          _buildDetailRow(context, 'Pre?o', 'R\$ ${produto!.preco.toStringAsFixed(2)}'),
+          _buildDetailRow(context, 'PREÇO', 'R\$ ${produto!.preco.toStringAsFixed(2)}'),
           if (produto!.categoria.isNotEmpty) ...[
             const Divider(height: 16),
             _buildDetailRow(context, 'Categoria', produto!.categoria),
@@ -300,9 +299,6 @@ class BindingConfirmationCard extends StatelessWidget {
     );
   }
 }
-
-
-
 
 
 

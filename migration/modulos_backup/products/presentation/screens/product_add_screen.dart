@@ -646,8 +646,8 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(AppSpacing.md),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.all(AppSpacing.md),
+                        decoration: const BoxDecoration(
                           color: AppThemeColors.blueMain,
                           borderRadius: AppRadius.sm,
                         ),
@@ -1049,7 +1049,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(AppSpacing.lg),
+                      padding: const EdgeInsets.all(AppSpacing.lg),
                       decoration: BoxDecoration(
                         gradient: categoryTheme.gradient,
                         borderRadius: AppRadius.md,
@@ -1078,7 +1078,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                               fontSize: 18,
                             )),
                           ),
-                          SizedBox(height: AppSpacing.xs),
+                          const SizedBox(height: AppSpacing.xs),
                           Row(
                             children: [
                               Icon(
@@ -1086,7 +1086,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                                 size: 14,
                                 color: categoryTheme.color,
                               ),
-                              SizedBox(width: AppSpacing.xs),
+                              const SizedBox(width: AppSpacing.xs),
                               Text(
                                 _categoria,
                                 style: TextStyle(
@@ -1102,7 +1102,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppThemeColors.brandPrimaryGreen,
                         borderRadius: AppRadius.sm,
                       ),
@@ -1169,7 +1169,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                 )),
               ),
               secondary: Container(
-                padding: EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
+                padding: const EdgeInsets.all(AppSpacing.welcomeInnerSpacing),
                 decoration: BoxDecoration(
                   color: _vincularTag 
                       ? AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.1)
@@ -1232,7 +1232,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
               children: [
                 Text(
                   label,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     color: AppThemeColors.textSecondary,
                     fontWeight: FontWeight.w500,
@@ -1259,13 +1259,13 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
 
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppThemeColors.surface,
         boxShadow: [
           BoxShadow(
             color: AppThemeColors.textPrimaryOverlay05,
             blurRadius: 10,
-            offset: const Offset(0, -4),
+            offset: Offset(0, -4),
           ),
         ],
       ),
@@ -1281,7 +1281,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                   ),
-                  side: BorderSide(color: AppThemeColors.borderLight),
+                  side: const BorderSide(color: AppThemeColors.borderLight),
                   shape: RoundedRectangleBorder(
                     borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   ),
@@ -1301,7 +1301,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                   ),
-                  side: BorderSide(color: AppThemeColors.borderLight),
+                  side: const BorderSide(color: AppThemeColors.borderLight),
                   shape: RoundedRectangleBorder(
                     borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   ),
@@ -1439,7 +1439,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
 
   Widget _buildDiscardDialog() {
     return AlertDialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: AppRadius.dialog,
       ),
       icon: const Icon(
@@ -1472,11 +1472,11 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
   void _abrirScanner() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Row(
+        content: const Row(
           children: [
-            const Icon(Icons.info_rounded, color: AppThemeColors.surface),
-            const SizedBox(width: AppSpacing.md),
-            const Expanded(
+            Icon(Icons.info_rounded, color: AppThemeColors.surface),
+            SizedBox(width: AppSpacing.md),
+            Expanded(
               child: Text('Scanner de código de barras em desenvolvimento. Digite o código manualmente.'),
             ),
           ],

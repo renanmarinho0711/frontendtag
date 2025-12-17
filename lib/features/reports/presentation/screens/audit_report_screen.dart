@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/reports/presentation/providers/reports_provider.dart';
 
-class relatÃ³riosauditoriaScreen extends ConsumerStatefulWidget {
-  const relatÃ³riosauditoriaScreen({super.key});
+class RelatoriosAuditoriaScreen extends ConsumerStatefulWidget {
+  const RelatoriosAuditoriaScreen({super.key});
 
   @override
-  ConsumerState<relatÃ³riosauditoriaScreen> createState() => _relatÃ³riosauditoriaScreenState();
+  ConsumerState<RelatoriosAuditoriaScreen> createState() => _RelatoriosAuditoriaScreenState();
 }
 
-class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosauditoriaScreen>
+class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaScreen>
     with TickerProviderStateMixin, ResponsiveCache {
   late AnimationController _animationController;
   late AnimationController _refreshController;
@@ -22,7 +21,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
   // NOTA: _filtroPeriodo removido (morto)
   bool _apenasImportantes = false;
   
-  // OTIMIZA��O: Cache de logs filtrados
+  // OTIMIZAããO: Cache de logs filtrados
   List<Map<String, dynamic>>? _cachedLogsFiltrados;
   String _lastFiltroTipo = 'Todos';
   String _lastFiltroUsuario = 'Todos';
@@ -39,14 +38,14 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     return _auditState.reports.map((report) {
       return {
         'tipo': report.titulo,
-        'data': _formatDate(report.dataauditoria),
+        'data': _formatDate(report.dataAuditoria),
         'usuario': report.auditor,
         'descricao': report.descricao,
         'icone': _getIconForType(report.titulo),
         'cor': _getColorForType(report.titulo),
         'dispositivo': 'Sistema',
         'ip': 'N/A',
-        'categoria': report.hasProblems ? 'Cr�tica' : 'Normal',
+        'categoria': report.hasProblems ? 'Crãtica' : 'Normal',
         'antes': '${report.itensVerificados} itens',
         'depois': '${report.itensVerificados - report.itensComProblema} OK',
         'impacto': '${report.percentualConformidade.toStringAsFixed(1)}%',
@@ -59,25 +58,25 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
   }
   
   IconData _getIconForType(String type) {
-    if (type.toLowerCase().contains('pre�o')) return Icons.attach_money_rounded;
+    if (type.toLowerCase().contains('preço')) return Icons.attach_money_rounded;
     if (type.toLowerCase().contains('tag')) return Icons.link_rounded;
     if (type.toLowerCase().contains('import')) return Icons.upload_file_rounded;
-    if (type.toLowerCase().contains('estrat�g')) return Icons.auto_awesome_rounded;
+    if (type.toLowerCase().contains('estratãg')) return Icons.auto_awesome_rounded;
     if (type.toLowerCase().contains('login')) return Icons.login_rounded;
     if (type.toLowerCase().contains('backup')) return Icons.backup_rounded;
     return Icons.info_outline_rounded;
   }
   
   Color _getColorForType(String type) {
-    if (type.toLowerCase().contains('pre�o')) return ThemeColors.of(context).success;
+    if (type.toLowerCase().contains('preço')) return ThemeColors.of(context).success;
     if (type.toLowerCase().contains('tag')) return ThemeColors.of(context).primary;
     if (type.toLowerCase().contains('import')) return ThemeColors.of(context).greenDark;
-    if (type.toLowerCase().contains('estrat�g')) return ThemeColors.of(context).cyanMain;
+    if (type.toLowerCase().contains('estratãg')) return ThemeColors.of(context).cyanMain;
     if (type.toLowerCase().contains('login')) return ThemeColors.of(context).cyanMain;
     return ThemeColors.of(context).primary;
   }
 
-  // OTIMIZA��O: Getter com cache
+  // OTIMIZAããO: Getter com cache
   List<Map<String, dynamic>> get _logsFiltrados {
     if (_cachedLogsFiltrados != null &&
         _lastFiltroTipo == _filtroTipo &&
@@ -93,7 +92,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     _cachedLogsFiltrados = _logs.where((log) {
       final tipoMatch = _filtroTipo == 'Todos' || log['tipo'] == _filtroTipo;
       final usuarioMatch = _filtroUsuario == 'Todos' || log['usuario'] == _filtroUsuario;
-      final importanteMatch = !_apenasImportantes || log['categoria'] == 'Cr�tica';
+      final importanteMatch = !_apenasImportantes || log['categoria'] == 'Crãtica';
       return tipoMatch && usuarioMatch && importanteMatch;
     }).toList();
     
@@ -184,12 +183,12 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
             Icon(Icons.security_outlined, size: 64, color: ThemeColors.of(context).textSecondary),
             const SizedBox(height: 16),
             Text(
-              'Nenhum registro de auditoria dispon�vel',
+              'Nenhum registro de auditoria disponível',
               style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
-              'Os registros aparecer�o conforme as a��es forem realizadas',
+              'Os registros aparecerão conforme as ações forem realizadas',
               style: TextStyle(color: ThemeColors.of(context).textSecondaryOverlay70, fontSize: 14),
             ),
           ],
@@ -266,26 +265,26 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primaryLight,
+                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
               ],
             ),
-            child: const Icon(
+            child: Icon(
               Icons.security_rounded,
               color: ThemeColors.of(context).surface,
               size: 28,
             ),
           ),
           const SizedBox(width: 16),
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Relat�rios de auditoria',
+                const Text(
+                  'Relatórios de Auditoria',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -293,9 +292,9 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
-                  'Hist�rico e Rastreabilidade',
+                  'Histórico e Rastreabilidade',
                   style: TextStyle(
                     fontSize: 13,
                     color: ThemeColors.of(context).textSecondary,
@@ -393,10 +392,10 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                         letterSpacing: -0.8,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(
-                      'auditoria Completa � �ltimos 30 dias',
-                      style: TextStyle(
+                      'Auditoria Completa é últimos 30 dias',
+                      style: const TextStyle(
                         fontSize: 13,
                         letterSpacing: 0.2,
                       ).copyWith(color: ThemeColors.of(context).surfaceOverlay70),
@@ -407,15 +406,15 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).successLight,
+                  color: ThemeColors.of(context).success.withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: ThemeColors.of(context).successLight),
+                  border: Border.all(color: ThemeColors.of(context).success.withValues(alpha: 0.5)),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.verified_rounded, size: 16, color: ThemeColors.of(context).surface),
-                    SizedBox(width: 6),
+                    const SizedBox(width: 6),
                     Text(
                       'Seguro',
                       style: TextStyle(
@@ -440,7 +439,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
             child: Row(
               children: [
                 Expanded(
-                  child: _buildStatItem('847', 'Usu�rio', Icons.person_rounded),
+                  child: _buildStatItem('847', 'Usuário', Icons.person_rounded),
                 ),
                 Container(width: 1, height: 40, color: ThemeColors.of(context).surfaceOverlay30),
                 Expanded(
@@ -448,7 +447,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 ),
                 Container(width: 1, height: 40, color: ThemeColors.of(context).surfaceOverlay30),
                 Expanded(
-                  child: _buildStatItem('67', 'Cr�ticos', Icons.error_rounded),
+                  child: _buildStatItem('67', 'Crãticos', Icons.error_rounded),
                 ),
               ],
             ),
@@ -512,7 +511,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
               ),
               const SizedBox(width: 12),
               const Text(
-                'Filtros Avan�ados',
+                'Filtros Avançados',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -524,11 +523,11 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 child: Switch(
                   value: _apenasImportantes,
                   onChanged: (value) => setState(() => _apenasImportantes = value),
-                  activeColor: ThemeColors.of(context).error,
+                  activeThumbColor: ThemeColors.of(context).error,
                 ),
               ),
               const Text(
-                'Cr�ticos',
+                'Crãticos',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
@@ -541,11 +540,11 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
             children: [
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _filtroTipo,
+                  initialValue: _filtroTipo,
                   style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textPrimary),
                   decoration: InputDecoration(
                     labelText: 'Tipo',
-                    labelStyle: TextStyle(fontSize: 11),
+                    labelStyle: const TextStyle(fontSize: 11),
                     prefixIcon: Icon(Icons.category_rounded, size: 16, color: ThemeColors.of(context).infoDark),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -553,7 +552,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                     contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                     isDense: true,
                   ),
-                  items: ['Todos', 'Altera��o de Pre�o', 'Login', 'Importa��o', 'Backup', 'Exclus�o de Produto']
+                  items: ['Todos', 'AlterAção de PREÇO', 'Login', 'Importação', 'Backup', 'Exclusão de Produto']
                       .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                       .toList(),
                   onChanged: (value) {
@@ -564,11 +563,11 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
               const SizedBox(width: 12),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _filtroUsuario,
+                  initialValue: _filtroUsuario,
                   style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textPrimary),
                   decoration: InputDecoration(
-                    labelText: 'Usu�rio',
-                    labelStyle: TextStyle(fontSize: 11),
+                    labelText: 'Usuário',
+                    labelStyle: const TextStyle(fontSize: 11),
                     prefixIcon: Icon(Icons.person_rounded, size: 16, color: ThemeColors.of(context).infoDark),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -607,12 +606,12 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: (log['cor'] as Color)Light,
+            color: (log['cor'] as Color).withValues(alpha: 0.3),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: (log['cor'] as Color)Light,
+              color: (log['cor'] as Color).withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 4),
             ),
@@ -633,7 +632,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: (log['cor'] as Color)Light,
+                    color: (log['cor'] as Color).withValues(alpha: 0.3),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -646,7 +645,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 Expanded(
                   child: Text(
                     log['tipo'],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       letterSpacing: -0.3,
@@ -656,10 +655,10 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 4),
                   decoration: BoxDecoration(
-                    color: _getCategoriaCor(log['categoria'])Light,
+                    color: _getCategoriaCor(log['categoria']).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(6),
                     border: Border.all(
-                      color: _getCategoriaCor(log['categoria'])Light,
+                      color: _getCategoriaCor(log['categoria']).withValues(alpha: 0.3),
                     ),
                   ),
                   child: Text(
@@ -720,7 +719,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                         Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: (log['cor'] as Color)Light,
+                            color: (log['cor'] as Color).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Icon(
@@ -731,7 +730,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
                         ),
                         const SizedBox(width: 10),
                         Text(
-                          'Detalhes da Opera��o',
+                          'Detalhes da OperAção',
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -804,9 +803,9 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -850,7 +849,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
             ),
             child: Text(
               value,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -886,7 +885,7 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
           ),
           const SizedBox(height: 8),
           Text(
-            'Todos os logs s�o criptografados e armazenados\npor 90 dias para garantir compliance e seguran�a',
+            'Todos os logs são criptografados e armazenados\npor 90 dias para garantir compliance e segurança',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 12,
@@ -938,9 +937,9 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
 
   Color _getCategoriaCor(String categoria) {
     switch (categoria) {
-      case 'Cr�tica':
+      case 'Crãtica':
         return ThemeColors.of(context).error;
-      case 'Seguran�a':
+      case 'Segurança':
         return ThemeColors.of(context).yellowGold;
       case 'Sistema':
         return ThemeColors.of(context).blueCyan;
@@ -960,11 +959,11 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: const Row(
+          content: Row(
             children: [
               Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface),
-              SizedBox(width: 12),
-              Text('Logs atualizados!'),
+              const SizedBox(width: 12),
+              const Text('Logs atualizados!'),
             ],
           ),
           backgroundColor: ThemeColors.of(context).successIcon,
@@ -975,9 +974,6 @@ class _relatÃ³riosauditoriaScreenState extends ConsumerState<relatÃ³riosaudi
     }
   }
 }
-
-
-
 
 
 

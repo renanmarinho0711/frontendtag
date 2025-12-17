@@ -6,7 +6,6 @@ import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class CategoriasAdicionarScreen extends ConsumerStatefulWidget {
   const CategoriasAdicionarScreen({super.key});
@@ -24,8 +23,11 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
   final _descricaoController = TextEditingController();
   String? _categoriaPai;
   IconData _iconeSelecionado = Icons.category_rounded;
-  Color _corSelecionada = ThemeColors.of(context).primary;
+  Color? _corSelecionada;
   late TabController _tabController;
+
+  // Helper para obter a cor selecionada com fallback para primary
+  Color _getCorSelecionada(BuildContext context) => _corSelecionada ?? ThemeColors.of(context).primary;
 
   // Categorias sugeridas carregadas do backend
   List<SuggestedCategoryModel> _categoriasSugeridas = [];
@@ -51,7 +53,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
     Icons.local_pizza_rounded,
   ];
 
-  final List<Color> _coresDisponiveis = [
+  List<Color> _getCoresDisponiveis(BuildContext context) => [
     ThemeColors.of(context).primary,
     ThemeColors.of(context).success,
     ThemeColors.of(context).yellowGold,
@@ -76,7 +78,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
       });
     });
     
-    // Carregar categorias sugeridas do backend ap�s o build
+    // Carregar categorias sugeridas do backend apãs o build
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _loadSuggestedCategories();
     });
@@ -266,15 +268,15 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                ThemeColors.of(context).blueCyanLight,
-                ThemeColors.of(context).primaryLight,
+                ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+                ThemeColors.of(context).primary.withValues(alpha: 0.1),
               ],
             ),
             borderRadius: BorderRadius.circular(
               isMobile ? 12 : 16,
             ),
             border: Border.all(
-              color: ThemeColors.of(context).blueCyanLight,
+              color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
             ),
           ),
           child: Row(
@@ -282,7 +284,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
             children: [
               Icon(
                 Icons.lightbulb_rounded,
-                color: ThemeColors.of(context).yellowGoldDark,
+                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.8),
                 size: AppSizes.iconMedium.get(isMobile, isTablet),
               ),
               SizedBox(
@@ -367,7 +369,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                   boxShadow: isSelected
                       ? [
                           BoxShadow(
-                            color: cat.corLight,
+                            color: cat.cor.withValues(alpha: 0.3),
                             blurRadius: isMobile ? 8 : 12,
                             offset: const Offset(0, 4),
                           ),
@@ -385,7 +387,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                           AppSizes.paddingBase.get(isMobile, isTablet),
                         ),
                         decoration: BoxDecoration(
-                          color: cat.corLight,
+                          color: cat.cor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(
                             isMobile ? 10 : 12,
                           ),
@@ -485,7 +487,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Informa��es B�sicas',
+            'Informações Básicas',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -554,7 +556,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
               ),
             ),
             decoration: InputDecoration(
-              labelText: 'Descri��o (opcional)',
+              labelText: 'Descrição (opcional)',
               hintText: 'Descreva o tipo de produtos desta categoria',
               labelStyle: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -624,7 +626,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
               filled: true,
               fillColor: ThemeColors.of(context).textSecondary,
             ),
-            value: _categoriaPai,
+            initialValue: _categoriaPai,
             items: [
               const DropdownMenuItem<String>(
                 value: null,
@@ -644,7 +646,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                         Text(e.nome),
                       ],
                     ),
-                  )).toList(),
+                  )),
             ],
             onChanged: (value) {
               setState(() => _categoriaPai = value);
@@ -681,7 +683,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Personaliza��o Visual',
+            'PersonalizAção Visual',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -698,7 +700,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
             height: AppSizes.paddingXs.get(isMobile, isTablet),
           ),
           Text(
-            'Escolha um �cone e uma cor para identificar sua categoria',
+            'Escolha um ícone e uma cor para identificar sua categoria',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -713,7 +715,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
             height: AppSizes.padding2Xl.get(isMobile, isTablet),
           ),
           Text(
-            '�cone',
+            'ícone',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -746,10 +748,10 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                   ),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? _corSelecionadaLight
+                        ? _getCorSelecionada(context).withValues(alpha: 0.1)
                         : ThemeColors.of(context).textSecondaryOverlay20,
                     border: Border.all(
-                      color: isSelected ?  _corSelecionada : ThemeColors.of(context).textSecondary,
+                      color: isSelected ?  _getCorSelecionada(context) : ThemeColors.of(context).textSecondary,
                       width: isSelected ? 2 : 1,
                     ),
                     borderRadius: BorderRadius.circular(
@@ -758,7 +760,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                   ),
                   child: Icon(
                     icone,
-                    color: isSelected ? _corSelecionada : ThemeColors.of(context).textSecondary,
+                    color: isSelected ? _getCorSelecionada(context) : ThemeColors.of(context).textSecondary,
                     size: AppSizes.iconLarge.get(isMobile, isTablet),
                   ),
                 ),
@@ -786,8 +788,9 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
           Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: _coresDisponiveis.map((cor) {
-              final isSelected = _corSelecionada == cor;
+            children: _getCoresDisponiveis(context).map((cor) {
+              final corSelecionada = _corSelecionada ?? ThemeColors.of(context).primary;
+              final isSelected = corSelecionada == cor;
               final size = AppSizes.iconHeroMd.get(isMobile, isTablet);
               return InkWell(
                 onTap: () {
@@ -812,7 +815,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                     boxShadow: isSelected
                         ? [
                             BoxShadow(
-                              color: corLight,
+                              color: cor.withValues(alpha: 0.5),
                               blurRadius: isMobile ? 8 : 12,
                               offset: const Offset(0, 4),
                             ),
@@ -840,7 +843,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
     final isTablet = ResponsiveHelper.isTablet(context);
     final nome = _nomeController.text.isEmpty ? 'Sua Categoria' : _nomeController.text;
     final descricao = _descricaoController.text.isEmpty
-        ? 'Descri��o da categoria'
+        ? 'Descrição da categoria'
         : _descricaoController.text;
 
     return Container(
@@ -850,14 +853,14 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            _corSelecionadaLight,
-            _corSelecionadaLight,
+            _getCorSelecionada(context).withValues(alpha: 0.1),
+            _getCorSelecionada(context).withValues(alpha: 0.05),
           ],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
         ),
-        border: Border.all(color: _corSelecionadaLight),
+        border: Border.all(color: _getCorSelecionada(context).withValues(alpha: 0.3)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -875,7 +878,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                 width: AppSizes.paddingXs.get(isMobile, isTablet),
               ),
               Text(
-                'Pr�via',
+                'Prãvia',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -901,14 +904,14 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [_corSelecionada, _corSelecionada.withValues(alpha: 0.7)],
+                    colors: [_getCorSelecionada(context), _getCorSelecionada(context).withValues(alpha: 0.7)],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 12 : 16,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: _corSelecionadaLight,
+                      color: _getCorSelecionada(context).withValues(alpha: 0.3),
                       blurRadius: isMobile ? 8 : 12,
                       offset: const Offset(0, 4),
                     ),
@@ -1274,9 +1277,6 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
     );
   }
 }
-
-
-
 
 
 

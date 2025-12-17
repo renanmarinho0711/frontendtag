@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
 /// BLOCO 7: Centro de Scanner (Para Mobile)
-/// Acesso rpido s funes de scanner que so o core do sistema
+/// Acesso rápido s funes de scanner que so o core do sistema
 class ScannerCentralCard extends StatelessWidget {
   final VoidCallback? onAbrirScanner;
   final VoidCallback? onScanearTag;
@@ -79,7 +80,7 @@ class ScannerCentralCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: ThemeColors.of(context).greenMaterialLight,
+                        color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -227,8 +228,6 @@ class ScannerCentralCard extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

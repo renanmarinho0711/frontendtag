@@ -4,7 +4,7 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/tags/data/models/tag_model.dart';
 
-/// Estat?sticas de sincroniza??o Minew das tags
+/// Estatãsticas de sincronização Minew das tags
 class MinewSyncStats {
   final int totalTags;
   final int synced;
@@ -46,7 +46,7 @@ class MinewSyncStats {
     DateTime? lastSync;
 
     for (final tag in tags) {
-      // Contagem por status de sincroniza??o
+      // Contagem por status de sincronização
       switch (tag.minewSyncStatus) {
         case 'synced':
           synced++;
@@ -66,7 +66,7 @@ class MinewSyncStats {
         offline++;
       }
 
-      // Encontrar ?ltima sincroniza??o
+      // Encontrar Última sincronização
       if (tag.lastSync != null) {
         if (lastSync == null || tag.lastSync!.isAfter(lastSync)) {
           lastSync = tag.lastSync;
@@ -86,7 +86,7 @@ class MinewSyncStats {
   }
 }
 
-/// Card para exibir status de sincroniza??o Minew das tags
+/// Card para exibir status de sincronização Minew das tags
 class TagMinewSyncCard extends StatelessWidget {
   final MinewSyncStats stats;
   final bool isSyncing;
@@ -130,7 +130,7 @@ class TagMinewSyncCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).brandPrimaryGreenLight,
+                  color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
@@ -145,7 +145,7 @@ class TagMinewSyncCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sincroniza??o Minew',
+                      'Sincronização Minew',
                       style: TextStyle(
                         fontSize: isMobile ? 16 : 18,
                         fontWeight: FontWeight.bold,
@@ -154,7 +154,7 @@ class TagMinewSyncCard extends StatelessWidget {
                     ),
                     if (stats.lastGlobalSync != null)
                       Text(
-                        '�ltima: ${_formatLastSync(stats.lastGlobalSync!)}',
+                        'Última: ${_formatLastSync(stats.lastGlobalSync!)}',
                         style: TextStyle(
                           fontSize: isMobile ? 11 : 12,
                           color: ThemeColors.of(context).textSecondary,
@@ -175,7 +175,7 @@ class TagMinewSyncCard extends StatelessWidget {
                             color: ThemeColors.of(context).surface,
                           ),
                         )
-                      : Icon(Icons.sync_rounded, size: 18),
+                      : const Icon(Icons.sync_rounded, size: 18),
                   label: Text(isSyncing ? 'Sincronizando...' : 'Sincronizar'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
@@ -269,7 +269,7 @@ class TagMinewSyncCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Progresso de Sincroniza??o',
+              'Progresso de Sincronização',
               style: TextStyle(
                 fontSize: isMobile ? 12 : 13,
                 fontWeight: FontWeight.w500,
@@ -314,7 +314,7 @@ class TagMinewSyncCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Row(
         children: [
@@ -378,9 +378,9 @@ class TagMinewSyncCard extends StatelessWidget {
     final diff = now.difference(dateTime);
 
     if (diff.inMinutes < 1) return 'Agora';
-    if (diff.inMinutes < 60) return 'h? ${diff.inMinutes} min';
-    if (diff.inHours < 24) return 'h? ${diff.inHours}h?';
-    if (diff.inDays < 7) return 'h? ${diff.inDays} dias';
+    if (diff.inMinutes < 60) return 'hã ${diff.inMinutes} min';
+    if (diff.inHours < 24) return 'hã ${diff.inHours}hã';
+    if (diff.inDays < 7) return 'hã ${diff.inDays} dias';
 
     return '${dateTime.day}/${dateTime.month}/${dateTime.year}';
   }
@@ -424,9 +424,9 @@ class TagSyncStatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -471,7 +471,7 @@ class TagSyncStatusBadge extends StatelessWidget {
   }
 }
 
-/// Widget para exibir informa??es de temperatura da tag
+/// Widget para exibir Informações de temperatura da tag
 class TagTemperatureIndicator extends StatelessWidget {
   final int? temperature;
   final bool compact;
@@ -498,7 +498,7 @@ class TagTemperatureIndicator extends StatelessWidget {
           Icon(icon, size: 14, color: color),
           const SizedBox(width: 2),
           Text(
-            '$temperature�C',
+            '$temperature°C',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w500,
@@ -512,7 +512,7 @@ class TagTemperatureIndicator extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -521,7 +521,7 @@ class TagTemperatureIndicator extends StatelessWidget {
           Icon(icon, size: 16, color: color),
           const SizedBox(width: 4),
           Text(
-            '$temperature�C',
+            '$temperature°C',
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w600,
@@ -537,7 +537,7 @@ class TagTemperatureIndicator extends StatelessWidget {
     if (temperature! < 0) return ThemeColors.of(context).primary; // Muito frio
     if (temperature! < 10) return ThemeColors.of(context).cyanMain; // Frio
     if (temperature! < 30) return ThemeColors.of(context).success; // Normal
-    if (temperature! < 40) return ThemeColors.of(context).warning; // Quente
+    if (temperature! < 40) return ThemeColors.of(context).orangeMain; // Quente
     return ThemeColors.of(context).errorDark; // Muito quente
   }
 
@@ -548,9 +548,6 @@ class TagTemperatureIndicator extends StatelessWidget {
     return Icons.local_fire_department_rounded;
   }
 }
-
-
-
 
 
 

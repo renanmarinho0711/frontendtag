@@ -4,6 +4,7 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/constants/app_constants.dart' as AppConst;
 import 'package:tagbean/features/settings/presentation/providers/settings_provider.dart';
 import 'package:tagbean/features/settings/data/models/settings_models.dart';
@@ -27,11 +28,11 @@ class _ConfiguracoesNotificacoesScreenState
 
   // Eventos para notificar
   final Map<String, bool> _eventosNotificacao = {
-    'Erro de Sincronizao': true,
+    'Erro de Sincronização': true,
     'Tag Offline': true,
-    'Produto sem Preo': true,
+    'Produto sem Preço': true,
     'Margem Negativa': true,
-    'Importao Concluda': false,
+    'Importação Concluda': false,
     'Estratgia Executada': true,
     'Backup Realizado': false,
     'Novo Login Detectado': true,
@@ -64,7 +65,7 @@ class _ConfiguracoesNotificacoesScreenState
     );
     _animationController.forward();
     
-    // Carregar configuraes do backend
+    // Carregar configurações do backend
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _loadSettings();
     });
@@ -110,7 +111,7 @@ class _ConfiguracoesNotificacoesScreenState
       setState(() => _isLoading = false);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erro ao carregar configuraes: $e')),
+          SnackBar(content: Text('Erro ao carregar configurações: $e')),
         );
       }
     }
@@ -118,11 +119,11 @@ class _ConfiguracoesNotificacoesScreenState
   
   String? _mapEventKeyToName(String key) {
     const mapping = {
-      'sync_alerts': 'Erro de Sincronizao',
+      'sync_alerts': 'Erro de Sincronização',
       'error_alerts': 'Tag Offline',
-      'price_alerts': 'Produto sem Preo',
+      'price_alerts': 'Produto sem Preço',
       'stock_alerts': 'Margem Negativa',
-      'import_alerts': 'Importao Concluda',
+      'import_alerts': 'Importação Concluda',
       'strategy_alerts': 'Estratgia Executada',
       'backup_alerts': 'Backup Realizado',
       'login_alerts': 'Novo Login Detectado',
@@ -132,11 +133,11 @@ class _ConfiguracoesNotificacoesScreenState
   
   String _mapEventNameToKey(String name) {
     const mapping = {
-      'Erro de Sincronizao': 'sync_alerts',
+      'Erro de Sincronização': 'sync_alerts',
       'Tag Offline': 'error_alerts',
-      'Produto sem Preo': 'price_alerts',
+      'Produto sem Preço': 'price_alerts',
       'Margem Negativa': 'stock_alerts',
-      'Importao Concluda': 'import_alerts',
+      'Importação Concluda': 'import_alerts',
       'Estratgia Executada': 'strategy_alerts',
       'Backup Realizado': 'backup_alerts',
       'Novo Login Detectado': 'login_alerts',
@@ -177,10 +178,10 @@ class _ConfiguracoesNotificacoesScreenState
       
       if (success && mounted) {
         setState(() => _alteracoesFeitas = false);
-        _showSuccessSnackBar('Configuraes salvas com sucesso!');
+        _showSuccessSnackBar('Configurações salvas com sucesso!');
       } else if (mounted) {
         final errorMessage = ref.read(notificationSettingsProvider).errorMessage;
-        _showErrorSnackBar(errorMessage ?? 'Erro ao salvar configuraes');
+        _showErrorSnackBar(errorMessage ?? 'Erro ao salvar configurações');
       }
     } catch (e) {
       setState(() => _isSaving = false);
@@ -314,7 +315,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).shadowSubtle(0.05),
+            color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -358,7 +359,7 @@ class _ConfiguracoesNotificacoesScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Notificaes',
+                  'Notificações',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -557,7 +558,7 @@ class _ConfiguracoesNotificacoesScreenState
           ),
           _buildChannelSwitch(
             'Push',
-            'Notificaes instantneas no aplicativo',
+            'Notificações instantneas no aplicativo',
             Icons.notifications_rounded,
             _notificarPush,
             ThemeColors.of(context).warning,
@@ -593,7 +594,7 @@ class _ConfiguracoesNotificacoesScreenState
           AppSizes.paddingLg.get(isMobile, isTablet),
         ),
         border: Border.all(
-          color: value ? colorLight : ThemeColors.of(context).textSecondary,
+          color: value ? color.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -662,7 +663,7 @@ class _ConfiguracoesNotificacoesScreenState
           Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: color,
+            activeThumbColor: color,
           ),
         ],
       ),
@@ -688,7 +689,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).shadowSubtle(0.05),
+            color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -818,7 +819,7 @@ class _ConfiguracoesNotificacoesScreenState
                   ),
                   secondary: Icon(
                     _getIconForEvent(entry.key),
-                    color: entry.value ? ThemeColors.of(context).purpleMedium : ThemeColors.of(context).textSecondary.withOpacity(0.6),
+                    color: entry.value ? ThemeColors.of(context).purpleMedium : ThemeColors.of(context).textSecondary.withValues(alpha: 0.6),
                     size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                   ),
                   activeColor: ThemeColors.of(context).purpleMedium,
@@ -835,7 +836,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -843,15 +844,15 @@ class _ConfiguracoesNotificacoesScreenState
 
   IconData _getIconForEvent(String event) {
     switch (event) {
-      case 'Erro de Sincronizao':
+      case 'Erro de Sincronização':
         return Icons.sync_problem_rounded;
       case 'Tag Offline':
         return Icons.signal_wifi_off_rounded;
-      case 'Produto sem Preo':
+      case 'Produto sem Preço':
         return Icons.money_off_rounded;
       case 'Margem Negativa':
         return Icons.trending_down_rounded;
-      case 'Importao Concluda':
+      case 'Importação Concluda':
         return Icons.upload_file_rounded;
       case 'Estratgia Executada':
         return Icons.auto_awesome_rounded;
@@ -883,7 +884,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).shadowSubtle(0.05),
+            color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -981,7 +982,7 @@ class _ConfiguracoesNotificacoesScreenState
                   ),
                   child: Icon(
                     Icons.do_not_disturb_on_rounded,
-                    color: _naoPerturbar ? ThemeColors.of(context).primaryDark : ThemeColors.of(context).textSecondary.withOpacity(0.6),
+                    color: _naoPerturbar ? ThemeColors.of(context).primary.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondary.withValues(alpha: 0.6),
                     size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
                   ),
                 ),
@@ -1031,7 +1032,7 @@ class _ConfiguracoesNotificacoesScreenState
                       _alteracoesFeitas = true;
                     });
                   },
-                  activeColor: ThemeColors.of(context).primary,
+                  activeThumbColor: ThemeColors.of(context).primary,
                 ),
               ],
             ),
@@ -1262,7 +1263,7 @@ class _ConfiguracoesNotificacoesScreenState
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).shadowSubtle(0.05),
+            color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.05),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 8,
@@ -1286,7 +1287,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [ThemeColors.of(context).success, ThemeColors.of(context).successEnd],
+                    colors: [ThemeColors.of(context).greenGradient, ThemeColors.of(context).greenGradientEnd],
                   ),
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
@@ -1418,7 +1419,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ],
               ),
             );
-          }). toList(),
+          }),
           TextButton. icon(
             onPressed: () {
               // Adicionar novo e-mail
@@ -1476,7 +1477,7 @@ class _ConfiguracoesNotificacoesScreenState
                     desktop: 12,
                   ),
                 ),
-                border: Border. all(color: ThemeColors.of(context).textSecondaryLight),
+                border: Border. all(color: ThemeColors.of(context).textSecondary.withValues(alpha: 0.3)),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -1535,7 +1536,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ],
               ),
             );
-          }).toList(),
+          }),
           TextButton.icon(
             onPressed: () {
               // Adicionar novo telefone
@@ -1570,7 +1571,7 @@ class _ConfiguracoesNotificacoesScreenState
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmberLight],
+          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmber.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
@@ -1598,7 +1599,7 @@ class _ConfiguracoesNotificacoesScreenState
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Testar Notificaes',
+                'Testar Notificações',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1733,7 +1734,7 @@ class _ConfiguracoesNotificacoesScreenState
                   size: AppSizes.iconSmall.get(isMobile, isTablet),
                 ),
             label: Text(
-              _isSaving ? 'Salvando...' : 'Salvar Configuraes',
+              _isSaving ? 'Salvando...' : 'Salvar Configurações',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1838,7 +1839,7 @@ class _ConfiguracoesNotificacoesScreenState
                 AppSizes.paddingXs.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).surfaceLight,
+                color: ThemeColors.of(context).surface.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -1906,10 +1907,6 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
-
-
-
-
 
 
 

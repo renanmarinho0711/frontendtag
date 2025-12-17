@@ -1,4 +1,4 @@
-// Widgets modulares para a funcionalidade de vinculação QR/Tag
+/// Widgets modulares para a funcionalidade de vinculação QR/Tag
 library qr_widgets;
 
 export 'qr_scan_area.dart';

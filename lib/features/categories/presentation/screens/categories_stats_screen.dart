@@ -7,6 +7,7 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class CategoriasEstatisticasScreen extends ConsumerStatefulWidget {
   const CategoriasEstatisticasScreen({super.key});
@@ -24,10 +25,10 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
-    // Inicializa o provider de estat�sticas
+    // Inicializa o provider de estatísticas
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(categoryStatsProvider.notifier).loadStats();
-      // Tamb�m carregar categorias se ainda n�o carregadas
+      // Tambãm carregar categorias se ainda não carregadas
       final categoriesState = ref.read(categoriesProvider);
       if (categoriesState.status == LoadingStatus.initial) {
         ref.read(categoriesProvider.notifier).initialize();
@@ -35,13 +36,13 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     });
   }
 
-  /// Converte CategoryModel para Map<String, dynamic> para compatibilidade com estat�sticas
+  /// Converte CategoryModel para Map<String, dynamic> para compatibilidade com estatísticas
   List<Map<String, dynamic>> _getCategorias() {
     final categoriesState = ref.watch(categoriesProvider);
     final statsState = ref.watch(categoryStatsProvider);
     
     return categoriesState.categories.map((cat) {
-      // Buscar stats espec�ficas dessa categoria
+      // Buscar stats específicas dessa categoria
       final stats = statsState.stats.firstWhere(
         (s) => s.categoryId == cat.id,
         orElse: () => CategoryStatsModel.empty(cat.id),
@@ -84,7 +85,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     if (lower.contains('limp')) return ThemeColors.of(context).blueCyan;
     if (lower.contains('higien')) return ThemeColors.of(context).blueLight;
     if (lower.contains('padar')) return ThemeColors.of(context).yellowGold;
-    return ThemeColors.of(context).info;
+    return ThemeColors.of(context).blueMain;
   }
 
   List<Color> _getGradientForCategory(String nome) {
@@ -95,7 +96,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     if (lower.contains('limp')) return [ThemeColors.of(context).blueCyan, ThemeColors.of(context).primary];
     if (lower.contains('higien')) return [ThemeColors.of(context).blueLight, ThemeColors.of(context).primary];
     if (lower.contains('padar')) return [ThemeColors.of(context).yellowGold, ThemeColors.of(context).warning];
-    return [ThemeColors.of(context).info, ThemeColors.of(context).blueDark];
+    return [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueDark];
   }
 
   /// Getter para lista de categorias formatada para UI
@@ -131,7 +132,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Estat�sticas',
+          'Estatãsticas',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -171,7 +172,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: _exportarrelatÃ³rio,
+        onPressed: _exportarRelatorio,
         icon: const Icon(Icons.file_download_rounded),
         label: const Text('Exportar'),
         backgroundColor: ThemeColors.of(context).success,
@@ -198,15 +199,15 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ThemeColors.of(context).blueCyanLight,
-            ThemeColors.of(context).primaryLight,
+            ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
+            ThemeColors.of(context).primary.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 16,
         ),
         border: Border.all(
-          color: ThemeColors.of(context).blueCyanLight,
+          color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
         ),
       ),
       child: Row(
@@ -214,7 +215,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         children: [
           Icon(
             Icons.lightbulb_rounded,
-            color: ThemeColors.of(context).yellowGoldDark,
+            color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.8),
             size: AppSizes.iconMedium.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -222,7 +223,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           ),
           Expanded(
             child: Text(
-              'Visualize estat�sticas detalhadas e tend�ncias das categorias',
+              'Visualize estatísticas detalhadas e tendãncias das categorias',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -385,7 +386,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               Icons.trending_up_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Tend�ncias',
+            text: 'Tendãncias',
           ),
         ],
       ),
@@ -465,7 +466,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         '+${_dadosAtuais['crescimento']}%',
       ),
       _buildSummaryCard(
-        'Ticket M�dio',
+        'Ticket Mãdio',
         'R\$ ${_dadosAtuais['ticketMedio'].toStringAsFixed(2)}',
         Icons.receipt_long_rounded,
         [ThemeColors.of(context).blueCyan, ThemeColors.of(context).blueLight],
@@ -539,13 +540,13 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              gradient[0]Light,
-              gradient[0]Light,
+              gradient[0].withValues(alpha: 0.1),
+              gradient[0].withValues(alpha: 0.05),
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: gradient[0]Light,
+            color: gradient[0].withValues(alpha: 0.3),
             width: isMobile ? 1.25 : 1.5,
           ),
         ),
@@ -633,10 +634,10 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(
-                  'Distribui��o por Categoria',
+                  'Distribuição por Categoria',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -658,7 +659,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               desktop: 32,
             ),
           ),
-          ..._categorias.map((cat) => _buildDistributionBar(cat)).toList(),
+          ..._categorias.map((cat) => _buildDistributionBar(cat)),
         ],
       ),
     );
@@ -676,13 +677,13 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               Row(
                 children: [
                   Icon(
-                    categoria['icone'],
+                    categoria['icone'] as IconData?,
                     size: 18,
-                    color: categoria['cor'],
+                    color: categoria['cor'] as Color?,
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    categoria['nome'],
+                    categoria['nome'] as String,
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -703,22 +704,22 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                     mobileFontSize: 13,
                   ),
                   fontWeight: FontWeight.bold,
-                  color: categoria['cor'],
+                  color: categoria['cor'] as Color?,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: TweenAnimationBuilder(
               duration: const Duration(milliseconds: 1000),
-              tween: Tween<double>(begin: 0, end: categoria['percentual'] / 100),
+              tween: Tween<double>(begin: 0, end: (categoria['percentual'] as num) / 100),
               builder: (context, double value, child) {
                 return LinearProgressIndicator(
                   value: value,
                   backgroundColor: ThemeColors.of(context).textSecondary,
-                  valueColor: AlwaysStoppedAnimation<Color>(categoria['cor']),
+                  valueColor: AlwaysStoppedAnimation<Color>(categoria['cor'] as Color),
                   minHeight: 12,
                 );
               },
@@ -732,9 +733,10 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
   Widget _buildTopCategoriesCard() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    final topCategories = List<Map<String, dynamic>>.from(_categorias)
-      ..sort((a, b) => b['faturamento'].compareTo(a['faturamento']))
-      ..take(5);
+    final topCategories = (List<Map<String, dynamic>>.from(_categorias)
+      ..sort((a, b) => (b['faturamento'] as num).compareTo(a['faturamento'] as num)))
+      .take(5)
+      .toList();
 
     return Container(
       padding: EdgeInsets.all(
@@ -781,7 +783,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Top 5 Categorias',
                 style: TextStyle(
@@ -803,7 +805,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
             final index = entry.key;
             final cat = entry.value;
             return _buildRankingItem(cat, index + 1);
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -813,7 +815,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: EdgeInsets.all(
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
@@ -821,8 +823,8 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
         gradient: posicao == 1
             ? LinearGradient(
                 colors: [
-                  ThemeColors.of(context).yellowGoldLight,
-                  ThemeColors.of(context).warningLight,
+                  ThemeColors.of(context).yellowGold.withValues(alpha: 0.1),
+                  ThemeColors.of(context).warning.withValues(alpha: 0.1),
                 ],
               )
             : null,
@@ -846,7 +848,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                         ? [ThemeColors.of(context).silver, ThemeColors.of(context).grey900]
                         : posicao == 3
                             ? [ThemeColors.of(context).bronze, ThemeColors.of(context).brownSaddle]
-                            : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).textTertiary],
+                            : [ThemeColors.of(context).textSecondary, ThemeColors.of(context).grey400],
               ),
               shape: BoxShape.circle,
             ),
@@ -865,19 +867,19 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               ),
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Icon(
-            categoria['icone'],
-            color: categoria['cor'],
+            categoria['icone'] as IconData?,
+            color: categoria['cor'] as Color?,
             size: 24,
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  categoria['nome'],
+                  categoria['nome'] as String,
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -905,7 +907,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                'R\$ ${categoria['faturamento'].toStringAsFixed(2)}',
+                'R\$ ${((categoria['faturamento'] as num?) ?? 0).toStringAsFixed(2)}',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -913,7 +915,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                     mobileFontSize: 14,
                   ),
                   fontWeight: FontWeight.bold,
-                  color: categoria['cor'],
+                  color: categoria['cor'] as Color?,
                 ),
               ),
               Text(
@@ -961,10 +963,10 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           borderRadius: BorderRadius.circular(
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
-          border: Border.all(color: (categoria['cor'] as Color)Light, width: 2),
+          border: Border.all(color: (categoria['cor'] as Color).withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
-              color: (categoria['cor'] as Color)Light,
+              color: (categoria['cor'] as Color).withValues(alpha: 0.1),
               blurRadius: isMobile ? 15 : 20,
               offset: const Offset(0, 4),
             ),
@@ -977,7 +979,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                 AppSizes.cardPadding.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: categoria['gradiente']),
+                gradient: LinearGradient(colors: (categoria['gradiente'] as List<dynamic>).cast<Color>()),
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(isMobile ? 14 : (isTablet ? 16 : 18)),
                 ),
@@ -995,18 +997,18 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       ),
                     ),
                     child: Icon(
-                      categoria['icone'],
+                      categoria['icone'] as IconData?,
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconLarge.get(isMobile, isTablet),
                     ),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          categoria['nome'],
+                          categoria['nome'] as String,
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1065,7 +1067,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                           ThemeColors.of(context).primary,
                         ),
                       ),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: _buildMetricBox(
                           'Faturamento',
@@ -1076,18 +1078,18 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   Row(
                     children: [
                       Expanded(
                         child: _buildMetricBox(
-                          'Ticket M�dio',
+                          'Ticket Mãdio',
                           'R\$ ${categoria['ticketMedio'].toStringAsFixed(2)}',
                           Icons.receipt_rounded,
                           ThemeColors.of(context).yellowGold,
                         ),
                       ),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: _buildMetricBox(
                           'Margem',
@@ -1098,16 +1100,16 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: categoria['crescimento'] > 0
+                      color: (categoria['crescimento'] as num) > 0
                           ? ThemeColors.of(context).successPastel
                           : ThemeColors.of(context).errorPastel,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: categoria['crescimento'] > 0
+                        color: (categoria['crescimento'] as num) > 0
                             ? ThemeColors.of(context).success.withValues(alpha: 0.4)
                             : ThemeColors.of(context).error.withValues(alpha: 0.4),
                       ),
@@ -1116,17 +1118,17 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          categoria['crescimento'] > 0
+                          (categoria['crescimento'] as num) > 0
                               ? Icons.trending_up_rounded
                               : Icons.trending_down_rounded,
-                          color: categoria['crescimento'] > 0
-                              ? ThemeColors.of(context).successDark
-                              : ThemeColors.of(context).errorDark,
+                          color: (categoria['crescimento'] as num) > 0
+                              ? ThemeColors.of(context).success.withValues(alpha: 0.8)
+                              : ThemeColors.of(context).error.withValues(alpha: 0.8),
                           size: 20,
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '${categoria['crescimento'] > 0 ? '+' : ''}${categoria['crescimento']}% de crescimento',
+                          '${(categoria['crescimento'] as num) > 0 ? '+' : ''}${categoria['crescimento']}% de crescimento',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1134,7 +1136,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                               mobileFontSize: 13,
                             ),
                             fontWeight: FontWeight.bold,
-                            color: categoria['crescimento'] > 0
+                            color: (categoria['crescimento'] as num) > 0
                                 ? ThemeColors.of(context).successIcon
                                 : ThemeColors.of(context).errorDark,
                           ),
@@ -1155,9 +1157,9 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -1197,7 +1199,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
     final sortedByGrowth = List<Map<String, dynamic>>.from(_categorias)
-      ..sort((a, b) => b['crescimento'].compareTo(a['crescimento']));
+      ..sort((a, b) => (b['crescimento'] as num).compareTo(a['crescimento'] as num));
 
     return Container(
       padding: EdgeInsets.all(
@@ -1244,7 +1246,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   size: AppSizes.iconMedium.get(isMobile, isTablet),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Ranking de Crescimento',
                 style: TextStyle(
@@ -1267,17 +1269,17 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               desktop: 28,
             ),
           ),
-          ... sortedByGrowth.map((cat) => _buildGrowthItem(cat)).toList(),
+          ... sortedByGrowth.map((cat) => _buildGrowthItem(cat)),
         ],
       ),
     );
   }
 
   Widget _buildGrowthItem(Map<String, dynamic> categoria) {
-    final isPositive = categoria['crescimento'] > 0;
+    final isPositive = (categoria['crescimento'] as num) > 0;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isPositive ?  ThemeColors.of(context).successPastel : ThemeColors.of(context).errorPastel,
@@ -1289,14 +1291,14 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       child: Row(
         children: [
           Icon(
-            categoria['icone'],
-            color: categoria['cor'],
+            categoria['icone'] as IconData?,
+            color: categoria['cor'] as Color?,
             size: 24,
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
-              categoria['nome'],
+              categoria['nome'] as String,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1322,7 +1324,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                 ),
                 const SizedBox(width: 4),
                 Text(
-                  '${categoria['crescimento'] > 0 ? '+' : ''}${categoria['crescimento']}%',
+                  '${(categoria['crescimento'] as num) > 0 ? '+' : ''}${categoria['crescimento']}%',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -1386,7 +1388,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Performance Comparativa',
                 style: TextStyle(
@@ -1406,24 +1408,25 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           ),
           SizedBox(
             height: 200,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: _categorias.map((cat) {
-                final height = (cat['percentual'] / 100) * 180;
-                return TweenAnimationBuilder(
-                  duration: const Duration(milliseconds: 1000),
-                  tween: Tween<double>(begin: 0, end: height),
-                  builder: (context, double animatedHeight, child) {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          '${cat['percentual']}%',
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: _categorias.map((cat) {
+                    return TweenAnimationBuilder(
+                      duration: const Duration(milliseconds: 1000),
+                      tween: Tween<double>(begin: 0, end: constraints.maxHeight),
+                      builder: (context, double animatedHeight, child) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              '${cat['percentual']}%',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
-                            color: cat['cor'],
+                            color: cat['cor'] as Color?,
                           ),
                         ),
                         const SizedBox(height: 4),
@@ -1434,7 +1437,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
-                              colors: cat['gradiente'],
+                              colors: (cat['gradiente'] as List<dynamic>).cast<Color>(),
                             ),
                             borderRadius: const BorderRadius.vertical(
                               top: Radius.circular(8),
@@ -1442,12 +1445,15 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                           ),
                         ),
                         const SizedBox(height: 8),
-                        Icon(cat['icone'], size: 18, color: cat['cor']),
+                        Icon(cat['icone'] as IconData?, size: 18, color: cat['cor'] as Color?),
                       ],
+                        );
+                      },
                     );
                   },
+                ).toList(),
                 );
-              }).toList(),
+              },
             ),
           ),
         ],
@@ -1455,14 +1461,14 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     );
   }
 
-  /// Gera insights din�micos baseados nos dados das categorias
+  /// Gera insights dinâmicos baseados nos dados das categorias
   List<Map<String, dynamic>> _gerarInsights() {
     final categorias = _getCategorias();
     if (categorias.isEmpty) return [];
     
     final insights = <Map<String, dynamic>>[];
     
-    // Ordena por faturamento para encontrar l�der
+    // Ordena por faturamento para encontrar láder
     final sortedByFaturamento = List<Map<String, dynamic>>.from(categorias)
       ..sort((a, b) => (b['faturamento'] as num).compareTo(a['faturamento'] as num));
     
@@ -1520,12 +1526,12 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       }
     }
     
-    // Se n�o h� insights, mostra mensagem padr�o
+    // Se não hã insights, mostra mensagem padrão
     if (insights.isEmpty) {
       insights.add({
         'icon': Icons.info_rounded,
         'text': 'Cadastre categorias para visualizar insights',
-        'color': ThemeColors.of(context).info,
+        'color': ThemeColors.of(context).blueMain,
       });
     }
     
@@ -1560,7 +1566,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                 color: ThemeColors.of(context).primaryDark,
                 size: 28,
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Text(
                 'Insights Principais',
                 style: TextStyle(
@@ -1575,12 +1581,12 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               ),
             ],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ...insights.map((insight) => _buildInsightItem(
             insight['icon'] as IconData,
             insight['text'] as String,
             insight['color'] as Color,
-          )).toList(),
+          )),
         ],
       ),
     );
@@ -1588,17 +1594,17 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
 
   Widget _buildInsightItem(IconData icon, String text, Color color) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
           Icon(icon, color: color, size: 20),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
               text,
@@ -1617,27 +1623,27 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     );
   }
 
-  void _exportarrelatÃ³rio() {
+  void _exportarRelatorio() {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).success, size: 48),
-        title: const Text('Exportar Relat�rio'),
+        title: const Text('Exportar Relatãrio'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Selecione o formato do relat�rio:'),
+            const Text('Selecione o formato do relatãrio:'),
             const SizedBox(height: 16),
             ListTile(
               leading: Icon(Icons.check_rounded, color: ThemeColors.of(context).error),
               title: const Text('PDF'),
-              subtitle: const Text('Relat�rio completo em PDF'),
+              subtitle: const Text('Relatãrio completo em PDF'),
               onTap: () {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Gerando relat�rio PDF...'),
+                  SnackBar(
+                    content: const Text('Gerando relatãrio PDF...'),
                     backgroundColor: ThemeColors.of(context).success,
                     behavior: SnackBarBehavior.floating,
                   ),
@@ -1651,8 +1657,8 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               onTap: () {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Gerando planilha Excel...'),
+                  SnackBar(
+                    content: const Text('Gerando planilha Excel...'),
                     backgroundColor: ThemeColors.of(context).success,
                     behavior: SnackBarBehavior.floating,
                   ),
@@ -1671,10 +1677,6 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
     );
   }
 }
-
-
-
-
 
 
 

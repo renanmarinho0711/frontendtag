@@ -12,7 +12,7 @@ class ResponsiveHelper {
   static const double largeMobileMaxWidth = 480;
   static const double smallTabletMaxWidth = 768;
 
-  // OTIMIZAÇÃO: Cache de valores do MediaQuery
+  // OTIMIZAÇÀO: Cache de valores do MediaQuery
   static double _getScreenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }

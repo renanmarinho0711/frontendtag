@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/providers/calendar_provider.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 
@@ -192,7 +191,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   ),
                 ),
                 Text(
-                  'Detec??o de Pontes',
+                  'Detecção de Pontes',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -270,7 +269,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               Icons.settings_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Configura??o',
+            text: 'ConfigurAção',
           ),
           Tab(
             icon: Icon(
@@ -320,7 +319,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   '??',
                   holidaysState.ajusteViagem,
                   Icons.flight_rounded,
-                  ThemeColors.of(context).info,
+                  ThemeColors.of(context).blueMain,
                   (v) => ref.read(longHolidaysProvider.notifier).setAjusteViagem(v),
                 ),
                 SizedBox(
@@ -331,7 +330,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   '??',
                   holidaysState.ajusteCasa,
                   Icons.home_rounded,
-                  ThemeColors.of(context).success,
+                  ThemeColors.of(context).greenMain,
                   (v) => ref.read(longHolidaysProvider.notifier).setAjusteCasa(v),
                 ),
                 SizedBox(
@@ -424,7 +423,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Pontes e Feriad?es',
+                  'Pontes e Feriadões',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -441,7 +440,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  holidaysState.isStrategyActive ? 'Detec??o ativa' : 'Detec??o inativa',
+                  holidaysState.isStrategyActive ? 'Detecção ativa' : 'Detecção inativa',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -460,7 +459,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
             child: Switch(
               value: holidaysState.isStrategyActive,
               onChanged: (value) => ref.read(longHolidaysProvider.notifier).setStrategyActive(value),
-              activeColor: ThemeColors.of(context).surface,
+              activeThumbColor: ThemeColors.of(context).surface,
               activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
             ),
           ),
@@ -498,14 +497,14 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).infoLight,
+              color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
               ),
             ),
             child: Icon(
               Icons.auto_awesome_rounded,
-              color: ThemeColors.of(context).info,
+              color: ThemeColors.of(context).blueMain,
               size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
             ),
           ),
@@ -518,7 +517,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Detec??o Autom?tica',
+                  'Detecção Automática',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -552,7 +551,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
             child: Switch(
               value: holidaysState.deteccaoAutomatica,
               onChanged: (value) => ref.read(longHolidaysProvider.notifier).setDeteccaoAutomatica(value),
-              activeColor: ThemeColors.of(context).info,
+              activeThumbColor: ThemeColors.of(context).blueMain,
             ),
           ),
         ],
@@ -580,10 +579,10 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
         ),
-        border: Border.all(color: corLight, width: 2),
+        border: Border.all(color: cor.withValues(alpha: 0.3), width: 2),
         boxShadow: [
           BoxShadow(
-            color: corLight,
+            color: cor.withValues(alpha: 0.15),
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 4 : 6),
           ),
@@ -609,7 +608,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: corLight,
+                      color: cor.withValues(alpha: 0.3),
                       blurRadius: isMobile ? 10 : 12,
                       offset: const Offset(0, 4),
                     ),
@@ -686,7 +685,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [cor, corDark],
+                    colors: [cor, cor.withValues(alpha: 0.8)],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 8 : 10,
@@ -759,14 +758,14 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).warningLight,
+                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.category_rounded,
-                  color: ThemeColors.of(context).warning,
+                  color: ThemeColors.of(context).orangeMain,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -791,7 +790,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
+                    colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 9 : 10,
@@ -829,7 +828,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).blueCyanLight,
+                      color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
                       blurRadius: isMobile ? 6 : 8,
                       offset: const Offset(0, 3),
                     ),
@@ -889,15 +888,15 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              feriado.colorLight,
-              feriado.colorLight,
+              feriado.color.withValues(alpha: 0.1),
+              feriado.color.withValues(alpha: 0.05),
             ],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: feriado.colorLight,
+            color: feriado.color.withValues(alpha: 0.3),
             width: 2,
           ),
         ),
@@ -920,7 +919,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: feriado.colorLight,
+                    color: feriado.color.withValues(alpha: 0.3),
                     blurRadius: isMobile ? 10 : 12,
                     offset: const Offset(0, 4),
                   ),
@@ -990,10 +989,10 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                       vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
-                      color: feriado.colorLight,
+                      color: feriado.color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(6),
                       border: Border.all(
-                        color: feriado.colorLight,
+                        color: feriado.color.withValues(alpha: 0.3),
                       ),
                     ),
                     child: Text(
@@ -1164,7 +1163,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? Identifica quando h? ponte ou feriad?o',
+                '? Identifica quando hã ponte ou feriadão',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1179,7 +1178,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre?os de produtos de lazer e viagem',
+                '? Aumenta preços de produtos de lazer e viagem',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1209,7 +1208,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Maximiza vendas em per?odos de turismo',
+                '? Maximiza vendas em períodos de turismo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1270,7 +1269,7 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    success ? 'Configura??es Salvas!' : 'Erro ao salvar',
+                    success ? 'Configurações Salvas!' : 'Erro ao salvar',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1306,9 +1305,6 @@ class _FeriadosProlongadosConfigScreenState extends ConsumerState<FeriadosProlon
     );
   }
 }
-
-
-
 
 
 

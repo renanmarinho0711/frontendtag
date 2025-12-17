@@ -28,7 +28,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
         color: ThemeColors.of(context).surface,
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).neutralBlackLight,
+            color: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -87,14 +87,14 @@ class DashboardMobileBottomNav extends StatelessWidget {
               children: [
                 Icon(
                   item['icon'],
-                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
+                  color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
                   size: 24,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   item['title'],
                   style: TextStyle(
-                    color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
+                    color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
                     fontSize: 10,
                     fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                   ),
@@ -109,7 +109,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
   }
 
   /// Auto-scroll para o item selecionado com navegao inteligente
-  /// Quando clicar no ltimo visvel  direita/esquerda, avana 3 itens
+  /// Quando clicar no Último visvel  direita/esquerda, avana 3 itens
   void _autoScrollToItem(BuildContext context, int index) {
     if (!scrollController.hasClients) return;
 
@@ -159,10 +159,6 @@ class DashboardMobileBottomNav extends StatelessWidget {
     }
   }
 }
-
-
-
-
 
 
 

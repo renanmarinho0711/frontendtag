@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/reports/presentation/providers/reports_provider.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de Atividade Recente - Mostra histórico de ações no sistema
@@ -154,7 +153,7 @@ class _RecentActivityDashboardCardState extends ConsumerState<RecentActivityDash
     
     for (final report in state.reports) {
       activities.add({
-        'time': _formatRelativeTime(report.dataauditoria),
+        'time': _formatRelativeTime(report.dataAuditoria),
         'icon': _getIconForType(report.titulo),
         'color': _getColorForType(report.titulo, report.hasProblems),
         'description': report.descricao.isNotEmpty ? report.descricao : report.titulo,

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:mobile_scanner/mobile_scanner.dart'; // Dependência removida para web
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Widget de Scanner de Código de Barras usando a câmera do dispositivo
-/// NOTA: Não disponível em Web - substitua por upload de imagem ou input manual
+/// Widget de Scanner de Cãdigo de Barras usando a câmera do dispositivo
 /// 
 /// Usa a biblioteca mobile_scanner para leitura de:
-/// - C�digos de barras (EAN-8, EAN-13, UPC-A, UPC-E)
+/// - Cãdigos de barras (EAN-8, EAN-13, UPC-A, UPC-E)
 /// - QR Codes
 /// - Data Matrix
 /// - Code 128, Code 39, ITF, etc.
@@ -17,7 +15,7 @@ import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// ```dart
 /// BarcodeScannerWidget(
 ///   onBarcodeDetected: (barcode) {
-///     print('Código detectado: $barcode');
+///     print('Cãdigo detectado: $barcode');
 ///     // Buscar produto, preencher campo, etc.
 ///   },
 ///   onClose: () => Navigator.pop(context),
@@ -25,7 +23,7 @@ import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// ```
 class BarcodeScannerWidget extends StatefulWidget {
   /// Callback chamado quando um código de barras é detectado
-  final void Function(String barcode, dynamic format) onBarcodeDetected; // BarcodeFormat removido
+  final void Function(String barcode, BarcodeFormat format) onBarcodeDetected;
   
   /// Callback para fechar o scanner
   final VoidCallback? onClose;
@@ -33,24 +31,24 @@ class BarcodeScannerWidget extends StatefulWidget {
   /// Título exibido no overlay
   final String title;
   
-  /// Subt�tulo/instru��o exibida no overlay
+  /// Subtítulo/instrução exibida no overlay
   final String subtitle;
   
-  /// Cor primária do overlay (dinâmica via ThemeColors no build)
+  /// Cor primária do overlay (se null, usa ThemeColors.of(context).brandPrimaryGreen)
   final Color? primaryColor;
   
-  /// Se deve fechar automaticamente ap�s detectar c�digo
+  /// Se deve fechar automaticamente após detectar código
   final bool autoClose;
   
-  /// Se deve vibrar ao detectar c�digo
+  /// Se deve vibrar ao detectar código
   final bool hapticFeedback;
 
   const BarcodeScannerWidget({
     super.key,
     required this.onBarcodeDetected,
     this.onClose,
-    this.title = 'Escanear C�digo',
-    this.subtitle = 'Posicione o c�digo de barras dentro da �rea',
+    this.title = 'Escanear Código',
+    this.subtitle = 'Posicione o código de barras dentro da área',
     this.primaryColor,
     this.autoClose = true,
     this.hapticFeedback = true,
@@ -63,8 +61,7 @@ class BarcodeScannerWidget extends StatefulWidget {
 class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
     with SingleTickerProviderStateMixin {
   
-  // late MobileScannerController _controller; // mobile_scanner foi removido
-  dynamic _controller;
+  late MobileScannerController _controller;
   late AnimationController _animationController;
   
   bool _isFlashOn = false;
@@ -75,13 +72,12 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
   void initState() {
     super.initState();
     
-    // Inicialização comentada - mobile_scanner removido
-    // _controller = MobileScannerController(
-    //   facing: CameraFacing.back,
-    //   torchEnabled: false,
-    //   detectionSpeed: DetectionSpeed.normal,
-    //   detectionTimeoutMs: 500,
-    // );
+    _controller = MobileScannerController(
+      facing: CameraFacing.back,
+      torchEnabled: false,
+      detectionSpeed: DetectionSpeed.normal,
+      detectionTimeoutMs: 500,
+    );
     
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 2000),
@@ -92,14 +88,12 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
   @override
   void dispose() {
     _animationController.dispose();
-    // _controller?.dispose(); // mobile_scanner removido
+    _controller.dispose();
     super.dispose();
   }
 
-  void _onBarcodeDetected(dynamic capture) { // BarcodeCapture removido
-    // Função comentada - mobile_scanner removido
-    /*
-    if (_hasDetected) return; // Evita múltiplas detecções
+  void _onBarcodeDetected(BarcodeCapture capture) {
+    if (_hasDetected) return; // Evita mãltiplas detecções
     
     final barcode = capture.barcodes.firstOrNull;
     if (barcode == null || barcode.rawValue == null) return;
@@ -125,7 +119,6 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
         widget.onClose?.call();
       });
     }
-    */
   }
 
   void _toggleFlash() {
@@ -143,43 +136,26 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
 
   @override
   Widget build(BuildContext context) {
-    // Usa cor fornecida ou dinâmica do ThemeColors
-    final primaryColor = widget.primaryColor ?? ThemeColors.of(context).greenMaterial;
-    
     return Scaffold(
       backgroundColor: ThemeColors.of(context).neutralBlack,
       body: Stack(
         children: [
-          // Câmera - MobileScanner removido para Web
-          Container(
-            color: ThemeColors.of(context).neutralBlack,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.camera_alt, size: 64, color: Colors.grey.shade400),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Scanner não disponível em Web',
-                    style: TextStyle(color: Colors.grey.shade400),
-                  ),
-                  const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: widget.onClose,
-                    child: const Text('Fechar'),
-                  ),
-                ],
-              ),
-            ),
+          // Cãmera
+          MobileScanner(
+            controller: _controller,
+            onDetect: _onBarcodeDetected,
+            errorBuilder: (context, error, child) {
+              return _buildErrorWidget(error);
+            },
           ),
           
-          // Overlay com área de scan
+          // Overlay com ãrea de scan
           _buildScanOverlay(),
           
           // Header com controles
           _buildHeader(),
           
-          // Indicador de c�digo detectado
+          // Indicador de código detectado
           if (_hasDetected) _buildDetectedIndicator(),
         ],
       ),
@@ -192,7 +168,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Row(
           children: [
-            // Bot�o fechar
+            // Botão fechar
             _buildControlButton(
               icon: Icons.close_rounded,
               onTap: widget.onClose,
@@ -201,7 +177,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
             
             const Spacer(),
             
-            // Bot�o flash
+            // Botão flash
             _buildControlButton(
               icon: _isFlashOn 
                   ? Icons.flash_on_rounded 
@@ -213,11 +189,11 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
             
             const SizedBox(width: AppSpacing.md),
             
-            // Bot�o trocar c�mera
+            // Botão trocar câmera
             _buildControlButton(
               icon: Icons.cameraswitch_rounded,
               onTap: _switchCamera,
-              tooltip: 'Trocar c�mera',
+              tooltip: 'Trocar câmera',
             ),
           ],
         ),
@@ -233,8 +209,8 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
   }) {
     return Material(
       color: isActive 
-          ? widget.primaryColor 
-          : ThemeColors.of(context).neutralBlackLight,
+          ? (widget.primaryColor ?? ThemeColors.of(context).brandPrimaryGreen)
+          : ThemeColors.of(context).neutralBlack.withValues(alpha: 0.5),
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: onTap,
@@ -257,14 +233,14 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
         scanAreaSize: 280,
         borderColor: _hasDetected 
             ? ThemeColors.of(context).success 
-            : widget.primaryColor,
+            : (widget.primaryColor ?? ThemeColors.of(context).brandPrimaryGreen),
         overlayColor: ThemeColors.of(context).neutralBlack.withValues(alpha: 0.6),
       ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // �rea de scan com anima��o
+            // ãrea de scan com animAção
             SizedBox(
               width: 280,
               height: 280,
@@ -288,7 +264,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
                               gradient: LinearGradient(
                                 colors: [
                                   ThemeColors.of(context).transparent,
-                                  widget.primaryColor,
+                                  widget.primaryColor ?? ThemeColors.of(context).brandPrimaryGreen,
                                   ThemeColors.of(context).transparent,
                                 ],
                               ),
@@ -303,9 +279,9 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
             
             const SizedBox(height: AppSpacing.xxl),
             
-            // T�tulo
+            // Título
             Text(
-              _hasDetected ? 'C�digo Detectado!' : widget.title,
+              _hasDetected ? 'Cãdigo Detectado!' : widget.title,
               style: AppTextStyles.title.copyWith(
                 color: ThemeColors.of(context).surface,
               ),
@@ -313,7 +289,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
             
             const SizedBox(height: AppSpacing.sm),
             
-            // Subt�tulo
+            // Subtítulo
             Text(
               _hasDetected ? _detectedCode ?? '' : widget.subtitle,
               style: AppTextStyles.body.copyWith(
@@ -330,7 +306,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
   Widget _buildCorners() {
     final color = _hasDetected 
         ? ThemeColors.of(context).success 
-        : widget.primaryColor;
+        : (widget.primaryColor ?? ThemeColors.of(context).brandPrimaryGreen);
     
     return Stack(
       children: [
@@ -390,7 +366,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
         decoration: BoxDecoration(
           color: ThemeColors.of(context).success,
           borderRadius: const BorderRadius.all(Radius.circular(16)),
-          // boxShadow removido pois AppShadows n�o � const
+          // boxShadow removido pois AppShadows não é const
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -402,7 +378,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
             ),
             const SizedBox(width: AppSpacing.sm),
             const Text(
-              'C�digo lido com sucesso!',
+              'Cãdigo lido com sucesso!',
               style: AppTextStyles.buttonPrimary,
             ),
           ],
@@ -411,14 +387,13 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
     );
   }
 
-  Widget _buildErrorWidget(dynamic error) { // MobileScannerException removido
-    /*
+  Widget _buildErrorWidget(MobileScannerException error) {
     String message;
     IconData icon;
     
     switch (error.errorCode) {
       case MobileScannerErrorCode.permissionDenied:
-        message = 'PermissÃ£o de câmera negada.\nAcesse as configurações para permitir.';
+        message = 'Permissão de câmera negada.\nAcesse as configurações para permitir.';
         icon = Icons.no_photography_rounded;
         break;
       case MobileScannerErrorCode.controllerAlreadyInitialized:
@@ -451,16 +426,24 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
               ),
               textAlign: TextAlign.center,
             ),
+            const SizedBox(height: AppSpacing.xl),
+            ElevatedButton.icon(
+              onPressed: widget.onClose,
+              icon: const Icon(Icons.arrow_back_rounded),
+              label: const Text('Voltar'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: widget.primaryColor ?? ThemeColors.of(context).brandPrimaryGreen,
+                foregroundColor: ThemeColors.of(context).surface,
+              ),
+            ),
           ],
         ),
       ),
     );
-    */
-    return const SizedBox.shrink(); // mobile_scanner removido
   }
 }
 
-/// Painter para o overlay com �rea de scan recortada
+/// Painter para o overlay com ãrea de scan recortada
 class ScanOverlayPainter extends CustomPainter {
   final double scanAreaSize;
   final Color borderColor;
@@ -576,11 +559,11 @@ class CornerPainter extends CustomPainter {
 
 /// Dialog helper para abrir scanner facilmente
 class BarcodeScannerDialog {
-  /// Abre o scanner em tela cheia e retorna o c�digo detectado
+  /// Abre o scanner em tela cheia e retorna o código detectado
   static Future<String?> show(
     BuildContext context, {
-    String title = 'Escanear C�digo',
-    String subtitle = 'Posicione o c�digo de barras dentro da �rea',
+    String title = 'Escanear Cãdigo',
+    String subtitle = 'Posicione o código de barras dentro da ãrea',
     Color? primaryColor,
   }) async {
     String? result;
@@ -603,8 +586,6 @@ class BarcodeScannerDialog {
     return result;
   }
 }
-
-
 
 
 

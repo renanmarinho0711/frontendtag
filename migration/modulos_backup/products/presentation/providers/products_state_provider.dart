@@ -14,7 +14,7 @@ import 'package:tagbean/design_system/design_system.dart';
 /// Alias para StockItem (compatibilidade)
 typedef StockItemModel = StockItem;
 
-// Nota: PriceHistoryItem e PriceHistoryModel sÃ£o definidos em product_models.dart
+// Nota: PriceHistoryItem e PriceHistoryModel são definidos em product_models.dart
 // O import já traz essas definições, então não precisamos redefinir aqui
 
 // =============================================================================

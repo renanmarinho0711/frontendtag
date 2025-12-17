@@ -6,14 +6,14 @@ class QuickActionsCard extends StatelessWidget {
   final VoidCallback onAdicionarProduto;
   final VoidCallback onAdicionarTag;
   final VoidCallback onSincronizar;
-  final VoidCallback onrelatÃ³rios;
+  final VoidCallback onRelatorios;
   
   const QuickActionsCard({
     super.key,
     required this.onAdicionarProduto,
     required this.onAdicionarTag,
     required this.onSincronizar,
-    required this.onrelatÃ³rios,
+    required this.onRelatorios,
   });
   
   @override
@@ -55,7 +55,7 @@ class QuickActionsCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    'Aes Rpidas',
+                    'Ações Rápidas',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -82,7 +82,7 @@ class QuickActionsCard extends StatelessWidget {
                   icon: Icons.add_shopping_cart_rounded,
                   label: 'Adicionar Produto',
                   subtitle: 'Cadastrar novo item no estoque',
-                  gradient: [ThemeColors.of(context).info, ThemeColors.of(context).blueCyan],
+                  gradient: [ThemeColors.of(context).blueMain, ThemeColors.of(context).blueCyan],
                   onTap: onAdicionarProduto,
                 ),
                 SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -109,8 +109,8 @@ class QuickActionsCard extends StatelessWidget {
                   icon: Icons.assessment_rounded,
                   label: 'Relatrios',
                   subtitle: 'Visualizar anlises e mtricas',
-                  gradient: [ThemeColors.of(context).warning, ThemeColors.of(context).yellowGold],
-                  onTap: onrelatÃ³rios,
+                  gradient: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).yellowGold],
+                  onTap: onRelatorios,
                 ),
               ],
             ),
@@ -147,7 +147,7 @@ class QuickActionsCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
           boxShadow: [
             BoxShadow(
-              color: gradient[0]Light,
+              color: gradient[0].withValues(alpha: 0.3),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -187,7 +187,7 @@ class QuickActionsCard extends StatelessWidget {
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     subtitle,
                     style: TextStyle(
@@ -220,8 +220,6 @@ class QuickActionsCard extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

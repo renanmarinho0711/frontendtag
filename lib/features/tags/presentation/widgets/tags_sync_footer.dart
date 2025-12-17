@@ -3,7 +3,7 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Status de sincroniza??o das tags
+/// Status de sincronização das tags
 enum TagsSyncStatus {
   syncing,
   synced,
@@ -11,7 +11,7 @@ enum TagsSyncStatus {
   offline,
 }
 
-/// Footer de sincroniza??o das tags
+/// Footer de sincronização das tags
 class TagsSyncFooter extends StatelessWidget {
   final TagsSyncStatus status;
   final DateTime? lastSync;
@@ -44,11 +44,11 @@ class TagsSyncFooter extends StatelessWidget {
       decoration: BoxDecoration(
         color: statusColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: statusColorLight),
+        border: Border.all(color: statusColor.withValues(alpha: 0.2)),
       ),
       child: Row(
         children: [
-          // ?cone de status
+          // ícone de status
           if (isSyncing)
             SizedBox(
               width: isMobile ? 18 : 20,
@@ -82,7 +82,7 @@ class TagsSyncFooter extends StatelessWidget {
                 ),
                 if (lastSync != null && status == TagsSyncStatus.synced)
                   Text(
-                    '�ltima sincroniza??o: ${_formatLastSync(lastSync!)}',
+                    'Última sincronização: ${_formatLastSync(lastSync!)}',
                     style: TextStyle(
                       fontSize: isMobile ? 10 : 11,
                       color: ThemeColors.of(context).textSecondary,
@@ -98,7 +98,7 @@ class TagsSyncFooter extends StatelessWidget {
               margin: const EdgeInsets.only(right: 10),
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).orangeMaterialLight,
+                color: ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -122,7 +122,7 @@ class TagsSyncFooter extends StatelessWidget {
               ),
             ),
 
-          // Bot?o de sincronizar
+          // Botão de sincronizar
           if (onSyncTap != null && !isSyncing)
             InkWell(
               onTap: onSyncTap,
@@ -137,7 +137,7 @@ class TagsSyncFooter extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
-                      color: ThemeColors.of(context).brandPrimaryGreenLight,
+                      color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
                       blurRadius: 4,
                       offset: const Offset(0, 2),
                     ),
@@ -202,9 +202,9 @@ class TagsSyncFooter extends StatelessWidget {
       case TagsSyncStatus.synced:
         return 'Tags sincronizadas';
       case TagsSyncStatus.error:
-        return 'Erro na sincroniza??o';
+        return 'Erro na sincronização';
       case TagsSyncStatus.offline:
-        return 'Sem conex?o';
+        return 'Sem conexão';
     }
   }
 
@@ -213,14 +213,12 @@ class TagsSyncFooter extends StatelessWidget {
     final difference = now.difference(dateTime);
 
     if (difference.inMinutes < 1) return 'Agora mesmo';
-    if (difference.inMinutes < 60) return 'h? ${difference.inMinutes} min';
-    if (difference.inHours < 24) return 'h? ${difference.inHours}h?';
+    if (difference.inMinutes < 60) return 'hã ${difference.inMinutes} min';
+    if (difference.inHours < 24) return 'hã ${difference.inHours}hã';
     if (difference.inDays == 1) return 'Ontem';
-    return '${dateTime.day}/${dateTime.month} �s ${dateTime.hour}:${dateTime.minute.toString().padLeft(2, '0')}';
+    return '${dateTime.day}/${dateTime.month} às ${dateTime.hour}:${dateTime.minute.toString().padLeft(2, '0')}';
   }
 }
-
-
 
 
 

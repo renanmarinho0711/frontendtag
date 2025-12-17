@@ -1,4 +1,4 @@
-mport 'package:tagbean/core/network/api_client.dart';
+import 'package:tagbean/core/network/api_client.dart';
 import 'package:tagbean/core/network/api_response.dart';
 import 'package:tagbean/features/categories/data/models/category_models.dart';
 
@@ -154,7 +154,7 @@ class CategoriesRepository {
     return await _apiService.put<void>(
       '/products/$productId',
       body: {'categoryId': categoryId},
-      parser: (_) => null,
+      parser: (_) {},
     );
   }
 
@@ -166,7 +166,7 @@ class CategoriesRepository {
     return await _apiService.put<void>(
       '/products/$productId',
       body: {'categoryId': null},
-      parser: (_) => null,
+      parser: (_) {},
     );
   }
 

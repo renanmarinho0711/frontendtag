@@ -55,7 +55,7 @@ class ProductFilters extends StatelessWidget {
         _buildFilterContainer(context, isMobile, isTablet),
         if (_hasActiveFilters())
           Padding(
-            padding: EdgeInsets.only(top: AppSpacing.sm),
+            padding: const EdgeInsets.only(top: AppSpacing.sm),
             child: _buildActiveFilters(context, isMobile, isTablet),
           ),
       ],
@@ -117,7 +117,7 @@ class ProductFilters extends StatelessWidget {
           fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
         ),
         prefixIcon: Container(
-          margin: EdgeInsets.only(left: AppSpacing.sm, right: AppSpacing.xs),
+          margin: const EdgeInsets.only(left: AppSpacing.sm, right: AppSpacing.xs),
           child: Icon(
             Icons.search_rounded,
             color: AppThemeColors.brandPrimaryGreen,
@@ -127,7 +127,7 @@ class ProductFilters extends StatelessWidget {
         suffixIcon: searchQuery.isNotEmpty
             ? IconButton(
                 icon: Container(
-                  padding: EdgeInsets.all(AppSpacing.xxs),
+                  padding: const EdgeInsets.all(AppSpacing.xxs),
                   decoration: BoxDecoration(
                     color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
@@ -154,7 +154,7 @@ class ProductFilters extends StatelessWidget {
           borderSide:
               BorderSide(color: AppThemeColors.brandPrimaryGreen.withValues(alpha: 0.2)),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderRadius: AppRadius.lg,
           borderSide: BorderSide(color: AppThemeColors.brandPrimaryGreen, width: 2),
         ),
@@ -175,7 +175,7 @@ class ProductFilters extends StatelessWidget {
       children: [
         Expanded(
           child: DropdownButtonFormField<String>(
-            value: filterCategoria,
+            initialValue: filterCategoria,
             style: TextStyle(
               fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
               color: AppThemeColors.textPrimary,
@@ -186,7 +186,7 @@ class ProductFilters extends StatelessWidget {
                   fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
               prefixIcon: Icon(Icons.category_rounded,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
-              border: OutlineInputBorder(borderRadius: AppRadius.lg),
+              border: const OutlineInputBorder(borderRadius: AppRadius.lg),
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingBase.get(isMobile, isTablet),
                 vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -211,7 +211,7 @@ class ProductFilters extends StatelessWidget {
         SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
         Expanded(
           child: DropdownButtonFormField<String>(
-            value: filterStatus,
+            initialValue: filterStatus,
             style: TextStyle(
               fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
               color: AppThemeColors.textPrimary,
@@ -222,7 +222,7 @@ class ProductFilters extends StatelessWidget {
                   fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
               prefixIcon: Icon(Icons.filter_list_rounded,
                   size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
-              border: OutlineInputBorder(borderRadius: AppRadius.lg),
+              border: const OutlineInputBorder(borderRadius: AppRadius.lg),
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingBase.get(isMobile, isTablet),
                 vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -279,7 +279,7 @@ class ProductFilters extends StatelessWidget {
           ),
           style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            shape: RoundedRectangleBorder(borderRadius: AppRadius.sm),
+            shape: const RoundedRectangleBorder(borderRadius: AppRadius.sm),
           ),
         ),
       ],
@@ -300,7 +300,7 @@ class ProductFilters extends StatelessWidget {
           size: AppSizes.iconSmall.get(isMobile, isTablet)),
       onDeleted: onRemove,
       backgroundColor: AppThemeColors.successLight,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: AppRadius.sm,
         side: BorderSide(color: AppThemeColors.success),
       ),

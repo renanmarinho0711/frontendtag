@@ -6,8 +6,8 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   # Habilita análise estrita
   language:
-    strict-casts: false
-    strict-raw-types: false
+    strict-casts: true
+    strict-raw-types: true
   
   # Exclui arquivos gerados automaticamente
   exclude:
@@ -17,38 +17,34 @@ analyzer:
     - "lib/generated/**"
     - "build/**"
     - ".dart_tool/**"
-    - "migration/**"  # Exclui arquivos de migração em andamento
-    - "test/**"  # Exclui testes
-    - ".flutter-plugins"
-    - ".flutter-plugins-dependencies"
   
-  # Configuração de severidade dos erros
+  # Configuração de severidade dos erros - foco em detectar código morto
   errors:
     # Erros que devem permanecer como erro
     invalid_assignment: error
     missing_return: error
-    dead_code: warning
     
-    # Warnings que podem ser reduzidos para info (elementos reservados para uso futuro)
-    unused_field: info
-    unused_element: info
-    unused_local_variable: info
-    unused_element_parameter: info
+    # Código morto e variáveis não usadas - warnings importantes
+    dead_code: warning
+    unused_import: warning
+    unused_local_variable: warning
+    unused_field: warning
+    unused_element: warning
+    unused_element_parameter: warning
     
     # Deprecations e casts desnecessários
     deprecated_member_use: info
     deprecated_member_use_from_same_package: info
-    unnecessary_cast: info
+    unnecessary_cast: warning
     
     # Dead null aware expression (pode indicar código que precisa de revisão)
-    dead_null_aware_expression: info
+    dead_null_aware_expression: warning
     
     # Imports
-    unused_import: warning
-    unnecessary_import: info
+    unnecessary_import: warning
     
     # Default clause unreachable
-    unreachable_switch_default: info
+    unreachable_switch_default: warning
 
 linter:
   rules:
@@ -74,3 +70,39 @@ linter:
     avoid_slow_async_io: true
     cancel_subscriptions: true
     close_sinks: true
+
+# Dart Code Metrics - detecção avançada de código morto e métricas
+dart_code_metrics:
+  # Detectar código morto
+  rules:
+    - no-unused-parameter
+    - no-unused-members-in-classes
+    - no-unused-files
+    - prefer-static-class
+    - no-empty-block
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - prefer-conditional-expressions
+    - avoid-redundant-async
+    - avoid-unused-parameters
+
+  # Métricas de qualidade
+  metrics:
+    cyclomatic-complexity: 20
+    number-of-parameters: 4
+    maximum-nesting-level: 5
+    source-lines-of-code: 50
+    maintainability-index: 50
+    number-of-methods: 10
+    weight-of-class: 0.33
+    
+  # Análise de arquivos
+  metrics-exclude:
+    - test/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    
+  # Reportar widgets não usados
+  anti-patterns:
+    - long-method
+    - long-parameter-list

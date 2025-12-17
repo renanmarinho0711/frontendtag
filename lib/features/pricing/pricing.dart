@@ -1,4 +1,4 @@
-// TagBean Pricing Feature
+/// TagBean Pricing Feature
 library pricing;
 
 export 'presentation/screens/adjustments_history_screen.dart';

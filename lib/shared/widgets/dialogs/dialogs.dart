@@ -1,4 +1,4 @@
-// Barrel file para widgets de dialogs
+/// Barrel file para widgets de dialogs
 library;
 
 export 'app_dialog.dart';

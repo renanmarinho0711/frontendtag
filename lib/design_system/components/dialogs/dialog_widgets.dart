@@ -1,8 +1,7 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Widget reutiliz�vel para di�logos de confirma��o
+/// Widget reutilizãvel para diálogos de confirmação
 class ConfirmDialog extends StatelessWidget {
   final String title;
   final String message;
@@ -29,6 +28,7 @@ class ConfirmDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return AlertDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -38,7 +38,7 @@ class ConfirmDialog extends StatelessWidget {
           if (icon != null) ...[
             Icon(
               icon,
-              color: iconColor ?? (isDangerous ? AppThemeColors.error : AppThemeColors.primary),
+              color: iconColor ?? (isDangerous ? colors.error : colors.primary),
               size: 28,
             ),
             const SizedBox(width: 12),
@@ -46,7 +46,7 @@ class ConfirmDialog extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -58,7 +58,7 @@ class ConfirmDialog extends StatelessWidget {
         message,
         style: TextStyle(
           fontSize: 14,
-          color: AppThemeColors.textSecondary,
+          color: colors.textSecondary,
         ),
       ),
       actions: [
@@ -70,7 +70,7 @@ class ConfirmDialog extends StatelessWidget {
           child: Text(
             cancelText ?? 'Cancelar',
             style: TextStyle(
-              color: AppThemeColors.grey600,
+              color: colors.grey600,
             ),
           ),
         ),
@@ -80,8 +80,8 @@ class ConfirmDialog extends StatelessWidget {
             onConfirm?.call();
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: isDangerous ? AppThemeColors.error : AppThemeColors.primary,
-            foregroundColor: AppThemeColors.surface,
+            backgroundColor: isDangerous ? colors.error : colors.primary,
+            foregroundColor: colors.surface,
           ),
           child: Text(confirmText ?? 'Confirmar'),
         ),
@@ -89,7 +89,7 @@ class ConfirmDialog extends StatelessWidget {
     );
   }
 
-  /// M�todo est�tico para mostrar o di�logo
+  /// Mãtodo estático para mostrar o diálogo
   static Future<bool?> show(
     BuildContext context, {
     required String title,
@@ -119,7 +119,7 @@ class ConfirmDialog extends StatelessWidget {
   }
 }
 
-/// Widget reutiliz�vel para di�logos de alerta/informa��o
+/// Widget reutilizãvel para diálogos de alerta/informAção
 class InfoDialog extends StatelessWidget {
   final String title;
   final String message;
@@ -137,8 +137,7 @@ class InfoDialog extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
+  Widget build(BuildContext context) {    final colors = ThemeColors.of(context);    return AlertDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -147,7 +146,7 @@ class InfoDialog extends StatelessWidget {
           if (icon != null) ...[
             Icon(
               icon,
-              color: iconColor ?? AppThemeColors.info,
+              color: iconColor ?? colors.info,
               size: 28,
             ),
             const SizedBox(width: 12),
@@ -155,7 +154,7 @@ class InfoDialog extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -167,7 +166,7 @@ class InfoDialog extends StatelessWidget {
         message,
         style: TextStyle(
           fontSize: 14,
-          color: AppThemeColors.textSecondary,
+          color: colors.textSecondary,
         ),
       ),
       actions: [
@@ -179,7 +178,7 @@ class InfoDialog extends StatelessWidget {
     );
   }
 
-  /// M�todo est�tico para mostrar o di�logo
+  /// Mãtodo estático para mostrar o diálogo
   static Future<void> show(
     BuildContext context, {
     required String title,
@@ -201,7 +200,7 @@ class InfoDialog extends StatelessWidget {
   }
 }
 
-/// Widget reutiliz�vel para di�logos de loading
+/// Widget reutilizãvel para diálogos de loading
 class LoadingDialog extends StatelessWidget {
   final String? message;
 
@@ -212,6 +211,7 @@ class LoadingDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return AlertDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -226,7 +226,7 @@ class LoadingDialog extends StatelessWidget {
               message!,
               style: TextStyle(
                 fontSize: 14,
-                color: AppThemeColors.textSecondary,
+                color: colors.textSecondary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -236,7 +236,7 @@ class LoadingDialog extends StatelessWidget {
     );
   }
 
-  /// M�todo est�tico para mostrar o di�logo
+  /// Mãtodo estático para mostrar o diálogo
   static void show(BuildContext context, {String? message}) {
     showDialog(
       context: context,
@@ -245,26 +245,26 @@ class LoadingDialog extends StatelessWidget {
     );
   }
 
-  /// M�todo est�tico para ocultar o di�logo
+  /// Mãtodo estático para ocultar o diálogo
   static void hide(BuildContext context) {
     Navigator.of(context).pop();
   }
 }
 
-/// Helper para di�logos comuns
+/// Helper para diálogos comuns
 class DialogHelper {
   DialogHelper._();
 
-  /// Di�logo de confirma��o de exclus�o
+  /// Diãlogo de confirmação de exclusão
   static Future<bool?> confirmDelete(
     BuildContext context, {
     String? itemName,
   }) {
     return ConfirmDialog.show(
       context,
-      title: 'Confirmar Exclus�o',
+      title: 'Confirmar Exclusão',
       message: itemName != null
-          ? 'Tem certeza que deseja excluir "$itemName"? Esta a��o n�o pode ser desfeita.'
+          ? 'Tem certeza que deseja excluir "$itemName"? Esta Ação não pode ser desfeita.'
           : 'Tem certeza que deseja excluir?',
       confirmText: 'Excluir',
       cancelText: 'Cancelar',
@@ -273,32 +273,32 @@ class DialogHelper {
     );
   }
 
-  /// Di�logo de confirma��o de cancelamento
+  /// Diãlogo de confirmação de cancelamento
   static Future<bool?> confirmCancel(BuildContext context) {
     return ConfirmDialog.show(
       context,
       title: 'Cancelar',
       message: 'Tem certeza que deseja cancelar?',
       confirmText: 'Sim',
-      cancelText: 'N�o',
+      cancelText: 'Não',
       icon: Icons.cancel_rounded,
     );
   }
 
-  /// Di�logo de altera��es n�o salvas
+  /// Diãlogo de alterações não salvas
   static Future<bool?> confirmUnsavedChanges(BuildContext context) {
     return ConfirmDialog.show(
       context,
-      title: 'Altera��es n�o salvas',
-      message: 'Voc� tem altera��es n�o salvas. Deseja descart�-las?',
+      title: 'Alterações não salvas',
+      message: 'você tem alterações não salvas. Deseja descartã-las?',
       confirmText: 'Sair',
       cancelText: 'Continuar editando',
       icon: Icons.warning_rounded,
-      iconColor: AppThemeColors.warning,
+      iconColor: const Color(0xFFFFA000),
     );
   }
 
-  /// Di�logo de sucesso
+  /// Diãlogo de sucesso
   static Future<void> showSuccess(
     BuildContext context, {
     required String message,
@@ -309,11 +309,11 @@ class DialogHelper {
       title: title ?? 'Sucesso',
       message: message,
       icon: Icons.check_circle_rounded,
-      iconColor: AppThemeColors.success,
+      iconColor: const Color(0xFF4CAF50),
     );
   }
 
-  /// Di�logo de erro
+  /// Diãlogo de erro
   static Future<void> showError(
     BuildContext context, {
     required String message,
@@ -324,11 +324,11 @@ class DialogHelper {
       title: title ?? 'Erro',
       message: message,
       icon: Icons.error_rounded,
-      iconColor: AppThemeColors.error,
+      iconColor: const Color(0xFFE53935),
     );
   }
 
-  /// Di�logo de aviso
+  /// Diãlogo de aviso
   static Future<void> showWarning(
     BuildContext context, {
     required String message,
@@ -336,14 +336,14 @@ class DialogHelper {
   }) {
     return InfoDialog.show(
       context,
-      title: title ?? 'Aten��o',
+      title: title ?? 'atenção',
       message: message,
       icon: Icons.warning_rounded,
-      iconColor: AppThemeColors.warning,
+      iconColor: const Color(0xFFFFA000),
     );
   }
 
-  /// Di�logo de informa��o
+  /// Diãlogo de informAção
   static Future<void> showInfo(
     BuildContext context, {
     required String message,
@@ -351,10 +351,10 @@ class DialogHelper {
   }) {
     return InfoDialog.show(
       context,
-      title: title ?? 'Informa��o',
+      title: title ?? 'InformAção',
       message: message,
       icon: Icons.info_rounded,
-      iconColor: AppThemeColors.info,
+      iconColor: const Color(0xFF2196F3),
     );
   }
 }

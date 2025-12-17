@@ -6,7 +6,6 @@ import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class CategoriasAdicionarScreen extends ConsumerStatefulWidget {
   const CategoriasAdicionarScreen({super.key});
@@ -316,9 +315,9 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.error_outline, color: AppThemeColors.error, size: 48),
+                        const Icon(Icons.error_outline, color: AppThemeColors.error, size: 48),
                         const SizedBox(height: 12),
-                        Text(_suggestionsError!, style: TextStyle(color: AppThemeColors.error)),
+                        Text(_suggestionsError!, style: const TextStyle(color: AppThemeColors.error)),
                         const SizedBox(height: 12),
                         ElevatedButton(
                           onPressed: _loadSuggestedCategories,
@@ -624,7 +623,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
               filled: true,
               fillColor: AppThemeColors.textSecondary,
             ),
-            value: _categoriaPai,
+            initialValue: _categoriaPai,
             items: [
               const DropdownMenuItem<String>(
                 value: null,
@@ -644,7 +643,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                         Text(e.nome),
                       ],
                     ),
-                  )).toList(),
+                  )),
             ],
             onChanged: (value) {
               setState(() => _categoriaPai = value);
@@ -998,7 +997,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                     padding: EdgeInsets.symmetric(
                       vertical: AppSizes.paddingLgAlt3.get(isMobile, isTablet),
                     ),
-                    side: BorderSide(color: AppThemeColors.textSecondary),
+                    side: const BorderSide(color: AppThemeColors.textSecondary),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                         isMobile ? 12 : 16,
@@ -1077,7 +1076,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
                         desktop: 18,
                       ),
                     ),
-                    side: BorderSide(color: AppThemeColors.textSecondaryOverlay60),
+                    side: const BorderSide(color: AppThemeColors.textSecondaryOverlay60),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),

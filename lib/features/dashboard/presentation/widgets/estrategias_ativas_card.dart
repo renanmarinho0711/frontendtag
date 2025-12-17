@@ -6,7 +6,7 @@ import 'package:tagbean/features/strategies/presentation/providers/strategies_pr
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
 /// Card compacto de estratégias ativas
-/// Mostra visÃ£o consolidada das estratégias em funcionamento
+/// Mostra visão consolidada das estratégias em funcionamento
 class EstrategiasAtivasCard extends ConsumerWidget {
   final VoidCallback? onGerenciar;
 
@@ -42,9 +42,9 @@ class EstrategiasAtivasCard extends ConsumerWidget {
 
     // Cores para cada estratégia
     final cores = [
-      ThemeColors.of(context).success,
-      ThemeColors.of(context).info,
-      ThemeColors.of(context).warning,
+      ThemeColors.of(context).greenMain,
+      ThemeColors.of(context).blueMain,
+      ThemeColors.of(context).orangeMain,
       ThemeColors.of(context).greenMaterial,
       ThemeColors.of(context).greenTeal,
     ];
@@ -75,13 +75,13 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    ThemeColors.of(context).warningLight,
-                    ThemeColors.of(context).orangeDarkLight,
+                    ThemeColors.of(context).orangeMain.withValues(alpha: 0.1),
+                    ThemeColors.of(context).orangeDark.withValues(alpha: 0.05),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: ThemeColors.of(context).warningLight,
+                  color: ThemeColors.of(context).orangeMain.withValues(alpha: 0.15),
                 ),
               ),
               child: Row(
@@ -90,7 +90,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [ThemeColors.of(context).warning, ThemeColors.of(context).orangeDark],
+                        colors: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -138,7 +138,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: ThemeColors.of(context).success,
+                          color: ThemeColors.of(context).greenMain,
                         ),
                       ),
                     ],
@@ -149,7 +149,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
                       onPressed: onGerenciar,
                       icon: Icon(
                         Icons.settings_rounded,
-                        color: ThemeColors.of(context).warning,
+                        color: ThemeColors.of(context).orangeMain,
                         size: 22,
                       ),
                       tooltip: 'Gerenciar',
@@ -233,7 +233,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
       decoration: BoxDecoration(
         color: cor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: corLight),
+        border: Border.all(color: cor.withValues(alpha: 0.15)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -241,7 +241,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
           Container(
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
-              color: corLight,
+              color: cor.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icone, color: cor, size: 18),
@@ -277,7 +277,7 @@ class EstrategiasAtivasCard extends ConsumerWidget {
       width: 80,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: ThemeColors.of(context).borderLight),
       ),
@@ -305,8 +305,6 @@ class EstrategiasAtivasCard extends ConsumerWidget {
     );
   }
 }
-
-
 
 
 

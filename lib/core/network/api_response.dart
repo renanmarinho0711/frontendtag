@@ -1,4 +1,4 @@
-// Classe genérica para respostas da API
+/// Classe genérica para respostas da API
 class ApiResponse<T> {
   final T? data;
   final String? error;

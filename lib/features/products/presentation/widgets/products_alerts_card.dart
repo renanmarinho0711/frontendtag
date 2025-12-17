@@ -29,7 +29,7 @@ class ProductAlert {
       case AlertPriority.critical:
         return ThemeColors.of(context).error;
       case AlertPriority.attention:
-        return ThemeColors.of(context).warning;
+        return ThemeColors.of(context).orangeMain;
       case AlertPriority.info:
         return ThemeColors.of(context).primary;
       case AlertPriority.success:
@@ -74,12 +74,12 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         border: Border.all(
-          color: Color.alphaBlend(sortedAlerts.first.colorLight, ThemeColors.of(context).surface),
+          color: Color.alphaBlend(sortedAlerts.first.color.withValues(alpha: 0.3), ThemeColors.of(context).surface),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: Color.alphaBlend(sortedAlerts.first.colorLight, ThemeColors.of(context).surface),
+            color: Color.alphaBlend(sortedAlerts.first.color.withValues(alpha: 0.1), ThemeColors.of(context).surface),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -101,7 +101,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.sm),
                     decoration: BoxDecoration(
-                      color: sortedAlerts.first.colorLight,
+                      color: sortedAlerts.first.color.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(
@@ -116,7 +116,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'A��es Pendentes',
+                          'Ações Pendentes',
                           style: TextStyle(
                             fontSize: isMobile ? 15 : 16,
                             fontWeight: FontWeight.bold,
@@ -124,7 +124,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
                           ),
                         ),
                         Text(
-                          '${widget.alerts.length} ${widget.alerts.length == 1 ? 'item requer' : 'itens requerem'} aten��o',
+                          '${widget.alerts.length} ${widget.alerts.length == 1 ? 'item requer' : 'itens requerem'} atenção',
                           style: TextStyle(
                             fontSize: isMobile ? 12 : 13,
                             color: ThemeColors.of(context).textSecondary,
@@ -158,7 +158,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
           if (!_isMinimized)
             Container(
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).surfaceSecondary,
+                color: ThemeColors.of(context).backgroundLight,
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(isMobile ? 16 : 20),
                 ),
@@ -194,7 +194,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
           Container(
             padding: const EdgeInsets.all(AppSpacing.xs),
             decoration: BoxDecoration(
-              color: alert.colorLight,
+              color: alert.color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(alert.icon, color: alert.color, size: 18),
@@ -207,7 +207,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                     decoration: BoxDecoration(
-                      color: alert.colorLight,
+                      color: alert.color.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -246,7 +246,7 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
             ),
             child: Text(
               alert.actionLabel,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
             ),
           ),
         ],
@@ -254,8 +254,6 @@ class _ProductsAlertsCardState extends State<ProductsAlertsCard> {
     );
   }
 }
-
-
 
 
 

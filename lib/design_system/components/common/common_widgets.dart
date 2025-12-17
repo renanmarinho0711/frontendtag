@@ -1,5 +1,4 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Widget de loading centralizado
@@ -17,6 +16,7 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -26,7 +26,7 @@ class LoadingWidget extends StatelessWidget {
             height: size ?? 40,
             child: CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
-                color ?? AppThemeColors.primary,
+                color ?? colors.primary,
               ),
               strokeWidth: 3,
             ),
@@ -37,7 +37,7 @@ class LoadingWidget extends StatelessWidget {
               message!,
               style: TextStyle(
                 fontSize: 14,
-                color: AppThemeColors.textSecondary,
+                color: colors.textSecondary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -63,6 +63,7 @@ class ErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(24),
@@ -72,14 +73,14 @@ class ErrorWidget extends StatelessWidget {
             Icon(
               icon ?? Icons.error_outline_rounded,
               size: 64,
-              color: AppThemeColors.error,
+              color: colors.error,
             ),
             const SizedBox(height: 16),
             Text(
               message,
               style: TextStyle(
                 fontSize: 16,
-                color: AppThemeColors.textSecondary,
+                color: colors.textSecondary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -98,7 +99,7 @@ class ErrorWidget extends StatelessWidget {
   }
 }
 
-/// Badge customiz�vel
+/// Badge customizãvel
 class CustomBadge extends StatelessWidget {
   final String text;
   final Color backgroundColor;
@@ -110,7 +111,7 @@ class CustomBadge extends StatelessWidget {
     super.key,
     required this.text,
     required this.backgroundColor,
-    this.textColor = AppThemeColors.surface,
+    this.textColor = const Color(0xFFFFFFFF),
     this.padding,
     this.fontSize,
   });
@@ -174,6 +175,7 @@ class _ShimmerLoadingState extends State<ShimmerLoading>
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {
@@ -186,9 +188,9 @@ class _ShimmerLoadingState extends State<ShimmerLoading>
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                AppThemeColors.grey300,
-                AppThemeColors.grey100,
-                AppThemeColors.grey300,
+                colors.grey300,
+                colors.grey100,
+                colors.grey300,
               ],
               stops: [
                 _controller.value - 0.3,
@@ -218,11 +220,12 @@ class LabeledDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Row(
       children: [
         Expanded(
           child: Divider(
-            color: color ?? AppThemeColors.divider,
+            color: color ?? colors.divider,
             thickness: thickness ?? 1,
           ),
         ),
@@ -232,14 +235,14 @@ class LabeledDivider extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 12,
-              color: AppThemeColors.textSecondary,
+              color: colors.textSecondary,
               fontWeight: FontWeight.w500,
             ),
           ),
         ),
         Expanded(
           child: Divider(
-            color: color ?? AppThemeColors.divider,
+            color: color ?? colors.divider,
             thickness: thickness ?? 1,
           ),
         ),
@@ -248,7 +251,7 @@ class LabeledDivider extends StatelessWidget {
   }
 }
 
-/// Chip com �cone
+/// Chip com ícone
 class IconChip extends StatelessWidget {
   final String label;
   final IconData icon;
@@ -262,7 +265,7 @@ class IconChip extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.backgroundColor,
-    this.textColor = AppThemeColors.surface,
+    this.textColor = const Color(0xFFFFFFFF),
     this.onTap,
     this.onDelete,
   });

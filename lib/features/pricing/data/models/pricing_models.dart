@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 // =============================================================================
 // PRICING ADJUSTMENT TYPE ENUM
@@ -32,7 +31,7 @@ enum OperationType {
   aumentar('aumentar', 'Aumentar'),
   aumento('aumento', 'Aumento'), // alias para aumentar
   diminuir('diminuir', 'Diminuir'),
-  reducao('reducao', 'Redu??o'); // alias para diminuir
+  reducao('reducao', 'Redu��o'); // alias para diminuir
 
   final String value;
   final String label;
@@ -56,7 +55,7 @@ enum ApplyScope {
   marca('marca', 'Por marca'),
   selecionados('selecionados', 'Produtos selecionados'),
   lista('lista', 'Lista de produtos'),
-  faixaPreco('faixaPreco', 'Faixa de pre?o');
+  faixaPreco('faixaPreco', 'Faixa de pre�o');
 
   final String value;
   final String label;
@@ -101,7 +100,7 @@ class PricingProductModel {
     required this.precoNovo,
     required this.margemAtual,
     required this.margemNova,
-    this.cor = const 'info',
+    this.cor = const Color(0xFF2196F3),
     this.tag,
     this.ativo = true,
     this.selecionado = false,
@@ -166,7 +165,7 @@ class PricingProductModel {
       precoNovo: newPrice,
       margemAtual: currentMargin,
       margemNova: newMargin,
-      cor: json['cor'] is Color ? json['cor'] as Color : const 'info',
+      cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
       tag: json['tag']?.toString() ?? json['barcode']?.toString(),
       ativo: json['isActive'] as bool? ?? json['ativo'] as bool? ?? true,
       selecionado: json['selecionado'] as bool? ?? false,
@@ -257,14 +256,14 @@ class PricingAdjustmentConfigModel {
   factory PricingAdjustmentConfigModel.fromJson(Map<String, dynamic> json) {
     return PricingAdjustmentConfigModel(
       tipoAjuste: AdjustmentType.fromString(json['tipoAjuste']?.toString()),
-      tipoOperacao: OperationType.fromString(json['tipoOperacao']?.toString()),
+      tipoOperacao: OperationType.fromString(json['tipoOperação']?.toString()),
       aplicarEm: ApplyScope.fromString(json['aplicarEm']?.toString()),
       categoriaSelecionada: json['categoriaSelecionada']?.toString(),
       marcaSelecionada: json['marcaSelecionada']?.toString(),
       produtosSelecionados: (json['produtosSelecionados'] as List?)?.map((e) => e.toString()).toList(),
       valor: (json['valor'] as num?)?.toDouble() ?? 0.0,
       respeitarMargemMinima: json['respeitarMargemMinima'] as bool? ?? true,
-      margemMinimaSeguranca: (json['margemMinimaSeguranca'] as num?)?.toDouble() ?? 15.0,
+      margemMinimaSeguranca: (json['margemMinimaSegurança'] as num?)?.toDouble() ?? 15.0,
       margemMinima: (json['margemMinima'] as num?)?.toDouble(),
       aplicarApenasProdutosAtivos: json['aplicarApenasProdutosAtivos'] as bool? ?? true,
       notificarTags: json['notificarTags'] as bool? ?? true,
@@ -274,14 +273,14 @@ class PricingAdjustmentConfigModel {
   Map<String, dynamic> toJson() {
     return {
       'tipoAjuste': tipoAjuste.value,
-      'tipoOperacao': tipoOperacao.value,
+      'tipoOperação': tipoOperacao.value,
       'aplicarEm': aplicarEm.value,
       'categoriaSelecionada': categoriaSelecionada,
       'marcaSelecionada': marcaSelecionada,
       'produtosSelecionados': produtosSelecionados,
       'valor': valor,
       'respeitarMargemMinima': respeitarMargemMinima,
-      'margemMinimaSeguranca': margemMinimaSeguranca,
+      'margemMinimaSegurança': margemMinimaSeguranca,
       'margemMinima': margemMinima,
       'aplicarApenasProdutosAtivos': aplicarApenasProdutosAtivos,
       'notificarTags': notificarTags,
@@ -381,7 +380,7 @@ class MarginReviewModel {
   bool get abaixoMinimo => margemAtual < margemMinima;
   bool get acimaideal => margemAtual >= margemIdeal;
 
-  /// ?cone baseado no status
+  /// �cone baseado no status
   IconData get statusIcon {
     switch (status) {
       case 'critico':
@@ -393,26 +392,26 @@ class MarginReviewModel {
     }
   }
   
-  /// Label do status para exibi??o
+  /// Label do status para exibi��o
   String get statusLabel {
     switch (status) {
       case 'critico':
-        return 'Cr?tico';
+        return 'Cr�tico';
       case 'atencao':
-        return 'Aten??o';
+        return 'Aten��o';
       default:
-        return 'Saud?vel';
+        return 'Saud�vel';
     }
   }
 
   Color get statusColor {
     switch (status) {
       case 'critico':
-        return const 'errorDark';
+        return const Color(0xFFFF5252);
       case 'atencao':
-        return const 'warning';
+        return const Color(0xFFFF9800);
       default:
-        return const 'success';
+        return const Color(0xFF4CAF50);
     }
   }
 
@@ -468,7 +467,7 @@ class MarginReviewModel {
 // PRICE HISTORY ENTRY
 // =============================================================================
 
-/// Entrada do hist?rico de pre?os
+/// Entrada do hist�rico de pre�os
 class PriceHistoryEntry {
   final String id;
   final DateTime date;
@@ -543,13 +542,13 @@ class AiSuggestionModel {
   Color get tipoColor {
     switch (tipo) {
       case 'aumento':
-        return const 'success';
+        return const Color(0xFF4CAF50);
       case 'reducao':
-        return const 'errorDark';
+        return const Color(0xFFFF5252);
       case 'manutencao':
-        return const 'info';
+        return const Color(0xFF2196F3);
       default:
-        return const 'info';
+        return const Color(0xFF2196F3);
     }
   }
 
@@ -690,20 +689,36 @@ class PricingHistoryModel {
   // Aliases para compatibilidade
   String get motivo => motivacao;
   DateTime get data => dataAjuste;
-
-  /// Semantic color key for the tipo (replaces deprecated tipoColor)
-  String get tipoColorKey {
+  
+  Color get tipoColor {
     switch (tipo) {
       case 'automatico':
-        return 'success';
+        return const Color(0xFF4CAF50);
       case 'manual':
-        return 'info';
+        return const Color(0xFF2196F3);
       case 'ia':
-        return 'blueCyan';
+        return AppThemeColors.blueCyan;
       case 'lote':
-        return 'orangeDark';
+        return AppThemeColors.orangeDark;
       default:
-        return 'secondary';
+        return AppThemeColors.textSecondary;
+    }
+  }
+
+  /// Obtém a cor dinâmica do tipo (requer BuildContext)
+  Color dynamicTipoColor(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    switch (tipo) {
+      case 'automatico':
+        return colors.success;
+      case 'manual':
+        return colors.blueMain;
+      case 'ia':
+        return colors.blueCyan;
+      case 'lote':
+        return colors.orangeDark;
+      default:
+        return colors.textSecondary;
     }
   }
 
@@ -725,11 +740,11 @@ class PricingHistoryModel {
   String get tipoLabel {
     switch (tipo) {
       case 'automatico':
-        return 'Ajuste Autom?tico';
+        return 'Ajuste Autom�tico';
       case 'manual':
         return 'Ajuste Manual';
       case 'ia':
-        return 'Sugest?o IA';
+        return 'Sugest�o IA';
       case 'lote':
         return 'Ajuste em Lote';
       default:
@@ -896,8 +911,6 @@ class DynamicPricingConfigModel {
     };
   }
 }
-
-
 
 
 

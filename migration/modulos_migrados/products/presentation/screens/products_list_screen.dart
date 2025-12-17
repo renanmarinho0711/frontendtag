@@ -13,7 +13,7 @@ import 'package:tagbean/features/products/presentation/providers/products_state_
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
 import 'package:tagbean/core/enums/loading_status.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
+
 class ProdutosListaScreen extends ConsumerStatefulWidget {
   final VoidCallback? onBack;
   final String? initialFilter;
@@ -43,8 +43,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
   Set<String> _selectedProductIds = {};
   
   // Estado de ordenação e loading
-  String _sortMode = 'recentes'; // 'a-z', 'z-a', 'preco_crescente', 'preco_decrescente', 'recentes'
-  bool _isLoadingMore = false;
+  final String _sortMode = 'recentes'; // 'a-z', 'z-a', 'preco_crescente', 'preco_decrescente', 'recentes'
+  final bool _isLoadingMore = false;
 
   // Acesso rápido ao state do provider
   ProductsListState get _productsState => ref.watch(productsListRiverpodProvider);
@@ -518,7 +518,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       
                       _buildProductsList(context, isLoading, filteredProducts),
                       
-                      SliverToBoxAdapter(child: SizedBox(height: 100)),
+                      const SliverToBoxAdapter(child: SizedBox(height: 100)),
                     ],
                   ),
                 ),
@@ -572,7 +572,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppGradients.overlayWhite20,
               borderRadius: AppRadius.button,
             ),
@@ -649,7 +649,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           horizontal: AppSizes.paddingSmAlt.get(isMobile, isTablet),
           vertical: AppSizes.paddingXs.get(isMobile, isTablet),
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppGradients.overlayWhite20,
           borderRadius: AppRadius.sm,
         ),
@@ -781,7 +781,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                 fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
               ),
               prefixIcon: Container(
-                margin: EdgeInsets.only(left: AppSpacing.sm, right: AppSpacing.xs),
+                margin: const EdgeInsets.only(left: AppSpacing.sm, right: AppSpacing.xs),
                 child: Icon(
                   Icons.search_rounded,
                   color: ThemeColors.of(context).brandPrimaryGreen,
@@ -791,7 +791,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               suffixIcon: state.searchQuery.isNotEmpty
                   ? IconButton(
                       icon: Container(
-                        padding: EdgeInsets.all(AppSpacing.xxs),
+                        padding: const EdgeInsets.all(AppSpacing.xxs),
                         decoration: BoxDecoration(
                           color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
@@ -835,7 +835,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
             children: [
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: state.filterCategoria,
+                  initialValue: state.filterCategoria,
                   style: TextStyle(
                     fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
                     color: ThemeColors.of(context).textPrimary,
@@ -844,7 +844,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     labelText: 'Categoria',
                     labelStyle: TextStyle(fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
                     prefixIcon: Icon(Icons.category_rounded, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
-                    border: OutlineInputBorder(borderRadius: AppRadius.lg),
+                    border: const OutlineInputBorder(borderRadius: AppRadius.lg),
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingBase.get(isMobile, isTablet),
                       vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -867,7 +867,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: state.filterStatus,
+                  initialValue: state.filterStatus,
                   style: TextStyle(
                     fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
                     color: ThemeColors.of(context).textPrimary,
@@ -876,7 +876,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     labelText: 'Status',
                     labelStyle: TextStyle(fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
                     prefixIcon: Icon(Icons.filter_list_rounded, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
-                    border: OutlineInputBorder(borderRadius: AppRadius.lg),
+                    border: const OutlineInputBorder(borderRadius: AppRadius.lg),
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AppSizes.paddingBase.get(isMobile, isTablet),
                       vertical: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -931,8 +931,8 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
               style: TextStyle(fontSize: AppTextStyles.fontSizeXsAlt.get(isMobile, isTablet)),
             ),
             style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              shape: RoundedRectangleBorder(borderRadius: AppRadius.sm),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              shape: const RoundedRectangleBorder(borderRadius: AppRadius.sm),
             ),
           ),
         ],
@@ -1007,7 +1007,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                         valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).brandPrimaryGreen),
                       ),
                     ),
-                    SizedBox(width: AppSpacing.md),
+                    const SizedBox(width: AppSpacing.md),
                     Text(
                       'Carregando mais...',
                       style: TextStyle(
@@ -1121,7 +1121,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: AppSpacing.md),
+                                const SizedBox(height: AppSpacing.md),
                                 TextButton(
                                   onPressed: () => Navigator.pop(context),
                                   child: Text('Fechar', style: TextStyle(color: ThemeColors.of(context).surface)),
@@ -1185,7 +1185,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                               size: 12,
                               color: ThemeColors.of(context).textSecondary,
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Flexible(
                               child: Text(
                                 produto.categoria,
@@ -1221,7 +1221,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                 size: 11,
                                 color: ThemeColors.of(context).successIcon,
                               ),
-                              SizedBox(width: 4),
+                              const SizedBox(width: 4),
                               Flexible(
                                 child: Text(
                                   'Tag vinculada: ${produto.tag}',
@@ -1265,7 +1265,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                 size: AppSizes.iconMicroAlt.get(isMobile, isTablet),
                                 color: ThemeColors.of(context).warningDark,
                               ),
-                              SizedBox(width: AppSpacing.xxs),
+                              const SizedBox(width: AppSpacing.xxs),
                               Text(
                                 'Sem preço',
                                 style: TextStyle(
@@ -1309,7 +1309,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                               size: 10,
                               color: hasTag ? ThemeColors.of(context).successIcon : ThemeColors.of(context).warningDark,
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               hasTag ? 'Online' : 'Sem Tag',
                               style: TextStyle(
@@ -1362,7 +1362,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         color: ThemeColors.of(context).textSecondary,
         size: AppSizes.iconMedium.get(isMobile, isTablet),
       ),
-      shape: RoundedRectangleBorder(borderRadius: AppRadius.lg),
+      shape: const RoundedRectangleBorder(borderRadius: AppRadius.lg),
       itemBuilder: (context) => <PopupMenuEntry<String>>[
         PopupMenuItem(
           child: Row(
@@ -1489,7 +1489,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(icon, size: 9, color: iconColor),
-          SizedBox(width: 3),
+          const SizedBox(width: 3),
           Text(
             label,
             style: TextStyle(
@@ -1873,7 +1873,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           ),
           TextButton(
             onPressed: () => _productsNotifier.loadProducts(refresh: true),
-            child: Text('Tentar novamente'),
+            child: const Text('Tentar novamente'),
           ),
         ],
       ),
@@ -1899,12 +1899,12 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         }
       },
       backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
+      tooltip: 'Adicionar Produto',
       child: Icon(
         Icons.add_rounded,
         size: AppSizes.iconLarge.get(isMobile, isTablet),
         color: ThemeColors.of(context).surface,
       ),
-      tooltip: 'Adicionar Produto',
     );
   }
 
@@ -1916,9 +1916,9 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: AppRadius.card),
+        shape: const RoundedRectangleBorder(borderRadius: AppRadius.card),
         icon: Icon(Icons.warning_rounded, color: ThemeColors.of(context).redMain, size: AppSizes.iconHeroSm.get(isMobile, isTablet)),
-        title: Text('Confirmar ExclusÃ£o', style: TextStyle(fontSize: AppTextStyles.fontSizeXlAlt.get(isMobile, isTablet))),
+        title: Text('Confirmar Exclusão', style: TextStyle(fontSize: AppTextStyles.fontSizeXlAlt.get(isMobile, isTablet))),
         content: Text(
           'Deseja realmente excluir "${produto.nome}"?\n\nEsta ação não pode ser desfeita.',
           textAlign: TextAlign.center,
@@ -1961,7 +1961,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                     ),
                     backgroundColor: ThemeColors.of(context).redMain,
                     behavior: SnackBarBehavior.floating,
-                    shape: RoundedRectangleBorder(borderRadius: AppRadius.lg),
+                    shape: const RoundedRectangleBorder(borderRadius: AppRadius.lg),
                     padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
                   ),
                 );
@@ -1969,7 +1969,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: ThemeColors.of(context).redMain,
-              shape: RoundedRectangleBorder(borderRadius: AppRadius.button),
+              shape: const RoundedRectangleBorder(borderRadius: AppRadius.button),
               padding: EdgeInsets.symmetric(
                 horizontal: AppSizes.paddingXlAlt2.get(isMobile, isTablet),
                 vertical: AppSizes.paddingBaseAlt.get(isMobile, isTablet),
@@ -2065,7 +2065,6 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
     final isMobile = MediaQuery.of(context).size.width < 600;
     final isTablet = MediaQuery.of(context).size.width >= 600 && 
                      MediaQuery.of(context).size.width < 900;
-    final selectedCount = _selectedProductIds.length;
 
     return Container(
       padding: EdgeInsets.symmetric(

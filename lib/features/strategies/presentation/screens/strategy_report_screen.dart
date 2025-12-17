@@ -43,9 +43,9 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Relatório de Estratégias'),
-        backgroundColor: ThemeColors.of(context).appBarBackground,
-        foregroundColor: ThemeColors.of(context).appBarForeground,
+        title: const Text('Relatãrio de Estratégias'),
+        backgroundColor: ThemeColors.of(context).primary,
+        foregroundColor: ThemeColors.of(context).surface,
         elevation: 0,
         actions: [
           IconButton(
@@ -60,7 +60,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).surfaceSecondary,
+          color: ThemeColors.of(context).backgroundLight,
         ),
         child: ListView(
           padding: const EdgeInsets.all(16),
@@ -72,7 +72,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 4),
               child: Text(
-                'Desempenho por Estrat�gia',
+                'Desempenho por Estratãgia',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             ),
             const SizedBox(height: 12),
             ...estrategias.asMap().entries.map((e) => Padding(
-              padding: EdgeInsets.only(bottom: 16),
+              padding: const EdgeInsets.only(bottom: 16),
               child: _buildEstrategiaCard(e.value, e.key),
             )),
             const SizedBox(height: 20),
@@ -104,7 +104,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).primaryLight,
+            color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -133,7 +133,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Vis�o Geral',
+                      'Visão Geral',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -141,10 +141,10 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                         letterSpacing: -0.5,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(
-                      '�ltimos 30 dias',
-                      style: TextStyle(
+                      'últimos 30 dias',
+                      style: const TextStyle(
                         fontSize: 14,
                       ).copyWith(color: ThemeColors.of(context).surfaceOverlay70),
                     ),
@@ -158,8 +158,8 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             children: [
               Expanded(
                 child: _buildMetricBox(
-                  'Estrat�gias Ativas',
-                  '$estrategiasAtivas',
+                  'Estratégias Ativas',
+                  '$estratégiasAtivas',
                   Icons.lightbulb_rounded,
                 ),
               ),
@@ -186,7 +186,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
               const SizedBox(width: 12),
               Expanded(
                 child: _buildMetricBox(
-                  'ROI M�dio',
+                  'ROI Mãdio',
                   '$roiMedio%',
                   Icons.trending_up_rounded,
                 ),
@@ -306,12 +306,12 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             color: ThemeColors.of(context).surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: estrategia.primaryColorLight,
+              color: estrategia.primaryColor.withValues(alpha: 0.3),
               width: 2,
             ),
             boxShadow: [
               BoxShadow(
-                color: estrategia.primaryColorLight,
+                color: estrategia.primaryColor.withValues(alpha: 0.1),
                 blurRadius: 15,
                 offset: const Offset(0, 4),
               ),
@@ -343,7 +343,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                       children: [
                         Text(
                           estrategia.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             letterSpacing: -0.3,
@@ -355,7 +355,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 3),
                               decoration: BoxDecoration(
-                                color: estrategia.primaryColorLight,
+                                color: estrategia.primaryColor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: Text(
@@ -396,7 +396,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                       'Crescimento',
                       '+${crescimento.toStringAsFixed(0)}%',
                       Icons.trending_up_rounded,
-                      ThemeColors.of(context).success,
+                      ThemeColors.of(context).greenMain,
                     ),
                   ),
                   Container(width: 1, height: 40, color: ThemeColors.of(context).textSecondary),
@@ -421,10 +421,10 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     Color cor;
     switch (impacto) {
       case 'Alto':
-        cor = ThemeColors.of(context).success;
+        cor = ThemeColors.of(context).greenMain;
         break;
-      case 'M�dio':
-        cor = ThemeColors.of(context).warning;
+      case 'Mãdio':
+        cor = ThemeColors.of(context).orangeMain;
         break;
       default:
         cor = ThemeColors.of(context).textSecondary;
@@ -433,7 +433,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     return Container(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 3),
       decoration: BoxDecoration(
-        color: corLight,
+        color: cor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -523,26 +523,26 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
           const SizedBox(height: 16),
           if (insights.isEmpty)
             _buildInsightItem(
-              '? Nenhuma estrat�gia ativa para an�lise',
+              '? Nenhuma estratãgia ativa para anãlise',
               ThemeColors.of(context).textSecondary,
             )
           else
             ...insights.map((insight) => Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: _buildInsightItem(insight['texto'], insight['cor']),
-            )).toList(),
+            )),
         ],
       ),
     );
   }
   
-  /// Gera insights din�micos baseados nas estrat�gias do provider
+  /// Gera insights dinâmicos baseados nas Estratégias do provider
   List<Map<String, dynamic>> _generateDynamicInsights(List<StrategyModel> estrategias) {
     final insights = <Map<String, dynamic>>[];
     
     if (estrategias.isEmpty) return insights;
     
-    // Encontrar estrat�gia com melhor ROI
+    // Encontrar estratãgia com melhor ROI
     final estrategiasComRoi = estrategias.where((e) {
       final roi = double.tryParse(e.roi.replaceAll('%', '').replaceAll(',', '.')) ?? 0.0;
       return roi > 0;
@@ -557,28 +557,28 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       final melhorRoi = estrategiasComRoi.first;
       insights.add({
         'texto': '? ${melhorRoi.name} apresenta o melhor ROI (${melhorRoi.roi})',
-        'cor': ThemeColors.of(context).success,
+        'cor': ThemeColors.of(context).greenMain,
       });
     }
     
-    // Encontrar estrat�gia que afeta mais produtos
+    // Encontrar estratãgia que afeta mais produtos
     final estrategiasComProdutos = estrategias.where((e) => e.products > 0).toList();
     if (estrategiasComProdutos.isNotEmpty) {
       estrategiasComProdutos.sort((a, b) => b.products.compareTo(a.products));
       final maisProdutos = estrategiasComProdutos.first;
       insights.add({
         'texto': '? ${maisProdutos.name} afeta mais produtos (${maisProdutos.products} itens)',
-        'cor': ThemeColors.of(context).info,
+        'cor': ThemeColors.of(context).blueMain,
       });
     }
     
-    // Sugest�o para estrat�gias inativas
+    // SuGestão para Estratégias inativas
     final inativas = estrategias.where((e) => e.status != StrategyStatus.active).toList();
     if (inativas.isNotEmpty) {
       final sugestao = inativas.first;
       insights.add({
-        'texto': '? Sugest�o: Ativar estrat�gia de ${sugestao.name} para aumentar vendas',
-        'cor': ThemeColors.of(context).warning,
+        'texto': '? SuGestão: Ativar estratãgia de ${sugestao.name} para aumentar vendas',
+        'cor': ThemeColors.of(context).orangeMain,
       });
     }
     
@@ -591,7 +591,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       });
       if (economiaTotal > 0) {
         insights.add({
-          'texto': '? Estrat�gias ativas geraram R\$ ${economiaTotal.toStringAsFixed(2)} de economia',
+          'texto': '? Estratégias ativas geraram R\$ ${economiaTotal.toStringAsFixed(2)} de economia',
           'cor': ThemeColors.of(context).blueCyan,
         });
       }
@@ -606,7 +606,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: corLight),
+        border: Border.all(color: cor.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -615,7 +615,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
           Expanded(
             child: Text(
               texto,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
                 height: 1.4,
               ),
@@ -635,7 +635,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
         height: MediaQuery.sizeOf(context).height * 0.75,
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
         ),
         child: Column(
           children: [
@@ -675,7 +675,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                           children: [
                             Text(
                               estrategia.name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: -0.5,
@@ -709,7 +709,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
                   _buildDetalheMetrica('ROI', estrategia.roi, Icons.analytics_rounded),
                   const SizedBox(height: 24),
                   const Text(
-                    'Evolu��o de Vendas',
+                    'Evolução de Vendas',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -745,7 +745,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
 
   Widget _buildDetalheMetrica(String label, String value, IconData icon) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.only(bottom: 16),
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
@@ -759,7 +759,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             Expanded(
               child: Text(
                 label,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
@@ -786,7 +786,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
           children: [
             Icon(Icons.picture_as_pdf_rounded, color: ThemeColors.of(context).surface),
             SizedBox(width: 12),
-            Text('Exportando relatório em PDF...'),
+            Text('Exportando relatãrio em PDF...'),
           ],
         ),
         backgroundColor: ThemeColors.of(context).primary,
@@ -803,17 +803,17 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
           children: [
             Icon(Icons.file_download_rounded, color: ThemeColors.of(context).surface),
             SizedBox(width: 12),
-            Text('Exportando relatório em Excel...'),
+            Text('Exportando relatãrio em Excel...'),
           ],
         ),
-        backgroundColor: ThemeColors.of(context).success,
+        backgroundColor: ThemeColors.of(context).greenMain,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     );
   }
 
-  /// Constr�i �rea do gr�fico com dados do backend
+  /// Constrói ãrea do gráfico com dados do backend
   Widget _buildChartArea(StrategyModel estrategia) {
     final providerKey = '${estrategia.id}:7';
     final asyncValue = ref.watch(strategyDailySalesProvider(providerKey));
@@ -859,7 +859,7 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
             ),
             child: Center(
               child: Text(
-                'Sem dados de vendas dispon�veis',
+                'Sem dados de vendas disponíveis',
                 style: TextStyle(color: ThemeColors.of(context).textSecondary),
               ),
             ),
@@ -921,8 +921,6 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
     );
   }
 }
-
-
 
 
 

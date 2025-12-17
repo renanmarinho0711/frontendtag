@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/pricing/data/models/pricing_models.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
@@ -82,7 +81,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
               ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: _exportarrelatÃ³rio,
+        onPressed: _exportarRelatorio,
         icon: Icon(Icons.file_download_rounded, size: AppSizes.iconMediumAlt.get(isMobile, isTablet)),
         label: Text(
           'Exportar',
@@ -95,7 +94,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
     );
   }
 
-  void _exportarrelatÃ³rio() {
+  void _exportarRelatorio() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -106,7 +105,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
           children: [
             Icon(Icons.download_rounded, color: ThemeColors.of(context).surface, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
             SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
-            const Text('Exportando relat�rio...'),
+            const Text('Exportando relatãrio...'),
           ],
         ),
         behavior: SnackBarBehavior.floating,
@@ -160,7 +159,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).info],
+                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain],
               ),
               borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
             ),
@@ -177,7 +176,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Revis�o de Margens',
+                  'Revisão de Margens',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                     overflow: TextOverflow.ellipsis,
@@ -186,7 +185,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                   ),
                 ),
                 Text(
-                  'An�lise de rentabilidade',
+                  'Anãlise de rentabilidade',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                     overflow: TextOverflow.ellipsis,
@@ -213,7 +212,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
           colors: [ThemeColors.of(context).infoModuleBackground, ThemeColors.of(context).infoModuleBackgroundAlt],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 18 : (isTablet ? 19 : 20)),
-        border: Border.all(color: ThemeColors.of(context).blueCyanLight, width: 2),
+        border: Border.all(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -315,7 +314,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
           SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
           Expanded(
             child: DropdownButtonFormField<String>(
-              value: _filterStatus,
+              initialValue: _filterStatus,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                 color: ThemeColors.of(context).textPrimary,
@@ -362,10 +361,10 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 18 : (isTablet ? 19 : 20)),
-          border: Border.all(color: item.statusColorLight, width: 2),
+          border: Border.all(color: item.statusColor.withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
-              color: item.statusColorLight,
+              color: item.statusColor.withValues(alpha: 0.1),
               blurRadius: ResponsiveHelper.getResponsiveBlurRadius(context, mobile: 16, tablet: 18, desktop: 20),
               offset: const Offset(0, 4),
             ),
@@ -444,9 +443,9 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                           vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8),
                         ),
                         decoration: BoxDecoration(
-                          color: item.statusColorLight,
+                          color: item.statusColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
-                          border: Border.all(color: item.statusColorLight),
+                          border: Border.all(color: item.statusColor.withValues(alpha: 0.3)),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -500,9 +499,9 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
     return Container(
       padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 9, tablet: 9.5, desktop: 10)),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -538,7 +537,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
       margin: EdgeInsets.all(AppSizes.paddingMdAlt.get(isMobile, isTablet)),
       padding: EdgeInsets.all(AppSizes.paddingMdAlt.get(isMobile, isTablet)),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight]),
+        gradient: LinearGradient(colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)]),
         borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
         border: Border.all(color: ThemeColors.of(context).infoLight),
       ),
@@ -556,7 +555,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
               ),
               SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
               Text(
-                'Dicas de An�lise de Margens',
+                'Dicas de Anãlise de Margens',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                   overflow: TextOverflow.ellipsis,
@@ -567,9 +566,9 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
             ],
           ),
           SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
-          _buildDicaItem('Margens negativas indicam preju�zo - ajuste urgente'),
-          _buildDicaItem('Margens baixas (<10%) podem n�o cobrir despesas'),
-          _buildDicaItem('Margens altas podem ser oportunidade para promo��es'),
+          _buildDicaItem('Margens negativas indicam prejuãzo - ajuste urgente'),
+          _buildDicaItem('Margens baixas (<10%) podem não cobrir despesas'),
+          _buildDicaItem('Margens altas podem ser oportunidade para promoções'),
         ],
       ),
     );
@@ -621,7 +620,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
             SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
             Expanded(
               child: Text(
-                'Ajustar Pre�o',
+                'Ajustar PREÇO',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                   overflow: TextOverflow.ellipsis,
@@ -656,7 +655,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Situa��o Atual:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5))),
+                    Text('SituAção Atual:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5))),
                     SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
                     _buildInfoRow('Custo', 'R\$ ${item.custoCompra.toStringAsFixed(2)}'),
                     _buildInfoRow('Venda', 'R\$ ${item.precoVenda.toStringAsFixed(2)}'),
@@ -666,7 +665,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                       Container(
                         padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 7, tablet: 7.5, desktop: 8)),
                         decoration: BoxDecoration(
-                          color: item.statusColorLight,
+                          color: item.statusColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(isMobile ? 7 : 8),
                         ),
                         child: Text(
@@ -687,7 +686,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                 style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13.5)),
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Novo Pre�o de Venda',
+                  labelText: 'Novo PREÇO de Venda',
                   labelStyle: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5)),
                   prefixText: 'R\$ ',
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(isMobile ? 10 : 12)),
@@ -723,7 +722,7 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
                       children: [
                         Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface, size: AppSizes.iconMediumSmall.get(isMobile, isTablet)),
                         SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
-                        Expanded(child: Text('Pre�o de ${item.nome} atualizado!')),
+                        Expanded(child: Text('PREÇO de ${item.nome} atualizado!')),
                       ],
                     ),
                     backgroundColor: ThemeColors.of(context).success,
@@ -769,8 +768,6 @@ class _PrecificacaoRevisaoMargensScreenState extends ConsumerState<PrecificacaoR
     );
   }
 }
-
-
 
 
 

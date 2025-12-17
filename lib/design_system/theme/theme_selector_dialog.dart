@@ -1,16 +1,14 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/design_system/theme/theme_provider.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Di�logo para sele��o de temas do sistema
+/// Diãlogo para seleção de temas do sistema
 class ThemeSelectorDialog extends ConsumerStatefulWidget {
   const ThemeSelectorDialog({super.key});
 
-  /// Mostra o di�logo de sele��o de temas
+  /// Mostra o diálogo de seleção de temas
   static Future<void> show(BuildContext context) async {
     return showDialog(
       context: context,
@@ -68,7 +66,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
     final themeState = ref.watch(themeProvider);
 
     return Dialog(
-      backgroundColor: AppThemeColors.surface,
+      backgroundColor: ThemeColors.of(context).surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
       ),
@@ -104,7 +102,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
             
             const SizedBox(height: 16),
             
-            // Bot�es de a��o
+            // Botães de Ação
             _buildActionButtons(context, themeState, isMobile),
           ],
         ),
@@ -120,8 +118,8 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
             orElse: () => availableThemes.first,
           )
         : null;
-    final previewPrimary = previewTheme?.primaryColor ?? AppThemeColors.moduleDashboard;
-    final previewSecondary = previewTheme?.secondaryColor ?? AppThemeColors.moduleDashboardDark;
+    final previewPrimary = previewTheme?.primaryColor ?? ThemeColors.of(context).moduleDashboard;
+    final previewSecondary = previewTheme?.secondaryColor ?? ThemeColors.of(context).moduleDashboardDark;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,14 +150,14 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                   style: TextStyle(
                     fontSize: isMobile ? 18 : 22,
                     fontWeight: FontWeight.bold,
-                    color: AppThemeColors.textPrimary,
+                    color: ThemeColors.of(context).textPrimary,
                   ),
                 ),
                 Text(
-                  '${availableThemes.length} temas dispon�veis',
+                  '${availableThemes.length} temas disponíveis',
                   style: TextStyle(
                     fontSize: isMobile ? 12 : 14,
-                    color: AppThemeColors.textSecondary,
+                    color: ThemeColors.of(context).textSecondary,
                   ),
                 ),
               ],
@@ -170,7 +168,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
           icon: const Icon(Icons.close_rounded),
           onPressed: () => Navigator.of(context).pop(),
           style: IconButton.styleFrom(
-            backgroundColor: AppThemeColors.grey100,
+            backgroundColor: ThemeColors.of(context).grey100,
           ),
         ),
       ],
@@ -180,15 +178,15 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
   Widget _buildSearchBar(BuildContext context, bool isMobile) {
     return Container(
       decoration: BoxDecoration(
-        color: AppThemeColors.grey100,
+        color: ThemeColors.of(context).grey100,
         borderRadius: BorderRadius.circular(12),
       ),
       child: TextField(
         onChanged: (value) => setState(() => _searchQuery = value),
         decoration: InputDecoration(
           hintText: 'Buscar tema...',
-          hintStyle: TextStyle(color: AppThemeColors.grey500),
-          prefixIcon: Icon(Icons.search_rounded, color: AppThemeColors.grey400),
+          hintStyle: TextStyle(color: ThemeColors.of(context).grey500),
+          prefixIcon: Icon(Icons.search_rounded, color: ThemeColors.of(context).grey400),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,
@@ -216,15 +214,15 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                 fontSize: 13,
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
                 color: isSelected
-                    ? AppThemeColors.surface
-                    : AppThemeColors.textSecondary,
+                    ? ThemeColors.of(context).surface
+                    : ThemeColors.of(context).textSecondary,
               ),
             ),
             selected: isSelected,
             onSelected: (_) => setState(() => _selectedCategory = category),
-            backgroundColor: AppThemeColors.grey100,
-            selectedColor: AppThemeColors.primaryDashboard,
-            checkmarkColor: AppThemeColors.surface,
+            backgroundColor: ThemeColors.of(context).grey100,
+            selectedColor: ThemeColors.of(context).primaryDashboard,
+            checkmarkColor: ThemeColors.of(context).surface,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
@@ -246,9 +244,9 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: AppThemeColors.successBackground,
+        color: ThemeColors.of(context).successBackground,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppThemeColors.successBorder),
+        border: Border.all(color: ThemeColors.of(context).successBorder),
       ),
       child: Row(
         children: [
@@ -274,14 +272,14 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                   style: TextStyle(
                     fontSize: isMobile ? 13 : 14,
                     fontWeight: FontWeight.w600,
-                    color: AppThemeColors.successText,
+                    color: ThemeColors.of(context).successText,
                   ),
                 ),
                 Text(
                   theme.description,
                   style: TextStyle(
                     fontSize: isMobile ? 11 : 12,
-                    color: AppThemeColors.successDark,
+                    color: ThemeColors.of(context).successDark,
                   ),
                 ),
               ],
@@ -289,7 +287,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
           ),
           Icon(
             Icons.check_circle_rounded,
-            color: AppThemeColors.success,
+            color: ThemeColors.of(context).success,
             size: 24,
           ),
         ],
@@ -308,14 +306,14 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
             Icon(
               Icons.search_off_rounded,
               size: 48,
-              color: AppThemeColors.grey400,
+              color: ThemeColors.of(context).grey400,
             ),
             const SizedBox(height: 12),
             Text(
               'Nenhum tema encontrado',
               style: TextStyle(
                 fontSize: 16,
-                color: AppThemeColors.textSecondary,
+                color: ThemeColors.of(context).textSecondary,
               ),
             ),
           ],
@@ -346,18 +344,18 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         decoration: BoxDecoration(
-          color: AppThemeColors.surface,
+          color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected
-                ? AppThemeColors.primaryDashboard
-                : AppThemeColors.border,
+                ? ThemeColors.of(context).primaryDashboard
+                : ThemeColors.of(context).border,
             width: isSelected ? 2 : 1,
           ),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: AppThemeColors.primaryDashboard.withValues(alpha: 0.2),
+                    color: ThemeColors.of(context).primaryDashboard.withValues(alpha: 0.2),
                     blurRadius: 8,
                     spreadRadius: 1,
                   ),
@@ -384,7 +382,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                   ? Center(
                       child: Container(
                         padding: const EdgeInsets.all(6),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                         ),
@@ -410,7 +408,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                       style: TextStyle(
                         fontSize: isMobile ? 12 : 13,
                         fontWeight: FontWeight.w600,
-                        color: AppThemeColors.textPrimary,
+                        color: ThemeColors.of(context).textPrimary,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -419,7 +417,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                       theme.description,
                       style: TextStyle(
                         fontSize: isMobile ? 10 : 11,
-                        color: AppThemeColors.textSecondary,
+                        color: ThemeColors.of(context).textSecondary,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -430,14 +428,14 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                         vertical: 2,
                       ),
                       decoration: BoxDecoration(
-                        color: AppThemeColors.grey100,
+                        color: ThemeColors.of(context).grey100,
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
                         theme.category,
                         style: TextStyle(
                           fontSize: isMobile ? 9 : 10,
-                          color: AppThemeColors.textTertiary,
+                          color: ThemeColors.of(context).textTertiary,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -457,39 +455,39 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
     ThemeState themeState,
     bool isMobile,
   ) {
-    // Usa cores do tema selecionado para o bot�o
+    // Usa cores do tema selecionado para o botão
     final previewTheme = _selectedThemeId != null
         ? availableThemes.firstWhere(
             (t) => t.id == _selectedThemeId,
             orElse: () => availableThemes.first,
           )
         : null;
-    final buttonColor = previewTheme?.primaryColor ?? AppThemeColors.primaryDashboard;
+    final buttonColor = previewTheme?.primaryColor ?? ThemeColors.of(context).primaryDashboard;
 
     return Row(
       children: [
-        // Bot�o resetar para padr�o
+        // Botão resetar para padrão
         TextButton.icon(
           onPressed: () {
             setState(() => _selectedThemeId = 'default');
           },
           icon: const Icon(Icons.restore_rounded, size: 18),
-          label: Text(isMobile ? 'Resetar' : 'Resetar para Padr�o'),
+          label: Text(isMobile ? 'Resetar' : 'Resetar para Padrão'),
           style: TextButton.styleFrom(
-            foregroundColor: AppThemeColors.textSecondary,
+            foregroundColor: ThemeColors.of(context).textSecondary,
           ),
         ),
         const Spacer(),
-        // Bot�o cancelar
+        // Botão cancelar
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
           style: TextButton.styleFrom(
-            foregroundColor: AppThemeColors.textSecondary,
+            foregroundColor: ThemeColors.of(context).textSecondary,
           ),
           child: const Text('Cancelar'),
         ),
         const SizedBox(width: 8),
-        // Bot�o aplicar
+        // Botão aplicar
         AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           child: ElevatedButton.icon(
@@ -508,7 +506,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                         SnackBar(
                           content: Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check_circle_rounded,
                                 color: Colors.white,
                               ),
@@ -520,7 +518,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                                   children: [
                                     Text(
                                       'Tema "${selectedTheme.name}" aplicado!',
-                                      style: TextStyle(fontWeight: FontWeight.bold),
+                                      style: const TextStyle(fontWeight: FontWeight.bold),
                                     ),
                                     const SizedBox(height: 4),
                                     const Text(
@@ -549,7 +547,7 @@ class _ThemeSelectorDialogState extends ConsumerState<ThemeSelectorDialog> {
                     height: 18,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      color: AppThemeColors.surface,
+                      color: ThemeColors.of(context).surface,
                     ),
                   )
                 : const Icon(Icons.check_rounded, size: 18),

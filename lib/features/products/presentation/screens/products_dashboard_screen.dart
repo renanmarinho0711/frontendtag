@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/theme/dynamic_gradients.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
@@ -43,7 +42,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   
   String _currentScreen = 'dashboard';
 
-  // Acesso rpido aos providers
+  // Acesso rápido aos providers
   ProductsListState get _productsState => ref.watch(productsListRiverpodProvider);
   ProductsListNotifier get _productsNotifier => ref.read(productsListRiverpodProvider.notifier);
   ProductStatisticsState get _statsState => ref.watch(productStatisticsRiverpodProvider);
@@ -112,11 +111,22 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
 
   /// Carrega dados dos providers com storeId do contexto
   Future<void> _loadData() async {
+    if (!mounted) return;
+    
     final currentStore = ref.read(currentStoreProvider);
     final storeId = currentStore?.id;
     
-    await _productsNotifier.loadProducts(refresh: true);
-    await _statsNotifier.loadStatistics(storeId: storeId);
+    // Guardar referências antes das operações assíncronas
+    final productsNotifier = ref.read(productsListRiverpodProvider.notifier);
+    final statsNotifier = ref.read(productStatisticsRiverpodProvider.notifier);
+    
+    await productsNotifier.loadProducts(refresh: true);
+    
+    if (!mounted) return;
+    
+    await statsNotifier.loadStatistics(storeId: storeId);
+    
+    if (!mounted) return;
     
     setState(() {
       _lastSyncTime = DateTime.now();
@@ -133,18 +143,25 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }
 
   Future<void> _refreshData() async {
+    if (!mounted) return;
+    
     setState(() {
       _isLoading = true;
       _isSyncing = true;
     });
     HapticFeedback.mediumImpact();
 
-    // Usar storeId do contexto
+    // Usar storeId do contexto - guardar referências antes do await
     final currentStore = ref.read(currentStoreProvider);
     final storeId = currentStore?.id;
+    final productsNotifier = ref.read(productsListRiverpodProvider.notifier);
+    final statsNotifier = ref.read(productStatisticsRiverpodProvider.notifier);
 
-    await _productsNotifier.loadProducts(refresh: true);
-    await _statsNotifier.loadStatistics(storeId: storeId);
+    await productsNotifier.loadProducts(refresh: true);
+    
+    if (!mounted) return;
+    
+    await statsNotifier.loadStatistics(storeId: storeId);
 
     if (!mounted) return;
 
@@ -161,7 +178,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           content: Row(
             children: [
               Container(
-                padding: EdgeInsets.all(AppSpacing.sm),
+                padding: const EdgeInsets.all(AppSpacing.sm),
                 decoration: BoxDecoration(
                   color: ThemeColors.of(context).surfaceOverlay20,
                   borderRadius: AppRadius.sm,
@@ -172,16 +189,16 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: 20,
                 ),
               ),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               const Text(
                 'Sincronizado com sucesso!',
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
             ],
           ),
-          backgroundColor: ThemeColors.of(context).success,
+          backgroundColor: ThemeColors.of(context).greenMain,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
+          shape: const RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
           duration: const Duration(seconds: 2),
         ),
       );
@@ -201,13 +218,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   // Verifica condies para onboarding contextual
   bool get _shouldShowOnboarding {
     if (!_showOnboarding) return false;
-    if (_totalProdutos == 0) return true; // Catlogo vazio
+    if (_totalProdutos == 0) return true; // catálogo vazio
     if (_semTag > 0 && _semTag / _totalProdutos > 0.3) return true; // >30% sem tag
     return false;
   }
   
   String get _onboardingMessage {
-    if (_totalProdutos == 0) return 'Comece seu catlogo adicionando produtos!';
+    if (_totalProdutos == 0) return 'Comece seu catálogo adicionando produtos!';
     if (_semTag > 0) return 'Voc tem $_semTag produtos sem tag vinculada';
     return '';
   }
@@ -221,7 +238,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     return 'h ${diff.inDays}d';
   }
 
-  /// HEADER - Com sync status, voltar, sincronizar e configuraes
+  /// HEADER - Com sync status, voltar, sincronizar e configurações
   Widget _buildModuleHeader() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -278,7 +295,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'Gesto de catlogo',
+                  'Gestão de catálogo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 10, tabletFontSize: 11),
                     color: ThemeColors.of(context).surfaceOverlay70,
@@ -289,7 +306,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             ),
           ),
           
-          // Status de Sincronizao
+          // Status de Sincronização
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: AppSizes.paddingSmAlt.get(isMobile, isTablet),
@@ -307,7 +324,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   color: ThemeColors.of(context).surfaceOverlay90,
                   size: 14,
                 ),
-                SizedBox(width: 4),
+                const SizedBox(width: 4),
                 Text(
                   _isSyncing ? 'Sincronizando...' : _syncTimeAgo,
                   style: TextStyle(
@@ -319,7 +336,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ],
             ),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           
           // Boto Sincronizar
           IconButton(
@@ -338,7 +355,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             constraints: const BoxConstraints(),
           ),
           
-          // Boto Configuraes
+          // Boto Configurações
           IconButton(
             onPressed: () => _showConfiguracoesModal(),
             icon: Icon(
@@ -346,7 +363,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               color: ThemeColors.of(context).surface,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            tooltip: 'Configuraes',
+            tooltip: 'Configurações',
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(),
           ),
@@ -371,10 +388,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             Row(
               children: [
                 Icon(Icons.settings_rounded, color: ThemeColors.of(context).brandPrimaryGreen),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Text(
-                    'Configuraes de Produtos',
+                    'Configurações de Produtos',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -385,14 +402,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 ),
               ],
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             ListTile(
               leading: Icon(Icons.visibility_rounded, color: ThemeColors.of(context).primary),
-              title: Text('Mostrar onboarding'),
-              subtitle: Text('Exibir dicas e sugestes'),
+              title: const Text('Mostrar onboarding'),
+              subtitle: const Text('Exibir dicas e Sugestões'),
               trailing: Switch(
                 value: _showOnboarding,
-                activeColor: ThemeColors.of(context).brandPrimaryGreen,
+                activeThumbColor: ThemeColors.of(context).brandPrimaryGreen,
                 onChanged: (value) async {
                   final prefs = await SharedPreferences.getInstance();
                   await prefs.setBool('products_show_onboarding', value);
@@ -402,10 +419,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ),
             ListTile(
-              leading: Icon(Icons.sync_rounded, color: ThemeColors.of(context).warning),
-              title: Text('Sincronizao automtica'),
-              subtitle: Text('Atualizar ao abrir'),
-              trailing: Icon(Icons.chevron_right_rounded),
+              leading: Icon(Icons.sync_rounded, color: ThemeColors.of(context).orangeMain),
+              title: const Text('Sincronização automtica'),
+              subtitle: const Text('Atualizar ao abrir'),
+              trailing: const Icon(Icons.chevron_right_rounded),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -419,7 +436,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).surfaceSecondary,
+      backgroundColor: ThemeColors.of(context).backgroundLight,
       body: _buildCurrentScreen(),
       floatingActionButton: _currentScreen == 'dashboard' 
           ? _buildContextualFAB()
@@ -429,7 +446,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
 
   /// FAB Contextual - muda comportamento baseado no estado
   Widget _buildContextualFAB() {
-    // Se catlogo vazio, mostrar FAB para adicionar primeiro produto
+    // Se catálogo vazio, mostrar FAB para adicionar primeiro produto
     if (_totalProdutos == 0) {
       // Se oculto, mostrar apenas boto pequeno para reexibir
       if (_hideFabAddProduct) {
@@ -475,7 +492,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       );
     }
     
-    // Normal: FAB com menu de aes rpidas
+    // Normal: FAB com menu de ações rápidas
     return FloatingActionButton(
       onPressed: _showQuickActionsMenu,
       backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
@@ -499,21 +516,21 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             Container(
               width: 40,
               height: 4,
-              margin: EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).textSecondaryOverlay30,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
             Text(
-              'Aes Rpidas',
+              'Ações Rápidas',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: ThemeColors.of(context).textPrimary,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildQuickMenuItem(
               icon: Icons.add_circle_outline_rounded,
               label: 'Adicionar Produto',
@@ -544,7 +561,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             _buildQuickMenuItem(
               icon: Icons.inventory_rounded,
               label: 'Gerenciar Estoque',
-              cor: ThemeColors.of(context).warning,
+              cor: ThemeColors.of(context).orangeMain,
               onTap: () {
                 Navigator.pop(context);
                 setState(() => _currentScreen = 'estoque');
@@ -564,9 +581,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }) {
     return ListTile(
       leading: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: corLight,
+          color: cor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(icon, color: cor, size: 22),
@@ -580,7 +597,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       ),
       trailing: Icon(Icons.chevron_right_rounded, color: ThemeColors.of(context).textSecondary),
       onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     );
   }
@@ -624,7 +641,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // SE��O 1: Header
+            // SEããO 1: Header
             _buildModuleHeader(),
             
             Padding(
@@ -634,34 +651,34 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // SE��O 2: Busca Global
+                  // SEããO 2: Busca Global
                   _buildBuscaGlobal(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
-                  // SE��O 3: Onboarding Contextual (condicional)
+                  // SEããO 3: Onboarding Contextual (condicional)
                   if (_shouldShowOnboarding) ...[
                     _buildOnboardingContextual(),
-                    SizedBox(height: AppSpacing.lg),
+                    const SizedBox(height: AppSpacing.lg),
                   ],
                   
-                  // SE��O 4: Resumo do Catlogo (5 cards clicveis)
+                  // SEããO 4: Resumo do catálogo (5 cards clicveis)
                   if (isLoading)
                     _buildLoadingStats()
                   else
                     _buildResumoCatalogo(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
-                  // SE��O 5: Aes Rpidas + Produtos em Destaque (2 colunas)
+                  // SEããO 5: Ações Rápidas + Produtos em Destaque (2 colunas)
                   _buildAcoesEDestaques(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
-                  // SE��O 6: Categorias
+                  // SEããO 6: Categorias
                   _buildCategoriasSection(),
-                  SizedBox(height: AppSpacing.lg),
+                  const SizedBox(height: AppSpacing.lg),
                   
-                  // SE��O 7: Mapa do Mdulo (todos os menus disponveis)
+                  // SEããO 7: Mapa do Módulo (todos os menus disponveis)
                   _buildMapaModulo(),
-                  SizedBox(height: AppSpacing.xl),
+                  const SizedBox(height: AppSpacing.xl),
                 ],
               ),
             ),
@@ -671,12 +688,12 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     );
   }
 
-  /// SE��O 2: Busca Global com Scanner
+  /// SEããO 2: Busca Global com Scanner
   Widget _buildBuscaGlobal() {
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
       child: Row(
         children: [
           Expanded(
@@ -684,7 +701,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               decoration: BoxDecoration(
                 color: ThemeColors.of(context).surface,
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: ThemeColors.of(context).brandPrimaryGreenLight),
+                border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3)),
                 boxShadow: [
                   BoxShadow(
                     color: ThemeColors.of(context).textPrimary.withValues(alpha: 0.06),
@@ -712,7 +729,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     size: 22,
                   ),
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                 ),
                 onSubmitted: (value) {
                   if (value.isNotEmpty) {
@@ -723,7 +740,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           // Boto Scanner
           Material(
             color: ThemeColors.of(context).brandPrimaryGreen,
@@ -732,7 +749,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               onTap: () => setState(() => _currentScreen = 'qr'),
               borderRadius: BorderRadius.circular(14),
               child: Container(
-                padding: EdgeInsets.all(14),
+                padding: const EdgeInsets.all(14),
                 child: Icon(
                   Icons.qr_code_scanner_rounded,
                   color: ThemeColors.of(context).surface,
@@ -746,21 +763,21 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     );
   }
 
-  /// SE��O 3: Onboarding Contextual
+  /// SEããO 3: Onboarding Contextual
   Widget _buildOnboardingContextual() {
     final isMobile = ResponsiveHelper.isMobile(context);
     
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ThemeColors.of(context).brandPrimaryGreenLight,
-            ThemeColors.of(context).brandPrimaryGreenLight,
+            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
+            ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.05),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreenLight),
+        border: Border.all(color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -768,9 +785,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).brandPrimaryGreenLight,
+                  color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -779,7 +796,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: 20,
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(
                   'Prximo Passo',
@@ -792,14 +809,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
               IconButton(
                 onPressed: _dismissOnboarding,
-                icon: Icon(Icons.close_rounded, size: 20),
+                icon: const Icon(Icons.close_rounded, size: 20),
                 color: ThemeColors.of(context).textSecondary,
                 padding: EdgeInsets.zero,
-                constraints: BoxConstraints(),
+                constraints: const BoxConstraints(),
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Text(
             _onboardingMessage,
             style: TextStyle(
@@ -807,7 +824,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               color: ThemeColors.of(context).textSecondary,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             children: [
               Expanded(
@@ -822,16 +839,16 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
                     foregroundColor: ThemeColors.of(context).surface,
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   ),
                   child: Text(
                     _totalProdutos == 0 ? 'Adicionar Primeiro Produto' : 'Vincular Tags',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               TextButton(
                 onPressed: _dismissOnboarding,
                 child: Text(
@@ -846,13 +863,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     );
   }
 
-  /// SE��O 4: Resumo do Catlogo - 5 Cards Clicveis
+  /// SEããO 4: Resumo do catálogo - 5 Cards Clicveis
   Widget _buildResumoCatalogo() {
     final isMobile = ResponsiveHelper.isMobile(context);
     
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: ThemeColors.of(context).surface,
         borderRadius: BorderRadius.circular(16),
@@ -868,14 +885,14 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Resumo do Catlogo',
+            'Resumo do catálogo',
             style: TextStyle(
               fontSize: isMobile ? 16 : 18,
               fontWeight: FontWeight.bold,
               color: ThemeColors.of(context).textPrimary,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           // Grid de 5 cards - usando Row para desktop, Wrap para mobile
           if (isMobile)
             Wrap(
@@ -906,7 +923,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   label: 'Sem Tag',
                   valor: '$_semTag',
                   icon: Icons.label_off_rounded,
-                  cor: ThemeColors.of(context).warning,
+                  cor: ThemeColors.of(context).orangeMain,
                   showAlert: _semTag > 0,
                   onTap: () {
                     _productsNotifier.clearFilters();
@@ -944,7 +961,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Com Tag',
@@ -957,13 +974,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Sem Tag',
                     valor: '$_semTag',
                     icon: Icons.label_off_rounded,
-                    cor: ThemeColors.of(context).warning,
+                    cor: ThemeColors.of(context).orangeMain,
                     showAlert: _semTag > 0,
                     onTap: () {
                       _productsNotifier.clearFilters();
@@ -971,7 +988,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Estoque',
@@ -981,7 +998,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     onTap: () => setState(() => _currentScreen = 'estoque'),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: _buildStatClickableExpanded(
                     label: 'Categorias',
@@ -1024,7 +1041,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 colors: [cor.withValues(alpha: 0.12), cor.withValues(alpha: 0.06)],
               ),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: corLight, width: 1.5),
+              border: Border.all(color: cor.withValues(alpha: 0.3), width: 1.5),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -1035,7 +1052,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   children: [
                     Icon(icon, color: cor, size: isMobile ? 18 : 22),
                     if (showAlert) ...[
-                      SizedBox(width: 4),
+                      const SizedBox(width: 4),
                       Container(
                         width: 8,
                         height: 8,
@@ -1047,7 +1064,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     ],
                   ],
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
@@ -1059,7 +1076,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     ),
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   label,
                   style: TextStyle(
@@ -1068,7 +1085,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Icon(
                   Icons.arrow_forward_rounded,
                   color: cor.withValues(alpha: 0.6),
@@ -1097,13 +1114,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [cor.withValues(alpha: 0.12), cor.withValues(alpha: 0.06)],
             ),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: corLight, width: 1),
+            border: Border.all(color: cor.withValues(alpha: 0.3), width: 1),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -1114,7 +1131,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 children: [
                   Icon(icon, color: cor, size: 20),
                   if (showAlert) ...[
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Container(
                       width: 6,
                       height: 6,
@@ -1126,7 +1143,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   ],
                 ],
               ),
-              SizedBox(height: 6),
+              const SizedBox(height: 6),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
@@ -1138,7 +1155,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   ),
                 ),
               ),
-              SizedBox(height: 2),
+              const SizedBox(height: 2),
               Text(
                 label,
                 style: TextStyle(
@@ -1147,7 +1164,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 2),
+              const SizedBox(height: 2),
               Icon(
                 Icons.arrow_forward_rounded,
                 color: cor.withValues(alpha: 0.6),
@@ -1172,7 +1189,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           mainAxisSize: MainAxisSize.min,
           children: [
             CircularProgressIndicator(color: ThemeColors.of(context).brandPrimaryGreen),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'Carregando estatsticas...',
               style: TextStyle(color: ThemeColors.of(context).textSecondary),
@@ -1183,7 +1200,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     );
   }
 
-  /// SE��O 5: Aes Rpidas + Produtos em Destaque (2 colunas)
+  /// SEããO 5: Ações Rápidas + Produtos em Destaque (2 colunas)
   Widget _buildAcoesEDestaques() {
     final isMobile = ResponsiveHelper.isMobile(context);
     
@@ -1192,7 +1209,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       return Column(
         children: [
           _buildAcoesRapidasCard(),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _buildProdutosDestaqueCard(),
         ],
       );
@@ -1203,7 +1220,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(child: _buildAcoesRapidasCard()),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         Expanded(child: _buildProdutosDestaqueCard()),
       ],
     );
@@ -1246,7 +1263,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         'label': 'Gerenciar Estoque',
         'subtitle': 'Entradas e sadas',
         'icon': Icons.inventory_rounded,
-        'cor': ThemeColors.of(context).warning,
+        'cor': ThemeColors.of(context).orangeMain,
         'screen': 'estoque',
       },
     ];
@@ -1270,10 +1287,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           Row(
             children: [
               Icon(Icons.flash_on_rounded, color: ThemeColors.of(context).brandPrimaryGreen, size: 20),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Flexible(
                 child: Text(
-                  'Aes Rpidas',
+                  'Ações Rápidas',
                   style: TextStyle(
                     fontSize: isMobile ? 14 : 16,
                     fontWeight: FontWeight.bold,
@@ -1284,8 +1301,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          SizedBox(height: 12),
-          ...acoes.map((acao) => _buildAcaoItem(acao)).toList(),
+          const SizedBox(height: 12),
+          ...acoes.map((acao) => _buildAcaoItem(acao)),
         ],
       ),
     );
@@ -1303,23 +1320,23 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           onTap: () => setState(() => _currentScreen = acao['screen'] as String),
           borderRadius: BorderRadius.circular(12),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
               color: cor.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: corLight),
+              border: Border.all(color: cor.withValues(alpha: 0.2)),
             ),
             child: Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: corLight,
+                    color: cor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(acao['icon'] as IconData, color: cor, size: 20),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -1348,7 +1365,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 ),
                 if (badge != null)
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: ThemeColors.of(context).error,
                       borderRadius: BorderRadius.circular(12),
@@ -1362,7 +1379,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                       ),
                     ),
                   ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Icon(Icons.chevron_right_rounded, color: cor.withValues(alpha: 0.6), size: 20),
               ],
             ),
@@ -1396,8 +1413,8 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           // Ttulo
           Row(
             children: [
-              Icon(Icons.star_rounded, color: ThemeColors.of(context).warning, size: 18),
-              SizedBox(width: 6),
+              Icon(Icons.star_rounded, color: ThemeColors.of(context).orangeMain, size: 18),
+              const SizedBox(width: 6),
               Expanded(
                 child: Text(
                   'Produtos em Destaque',
@@ -1411,15 +1428,15 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           
           // Seo: Atualizados Recentemente
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: ThemeColors.of(context).primary.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: ThemeColors.of(context).primaryLight),
+              border: Border.all(color: ThemeColors.of(context).primary.withValues(alpha: 0.2)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1428,7 +1445,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 Row(
                   children: [
                     Icon(Icons.schedule_rounded, color: ThemeColors.of(context).primary, size: 14),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Expanded(
                       child: Text(
                         'Atualizados Recentemente',
@@ -1442,10 +1459,10 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 if (recentProducts.isEmpty)
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Center(
                       child: Text(
                         'Nenhum produto cadastrado',
@@ -1465,7 +1482,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                           width: 28,
                           height: 28,
                           decoration: BoxDecoration(
-                            color: ThemeColors.of(context).surfaceSecondary,
+                            color: ThemeColors.of(context).backgroundLight,
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Icon(
@@ -1474,7 +1491,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                             size: 14,
                           ),
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         Expanded(
                           child: Text(
                             produto.nome,
@@ -1487,32 +1504,31 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        if (produto.preco != null)
-                          Text(
-                            'R\$ ${produto.preco!.toStringAsFixed(2)}',
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                              color: ThemeColors.of(context).brandPrimaryGreen,
-                            ),
+                        Text(
+                          'R\$ ${produto.preco.toStringAsFixed(2)}',
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: ThemeColors.of(context).brandPrimaryGreen,
                           ),
+                        ),
                       ],
                     ),
-                  )).toList(),
+                  )),
               ],
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           
-          // Boto Ver Histrico
+          // Boto Ver Histórico
           Center(
             child: TextButton.icon(
               onPressed: () => setState(() => _currentScreen = 'lista'),
-              icon: Icon(Icons.history_rounded, size: 14),
-              label: Text('Ver Histrico Completo', style: TextStyle(fontSize: 11)),
+              icon: const Icon(Icons.history_rounded, size: 14),
+              label: const Text('Ver Histórico Completo', style: TextStyle(fontSize: 11)),
               style: TextButton.styleFrom(
                 foregroundColor: ThemeColors.of(context).primary,
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               ),
             ),
           ),
@@ -1521,7 +1537,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     );
   }
 
-  /// SE��O 6: Categorias com Chips e boto + Nova
+  /// SEããO 6: Categorias com Chips e boto + Nova
   Widget _buildCategoriasSection() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final categorias = _statsState.categoriesStats;
@@ -1546,7 +1562,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           Row(
             children: [
               Icon(Icons.category_rounded, color: ThemeColors.of(context).cyanMain, size: 20),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Expanded(
                 child: Text(
                   'Categorias',
@@ -1562,19 +1578,19 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                 onPressed: () {
                   // TODO: Abrir modal de nova categoria
                 },
-                icon: Icon(Icons.add_rounded, size: 18),
-                label: Text('Nova'),
+                icon: const Icon(Icons.add_rounded, size: 18),
+                label: const Text('Nova'),
                 style: TextButton.styleFrom(
                   foregroundColor: ThemeColors.of(context).brandPrimaryGreen,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           if (categorias.isEmpty)
             Center(
               child: Padding(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 child: Column(
                   children: [
                     Icon(
@@ -1582,12 +1598,12 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                       size: 48,
                       color: ThemeColors.of(context).textSecondaryOverlay50,
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Text(
                       'Nenhuma categoria encontrada',
                       style: TextStyle(color: ThemeColors.of(context).textSecondary),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       'As categorias aparecero aqui quando voc adicionar produtos',
                       style: TextStyle(
@@ -1614,17 +1630,17 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                     },
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                       decoration: BoxDecoration(
-                        color: cat.corLight,
+                        color: cat.cor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: cat.corLight),
+                        border: Border.all(color: cat.cor.withValues(alpha: 0.3)),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(cat.icone, color: cat.cor, size: 18),
-                          SizedBox(width: 6),
+                          const SizedBox(width: 6),
                           Text(
                             cat.nome,
                             style: TextStyle(
@@ -1633,11 +1649,11 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                               fontSize: isMobile ? 12 : 13,
                             ),
                           ),
-                          SizedBox(width: 6),
+                          const SizedBox(width: 6),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: cat.corLight,
+                              color: cat.cor.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
@@ -1670,12 +1686,12 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
     return valor.toStringAsFixed(2);
   }
 
-  /// SE��O 7: Mapa do Mdulo - Todos os menus disponveis em cards pequenos
+  /// SEããO 7: Mapa do Módulo - Todos os menus disponveis em cards pequenos
   Widget _buildMapaModulo() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
-    // Lista de todos os menus/telas disponveis no mdulo
+    // Lista de todos os menus/telas disponveis no módulo
     final menus = [
       _ModuloMenuItem(
         titulo: 'Dashboard',
@@ -1686,7 +1702,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       ),
       _ModuloMenuItem(
         titulo: 'Lista de Produtos',
-        subtitulo: 'Catlogo completo',
+        subtitulo: 'catálogo completo',
         icone: Icons.inventory_2_rounded,
         cor: ThemeColors.of(context).primary,
         onTap: () => setState(() => _currentScreen = 'lista'),
@@ -1702,7 +1718,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         titulo: 'Importar',
         subtitulo: 'CSV/Excel',
         icone: Icons.upload_file_rounded,
-        cor: ThemeColors.of(context).warning,
+        cor: ThemeColors.of(context).orangeMain,
         onTap: () => setState(() => _currentScreen = 'importar'),
       ),
       _ModuloMenuItem(
@@ -1714,7 +1730,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       ),
       _ModuloMenuItem(
         titulo: 'Estoque',
-        subtitulo: 'Gesto de inventrio',
+        subtitulo: 'Gestão de inventrio',
         icone: Icons.warehouse_rounded,
         cor: ThemeColors.of(context).materialTeal,
         onTap: () => setState(() => _currentScreen = 'estoque'),
@@ -1727,7 +1743,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: () {
           // Scroll para seo de categorias ou modal
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Role para ver as categorias acima')),
+            const SnackBar(content: Text('Role para ver as categorias acima')),
           );
         },
       ),
@@ -1739,7 +1755,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Relatrios em desenvolvimento'),
+              content: const Text('Relatrios em desenvolvimento'),
               backgroundColor: ThemeColors.of(context).info,
             ),
           );
@@ -1762,9 +1778,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).brandPrimaryGreenLight,
+                  color: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -1773,13 +1789,13 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: isMobile ? 18 : 20,
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Mapa do Mdulo',
+                      'Mapa do Módulo',
                       style: TextStyle(
                         fontSize: isMobile ? 14 : 16,
                         fontWeight: FontWeight.bold,
@@ -1787,7 +1803,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                       ),
                     ),
                     Text(
-                      'Acesso rpido a todas as funcionalidades',
+                      'Acesso rápido a todas as funcionalidades',
                       style: TextStyle(
                         fontSize: isMobile ? 11 : 12,
                         color: ThemeColors.of(context).textSecondary,
@@ -1799,7 +1815,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           // Grid de cards compactos - calculando tamanho baseado na largura
           LayoutBuilder(
@@ -1807,7 +1823,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               // Calcular tamanho do card baseado na largura disponvel
               final availableWidth = constraints.maxWidth;
               final cardsPerRow = isMobile ? 4 : 8; // 4 em mobile, 8 em desktop
-              final spacing = 8.0;
+              const spacing = 8.0;
               final totalSpacing = spacing * (cardsPerRow - 1);
               final cardWidth = (availableWidth - totalSpacing) / cardsPerRow;
               final cardHeight = cardWidth * 0.85; // Proporo mais quadrada
@@ -1835,11 +1851,11 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: menu.onTap,
         borderRadius: BorderRadius.circular(8),
         child: Container(
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: menu.cor.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: menu.corLight, width: 1),
+            border: Border.all(color: menu.cor.withValues(alpha: 0.2), width: 1),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -1848,9 +1864,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
               Flexible(
                 flex: 2,
                 child: Container(
-                  padding: EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(3),
                   decoration: BoxDecoration(
-                    color: menu.corLight,
+                    color: menu.cor.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: FittedBox(
@@ -1859,7 +1875,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   ),
                 ),
               ),
-              SizedBox(height: 1),
+              const SizedBox(height: 1),
               Flexible(
                 flex: 1,
                 child: FittedBox(
@@ -1908,12 +1924,12 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         onTap: menu.onTap,
         borderRadius: BorderRadius.circular(8),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
           decoration: BoxDecoration(
             color: menu.cor.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: menu.corLight,
+              color: menu.cor.withValues(alpha: 0.2),
               width: 1,
             ),
           ),
@@ -1921,9 +1937,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: menu.corLight,
+                  color: menu.cor.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -1932,7 +1948,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
                   size: 22,
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 menu.titulo,
                 style: TextStyle(
@@ -1962,7 +1978,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }
 }
 
-/// Classe auxiliar para itens do mapa do mdulo
+/// Classe auxiliar para itens do mapa do módulo
 class _ModuloMenuItem {
   final String titulo;
   final String subtitulo;
@@ -1978,8 +1994,6 @@ class _ModuloMenuItem {
     required this.onTap,
   });
 }
-
-
 
 
 

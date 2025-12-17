@@ -3,18 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/reports/presentation/providers/reports_provider.dart';
 import 'package:tagbean/features/reports/data/models/report_models.dart';
 
-class relatÃ³riosPerformanceScreen extends ConsumerStatefulWidget {
-  const relatÃ³riosPerformanceScreen({super.key});
+class RelatoriosPerformanceScreen extends ConsumerStatefulWidget {
+  const RelatoriosPerformanceScreen({super.key});
 
   @override
-  ConsumerState<relatÃ³riosPerformanceScreen> createState() => _relatÃ³riosPerformanceScreenState();
+  ConsumerState<RelatoriosPerformanceScreen> createState() => _RelatoriosPerformanceScreenState();
 }
 
-class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPerformanceScreen>
+class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerformanceScreen>
     with TickerProviderStateMixin, ResponsiveCache {
   late AnimationController _animationController;
   late AnimationController _sparklineController;
@@ -25,7 +24,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
   PerformanceReportsState get _performanceState => ref.watch(performanceReportsProvider);
   
   // Converte os modelos do provider para o formato Map esperado pelos widgets
-  List<Map<String, dynamic>> get _relatÃ³rios {
+  List<Map<String, dynamic>> get _relatorios {
     if (_performanceState.reports.isEmpty) {
       return [];
     }
@@ -38,14 +37,14 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
         'valor': '${report.valorAtual.toStringAsFixed(1)}${report.unidade}',
         'valorNumerico': report.valorAtual,
         'percentual': (report.valorAtual / report.meta * 100).clamp(0, 100),
-        'detalhes': '� Valor atual: ${report.valorAtual.toStringAsFixed(2)} ${report.unidade}\n� Meta: ${report.meta.toStringAsFixed(2)} ${report.unidade}\n� Varia��o: ${report.variacao >= 0 ? '+' : ''}${report.variacao.toStringAsFixed(1)}%',
-        'acao': report.metaAtingida ? 'Meta atingida' : 'Ajustar estrat�gia',
-        'impacto': 'Varia��o: ${report.variacao >= 0 ? '+' : ''}${report.variacao.toStringAsFixed(1)}%',
+        'detalhes': 'ã Valor atual: ${report.valorAtual.toStringAsFixed(2)} ${report.unidade}\nã Meta: ${report.meta.toStringAsFixed(2)} ${report.unidade}\nã Variação: ${report.variacao >= 0 ? '+' : ''}${report.variacao.toStringAsFixed(1)}%',
+        'acao': report.metaAtingida ? 'Meta atingida' : 'Ajustar estratégia',
+        'impacto': 'Variação: ${report.variacao >= 0 ? '+' : ''}${report.variacao.toStringAsFixed(1)}%',
         'impactoNumerico': report.variacao,
         'prioridade': _getPrioridade(report),
         'tag': report.metaAtingida ? 'ATINGIDO' : 'PENDENTE',
         'recomendacao': report.descricao,
-        'prazo': report.metaAtingida ? 'Conclu�do' : '7-15 dias',
+        'prazo': report.metaAtingida ? 'Concluãdo' : '7-15 dias',
       };
     }).toList();
   }
@@ -156,7 +155,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
       );
     }
     
-    if (_relatÃ³rios.isEmpty) {
+    if (_relatorios.isEmpty) {
       return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -164,12 +163,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
             Icon(Icons.analytics_outlined, size: 64, color: ThemeColors.of(context).textSecondary),
             const SizedBox(height: 16),
             Text(
-              'Nenhum dado de performance dispon�vel',
+              'Nenhum dado de performance disponível',
               style: TextStyle(color: ThemeColors.of(context).textSecondary, fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
-              'Execute estrat�gias para gerar m�tricas',
+              'Execute EstratÃ©gias para gerar MÃ©tricas',
               style: TextStyle(color: ThemeColors.of(context).textSecondaryOverlay70, fontSize: 14),
             ),
           ],
@@ -186,12 +185,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.all(20),
-            itemCount: _relatÃ³rios.length + 1,
+            itemCount: _relatorios.length + 1,
             itemBuilder: (context, index) {
-              if (index == _relatÃ³rios.length) {
+              if (index == _relatorios.length) {
                 return _buildAISummary();
               }
-              return _buildEnhancedPerformanceCard(_relatÃ³rios[index], index);
+              return _buildEnhancedPerformanceCard(_relatorios[index], index);
             },
           ),
         ],
@@ -243,26 +242,26 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).successLight,
+                  color: ThemeColors.of(context).success.withValues(alpha: 0.3),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
               ],
             ),
-            child: const Icon(
+            child: Icon(
               Icons.insights_rounded,
               color: ThemeColors.of(context).surface,
               size: 28,
             ),
           ),
           const SizedBox(width: 16),
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'An�lise de Performance',
+                const Text(
+                  'Anãlise de Performance',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -270,9 +269,9 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
-                  'Insights e Recomenda��es IA',
+                  'Insights e Recomendações IA',
                   style: TextStyle(
                     fontSize: 13,
                     color: ThemeColors.of(context).textSecondary,
@@ -362,10 +361,10 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                         letterSpacing: -0.5,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(
-                      'Powered by IA � An�lise de 30 dias',
-                      style: TextStyle(
+                      'Powered by IA é Anãlise de 30 dias',
+                      style: const TextStyle(
                         fontSize: 13,
                         letterSpacing: 0.2,
                       ).copyWith(color: ThemeColors.of(context).surfaceOverlay70),
@@ -376,15 +375,15 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               Container(
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).yellowGoldLight,
+                  color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: ThemeColors.of(context).yellowGoldLight),
+                  border: Border.all(color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.5)),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.auto_awesome_rounded, size: 14, color: ThemeColors.of(context).surface),
-                    SizedBox(width: 6),
+                    const SizedBox(width: 6),
                     Text(
                       'IA',
                       style: TextStyle(
@@ -417,7 +416,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                 ),
                 Container(width: 1, height: 40, color: ThemeColors.of(context).surfaceOverlay30),
                 Expanded(
-                  child: _buildMiniMetricIA('24', 'M�dia', Icons.remove_rounded, ThemeColors.of(context).yellowGold),
+                  child: _buildMiniMetricIA('24', 'Mãdia', Icons.remove_rounded, ThemeColors.of(context).yellowGold),
                 ),
               ],
             ),
@@ -499,11 +498,11 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               const SizedBox(width: 12),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _ordenacaoSelecionada,
+                  initialValue: _ordenacaoSelecionada,
                   style: TextStyle(fontSize: 13, color: ThemeColors.of(context).textPrimary),
                   decoration: InputDecoration(
                     labelText: 'Ordenar por',
-                    labelStyle: TextStyle(fontSize: 11),
+                    labelStyle: const TextStyle(fontSize: 11),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -521,11 +520,11 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               const SizedBox(width: 12),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _filtroCategoria,
+                  initialValue: _filtroCategoria,
                   style: TextStyle(fontSize: 13, color: ThemeColors.of(context).textPrimary),
                   decoration: InputDecoration(
                     labelText: 'Categoria',
-                    labelStyle: TextStyle(fontSize: 11),
+                    labelStyle: const TextStyle(fontSize: 11),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -547,7 +546,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
     );
   }
 
-  Widget _buildEnhancedPerformanceCard(Map<String, dynamic> relatÃ³rio, int index) {
+  Widget _buildEnhancedPerformanceCard(Map<String, dynamic> relatorio, int index) {
     return TweenAnimationBuilder(
       duration: Duration(milliseconds: 400 + (index * 60)),
       tween: Tween<double>(begin: 0, end: 1),
@@ -563,12 +562,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(24),
           border: Border.all(
-            color: (relatÃ³rio['cor'] as Color)Light,
+            color: (relatorio['cor'] as Color).withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: (relatÃ³rio['cor'] as Color)Light,
+              color: (relatorio['cor'] as Color).withValues(alpha: 0.15),
               blurRadius: 25,
               offset: const Offset(0, 8),
             ),
@@ -585,20 +584,20 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    relatÃ³rio['cor'],
-                    (relatÃ³rio['cor'] as Color).withValues(alpha: 0.7),
+                    relatorio['cor'],
+                    (relatorio['cor'] as Color).withValues(alpha: 0.7),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(18),
                 boxShadow: [
                   BoxShadow(
-                    color: (relatÃ³rio['cor'] as Color).withValues(alpha: 0.4),
+                    color: (relatorio['cor'] as Color).withValues(alpha: 0.4),
                     blurRadius: 15,
                     offset: const Offset(0, 6),
                   ),
                 ],
               ),
-              child: Icon(relatÃ³rio['icone'], color: ThemeColors.of(context).surface, size: 32),
+              child: Icon(relatorio['icone'], color: ThemeColors.of(context).surface, size: 32),
             ),
             title: Row(
               children: [
@@ -607,8 +606,8 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        relatÃ³rio['titulo'],
-                        style: TextStyle(
+                        relatorio['titulo'],
+                        style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                           letterSpacing: -0.5,
@@ -620,7 +619,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                           Icon(Icons.timer_rounded, size: 12, color: ThemeColors.of(context).textSecondary),
                           const SizedBox(width: 4),
                           Text(
-                            'Prazo: ${relatÃ³rio['prazo']}',
+                            'Prazo: ${relatorio['prazo']}',
                             style: TextStyle(
                               fontSize: 10,
                               color: ThemeColors.of(context).textSecondary,
@@ -635,18 +634,18 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: _getPrioridadeCor(relatÃ³rio['prioridade'])Light,
+                    color: _getPrioridadeCor(relatorio['prioridade']).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                      color: _getPrioridadeCor(relatÃ³rio['prioridade'])Light,
+                      color: _getPrioridadeCor(relatorio['prioridade']).withValues(alpha: 0.3),
                     ),
                   ),
                   child: Text(
-                    relatÃ³rio['tag'],
+                    relatorio['tag'],
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      color: _getPrioridadeCor(relatÃ³rio['prioridade']),
+                      color: _getPrioridadeCor(relatorio['prioridade']),
                       letterSpacing: 0.5,
                     ),
                   ),
@@ -658,7 +657,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               children: [
                 const SizedBox(height: 8),
                 Text(
-                  relatÃ³rio['subtitulo'],
+                  relatorio['subtitulo'],
                   style: TextStyle(
                     fontSize: 12,
                     color: ThemeColors.of(context).textSecondary,
@@ -670,13 +669,13 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        (relatÃ³rio['cor'] as Color)Light,
-                        (relatÃ³rio['cor'] as Color)Light,
+                        (relatorio['cor'] as Color).withValues(alpha: 0.15),
+                        (relatorio['cor'] as Color).withValues(alpha: 0.05),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: (relatÃ³rio['cor'] as Color)Light,
+                      color: (relatorio['cor'] as Color).withValues(alpha: 0.3),
                     ),
                   ),
                   child: Row(
@@ -686,17 +685,17 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              relatÃ³rio['valor'],
+                              relatorio['valor'],
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                color: relatÃ³rio['cor'],
+                                color: relatorio['cor'],
                                 letterSpacing: -0.5,
                               ),
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              '${relatÃ³rio['percentual'].toStringAsFixed(1)}% do total',
+                              '${relatorio['percentual'].toStringAsFixed(1)}% do total',
                               style: TextStyle(
                                 fontSize: 11,
                                 color: ThemeColors.of(context).textSecondary,
@@ -708,12 +707,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: relatÃ³rio['cor']Light,
+                          color: relatorio['cor'].withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Icon(
                           Icons.auto_awesome_rounded,
-                          color: relatÃ³rio['cor'],
+                          color: relatorio['cor'],
                           size: 20,
                         ),
                       ),
@@ -742,18 +741,18 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: (relatÃ³rio['cor'] as Color)Light,
+                            color: (relatorio['cor'] as Color).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Icon(
                             Icons.analytics_rounded,
                             size: 18,
-                            color: relatÃ³rio['cor'],
+                            color: relatorio['cor'],
                           ),
                         ),
                         const SizedBox(width: 12),
                         Text(
-                          'An�lise de Performance',
+                          'Anãlise de Performance',
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
@@ -771,7 +770,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                         border: Border.all(color: ThemeColors.of(context).textSecondary),
                       ),
                       child: Text(
-                        relatÃ³rio['detalhes'],
+                        relatorio['detalhes'],
                         style: TextStyle(
                           fontSize: 13,
                           color: ThemeColors.of(context).textSecondary,
@@ -785,13 +784,13 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            (relatÃ³rio['cor'] as Color)Light,
-                            (relatÃ³rio['cor'] as Color)Light,
+                            (relatorio['cor'] as Color).withValues(alpha: 0.1),
+                            (relatorio['cor'] as Color).withValues(alpha: 0.05),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: (relatÃ³rio['cor'] as Color)Light,
+                          color: (relatorio['cor'] as Color).withValues(alpha: 0.3),
                         ),
                       ),
                       child: Column(
@@ -802,22 +801,22 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                               Icon(
                                 Icons.lightbulb_rounded,
                                 size: 18,
-                                color: relatÃ³rio['cor'],
+                                color: relatorio['cor'],
                               ),
                               const SizedBox(width: 10),
                               Text(
-                                'Recomenda��o IA',
+                                'RecomendAÃ§ão IA',
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
-                                  color: relatÃ³rio['cor'],
+                                  color: relatorio['cor'],
                                 ),
                               ),
                             ],
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            relatÃ³rio['acao'],
+                            relatorio['acao'],
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
@@ -826,7 +825,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                           ),
                           const SizedBox(height: 6),
                           Text(
-                            relatÃ³rio['recomendacao'],
+                            relatorio['recomendacao'],
                             style: TextStyle(
                               fontSize: 12,
                               color: ThemeColors.of(context).textSecondary,
@@ -845,7 +844,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                                 Icon(Icons.trending_up_rounded, size: 16, color: ThemeColors.of(context).successIcon),
                                 const SizedBox(width: 8),
                                 Text(
-                                  relatÃ³rio['impacto'],
+                                  relatorio['impacto'],
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -863,12 +862,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                       children: [
                         Expanded(
                           child: OutlinedButton.icon(
-                            onPressed: () => _verListarelatÃ³rio(relatÃ³rio),
-                            icon: Icon(Icons.list_rounded, size: 16, color: relatÃ³rio['cor']),
-                            label: Text('Ver Lista', style: TextStyle(color: relatÃ³rio['cor'], fontSize: 12)),
+                            onPressed: () => _verListaRelatorio(relatorio),
+                            icon: Icon(Icons.list_rounded, size: 16, color: relatorio['cor']),
+                            label: Text('Ver Lista', style: TextStyle(color: relatorio['cor'], fontSize: 12)),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
-                              side: BorderSide(color: relatÃ³rio['cor'], width: 1.5),
+                              side: BorderSide(color: relatorio['cor'], width: 1.5),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -878,12 +877,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                         const SizedBox(width: 12),
                         Expanded(
                           child: ElevatedButton.icon(
-                            onPressed: () => _aplicarrelatÃ³rio(relatÃ³rio),
+                            onPressed: () => _aplicarRelatorio(relatorio),
                             icon: const Icon(Icons.play_arrow_rounded, size: 16),
                             label: const Text('Aplicar', style: TextStyle(fontSize: 12)),
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
-                              backgroundColor: relatÃ³rio['cor'],
+                              backgroundColor: relatorio['cor'],
                               foregroundColor: ThemeColors.of(context).surface,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -953,11 +952,11 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
               children: [
                 _buildSummaryRow(Icons.attach_money_rounded, 'Potencial de ganho: ${_performanceState.potencialGanhoFormatted}', ThemeColors.of(context).success),
                 const SizedBox(height: 10),
-                _buildSummaryRow(Icons.warning_rounded, '${_performanceState.acoesUrgentes} a��es urgentes necess�rias', ThemeColors.of(context).error),
+                _buildSummaryRow(Icons.warning_rounded, '${_performanceState.acoesUrgentes} ações urgentes necessãrias', ThemeColors.of(context).error),
                 const SizedBox(height: 10),
                 _buildSummaryRow(Icons.trending_up_rounded, '${_performanceState.oportunidadesCrescimento} oportunidades de crescimento', ThemeColors.of(context).primary),
                 const SizedBox(height: 10),
-                _buildSummaryRow(Icons.timeline_rounded, 'Previs�o: ${_performanceState.crescimentoPrevistoFormatted}', ThemeColors.of(context).primary),
+                _buildSummaryRow(Icons.timeline_rounded, 'Previsão: ${_performanceState.crescimentoPrevistoFormatted}', ThemeColors.of(context).primary),
               ],
             ),
           ),
@@ -998,8 +997,8 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
     }
   }
 
-  /// Mostra lista detalhada do relat�rio
-  void _verListarelatÃ³rio(Map<String, dynamic> relatÃ³rio) {
+  /// Mostra lista detalhada do relatãrio
+  void _verListaRelatorio(Map<String, dynamic> relatorio) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -1011,7 +1010,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
         builder: (context, scrollController) => Container(
           decoration: BoxDecoration(
             color: ThemeColors.of(context).surface,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
           ),
           child: Column(
             children: [
@@ -1031,10 +1030,10 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: (relatÃ³rio['cor'] as Color)Light,
+                        color: (relatorio['cor'] as Color).withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Icon(Icons.list_rounded, color: relatÃ³rio['cor'], size: 22),
+                      child: Icon(Icons.list_rounded, color: relatorio['cor'], size: 22),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
@@ -1042,12 +1041,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            relatÃ³rio['titulo'] ?? 'Detalhes',
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            relatorio['titulo'] ?? 'Detalhes',
+                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            '${relatÃ³rio['produtos'] ?? 0} itens encontrados',
-                            style: TextStyle(fontSize: 13, color: ThemeColors.of(context).textSecondary),
+                            '${relatorio['produtos'] ?? 0} itens encontrados',
+                            style: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey600),
                           ),
                         ],
                       ),
@@ -1071,7 +1070,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                     decoration: BoxDecoration(
                       color: ThemeColors.of(context).grey50,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: ThemeColors.of(context).borderLight!),
+                      border: Border.all(color: ThemeColors.of(context).grey200),
                     ),
                     child: Row(
                       children: [
@@ -1079,7 +1078,7 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                           width: 8,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: relatÃ³rio['cor'],
+                            color: relatorio['cor'],
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
@@ -1088,12 +1087,12 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Item ${index + 1}', style: TextStyle(fontWeight: FontWeight.w600)),
-                              Text('Detalhes do item', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary)),
+                              Text('Item ${index + 1}', style: const TextStyle(fontWeight: FontWeight.w600)),
+                              Text('Detalhes do item', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).grey600)),
                             ],
                           ),
                         ),
-                        Icon(Icons.chevron_right_rounded, color: ThemeColors.of(context).textTertiary),
+                        Icon(Icons.chevron_right_rounded, color: ThemeColors.of(context).grey400),
                       ],
                     ),
                   ),
@@ -1106,8 +1105,8 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
     );
   }
 
-  /// Aplica a��o do relat�rio
-  void _aplicarrelatÃ³rio(Map<String, dynamic> relatÃ³rio) {
+  /// Aplica AÃ§ão do relatãrio
+  void _aplicarRelatorio(Map<String, dynamic> relatorio) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Row(
@@ -1122,11 +1121,11 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
             ),
             const SizedBox(width: 12),
             Expanded(
-              child: Text('Aplicando ${relatÃ³rio['titulo'] ?? 'relat�rio'}...'),
+              child: Text('Aplicando ${relatorio['titulo'] ?? 'relatÃÂ£rio'}...'),
             ),
           ],
         ),
-        backgroundColor: relatÃ³rio['cor'] as Color,
+        backgroundColor: relatorio['cor'] as Color,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         margin: const EdgeInsets.all(16),
@@ -1135,10 +1134,6 @@ class _relatÃ³riosPerformanceScreenState extends ConsumerState<relatÃ³riosPe
     );
   }
 }
-
-
-
-
 
 
 

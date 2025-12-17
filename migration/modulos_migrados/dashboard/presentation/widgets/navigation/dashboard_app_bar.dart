@@ -84,8 +84,8 @@ class DashboardAppBar extends ConsumerWidget {
             ],
             // Seletor de Loja - usa Expanded para ocupar espaço disponível
             if (!isMobile) const SizedBox(width: 8),
-            Expanded(
-              child: const StoreSelector(),
+            const Expanded(
+              child: StoreSelector(),
             ),
             
             // Search bar apenas para desktop grande
@@ -101,7 +101,7 @@ class DashboardAppBar extends ConsumerWidget {
             ],
             const SizedBox(width: 8),
             // Theme selector button
-            _AppBarThemeButton(),
+            const _AppBarThemeButton(),
             const SizedBox(width: 8),
             // Notification button
             _AppBarNotificationButton(

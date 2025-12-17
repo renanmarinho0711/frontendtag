@@ -9,9 +9,7 @@ import 'package:tagbean/features/categories/presentation/screens/categories_stat
 import 'package:tagbean/features/categories/presentation/providers/categories_provider.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class CategoriasMenuScreen extends ConsumerStatefulWidget {
   const CategoriasMenuScreen({super.key});
 
@@ -708,7 +706,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Text(
                                 opcao['titulo'],
                                 textAlign: TextAlign.center,
@@ -726,7 +724,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 opcao['subtitulo'],
                                 textAlign: TextAlign.center,

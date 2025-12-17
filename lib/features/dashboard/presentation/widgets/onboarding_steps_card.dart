@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 import 'package:tagbean/features/dashboard/data/models/dashboard_models.dart';
 
-/// Card de Primeiros Passos - Guia usurios novos pelo sistema
+/// Card de Primeiros Passos - Guia Usuários novos pelo sistema
 /// Substitui o card de "Atalhos Rpidos" que tinha conflitos com o navegador
 class OnboardingStepsCard extends ConsumerWidget {
   final VoidCallback? onImportProducts;
@@ -54,7 +55,7 @@ class OnboardingStepsCard extends ConsumerWidget {
             ),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: ThemeColors.of(context).onboardingBorderLight,
+              color: ThemeColors.of(context).onboardingBorder.withValues(alpha: 0.5),
               width: 1,
             ),
           ),
@@ -67,7 +68,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).onboardingIconLight,
+                      color: ThemeColors.of(context).onboardingIcon.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(
@@ -110,7 +111,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                       children: [
                         CircularProgressIndicator(
                           value: completed / total,
-                          backgroundColor: ThemeColors.of(context).borderLight,
+                          backgroundColor: ThemeColors.of(context).grey200,
                           valueColor: AlwaysStoppedAnimation<Color>(
                             ThemeColors.of(context).onboardingProgress,
                           ),
@@ -118,7 +119,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                         ),
                         Text(
                           '${((completed / total) * 100).toInt()}%',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                           ),
@@ -135,7 +136,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
                   value: completed / total,
-                  backgroundColor: ThemeColors.of(context).borderLight,
+                  backgroundColor: ThemeColors.of(context).grey200,
                   valueColor: AlwaysStoppedAnimation<Color>(
                     ThemeColors.of(context).onboardingProgress,
                   ),
@@ -214,16 +215,16 @@ class OnboardingStepsCard extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           decoration: BoxDecoration(
             color: completed 
-                ? ThemeColors.of(context).successLight
+                ? ThemeColors.of(context).greenMain.withValues(alpha: 0.1)
                 : isNext
-                    ? ThemeColors.of(context).greenMaterialLight
+                    ? ThemeColors.of(context).greenMaterial.withValues(alpha: 0.1)
                     : ThemeColors.of(context).grey100,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: completed
-                  ? ThemeColors.of(context).successLight
+                  ? ThemeColors.of(context).greenMain.withValues(alpha: 0.3)
                   : isNext
-                      ? ThemeColors.of(context).greenMaterialLight
+                      ? ThemeColors.of(context).greenMaterial.withValues(alpha: 0.3)
                       : ThemeColors.of(context).grey300,
               width: isNext ? 2 : 1,
             ),
@@ -237,10 +238,10 @@ class OnboardingStepsCard extends ConsumerWidget {
                 height: 24,
                 decoration: BoxDecoration(
                   color: completed
-                      ? ThemeColors.of(context).success
+                      ? ThemeColors.of(context).greenMain
                       : isNext
                           ? ThemeColors.of(context).greenMaterial
-                          : ThemeColors.of(context).textTertiary,
+                          : ThemeColors.of(context).grey400,
                   shape: BoxShape.circle,
                 ),
                 child: Center(
@@ -264,7 +265,7 @@ class OnboardingStepsCard extends ConsumerWidget {
                   fontSize: 12,
                   fontWeight: isNext ? FontWeight.bold : FontWeight.w500,
                   color: completed
-                      ? ThemeColors.of(context).success
+                      ? ThemeColors.of(context).greenMain
                       : isNext
                           ? ThemeColors.of(context).greenMaterial
                           : ThemeColors.of(context).textSecondary,
@@ -287,9 +288,6 @@ class OnboardingStepsCard extends ConsumerWidget {
     );
   }
 }
-
-
-
 
 
 

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/design_system/theme/icons.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Dados de tema para cada m�dulo
 /// 
@@ -76,10 +74,10 @@ class ModuleThemes {
     gradient: AppThemeColors.importacaoGradient,
   );
 
-  static const relatÃ³rios = ModuleThemeData(
+  static const relatorios = ModuleThemeData(
     label: 'Relat�rios',
-    icon: AppIcons.relatÃ³rios,
-    gradient: AppThemeColors.relatÃ³riosGradient,
+    icon: AppIcons.relatorios,
+    gradient: AppThemeColors.relatoriosGradient,
   );
 
   static const configuracoes = ModuleThemeData(
@@ -101,7 +99,7 @@ class ModuleThemes {
         return produtos;
       case 'etiquetas':
         return etiquetas;
-      case 'estrategias':
+      case 'estratégias':
       case 'estrat�gias':
         return estrategias;
       case 'sincronizacao':
@@ -115,9 +113,9 @@ class ModuleThemes {
       case 'importacao':
       case 'importa��o':
         return importacao;
-      case 'relatÃ³rios':
+      case 'relatorios':
       case 'relat�rios':
-        return relatÃ³rios;
+        return relatorios;
       case 'configuracoes':
       case 'configura��es':
         return configuracoes;
@@ -138,7 +136,7 @@ class ModuleThemes {
     precificacao,
     categorias,
     importacao,
-    relatÃ³rios,
+    relatorios,
     configuracoes,
   ];
 }

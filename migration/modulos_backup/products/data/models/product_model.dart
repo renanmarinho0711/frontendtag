@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'product_tag_model.dart';
 

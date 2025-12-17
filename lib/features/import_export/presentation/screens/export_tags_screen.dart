@@ -5,7 +5,6 @@ import 'package:tagbean/features/import_export/data/models/import_export_models.
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 
 class ExportacaoTagsScreen extends ConsumerStatefulWidget {
@@ -30,7 +29,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
   bool get _incluirMetricas => _state.config.includeMetrics;
   bool get _incluirHistorico => _state.config.includeHistory;
 
-  final Map<String, Map<String, dynamic>> _formatos = {
+  Map<String, Map<String, dynamic>> _getFormatos(BuildContext context) => {
     'excel': {
       'nome': 'Microsoft Excel',
       'subtitulo': 'Planilha completa (.xlsx)',
@@ -195,14 +194,14 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).info],
+                colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain],
               ),
               borderRadius: BorderRadius.circular(
                 isMobile ? 12 : (isTablet ? 13 : 14),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).primaryLight,
+                  color: ThemeColors.of(context).primary.withValues(alpha: 0.3),
                   blurRadius: isMobile ?  10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -245,7 +244,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                   ),
                 ),
                 Text(
-                  'Relat?rio Completo de ESLs',
+                  'Relatãrio Completo de ESLs',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -304,7 +303,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                       ),
                     overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: ThemeColors.of(context).successDark,
+                      color: ThemeColors.of(context).success.withValues(alpha: 0.8),
                     ),
                   ),
                 ],
@@ -371,7 +370,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         ),
         boxShadow: [
           BoxShadow(
-            color: colorLight,
+            color: color.withValues(alpha: 0.1),
             blurRadius: isMobile ? 12 : 15,
             offset: const Offset(0, 4),
           ),
@@ -490,7 +489,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               ),
               Expanded(
                 child: Text(
-                  'Formato de Exporta??o',
+                  'Formato de ExportAção',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -510,7 +509,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           isMobile && !ResponsiveHelper.isLandscape(context)
               ? Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: _formatos.entries.map((entry) {
+                  children: _getFormatos(context).entries.map((entry) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: _buildFormatOption(entry.key, entry.value),
@@ -519,7 +518,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                 )
               : Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: _formatos.entries.map((entry) {
+                  children: _getFormatos(context).entries.map((entry) {
                     return Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10),
@@ -547,7 +546,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         ),
         decoration: BoxDecoration(
           color: isSelected
-              ? (formato['cor'] as Color)Light
+              ? (formato['cor'] as Color).withValues(alpha: 0.1)
               : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
@@ -686,7 +685,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             children: [
               _buildFilterChip('todas', 'Todas (1.248)', Icons.grid_view_rounded),
               _buildFilterChip('associadas', 'Associadas (1.127)', Icons.link_rounded),
-              _buildFilterChip('disponiveis', 'Dispon?veis (121)', Icons.check_circle_rounded),
+              _buildFilterChip('disponiveis', 'Disponíveis (121)', Icons.check_circle_rounded),
               _buildFilterChip('offline', 'Offline (28)', Icons.wifi_off_rounded),
             ],
           ),
@@ -732,7 +731,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         ),
         decoration: BoxDecoration(
           gradient: isSelected
-              ? LinearGradient(colors: [ThemeColors.of(context).primary, ThemeColors.of(context).info])
+              ? LinearGradient(colors: [ThemeColors.of(context).primary, ThemeColors.of(context).blueMain])
               : null,
           color: isSelected ? null : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -851,8 +850,8 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           ),
           ResponsiveSpacing.verticalMedium(context),
           _buildOptionSwitch(
-            'Localiza??o F?sica',
-            'Corredor, prateleira e posi??o',
+            'LocalizAção Fãsica',
+            'Corredor, prateleira e posição',
             _incluirLocalizacao,
             Icons.location_on_rounded,
             (value) => _notifier.toggleIncludeLocation(),
@@ -862,7 +861,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           ),
           _buildOptionSwitch(
             'Produtos Associados',
-            'Nome, c?digo e pre?o do produto',
+            'Nome, código e preço do produto',
             _incluirProdutos,
             Icons.inventory_2_rounded,
             (value) => _notifier.toggleIncludeProducts(),
@@ -871,8 +870,8 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             height: AppSizes.spacingBase.get(isMobile, isTablet),
           ),
           _buildOptionSwitch(
-            'M?tricas de Performance',
-            'Bateria, sinal, uptime e atualiza??es',
+            'Mãtricas de Performance',
+            'Bateria, sinal, uptime e atualizações',
             _incluirMetricas,
             Icons.analytics_rounded,
             (value) => _notifier.toggleIncludeMetrics(),
@@ -881,8 +880,8 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             height: AppSizes.spacingBase.get(isMobile, isTablet),
           ),
           _buildOptionSwitch(
-            'Hist?rico de Atividades',
-            '?ltima atualiza??o e eventos',
+            'Histórico de Atividades',
+            'Última atualizAção e eventos',
             _incluirHistorico,
             Icons.history_rounded,
             (value) => _notifier.toggleIncludeHistory(),
@@ -977,7 +976,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: ThemeColors.of(context).primaryDark,
+              activeThumbColor: ThemeColors.of(context).primaryDark,
             ),
           ),
         ],
@@ -995,7 +994,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 16 : (isTablet ? 18 : 20),
@@ -1033,7 +1032,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).primaryDark,
+                  color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
                 ),
               ),
             ],
@@ -1065,17 +1064,17 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               ],
               if (_incluirProdutos) ...[
                 _buildColumnChip('Produto'),
-                _buildColumnChip('C?digo'),
-                _buildColumnChip('Pre?o'),
+                _buildColumnChip('Cãdigo'),
+                _buildColumnChip('PREÇO'),
               ],
               if (_incluirMetricas) ...[
                 _buildColumnChip('Uptime'),
                 _buildColumnChip('Updates'),
                 _buildColumnChip('Erros'),
-                _buildColumnChip('Lat?ncia'),
+                _buildColumnChip('Latãncia'),
               ],
               if (_incluirHistorico) ...[
-                _buildColumnChip('?ltima Atualiza??o'),
+                _buildColumnChip('Última AtualizAção'),
                 _buildColumnChip('Eventos'),
               ],
             ],
@@ -1123,7 +1122,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
   Widget _buildSummaryCard() {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    final formato = _formatos[_formatoSelecionado]!;
+    final formato = _getFormatos(context)[_formatoSelecionado]!;
     final tamanhoEstimado = (_totalTags * 0.015 * _totalColunas / 4).toStringAsFixed(1);
     final timestamp = DateTime.now().millisecondsSinceEpoch;
 
@@ -1161,7 +1160,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                 ),
               ),
               Text(
-                'Resumo da Exporta??o',
+                'Resumo da ExportAção',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1242,7 +1241,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
   }
 
   Widget _buildExportFAB() {
-    final formato = _formatos[_formatoSelecionado]!;
+    final formato = _getFormatos(context)[_formatoSelecionado]!;
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return FloatingActionButton.extended(
@@ -1268,7 +1267,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
   }
 
   void _executarExportacao() async {
-    final formato = _formatos[_formatoSelecionado]!;
+    final formato = _getFormatos(context)[_formatoSelecionado]!;
     final isMobile = ResponsiveHelper.isMobile(context);
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1276,7 +1275,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
         content: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(
+            SizedBox(
               width: 20,
               height: 20,
               child: CircularProgressIndicator(
@@ -1297,7 +1296,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
       ),
     );
 
-    // Executar exporta??o real via provider
+    // Executar exportAção real via provider
     final workContext = ref.read(workContextProvider);
     final storeId = workContext.context.currentStoreId ?? '';
     await _notifier.exportTags(storeId);
@@ -1318,7 +1317,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                 Flexible(
                   child: Text(
                     _state.result != null 
-                        ? 'Exporta??o conclu?da: ${_state.result!.recordCount} tags'
+                        ? 'ExportAção Concluída: ${_state.result!.recordCount} tags'
                         : 'Tags exportadas com sucesso!',
                   ),
                 ),
@@ -1342,11 +1341,6 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
     }
   }
 }
-
-
-
-
-
 
 
 

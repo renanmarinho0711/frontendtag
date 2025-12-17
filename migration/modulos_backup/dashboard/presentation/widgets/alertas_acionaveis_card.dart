@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
@@ -285,7 +285,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                       ),
                       Text(
                         '${alertasAtivos.length} ${alertasAtivos.length == 1 ? 'item requer' : 'itens requerem'} atenção',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           color: AppThemeColors.textSecondary,
                         ),
@@ -333,7 +333,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                       _expanded 
                           ? 'Mostrar menos' 
                           : 'Ver todos os ${alertasAtivos.length} alertas',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppThemeColors.textSecondary,
@@ -399,7 +399,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
           Expanded(
             child: Text(
               alerta.titulo,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
                 color: AppThemeColors.textPrimary,
@@ -459,7 +459,7 @@ class _AlertasAcionaveisCardState extends ConsumerState<AlertasAcionaveisCard> {
                 if (alerta.onIgnorar != null && !isMobile)
                   IconButton(
                     onPressed: alerta.onIgnorar,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.close_rounded,
                       color: AppThemeColors.textSecondary,
                       size: 18,

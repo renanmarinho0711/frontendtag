@@ -192,10 +192,10 @@ class NextActionCard extends ConsumerWidget {
                             children: [
                               Icon(Icons.schedule_rounded, color: ThemeColors.of(context).surface, size: 20),
                               const SizedBox(width: 12),
-                              Expanded(
+                              const Expanded(
                                 child: Text(
                                   'Lembraremos você mais tarde',
-                                  style: const TextStyle(fontWeight: FontWeight.w500),
+                                  style: TextStyle(fontWeight: FontWeight.w500),
                                 ),
                               ),
                             ],

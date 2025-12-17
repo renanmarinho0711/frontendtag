@@ -1,7 +1,6 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Boto de ajuda flutuante que mostra dicas contextuais
@@ -22,18 +21,19 @@ class HelpButton extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: ThemeColors.of(context).transparent,
+      backgroundColor: Colors.transparent,
       builder: (context) => _HelpSheet(title: title, items: items),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return IconButton(
       onPressed: () => _showHelp(context),
       icon: Icon(
         Icons.help_outline_rounded,
-        color: color ?? ThemeColors.of(context).textSecondary,
+        color: color ?? colors.textSecondary,
       ),
       tooltip: 'Ajuda',
     );
@@ -51,14 +51,15 @@ class _HelpSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return DraggableScrollableSheet(
       initialChildSize: 0.6,
       minChildSize: 0.4,
       maxChildSize: 0.9,
       builder: (context, scrollController) => Container(
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          color: colors.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
           children: [
@@ -68,7 +69,7 @@ class _HelpSheet extends StatelessWidget {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).grey300,
+                color: colors.grey300,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -80,12 +81,12 @@ class _HelpSheet extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: ThemeColors.of(context).primaryPastel,
+                      color: colors.primaryPastel,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.help_rounded,
-                      color: ThemeColors.of(context).primary,
+                      color: colors.primary,
                       size: 24,
                     ),
                   ),
@@ -105,7 +106,7 @@ class _HelpSheet extends StatelessWidget {
                           title,
                           style: TextStyle(
                             fontSize: 13,
-                            color: ThemeColors.of(context).grey600,
+                            color: colors.grey600,
                           ),
                         ),
                       ],
@@ -146,12 +147,13 @@ class _HelpItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).grey50,
+        color: colors.grey50,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ThemeColors.of(context).grey200!),
+        border: Border.all(color: colors.grey200),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +161,7 @@ class _HelpItemCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Color.alphaBlend(ThemeColors.of(context).surface.withValues(alpha: 0.9), item.color),
+              color: Color.alphaBlend(colors.surface.withValues(alpha: 0.9), item.color),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(item.icon, color: item.color, size: 20),
@@ -171,7 +173,7 @@ class _HelpItemCard extends StatelessWidget {
               children: [
                 Text(
                   item.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                   ),
@@ -181,7 +183,7 @@ class _HelpItemCard extends StatelessWidget {
                   item.description,
                   style: TextStyle(
                     fontSize: 13,
-                    color: ThemeColors.of(context).grey600,
+                    color: colors.grey600,
                     height: 1.4,
                   ),
                 ),
@@ -208,7 +210,7 @@ class _HelpItemCard extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold,
-                                  color: ThemeColors.of(context).surface,
+                                  color: colors.surface,
                                 ),
                               ),
                             ),
@@ -219,7 +221,7 @@ class _HelpItemCard extends StatelessWidget {
                               step,
                               style: TextStyle(
                                 fontSize: 12,
-                                color: ThemeColors.of(context).grey700,
+                                color: colors.grey700,
                               ),
                             ),
                           ),
@@ -249,7 +251,7 @@ class HelpItem {
     required this.title,
     required this.description,
     required this.icon,
-    this.color = ThemeColors.of(context).roleManager,
+    this.color = const Color(0xFF6366F1), // roleManager default
     this.steps,
   });
 }
@@ -277,13 +279,14 @@ class ActionButtonWithHelp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final button = ElevatedButton.icon(
       onPressed: onPressed,
       icon: Icon(icon),
       label: Text(label),
       style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ?? ThemeColors.of(context).primary,
-        foregroundColor: foregroundColor ?? ThemeColors.of(context).surface,
+        backgroundColor: backgroundColor ?? colors.primary,
+        foregroundColor: foregroundColor ?? colors.surface,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
@@ -328,6 +331,7 @@ class InputWithHint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -336,7 +340,7 @@ class InputWithHint extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
               ),
@@ -348,7 +352,7 @@ class InputWithHint extends StatelessWidget {
                 child: Icon(
                   Icons.info_outline_rounded,
                   size: 16,
-                  color: ThemeColors.of(context).grey500,
+                  color: colors.grey500,
                 ),
               ),
             ],
@@ -370,14 +374,14 @@ class InputWithHint extends StatelessWidget {
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: ThemeColors.of(context).grey300!),
+              borderSide: BorderSide(color: colors.grey300),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: ThemeColors.of(context).primary, width: 2),
+              borderSide: BorderSide(color: colors.primary, width: 2),
             ),
             filled: true,
-            fillColor: ThemeColors.of(context).grey50,
+            fillColor: colors.grey50,
           ),
         ),
       ],
@@ -400,15 +404,16 @@ class KeyboardShortcutHint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).grey200,
+            color: colors.grey200,
             borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: ThemeColors.of(context).grey300!),
+            border: Border.all(color: colors.grey300),
           ),
           child: Text(
             shortcut,
@@ -416,7 +421,7 @@ class KeyboardShortcutHint extends StatelessWidget {
               fontSize: 11,
               fontWeight: FontWeight.w600,
               fontFamily: 'monospace',
-              color: color ?? ThemeColors.of(context).grey700,
+              color: color ?? colors.grey700,
             ),
           ),
         ),
@@ -425,7 +430,7 @@ class KeyboardShortcutHint extends StatelessWidget {
           action,
           style: TextStyle(
             fontSize: 12,
-            color: ThemeColors.of(context).grey600,
+            color: colors.grey600,
           ),
         ),
       ],

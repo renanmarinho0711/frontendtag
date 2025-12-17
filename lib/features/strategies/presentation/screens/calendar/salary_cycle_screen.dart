@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/providers/calendar_provider.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 
@@ -81,7 +80,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              backgroundColor: ThemeColors.of(context).success,
+              backgroundColor: ThemeColors.of(context).greenMain,
             ),
           Positioned(
             right: 0,
@@ -158,7 +157,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
+                colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark],
               ),
               borderRadius: BorderRadius.circular(
                 isMobile ? 10 : 12,
@@ -179,7 +178,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Ciclo de Sal?rio',
+                  'Ciclo de Salário',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -247,7 +246,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
         controller: _tabController,
         indicator: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
+            colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 10 : 12,
@@ -270,14 +269,14 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
               Icons.settings_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Configura??o',
+            text: 'ConfigurAção',
           ),
           Tab(
             icon: Icon(
               Icons.history_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Hist?rico',
+            text: 'Histórico',
           ),
         ],
       ),
@@ -310,18 +309,18 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           _buildAjusteCard(
-            'In?cio do M?s (P?s-Pagamento)',
+            'Inãcio do Mãs (Pãs-Pagamento)',
             'Dias 1-${state.diasPagamento}',
             state.ajusteInicio,
             Icons.trending_up_rounded,
-            ThemeColors.of(context).success,
+            ThemeColors.of(context).greenMain,
             (v) => ref.read(salaryCycleProvider.notifier).setAjusteInicio(v),
           ),
           SizedBox(
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           _buildAjusteCard(
-            'Fim do M?s (Pr?-Pagamento)',
+            'Fim do Mãs (Prã-Pagamento)',
             'Dias ${30 - state.diasPagamento}-30',
             state.ajusteFim,
             Icons.trending_down_rounded,
@@ -381,14 +380,14 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).success, ThemeColors.of(context).greenDark],
+          colors: [ThemeColors.of(context).greenMain, ThemeColors.of(context).greenDark],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 20 : (isTablet ? 22 : 24),
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).success.withValues(alpha: 0.4),
+            color: ThemeColors.of(context).greenMain.withValues(alpha: 0.4),
             blurRadius: isMobile ? 20 : 25,
             offset: Offset(0, isMobile ? 10 : 12),
           ),
@@ -439,7 +438,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  state.isStrategyActive ? 'Ajustes autom?ticos ativos' : 'Ajustes desativados',
+                  state.isStrategyActive ? 'Ajustes Automáticos ativos' : 'Ajustes desativados',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -458,7 +457,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
             child: Switch(
               value: state.isStrategyActive,
               onChanged: (value) => ref.read(salaryCycleProvider.notifier).setStrategyActive(value),
-              activeColor: ThemeColors.of(context).surface,
+              activeThumbColor: ThemeColors.of(context).surface,
               activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
             ),
           ),
@@ -494,7 +493,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
           ),
           Expanded(
             child: Text(
-              'Sistema ajusta pre?os automaticamente baseado no ciclo de pagamento mensal dos consumidores',
+              'Sistema ajusta preços automaticamente baseado no ciclo de pagamento mensal dos consumidores',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -543,14 +542,14 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).infoLight,
+                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
                 ),
                 child: Icon(
                   Icons.calendar_view_week_rounded,
-                  color: ThemeColors.of(context).info,
+                  color: ThemeColors.of(context).blueMain,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -578,7 +577,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                       height: AppSizes.paddingXxs.get(isMobile, isTablet),
                     ),
                     Text(
-                      'Aplicar ajuste tamb?m no dia 15',
+                      'Aplicar ajuste tambãm no dia 15',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -597,7 +596,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                 child: Switch(
                   value: state.monitorarQuinzena,
                   onChanged: (value) => ref.read(salaryCycleProvider.notifier).setMonitorarQuinzena(value),
-                  activeColor: ThemeColors.of(context).info,
+                  activeThumbColor: ThemeColors.of(context).blueMain,
                 ),
               ),
             ],
@@ -629,7 +628,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   ),
                   Expanded(
                     child: Text(
-                      'Ajuste aplicado tamb?m no dia ${state.diaQuinzena} de cada m?s',
+                      'Ajuste aplicado tambãm no dia ${state.diaQuinzena} de cada mãs',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -670,10 +669,10 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
         ),
-        border: Border.all(color: corLight, width: 2),
+        border: Border.all(color: cor.withValues(alpha: 0.3), width: 2),
         boxShadow: [
           BoxShadow(
-            color: corLight,
+            color: cor.withValues(alpha: 0.15),
             blurRadius: isMobile ? 15 : 20,
             offset: Offset(0, isMobile ? 4 : 6),
           ),
@@ -699,7 +698,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: corLight,
+                      color: cor.withValues(alpha: 0.3),
                       blurRadius: isMobile ? 10 : 12,
                       offset: const Offset(0, 4),
                     ),
@@ -756,7 +755,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                 ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [cor, corDark],
+                    colors: [cor, cor.withValues(alpha: 0.8)],
                   ),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 8 : 10,
@@ -829,7 +828,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyanLight,
+                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(
                     isMobile ? 10 : 12,
                   ),
@@ -845,7 +844,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
               ),
               Expanded(
                 child: Text(
-                  'Dura??o dos Ajustes',
+                  'DurAção dos Ajustes',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -895,7 +894,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'In?cio do M?s: Dias 1-${state.diasPagamento}',
+                'Inãcio do Mãs: Dias 1-${state.diasPagamento}',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -911,7 +910,7 @@ class _CicloSalarioConfigScreenState extends ConsumerState<CicloSalarioConfigScr
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                'Fim do M?s: Dias ${30 - state.diasPagamento}-30',
+                'Fim do Mãs: Dias ${30 - state.diasPagamento}-30',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -952,12 +951,12 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).blueIndigoLight, ThemeColors.of(context).primaryPastel],
+          colors: [ThemeColors.of(context).blueIndigo.withValues(alpha: 0.1), ThemeColors.of(context).primaryPastel],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
         ),
-        border: Border.all(color: ThemeColors.of(context).blueIndigoLight, width: 2),
+        border: Border.all(color: ThemeColors.of(context).blueIndigo.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -968,14 +967,14 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
             children: [
               Icon(
                 Icons.show_chart_rounded,
-                color: ThemeColors.of(context).blueIndigoDark,
+                color: ThemeColors.of(context).blueIndigo.withValues(alpha: 0.8),
                 size: AppSizes.iconLarge.get(isMobile, isTablet),
               ),
               SizedBox(
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Visualiza??o do Ciclo',
+                'VisualizAção do Ciclo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -984,7 +983,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                   ),
                 overflow: TextOverflow.ellipsis,
                   fontWeight: FontWeight.bold,
-                  color: ThemeColors.of(context).blueIndigoDark,
+                  color: ThemeColors.of(context).blueIndigo.withValues(alpha: 0.8),
                 ),
               ),
             ],
@@ -1011,10 +1010,10 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 double altura;
                 
                 if (isInicio || isQuinzena) {
-                  cor = ThemeColors.of(context).success;
+                  cor = ThemeColors.of(context).greenMain;
                   altura = 80.0;
                 } else if (isFim) {
-                  cor = ThemeColors.of(context).warning;
+                  cor = ThemeColors.of(context).orangeMain;
                   altura = 40.0;
                 } else {
                   cor = ThemeColors.of(context).textSecondaryOverlay40;
@@ -1040,9 +1039,9 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildLegenda(ThemeColors.of(context).success, 'In?cio (+${state.ajusteInicio.toStringAsFixed(0)}%)'),
+              _buildLegenda(ThemeColors.of(context).greenMain, 'Inãcio (+${state.ajusteInicio.toStringAsFixed(0)}%)'),
               _buildLegenda(ThemeColors.of(context).textSecondary, 'Normal'),
-              _buildLegenda(ThemeColors.of(context).warning, 'Fim (${state.ajusteFim.toStringAsFixed(0)}%)'),
+              _buildLegenda(ThemeColors.of(context).orangeMain, 'Fim (${state.ajusteFim.toStringAsFixed(0)}%)'),
             ],
           ),
         ],
@@ -1102,10 +1101,10 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
           borderRadius: BorderRadius.circular(
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
-          border: Border.all(color: item.colorLight, width: 2),
+          border: Border.all(color: item.color.withValues(alpha: 0.3), width: 2),
           boxShadow: [
             BoxShadow(
-              color: item.colorLight,
+              color: item.color.withValues(alpha: 0.15),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -1180,7 +1179,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                     vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: item.colorLight,
+                    color: item.color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(
                       isMobile ? 7 : 8,
                     ),
@@ -1278,11 +1277,11 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
         ),
         icon: Icon(
           Icons.attach_money_rounded,
-          color: ThemeColors.of(context).success,
+          color: ThemeColors.of(context).greenMain,
           size: AppSizes.iconHeroMd.get(isMobile, isTablet),
         ),
         title: Text(
-          'Ciclo de Sal?rio',
+          'Ciclo de Salário',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1298,7 +1297,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Ajusta pre?os automaticamente baseado no ciclo de pagamento:',
+                'Ajusta preços automaticamente baseado no ciclo de pagamento:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1313,7 +1312,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 height: AppSizes.paddingMd.get(isMobile, isTablet),
               ),
               Text(
-                '? Aumenta pre?os no in?cio do m?s (p?s-pagamento)',
+                '? Aumenta preços no início do mãs (pãs-pagamento)',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1328,7 +1327,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Reduz pre?os no fim do m?s (pr?-pagamento)',
+                '? Reduz preços no fim do mãs (prã-pagamento)',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1343,7 +1342,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Monitora tamb?m o dia 15 (quinzena)',
+                '? Monitora tambãm o dia 15 (quinzena)',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1358,7 +1357,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 height: AppSizes.paddingXsAlt2.get(isMobile, isTablet),
               ),
               Text(
-                '? Maximiza vendas em per?odos de alto poder de compra',
+                '? Maximiza vendas em períodos de alto poder de compra',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1395,7 +1394,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
   Future<void> _salvarConfiguracoes() async {
     final isMobile = ResponsiveHelper.isMobile(context);
 
-    // Salva as configura??es via provider
+    // Salva as configurações via provider
     final success = await ref.read(salaryCycleProvider.notifier).saveConfigurations();
 
     if (!mounted) return;
@@ -1419,7 +1418,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    success ? 'Configura??es Salvas!' : 'Erro ao Salvar',
+                    success ? 'Configurações Salvas!' : 'Erro ao Salvar',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1431,7 +1430,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
                     ),
                   ),
                   Text(
-                    success ? 'Ciclo de sal?rio configurado' : 'Tente novamente',
+                    success ? 'Ciclo de salário configurado' : 'Tente novamente',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1446,7 +1445,7 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
             ),
           ],
         ),
-        backgroundColor: success ? ThemeColors.of(context).success : ThemeColors.of(context).error,
+        backgroundColor: success ? ThemeColors.of(context).greenMain : ThemeColors.of(context).error,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1455,9 +1454,6 @@ Widget _buildVisualizacaoCard(SalaryCycleState state) {
     );
   }
 }
-
-
-
 
 
 

@@ -5,7 +5,6 @@ import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 class ComboInteligenteConfigScreen extends ConsumerStatefulWidget {
   const ComboInteligenteConfigScreen({super.key});
@@ -74,11 +73,11 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   heroTag: 'ia',
                   onPressed: _gerarCombos,
                   backgroundColor: ThemeColors.of(context).greenTeal,
+                  tooltip: 'Gerar com IA',
                   child: Icon(
                     Icons.auto_awesome_rounded,
                     size: AppSizes.iconLarge.get(isMobile, isTablet),
                   ),
-                  tooltip: 'Gerar com IA',
                 ),
                 SizedBox(
                   height: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -288,7 +287,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
               Icons.settings_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Configura??o',
+            text: 'ConfigurAção',
           ),
           Tab(
             icon: Icon(
@@ -412,7 +411,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Combos Automticos',
+                      'Combos automáticos',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -450,7 +449,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                 child: Switch(
                   value: state.isStrategyActive,
                   onChanged: (value) => ref.read(smartComboProvider.notifier).setStrategyActive(value),
-                  activeColor: ThemeColors.of(context).surface,
+                  activeThumbColor: ThemeColors.of(context).surface,
                   activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
                 ),
               ),
@@ -616,7 +615,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                         height: AppSizes.paddingMicro2.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Convers?o',
+                        'Conversão',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -649,7 +648,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).materialTealLight, ThemeColors.of(context).cyanMainLight],
+          colors: [ThemeColors.of(context).materialTeal.withValues(alpha: 0.1), ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
@@ -661,7 +660,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
         children: [
           Icon(
             Icons.auto_awesome_rounded,
-            color: ThemeColors.of(context).materialTealDark,
+            color: ThemeColors.of(context).materialTeal.withValues(alpha: 0.8),
             size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
           ),
           SizedBox(
@@ -689,7 +688,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Sugest?es autom?ticas aparecem nas ESLs e integram com PDV no checkout',
+                  'Sugestões automáticas aparecem nas ESLs e integram com PDV no checkout',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -742,7 +741,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTealLight,
+                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -756,7 +755,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
               ),
               Expanded(
                 child: Text(
-                  'Par?metros de Combos',
+                  'Parâmetros de Combos',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -807,7 +806,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTealLight,
+                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -871,7 +870,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTealLight,
+                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -935,7 +934,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).greenTealLight,
+                  color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -1002,12 +1001,12 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).infoLight,
+                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.local_offer_rounded,
-                  color: ThemeColors.of(context).info,
+                  color: ThemeColors.of(context).blueMain,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -1102,7 +1101,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).greenTealLight,
+                    color: ThemeColors.of(context).greenTeal.withValues(alpha: 0.3),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -1165,8 +1164,8 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
         mainAxisSize: MainAxisSize.min,
         children: [
           _buildSwitchOption(
-            'Sugest?o Automtica',
-            'IA sugere combos baseado em hist?rico de compras',
+            'SuGestão Automtica',
+            'IA sugere combos baseado em histórico de compras',
             Icons.psychology_rounded,
             state.sugestaoAutomatica,
             (value) => ref.read(smartComboProvider.notifier).setSugestaoAutomatica(value),
@@ -1175,7 +1174,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           _buildSwitchOption(
-            'Integra??o com PDV',
+            'IntegrAção com PDV',
             'Combos aparecem automaticamente no checkout',
             Icons.point_of_sale_rounded,
             state.integracaoPdv,
@@ -1210,10 +1209,10 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
         AppSizes.paddingMdAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ? ThemeColors.of(context).materialTealLight : ThemeColors.of(context).textSecondary,
+        color: value ? ThemeColors.of(context).materialTeal.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary,
         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         border: Border.all(
-          color: value ? ThemeColors.of(context).materialTealLight : ThemeColors.of(context).textSecondaryOverlay30,
+          color: value ? ThemeColors.of(context).materialTeal.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondaryOverlay30,
         ),
       ),
       child: Row(
@@ -1269,7 +1268,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: ThemeColors.of(context).greenTeal,
+              activeThumbColor: ThemeColors.of(context).greenTeal,
             ),
           ),
         ],
@@ -1301,12 +1300,12 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: combo.corLight,
+            color: combo.cor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: combo.corLight,
+              color: combo.cor.withValues(alpha: 0.15),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -1333,7 +1332,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                     borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: combo.corLight,
+                        color: combo.cor.withValues(alpha: 0.3),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -1400,7 +1399,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                               vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                             ),
                             decoration: BoxDecoration(
-                              color: combo.corLight,
+                              color: combo.cor.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
                             ),
                             child: Text(
@@ -1441,7 +1440,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
-                                color: ThemeColors.of(context).successDark,
+                                color: ThemeColors.of(context).greenMain.withValues(alpha: 0.8),
                               ),
                             ),
                           ),
@@ -1457,7 +1456,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                     onChanged: (value) {
                       ref.read(smartComboProvider.notifier).toggleComboAtivo(combo.id, value);
                     },
-                    activeColor: combo.cor,
+                    activeThumbColor: combo.cor,
                   ),
                 ),
               ],
@@ -1479,10 +1478,10 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                     vertical: AppSizes.paddingXs.get(isMobile, isTablet),
                   ),
                   decoration: BoxDecoration(
-                    color: combo.corLight,
+                    color: combo.cor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
                     border: Border.all(
-                      color: combo.corLight,
+                      color: combo.cor.withValues(alpha: 0.3),
                     ),
                   ),
                   child: Row(
@@ -1568,7 +1567,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                           height: AppSizes.paddingXxs.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Pre?o Combo',
+                          'PREÇO Combo',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1680,7 +1679,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                           height: AppSizes.paddingXxs.get(isMobile, isTablet),
                         ),
                         Text(
-                          'Convers?o',
+                          'Conversão',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1859,7 +1858,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                 height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
               ),
               Text(
-                '? Taxa de convers?o histrica',
+                '? Taxa de conversão histrica',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1893,7 +1892,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
           ElevatedButton(
             onPressed: () async {
               Navigator.pop(context);
-              // Chama o m?todo do provider para gerar combos via IA
+              // Chama o método do provider para gerar combos via IA
               await ref.read(smartComboProvider.notifier).gerarCombos();
               
               if (mounted) {
@@ -2009,11 +2008,11 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
               Text('? Desconto atrativo automatizado', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
-              Text('? Integra??o com PDV no checkout', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('? IntegrAção com PDV no checkout', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
               Text('? Aumenta ticket mdio em 25-35%', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
-              Text('? Sugest?es aparecem nas ESLs automaticamente', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('? Sugestões aparecem nas ESLs automaticamente', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
             ],
           ),
         ),
@@ -2030,7 +2029,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
   void _salvarConfiguracoes() async {
     final isMobile = ResponsiveHelper.isMobile(context);
 
-    // Salva as configura??es no backend
+    // Salva as configurações no backend
     await ref.read(smartComboProvider.notifier).saveConfigurations();
     
     final state = ref.read(smartComboProvider);
@@ -2070,7 +2069,7 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Configura??es Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
+                      Text('Configurações Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       Text('Combos inteligentes configurados', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11))),
                     ],
                   ),
@@ -2086,9 +2085,6 @@ class _ComboInteligenteConfigScreenState extends ConsumerState<ComboInteligenteC
     }
   }
 }
-
-
-
 
 
 

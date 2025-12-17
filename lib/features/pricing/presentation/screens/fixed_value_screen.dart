@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/pricing/data/models/pricing_models.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
@@ -17,7 +16,7 @@ class AjusteValorFixoScreen extends ConsumerStatefulWidget {
 
 class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> with ResponsiveCache {
   final TextEditingController _valorController = TextEditingController();
-  List<String> _categoriasSelecionadas = [];
+  final List<String> _categoriasSelecionadas = [];
   
   final List<String> _categorias = [
     'Alimentos',
@@ -25,7 +24,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
     'Higiene',
     'Limpeza',
     'Congelados',
-    'Latic?nios',
+    'Laticínios',
     'Padaria',
     'Hortifruti',
   ];
@@ -259,7 +258,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
               Expanded(
                 child: _buildTipoOption(
                   OperationType.diminuir,
-                  'Redu??o',
+                  'Redução',
                   Icons.remove_circle_outline,
                   ThemeColors.of(context).error,
                 ),
@@ -287,7 +286,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
       child: Container(
         padding: EdgeInsets.symmetric(vertical: AppSizes.paddingBase.get(isMobile, isTablet)),
         decoration: BoxDecoration(
-          color: isSelected ? colorLight : ThemeColors.of(context).textSecondaryOverlay05,
+          color: isSelected ? color.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondaryOverlay05,
           border: Border.all(
             color: isSelected ? color : ThemeColors.of(context).textSecondaryOverlay30,
             width: 2,
@@ -432,7 +431,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
           ),
           RadioListTile<ApplyScope>(
             title: Text(
-              'Categorias espec?ficas',
+              'Categorias especÃ­ficas',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13.5),
                 overflow: TextOverflow.ellipsis,
@@ -544,7 +543,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
               ),
               Expanded(
                 child: Text(
-                  'Pr?via do Ajuste',
+                  'Prãvia do Ajuste',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 15, mobileFontSize: 14, tabletFontSize: 14.5),
                     overflow: TextOverflow.ellipsis,
@@ -649,7 +648,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            'Digite um valor v?lido',
+            'Digite um valor vÃ¡lido',
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13),
               overflow: TextOverflow.ellipsis,
@@ -693,7 +692,7 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Deseja aplicar ${isAumento ? 'aumento' : 'redu??o'} de R\$ ${_config.valor.toStringAsFixed(2)} '
+              'Deseja aplicar ${isAumento ? 'aumento' : 'reduÃÂ£ÃÂ£o'} de R\$ ${_config.valor.toStringAsFixed(2)} '
               '${_config.aplicarEm == ApplyScope.todos ? 'em todos os produtos' : 'nas categorias selecionadas'}?',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13.5),
@@ -709,8 +708,8 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('? $_produtosAfetados produtos afetados'),
-                  Text('? Impacto: ${_impactoTotal >= 0 ? '+' : ''}R\$ ${_impactoTotal.toStringAsFixed(2)}'),
+                  Text('ã $_produtosAfetados produtos afetados'),
+                  Text('ã Impacto: ${_impactoTotal >= 0 ? '+' : ''}R\$ ${_impactoTotal.toStringAsFixed(2)}'),
                 ],
               ),
             ),
@@ -766,8 +765,6 @@ class _AjusteValorFixoScreenState extends ConsumerState<AjusteValorFixoScreen> w
     );
   }
 }
-
-
 
 
 

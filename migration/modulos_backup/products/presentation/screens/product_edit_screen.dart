@@ -728,7 +728,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                   onSubmitted: () => _precoKgFocusNode.requestFocus(),
                 ),
               ),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: _buildTextField(
                   controller: _precoKgController,
@@ -786,7 +786,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           
           // Dropdown de categoria
           DropdownButtonFormField<String>(
-            value: _categoria,
+            initialValue: _categoria,
             style: _responsiveTextStyle(AppTextStyles.dropdownItem),
             decoration: InputDecoration(
               labelText: 'Categoria',
@@ -832,7 +832,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
           
           // Dropdown de status
           DropdownButtonFormField<String>(
-            value: _status,
+            initialValue: _status,
             style: _responsiveTextStyle(AppTextStyles.dropdownItem),
             decoration: InputDecoration(
               labelText: 'Status',
@@ -994,7 +994,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                     padding: EdgeInsets.symmetric(
                       vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                     ),
-                    side: BorderSide(color: AppThemeColors.borderLight),
+                    side: const BorderSide(color: AppThemeColors.borderLight),
                     shape: RoundedRectangleBorder(
                       borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                     ),
@@ -1095,7 +1095,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.formButtonPaddingVertical.get(isMobile, isTablet),
                   ),
-                  side: BorderSide(color: AppThemeColors.borderLight),
+                  side: const BorderSide(color: AppThemeColors.borderLight),
                   shape: RoundedRectangleBorder(
                     borderRadius: isMobile ? AppRadius.sm : AppRadius.md,
                   ),
@@ -1147,7 +1147,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
 
   Widget _buildDiscardDialog() {
     return AlertDialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: AppRadius.dialog,
       ),
       icon: const Icon(
@@ -1255,7 +1255,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.dialog,
         ),
         icon: const Icon(

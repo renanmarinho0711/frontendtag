@@ -41,7 +41,7 @@ class SugestoesIACard extends ConsumerWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).greenMaterialLight,
+              color: ThemeColors.of(context).greenMaterial.withValues(alpha: 0.3),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -87,7 +87,7 @@ class SugestoesIACard extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Sugestes Inteligentes',
+                          'Sugestões Inteligentes',
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -216,7 +216,7 @@ class SugestoesIACard extends ConsumerWidget {
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
-        border: Border.all(color: textColorLight),
+        border: Border.all(color: textColor.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -249,8 +249,6 @@ class SugestoesIACard extends ConsumerWidget {
     );
   }
 }
-
-
 
 
 

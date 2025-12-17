@@ -64,7 +64,7 @@ class ProductCard extends StatelessWidget {
                   EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
               child: Row(
                 children: [
-                  // Checkbox para modo de sele??o
+                  // Checkbox para modo de seleção
                   if (isSelectionMode) ...[
                     Checkbox(
                       value: isSelected,
@@ -134,7 +134,7 @@ class ProductCard extends StatelessWidget {
                   vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: produto.corLight,
+                  color: produto.cor.withValues(alpha: 0.1),
                   borderRadius: AppRadius.xs,
                 ),
                 child: Text(
@@ -152,7 +152,7 @@ class ProductCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: const Text('�',
+              child: const Text('•',
                   style: TextStyle(color: ThemeColors.of(context).textSecondary)),
             ),
             Icon(
@@ -160,7 +160,7 @@ class ProductCard extends StatelessWidget {
               size: AppSizes.iconMicroAlt.get(isMobile, isTablet),
               color: ThemeColors.of(context).textSecondary,
             ),
-            SizedBox(width: AppSpacing.xxs),
+            const SizedBox(width: AppSpacing.xxs),
             Flexible(
               child: Text(
                 produto.codigo,
@@ -257,7 +257,7 @@ class ProductCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         if (produto.preco <= 0) ...[
-          // Alerta visual para produto sem pre?o
+          // Alerta visual para produto sem preço
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: AppSizes.paddingXsAlt3.get(isMobile, isTablet),
@@ -278,7 +278,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 const SizedBox(width: AppSpacing.xxs),
                 Text(
-                  'Sem pre?o',
+                  'Sem preço',
                   style: TextStyle(
                     fontSize:
                         AppTextStyles.fontSizeMicroAlt2.get(isMobile, isTablet),
@@ -313,8 +313,6 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

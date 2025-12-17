@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/pricing/data/models/pricing_models.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
@@ -99,7 +98,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
   // ===========================================================================
 
   Widget _buildLoadingState() {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -107,9 +106,9 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             valueColor:
                 AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
-            'Carregando hist?rico...',
+            'Carregando histórico...',
             style: TextStyle(
               fontSize: 16,
               color: ThemeColors.of(context).textSecondary,
@@ -194,7 +193,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Hist?rico de Ajustes',
+                  'Histórico de Ajustes',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -208,7 +207,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
                   ),
                 ),
                 Text(
-                  'Todas as altera??es de pre?o',
+                  'Todas as alterações de preço',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -262,7 +261,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
         borderRadius: BorderRadius.circular(isMobile ? 18 : (isTablet ? 19 : 20)),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).blueCyanLight,
+            color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 16,
@@ -284,7 +283,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
               ),
               SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
               Text(
-                'Resumo do Per?odo',
+                'Resumo do Perãodo',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -313,7 +312,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
               SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
               Expanded(
                 child: _buildResumoItem(
-                    Icons.arrow_downward_rounded, '$reducoes', 'Redu??es'),
+                    Icons.arrow_downward_rounded, '$reducoes', 'Reduções'),
               ),
             ],
           ),
@@ -471,7 +470,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             horizontal: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
         children: [
           _buildFiltroChip('Todos', 'todos', Icons.all_inclusive_rounded),
-          _buildFiltroChip('Autom?tico', 'automatico', Icons.auto_mode_rounded),
+          _buildFiltroChip('Automãtico', 'automatico', Icons.auto_mode_rounded),
           _buildFiltroChip('Manual', 'manual', Icons.edit_rounded),
           _buildFiltroChip('IA', 'ia', Icons.psychology_rounded),
           _buildFiltroChip('Lote', 'lote', Icons.inventory_rounded),
@@ -579,7 +578,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 14 : (isTablet ? 15 : 16)),
           border: Border.all(
-            color: corLight,
+            color: cor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
@@ -636,7 +635,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             ),
           ),
           decoration: BoxDecoration(
-            color: corLight,
+            color: cor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
           ),
           child: Icon(
@@ -705,8 +704,8 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
           ),
           decoration: BoxDecoration(
             color: item.isAumento
-                ? ThemeColors.of(context).successLight
-                : ThemeColors.of(context).errorLight,
+                ? ThemeColors.of(context).success.withValues(alpha: 0.1)
+                : ThemeColors.of(context).error.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(isMobile ? 7 : 8),
           ),
           child: Row(
@@ -993,7 +992,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             ),
             style: OutlinedButton.styleFrom(
               foregroundColor: cor,
-              side: BorderSide(color: corLight),
+              side: BorderSide(color: cor.withValues(alpha: 0.5)),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
               ),
@@ -1093,7 +1092,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
               desktop: 8,
             ),
           ),
-          const Text(
+          Text(
             'Tente ajustar os filtros',
             style: TextStyle(
               fontSize: 14,
@@ -1114,11 +1113,11 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
     final now = DateTime.now();
     final diff = now.difference(data);
 
-    if (diff.inHours < 1) return '${diff.inMinutes} min atr?s';
-    if (diff.inHours < 24) return '${diff.inHours}h? atr?s';
-    if (diff.inDays == 1) return '1 dia atr?s';
-    if (diff.inDays < 7) return '${diff.inDays} dias atr?s';
-    return '${(diff.inDays / 7).floor()} sem atr?s';
+    if (diff.inHours < 1) return '${diff.inMinutes} min atrãs';
+    if (diff.inHours < 24) return '${diff.inHours}hã atrãs';
+    if (diff.inDays == 1) return '1 dia atrãs';
+    if (diff.inDays < 7) return '${diff.inDays} dias atrãs';
+    return '${(diff.inDays / 7).floor()} sem atrãs';
   }
 
   // ===========================================================================
@@ -1134,7 +1133,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
       builder: (context) => Container(
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
         ),
         padding: EdgeInsets.all(AppSizes.paddingXl.get(isMobile, isTablet)),
         child: Column(
@@ -1158,7 +1157,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             ),
             SizedBox(height: AppSizes.spacingLg.get(isMobile, isTablet)),
             Text(
-              'Filtrar por Per?odo',
+              'Filtrar por Perãodo',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1178,9 +1177,9 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
                 desktop: 10,
               ),
               children: [
-                _buildPeriodoChip('?ltimas 24h', '24h'),
-                _buildPeriodoChip('?ltimos 7 dias', '7dias'),
-                _buildPeriodoChip('?ltimos 30 dias', '30dias'),
+                _buildPeriodoChip('últimas 24h', '24h'),
+                _buildPeriodoChip('últimos 7 dias', '7dias'),
+                _buildPeriodoChip('últimos 30 dias', '30dias'),
                 _buildPeriodoChip('Todos', 'todos'),
               ],
             ),
@@ -1241,7 +1240,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
                 ),
               ),
               decoration: BoxDecoration(
-                color: item.tipoColorLight,
+                color: item.tipoColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(isMobile ? 7 : 8),
               ),
               child: Icon(
@@ -1263,12 +1262,12 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             _buildDetalheItem('Produto', item.produtoNome),
             _buildDetalheItem('Tipo', item.tipoLabel),
             _buildDetalheItem(
-                'Pre?o Anterior', 'R\$ ${item.precoAntigo.toStringAsFixed(2)}'),
+                'PREÇO Anterior', 'R\$ ${item.precoAntigo.toStringAsFixed(2)}'),
             _buildDetalheItem(
-                'Pre?o Novo', 'R\$ ${item.precoNovo.toStringAsFixed(2)}'),
-            _buildDetalheItem('Varia??o', '${item.variacao.toStringAsFixed(1)}%'),
-            _buildDetalheItem('Motiva??o', item.motivacao),
-            _buildDetalheItem('Usu?rio', item.usuario),
+                'PREÇO Novo', 'R\$ ${item.precoNovo.toStringAsFixed(2)}'),
+            _buildDetalheItem('VariAção', '${item.variacao.toStringAsFixed(1)}%'),
+            _buildDetalheItem('MotivAção', item.motivacao),
+            _buildDetalheItem('Usuário', item.usuario),
             _buildDetalheItem('Data/Hora', _formatarTempo(item.dataAjuste)),
           ],
         ),
@@ -1356,8 +1355,8 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
           ],
         ),
         content: Text(
-          'Deseja reverter o ajuste de pre?o de "${item.produtoNome}"?\n\n'
-          'O pre?o voltar? de R\$ ${item.precoNovo.toStringAsFixed(2)} para R\$ ${item.precoAntigo.toStringAsFixed(2)}.',
+          'Deseja reverter o ajuste de preço de "${item.produtoNome}"?\n\n'
+          'O preço voltarã de R\$ ${item.precoNovo.toStringAsFixed(2)} para R\$ ${item.precoAntigo.toStringAsFixed(2)}.',
         ),
         actions: [
           TextButton(
@@ -1405,10 +1404,10 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
               size: AppSizes.iconLargeAlt.get(isMobile, isTablet),
             ),
             SizedBox(width: AppSizes.spacingBase.get(isMobile, isTablet)),
-            const Text('Exportar Hist?rico'),
+            const Text('Exportar Histórico'),
           ],
         ),
-        content: const Text('Escolha o formato para exporta??o:'),
+        content: const Text('Escolha o formato para exportAção:'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -1418,7 +1417,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             onPressed: () {
               Navigator.pop(context);
               _showSnackBar(
-                'Exportando relat?rio em PDF...',
+                'Exportando relatãrio em PDF...',
                 Icons.picture_as_pdf_rounded,
                 ThemeColors.of(context).blueCyan,
               );
@@ -1437,7 +1436,7 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
             onPressed: () {
               Navigator.pop(context);
               _showSnackBar(
-                'Exportando relat?rio em Excel...',
+                'Exportando relatãrio em Excel...',
                 Icons.table_chart_rounded,
                 ThemeColors.of(context).success,
               );
@@ -1482,8 +1481,6 @@ class _HistoricoAjustesScreenState extends ConsumerState<HistoricoAjustesScreen>
     );
   }
 }
-
-
 
 
 

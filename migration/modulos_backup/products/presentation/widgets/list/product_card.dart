@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
@@ -149,9 +149,9 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: const Text('â€¢',
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              child: Text('â€¢',
                   style: TextStyle(color: AppThemeColors.textSecondary)),
             ),
             Icon(
@@ -159,7 +159,7 @@ class ProductCard extends StatelessWidget {
               size: AppSizes.iconMicroAlt.get(isMobile, isTablet),
               color: AppThemeColors.textSecondary,
             ),
-            SizedBox(width: AppSpacing.xxs),
+            const SizedBox(width: AppSpacing.xxs),
             Flexible(
               child: Text(
                 produto.codigo,

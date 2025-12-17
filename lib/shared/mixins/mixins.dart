@@ -1,4 +1,4 @@
-// Barrel file para exportar todos os mixins
+/// Arquivo barril para exportar todos os mixins
 library;
 
 export 'form_mixin.dart';

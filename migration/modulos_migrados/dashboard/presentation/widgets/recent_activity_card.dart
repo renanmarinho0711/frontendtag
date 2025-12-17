@@ -6,7 +6,6 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/reports/presentation/providers/reports_provider.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class RecentActivityCard extends ConsumerStatefulWidget {
   const RecentActivityCard({super.key});
 
@@ -50,7 +49,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
         'description': report.descricao.isEmpty
             ? '${report.itensVerificados} itens verificados'
             : report.descricao,
-        'time': _formatTimeAgo(report.dataauditoria),
+        'time': _formatTimeAgo(report.dataAuditoria),
         'color': _getColorForAction(report.titulo),
       };
     }).toList();
@@ -198,7 +197,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         color: ThemeColors.of(context).textSecondaryOverlay50,
                         size: 32,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'Não foi possível carregar atividades',
                         style: TextStyle(
@@ -212,10 +211,10 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       TextButton(
                         onPressed: () => ref.read(auditReportsProvider.notifier).loadReports(),
-                        child: Text('Tentar novamente'),
+                        child: const Text('Tentar novamente'),
                       ),
                     ],
                   ),
@@ -232,7 +231,7 @@ class _RecentActivityCardState extends ConsumerState<RecentActivityCard> {
                         color: ThemeColors.of(context).textSecondaryOverlay50,
                         size: 32,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'Nenhuma atividade recente',
                         style: TextStyle(

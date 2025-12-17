@@ -57,7 +57,7 @@ class DashboardNavigationRail extends StatelessWidget {
     {
       'icon': Icons.assessment_rounded,
       'title': 'Relatórios',
-      'gradient': [AppThemeColors.modulerelatÃ³rios, AppThemeColors.modulerelatÃ³riosDark]
+      'gradient': [AppThemeColors.moduleRelatorios, AppThemeColors.moduleRelatoriosDark]
     },
     {
       'icon': Icons.settings_rounded,

@@ -3,7 +3,7 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
-/// Estado de onboarding espec�fico para produtos
+/// Estado de onboarding especãfico para produtos
 /// Renomeado de OnboardingState para evitar conflito com tags
 enum ProductOnboardingState {
   noProducts,
@@ -58,15 +58,15 @@ class ProductsOnboardingCard extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            config.colorLight,
-            config.colorLight,
+            config.color.withValues(alpha: 0.15),
+            config.color.withValues(alpha: 0.05),
           ],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
-        border: Border.all(color: config.colorLight, width: 1.5),
+        border: Border.all(color: config.color.withValues(alpha: 0.3), width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: config.colorLight,
+            color: config.color.withValues(alpha: 0.1),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -80,7 +80,7 @@ class ProductsOnboardingCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
-                  color: config.colorLight,
+                  color: config.color.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(config.icon, color: config.color, size: 28),
@@ -113,7 +113,7 @@ class ProductsOnboardingCard extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.check_rounded, color: ThemeColors.of(context).textTertiary, size: 20),
                   onPressed: onDismiss,
-                  tooltip: 'N�o mostrar novamente',
+                  tooltip: 'Não mostrar novamente',
                 ),
             ],
           ),
@@ -142,23 +142,23 @@ class ProductsOnboardingCard extends StatelessWidget {
       case ProductOnboardingState.noProducts:
         return _OnboardingConfig(
           icon: Icons.celebration_rounded,
-          title: 'Comece seu cat�logo!',
+          title: 'Comece seu catálogo!',
           subtitle: 'Escolha como adicionar seus primeiros produtos',
           color: ThemeColors.of(context).brandPrimaryGreen,
           actions: [
             _ActionConfig('Importar Planilha', Icons.upload_file_rounded, onImportarPlanilha, true),
             _ActionConfig('Adicionar Manual', Icons.add_rounded, onAdicionarManual, false),
-            _ActionConfig('Escanear C�digo', Icons.qr_code_scanner_rounded, onEscanear, false),
+            _ActionConfig('Escanear Cãdigo', Icons.qr_code_scanner_rounded, onEscanear, false),
           ],
         );
       case ProductOnboardingState.noPrice:
         return _OnboardingConfig(
           icon: Icons.price_change_outlined,
-          title: 'Produtos sem pre�o definido',
-          subtitle: 'Voc� tem $produtosSemPreco produtos sem pre�o. Configure pre�os para exibir nas etiquetas.',
-          color: ThemeColors.of(context).warning,
+          title: 'Produtos sem preço definido',
+          subtitle: 'você tem $produtosSemPreco produtos sem preço. Configure preços para exibir nas etiquetas.',
+          color: ThemeColors.of(context).orangeMain,
           actions: [
-            _ActionConfig('Definir Pre�os Agora', Icons.attach_money_rounded, onDefinirPrecos, true),
+            _ActionConfig('Definir PREÇOs Agora', Icons.attach_money_rounded, onDefinirPrecos, true),
             _ActionConfig('Fazer depois', Icons.schedule_rounded, onDismiss ?? () {}, false),
           ],
         );
@@ -166,7 +166,7 @@ class ProductsOnboardingCard extends StatelessWidget {
         return _OnboardingConfig(
           icon: Icons.local_offer_rounded,
           title: 'Produtos aguardando tags',
-          subtitle: '$produtosSemTag produtos aguardando vincula��o. Vincule tags ESL para atualiza��o autom�tica.',
+          subtitle: '$produtosSemTag produtos aguardando vinculAção. Vincule tags ESL para atualizAção automática.',
           color: ThemeColors.of(context).primary,
           actions: [
             _ActionConfig('Vincular Tags', Icons.link_rounded, onVincularTags, true),
@@ -219,7 +219,7 @@ class ProductsOnboardingCard extends StatelessWidget {
       label: Text(label),
       style: OutlinedButton.styleFrom(
         foregroundColor: color,
-        side: BorderSide(color: colorLight),
+        side: BorderSide(color: color.withValues(alpha: 0.5)),
         padding: EdgeInsets.symmetric(
           horizontal: isMobile ? 16 : 20,
           vertical: isMobile ? 12 : 14,
@@ -256,8 +256,6 @@ class _ActionConfig {
 
   _ActionConfig(this.label, this.icon, this.onTap, this.isPrimary);
 }
-
-
 
 
 

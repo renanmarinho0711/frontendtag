@@ -83,8 +83,8 @@ class DashboardAppBar extends ConsumerWidget {
             ],
             // Seletor de Loja - usa Expanded para ocupar espaço disponível
             if (!isMobile) const SizedBox(width: 8),
-            Expanded(
-              child: const StoreSelector(),
+            const Expanded(
+              child: StoreSelector(),
             ),
             
             // Search bar apenas para desktop grande
@@ -100,7 +100,7 @@ class DashboardAppBar extends ConsumerWidget {
             ],
             const SizedBox(width: 8),
             // Theme selector button
-            _AppBarThemeButton(),
+            const _AppBarThemeButton(),
             const SizedBox(width: 8),
             // Notification button
             _AppBarNotificationButton(
@@ -200,13 +200,13 @@ class DashboardAppBar extends ConsumerWidget {
           color: AppThemeColors.grey100,
           borderRadius: BorderRadius.circular(12),
         ),
-        child: TextField(
+        child: const TextField(
           decoration: InputDecoration(
             hintText: 'Buscar produtos, tags...',
             hintStyle: TextStyle(fontSize: 13, color: AppThemeColors.grey500),
             prefixIcon: Icon(Icons.search_rounded, color: AppThemeColors.grey400, size: 20),
             border: InputBorder.none,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
         ),
       ),
@@ -387,7 +387,7 @@ class _AppBarUserMenu extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           colors: [AppThemeColors.grey200, AppThemeColors.grey300],
         ),
         borderRadius: BorderRadius.circular(isMobile ? 8 : 10),

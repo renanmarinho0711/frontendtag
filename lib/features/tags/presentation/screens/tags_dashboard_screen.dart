@@ -10,7 +10,6 @@ import 'package:tagbean/features/tags/presentation/screens/tag_add_screen.dart';
 import 'package:tagbean/features/tags/presentation/screens/tags_batch_screen.dart';
 import 'package:tagbean/features/tags/presentation/screens/tags_import_screen.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/features/tags/presentation/providers/tags_provider.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
@@ -39,7 +38,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
   final TextEditingController _searchController = TextEditingController();
 
   // NOTA: _isLoading removido (morto)
-  bool _dismissedOnboarding = false;
+  final bool _dismissedOnboarding = false;
   // NOTA: _lastSync removido (morto)
   
   String _currentScreen = 'dashboard';
@@ -114,7 +113,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
           content: Row(
             children: [
               Container(
-                padding: EdgeInsets.all(AppSpacing.sm),
+                padding: const EdgeInsets.all(AppSpacing.sm),
                 decoration: BoxDecoration(
                   color: ThemeColors.of(context).surfaceOverlay20,
                   borderRadius: AppRadius.sm,
@@ -125,7 +124,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                   size: 20,
                 ),
               ),
-              SizedBox(width: AppSpacing.md),
+              const SizedBox(width: AppSpacing.md),
               const Text(
                 'Dados atualizados com sucesso!',
                 style: TextStyle(fontWeight: FontWeight.w600),
@@ -134,7 +133,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
           ),
           backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
+          shape: const RoundedRectangleBorder(borderRadius: AppRadius.snackbar),
           duration: const Duration(seconds: 2),
         ),
       );
@@ -224,7 +223,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors.of(context).surfaceSecondary,
+      backgroundColor: ThemeColors.of(context).backgroundLight,
       body: _buildCurrentScreen(),
       floatingActionButton: _currentScreen == 'dashboard' 
           ? _buildContextualFAB()
@@ -315,7 +314,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
           ),
           
-          // 6. Aes Rpidas
+          // 6. Ações Rápidas
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -393,7 +392,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
             const SizedBox(height: AppSpacing.dashboardSectionGap),
             Text(
-              'Aes Rpidas',
+              'Ações Rápidas',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -421,7 +420,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
             _buildQuickActionTile(
               icon: Icons.layers_rounded,
-              label: 'Operaes em Lote',
+              label: 'Operações em Lote',
               color: ThemeColors.of(context).orangeMaterial,
               onTap: () {
                 Navigator.pop(context);
@@ -475,7 +474,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
-                    color: colorLight,
+                    color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(icon, color: color, size: 24),
@@ -568,7 +567,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      'Gesto de tags ESL',
+                      'Gestão de tags ESL',
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 10, tabletFontSize: 11),
                         color: ThemeColors.of(context).surfaceOverlay70,
@@ -599,7 +598,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(icon, color: ThemeColors.of(context).surface, size: 16),
-          SizedBox(height: AppSpacing.xs),
+          const SizedBox(height: AppSpacing.xs),
           Text(
             value,
             style: TextStyle(
@@ -715,7 +714,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 onTap: () => _navigateToListWithFilter(null),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildStatCard(
                 title: 'Online',
@@ -726,7 +725,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 onTap: () => _navigateToListWithFilter('online'),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildStatCard(
                 title: 'Offline',
@@ -740,7 +739,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
           ],
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         Row(
           children: [
             Expanded(
@@ -753,7 +752,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 onTap: () => _navigateToListWithFilter('vinculadas'),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildStatCard(
                 title: 'Disponveis',
@@ -765,7 +764,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 onTap: () => _navigateToListWithFilter('disponiveis'),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildStatCard(
                 title: 'Bateria',
@@ -810,7 +809,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
               ),
             ],
             border: Border.all(
-              color: isWarning ? colorLight : ThemeColors.of(context).border,
+              color: isWarning ? color.withValues(alpha: 0.5) : ThemeColors.of(context).border,
               width: isWarning ? 2 : 1,
             ),
           ),
@@ -835,14 +834,14 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.xs),
                     decoration: BoxDecoration(
-                      color: colorLight,
+                      color: color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(icon, color: color, size: 16),
                   ),
                 ],
               ),
-              SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: AppSpacing.sm),
               Text(
                 value,
                 style: TextStyle(
@@ -851,7 +850,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                   color: isWarning ? color : ThemeColors.of(context).textPrimary,
                 ),
               ),
-              SizedBox(height: AppSpacing.xs),
+              const SizedBox(height: AppSpacing.xs),
               Text(
                 subtitle,
                 style: TextStyle(
@@ -873,7 +872,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
         Row(
           children: [
             Icon(Icons.warning_amber_rounded, color: ThemeColors.of(context).orangeMaterial, size: 20),
-            SizedBox(width: AppSpacing.sm),
+            const SizedBox(width: AppSpacing.sm),
             Text(
               'Alertas Importantes',
               style: TextStyle(
@@ -900,7 +899,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
           ],
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         ..._alerts.map((alert) => _buildAlertCard(alert)),
       ],
     );
@@ -908,8 +907,8 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
 
   Widget _buildAlertCard(TagAlert alert) {
     final backgroundColor = alert.priority == TagAlertPriority.critical
-        ? ThemeColors.of(context).errorLight
-        : ThemeColors.of(context).orangeMaterialLight;
+        ? ThemeColors.of(context).error.withValues(alpha: 0.1)
+        : ThemeColors.of(context).orangeMaterial.withValues(alpha: 0.1);
     
     final borderColor = alert.priority == TagAlertPriority.critical
         ? ThemeColors.of(context).error
@@ -928,12 +927,12 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
           Container(
             padding: const EdgeInsets.all(AppSpacing.sm),
             decoration: BoxDecoration(
-              color: borderColorLight,
+              color: borderColor.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(alert.icon, color: borderColor, size: 20),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -946,7 +945,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                     color: ThemeColors.of(context).textPrimary,
                   ),
                 ),
-                SizedBox(height: AppSpacing.xs),
+                const SizedBox(height: AppSpacing.xs),
                 Text(
                   'Clique para resolver',
                   style: TextStyle(
@@ -957,7 +956,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
               ],
             ),
           ),
-          SizedBox(width: AppSpacing.md),
+          const SizedBox(width: AppSpacing.md),
           ElevatedButton(
             onPressed: alert.onAction,
             style: ElevatedButton.styleFrom(
@@ -970,7 +969,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
             child: Text(
               alert.actionLabel,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
               ),
@@ -1006,7 +1005,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
       ),
       MenuItemData(
         icon: Icons.layers_rounded,
-        title: 'Operaes em Lote',
+        title: 'Operações em Lote',
         subtitle: 'Atualizar mltiplas tags',
         color: ThemeColors.of(context).orangeMaterial,
         screen: 'lote',
@@ -1026,7 +1025,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
         Row(
           children: [
             Icon(Icons.dashboard_rounded, color: ThemeColors.of(context).brandPrimaryGreen, size: 20),
-            SizedBox(width: AppSpacing.sm),
+            const SizedBox(width: AppSpacing.sm),
             Text(
               'Menu Principal',
               style: TextStyle(
@@ -1037,7 +1036,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
           ],
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         ...menuItems.map((item) => _buildMenuItemCard(item)),
       ],
     );
@@ -1070,12 +1069,12 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.md),
                   decoration: BoxDecoration(
-                    color: item.colorLight,
+                    color: item.color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(item.icon, color: item.color, size: 24),
                 ),
-                SizedBox(width: AppSpacing.md),
+                const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -1088,7 +1087,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                           color: ThemeColors.of(context).textPrimary,
                         ),
                       ),
-                      SizedBox(height: AppSpacing.xs),
+                      const SizedBox(height: AppSpacing.xs),
                       Text(
                         item.subtitle,
                         style: TextStyle(
@@ -1119,9 +1118,9 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
         Row(
           children: [
             Icon(Icons.flash_on_rounded, color: ThemeColors.of(context).orangeMaterial, size: 20),
-            SizedBox(width: AppSpacing.sm),
+            const SizedBox(width: AppSpacing.sm),
             Text(
-              'Aes Rpidas',
+              'Ações Rápidas',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -1130,7 +1129,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
           ],
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         Row(
           children: [
             Expanded(
@@ -1141,7 +1140,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 onTap: () => _navigateToScreen('adicionar'),
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildQuickActionButton(
                 icon: Icons.upload_file_rounded,
@@ -1152,7 +1151,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
           ],
         ),
-        SizedBox(height: AppSpacing.md),
+        const SizedBox(height: AppSpacing.md),
         Row(
           children: [
             Expanded(
@@ -1163,7 +1162,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 onTap: _syncAllTags,
               ),
             ),
-            SizedBox(width: AppSpacing.md),
+            const SizedBox(width: AppSpacing.md),
             Expanded(
               child: _buildQuickActionButton(
                 icon: Icons.refresh_rounded,
@@ -1213,12 +1212,12 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
-                    color: colorLight,
+                    color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(icon, color: color, size: 24),
                 ),
-                SizedBox(height: AppSpacing.sm),
+                const SizedBox(height: AppSpacing.sm),
                 Text(
                   label,
                   textAlign: TextAlign.center,
@@ -1306,7 +1305,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
       _MenuTagItem(
         icon: Icons.layers_rounded,
         label: 'Lote',
-        subtitle: 'Operaes',
+        subtitle: 'Operações',
         color: ThemeColors.of(context).blueCyan,
         onTap: () => _navigateToScreen('lote'),
       ),
@@ -1319,7 +1318,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
       ),
       _MenuTagItem(
         icon: Icons.settings_rounded,
-        label: 'Configuraes',
+        label: 'Configurações',
         subtitle: 'Preferncias',
         color: ThemeColors.of(context).textSecondary,
         onTap: () => _showSettingsSheet(),
@@ -1368,7 +1367,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.lg),
+          const SizedBox(height: AppSpacing.lg),
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -1397,7 +1396,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
           decoration: BoxDecoration(
             color: item.color.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: item.colorLight),
+            border: Border.all(color: item.color.withValues(alpha: 0.2)),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -1409,7 +1408,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
                   Container(
                     padding: EdgeInsets.all(isMobile ? 8 : 10),
                     decoration: BoxDecoration(
-                      color: item.colorLight,
+                      color: item.color.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(
@@ -1506,7 +1505,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             children: [
               Icon(Icons.check_rounded, color: ThemeColors.of(context).surface),
               const SizedBox(width: 12),
-              const Expanded(child: Text('Sincronizao concluda!')),
+              const Expanded(child: Text('Sincronização concluda!')),
             ],
           ),
           backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
@@ -1539,7 +1538,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
             const SizedBox(height: AppSpacing.dashboardSectionGap),
             Text(
-              'Configuraes de Tags',
+              'Configurações de Tags',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -1550,7 +1549,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ListTile(
               leading: Icon(Icons.notifications_rounded, color: ThemeColors.of(context).brandPrimaryGreen),
               title: const Text('Alertas de Status'),
-              subtitle: const Text('Notificaes de tags offline'),
+              subtitle: const Text('Notificações de tags offline'),
               trailing: Icon(Icons.arrow_forward_ios_rounded, size: 16, color: ThemeColors.of(context).textTertiary),
               onTap: () => Navigator.pop(context),
             ),
@@ -1563,7 +1562,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ),
             ListTile(
               leading: Icon(Icons.sync_rounded, color: ThemeColors.of(context).primary),
-              title: const Text('Sincronizao Automtica'),
+              title: const Text('Sincronização Automtica'),
               subtitle: const Text('Intervalo de atualizao'),
               trailing: Icon(Icons.arrow_forward_ios_rounded, size: 16, color: ThemeColors.of(context).textTertiary),
               onTap: () => Navigator.pop(context),
@@ -1571,7 +1570,7 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
             ListTile(
               leading: Icon(Icons.download_rounded, color: ThemeColors.of(context).blueCyan),
               title: const Text('Exportar Dados'),
-              subtitle: const Text('Baixar relatório de tags'),
+              subtitle: const Text('Baixar relatrio de tags'),
               trailing: Icon(Icons.arrow_forward_ios_rounded, size: 16, color: ThemeColors.of(context).textTertiary),
               onTap: () => Navigator.pop(context),
             ),
@@ -1617,8 +1616,6 @@ class _MenuTagItem {
     this.badge,
   });
 }
-
-
 
 
 

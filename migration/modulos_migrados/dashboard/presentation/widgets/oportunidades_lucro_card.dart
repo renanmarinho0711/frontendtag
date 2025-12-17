@@ -4,7 +4,6 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/pricing/presentation/providers/pricing_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de Oportunidades de Lucro (Sugestões IA reestruturado)
 /// Mostra oportunidades de ajuste de preço identificadas pela IA
 class OportunidadesLucroCard extends ConsumerWidget {
@@ -45,7 +44,7 @@ class OportunidadesLucroCard extends ConsumerWidget {
         .where((s) => s.tipo == 'aumento')
         .fold(0.0, (sum, s) => sum + (s.precoSugerido - s.precoAtual));
 
-    // Se não há sugestões, mostra versÃ£o compacta
+    // Se não há sugestões, mostra versão compacta
     if (totalSugestoes == 0) {
       return _buildEmptyState(context, isMobile, isTablet);
     }
@@ -206,8 +205,8 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Expanded(
                   child: OutlinedButton.icon(
                     onPressed: onRevisarSugestoes,
-                    icon: Icon(Icons.visibility_rounded, size: 18),
-                    label: Text(
+                    icon: const Icon(Icons.visibility_rounded, size: 18),
+                    label: const Text(
                       'Revisar Sugestões',
                       style: TextStyle(fontSize: 13),
                     ),
@@ -225,8 +224,8 @@ class OportunidadesLucroCard extends ConsumerWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: onAplicarAutomatico,
-                    icon: Icon(Icons.bolt_rounded, size: 18),
-                    label: Text(
+                    icon: const Icon(Icons.bolt_rounded, size: 18),
+                    label: const Text(
                       'Aplicar Todos',
                       style: TextStyle(fontSize: 13),
                     ),

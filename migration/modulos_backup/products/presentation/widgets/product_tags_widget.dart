@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/data/models/product_tag_model.dart';
@@ -77,19 +77,19 @@ class ProductTagsWidget extends ConsumerWidget {
   }
 
   Widget _buildErrorState(BuildContext context, String error) {
-    return Card(
+    return const Card(
       child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
+        padding: EdgeInsets.all(AppSpacing.lg),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
+            Icon(
               Icons.error_outline,
               size: 48,
               color: AppThemeColors.red400,
             ),
-            const SizedBox(height: AppSpacing.sm),
-            const Text(
+            SizedBox(height: AppSpacing.sm),
+            Text(
               'Erro ao carregar tags',
               style: TextStyle(
                 color: AppThemeColors.redMain,

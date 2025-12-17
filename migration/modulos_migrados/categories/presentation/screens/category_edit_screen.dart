@@ -5,9 +5,7 @@ import 'package:tagbean/features/categories/presentation/providers/categories_pr
 import 'package:tagbean/features/categories/data/models/category_models.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 class CategoriasEditarScreen extends ConsumerStatefulWidget {
   final CategoryModel categoria;
 

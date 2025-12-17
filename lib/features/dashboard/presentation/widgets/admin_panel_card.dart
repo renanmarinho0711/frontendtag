@@ -5,10 +5,10 @@ import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 
 /// Card de Painel Administrativo
-/// Mostra opes de gesto baseadas na role do usurio:
-/// - PlatformAdmin: Gerenciar Clientes, Todas as Lojas, Todos os Usurios
-/// - ClientAdmin: Gerenciar Lojas, Gerenciar Usurios
-/// - StoreManager: Gerenciar Usurios da Loja
+/// Mostra opes de gesto baseadas na role do usuário:
+/// - PlatformAdmin: Gerenciar Clientes, Todas as Lojas, Todos os Usuários
+/// - ClientAdmin: Gerenciar Lojas, Gerenciar Usuários
+/// - StoreManager: Gerenciar Usuários da Loja
 class AdminPanelCard extends ConsumerWidget {
   final VoidCallback onGerenciarClientes;
   final VoidCallback onGerenciarLojas;
@@ -54,7 +54,7 @@ class AdminPanelCard extends ConsumerWidget {
         borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         boxShadow: [
           BoxShadow(
-            color: (isPlatformAdmin ? ThemeColors.of(context).moduleDashboard : ThemeColors.of(context).blueCyan)Light,
+            color: (isPlatformAdmin ? ThemeColors.of(context).moduleDashboard : ThemeColors.of(context).blueCyan).withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -143,7 +143,7 @@ class AdminPanelCard extends ConsumerWidget {
             ),
             SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
             
-            // Aes administrativas
+            // Ações administrativas
             if (isMobile)
               _buildMobileActions(context, isPlatformAdmin, isClientAdmin)
             else
@@ -188,7 +188,7 @@ class AdminPanelCard extends ConsumerWidget {
               child: _buildActionButton(
                 context: context,
                 icon: Icons.people_rounded,
-                label: 'Usurios',
+                label: 'Usuários',
                 onTap: onGerenciarUsuarios,
               ),
             ),
@@ -197,7 +197,7 @@ class AdminPanelCard extends ConsumerWidget {
               child: _buildActionButton(
                 context: context,
                 icon: Icons.settings_rounded,
-                label: 'Configuraes',
+                label: 'Configurações',
                 onTap: onVerConfiguracoes,
               ),
             ),
@@ -243,8 +243,8 @@ class AdminPanelCard extends ConsumerWidget {
         child: _buildActionButton(
           context: context,
           icon: Icons.people_rounded,
-          label: 'Gerenciar Usurios',
-          subtitle: 'Acessos e permisses',
+          label: 'Gerenciar Usuários',
+          subtitle: 'Acessos e Permissões',
           onTap: onGerenciarUsuarios,
         ),
       ),
@@ -256,7 +256,7 @@ class AdminPanelCard extends ConsumerWidget {
         child: _buildActionButton(
           context: context,
           icon: Icons.settings_rounded,
-          label: 'Configuraes',
+          label: 'Configurações',
           subtitle: 'Sistema e integraes',
           onTap: onVerConfiguracoes,
         ),
@@ -339,8 +339,6 @@ class AdminPanelCard extends ConsumerWidget {
     );
   }
 }
-
-
 
 
 

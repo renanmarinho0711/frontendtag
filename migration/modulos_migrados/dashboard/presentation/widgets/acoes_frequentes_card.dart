@@ -4,21 +4,20 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/dashboard/presentation/providers/dashboard_provider.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de ações frequentes baseado no uso real
 /// Substitui QuickActionsCard com ações mais relevantes
 class AcoesFrequentesCard extends ConsumerWidget {
   final VoidCallback onVincularTag;
   final VoidCallback onAtualizarPrecos;
   final VoidCallback onAdicionarProduto;
-  final VoidCallback onVerrelatÃ³rio;
+  final VoidCallback onVerRelatorio;
   
   const AcoesFrequentesCard({
     super.key,
     required this.onVincularTag,
     required this.onAtualizarPrecos,
     required this.onAdicionarProduto,
-    required this.onVerrelatÃ³rio,
+    required this.onVerRelatorio,
   });
 
   @override
@@ -169,7 +168,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                   icon: Icons.bar_chart_rounded,
                   label: 'Relatório',
                   cor: ThemeColors.of(context).orangeMain,
-                  onTap: onVerrelatÃ³rio,
+                  onTap: onVerRelatorio,
                 ),
               ),
             ],
@@ -223,7 +222,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
           label: 'Ver Relatório do Dia',
           subtitle: 'Resumo de vendas',
           gradiente: [ThemeColors.of(context).orangeMain, ThemeColors.of(context).orangeDark],
-          onTap: onVerrelatÃ³rio,
+          onTap: onVerRelatorio,
           isMobile: isMobile,
           isTablet: isTablet,
         ),

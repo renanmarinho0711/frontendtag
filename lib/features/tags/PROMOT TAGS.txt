@@ -1,4 +1,4 @@
-opilot said: # 📋 PROMPT DE COMANDO: MAPEAMENTO
+Copilot said: # 📋 PROMPT DE COMANDO: MAPEAMENTO
 📋 PROMPT DE COMANDO: MAPEAMENTO E REESTRUTURAÇÃO COMPLETA DE MÓDULO
 🎯 OBJETIVO DO PROMPT
 Este prompt deve ser utilizado para realizar o mapeamento completo, análise de integridade e reestruturação de UX/UI de qualquer módulo do sistema TagBean. O processo inclui verificação de todos os arquivos Flutter, conexões com backend, navegação entre telas e proposta de melhorias focadas na experiência do usuário.

@@ -1,5 +1,4 @@
-mport 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Card de mtrica para dashboards
@@ -39,7 +38,7 @@ class MetricCard extends StatelessWidget {
         value: count,
         subtitle: subtitle,
         icon: Icons.inventory_2_outlined,
-        color: ThemeColors.of(context).blueMaterial,
+        color: const Color(0xFF2196F3), // blueMaterial
         onTap: onTap,
         isCompact: isCompact,
       );
@@ -56,7 +55,7 @@ class MetricCard extends StatelessWidget {
         value: count,
         subtitle: subtitle,
         icon: Icons.nfc_outlined,
-        color: ThemeColors.of(context).greenMaterial,
+        color: const Color(0xFF4CAF50), // greenMaterial
         onTap: onTap,
         isCompact: isCompact,
       );
@@ -73,7 +72,7 @@ class MetricCard extends StatelessWidget {
         title: 'Lucro',
         value: value,
         icon: Icons.trending_up_outlined,
-        color: ThemeColors.of(context).orangeMaterial,
+        color: const Color(0xFFFF9800), // orangeMaterial
         trend: trend,
         isPositiveTrend: isPositiveTrend,
         onTap: onTap,
@@ -92,7 +91,7 @@ class MetricCard extends StatelessWidget {
         title: 'Margem',
         value: value,
         icon: Icons.percent_outlined,
-        color: ThemeColors.of(context).blueCyan,
+        color: const Color(0xFF00BCD4), // blueCyan
         trend: trend,
         isPositiveTrend: isPositiveTrend,
         onTap: onTap,
@@ -111,7 +110,7 @@ class MetricCard extends StatelessWidget {
         title: 'Vendas',
         value: value,
         icon: Icons.shopping_cart_outlined,
-        color: ThemeColors.of(context).materialTeal,
+        color: const Color(0xFF009688), // materialTeal
         trend: trend,
         isPositiveTrend: isPositiveTrend,
         onTap: onTap,
@@ -130,8 +129,9 @@ class MetricCard extends StatelessWidget {
   }
 
   Widget _buildFull(BuildContext context, ThemeData theme) {
+    final colors = ThemeColors.of(context);
     return Material(
-      color: ThemeColors.of(context).transparent,
+      color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
@@ -140,7 +140,7 @@ class MetricCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: theme.cardColor,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: ThemeColors.of(context).grey200),
+            border: Border.all(color: colors.grey200),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,7 +151,7 @@ class MetricCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Color.alphaBlend(color.withValues(alpha: 0.1), ThemeColors.of(context).surface),
+                      color: Color.alphaBlend(color.withValues(alpha: 0.1), colors.surface),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(icon, size: 24, color: color),
@@ -161,7 +161,7 @@ class MetricCard extends StatelessWidget {
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 14,
-                      color: ThemeColors.of(context).grey400,
+                      color: colors.grey400,
                     ),
                 ],
               ),
@@ -169,7 +169,7 @@ class MetricCard extends StatelessWidget {
               Text(
                 title,
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: ThemeColors.of(context).grey600,
+                  color: colors.grey600,
                 ),
               ),
               const SizedBox(height: 4),
@@ -189,14 +189,14 @@ class MetricCard extends StatelessWidget {
                             ? Icons.arrow_upward
                             : Icons.arrow_downward,
                         size: 14,
-                        color: isPositiveTrend ? ThemeColors.of(context).greenMaterial : ThemeColors.of(context).redMain,
+                        color: isPositiveTrend ? colors.greenMaterial : colors.redMain,
                       ),
                       const SizedBox(width: 4),
                       Text(
                         trend!,
                         style: TextStyle(
                           fontSize: 12,
-                          color: isPositiveTrend ? ThemeColors.of(context).greenMaterial : ThemeColors.of(context).redMain,
+                          color: isPositiveTrend ? colors.greenMaterial : colors.redMain,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -207,7 +207,7 @@ class MetricCard extends StatelessWidget {
                         child: Text(
                           subtitle!,
                           style: theme.textTheme.bodySmall?.copyWith(
-                            color: ThemeColors.of(context).grey500,
+                            color: colors.grey500,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -224,15 +224,16 @@ class MetricCard extends StatelessWidget {
   }
 
   Widget _buildCompact(BuildContext context, ThemeData theme) {
+    final colors = ThemeColors.of(context);
     return Material(
-      color: ThemeColors.of(context).transparent,
+      color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(10),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           decoration: BoxDecoration(
-            color: Color.alphaBlend(ThemeColors.of(context).surface.withValues(alpha: 0.9), color),
+            color: Color.alphaBlend(colors.surface.withValues(alpha: 0.9), color),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
@@ -253,7 +254,7 @@ class MetricCard extends StatelessWidget {
                   Text(
                     title,
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: ThemeColors.of(context).grey600,
+                      color: colors.grey600,
                       fontSize: 10,
                     ),
                   ),

@@ -1,6 +1,5 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
 /// Widget de breadcrumb para navegao intuitiva
@@ -18,6 +17,7 @@ class AppBreadcrumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -30,7 +30,7 @@ class AppBreadcrumb extends StatelessWidget {
                 child: Icon(
                   Icons.chevron_right_rounded,
                   size: 18,
-                  color: separatorColor ?? ThemeColors.of(context).grey400,
+                  color: separatorColor ?? colors.grey400,
                 ),
               ),
             _BreadcrumbItemWidget(
@@ -58,11 +58,12 @@ class _BreadcrumbItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     final style = textStyle ??
         TextStyle(
           fontSize: 14,
           fontWeight: isLast ? FontWeight.w600 : FontWeight.normal,
-          color: isLast ? ThemeColors.of(context).textPrimary : ThemeColors.of(context).textSecondary,
+          color: isLast ? colors.textPrimary : colors.textSecondary,
         );
 
     if (isLast || item.onTap == null) {
@@ -73,7 +74,7 @@ class _BreadcrumbItemWidget extends StatelessWidget {
             Icon(
               item.icon,
               size: 16,
-              color: isLast ? ThemeColors.of(context).textPrimary : ThemeColors.of(context).textSecondary,
+              color: isLast ? colors.textPrimary : colors.textSecondary,
             ),
             const SizedBox(width: 4),
           ],
@@ -94,13 +95,13 @@ class _BreadcrumbItemWidget extends StatelessWidget {
               Icon(
                 item.icon,
                 size: 16,
-                color: ThemeColors.of(context).primary,
+                color: colors.primary,
               ),
               const SizedBox(width: 4),
             ],
             Text(
               item.label,
-              style: style.copyWith(color: ThemeColors.of(context).primary),
+              style: style.copyWith(color: colors.primary),
             ),
           ],
         ),
@@ -143,9 +144,10 @@ class StepIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final active = activeColor ?? ThemeColors.of(context).primary;
-    final inactive = inactiveColor ?? ThemeColors.of(context).grey300!;
-    final completed = completedColor ?? ThemeColors.of(context).successIcon;
+    final colors = ThemeColors.of(context);
+    final active = activeColor ?? colors.primary;
+    final inactive = inactiveColor ?? colors.grey300;
+    final completed = completedColor ?? colors.successIcon;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -185,8 +187,8 @@ class StepIndicator extends StatelessWidget {
                       fontSize: 11,
                       fontWeight: i == currentStep ? FontWeight.w600 : FontWeight.normal,
                       color: i <= currentStep 
-                          ? ThemeColors.of(context).textPrimary 
-                          : ThemeColors.of(context).textSecondary,
+                          ? colors.textPrimary 
+                          : colors.textSecondary,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -219,17 +221,18 @@ class _StepCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = ThemeColors.of(context);
     Color backgroundColor;
     Color foregroundColor;
     Widget child;
 
     if (isCompleted) {
       backgroundColor = completedColor;
-      foregroundColor = ThemeColors.of(context).surface;
-      child = Icon(Icons.check_rounded, size: 16, color: ThemeColors.of(context).surface);
+      foregroundColor = colors.surface;
+      child = Icon(Icons.check_rounded, size: 16, color: colors.surface);
     } else if (isActive) {
       backgroundColor = activeColor;
-      foregroundColor = ThemeColors.of(context).surface;
+      foregroundColor = colors.surface;
       child = Text(
         '$stepNumber',
         style: TextStyle(
@@ -240,7 +243,7 @@ class _StepCircle extends StatelessWidget {
       );
     } else {
       backgroundColor = inactiveColor;
-      foregroundColor = ThemeColors.of(context).grey600!;
+      foregroundColor = colors.grey600;
       child = Text(
         '$stepNumber',
         style: TextStyle(
@@ -261,7 +264,7 @@ class _StepCircle extends StatelessWidget {
         boxShadow: isActive
             ? [
                 BoxShadow(
-                  color: Color.alphaBlend(activeColor.withValues(alpha: 0.4), ThemeColors.of(context).surface),
+                  color: Color.alphaBlend(activeColor.withValues(alpha: 0.4), colors.surface),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -292,7 +295,8 @@ class LabeledProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final progressColor = color ?? ThemeColors.of(context).primary;
+    final colors = ThemeColors.of(context);
+    final progressColor = color ?? colors.primary;
     final displayValue = (value * 100).toInt();
 
     return Column(
@@ -311,7 +315,7 @@ class LabeledProgress extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: ThemeColors.of(context).textSecondary,
+                      color: colors.textSecondary,
                     ),
                   ),
                 Text(
@@ -335,7 +339,7 @@ class LabeledProgress extends StatelessWidget {
               return LinearProgressIndicator(
                 value: animatedValue,
                 minHeight: height,
-                backgroundColor: ThemeColors.of(context).grey200,
+                backgroundColor: colors.grey200,
                 valueColor: AlwaysStoppedAnimation(progressColor),
               );
             },

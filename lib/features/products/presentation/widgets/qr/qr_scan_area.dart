@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Widget de �rea de escaneamento QR/NFC
-/// �rea visual onde o usu�rio deve posicionar o c�digo
+/// Widget de ãrea de escaneamento QR/NFC
+/// ãrea visual onde o Usuário deve posicionar o código
 /// 
-/// Para usar scanner real de c�mera, use [onOpenCamera] callback
-/// que abrir� o BarcodeScannerWidget em tela cheia
+/// Para usar scanner real de câmera, use [onOpenCamera] callback
+/// que abrirá o BarcodeScannerWidget em tela cheia
 class QrScanArea extends StatelessWidget {
   final bool isScanning;
   final bool hasCapture;
@@ -18,7 +17,7 @@ class QrScanArea extends StatelessWidget {
   final VoidCallback? onTapToScan;
   final VoidCallback? onManualInput;
   
-  /// Callback para abrir c�mera real de escaneamento
+  /// Callback para abrir câmera real de escaneamento
   final VoidCallback? onOpenCamera;
 
   const QrScanArea({
@@ -41,10 +40,10 @@ class QrScanArea extends StatelessWidget {
       height: 220,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: hasCapture ? ThemeColors.of(context).success : primaryColorLight,
+          color: hasCapture ? ThemeColors.of(context).success : primaryColor.withValues(alpha: 0.3),
           width: hasCapture ? 2 : 1,
         ),
       ),
@@ -54,7 +53,7 @@ class QrScanArea extends StatelessWidget {
 
   Widget _buildScanState(BuildContext context) {
     if (isScanning) {
-      return _buildScanningOverlay();
+      return _buildScanningOverlay(context);
     }
     return _buildIdleState(context);
   }
@@ -66,7 +65,7 @@ class QrScanArea extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // �cone animado
+          // ícone animado
           if (pulseController != null)
             AnimatedBuilder(
               animation: pulseController!,
@@ -93,10 +92,10 @@ class QrScanArea extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(AppSpacing.dashboardSectionGap),
               decoration: BoxDecoration(
-                color: primaryColorLight,
+                color: primaryColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: primaryColorLight,
+                  color: primaryColor.withValues(alpha: 0.3),
                   width: 2,
                 ),
               ),
@@ -125,12 +124,12 @@ class QrScanArea extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           
-          // Bot�o para abrir c�mera real
+          // Botão para abrir câmera real
           if (onOpenCamera != null)
             ElevatedButton.icon(
               onPressed: onOpenCamera,
-              icon: Icon(Icons.camera_alt_rounded, size: 20),
-              label: Text('Abrir C�mera'),
+              icon: const Icon(Icons.camera_alt_rounded, size: 20),
+              label: const Text('Abrir Cãmera'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: primaryColor,
                 foregroundColor: ThemeColors.of(context).surface,
@@ -156,7 +155,7 @@ class QrScanArea extends StatelessWidget {
     );
   }
 
-  Widget _buildScanningOverlay() {
+  Widget _buildScanningOverlay(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -184,19 +183,19 @@ class QrScanArea extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-          SizedBox(
+              SizedBox(
                 width: 16,
                 height: 16,
                 child: CircularProgressIndicator(
                   strokeWidth: 2,
-                  valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).textSecondary),
+                  valueColor: AlwaysStoppedAnimation<Color>(ThemeColors.of(context).surface),
                 ),
               ),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 'Escaneando...',
                 style: TextStyle(
-                  color: ThemeColors.of(context).textSecondary,
+                  color: ThemeColors.of(context).surface,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -215,7 +214,7 @@ class QrScanArea extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(AppSpacing.lg),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).successLight,
+              color: ThemeColors.of(context).success.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -257,7 +256,7 @@ class _ScanLinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = colorLight
+      ..color = color.withValues(alpha: 0.3)
       ..strokeWidth = 2;
 
     // Desenha linhas de scan
@@ -265,7 +264,7 @@ class _ScanLinePainter extends CustomPainter {
     canvas.drawLine(
       Offset(0, lineY),
       Offset(size.width, lineY),
-      paint..color = colorDark,
+      paint..color = color.withValues(alpha: 0.8),
     );
 
     // Cantos do frame
@@ -298,8 +297,6 @@ class _ScanLinePainter extends CustomPainter {
     return oldDelegate.progress != progress;
   }
 }
-
-
 
 
 

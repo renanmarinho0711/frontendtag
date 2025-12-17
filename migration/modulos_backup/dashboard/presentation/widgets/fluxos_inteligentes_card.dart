@@ -63,7 +63,7 @@ class FluxosInteligentesCard extends ConsumerWidget {
                   color: AppThemeColors.greenMaterial.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.auto_awesome_rounded,
                   color: AppThemeColors.greenMaterial,
                   size: 18,
@@ -90,7 +90,7 @@ class FluxosInteligentesCard extends ConsumerWidget {
                   ),
                   child: Text(
                     'Ver todos (${fluxos.length})',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       color: AppThemeColors.greenMaterial,
                     ),

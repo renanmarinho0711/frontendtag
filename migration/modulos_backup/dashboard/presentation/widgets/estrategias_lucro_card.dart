@@ -273,7 +273,7 @@ class EstrategiasLucroCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (title == 'Ganho Hoje')
-                Icon(
+                const Icon(
                   Icons.trending_up_rounded,
                   color: AppThemeColors.surfaceOverlay80,
                   size: 10,

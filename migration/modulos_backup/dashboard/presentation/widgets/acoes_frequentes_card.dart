@@ -10,14 +10,14 @@ class AcoesFrequentesCard extends ConsumerWidget {
   final VoidCallback onVincularTag;
   final VoidCallback onAtualizarPrecos;
   final VoidCallback onAdicionarProduto;
-  final VoidCallback onVerrelatÃ³rio;
+  final VoidCallback onVerRelatorio;
   
   const AcoesFrequentesCard({
     super.key,
     required this.onVincularTag,
     required this.onAtualizarPrecos,
     required this.onAdicionarProduto,
-    required this.onVerrelatÃ³rio,
+    required this.onVerRelatorio,
   });
 
   @override
@@ -62,12 +62,12 @@ class AcoesFrequentesCard extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [AppThemeColors.orangeMain, AppThemeColors.orangeDark],
                     ),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.bolt_rounded,
                     color: AppThemeColors.surface,
                     size: 20,
@@ -91,7 +91,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                           color: AppThemeColors.textPrimary,
                         ),
                       ),
-                      Text(
+                      const Text(
                         'O que você mais faz',
                         style: TextStyle(
                           fontSize: 12,
@@ -168,7 +168,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                   icon: Icons.bar_chart_rounded,
                   label: 'Relatório',
                   cor: AppThemeColors.orangeMain,
-                  onTap: onVerrelatÃ³rio,
+                  onTap: onVerRelatorio,
                 ),
               ),
             ],
@@ -222,7 +222,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
           label: 'Ver Relatório do Dia',
           subtitle: 'Resumo de vendas',
           gradiente: [AppThemeColors.orangeMain, AppThemeColors.orangeDark],
-          onTap: onVerrelatÃ³rio,
+          onTap: onVerRelatorio,
           isMobile: isMobile,
           isTablet: isTablet,
         ),
@@ -290,7 +290,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
             const SizedBox(height: 8),
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: AppThemeColors.textPrimary,
@@ -357,7 +357,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                 children: [
                   Text(
                     label,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: AppThemeColors.textPrimary,
@@ -366,7 +366,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                   ),
                   Text(
                     subtitle,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 11,
                       color: AppThemeColors.textSecondary,
                     ),
@@ -385,7 +385,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                 ),
                 child: Text(
                   badge,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: AppThemeColors.redMain,
@@ -393,7 +393,7 @@ class AcoesFrequentesCard extends ConsumerWidget {
                 ),
               ),
             const SizedBox(width: 8),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios_rounded,
               color: AppThemeColors.textSecondaryOverlay50,
               size: 16,

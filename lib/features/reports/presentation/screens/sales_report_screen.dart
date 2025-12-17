@@ -1,21 +1,20 @@
+import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tagbean/core/enums/loading_status.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/reports/presentation/providers/reports_provider.dart';
 import 'package:tagbean/features/reports/data/models/report_models.dart';
 
-class relatoriosVendasScreen extends ConsumerStatefulWidget {
-  const relatoriosVendasScreen({super.key});
+class RelatoriosVendasScreen extends ConsumerStatefulWidget {
+  const RelatoriosVendasScreen({super.key});
 
   @override
-  ConsumerState<relatoriosVendasScreen> createState() => _relatoriosVendasScreenState();
+  ConsumerState<RelatoriosVendasScreen> createState() => _RelatoriosVendasScreenState();
 }
 
-class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
+class _RelatoriosVendasScreenState extends ConsumerState<RelatoriosVendasScreen>
     with TickerProviderStateMixin, ResponsiveCache {
   late AnimationController _animationController;
   late AnimationController _chartController;
@@ -54,13 +53,6 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
     _animationController.dispose();
     _chartController.dispose();
     super.dispose();
-  }
-
-  /// Resolve colorKey do modelo em uma Color dinâmica
-  /// ESSENCIAL: Converte string semântica em cor real usando tema atual
-  Color _resolveColorFromKey(String colorKey) {
-    final themeColors = ThemeColors.of(context);
-    return themeColors.getColorByKey(colorKey) ?? themeColors.primary;
   }
 
   @override
@@ -180,7 +172,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: ThemeColors.of(context).successLight,
+                  color: ThemeColors.of(context).success.withValues(alpha: 0.3),
                   blurRadius: isMobile ? 10 : 12,
                   offset: const Offset(0, 4),
                 ),
@@ -201,7 +193,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'relatorios de Vendas',
+                  'Relatórios de Vendas',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -223,7 +215,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                   ),
                 ),
                 Text(
-                  'Análise de Performance Comercial',
+                  'Anãlise de Performance Comercial',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -417,7 +409,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildMiniStat(_salesState.ticketMedioFormatted, 'Ticket Médio', Icons.receipt_long_rounded),
+                _buildMiniStat(_salesState.ticketMedioFormatted, 'Ticket Mãdio', Icons.receipt_long_rounded),
                 Container(
                   width: 1,
                   height: ResponsiveHelper.getResponsiveHeight(context, mobile: 36, tablet: 38, desktop: 40),
@@ -516,7 +508,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Text(
-                'Período:',
+                'Perãodo:',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                 overflow: TextOverflow.ellipsis,
@@ -526,7 +518,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _periodoSelecionado,
+                  initialValue: _periodoSelecionado,
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                     color: ThemeColors.of(context).textPrimary,
@@ -562,7 +554,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
               Expanded(child: _buildViewButton('lista', 'Lista', Icons.list_rounded)),
               SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
-              Expanded(child: _buildViewButton('grafico', 'Gráfico', Icons.bar_chart_rounded)),
+              Expanded(child: _buildViewButton('grafico', 'gráfico', Icons.bar_chart_rounded)),
             ],
           ),
         ],
@@ -630,10 +622,10 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
           borderRadius: BorderRadius.circular(isMobile ? 20 : (isTablet ? 22 : 24)),
-          border: Border.all(color: relatorio.corLight, width: isMobile ?  1.5 : 2),
+          border: Border.all(color: relatorio.cor.withValues(alpha: 0.3), width: isMobile ?  1.5 : 2),
           boxShadow: [
             BoxShadow(
-              color: relatorio.corLight,
+              color: relatorio.cor.withValues(alpha: 0.15),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 6 : 8),
             ),
@@ -693,12 +685,12 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        relatorio.corLight,
-                        relatorio.corLight,
+                        relatorio.cor.withValues(alpha: 0.2),
+                        relatorio.cor.withValues(alpha: 0.1),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
-                    border: Border.all(color: relatorio.corLight),
+                    border: Border.all(color: relatorio.cor.withValues(alpha: 0.3)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -746,12 +738,12 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              relatorio.corLight,
-                              relatorio.corLight,
+                              relatorio.cor.withValues(alpha: 0.15),
+                              relatorio.cor.withValues(alpha: 0.05),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
-                          border: Border.all(color: relatorio.corLight),
+                          border: Border.all(color: relatorio.cor.withValues(alpha: 0.3)),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -784,7 +776,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 3.5, tablet: 3.75, desktop: 4),
                               ),
                               decoration: BoxDecoration(
-                                color: relatorio.corLight,
+                                color: relatorio.cor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
                               ),
                               child: Text(
@@ -856,7 +848,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                         Container(
                           padding: EdgeInsets.all(ResponsiveHelper.getResponsivePadding(context, mobile: 9, tablet: 9.5, desktop: 10)),
                           decoration: BoxDecoration(
-                            color: relatorio.corLight,
+                            color: relatorio.cor.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                           ),
                           child: Icon(
@@ -901,7 +893,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                       children: [
                         Expanded(
                           child: OutlinedButton.icon(
-                            onPressed: () => _exportarrelatorio(relatorio),
+                            onPressed: () => _exportarRelatorio(relatorio),
                             icon: Icon(
                               Icons.file_download_rounded,
                               size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 15, tablet: 15.5, desktop: 16),
@@ -927,7 +919,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                         SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                         Expanded(
                           child: ElevatedButton.icon(
-                            onPressed: () => _verDetalhesrelatorio(relatorio),
+                            onPressed: () => _verDetalhesRelatorio(relatorio),
                             icon: Icon(
                               Icons.open_in_new_rounded,
                               size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 15, tablet: 15.5, desktop: 16),
@@ -1000,7 +992,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
               ),
               SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
               Text(
-                'Comparativo de Per�odos',
+                'Comparativo de Períodos',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15, tabletFontSize: 15.5),
                 overflow: TextOverflow.ellipsis,
@@ -1011,11 +1003,11 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
             ],
           ),
           ResponsiveSpacing.verticalMedium(context),
-          _buildChartBar('Mês Atual', 103500, 103500, ThemeColors.of(context).success),
+          _buildChartBar('Mãs Atual', 103500, 103500, ThemeColors.of(context).success),
           SizedBox(height: AppSizes.spacingBase.get(isMobile, isTablet)),
-          _buildChartBar('Mês Anterior', 90000, 103500, ThemeColors.of(context).primary),
+          _buildChartBar('Mãs Anterior', 90000, 103500, ThemeColors.of(context).primary),
           SizedBox(height: AppSizes.spacingBase.get(isMobile, isTablet)),
-          _buildChartBar('Há 2 Meses', 85000, 103500, ThemeColors.of(context).greenMaterial),
+          _buildChartBar('Hã 2 Meses', 85000, 103500, ThemeColors.of(context).greenLightMaterial),
           ResponsiveSpacing.verticalMedium(context),
           Container(
             padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
@@ -1034,7 +1026,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                 SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                 Expanded(
                   child: Text(
-                    'Crescimento consistente de 15% ao m�s',
+                    'Crescimento consistente de 15% ao mãs',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                     overflow: TextOverflow.ellipsis,
@@ -1102,8 +1094,8 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
     );
   }
 
-  /// Exporta relatorio em formato selecionado
-  void _exportarrelatorio(SalesReportModel relatorio) {
+  /// Exporta relatãrio em formato selecionado
+  void _exportarRelatorio(SalesReportModel relatorio) {
     showModalBottomSheet(
       context: context,
       backgroundColor: ThemeColors.of(context).transparent,
@@ -1111,7 +1103,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           color: ThemeColors.of(context).surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -1122,7 +1114,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: relatorio.corLight,
+                    color: relatorio.cor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(Icons.file_download_rounded, color: relatorio.cor, size: 22),
@@ -1132,8 +1124,8 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Exportar relatorio', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                      Text(relatorio.titulo, style: TextStyle(fontSize: 13, color: ThemeColors.of(context).textSecondary)),
+                      const Text('Exportar Relatãrio', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      Text(relatorio.titulo, style: TextStyle(fontSize: 13, color: ThemeColors.of(context).grey600)),
                     ],
                   ),
                 ),
@@ -1182,7 +1174,7 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: colorLight),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
         ),
         child: Row(
           children: [
@@ -1190,15 +1182,15 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
             const SizedBox(width: 16),
             Text(format, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: color)),
             const Spacer(),
-            Icon(Icons.arrow_forward_ios_rounded, size: 16, color: colorLight),
+            Icon(Icons.arrow_forward_ios_rounded, size: 16, color: color.withValues(alpha: 0.5)),
           ],
         ),
       ),
     );
   }
 
-  /// Ver detalhes do relatorio
-  void _verDetalhesrelatorio(SalesReportModel relatorio) {
+  /// Ver detalhes do relatãrio
+  void _verDetalhesRelatorio(SalesReportModel relatorio) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Row(
@@ -1220,9 +1212,6 @@ class _relatoriosVendasScreenState extends ConsumerState<relatoriosVendasScreen>
     );
   }
 }
-
-
-
 
 
 

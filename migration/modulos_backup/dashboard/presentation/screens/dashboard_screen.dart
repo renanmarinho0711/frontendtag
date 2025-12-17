@@ -36,7 +36,6 @@ import 'package:tagbean/features/dashboard/presentation/widgets/recent_activity_
 import 'package:tagbean/features/dashboard/presentation/widgets/admin_panel_card.dart';
 // Widgets de navegação extraídos
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/navigation.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
   const DashboardScreen({super.key});
@@ -102,7 +101,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     {
       'icon': Icons.assessment_rounded,
       'title': 'Relatórios',
-      'gradient': [AppThemeColors.modulerelatÃ³rios, AppThemeColors.modulerelatÃ³riosDark]
+      'gradient': [AppThemeColors.moduleRelatorios, AppThemeColors.moduleRelatoriosDark]
     },
     {
       'icon': Icons.settings_rounded,
@@ -303,7 +302,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       case 7:
         return ImportacaoMenuScreen(key: _getScreenKey('importacao'));
       case 8:
-        return relatÃ³riosMenuScreen(key: _getScreenKey('relatÃ³rios'));
+        return RelatoriosMenuScreen(key: _getScreenKey('relatorios'));
       case 9:
         return ConfiguracoesMenuScreen(key: _getScreenKey('configuracoes'));
       default:
@@ -312,7 +311,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
   
   // OTIMIZAÇÃO REMOVIDA: Não recriar GlobalKeys (causava rebuilds completos das telas)
-  // GlobalKeys agora sÃ£o final e persistem durante toda vida útil do widget
+  // GlobalKeys agora são final e persistem durante toda vida útil do widget
 
   @override
   Widget build(BuildContext context) {
@@ -326,7 +325,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         fadeController: _fadeController,
       ) : null,
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -464,7 +463,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           children: [
             Text('TagBean - Sistema de Gestão de Etiquetas Eletrônicas'),
             SizedBox(height: 12),
-            Text('versÃ£o: 1.0.0'),
+            Text('Versão: 1.0.0'),
             SizedBox(height: 8),
             Text('Suporte: suporte@tagbean.com.br'),
           ],
@@ -748,13 +747,13 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         color: AppThemeColors.grey100,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: TextField(
+      child: const TextField(
         decoration: InputDecoration(
           hintText: 'Buscar produtos, tags...',
           hintStyle: TextStyle(fontSize: 13, color: AppThemeColors.grey500),
           prefixIcon: Icon(Icons.search_rounded, color: AppThemeColors.grey400, size: 20),
           border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         ),
       ),
     );
@@ -888,7 +887,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           ),
         ),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [AppThemeColors.grey200, AppThemeColors.grey300],
           ),
           borderRadius: BorderRadius.circular(isMobile ? 8 : 10),
@@ -1354,7 +1353,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           onVincularTag: () => _navigateTo(2),
           onAtualizarPrecos: () => _navigateTo(5),
           onAdicionarProduto: () => _navigateTo(1),
-          onVerrelatÃ³rio: () => _navigateTo(8),
+          onVerRelatorio: () => _navigateTo(8),
         ),
         SizedBox(height: spacing),
         
@@ -1401,7 +1400,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   onVincularTag: () => _navigateTo(2),
                   onAtualizarPrecos: () => _navigateTo(5),
                   onAdicionarProduto: () => _navigateTo(1),
-                  onVerrelatÃ³rio: () => _navigateTo(8),
+                  onVerRelatorio: () => _navigateTo(8),
                 ),
               ),
             ],
@@ -1434,7 +1433,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
         ),
-        icon: Icon(
+        icon: const Icon(
           Icons.auto_awesome_rounded,
           color: AppThemeColors.greenMaterial,
           size: 48,
@@ -1455,11 +1454,11 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               Navigator.pop(context);
               // TODO: Implementar aplicação de sugestões
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
+                const SnackBar(
                   content: Row(
                     children: [
                       Icon(Icons.check_circle_rounded, color: AppThemeColors.surface),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12),
                       Expanded(child: Text('Sugestões aplicadas com sucesso!')),
                     ],
                   ),
@@ -1784,9 +1783,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     String value,
     IconData icon,
     List<Color> gradient,
-    String trend, {
-    bool isAlert = false,
-  }) {
+    String trend) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
 
@@ -1963,7 +1960,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       ),
                     ),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [AppThemeColors.moduleEstrategias, AppThemeColors.moduleEstrategiasDark],
                       ),
                       borderRadius: BorderRadius.circular(
@@ -2081,7 +2078,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [AppThemeColors.successLight, AppThemeColors.materialTeal],
@@ -2375,17 +2372,17 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               letterSpacing: -0.5,
             ),
           ),
-          SizedBox(height: 1),
+          const SizedBox(height: 1),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               if (title == 'Ganho Hoje')
-                Icon(
+                const Icon(
                   Icons.trending_up_rounded,
                   color: AppThemeColors.surfaceOverlay80,
                   size: 7,
                 ),
-              if (title == 'Ganho Hoje') SizedBox(width: 2),
+              if (title == 'Ganho Hoje') const SizedBox(width: 2),
               Flexible(
                 child: Text(
                   subtitle,
@@ -2429,17 +2426,17 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       },
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [AppThemeColors.modulerelatÃ³rios, AppThemeColors.modulerelatÃ³riosDark],
+            colors: [AppThemeColors.moduleRelatorios, AppThemeColors.moduleRelatoriosDark],
           ),
           borderRadius: BorderRadius.circular(
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           boxShadow: [
             BoxShadow(
-              color: AppThemeColors.modulerelatÃ³rios.withValues(alpha: 0.3),
+              color: AppThemeColors.moduleRelatorios.withValues(alpha: 0.3),
               blurRadius: isMobile ? 20 : 25,
               offset: Offset(0, isMobile ? 8 : 10),
             ),
@@ -2938,7 +2935,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
               ],
             ),
           ),
-          SizedBox(width: 4),
+          const SizedBox(width: 4),
           Flexible(
             flex: 2,
             child: Column(
@@ -3359,7 +3356,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       ),
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [AppThemeColors.errorPastel, AppThemeColors.warningBackground],
@@ -3932,7 +3929,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   /// Força sincronização imediata
   void _forcarSincronizacao() {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Row(
           children: [
             SizedBox(
@@ -3943,13 +3940,13 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                 valueColor: AlwaysStoppedAnimation<Color>(AppThemeColors.surface),
               ),
             ),
-            const SizedBox(width: 12),
-            const Expanded(child: Text('Sincronizando...')),
+            SizedBox(width: 12),
+            Expanded(child: Text('Sincronizando...')),
           ],
         ),
         backgroundColor: AppThemeColors.blueMain,
         behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 3),
+        duration: Duration(seconds: 3),
       ),
     );
     // TODO: Implementar chamada real de sincronização
@@ -3962,7 +3959,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        icon: Icon(Icons.cloud_done_rounded, color: AppThemeColors.greenMain, size: 48),
+        icon: const Icon(Icons.cloud_done_rounded, color: AppThemeColors.greenMain, size: 48),
         title: const Text('Status do ERP'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -3995,7 +3992,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: TextStyle(color: AppThemeColors.textSecondary)),
+        Text(label, style: const TextStyle(color: AppThemeColors.textSecondary)),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
@@ -4017,7 +4014,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        icon: Icon(Icons.auto_awesome_rounded, color: AppThemeColors.greenMaterial, size: 48),
+        icon: const Icon(Icons.auto_awesome_rounded, color: AppThemeColors.greenMaterial, size: 48),
         title: const Text('Fluxos Pendentes'),
         content: const Text(
           'Aqui você pode ver todos os fluxos inteligentes que precisam de sua atenção.',
@@ -4045,17 +4042,17 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   void _atualizarDashboard() {
     ref.read(dashboardProvider.notifier).refresh();
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Row(
           children: [
             Icon(Icons.refresh_rounded, color: AppThemeColors.surface),
-            const SizedBox(width: 12),
-            const Expanded(child: Text('Dashboard atualizado!')),
+            SizedBox(width: 12),
+            Expanded(child: Text('Dashboard atualizado!')),
           ],
         ),
         backgroundColor: AppThemeColors.greenMain,
         behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 2),
+        duration: Duration(seconds: 2),
       ),
     );
   }
@@ -4141,7 +4138,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 2),
+                    const SizedBox(height: 2),
                     Text(
                       alerta['descricao'],
                       style: TextStyle(
@@ -4491,7 +4488,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   ),
                   if (alerta != _alertas.take(3).last) const Divider(),
                 ],
-              )).toList(),
+              )),
               if (_alertas.isEmpty) ...[
                 _buildNotificationItem(
                   'Sem alertas',
@@ -4743,12 +4740,12 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
   ThemeData appBarTheme(BuildContext context) {
     final theme = Theme.of(context);
     return theme.copyWith(
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: AppThemeColors.surface,
         iconTheme: IconThemeData(color: AppThemeColors.textPrimary),
         titleTextStyle: TextStyle(color: AppThemeColors.textPrimary, fontSize: 16),
       ),
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         hintStyle: TextStyle(color: AppThemeColors.textSecondary),
         border: InputBorder.none,
       ),
@@ -4788,7 +4785,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
   }
 
   Widget _buildEmptyState(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -4797,7 +4794,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             size: 64,
             color: AppThemeColors.textSecondaryOverlay30,
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           Text(
             'Busque por produtos ou tags',
             style: TextStyle(
@@ -4805,7 +4802,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
               color: AppThemeColors.textSecondary,
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           Text(
             'Digite um nome, código ou MAC',
             style: TextStyle(
@@ -4836,7 +4833,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               Icons.search_off_rounded,
               size: 64,
               color: AppThemeColors.textSecondaryOverlay30,
@@ -4844,7 +4841,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             const SizedBox(height: 16),
             Text(
               'Nenhum resultado para "$query"',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 color: AppThemeColors.textSecondary,
               ),
@@ -4879,7 +4876,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
           ),
           subtitle: Text(
             isProduto ? r['codigo'] ?? '' : r['produto'] ?? 'Sem vínculo',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               color: AppThemeColors.textSecondary,
             ),
@@ -4887,7 +4884,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
           trailing: isProduto
               ? Text(
                   r['preco'] ?? '',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: AppThemeColors.greenMain,
                   ),
@@ -4900,7 +4897,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                   ),
                   child: Text(
                     r['status'] ?? '',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppThemeColors.greenMain,

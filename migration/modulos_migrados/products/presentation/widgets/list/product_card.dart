@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Card de produto individual para a lista de produtos
 class ProductCard extends StatelessWidget {
   final ProductModel produto;
@@ -160,7 +159,7 @@ class ProductCard extends StatelessWidget {
               size: AppSizes.iconMicroAlt.get(isMobile, isTablet),
               color: ThemeColors.of(context).textSecondary,
             ),
-            SizedBox(width: AppSpacing.xxs),
+            const SizedBox(width: AppSpacing.xxs),
             Flexible(
               child: Text(
                 produto.codigo,

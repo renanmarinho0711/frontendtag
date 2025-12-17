@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/reports/data/models/report_models.dart';
 import 'package:tagbean/features/reports/data/repositories/reports_repository.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
+import 'package:tagbean/design_system/theme/theme_colors.dart';
 import 'package:tagbean/core/enums/loading_status.dart';
 
 // =============================================================================
@@ -50,19 +50,19 @@ class SalesReportsState {
   /// Total de itens vendidos
   int get totalItensVendidos => reports.fold(0, (sum, r) => sum + r.quantidadeNumerica);
   
-  /// Ticket m�dio
+  /// Ticket Médio
   double get ticketMedio => totalItensVendidos > 0 ? totalVendas / totalItensVendidos : 0.0;
   
-  /// Ticket m�dio formatado
+  /// Ticket Médio formatado
   String get ticketMedioFormatted {
     final ticket = ticketMedio;
     return 'R\$ ${ticket.toStringAsFixed(2).replaceAll('.', ',')}';
   }
   
-  /// Crescimento m�dio
+  /// Crescimento Médio
   String get crescimentoMedio {
     if (reports.isEmpty) return '0%';
-    // Pega o crescimento do primeiro relat�rio ou calcula m�dia
+    // Pega o crescimento do primeiro relatãrio ou calcula mãdia
     final report = reports.isNotEmpty ? reports.first : null;
     return report?.crescimento ?? '0%';
   }
@@ -117,7 +117,7 @@ class SalesReportsNotifier extends StateNotifier<SalesReportsState> {
               titulo: item['titulo'] ?? item['title'] ?? '',
               subtitulo: item['subtitulo'] ?? item['subtitle'] ?? '',
               icone: Icons.trending_up_rounded,
-              corKey: 'success',
+              cor: AppThemeColors.success,
               valor: item['valor'] ?? item['value'] ?? '',
               valorNumerico: (item['valorNumerico'] ?? item['numericValue'] ?? 0).toDouble(),
               quantidade: item['quantidade'] ?? item['quantity'] ?? '',
@@ -138,15 +138,15 @@ class SalesReportsNotifier extends StateNotifier<SalesReportsState> {
           error: null,
         );
       } else {
-        // ERRO: API retornou falha - N�O usar mock silenciosamente
+        // ERRO: API retornou falha - NãO usar mock silenciosamente
         state = state.copyWith(
           status: LoadingStatus.error,
-          error: response.message ?? 'Erro ao carregar relat�rios da API',
+          error: response.message ?? 'Erro ao carregar relatórios da API',
           reports: [],
         );
       }
     } catch (e) {
-      // ERRO: Exce��o na chamada - mostrar erro ao usu�rio
+      // ERRO: Exceãão na chamada - mostrar erro ao Usuário
       state = state.copyWith(
         status: LoadingStatus.error,
         error: 'Falha ao conectar com o servidor: ${e.toString()}',
@@ -190,7 +190,7 @@ class AuditReportsState {
     this.error,
   });
 
-  int get totalauditorias => reports.length;
+  int get totalAuditorias => reports.length;
   int get auditoriasComProblemas => reports.where((r) => r.hasProblems).length;
   double get conformidadeMedia => 
       reports.isNotEmpty 
@@ -235,7 +235,7 @@ class AuditReportsNotifier extends StateNotifier<AuditReportsState> {
               id: item['id']?.toString() ?? '',
               titulo: item['titulo'] ?? item['title'] ?? item['tipo'] ?? item['Tipo'] ?? '',
               descricao: item['descricao'] ?? item['description'] ?? item['Descricao'] ?? '',
-              dataauditoria: DateTime.tryParse(item['dataauditoria'] ?? item['auditDate'] ?? item['dataHora'] ?? item['DataHora'] ?? '') ?? DateTime.now(),
+              dataAuditoria: DateTime.tryParse(item['dataAuditoria'] ?? item['auditDate'] ?? item['dataHora'] ?? item['DataHora'] ?? '') ?? DateTime.now(),
               auditor: item['auditor'] ?? item['usuario'] ?? item['Usuario'] ?? 'Sistema',
               itensVerificados: item['itensVerificados'] ?? item['itemsVerified'] ?? 1,
               itensComProblema: item['itensComProblema'] ?? item['itemsWithProblem'] ?? 0,
@@ -253,7 +253,7 @@ class AuditReportsNotifier extends StateNotifier<AuditReportsState> {
       } else {
         state = state.copyWith(
           status: LoadingStatus.error,
-          error: response.message ?? 'Erro ao carregar relat�rio de auditoria',
+          error: response.message ?? 'Erro ao carregar relatãrio de auditoria',
           reports: [],
         );
       }
@@ -323,7 +323,7 @@ class OperationalReportsNotifier extends StateNotifier<OperationalReportsState> 
               titulo: item['titulo'] ?? item['title'] ?? item['Titulo'] ?? '',
               categoria: item['categoria'] ?? item['category'] ?? 'Operacional',
               icone: Icons.analytics_rounded,
-              corKey: 'primary',
+              cor: AppThemeColors.primary,
               valor: item['valor'] ?? item['value'] ?? item['Valor'] ?? '',
               unidade: item['unidade'] ?? item['unit'] ?? '',
               percentualMeta: (item['percentualMeta'] ?? item['targetPercentage'] ?? 0).toDouble(),
@@ -341,7 +341,7 @@ class OperationalReportsNotifier extends StateNotifier<OperationalReportsState> 
       } else {
         state = state.copyWith(
           status: LoadingStatus.error,
-          error: response.message ?? 'Erro ao carregar relat�rio operacional',
+          error: response.message ?? 'Erro ao carregar relatãrio operacional',
           reports: [],
         );
       }
@@ -384,7 +384,7 @@ class PerformanceReportsState {
   double get percentualMetasAtingidas => 
       reports.isNotEmpty ? (metasAtingidas / reports.length) * 100 : 0;
 
-  /// Potencial de ganho mensal (soma das varia��es positivas * 1000)
+  /// Potencial de ganho mensal (soma das variações positivas * 1000)
   double get potencialGanhoMensal {
     return reports
         .where((r) => r.variacao > 0)
@@ -395,18 +395,18 @@ class PerformanceReportsState {
   String get potencialGanhoFormatted {
     final potencial = potencialGanhoMensal;
     if (potencial >= 1000) {
-      return 'R\$ ${(potencial / 1000).toStringAsFixed(2).replaceAll('.', ',')}K/m�s';
+      return 'R\$ ${(potencial / 1000).toStringAsFixed(2).replaceAll('.', ',')}K/mãs';
     }
-    return 'R\$ ${potencial.toStringAsFixed(0)}/m�s';
+    return 'R\$ ${potencial.toStringAsFixed(0)}/mãs';
   }
   
-  /// A��es urgentes (reports com varia��o negativa)
+  /// Ações urgentes (reports com variAção negativa)
   int get acoesUrgentes => reports.where((r) => r.variacao < 0 && !r.metaAtingida).length;
   
   /// Oportunidades de crescimento (reports com trend positivo)
   int get oportunidadesCrescimento => reports.where((r) => r.trend == ReportTrend.up).length;
   
-  /// Crescimento previsto (m�dia das varia��es positivas)
+  /// Crescimento previsto (mãdia das variações positivas)
   double get crescimentoPrevisto {
     final positivos = reports.where((r) => r.variacao > 0).toList();
     if (positivos.isEmpty) return 0;
@@ -474,7 +474,7 @@ class PerformanceReportsNotifier extends StateNotifier<PerformanceReportsState> 
       } else {
         state = state.copyWith(
           status: LoadingStatus.error,
-          error: response.message ?? 'Erro ao carregar relat�rio de performance',
+          error: response.message ?? 'Erro ao carregar relatãrio de performance',
           reports: [],
         );
       }
@@ -502,7 +502,7 @@ class PerformanceReportsNotifier extends StateNotifier<PerformanceReportsState> 
 // PROVIDERS
 // =============================================================================
 
-/// Provider de relat�rios de vendas
+/// Provider de relatórios de vendas
 final salesReportsProvider = StateNotifierProvider<SalesReportsNotifier, SalesReportsState>(
   (ref) {
     final repository = ref.watch(reportsRepositoryProvider);
@@ -510,7 +510,7 @@ final salesReportsProvider = StateNotifierProvider<SalesReportsNotifier, SalesRe
   },
 );
 
-/// Provider de relat�rios de auditoria
+/// Provider de relatórios de auditoria
 final auditReportsProvider = StateNotifierProvider<AuditReportsNotifier, AuditReportsState>(
   (ref) {
     final repository = ref.watch(reportsRepositoryProvider);
@@ -518,7 +518,7 @@ final auditReportsProvider = StateNotifierProvider<AuditReportsNotifier, AuditRe
   },
 );
 
-/// Provider de relat�rios operacionais
+/// Provider de relatórios operacionais
 final operationalReportsProvider = StateNotifierProvider<OperationalReportsNotifier, OperationalReportsState>(
   (ref) {
     final repository = ref.watch(reportsRepositoryProvider);
@@ -526,14 +526,13 @@ final operationalReportsProvider = StateNotifierProvider<OperationalReportsNotif
   },
 );
 
-/// Provider de relat�rios de performance
+/// Provider de relatórios de performance
 final performanceReportsProvider = StateNotifierProvider<PerformanceReportsNotifier, PerformanceReportsState>(
   (ref) {
     final repository = ref.watch(reportsRepositoryProvider);
     return PerformanceReportsNotifier(repository);
   },
 );
-
 
 
 

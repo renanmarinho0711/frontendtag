@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 
 class ConfiguracoesNotificacoesScreen extends ConsumerStatefulWidget {
@@ -24,11 +23,11 @@ class _ConfiguracoesNotificacoesScreenState
 
   // Eventos para notificar
   final Map<String, bool> _eventosNotificacao = {
-    'Erro de Sincronizao': true,
+    'Erro de Sincronização': true,
     'Tag Offline': true,
-    'Produto sem Preo': true,
+    'Produto sem Preço': true,
     'Margem Negativa': true,
-    'Importao Concluda': false,
+    'Importação Concluda': false,
     'Estratgia Executada': true,
     'Backup Realizado': false,
     'Novo Login Detectado': true,
@@ -72,7 +71,7 @@ class _ConfiguracoesNotificacoesScreenState
 
     return Container(
       decoration: BoxDecoration(
-        color: ThemeColors.of(context).surfaceSecondary,
+        color: ThemeColors.of(context).backgroundLight,
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -211,7 +210,7 @@ class _ConfiguracoesNotificacoesScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Notificaes',
+                  'Notificações',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -248,7 +247,7 @@ class _ConfiguracoesNotificacoesScreenState
                 vertical: AppSizes.paddingXsAlt4.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).yellowGoldLight,
+                color: ThemeColors.of(context).yellowGold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -410,7 +409,7 @@ class _ConfiguracoesNotificacoesScreenState
           ),
           _buildChannelSwitch(
             'Push',
-            'Notificaes instantneas no aplicativo',
+            'Notificações instantneas no aplicativo',
             Icons.notifications_rounded,
             _notificarPush,
             ThemeColors.of(context).warning,
@@ -441,12 +440,12 @@ class _ConfiguracoesNotificacoesScreenState
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ? colorLight : ThemeColors.of(context).surfaceSecondary,
+        color: value ? color.withValues(alpha: 0.05) : ThemeColors.of(context).backgroundLight,
         borderRadius: BorderRadius.circular(
           AppSizes.paddingLg.get(isMobile, isTablet),
         ),
         border: Border.all(
-          color: value ? colorLight : ThemeColors.of(context).textSecondary,
+          color: value ? color.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary,
         ),
       ),
       child: Row(
@@ -457,7 +456,7 @@ class _ConfiguracoesNotificacoesScreenState
               AppSizes.paddingBase.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: value ? colorLight : ThemeColors.of(context).surfaceSecondary,
+              color: value ? color.withValues(alpha: 0.1) : ThemeColors.of(context).backgroundLight,
               borderRadius: BorderRadius.circular(
                 ResponsiveHelper.getResponsiveBorderRadius(
                   context,
@@ -515,7 +514,7 @@ class _ConfiguracoesNotificacoesScreenState
           Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: color,
+            activeThumbColor: color,
           ),
         ],
       ),
@@ -633,7 +632,7 @@ class _ConfiguracoesNotificacoesScreenState
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: entry.value ? ThemeColors.of(context).primaryPastel : ThemeColors.of(context).surfaceSecondary,
+                  color: entry.value ? ThemeColors.of(context).primaryPastel : ThemeColors.of(context).backgroundLight,
                   borderRadius: BorderRadius.circular(
                     ResponsiveHelper.getResponsiveBorderRadius(
                       context,
@@ -686,7 +685,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -694,15 +693,15 @@ class _ConfiguracoesNotificacoesScreenState
 
   IconData _getIconForEvent(String event) {
     switch (event) {
-      case 'Erro de Sincronizao':
+      case 'Erro de Sincronização':
         return Icons.sync_problem_rounded;
       case 'Tag Offline':
         return Icons.signal_wifi_off_rounded;
-      case 'Produto sem Preo':
+      case 'Produto sem Preço':
         return Icons.money_off_rounded;
       case 'Margem Negativa':
         return Icons.trending_down_rounded;
-      case 'Importao Concluda':
+      case 'Importação Concluda':
         return Icons.upload_file_rounded;
       case 'Estratgia Executada':
         return Icons.auto_awesome_rounded;
@@ -802,7 +801,7 @@ class _ConfiguracoesNotificacoesScreenState
               AppSizes.paddingMd.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: _naoPerturbar ?  ThemeColors.of(context).infoPastel : ThemeColors.of(context).surfaceSecondary,
+              color: _naoPerturbar ?  ThemeColors.of(context).infoPastel : ThemeColors.of(context).backgroundLight,
               borderRadius: BorderRadius.circular(
                 AppSizes.paddingLg.get(isMobile, isTablet),
               ),
@@ -820,7 +819,7 @@ class _ConfiguracoesNotificacoesScreenState
                   decoration: BoxDecoration(
                     color: _naoPerturbar
                         ? ThemeColors.of(context).infoLight
-                        : ThemeColors.of(context).surfaceSecondary,
+                        : ThemeColors.of(context).backgroundLight,
                     borderRadius: BorderRadius.circular(
                       ResponsiveHelper.getResponsiveBorderRadius(
                         context,
@@ -832,7 +831,7 @@ class _ConfiguracoesNotificacoesScreenState
                   ),
                   child: Icon(
                     Icons.do_not_disturb_on_rounded,
-                    color: _naoPerturbar ? ThemeColors.of(context).primaryDark : ThemeColors.of(context).textSecondaryOverlay60,
+                    color: _naoPerturbar ? ThemeColors.of(context).primary.withValues(alpha: 0.8) : ThemeColors.of(context).textSecondaryOverlay60,
                     size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
                   ),
                 ),
@@ -882,7 +881,7 @@ class _ConfiguracoesNotificacoesScreenState
                       _alteracoesFeitas = true;
                     });
                   },
-                  activeColor: ThemeColors.of(context).primary,
+                  activeThumbColor: ThemeColors.of(context).primary,
                 ),
               ],
             ),
@@ -1201,7 +1200,7 @@ class _ConfiguracoesNotificacoesScreenState
                 AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).surfaceSecondary,
+                color: ThemeColors.of(context).backgroundLight,
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -1269,7 +1268,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ],
               ),
             );
-          }).toList(),
+          }),
           TextButton.icon(
             onPressed: () {
               // Adicionar novo e-mail
@@ -1318,7 +1317,7 @@ class _ConfiguracoesNotificacoesScreenState
                 AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
-                color: ThemeColors.of(context).surfaceSecondary,
+                color: ThemeColors.of(context).backgroundLight,
                 borderRadius: BorderRadius.circular(
                   ResponsiveHelper.getResponsiveBorderRadius(
                     context,
@@ -1386,7 +1385,7 @@ class _ConfiguracoesNotificacoesScreenState
                 ],
               ),
             );
-          }).toList(),
+          }),
           TextButton.icon(
             onPressed: () {
               // Adicionar novo telefone
@@ -1421,7 +1420,7 @@ class _ConfiguracoesNotificacoesScreenState
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmberLight],
+          colors: [ThemeColors.of(context).warningPastel, ThemeColors.of(context).orangeAmber.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(
@@ -1449,7 +1448,7 @@ class _ConfiguracoesNotificacoesScreenState
                 width: AppSizes.spacingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Testar Notificaes',
+                'Testar Notificações',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -1605,7 +1604,7 @@ class _ConfiguracoesNotificacoesScreenState
                           crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                             Text(
-                              'Configuraes Salvas! ',
+                              'Configurações Salvas! ',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1617,7 +1616,7 @@ class _ConfiguracoesNotificacoesScreenState
                               ),
                             ),
                             Text(
-                              'Notificaes atualizadas',
+                              'Notificações atualizadas',
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -1653,7 +1652,7 @@ class _ConfiguracoesNotificacoesScreenState
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
             label: Text(
-              'Salvar Configuraes',
+              'Salvar Configurações',
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1817,11 +1816,6 @@ class _ConfiguracoesNotificacoesScreenState
     );
   }
 }
-
-
-
-
-
 
 
 

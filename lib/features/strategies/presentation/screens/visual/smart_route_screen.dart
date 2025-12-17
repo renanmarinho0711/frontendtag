@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/providers/visual_provider.dart';
 
@@ -77,7 +76,7 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
           const SizedBox(width: 16),
           Container(padding: const EdgeInsets.all(10), decoration: BoxDecoration(gradient: LinearGradient(colors: [ThemeColors.of(context).blueCyan, ThemeColors.of(context).primary]), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.route_rounded, color: ThemeColors.of(context).surface, size: 24)),
           const SizedBox(width: 12),
-          const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Smart Route', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)), Text('Guia LED para picking', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
+          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Text('Smart Route', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)), Text('Guia LED para picking', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
           IconButton(icon: const Icon(Icons.info_outline_rounded), onPressed: _showInfoDialog, color: ThemeColors.of(context).textSecondary),
         ],
       ),
@@ -95,8 +94,8 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
         indicatorSize: TabBarIndicatorSize.tab,
         labelColor: ThemeColors.of(context).surface,
         unselectedLabelColor: ThemeColors.of(context).textSecondary,
-        labelStyle: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-        tabs: const [Tab(icon: Icon(Icons.settings_rounded, size: 18), text: 'Configura??o'), Tab(icon: Icon(Icons.route_rounded, size: 18), text: 'Rotas Ativas')],
+        labelStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+        tabs: const [Tab(icon: Icon(Icons.settings_rounded, size: 18), text: 'ConfigurAção'), Tab(icon: Icon(Icons.route_rounded, size: 18), text: 'Rotas Ativas')],
       ),
     );
   }
@@ -118,7 +117,7 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                Container(padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), decoration: BoxDecoration(color: ThemeColors.of(context).blueCyanLight, borderRadius: BorderRadius.circular(12), border: Border.all(color: ThemeColors.of(context).blueCyan, width: 2)), child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.directions_walk_rounded, size: 20, color: ThemeColors.of(context).blueCyan), const SizedBox(width: 8), Text('${state.rotasAtivas.length} rotas em andamento', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: ThemeColors.of(context).blueCyan))])),
+                Container(padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), decoration: BoxDecoration(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12), border: Border.all(color: ThemeColors.of(context).blueCyan, width: 2)), child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.directions_walk_rounded, size: 20, color: ThemeColors.of(context).blueCyan), const SizedBox(width: 8), Text('${state.rotasAtivas.length} rotas em andamento', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: ThemeColors.of(context).blueCyan))])),
                 const SizedBox(height: 16),
                 ListView.builder(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), itemCount: state.rotasAtivas.length, itemBuilder: (context, index) => Padding(padding: const EdgeInsets.only(bottom: 16), child: _buildRotaCard(state.rotasAtivas[index], index))),
               ],
@@ -137,8 +136,8 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
         children: [
           Container(padding: const EdgeInsets.all(16), decoration: BoxDecoration(color: ThemeColors.of(context).surfaceOverlay20, borderRadius: BorderRadius.circular(16)), child: Icon(Icons.route_rounded, color: ThemeColors.of(context).surface, size: 24)),
           const SizedBox(width: 16),
-          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Text('Smart Route', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface, letterSpacing: -0.8)), const SizedBox(height: 6), Text(state.isStrategyActive ? 'Guia LED ativo para picking' : 'Sistema inativo', style: TextStyle(fontSize: 13, color: ThemeColors.of(context).surfaceOverlay70))])),
-          Transform.scale(scale: 1.1, child: Switch(value: state.isStrategyActive, onChanged: (value) => ref.read(smartRouteProvider.notifier).setStrategyActive(value), activeColor: ThemeColors.of(context).surface, activeTrackColor: ThemeColors.of(context).surfaceOverlay50)),
+          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Smart Route', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface, letterSpacing: -0.8)), const SizedBox(height: 6), Text(state.isStrategyActive ? 'Guia LED ativo para picking' : 'Sistema inativo', style: TextStyle(fontSize: 13, color: ThemeColors.of(context).surfaceOverlay70))])),
+          Transform.scale(scale: 1.1, child: Switch(value: state.isStrategyActive, onChanged: (value) => ref.read(smartRouteProvider.notifier).setStrategyActive(value), activeThumbColor: ThemeColors.of(context).surface, activeTrackColor: ThemeColors.of(context).surfaceOverlay50)),
         ],
       ),
     );
@@ -151,12 +150,12 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            child: Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).infoLight, borderRadius: BorderRadius.circular(12)), child: const Icon(Icons.lightbulb_rounded, color: ThemeColors.of(context).info, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Par?metros de LED', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))])
+          Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.lightbulb_rounded, color: ThemeColors.of(context).blueMain, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Parâmetros de LED', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))]),
           const SizedBox(height: 24),
-          Row(children: [const Icon(Icons.light_mode_rounded, size: 24, color: ThemeColors.of(context).info), const SizedBox(width: 12), const Expanded(child: Text('Intensidade LED', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).infoLight, borderRadius: BorderRadius.circular(8)), child: Text('${state.intensidadeLed}%', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).info)))]),
-          Slider(value: state.intensidadeLed.toDouble(), min: 0, max: 100, divisions: 10, label: '${state.intensidadeLed}%', onChanged: (value) => ref.read(smartRouteProvider.notifier).setIntensidadeLed(value), activeColor: ThemeColors.of(context).info),
+          Row(children: [Icon(Icons.light_mode_rounded, size: 24, color: ThemeColors.of(context).blueMain), const SizedBox(width: 12), const Expanded(child: Text('Intensidade LED', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)), child: Text('${state.intensidadeLed}%', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).blueMain)))]),
+          Slider(value: state.intensidadeLed.toDouble(), min: 0, max: 100, divisions: 10, label: '${state.intensidadeLed}%', onChanged: (value) => ref.read(smartRouteProvider.notifier).setIntensidadeLed(value), activeColor: ThemeColors.of(context).blueMain),
           const SizedBox(height: 24),
-          Row(children: [const Icon(Icons.timer_rounded, size: 24, color: ThemeColors.of(context).orangeDark), const SizedBox(width: 12), const Expanded(child: Text('Tempo de Piscar', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).orangeDarkLight, borderRadius: BorderRadius.circular(8)), child: Text('${state.tempoPiscar}s', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).orangeDark)))]),
+          Row(children: [Icon(Icons.timer_rounded, size: 24, color: ThemeColors.of(context).orangeDark), const SizedBox(width: 12), const Expanded(child: Text('Tempo de Piscar', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))), Container(padding: EdgeInsets.symmetric(horizontal: AppSizes.mediumPadding.get(isMobile, isTablet), vertical: 6), decoration: BoxDecoration(color: ThemeColors.of(context).orangeDark.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)), child: Text('${state.tempoPiscar}s', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ThemeColors.of(context).orangeDark)))]),
           Slider(value: state.tempoPiscar.toDouble(), min: 1, max: 10, divisions: 9, label: '${state.tempoPiscar}s', onChanged: (value) => ref.read(smartRouteProvider.notifier).setTempoPiscar(value.toInt()), activeColor: ThemeColors.of(context).orangeDark),
         ],
       ),
@@ -170,7 +169,7 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-            child: Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).blueCyanLight, borderRadius: BorderRadius.circular(12)), child: const Icon(Icons.alt_route_rounded, color: ThemeColors.of(context).blueCyan, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Modo de Rota', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))])
+          Row(children: [Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.alt_route_rounded, color: ThemeColors.of(context).blueCyan, size: 22)), const SizedBox(width: 14), const Expanded(child: Text('Modo de Rota', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: -0.5)))]),
           const SizedBox(height: 16),
           Wrap(
             spacing: 8,
@@ -193,9 +192,9 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(color: ThemeColors.of(context).surface, borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: ThemeColors.of(context).textPrimaryOverlay05, blurRadius: 20, offset: const Offset(0, 4))]),
       child: Column(children: [
-        _buildSwitchOption('Confirma??o por Scan', 'Exigir scan para confirmar coleta', Icons.qr_code_scanner_rounded, state.confirmacaoScan, (value) => ref.read(smartRouteProvider.notifier).setConfirmacaoScan(value)),
+        _buildSwitchOption('ConfirmAção por Scan', 'Exigir scan para confirmar coleta', Icons.qr_code_scanner_rounded, state.confirmacaoScan, (value) => ref.read(smartRouteProvider.notifier).setConfirmacaoScan(value)),
         const SizedBox(height: 12),
-        _buildSwitchOption('Som de Confirma??o', 'Emitir beep ao confirmar item', Icons.volume_up_rounded, state.somConfirmacao, (value) => ref.read(smartRouteProvider.notifier).setSomConfirmacao(value)),
+        _buildSwitchOption('Som de ConfirmAção', 'Emitir beep ao confirmar item', Icons.volume_up_rounded, state.somConfirmacao, (value) => ref.read(smartRouteProvider.notifier).setSomConfirmacao(value)),
         const SizedBox(height: 12),
         _buildSwitchOption('Mostrar Prximo Item', 'Exibir preview do prximo item', Icons.skip_next_rounded, state.mostrarProximoItem, (value) => ref.read(smartRouteProvider.notifier).setMostrarProximoItem(value)),
       ]),
@@ -205,12 +204,12 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
   Widget _buildSwitchOption(String title, String subtitle, IconData icon, bool value, Function(bool) onChanged) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(color: value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondary, borderRadius: BorderRadius.circular(12), border: Border.all(color: value ? ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondary)),
+      decoration: BoxDecoration(color: value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondary, borderRadius: BorderRadius.circular(12), border: Border.all(color: value ? ThemeColors.of(context).blueCyan.withValues(alpha: 0.3) : ThemeColors.of(context).textSecondary)),
       child: Row(children: [
         Icon(icon, color: value ? ThemeColors.of(context).blueCyan : ThemeColors.of(context).textSecondary, size: 24),
         const SizedBox(width: 14),
-        Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(title, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)), const SizedBox(height: 4), Text(subtitle, style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
-        Transform.scale(scale: 0.95, child: Switch(value: value, onChanged: onChanged, activeColor: ThemeColors.of(context).blueCyan)),
+        Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(title, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)), const SizedBox(height: 4), Text(subtitle, style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])),
+        Transform.scale(scale: 0.95, child: Switch(value: value, onChanged: onChanged, activeThumbColor: ThemeColors.of(context).blueCyan)),
       ]),
     );
   }
@@ -222,24 +221,24 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
       builder: (context, double value, child) => Transform.scale(scale: 0.8 + (0.2 * value), child: Opacity(opacity: value, child: child)),
       child: Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(color: ThemeColors.of(context).surface, borderRadius: BorderRadius.circular(16), border: Border.all(color: rota.corRotaLight, width: 2), boxShadow: [BoxShadow(color: rota.corRotaLight, blurRadius: 20, offset: const Offset(0, 6))]),
+        decoration: BoxDecoration(color: ThemeColors.of(context).surface, borderRadius: BorderRadius.circular(16), border: Border.all(color: rota.corRota.withValues(alpha: 0.3), width: 2), boxShadow: [BoxShadow(color: rota.corRota.withValues(alpha: 0.2), blurRadius: 20, offset: const Offset(0, 6))]),
         child: Column(children: [
           Row(children: [
-            Container(width: 60, height: 60, decoration: BoxDecoration(gradient: LinearGradient(colors: [rota.corRota, rota.corRota.withValues(alpha: 0.7)]), borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: rota.corRotaLight, blurRadius: 12, offset: const Offset(0, 4))]), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.route_rounded, color: ThemeColors.of(context).surface, size: 24), const SizedBox(height: 2), Text('#${rota.id}', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface))])),
+            Container(width: 60, height: 60, decoration: BoxDecoration(gradient: LinearGradient(colors: [rota.corRota, rota.corRota.withValues(alpha: 0.7)]), borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: rota.corRota.withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 4))]), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(Icons.route_rounded, color: ThemeColors.of(context).surface, size: 24), const SizedBox(height: 2), Text('#${rota.id}', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ThemeColors.of(context).surface))])),
             const SizedBox(width: 16),
-            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(rota.operador, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: -0.3), maxLines: 1, overflow: TextOverflow.ellipsis), const SizedBox(height: 6), Row(children: [Icon(Icons.inventory_2_rounded, size: 14, color: ThemeColors.of(context).textSecondary), const SizedBox(width: 4), Text('${rota.itensColetados}/${rota.totalItens} itens', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])])),
-            Container(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), decoration: BoxDecoration(color: rota.corRotaLight, borderRadius: BorderRadius.circular(8), border: Border.all(color: rota.corRotaLight, width: 2)), child: Text('${rota.progresso}%', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: rota.corRota))),
+            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(rota.operador, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: -0.3), maxLines: 1, overflow: TextOverflow.ellipsis), const SizedBox(height: 6), Row(children: [Icon(Icons.inventory_2_rounded, size: 14, color: ThemeColors.of(context).textSecondary), const SizedBox(width: 4), Text('${rota.itensColetados}/${rota.totalItens} itens', style: TextStyle(fontSize: 12, color: ThemeColors.of(context).textSecondary))])])),
+            Container(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), decoration: BoxDecoration(color: rota.corRota.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8), border: Border.all(color: rota.corRota.withValues(alpha: 0.3), width: 2)), child: Text('${rota.progresso}%', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: rota.corRota))),
           ]),
           const SizedBox(height: 12),
-          ClipRRect(borderRadius: BorderRadius.circular(4), child: LinearProgressIndicator(value: rota.progresso / 100, backgroundColor: rota.corRotaLight, valueColor: AlwaysStoppedAnimation<Color>(rota.corRota), minHeight: 8)),
+          ClipRRect(borderRadius: BorderRadius.circular(4), child: LinearProgressIndicator(value: rota.progresso / 100, backgroundColor: rota.corRota.withValues(alpha: 0.2), valueColor: AlwaysStoppedAnimation<Color>(rota.corRota), minHeight: 8)),
           const SizedBox(height: 12),
           Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(color: ThemeColors.of(context).textSecondary, borderRadius: BorderRadius.circular(12)),
             child: Row(children: [
-              Expanded(child: Column(children: [Icon(Icons.access_time_rounded, size: 20, color: rota.corRota), const SizedBox(height: 4), Text(rota.tempoDecorrido, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: rota.corRota)), const Text('Tempo', style: TextStyle(fontSize: 10, color: ThemeColors.of(context).textSecondary))])),
+              Expanded(child: Column(children: [Icon(Icons.access_time_rounded, size: 20, color: rota.corRota), const SizedBox(height: 4), Text(rota.tempoDecorrido, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: rota.corRota)), Text('Tempo', style: TextStyle(fontSize: 10, color: ThemeColors.of(context).textSecondary))])),
               Container(width: 1, height: 50, color: ThemeColors.of(context).textSecondary),
-              Expanded(child: Column(children: [Icon(Icons.location_on_rounded, size: 20, color: rota.corRota), const SizedBox(height: 4), Text(rota.zonaAtual, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: rota.corRota)), const Text('Zona', style: TextStyle(fontSize: 10, color: ThemeColors.of(context).textSecondary))])),
+              Expanded(child: Column(children: [Icon(Icons.location_on_rounded, size: 20, color: rota.corRota), const SizedBox(height: 4), Text(rota.zonaAtual, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: rota.corRota)), Text('Zona', style: TextStyle(fontSize: 10, color: ThemeColors.of(context).textSecondary))])),
             ]),
           ),
         ]),
@@ -248,18 +247,15 @@ class _SmartRouteConfigScreenState extends ConsumerState<SmartRouteConfigScreen>
   }
 
   void _showInfoDialog() {
-    showDialog(context: context, builder: (context) => AlertDialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), icon: const Icon(Icons.route_rounded, color: ThemeColors.of(context).blueCyan, size: 56), title: const Text('Smart Route'), content: const SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Guia LED inteligente para picking:', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)), SizedBox(height: 16), Text(' LED guia o operador at o produto', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Rota otimizada para menor tempo', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Confirma??o por scan ou toque', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Reduz erros de picking em 95%', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Aumenta produtividade em 40%', style: TextStyle(fontSize: 13, height: 1.5))])), actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Entendi'))]));
+    showDialog(context: context, builder: (context) => AlertDialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), icon: Icon(Icons.route_rounded, color: ThemeColors.of(context).blueCyan, size: 56), title: const Text('Smart Route'), content: const SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [Text('Guia LED inteligente para picking:', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)), SizedBox(height: 16), Text(' LED guia o operador at o produto', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Rota otimizada para menor tempo', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' ConfirmAção por scan ou toque', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Reduz erros de picking em 95%', style: TextStyle(fontSize: 13, height: 1.5)), SizedBox(height: 8), Text(' Aumenta produtividade em 40%', style: TextStyle(fontSize: 13, height: 1.5))])), actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Entendi'))]));
   }
 
   void _salvarConfiguracoes() async {
     await ref.read(smartRouteProvider.notifier).salvarConfiguracoes();
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: const Row(children: [Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface), SizedBox(width: 12), Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [Text('Configura??es Salvas!', style: TextStyle(fontWeight: FontWeight.bold)), Text('Smart Route configurado', style: TextStyle(fontSize: 12))]))]), backgroundColor: ThemeColors.of(context).success, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Row(children: [Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface), const SizedBox(width: 12), const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [Text('Configurações Salvas!', style: TextStyle(fontWeight: FontWeight.bold)), Text('Smart Route configurado', style: TextStyle(fontSize: 12))]))]), backgroundColor: ThemeColors.of(context).success, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))));
   }
 }
-
-
-
 
 
 

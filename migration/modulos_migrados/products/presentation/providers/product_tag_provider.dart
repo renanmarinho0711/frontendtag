@@ -1,4 +1,4 @@
-mport 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/products/data/models/product_tag_model.dart';
 import 'package:tagbean/features/products/data/services/product_tag_service.dart';
 

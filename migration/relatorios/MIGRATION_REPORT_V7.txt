@@ -1,4 +1,4 @@
-=== RELATORIO v7.0 ===
+﻿=== RELATORIO v7.0 ===
 Data: 12/14/2025 09:51:41
 Arquivos: 62
 Metodos: 219

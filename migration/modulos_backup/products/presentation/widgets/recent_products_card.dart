@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
@@ -95,7 +95,7 @@ class RecentProductsCard extends StatelessWidget {
                         Flexible(
                           child: Text(
                             isMobile ? 'Ver tudo' : 'Ver histórico completo',
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: AppThemeColors.brandPrimaryGreen,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
@@ -214,7 +214,7 @@ class RecentProductsCard extends StatelessWidget {
                               color: AppThemeColors.brandPrimaryGreen,
                             ),
                           ),
-                          Text(
+                          const Text(
                             'â€¢',
                             style: TextStyle(
                               fontSize: 12,
@@ -328,7 +328,7 @@ class RecentProductsCard extends StatelessWidget {
           const SizedBox(width: AppSpacing.xs),
           Text(
             tagCode ?? 'Tag vinculada',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w600,
               color: AppThemeColors.brandPrimaryGreen,

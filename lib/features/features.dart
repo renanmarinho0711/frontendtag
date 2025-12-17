@@ -1,4 +1,4 @@
-// TagBean Features
+/// TagBean Features
 /// 
 /// Barrel export para todas as features do aplicativo.
 /// 

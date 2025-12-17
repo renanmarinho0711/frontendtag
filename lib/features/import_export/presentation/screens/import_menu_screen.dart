@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tagbean/core/utils/responsive_helper.dart';
-import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/import_export/presentation/screens/import_products_screen.dart';
 import 'package:tagbean/features/import_export/presentation/screens/import_tags_screen.dart';
 import 'package:tagbean/features/import_export/presentation/screens/export_products_screen.dart';
@@ -13,6 +9,9 @@ import 'package:tagbean/features/import_export/presentation/providers/import_exp
 import 'package:tagbean/features/import_export/data/models/import_export_models.dart';
 import 'package:tagbean/features/products/presentation/providers/products_state_provider.dart';
 import 'package:tagbean/features/tags/presentation/providers/tags_provider.dart';
+import 'package:tagbean/core/utils/responsive_helper.dart';
+import 'package:tagbean/core/utils/responsive_cache.dart';
+import 'package:tagbean/design_system/design_system.dart';
 
 class ImportacaoMenuScreen extends ConsumerStatefulWidget {
   const ImportacaoMenuScreen({super.key});
@@ -49,7 +48,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         'descricao': 'Cadastre mltiplos produtos de uma vez',
         'icone': Icons.upload_rounded,
         'gradiente': [ThemeColors.of(context).importProdutos, ThemeColors.of(context).importProdutosDark],
-        'badge': 'Rpido',
+        'badge': 'Rápido',
         'tagsCount': totalProdutos > 0 ? '$totalProdutos produtos' : 'Nenhum produto',
         'ultimaAcao': _menuState.lastProductImport ?? 'Nunca',
       },
@@ -66,7 +65,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
       {
         'titulo': 'Exportar Produtos',
         'subtitulo': 'Excel, CSV ou PDF',
-        'descricao': 'Baixe relatório completo de produtos',
+        'descricao': 'Baixe relatrio completo de produtos',
         'icone': Icons.download_rounded,
         'gradiente': [ThemeColors.of(context).exportProdutos, ThemeColors.of(context).exportProdutosDark],
         'badge': null,
@@ -75,7 +74,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
       },
       {
         'titulo': 'Exportar Tags',
-        'subtitulo': 'Relatório completo',
+        'subtitulo': 'Relatrio completo',
         'descricao': 'Exporte dados das etiquetas',
         'icone': Icons.download_for_offline_rounded,
         'gradiente': [ThemeColors.of(context).exportTags, ThemeColors.of(context).exportTagsDark],
@@ -84,19 +83,19 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         'ultimaAcao': _menuState.lastTagExport ?? 'Nunca',
       },
       {
-        'titulo': 'Operaes em Lote',
-        'subtitulo': 'Aes massivas',
+        'titulo': 'Operações em Lote',
+        'subtitulo': 'Ações massivas',
         'descricao': 'Atualize, delete ou modifique em massa',
         'icone': Icons.layers_rounded,
         'gradiente': [ThemeColors.of(context).batchOperations, ThemeColors.of(context).batchOperationsDark],
         'badge': 'Avanado',
-        'tagsCount': '6 operaes',
+        'tagsCount': '6 operações',
         'ultimaAcao': _menuState.lastBatchOperation ?? 'Nunca',
       },
       {
-        'titulo': 'Histrico',
-        'subtitulo': 'Ver todas as aes',
-        'descricao': 'Consulte histrico completo de operaes',
+        'titulo': 'Histórico',
+        'subtitulo': 'Ver todas as ações',
+        'descricao': 'Consulte histórico completo de operações',
         'icone': Icons.history_rounded,
         'gradiente': [ThemeColors.of(context).importHistorico, ThemeColors.of(context).importHistoricoDark],
         'badge': totalHistorico > 0 ? 'Novo' : null,
@@ -117,7 +116,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
       return [
         {'label': 'Produtos', 'valor': '-', 'icon': Icons.inventory_2_rounded, 'cor': ThemeColors.of(context).statProdutosIcon, 'mudanca': '-', 'tipo': 'status'},
         {'label': 'Tags ESL', 'valor': '-', 'icon': Icons.sell_rounded, 'cor': ThemeColors.of(context).statTagsESLIcon, 'mudanca': '-', 'tipo': 'status'},
-        {'label': 'ltima Sync', 'valor': '-', 'icon': Icons.sync_rounded, 'cor': ThemeColors.of(context).statSyncIcon, 'mudanca': 'Aguardando', 'tipo': 'status'},
+        {'label': 'Última Sync', 'valor': '-', 'icon': Icons.sync_rounded, 'cor': ThemeColors.of(context).statSyncIcon, 'mudanca': 'Aguardando', 'tipo': 'status'},
         {'label': 'Pendentes', 'valor': '-', 'icon': Icons.pending_actions_rounded, 'cor': ThemeColors.of(context).statPendentesIcon, 'mudanca': '-', 'tipo': 'status'},
       ];
     }
@@ -244,9 +243,9 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                             ),
                             decoration: BoxDecoration(
-                              color: ThemeColors.of(context).primaryLight,
+                              color: ThemeColors.of(context).primary.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
-                              border: Border.all(color: ThemeColors.of(context).primaryLight),
+                              border: Border.all(color: ThemeColors.of(context).primary.withValues(alpha: 0.3)),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -254,7 +253,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                                 Icon(
                                   Icons.apps_rounded,
                                   size: AppSizes.iconTiny.get(isMobile, isTablet),
-                                  color: ThemeColors.of(context).primaryDark,
+                                  color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
                                 ),
                                 SizedBox(
                                   width: AppSizes.paddingXsAlt.get(isMobile, isTablet),
@@ -270,7 +269,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                     fontWeight: FontWeight.bold,
-                                    color: ThemeColors.of(context).primaryDark,
+                                    color: ThemeColors.of(context).primary.withValues(alpha: 0.8),
                                   ),
                                 ),
                               ],
@@ -395,7 +394,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Importao / Exportao',
+                  'Importação / Exportação',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -440,7 +439,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: ThemeColors.of(context).successLight,
+              color: ThemeColors.of(context).success.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(
                 isMobile ? 8 : 10,
               ),
@@ -493,7 +492,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMainLight],
+          colors: [ThemeColors.of(context).infoPastel, ThemeColors.of(context).cyanMain.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 14,
@@ -535,7 +534,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sobre este Mdulo',
+                  'Sobre este Módulo',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -627,12 +626,12 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           gradient: LinearGradient(
             colors: [
               (stat['cor'] as Color).withValues(alpha: 0.25),
-              (stat['cor'] as Color)Light,
+              (stat['cor'] as Color).withValues(alpha: 0.15),
             ],
           ),
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
-            color: (stat['cor'] as Color)Light,
+            color: (stat['cor'] as Color).withValues(alpha: 0.5),
             width: isMobile ? 1.25 : 1.5,
           ),
         ),
@@ -672,7 +671,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                 vertical: ResponsiveHelper.getResponsivePadding(context, mobile: 2.5, tablet: 2.75, desktop: 3),
               ),
               decoration: BoxDecoration(
-                color: (stat['cor'] as Color)Light,
+                color: (stat['cor'] as Color).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppSizes.paddingXs.get(isMobile, isTablet)),
               ),
               child: Row(
@@ -731,7 +730,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         ),
         boxShadow: [
           BoxShadow(
-            color: ThemeColors.of(context).quickActionsImportBackground2Light,
+            color: ThemeColors.of(context).quickActionsImportBackground2.withValues(alpha: 0.5),
             blurRadius: ResponsiveHelper.getResponsiveBlurRadius(
               context,
               mobile: 15,
@@ -775,7 +774,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                 width: AppSizes.paddingBase.get(isMobile, isTablet),
               ),
               Text(
-                'Aes Rpidas',
+                'Ações Rápidas',
                 style: TextStyle(
                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                     context,
@@ -822,7 +821,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               ),
               Expanded(
                 child: _buildQuickActionButton(
-                  'Histrico',
+                  'Histórico',
                   Icons.history_rounded,
                   ThemeColors.of(context).quickActionHistoricoBackground,
                   ThemeColors.of(context).quickActionHistoricoBorder,
@@ -849,7 +848,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
             const Text('Selecione o tipo de template:'),
             const SizedBox(height: 16),
             ListTile(
-              leading: const Icon(Icons.inventory_2_rounded, color: ThemeColors.of(context).blueCyan),
+              leading: Icon(Icons.inventory_2_rounded, color: ThemeColors.of(context).blueCyan),
               title: const Text('Template de Produtos'),
               subtitle: const Text('CSV com colunas de produtos'),
               onTap: () {
@@ -883,7 +882,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
       SnackBar(
         content: Row(
           children: [
-            const SizedBox(
+            SizedBox(
               width: 20,
               height: 20,
               child: CircularProgressIndicator(strokeWidth: 2, color: ThemeColors.of(context).surface),
@@ -900,8 +899,8 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
     await Future.delayed(const Duration(seconds: 1));
     
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Template baixado com sucesso!'),
+      SnackBar(
+        content: const Text('Template baixado com sucesso!'),
         backgroundColor: ThemeColors.of(context).success,
         behavior: SnackBarBehavior.floating,
       ),
@@ -921,7 +920,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
             const Text('O que deseja importar?'),
             const SizedBox(height: 16),
             ListTile(
-              leading: const Icon(Icons.inventory_2_rounded, color: ThemeColors.of(context).blueCyan),
+              leading: Icon(Icons.inventory_2_rounded, color: ThemeColors.of(context).blueCyan),
               title: const Text('Produtos'),
               subtitle: const Text('Importar via Excel/CSV'),
               onTap: () {
@@ -957,8 +956,8 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        icon: const Icon(Icons.history_rounded, color: ThemeColors.of(context).orangeMaterial, size: 48),
-        title: const Text('Histrico de Importaes'),
+        icon: Icon(Icons.history_rounded, color: ThemeColors.of(context).orangeMaterial, size: 48),
+        title: const Text('Histórico de Importações'),
         content: ConstrainedBox(
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width * 0.8,
@@ -966,13 +965,13 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           ),
           child: importHistory.when(
             data: (history) => history.isEmpty
-                ? const Center(
+                ? Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.history_rounded, size: 48, color: ThemeColors.of(context).textSecondary),
-                        SizedBox(height: 16),
-                        Text('Nenhuma importao realizada', style: TextStyle(color: ThemeColors.of(context).textSecondary)),
+                        const SizedBox(height: 16),
+                        Text('Nenhuma importação realizada', style: TextStyle(color: ThemeColors.of(context).textSecondary)),
                       ],
                     ),
                   )
@@ -1003,7 +1002,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                   ),
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (e, _) => Center(
-              child: Text('Erro ao carregar histrico: $e', style: TextStyle(color: ThemeColors.of(context).error)),
+              child: Text('Erro ao carregar histórico: $e', style: TextStyle(color: ThemeColors.of(context).error)),
             ),
           ),
         ),
@@ -1259,7 +1258,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               ),
               Expanded(
                 child: Text(
-                  'Dicas de Importao/Exportao',
+                  'Dicas de Importação/Exportação',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -1296,7 +1295,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           _buildTipItem(
             '??',
             'Templates Disponveis',
-            'Baixe modelos prontos para facilitar a importao',
+            'Baixe modelos prontos para facilitar a importação',
             ThemeColors.of(context).primary,
             '12 templates',
           ),
@@ -1305,7 +1304,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           ),
           _buildTipItem(
             '?',
-            'Processamento Rpido',
+            'Processamento Rápido',
             'Processe at 10. 000 registros por vez',
             ThemeColors.of(context).blueCyan,
             'Alta performance',
@@ -1316,9 +1315,9 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           _buildTipItem(
             '??',
             'Backup Automtico',
-            'Todos os dados so salvos antes de qualquer operao',
+            'Todos os dados so salvos antes de qualquer operação',
             ThemeColors.of(context).success,
-            'Segurana total',
+            'Segurança total',
           ),
         ],
       ),
@@ -1334,11 +1333,11 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         AppSizes.paddingSm.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: colorLight,
+        color: color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(
           isMobile ? 10 : 12,
         ),
-        border: Border.all(color: colorLight),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Row(
         children: [
@@ -1356,11 +1355,11 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               desktop: 48,
             ),
             decoration: BoxDecoration(
-              color: colorLight,
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(
                 isMobile ?  10 : 12,
               ),
-              border: Border.all(color: colorLight),
+              border: Border.all(color: color.withValues(alpha: 0.3)),
             ),
             child: Center(
               child: Text(
@@ -1414,7 +1413,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
                         vertical: AppSizes.paddingXxs.get(isMobile, isTablet),
                       ),
                       decoration: BoxDecoration(
-                        color: colorLight,
+                        color: color.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(
                           isMobile ? 5 : 6,
                         ),
@@ -1465,17 +1464,17 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
     
-    // Busca histrico de importao do provider
+    // Busca histórico de importação do provider
     final historyAsync = ref.watch(importHistoryProvider);
     
-    // Gera atividades recentes baseadas no histrico
+    // Gera atividades recentes baseadas no histórico
     final activities = historyAsync.maybeWhen(
       data: (history) {
         if (history.isEmpty) {
           return <Map<String, dynamic>>[
             {
               'title': 'Nenhuma atividade',
-              'time': 'Faa sua primeira operao',
+              'time': 'Faa sua primeira operação',
               'icon': Icons.history_rounded,
               'color': ThemeColors.of(context).textSecondary,
             }
@@ -1507,7 +1506,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
           }
           
           return {
-            'title': 'Importao: ${h.fileName}',
+            'title': 'Importação: ${h.fileName}',
             'time': _formatarTempoRelativo(h.dateTime),
             'icon': icon,
             'color': color,
@@ -1596,15 +1595,15 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
     );
   }
   
-  /// Formata o tipo de operao para exibio
+  /// Formata o tipo de operação para exibio
   String _formatOperationType(String operation) {
     switch (operation) {
       case 'import':
-        return 'Importao';
+        return 'Importação';
       case 'export':
-        return 'Exportao';
+        return 'Exportação';
       case 'bulk':
-        return 'Operao em lote';
+        return 'Operação em lote';
       default:
         return operation;
     }
@@ -1647,7 +1646,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
               AppSizes.paddingXs.get(isMobile, isTablet),
             ),
             decoration: BoxDecoration(
-              color: colorLight,
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(
                 isMobile ? 6 : 8,
               ),
@@ -1717,21 +1716,21 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
 
     switch (titulo) {
       case 'Importar Produtos':
-        destino = ImportacaoProdutosScreen();
+        destino = const ImportacaoProdutosScreen();
         break;
       case 'Importar Tags':
         destino = const ImportacaoTagsScreen();
         break;
       case 'Exportar Produtos':
-        destino = ExportacaoProdutosScreen();
+        destino = const ExportacaoProdutosScreen();
         break;
       case 'Exportar Tags':
         destino = const ExportacaoTagsScreen();
         break;
-      case 'Operaes em Lote':
+      case 'Operações em Lote':
         destino = const ImportacaoOperacoesLoteScreen();
         break;
-      case 'Histrico':
+      case 'Histórico':
         _showHistory();
         return;
     }
@@ -1772,7 +1771,6 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
     );
   }
 }
-
 
 
 

@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import re
+import json
+from collections import defaultdict
+
+# Ler arquivo com encoding UTF-16
+with open('d:\\tagbean\\frontend\\analyze_output.txt', 'r', encoding='utf-16', errors='ignore') as f:
+    content = f.read()
+
+# Remover quebras de linha desnecessárias
+# Ajustar quebras que ficam no meio de filepaths
+content = re.sub(r'\n(?=[a-z])', '', content)
+
+issues = []
+
+# Padrão: espaços + (error|warning|info) + '-' + mensagem + ' - ' + caminho.dart + ':' + linha + ':' + col + ' - ' + código
+pattern = r'^\s+(error|warning|info)\s+-\s+(.+?)\s+-\s+([\w\\\/\.\-:]+\.dart):(\d+):(\d+)\s+-\s+(\S+)'
+
+for line in content.split('\n'):
+    match = re.match(pattern, line)
+    if match:
+        severity, message, filepath, line_num, col, code = match.groups()
+        issues.append({
+            'severity': severity,
+            'message': message.strip(),
+            'file': filepath.strip().replace('\\', '/'),
+            'line': int(line_num),
+            'col': int(col),
+            'code': code.strip()
+        })
+
+print(f"✅ Total issues encontrados: {len(issues)}")
+
+# Análise por tipo
+error_count = sum(1 for issue in issues if issue['severity'] == 'error')
+warning_count = sum(1 for issue in issues if issue['severity'] == 'warning')
+info_count = sum(1 for issue in issues if issue['severity'] == 'info')
+total = len(issues)
+
+print(f"🔴 Errors: {error_count} | 🟡 Warnings: {warning_count} | 🔵 Infos: {info_count}")
+
+if total == 0:
+    print("❌ Nenhum issue encontrado! Saindo...")
+    exit(1)
+
+# Agrupar por arquivo
+files_issues = defaultdict(list)
+for issue in issues:
+    files_issues[issue['file']].append(issue)
+
+# Top 15 arquivos
+top_files = sorted(files_issues.items(), key=lambda x: len(x[1]), reverse=True)[:15]
+
+print("\n🔝 TOP 15 ARQUIVOS COM MAIS ISSUES:")
+for idx, (arquivo, file_issues) in enumerate(top_files, 1):
+    errors = sum(1 for i in file_issues if i['severity'] == 'error')
+    warnings = sum(1 for i in file_issues if i['severity'] == 'warning')
+    infos = sum(1 for i in file_issues if i['severity'] == 'info')
+    print(f"{idx:2}. [{len(file_issues):3} issues] 🔴{errors:2} 🟡{warnings:2} 🔵{infos:3} - {arquivo[-75:]}")
+
+# Padrões de erro mais comuns
+error_patterns = defaultdict(int)
+for issue in issues:
+    error_patterns[issue['code']] += 1
+
+top_patterns = sorted(error_patterns.items(), key=lambda x: x[1], reverse=True)
+
+print("\n🔴 TOP 15 PADRÕES MAIS FREQUENTES:")
+for idx, (padrao, count) in enumerate(top_patterns[:15], 1):
+    percentual = (count / total * 100)
+    print(f"{idx:2}. [{count:4}] {percentual:5.1f}% - {padrao}")
+
+# Diretórios com mais issues
+dir_issues = defaultdict(int)
+for filepath, file_issues_list in files_issues.items():
+    parts = filepath.split('/')
+    if len(parts) >= 3 and parts[0] == 'lib':
+        if parts[1] in ['features', 'modules']:
+            dir_key = f"{parts[1]}/{parts[2]}"
+        else:
+            dir_key = parts[1]
+    else:
+        dir_key = 'root'
+    
+    dir_issues[dir_key] += len(file_issues_list)
+
+top_dirs = sorted(dir_issues.items(), key=lambda x: x[1], reverse=True)
+
+print("\n📁 DIRETÓRIOS COM MAIS ISSUES:")
+for idx, (diretorio, count) in enumerate(top_dirs[:10], 1):
+    percentual = (count / total * 100)
+    print(f"{idx:2}. [{count:4}] {percentual:5.1f}% - {diretorio}")
+
+# Agrupar problemas por severidade e tipo
+pattern_severities = defaultdict(lambda: {'error': 0, 'warning': 0, 'info': 0})
+for issue in issues:
+    pattern_severities[issue['code']][issue['severity']] += 1
+
+# Criar relatório estruturado
+report = {
+    'resumoGeral': {
+        'totalIssues': total,
+        'errors': error_count,
+        'warnings': warning_count,
+        'info': info_count,
+        'percentualErrors': f"{(error_count/total*100):.1f}%",
+        'percentualWarnings': f"{(warning_count/total*100):.1f}%",
+        'percentualInfo': f"{(info_count/total*100):.1f}%"
+    },
+    'top15ArquivosComIssues': [
+        {
+            'arquivo': arquivo.replace('lib/', ''),
+            'totalIssues': len(file_issues),
+            'distribuicao': {
+                'errors': sum(1 for i in file_issues if i['severity'] == 'error'),
+                'warnings': sum(1 for i in file_issues if i['severity'] == 'warning'),
+                'infos': sum(1 for i in file_issues if i['severity'] == 'info')
+            },
+            'topCodigos': [
+                {'codigo': code, 'ocorrencias': sum(1 for i in file_issues if i['code'] == code)}
+                for code in sorted(set(i['code'] for i in file_issues), 
+                                 key=lambda c: sum(1 for i in file_issues if i['code'] == c), reverse=True)[:5]
+            ]
+        }
+        for arquivo, file_issues in top_files
+    ],
+    'padroesMaisComuns': [
+        {
+            'padrao': padrao,
+            'totalOcorrencias': count,
+            'percentual': f"{(count/total*100):.1f}%",
+            'distribuicao': {
+                'errors': pattern_severities[padrao]['error'],
+                'warnings': pattern_severities[padrao]['warning'],
+                'infos': pattern_severities[padrao]['info']
+            },
+            'exemplo': next(('  ' + i['file'].replace('lib/', '') + ':' + str(i['line']) + ':' + str(i['col']) + ' | ' + i['message'][:70]) 
+                          for i in issues if i['code'] == padrao)
+        }
+        for padrao, count in top_patterns[:15]
+    ],
+    'diretoriosComMaisIssues': [
+        {
+            'diretorio': diretorio,
+            'totalIssues': count,
+            'percentual': f"{(count/total*100):.1f}%"
+        }
+        for diretorio, count in top_dirs
+    ],
+    'recomendacoes': [
+        f"🔴 CRÍTICO: {error_count} erros impedem compilação ({(error_count/total*100):.1f}% de {total})",
+        f"🟡 MEDIUM: {warning_count} warnings degradam qualidade ({(warning_count/total*100):.1f}%)",
+        f"🔵 LOW: {info_count} infos sobre deprecações/boas práticas ({(info_count/total*100):.1f}%)",
+        "",
+        "📊 CONCENTRAÇÃO GEOGRÁFICA:",
+        f"  🎯 Principal: {top_dirs[0][0]} com {top_dirs[0][1]} issues ({(top_dirs[0][1]/total*100):.1f}%)",
+        f"  🎯 Secundário: {top_dirs[1][0]} com {top_dirs[1][1]} issues ({(top_dirs[1][1]/total*100):.1f}%)",
+        f"  🎯 Terciário: {top_dirs[2][0]} com {top_dirs[2][1]} issues ({(top_dirs[2][1]/total*100):.1f}%)",
+        "",
+        "⚡ PADRÕES CRÍTICOS DETECTADOS:",
+        f"  1️⃣ '{top_patterns[0][0]}' = {top_patterns[0][1]} × ({(top_patterns[0][1]/total*100):.1f}%)",
+        f"  2️⃣ '{top_patterns[1][0]}' = {top_patterns[1][1]} × ({(top_patterns[1][1]/total*100):.1f}%)",
+        f"  3️⃣ '{top_patterns[2][0]}' = {top_patterns[2][1]} × ({(top_patterns[2][1]/total*100):.1f}%)",
+        "",
+        "🎯 AÇÕES IMEDIATAS (Ordem de Impacto):",
+        "  ① TIPAGEM: 'argument_type_not_assignable' → Converter dynamic em tipos específicos",
+        "  ② UNDEFINED: Resolver undefined_identifier em widgets → Check imports & scope",
+        "  ③ ENCODING: Caracteres especiais em nomes → UTF-8 validation",
+        "  ④ CONST: const_eval_method_invocation → Late init ou refactoring",
+        "  ⑤ IMPORTS: Circular dependencies → Restructure arquitetura",
+        "",
+        "📈 PLANO DE LONGO PRAZO:",
+        "  • Implementar Riverpod/Provider com type-safety",
+        "  • Adicionar strict linting rules (analysis_options.yaml)",
+        "  • Refatorar models com freezed/json_serializable",
+        "  • Code generation para eliminar boilerplate",
+        "  • Testes unitários para type safety",
+        "  • CI/CD com análise automática antes do merge"
+    ]
+}
+
+# Salvar relatório em JSON
+with open('d:\\tagbean\\frontend\\RELATORIO_ISSUES_DETALHADO.json', 'w', encoding='utf-8') as f:
+    json.dump(report, f, ensure_ascii=False, indent=2)
+
+print("\n" + "="*80)
+print("✅ ANÁLISE COMPLETA:")
+print(f"  Total Issues: {total} | 🔴 Errors: {error_count} | 🟡 Warnings: {warning_count} | 🔵 Infos: {info_count}")
+print("  📄 JSON: d:\\tagbean\\frontend\\RELATORIO_ISSUES_DETALHADO.json")
+print("="*80)

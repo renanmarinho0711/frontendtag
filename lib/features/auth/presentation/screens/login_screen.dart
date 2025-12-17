@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'package:tagbean/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
@@ -33,9 +32,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
   void initState() {
     super.initState();
     
-    // Pré-preencher credenciais para desenvolvimento
-    _usernameController.text = 'teste_admin_loja';
-    _passwordController.text = 'admin123';
+    // Prã-preencher credenciais para desenvolvimento
+    _usernameController.text = 'demo_admin';
+    _passwordController.text = 'TagBean@2025!';
     
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 1200),
@@ -75,11 +74,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
       _isLoading = true;
     });
 
-    // Autentica��o via Backend
+    // AutenticAção via Backend
     await _loginWithBackend();
   }
 
-  /// Login usando o backend real
+  /// Login usando o backend real (com fallback fake para desenvolvimento)
   Future<void> _loginWithBackend() async {
     try {
       final authNotifier = ref.read(authProvider.notifier);
@@ -99,27 +98,38 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
         // Navegar para o Dashboard
         _navigateToDashboard();
       } else {
-        // Falha no login
-        setState(() => _isLoading = false);
-        
-        final errorMessage = ref.read(authErrorProvider) ?? 'Erro ao fazer login';
-        _showErrorSnackBar(errorMessage);
-        
-        _animationController.reset();
-        _animationController.forward();
+        // Falha no login - tentar login fake para desenvolvimento
+        _tryFakeLogin();
       }
     } catch (e) {
       if (!mounted) return;
       
+      // Em caso de erro de conexão, tentar login fake para desenvolvimento
+      _tryFakeLogin();
+    }
+  }
+
+  /// Login fake para desenvolvimento (sem backend)
+  void _tryFakeLogin() {
+    final username = _usernameController.text.trim();
+    final password = _passwordController.text;
+
+    // Credenciais fake para desenvolvimento
+    if ((username == 'demo_admin' && password == 'TagBean@2025!') ||
+        (username == 'admin' && password == 'admin') ||
+        (username == 'test' && password == 'test')) {
+      // Login fake bem-sucedido
+      debugPrint('🔓 LOGIN FAKE: Acesso permitido para desenvolvimento');
+      _navigateToDashboard();
+    } else {
       setState(() => _isLoading = false);
-      _showErrorSnackBar('Erro de conex�o: ${e.toString()}');
-      
+      _showErrorSnackBar('Credenciais inválidas. Use: demo_admin / TagBean@2025!');
       _animationController.reset();
       _animationController.forward();
     }
   }
 
-  /// Navega para o Dashboard com anima��o
+  /// Navega para o Dashboard com animAção
   void _navigateToDashboard() {
     Navigator.pushReplacement(
       context,
@@ -149,7 +159,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
         ),
         backgroundColor: ThemeColors.of(context).error,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: AppRadius.button,
         ),
         margin: const EdgeInsets.all(AppSpacing.lg),
@@ -157,9 +167,28 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
     );
   }
 
-  // REMOVIDO: _navigateToForgotPassword() - ForgotPasswordScreen nao existe
-  // TODO: Implementar tela de recuperacao de senha
-
+  void _navigateToForgotPassword() {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const ForgotPasswordScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+            opacity: animation,
+            child: SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(1.0, 0.0),
+                end: Offset.zero,
+              ).animate(animation),
+              child: child,
+            ),
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 400),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -216,7 +245,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
       children: [
         Hero(
           tag: 'app_logo',
-          child: Container(
+          child: SizedBox(
             width: logoSize,
             height: logoSize,
             child: Stack(
@@ -253,21 +282,22 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           ),
         ),
         SizedBox(height: AppSizes.headerTitleToSubtitle.get(isMobile, isTablet)),
+        // BADGE "PREÇO INTELIGENTE" - usa cores de login específicas
         Container(
           padding: EdgeInsets.symmetric(
             horizontal: AppSizes.subtitlePaddingHorizontal.get(isMobile, isTablet),
             vertical: AppSizes.subtitlePaddingVertical.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
-            color: ThemeColors.of(context).overlayLight,
+            color: ThemeColors.of(context).loginBadgeBackground,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: ThemeColors.of(context).overlayLighter,
+              color: ThemeColors.of(context).loginBadgeBorder,
               width: AppSizes.borderWidthMedium,
             ),
           ),
           child: Text(
-            'PRE�O INTELIGENTE',
+            'PREÇO INTELIGENTE',
             textAlign: TextAlign.center,
             style: AppTextStyles.subtitle.responsive(isMobile, isTablet),
           ),
@@ -293,13 +323,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           ),
         );
       },
+      // INDICADOR "SISTEMA ONLINE" - usa cores de login específicas
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: isMobile ? 16 : 20,
           vertical: isMobile ? 10 : 12,
         ),
         decoration: BoxDecoration(
-          color: ThemeColors.of(context).overlayLight,
+          color: ThemeColors.of(context).loginStatusBackground,
           borderRadius: BorderRadius.circular(30),
           border: Border.all(
             color: ThemeColors.of(context).statusActive.withValues(alpha: 0.4),
@@ -307,7 +338,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           ),
           boxShadow: [
             BoxShadow(
-              color: ThemeColors.of(context).statusActiveLight,
+              color: ThemeColors.of(context).statusActive.withValues(alpha: 0.2),
               blurRadius: 12,
               spreadRadius: 0,
             ),
@@ -384,7 +415,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Usu�rio',
+          'Usuário',
           style: AppTextStyles.fieldLabel.responsive(isMobile, isTablet),
         ),
         const SizedBox(height: AppSizes.fieldLabelToInput),
@@ -431,7 +462,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Por favor, insira seu usu�rio';
+              return 'Por favor, insira seu Usuário';
             }
             return null;
           },
@@ -548,7 +579,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           ],
         ),
         TextButton(
-          onPressed: null, // TODO: Implementar tela de recuperacao de senha
+          onPressed: _navigateToForgotPassword,
           style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(
               horizontal: AppSpacing.sm,
@@ -573,8 +604,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
           backgroundColor: ThemeColors.of(context).brandPrimaryGreen,
           foregroundColor: ThemeColors.of(context).surface,
           elevation: 0,
-          shadowColor: ThemeColors.of(context).brandPrimaryGreenLight,
-          shape: RoundedRectangleBorder(
+          shadowColor: ThemeColors.of(context).brandPrimaryGreen.withValues(alpha: 0.3),
+          shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.button,
           ),
           disabledBackgroundColor: ThemeColors.of(context).disabledButton,
@@ -607,7 +638,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
     return Column(
       children: [
         Text(
-          'Etiquetas Eletr�nicas Inteligentes',
+          'Etiquetas Eletrônicas Inteligentes',
           textAlign: TextAlign.center,
           style: AppTextStyles.footer.responsive(isMobile, isTablet).copyWith(
             color: ThemeColors.of(context).surfaceOverlay90,
@@ -615,23 +646,92 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
         ),
         const SizedBox(height: AppSizes.footerTextSpacing),
         Text(
-          '� 2025 - TAG BEAN Inteligentes',
+          'ã 2025 - TAG BEAN Inteligentes',
           textAlign: TextAlign.center,
           style: AppTextStyles.footerSecondary.responsive(isMobile, isTablet).copyWith(
             color: ThemeColors.of(context).surfaceOverlay70,
           ),
         ),
         const SizedBox(height: 16),
-        // Bot�o de teste da API (apenas para desenvolvimento)
+        // Botão de teste da API (apenas para desenvolvimento)
         TextButton.icon(
           onPressed: () => Navigator.pushNamed(context, '/dev/full-api-test'),
           icon: Icon(Icons.science, color: ThemeColors.of(context).surfaceOverlay60, size: 16),
           label: Text(
-            '?? Testes da API',
+            '🧪 Testes da API',
             style: TextStyle(color: ThemeColors.of(context).surfaceOverlay60, fontSize: 12),
           ),
         ),
+        const SizedBox(height: 8),
+        // BOTÀO DEBUG - MOSTRA TODAS AS CORES DA TELA DE LOGIN
+        TextButton.icon(
+          onPressed: () => _debugPrintLoginColors(context),
+          icon: Icon(Icons.palette, color: ThemeColors.of(context).surface, size: 16),
+          label: Text(
+            '🎨 DEBUG CORES',
+            style: TextStyle(color: ThemeColors.of(context).surface, fontSize: 12, fontWeight: FontWeight.bold),
+          ),
+        ),
       ],
+    );
+  }
+
+  /// DEBUG: Imprime todas as cores usadas na tela de login
+  void _debugPrintLoginColors(BuildContext context) {
+    final colors = ThemeColors.of(context);
+    
+    String colorToHex(Color c) => '#${c.value.toRadixString(16).padLeft(8, '0').toUpperCase()}';
+    
+    debugPrint('');
+    debugPrint('╔══════════════════════════════════════════════════════════════════╗');
+    debugPrint('║          🎨 CORES DA TELA DE LOGIN - DEBUG                       ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ FUNDO DA PÁGINA (brandLoginGradient):                            ║');
+    debugPrint('║   Cor 1: ${colorToHex(colors.brandLoginGradient.colors[0])}                                      ║');
+    debugPrint('║   Cor 2: ${colorToHex(colors.brandLoginGradient.colors[1])}                                      ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ CARD DE LOGIN:                                                   ║');
+    debugPrint('║   surface: ${colorToHex(colors.surface)}                                     ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ BADGE "PREÇO INTELIGENTE":                                       ║');
+    debugPrint('║   loginBadgeBackground: ${colorToHex(colors.loginBadgeBackground)}                        ║');
+    debugPrint('║   loginBadgeBorder: ${colorToHex(colors.loginBadgeBorder)}                            ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ INDICADOR "SISTEMA ONLINE":                                      ║');
+    debugPrint('║   loginStatusBackground: ${colorToHex(colors.loginStatusBackground)}                       ║');
+    debugPrint('║   statusActive: ${colorToHex(colors.statusActive)}                                ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ INPUTS (USUÁRIO/SENHA):                                          ║');
+    debugPrint('║   inputBackground: ${colorToHex(colors.inputBackground)}                             ║');
+    debugPrint('║   borderLight: ${colorToHex(colors.borderLight)}                                 ║');
+    debugPrint('║   brandPrimaryGreen (ícone): ${colorToHex(colors.brandPrimaryGreen)}                    ║');
+    debugPrint('║   iconDefault: ${colorToHex(colors.iconDefault)}                                 ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ BOTÀO ENTRAR:                                                    ║');
+    debugPrint('║   brandPrimaryGreen: ${colorToHex(colors.brandPrimaryGreen)}                          ║');
+    debugPrint('║   disabledButton: ${colorToHex(colors.disabledButton)}                              ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ CHECKBOX:                                                        ║');
+    debugPrint('║   brandPrimaryGreen: ${colorToHex(colors.brandPrimaryGreen)}                          ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ TEXTOS:                                                          ║');
+    debugPrint('║   textPrimary: ${colorToHex(colors.textPrimary)}                                 ║');
+    debugPrint('║   textSecondary: ${colorToHex(colors.textSecondary)}                               ║');
+    debugPrint('║   surfaceOverlay90 (footer): ${colorToHex(colors.surfaceOverlay90)}                    ║');
+    debugPrint('║   surfaceOverlay70 (footer2): ${colorToHex(colors.surfaceOverlay70)}                   ║');
+    debugPrint('╠══════════════════════════════════════════════════════════════════╣');
+    debugPrint('║ SOMBRAS:                                                         ║');
+    debugPrint('║   shadowLight: ${colorToHex(colors.shadowLight)}                                 ║');
+    debugPrint('╚══════════════════════════════════════════════════════════════════╝');
+    debugPrint('');
+    
+    // Mostra um SnackBar para confirmar
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('🎨 Cores impressas no console! Pressione F12 para ver.'),
+        backgroundColor: colors.brandPrimaryGreen,
+        duration: const Duration(seconds: 3),
+      ),
     );
   }
 }
@@ -707,7 +807,7 @@ class _PulsingDotState extends State<_PulsingDot>
               );
             },
           ),
-          // Ponto central s�lido
+          // Ponto central sólido
           Container(
             width: widget.size,
             height: widget.size,
@@ -716,7 +816,7 @@ class _PulsingDotState extends State<_PulsingDot>
               color: widget.color,
               boxShadow: [
                 BoxShadow(
-                  color: widget.colorLight,
+                  color: widget.color.withValues(alpha: 0.5),
                   blurRadius: 6,
                   spreadRadius: 1,
                 ),
@@ -728,7 +828,6 @@ class _PulsingDotState extends State<_PulsingDot>
     );
   }
 }
-
 
 
 

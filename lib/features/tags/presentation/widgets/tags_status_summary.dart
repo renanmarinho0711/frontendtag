@@ -3,7 +3,7 @@ import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
-/// Item de estat?stica para o resumo
+/// Item de estatãstica para o resumo
 class TagsStatItem {
   final String label;
   final int value;
@@ -184,7 +184,7 @@ class TagsStatusSummary extends StatelessWidget {
           decoration: BoxDecoration(
             color: stat.color.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: stat.colorLight),
+            border: Border.all(color: stat.color.withValues(alpha: 0.2)),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -192,7 +192,7 @@ class TagsStatusSummary extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(isMobile ? 6 : 8),
                 decoration: BoxDecoration(
-                  color: stat.colorLight,
+                  color: stat.color.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -229,8 +229,6 @@ class TagsStatusSummary extends StatelessWidget {
     );
   }
 }
-
-
 
 
 

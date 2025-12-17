@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
 /// Widget de estado vazio para listas de produtos
@@ -85,7 +85,7 @@ class ProductsEmptyState extends StatelessWidget {
 
   /// Factory para estado de nenhum produto pendente
   factory ProductsEmptyState.pendentes({VoidCallback? onImport}) {
-    return ProductsEmptyState(
+    return const ProductsEmptyState(
       icon: Icons.check_circle_outline_rounded,
       title: 'Todos vinculados!',
       subtitle: 'Todos os produtos já possuem tags vinculadas.',
@@ -107,7 +107,7 @@ class ProductsEmptyState extends StatelessWidget {
 
   /// Factory para estado de carregando
   factory ProductsEmptyState.loading() {
-    return ProductsEmptyState(
+    return const ProductsEmptyState(
       icon: Icons.hourglass_empty_rounded,
       title: 'Carregando...',
       subtitle: 'Buscando produtos...',

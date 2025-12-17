@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 import 'package:tagbean/features/strategies/data/providers/cross_selling_provider.dart';
 
@@ -72,11 +71,11 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   heroTag: 'ia',
                   onPressed: _gerarSugestoes,
                   backgroundColor: ThemeColors.of(context).blueCyan,
+                  tooltip: 'Gerar com IA',
                   child: Icon(
                     Icons.auto_awesome_rounded,
                     size: AppSizes.iconLarge.get(isMobile, isTablet),
                   ),
-                  tooltip: 'Gerar com IA',
                 ),
                 SizedBox(
                   height: AppSizes.paddingBase.get(isMobile, isTablet),
@@ -287,14 +286,14 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
               Icons.settings_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Configura??o',
+            text: 'ConfigurAção',
           ),
           Tab(
             icon: Icon(
               Icons.local_offer_rounded,
               size: AppSizes.iconSmall.get(isMobile, isTablet),
             ),
-            text: 'Sugest?es',
+            text: 'Sugestões',
           ),
         ],
       ),
@@ -399,7 +398,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Navega??o Inteligente',
+                  'NavegAção Inteligente',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -417,7 +416,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  '$sugestoesAtivas sugest?es ativas',
+                  '$sugestoesAtivas sugestões ativas',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -437,7 +436,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             child: Switch(
               value: state.isStrategyActive,
               onChanged: (value) => ref.read(nearbyProductsProvider.notifier).setStrategyActive(value),
-              activeColor: ThemeColors.of(context).surface,
+              activeThumbColor: ThemeColors.of(context).surface,
               activeTrackColor: ThemeColors.of(context).surfaceOverlay50,
             ),
           ),
@@ -456,7 +455,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).blueCyanLight],
+          colors: [ThemeColors.of(context).primaryPastel, ThemeColors.of(context).blueCyan.withValues(alpha: 0.1)],
         ),
         borderRadius: BorderRadius.circular(
           isMobile ? 14 : (isTablet ? 15 : 16),
@@ -496,7 +495,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   height: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 Text(
-                  'Setas aparecem nas ESLs indicando produtos relacionados pr?ximos, aumentando cross-selling',
+                  'Setas aparecem nas ESLs indicando produtos relacionados prãximos, aumentando cross-selling',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -549,7 +548,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyanLight,
+                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
@@ -563,7 +562,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
               ),
               Expanded(
                 child: Text(
-                  'Par?metros de Sugest?o',
+                  'Parâmetros de SuGestão',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -595,7 +594,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
               ),
               Expanded(
                 child: Text(
-                  'Dist?ncia M?xima',
+                  'Distãncia Mãxima',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -614,7 +613,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyanLight,
+                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -664,7 +663,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                 ),
                 Expanded(
                   child: Text(
-                    'Produtos sugeridos devem estar no mximo a esta dist?ncia',
+                    'Produtos sugeridos devem estar no mximo a esta distãncia',
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -696,7 +695,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
               ),
               Expanded(
                 child: Text(
-                  'Confian?a M?nima da IA',
+                  'Confiança Mínima da IA',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -715,7 +714,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyanLight,
+                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -760,7 +759,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
               ),
               Expanded(
                 child: Text(
-                  'Tempo de Rota??o',
+                  'Tempo de RotAção',
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -779,7 +778,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   vertical: AppSizes.paddingXsAlt.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).blueCyanLight,
+                  color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Text(
@@ -846,12 +845,12 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                   AppSizes.paddingBase.get(isMobile, isTablet),
                 ),
                 decoration: BoxDecoration(
-                  color: ThemeColors.of(context).infoLight,
+                  color: ThemeColors.of(context).blueMain.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
                 ),
                 child: Icon(
                   Icons.style_rounded,
-                  color: ThemeColors.of(context).info,
+                  color: ThemeColors.of(context).blueMain,
                   size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                 ),
               ),
@@ -884,7 +883,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             children: [
               Expanded(
                 child: _buildEstiloButton(
-                  'Cl?ssica',
+                  'Clássica',
                   'classica',
                   Icons.arrow_forward_rounded,
                   state,
@@ -946,7 +945,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: ThemeColors.of(context).blueCyanLight,
+                    color: ThemeColors.of(context).blueCyan.withValues(alpha: 0.3),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -1010,7 +1009,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
         children: [
           _buildSwitchOption(
             'Seta Animada',
-            'Anima??o pulsante para chamar aten??o',
+            'AnimAção pulsante para chamar atenção',
             Icons.animation_rounded,
             state.setaAnimada,
             (value) => ref.read(nearbyProductsProvider.notifier).setSetaAnimada(value),
@@ -1019,8 +1018,8 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           _buildSwitchOption(
-            'Rota??o Autom?tica',
-            'Alterna entre m?ltiplas sugest?es',
+            'RotAção Automática',
+            'Alterna entre mãltiplas sugestões',
             Icons.autorenew_rounded,
             state.rotacaoAutomatica,
             (value) => ref.read(nearbyProductsProvider.notifier).setRotacaoAutomatica(value),
@@ -1029,8 +1028,8 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             height: AppSizes.paddingBase.get(isMobile, isTablet),
           ),
           _buildSwitchOption(
-            'Notificar Sugest?es',
-            'Alertas quando novas sugest?es forem criadas',
+            'Notificar Sugestões',
+            'Alertas quando novas sugestões forem criadas',
             Icons.notifications_active_rounded,
             state.notificarSugestoes,
             (value) => ref.read(nearbyProductsProvider.notifier).setNotificarSugestoes(value),
@@ -1054,7 +1053,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
         AppSizes.paddingMdAlt.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        color: value ?  ThemeColors.of(context).blueCyanLight : ThemeColors.of(context).textSecondaryOverlay10,
+        color: value ?  ThemeColors.of(context).blueCyan.withValues(alpha: 0.1) : ThemeColors.of(context).textSecondaryOverlay10,
         borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
         border: Border.all(
           color: value ? ThemeColors.of(context).primaryLight : ThemeColors.of(context).textSecondary,
@@ -1113,7 +1112,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: ThemeColors.of(context).blueCyan,
+              activeThumbColor: ThemeColors.of(context).blueCyan,
             ),
           ),
         ],
@@ -1144,12 +1143,12 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             isMobile ? 14 : (isTablet ? 15 : 16),
           ),
           border: Border.all(
-            color: sugestao.corLight,
+            color: sugestao.cor.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
-              color: sugestao.corLight,
+              color: sugestao.cor.withValues(alpha: 0.15),
               blurRadius: isMobile ? 15 : 20,
               offset: Offset(0, isMobile ? 4 : 6),
             ),
@@ -1176,7 +1175,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                     borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                     boxShadow: [
                       BoxShadow(
-                        color: sugestao.corLight,
+                        color: sugestao.cor.withValues(alpha: 0.3),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -1345,7 +1344,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                         height: AppSizes.paddingXxs.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Dist?ncia',
+                        'Distãncia',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1402,7 +1401,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                         height: AppSizes.paddingXxs.get(isMobile, isTablet),
                       ),
                       Text(
-                        'Convers?o',
+                        'Conversão',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1501,7 +1500,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
           size: AppSizes.iconHeroLg.get(isMobile, isTablet),
         ),
         title: Text(
-          'Gerar Sugest?es com IA',
+          'Gerar Sugestões com IA',
           style: TextStyle(
             fontSize: ResponsiveHelper.getResponsiveFontSize(
               context,
@@ -1517,15 +1516,15 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('A IA analisar?:', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13), fontWeight: FontWeight.w600)),
+              Text('A IA analisarã:', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13), fontWeight: FontWeight.w600)),
               SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),
-              Text('? Hist?rico de compras combinadas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Histórico de compras combinadas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXsAlt.get(isMobile, isTablet)),
-              Text('? Proximidade f?sica dos produtos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Proximidade fãsica dos produtos', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXsAlt.get(isMobile, isTablet)),
-              Text('? Padr?es de navega??o dos clientes', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Padrões de navegação dos clientes', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXsAlt.get(isMobile, isTablet)),
-              Text('? Taxa de convers?o de sugest?es', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Taxa de conversão de sugestões', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
             ],
           ),
         ),
@@ -1537,7 +1536,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
           ElevatedButton(
             onPressed: () async {
               Navigator.pop(context);
-              // Chama o m?todo do provider para gerar sugest?es via IA
+              // Chama o método do provider para gerar sugestões via IA
               await ref.read(nearbyProductsProvider.notifier).gerarSugestoes();
               
               if (mounted) {
@@ -1548,7 +1547,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                       children: [
                         Icon(Icons.check_circle_rounded, color: ThemeColors.of(context).surface, size: AppSizes.iconMedium.get(isMobile, isTablet)),
                         SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
-                        Text('Sugest?es geradas com sucesso!', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
+                        Text('Sugestões geradas com sucesso!', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       ],
                     ),
                     backgroundColor: ThemeColors.of(context).blueCyan,
@@ -1583,15 +1582,15 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
             children: [
               Text('Setas inteligentes nas ESLs indicam produtos relacionados:', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13), fontWeight: FontWeight.w600)),
               SizedBox(height: AppSizes.paddingMd.get(isMobile, isTablet)),
-              Text('? IA identifica produtos complementares automaticamente', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã IA identifica produtos complementares automaticamente', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
-              Text('? Setas animadas aparecem nas etiquetas eletr?nicas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Setas animadas aparecem nas etiquetas eletrônicas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
-              Text('? Aumenta ticket m?dio em 15-25%', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Aumenta ticket Médio em 15-25%', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
-              Text('? Cross-selling sem esfor?o manual', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã Cross-selling sem esforão manual', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
               SizedBox(height: AppSizes.paddingXs.get(isMobile, isTablet)),
-              Text('? Rota??o autom?tica entre m?ltiplas sugest?es', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
+              Text('ã RotAção automática entre mãltiplas sugestões', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), height: 1.5)),
             ],
           ),
         ),
@@ -1603,7 +1602,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
   void _salvarConfiguracoes() async {
     final isMobile = ResponsiveHelper.isMobile(context);
 
-    // Salva as configura??es no backend
+    // Salva as configurações no backend
     await ref.read(nearbyProductsProvider.notifier).saveConfigurations();
     
     final state = ref.read(nearbyProductsProvider);
@@ -1640,7 +1639,7 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Configura??es Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
+                      Text('Configurações Salvas!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13))),
                       Text('Produto vizinho configurado', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11))),
                     ],
                   ),
@@ -1656,9 +1655,6 @@ class _ProdutoVizinhoConfigScreenState extends ConsumerState<ProdutoVizinhoConfi
     }
   }
 }
-
-
-
 
 
 

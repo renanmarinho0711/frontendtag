@@ -9,7 +9,6 @@ import 'package:tagbean/features/categories/presentation/screens/categories_stat
 import 'package:tagbean/features/categories/presentation/providers/categories_provider.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_cache.dart';
-import 'package:tagbean/design_system/theme/theme_colors.dart';
 
 class CategoriasMenuScreen extends ConsumerStatefulWidget {
   const CategoriasMenuScreen({super.key});
@@ -290,7 +289,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
         AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [AppThemeColors.infoPastel, AppThemeColors.primaryPastel],
@@ -707,7 +706,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Text(
                                 opcao['titulo'],
                                 textAlign: TextAlign.center,
@@ -725,7 +724,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 opcao['subtitulo'],
                                 textAlign: TextAlign.center,
@@ -817,7 +816,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                   color: AppThemeColors.infoPastel,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(Icons.upload_rounded, color: AppThemeColors.infoDark),
+                child: const Icon(Icons.upload_rounded, color: AppThemeColors.infoDark),
               ),
               title: const Text('Importar Categorias'),
               subtitle: const Text('Carregar de arquivo'),
@@ -834,7 +833,7 @@ class _CategoriasMenuScreenState extends ConsumerState<CategoriasMenuScreen> wit
                   color: AppThemeColors.successPastel,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(Icons.download_rounded, color: AppThemeColors.successIcon),
+                child: const Icon(Icons.download_rounded, color: AppThemeColors.successIcon),
               ),
               title: const Text('Exportar Categorias'),
               subtitle: const Text('Salvar em arquivo'),

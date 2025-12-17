@@ -1,4 +1,4 @@
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/features/products/data/models/product_models.dart';
 
@@ -88,8 +88,8 @@ class ProductBindingCard extends StatelessWidget {
   }
 
   Widget _buildImagePlaceholder() {
-    return Center(
-      child: const Icon(
+    return const Center(
+      child: Icon(
         Icons.inventory_2_outlined,
         color: AppThemeColors.textTertiary,
         size: 28,
@@ -104,7 +104,7 @@ class ProductBindingCard extends StatelessWidget {
         // Nome
         Text(
           produto.nome,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,
             color: AppThemeColors.textPrimary,
@@ -124,7 +124,7 @@ class ProductBindingCard extends StatelessWidget {
             const SizedBox(width: AppSpacing.xs),
             Text(
               produto.codigo,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 color: AppThemeColors.textSecondary,
               ),
@@ -150,7 +150,7 @@ class ProductBindingCard extends StatelessWidget {
       ),
       child: Text(
         'R\$ ${produto.preco.toStringAsFixed(2)}',
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.bold,
           color: AppThemeColors.brandPrimaryGreen,
@@ -177,7 +177,7 @@ class ProductBindingCard extends StatelessWidget {
           const SizedBox(width: AppSpacing.xs),
           Text(
             produto.tag ?? 'Vinculada',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w600,
               color: AppThemeColors.success,

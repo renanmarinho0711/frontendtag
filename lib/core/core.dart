@@ -1,4 +1,4 @@
-// TagBean Core
+/// TagBean Core
 library core;
 
 // Constants
@@ -7,7 +7,8 @@ export 'constants/constants.dart';
 // Enums
 export 'enums/enums.dart';
 
-// REMOVIDO: export 'extensions/extensions.dart'; // Arquivo nao existe em lib/core/extensions/
+// Extensions
+export 'extensions/extensions.dart';
 
 // Network
 export 'network/api_client.dart';

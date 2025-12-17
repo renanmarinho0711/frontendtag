@@ -110,7 +110,7 @@ class AdminPanelCard extends ConsumerWidget {
                             : isClientAdmin 
                                 ? 'Gerencie sua empresa'
                                 : 'Gerencie sua equipe',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           color: AppThemeColors.surfaceOverlay80,
                         ),
@@ -231,7 +231,7 @@ class AdminPanelCard extends ConsumerWidget {
           context: context,
           icon: Icons.storefront_rounded,
           label: isPlatformAdmin ? 'Todas as Lojas' : 'Gerenciar Lojas',
-          subtitle: isPlatformAdmin ? 'VisÃ£o global' : 'Lojas da empresa',
+          subtitle: isPlatformAdmin ? 'Visão global' : 'Lojas da empresa',
           onTap: onGerenciarLojas,
         ),
       ),
@@ -318,7 +318,7 @@ class AdminPanelCard extends ConsumerWidget {
                     if (subtitle != null && !isMobile)
                       Text(
                         subtitle,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 11,
                           color: AppThemeColors.surfaceOverlay70,
                         ),

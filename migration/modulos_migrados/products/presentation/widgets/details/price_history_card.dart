@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Modelo para item do histórico de preços
 class PriceHistoryItemData {
   final DateTime data;
@@ -145,7 +144,7 @@ class PriceHistoryCard extends StatelessWidget {
   Widget _buildEmptyState(BuildContext context, bool isMobile, bool isTablet) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(AppSpacing.lg),
+        padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
           children: [
             Icon(

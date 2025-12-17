@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Header da lista de produtos com gradiente e estatísticas
 class ProductsHeader extends StatelessWidget {
   final int totalProdutos;
@@ -72,7 +71,7 @@ class ProductsHeader extends StatelessWidget {
   Widget _buildIcon(BuildContext context, bool isMobile, bool isTablet) {
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppGradients.overlayWhite20,
         borderRadius: AppRadius.button,
       ),
@@ -159,7 +158,7 @@ class ProductsHeader extends StatelessWidget {
           horizontal: AppSizes.paddingSmAlt.get(isMobile, isTablet),
           vertical: AppSizes.paddingXs.get(isMobile, isTablet),
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppGradients.overlayWhite20,
           borderRadius: AppRadius.sm,
         ),
