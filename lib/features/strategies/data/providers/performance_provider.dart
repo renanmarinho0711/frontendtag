@@ -142,7 +142,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
               fase: p['fase']?.toString() ?? 'Fase ${i + 1}',
               titulo: p['titulo']?.toString() ?? p['nome']?.toString() ?? p['name']?.toString() ?? 'Fase ${i + 1}',
               dias: p['dias'] ?? p['days'] ?? 7,
-              desconto: (p['desconto'] ?? p['discount'] ?? 0).toDouble(),
+              desconto: ((p['desconto'] ?? p['discount'] ?? 0) as num?)?.toDouble() ?? 0.0,
               cor: _parseColor(p['cor'] ?? p['color']),
               icone: Icons.timer,
               descricao: p['descricao']?.toString() ?? p['description']?.toString() ?? '',
@@ -170,9 +170,9 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
           phases: phases,
           products: products,
           allCategories: categoriesList is List ? List<String>.from(categoriesList) : [],
-          isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
-          margemMinima: (data['margemMinima'] ?? data['minMargin'] ?? state.margemMinima).toDouble(),
-          notificarLiquidacao: data['notificarLiquidacao'] ?? data['notifyClearance'] ?? state.notificarLiquidacao,
+          isStrategyActive: (((data['isActive'] ?? data['ativo']) as bool?) ?? state.isStrategyActive),
+          margemMinima: ((data['margemMinima'] ?? data['minMargin'] ?? state.margemMinima) as num?)?.toDouble() ?? state.margemMinima,
+          notificarLiquidacao: (((data['notificarLiquidacao'] ?? data['notifyClearance']) as bool?) ?? state.notificarLiquidacao),
         );
       } else {
         state = state.copyWith(isLoading: false, phases: [], products: []);
@@ -708,7 +708,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
               nome: p['nome']?.toString() ?? p['produtoNome']?.toString() ?? p['productName']?.toString() ?? '',
               vendasAtuais: p['vendasAtuais'] ?? p['currentSales'] ?? 0,
               previsao: p['previsao'] ?? p['demandaPrevista'] ?? p['predictedDemand'] ?? 0,
-              confianca: ((p['confianca'] ?? p['confidence'] ?? 0) * 1).toInt(),
+              confianca: (((p['confianca'] ?? p['confidence'] ?? 0) as int?) ?? 0),
               tendencia: ForecastTrend.fromString(p['tendencia']?.toString() ?? p['trend']?.toString() ?? 'estavel'),
               cor: const Color(0xFF2196F3),
               impacto: p['impacto']?.toString() ?? 'R\$ 0',
@@ -722,7 +722,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
             factors.add(ForecastFactorModel(
               id: f['id']?.toString() ?? '',
               nome: f['nome'] ?? f['name'] ?? '',
-              peso: (f['peso'] ?? f['weight'] ?? 0).toDouble(),
+              peso: ((f['peso'] ?? f['weight'] ?? 0) as num?)?.toDouble() ?? 0.0,
               cor: const Color(0xFF2196F3),
               icone: Icons.analytics,
               descricao: f['descricao']?.toString() ?? f['description']?.toString() ?? '',
@@ -734,12 +734,12 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
         if (data['modelStatus'] != null) {
           final ms = data['modelStatus'];
           modelStatus = ForecastModelStatus(
-            isActive: ms['isActive'] ?? ms['ativo'] ?? false,
-            isTrained: ms['isTrained'] ?? ms['treinado'] ?? false,
+            isActive: (((ms['isActive'] ?? ms['ativo']) as bool?) ?? false),
+            isTrained: (((ms['isTrained'] ?? ms['treinado']) as bool?) ?? false),
             lastTraining: ms['lastTraining']?.toString() ?? ms['ultimoTreinamento']?.toString() ?? 'Nunca',
-            precision: (ms['precision'] ?? ms['precisao'] ?? 0).toDouble(),
-            totalProducts: ms['totalProducts'] ?? ms['totalProdutos'] ?? 0,
-            totalPredictions: ms['totalPredictions'] ?? ms['totalPrevisoes'] ?? 0,
+            precision: ((ms['precision'] ?? ms['precisao'] ?? 0) as num?)?.toDouble() ?? 0.0,
+            totalProducts: (((ms['totalProducts'] ?? ms['totalProdutos'] ?? 0) as int?) ?? 0),
+            totalPredictions: (((ms['totalPredictions'] ?? ms['totalPrevisoes'] ?? 0) as int?) ?? 0),
           );
         }
         
@@ -748,9 +748,9 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
           predictions: predictions,
           factors: factors,
           modelStatus: modelStatus,
-          motorAtivo: data['motorAtivo'] ?? data['engineActive'] ?? state.motorAtivo,
-          periodoHistorico: data['periodoHistorico'] ?? data['historicalPeriod'] ?? state.periodoHistorico,
-          nivelConfianca: (data['nivelConfianca'] ?? data['confidenceLevel'] ?? state.nivelConfianca).toDouble(),
+          motorAtivo: (((data['motorAtivo'] ?? data['engineActive']) as bool?) ?? state.motorAtivo),
+          periodoHistorico: (((data['periodoHistorico'] ?? data['historicalPeriod']) as int?) ?? state.periodoHistorico),
+          nivelConfianca: ((data['nivelConfianca'] ?? data['confidenceLevel'] ?? state.nivelConfianca) as num?)?.toDouble() ?? state.nivelConfianca,
         );
       } else {
         state = state.copyWith(isLoading: false, predictions: [], factors: []);
