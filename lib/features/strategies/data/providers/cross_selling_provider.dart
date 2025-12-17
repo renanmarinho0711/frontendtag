@@ -125,11 +125,11 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
               id: s['id']?.toString() ?? '',
               produto: s['produto']?.toString() ?? s['produtoOrigem']?.toString() ?? s['sourceProduct']?.toString() ?? '',
               sugere: s['sugere']?.toString() ?? s['produtoDestino']?.toString() ?? s['targetProduct']?.toString() ?? '',
-              correlacao: s['correlacao'] ?? s['confianca'] ?? s['confidence'] ?? 0,
+              correlacao: (((s['correlacao'] ?? s['confianca'] ?? s['confidence'] ?? 0) as int?) ?? 0),
               distancia: s['distancia']?.toString() ?? '',
-              conversao: s['conversão'] ?? 0,
+              conversao: (((s['conversão'] ?? 0) as int?) ?? 0),
               cor: const Color(0xFF2196F3),
-              vendas: s['vendas'] ?? 0,
+              vendas: (((s['vendas'] ?? 0) as int?) ?? 0),
               icone: Icons.local_offer,
             ));
           }
@@ -138,14 +138,14 @@ class NearbyProductsNotifier extends StateNotifier<NearbyProductsState> {
         state = state.copyWith(
           isLoading: false,
           sugestoes: sugestoes,
-          isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
-          distanciaMaxima: (data['distanciaMaxima'] ?? data['maxDistance'] ?? state.distanciaMaxima).toDouble(),
-          confiancaMinima: (data['confiancaMinima'] ?? data['minConfidence'] ?? state.confiancaMinima).toDouble(),
-          setaAnimada: data['setaAnimada'] ?? data['animatedArrow'] ?? state.setaAnimada,
-          estiloSeta: data['estiloSeta'] ?? data['arrowStyle'] ?? state.estiloSeta,
-          rotacaoAutomatica: data['rotacaoAutomatica'] ?? data['autoRotation'] ?? state.rotacaoAutomatica,
-          tempoRotacao: data['tempoRotacao'] ?? data['rotationTime'] ?? state.tempoRotacao,
-          notificarSugestoes: data['notificarSugestoes'] ?? data['notifySuggestions'] ?? state.notificarSugestoes,
+          isStrategyActive: (((data['isActive'] ?? data['ativo']) as bool?) ?? state.isStrategyActive),
+          distanciaMaxima: ((data['distanciaMaxima'] ?? data['maxDistance'] ?? state.distanciaMaxima) as num?)?.toDouble() ?? state.distanciaMaxima,
+          confiancaMinima: ((data['confiancaMinima'] ?? data['minConfidence'] ?? state.confiancaMinima) as num?)?.toDouble() ?? state.confiancaMinima,
+          setaAnimada: (((data['setaAnimada'] ?? data['animatedArrow']) as bool?) ?? state.setaAnimada),
+          estiloSeta: (((data['estiloSeta'] ?? data['arrowStyle']) as String?) ?? state.estiloSeta),
+          rotacaoAutomatica: (((data['rotacaoAutomatica'] ?? data['autoRotation']) as bool?) ?? state.rotacaoAutomatica),
+          tempoRotacao: (((data['tempoRotacao'] ?? data['rotationTime']) as int?) ?? state.tempoRotacao),
+          notificarSugestoes: (((data['notificarSugestoes'] ?? data['notifySuggestions']) as bool?) ?? state.notificarSugestoes),
         );
       } else {
         state = state.copyWith(isLoading: false, sugestoes: []);
