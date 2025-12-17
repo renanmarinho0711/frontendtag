@@ -234,23 +234,14 @@ class HeatmapNotifier extends StateNotifier<HeatmapState> {
         
 
         state = state.copyWith(
-
           isLoading: false,
-
           zonas: zonas,
-
-          isStrategyActive: data['isActive'] ?? data['is_active'] ?? state.isStrategyActive,
-
-          limiteZonaFria: (data['limiteZonaFria'] ?? data['cold_zone_limit'] ?? state.limiteZonaFria).toDouble(),
-
-          intensidadePiscar: data['intensidadePiscar'] ?? data['blink_intensity'] ?? state.intensidadePiscar,
-
-          intervaloAtualizacao: data['intervaloAtualizacao'] ?? data['update_interval'] ?? state.intervaloAtualizacao,
-
-          notificarGestor: data['notificarGestor'] ?? data['notify_manager'] ?? state.notificarGestor,
-
-          integracaoCameras: data['integracaoCameras'] ?? data['camera_integration'] ?? state.integracaoCameras,
-
+          isStrategyActive: (((data['isActive'] ?? data['is_active']) as bool?) ?? state.isStrategyActive),
+          limiteZonaFria: ((data['limiteZonaFria'] ?? data['cold_zone_limit'] ?? state.limiteZonaFria) as num?)?.toDouble() ?? state.limiteZonaFria,
+          intensidadePiscar: (((data['intensidadePiscar'] ?? data['blink_intensity']) as String?) ?? state.intensidadePiscar),
+          intervaloAtualizacao: (((data['intervaloAtualizacao'] ?? data['update_interval']) as int?) ?? state.intervaloAtualizacao),
+          notificarGestor: (((data['notificarGestor'] ?? data['notify_manager']) as bool?) ?? state.notificarGestor),
+          integracaoCameras: (((data['integracaoCameras'] ?? data['camera_integration']) as bool?) ?? state.integracaoCameras),
         );
 
       } else {
