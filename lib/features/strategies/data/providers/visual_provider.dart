@@ -600,7 +600,7 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
 
               faturamento: p['faturamento']?.toString() ?? p['revenue']?.toString() ?? 'R\$ 0',
 
-              margem: (p['margem'] ?? p['margin'] ?? 0).toDouble(),
+              margem: ((p['margem'] ?? p['margin'] ?? 0) as num?)?.toDouble() ?? 0.0,
 
             ));
 
@@ -1508,15 +1508,15 @@ class SmartRouteNotifier extends StateNotifier<SmartRouteState> {
 
           rotasAtivas: rotas,
 
-          isStrategyActive: data['isActive'] ?? data['is_active'] ?? state.isStrategyActive,
+          isStrategyActive: (((data['isActive'] ?? data['is_active']) as bool?) ?? state.isStrategyActive),
 
-          intensidadeLed: (data['intensidadeLed'] ?? data['led_intensity'] ?? state.intensidadeLed).toDouble(),
+          intensidadeLed: ((data['intensidadeLed'] ?? data['led_intensity'] ?? state.intensidadeLed) as num?)?.toDouble() ?? state.intensidadeLed,
 
-          duracaoDestaque: (data['duracaoDestaque'] ?? data['highlight_duration'] ?? state.duracaoDestaque).toDouble(),
+          duracaoDestaque: ((data['duracaoDestaque'] ?? data['highlight_duration'] ?? state.duracaoDestaque) as num?)?.toDouble() ?? state.duracaoDestaque,
 
-          corProgressiva: data['corProgressiva'] ?? data['progressive_color'] ?? state.corProgressiva,
+          corProgressiva: (((data['corProgressiva'] ?? data['progressive_color']) as String?) ?? state.corProgressiva),
 
-          modoRota: data['modoRota'] ?? data['route_mode'] ?? state.modoRota,
+          modoRota: (((data['modoRota'] ?? data['route_mode']) as String?) ?? state.modoRota),
 
           feedbackSonoro: data['feedbackSonoro'] ?? data['sound_feedback'] ?? state.feedbackSonoro,
 
