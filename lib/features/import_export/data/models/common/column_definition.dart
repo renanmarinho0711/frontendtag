@@ -22,13 +22,13 @@ class ColumnDefinition {
 
   factory ColumnDefinition.fromJson(Map<String, dynamic> json) {
     return ColumnDefinition(
-      field: json['field'] ?? '',
-      displayName: json['displayName'] ?? '',
-      dataType: json['dataType'] ?? 'string',
-      isRequired: json['isRequired'] ?? false,
-      defaultValue: json['defaultValue'],
-      description: json['description'],
-      validationPattern: json['validationPattern'],
+      field: (((json['field'] ?? '') as String?) ?? ''),
+      displayName: (((json['displayName'] ?? '') as String?) ?? ''),
+      dataType: (((json['dataType'] ?? 'string') as String?) ?? 'string'),
+      isRequired: (((json['isRequired'] ?? false) as bool?) ?? false),
+      defaultValue: (json['defaultValue'] as String?),
+      description: (json['description'] as String?),
+      validationPattern: (json['validationPattern'] as String?),
       allowedValues: (json['allowedValues'] as List?)
           ?.map((v) => v.toString())
           .toList(),
@@ -67,12 +67,12 @@ class ColumnDefinitionModel {
 
   factory ColumnDefinitionModel.fromJson(Map<String, dynamic> json) {
     return ColumnDefinitionModel(
-      field: json['field'] ?? '',
-      displayName: json['displayName'] ?? '',
-      dataType: json['dataType'] ?? 'string',
-      isRequired: json['isRequired'] ?? false,
-      defaultValue: json['defaultValue'],
-      validationPattern: json['validationPattern'],
+      field: (((json['field'] ?? '') as String?) ?? ''),
+      displayName: (((json['displayName'] ?? '') as String?) ?? ''),
+      dataType: (((json['dataType'] ?? 'string') as String?) ?? 'string'),
+      isRequired: (((json['isRequired'] ?? false) as bool?) ?? false),
+      defaultValue: (json['defaultValue'] as String?),
+      validationPattern: (json['validationPattern'] as String?),
     );
   }
 

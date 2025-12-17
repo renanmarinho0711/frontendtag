@@ -12,9 +12,9 @@ class ColumnMappingModel {
 
   factory ColumnMappingModel.fromJson(Map<String, dynamic> json) {
     return ColumnMappingModel(
-      sourceColumn: json['sourceColumn'] ?? '',
-      targetField: json['targetField'] ?? '',
-      confidence: (json['confidence'] ?? 1.0).toDouble(),
+      sourceColumn: (((json['sourceColumn'] ?? '') as String?) ?? ''),
+      targetField: (((json['targetField'] ?? '') as String?) ?? ''),
+      confidence: ((json['confidence'] ?? 1.0) as num?)?.toDouble() ?? 1.0,
     );
   }
 
@@ -41,9 +41,9 @@ class ColumnMappingSuggestion {
 
   factory ColumnMappingSuggestion.fromJson(Map<String, dynamic> json) {
     return ColumnMappingSuggestion(
-      sourceColumn: json['sourceColumn'] ?? '',
-      suggestedField: json['suggestedField'],
-      confidence: (json['confidence'] ?? 0).toDouble(),
+      sourceColumn: (((json['sourceColumn'] ?? '') as String?) ?? ''),
+      suggestedField: (json['suggestedField'] as String?),
+      confidence: ((json['confidence'] ?? 0) as num?)?.toDouble() ?? 0.0,
       alternativeFields: (json['alternativeFields'] as List?)
           ?.map((f) => f.toString())
           .toList() ?? [],
