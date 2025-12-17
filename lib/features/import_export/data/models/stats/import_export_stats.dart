@@ -24,12 +24,12 @@ class ImportStatsModel {
 
   factory ImportStatsModel.fromJson(Map<String, dynamic> json) {
     return ImportStatsModel(
-      label: json['label'] as String,
-      value: json['valor'] as String,
-      icon: json['icon'] as IconData,
-      color: json['cor'] as Color,
-      change: json['mudanca'] as String,
-      changeType: json['tipo'] as String,
+      label: (json['label'] as String?) ?? '',
+      value: (json['valor'] as String?) ?? '',
+      icon: (json['icon'] as IconData?) ?? Icons.info,
+      color: (json['cor'] as Color?) ?? const Color(0xFF2196F3),
+      change: (json['mudanca'] as String?) ?? '',
+      changeType: (json['tipo'] as String?) ?? '',
     );
   }
 }
@@ -141,16 +141,16 @@ class ImportExportStats {
 
   factory ImportExportStats.fromJson(Map<String, dynamic> json) {
     return ImportExportStats(
-      totalImports: json['totalImports'] ?? 0,
-      totalExports: json['totalExports'] ?? 0,
-      successfulOperations: json['successfulOperations'] ?? 0,
-      failedOperations: json['failedOperations'] ?? 0,
-      totalRecordsImported: json['totalRecordsImported'] ?? 0,
-      totalRecordsExported: json['totalRecordsExported'] ?? 0,
+      totalImports: (((json['totalImports'] ?? 0) as int?) ?? 0),
+      totalExports: (((json['totalExports'] ?? 0) as int?) ?? 0),
+      successfulOperations: (((json['successfulOperations'] ?? 0) as int?) ?? 0),
+      failedOperations: (((json['failedOperations'] ?? 0) as int?) ?? 0),
+      totalRecordsImported: (((json['totalRecordsImported'] ?? 0) as int?) ?? 0),
+      totalRecordsExported: (((json['totalRecordsExported'] ?? 0) as int?) ?? 0),
       byDataType: (json['byDataType'] as Map<String, dynamic>?)
-          ?.map((k, v) => MapEntry(k, v as int)) ?? {},
+          ?.map((k, v) => MapEntry(k, (v as int?) ?? 0)) ?? {},
       byFormat: (json['byFormat'] as Map<String, dynamic>?)
-          ?.map((k, v) => MapEntry(k, v as int)) ?? {},
+          ?.map((k, v) => MapEntry(k, (v as int?) ?? 0)) ?? {},
       recentOperations: (json['recentOperations'] as List?)
           ?.map((o) => ImportExportHistory.fromJson(o as Map<String, dynamic>))
           .toList() ?? [],
