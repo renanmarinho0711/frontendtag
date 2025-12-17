@@ -119,12 +119,12 @@ class SalesReportsNotifier extends StateNotifier<SalesReportsState> {
               icone: Icons.trending_up_rounded,
               cor: AppThemeColors.success,
               valor: item['valor'] ?? item['value'] ?? '',
-              valorNumerico: (item['valorNumerico'] ?? item['numericValue'] ?? 0).toDouble(),
+              valorNumerico: ((item['valorNumerico'] ?? item['numericValue'] ?? 0) as num?)?.toDouble() ?? 0.0,
               quantidade: item['quantidade'] ?? item['quantity'] ?? '',
-              quantidadeNumerica: (item['quantidadeNumerica'] ?? item['numericQuantity'] ?? 0).toInt(),
+              quantidadeNumerica: (((item['quantidadeNumerica'] ?? item['numericQuantity'] ?? 0) as int?) ?? 0),
               detalhes: item['detalhes'] ?? item['details'] ?? '',
               meta: item['meta'] ?? item['target'] ?? '',
-              percentual: (item['percentual'] ?? item['percentage'] ?? item['Percentual'] ?? 0).toDouble(),
+              percentual: ((item['percentual'] ?? item['percentage'] ?? item['Percentual'] ?? 0) as num?)?.toDouble() ?? 0.0,
               trend: _parseTrend(item['trend'] ?? item['Trend']),
               crescimento: item['crescimento'] ?? item['growth'] ?? item['Crescimento'] ?? '',
               badge: item['badge'] ?? item['Badge'],
@@ -239,7 +239,7 @@ class AuditReportsNotifier extends StateNotifier<AuditReportsState> {
               auditor: item['auditor'] ?? item['usuario'] ?? item['Usuario'] ?? 'Sistema',
               itensVerificados: item['itensVerificados'] ?? item['itemsVerified'] ?? 1,
               itensComProblema: item['itensComProblema'] ?? item['itemsWithProblem'] ?? 0,
-              percentualConformidade: (item['percentualConformidade'] ?? item['compliancePercentage'] ?? 100).toDouble(),
+              percentualConformidade: ((item['percentualConformidade'] ?? item['compliancePercentage'] ?? 100) as num?)?.toDouble() ?? 100.0,
               itens: [],
             ));
           }
@@ -326,7 +326,7 @@ class OperationalReportsNotifier extends StateNotifier<OperationalReportsState> 
               cor: AppThemeColors.primary,
               valor: item['valor'] ?? item['value'] ?? item['Valor'] ?? '',
               unidade: item['unidade'] ?? item['unit'] ?? '',
-              percentualMeta: (item['percentualMeta'] ?? item['targetPercentage'] ?? 0).toDouble(),
+              percentualMeta: ((item['percentualMeta'] ?? item['targetPercentage'] ?? 0) as num?)?.toDouble() ?? 0.0,
               trend: _parseTrend(item['trend'] ?? item['status'] ?? item['Status']),
               periodo: item['periodo'] ?? item['period'] ?? '',
             ));
@@ -456,12 +456,12 @@ class PerformanceReportsNotifier extends StateNotifier<PerformanceReportsState> 
               id: item['id']?.toString() ?? '',
               metrica: item['metrica'] ?? item['metric'] ?? item['titulo'] ?? item['Titulo'] ?? '',
               descricao: item['descricao'] ?? item['description'] ?? '',
-              valorAtual: (item['valorAtual'] ?? item['currentValue'] ?? item['percentual'] ?? item['Percentual'] ?? 0).toDouble(),
-              valorAnterior: (item['valorAnterior'] ?? item['previousValue'] ?? 0).toDouble(),
-              meta: (item['meta'] ?? item['target'] ?? 100).toDouble(),
+              valorAtual: ((item['valorAtual'] ?? item['currentValue'] ?? item['percentual'] ?? item['Percentual'] ?? 0) as num?)?.toDouble() ?? 0.0,
+              valorAnterior: ((item['valorAnterior'] ?? item['previousValue'] ?? 0) as num?)?.toDouble() ?? 0.0,
+              meta: ((item['meta'] ?? item['target'] ?? 100) as num?)?.toDouble() ?? 100.0,
               unidade: item['unidade'] ?? item['unit'] ?? item['valor'] ?? item['Valor'] ?? '',
               trend: _parseTrend(item['trend'] ?? item['Trend']),
-              variacao: (item['variacao'] ?? item['variation'] ?? 0).toDouble(),
+              variacao: ((item['variacao'] ?? item['variation'] ?? 0) as num?)?.toDouble() ?? 0.0,
             ));
           }
         }
