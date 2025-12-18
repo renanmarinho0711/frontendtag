@@ -218,9 +218,9 @@ class AppButton extends StatelessWidget {
   
   TextStyle _getTextStyle(bool isDark) {
     final baseStyle = switch (size) {
-      AppButtonSize.small => AppTypography.labelSmall(),
-      AppButtonSize.medium => AppTypography.labelMedium(),
-      AppButtonSize.large => AppTypography.labelLarge(),
+      AppButtonSize.small => AppTextStyles.labelSmall,
+      AppButtonSize.medium => AppTextStyles.labelMedium,
+      AppButtonSize.large => AppTextStyles.labelLarge,
     };
     
     final isDisabled = onPressed == null;

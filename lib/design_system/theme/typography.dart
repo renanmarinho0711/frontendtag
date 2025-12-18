@@ -1091,41 +1091,28 @@ extension ResponsiveTextStyle on TextStyle {
 
   /// Retorna labelSmall com cor opcional
   static TextStyle labelSmallWith({Color? color}) {
-    return bodySmall.copyWith(color: color);
+    return AppTextStyles.bodySmall.copyWith(color: color);
   }
 
   /// Retorna labelMedium com cor opcional
   static TextStyle labelMediumWith({Color? color}) {
-    return body.copyWith(color: color);
+    return AppTextStyles.body.copyWith(color: color);
   }
 
   /// Retorna labelLarge com cor opcional
   static TextStyle labelLargeWith({Color? color}) {
-    return bodyMedium.copyWith(color: color);
+    return AppTextStyles.bodyMedium.copyWith(color: color);
   }
 
   /// Retorna bodyLarge (alias para h2) com cor opcional
   static TextStyle bodyLargeWith({Color? color}) {
-    return h2.copyWith(color: color);
+    return AppTextStyles.h2.copyWith(color: color);
   }
 
   /// Retorna bodySmall com cor opcional
   static TextStyle bodySmallWith({Color? color}) {
-    return bodySmall.copyWith(color: color);
+    return AppTextStyles.bodySmall.copyWith(color: color);
   }
-}
-
-
-/// Extension para adicionar métodos de compatibilidade a AppTextStyles
-extension AppTextStylesExtension on AppTextStyles {
-  /// Alias para bodySmall - estilo de label pequeno
-  static const TextStyle labelSmall = bodySmall;
-  
-  /// Alias para body - estilo de label médio
-  static TextStyle labelMedium() => body;
-  
-  /// Alias para bodyMedium - estilo de label grande
-  static const TextStyle labelLarge = bodyMedium;
 }
 
 

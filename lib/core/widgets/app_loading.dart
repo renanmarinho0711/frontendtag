@@ -159,7 +159,7 @@ class AppSkeleton extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? AppColors.grey800 : AppColors.grey200,
         borderRadius: borderRadius ?? 
-            (width == height ? BorderRadius.circular(width! / 2) : AppSpacing.borderRadiusSm),
+            (width == height ? BorderRadius.circular(width! / 2) : BorderRadius.circular(AppSpacing.borderRadiusSm)),
       ),
     );
   }
@@ -188,7 +188,7 @@ class AppSkeletonList extends StatelessWidget {
       itemBuilder: (context, index) {
         return AppSkeleton(
           height: itemHeight,
-          borderRadius: AppSpacing.borderRadiusMd,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusMd),
         );
       },
     );
