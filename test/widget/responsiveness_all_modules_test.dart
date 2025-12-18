@@ -8,6 +8,8 @@
 /// cd D:\tagbean\frontend
 /// C:\temp_flutter\flutter\bin\flutter.bat test test/widget/responsiveness_all_modules_test.dart
 /// ```
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

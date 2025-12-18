@@ -1,5 +1,7 @@
 // Testes E2E de Vinculação de Tags
 /// Cenários de vinculação e desvinculação de tags a produtos
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -8,6 +8,7 @@
 /// cd D:\tagbean\frontend
 /// dart run test/script/analyze_responsiveness.dart
 /// ```
+library;
 
 import 'dart:io';
 

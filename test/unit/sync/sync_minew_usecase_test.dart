@@ -73,7 +73,7 @@ void main() {
     test('deve lançar MinewApiException quando API falha', () async {
       // Arrange
       when(() => mockMinewRepo.getStoreStats(testStoreId))
-          .thenThrow(MinewApiException('Erro na API Minew', statusCode: 500));
+          .thenThrow(const MinewApiException('Erro na API Minew', statusCode: 500));
 
       // Act & Assert
       expect(
@@ -85,7 +85,7 @@ void main() {
     test('deve lançar SyncNetworkException quando há erro de rede', () async {
       // Arrange
       when(() => mockMinewRepo.getStoreStats(testStoreId))
-          .thenThrow(SyncNetworkException('Sem conexão'));
+          .thenThrow(const SyncNetworkException('Sem conexão'));
 
       // Act & Assert
       expect(
@@ -143,7 +143,7 @@ void main() {
     test('deve registrar erro no histórico quando sync falha', () async {
       // Arrange
       when(() => mockMinewRepo.syncStoreComplete(testStoreId))
-          .thenThrow(MinewApiException('Timeout', statusCode: 408));
+          .thenThrow(const MinewApiException('Timeout', statusCode: 408));
       when(() => mockHistoryRepo.addEntry(any()))
           .thenAnswer((_) async {});
 
@@ -157,7 +157,7 @@ void main() {
     test('callback de progresso deve ser chamado', () async {
       // Arrange
       final progressValues = <double>[];
-      final expectedResult = MinewSyncResult(success: true);
+      const expectedResult = MinewSyncResult(success: true);
 
       when(() => mockMinewRepo.syncStoreComplete(
         testStoreId,
@@ -176,7 +176,7 @@ void main() {
       // Act
       await syncMinewStoreUseCase.call(
         testStoreId,
-        onProgress: (p.toDouble() ?? 0.0) => progressValues.add(p),
+        onProgress: (p.toDouble Function() Function  ?? 0.0) => progressValues.add(p),
       );
 
       // Assert
@@ -248,7 +248,7 @@ void main() {
     test('deve lançar SyncAuthException quando credenciais inválidas', () async {
       // Arrange
       when(() => mockMinewRepo.importTags(testStoreId))
-          .thenThrow(SyncAuthException('Credenciais Minew inválidas'));
+          .thenThrow(const SyncAuthException('Credenciais Minew inválidas'));
 
       // Act & Assert
       expect(
@@ -260,7 +260,7 @@ void main() {
     test('deve lançar SyncStoreException quando loja não configurada', () async {
       // Arrange
       when(() => mockMinewRepo.importTags(testStoreId))
-          .thenThrow(SyncStoreException('Loja não tem credenciais Minew'));
+          .thenThrow(const SyncStoreException('Loja não tem credenciais Minew'));
 
       // Act & Assert
       expect(

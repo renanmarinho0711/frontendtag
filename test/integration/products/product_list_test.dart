@@ -1,5 +1,7 @@
 // Testes E2E de Listagem de Produtos
 /// TC027 - TC042: Cenários de listagem, busca e filtros
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

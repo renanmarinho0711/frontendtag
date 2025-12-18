@@ -1,5 +1,6 @@
 /// Testes E2E de Logout
 /// TC024 - TC026: Cenários de logout
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

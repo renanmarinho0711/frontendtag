@@ -1,4 +1,5 @@
 /// Modelo de estatísticas da loja
+library;
 
 /// Mapeado para: StoreStatsDto do backend
 

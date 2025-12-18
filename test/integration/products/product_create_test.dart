@@ -1,5 +1,7 @@
 // Testes E2E de Criação de Produto
 /// TC043 - TC055: Cenários de criação de produto
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

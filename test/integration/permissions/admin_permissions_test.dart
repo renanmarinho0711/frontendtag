@@ -1,5 +1,7 @@
 // Testes E2E de Permissões de Admin
 /// Verifica que o administrador tem acesso a todas as funcionalidades
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -2,6 +2,7 @@
 /// TC001 - TC013: Todos os cenários de login
 /// 
 /// Estrutura baseada no Plano Completo de Testes
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

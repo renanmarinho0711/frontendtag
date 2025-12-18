@@ -5,7 +5,7 @@ void main() {
   group('SyncExceptions', () {
     group('SyncNetworkException', () {
       test('deve criar exceção com mensagem', () {
-        final exception = SyncNetworkException('Sem conexão com a internet');
+        const exception = SyncNetworkException('Sem conexão com a internet');
         
         expect(exception.message, equals('Sem conexão com a internet'));
         expect(exception.toString(), contains('Sem conexão'));
@@ -24,14 +24,14 @@ void main() {
 
     group('SyncAuthException', () {
       test('deve criar exceção de autenticação', () {
-        final exception = SyncAuthException('Token expirado');
+        const exception = SyncAuthException('Token expirado');
         
         expect(exception.message, equals('Token expirado'));
         expect(exception, isA<SyncException>());
       });
 
       test('deve indicar necessidade de re-login', () {
-        final exception = SyncAuthException(
+        const exception = SyncAuthException(
           'SessÃ£o inválida',
           requiresReLogin: true,
         );
@@ -42,13 +42,13 @@ void main() {
 
     group('SyncDataException', () {
       test('deve criar exceção de dados', () {
-        final exception = SyncDataException('Dados corrompidos');
+        const exception = SyncDataException('Dados corrompidos');
         
         expect(exception.message, equals('Dados corrompidos'));
       });
 
       test('deve incluir campo problemático', () {
-        final exception = SyncDataException(
+        const exception = SyncDataException(
           'Campo inválido',
           field: 'price',
           value: -100,
@@ -61,14 +61,14 @@ void main() {
 
     group('SyncStoreException', () {
       test('deve criar exceção de loja', () {
-        final exception = SyncStoreException('Loja não encontrada');
+        const exception = SyncStoreException('Loja não encontrada');
         
         expect(exception.message, equals('Loja não encontrada'));
       });
 
       test('deve incluir ID da loja quando fornecido', () {
         const storeId = '33098c05-d3aa-4958-8c19-b665e80e9082';
-        final exception = SyncStoreException(
+        const exception = SyncStoreException(
           'Loja inativa',
           storeId: storeId,
         );
@@ -79,7 +79,7 @@ void main() {
 
     group('MinewApiException', () {
       test('deve criar exceção Minew com status code', () {
-        final exception = MinewApiException(
+        const exception = MinewApiException(
           'Rate limit exceeded',
           statusCode: 429,
         );
@@ -89,7 +89,7 @@ void main() {
       });
 
       test('deve incluir response body quando fornecido', () {
-        final exception = MinewApiException(
+        const exception = MinewApiException(
           'Bad Request',
           statusCode: 400,
           responseBody: '{"error": "Invalid MAC address format"}',
@@ -99,14 +99,14 @@ void main() {
       });
 
       test('isServerError deve ser true para 5xx', () {
-        final exception = MinewApiException('Server Error', statusCode: 503);
+        const exception = MinewApiException('Server Error', statusCode: 503);
         
         expect(exception.isServerError, isTrue);
         expect(exception.isClientError, isFalse);
       });
 
       test('isClientError deve ser true para 4xx', () {
-        final exception = MinewApiException('Not Found', statusCode: 404);
+        const exception = MinewApiException('Not Found', statusCode: 404);
         
         expect(exception.isClientError, isTrue);
         expect(exception.isServerError, isFalse);
@@ -114,38 +114,38 @@ void main() {
 
       test('isRetryable deve ser true para erros temporários', () {
         expect(
-          MinewApiException('Timeout', statusCode: 408).isRetryable,
+          const MinewApiException('Timeout', statusCode: 408).isRetryable,
           isTrue,
         );
         expect(
-          MinewApiException('Rate Limit', statusCode: 429).isRetryable,
+          const MinewApiException('Rate Limit', statusCode: 429).isRetryable,
           isTrue,
         );
         expect(
-          MinewApiException('Server Error', statusCode: 503).isRetryable,
+          const MinewApiException('Server Error', statusCode: 503).isRetryable,
           isTrue,
         );
         expect(
-          MinewApiException('Gateway Timeout', statusCode: 504).isRetryable,
+          const MinewApiException('Gateway Timeout', statusCode: 504).isRetryable,
           isTrue,
         );
       });
 
       test('isRetryable deve ser false para erros permanentes', () {
         expect(
-          MinewApiException('Bad Request', statusCode: 400).isRetryable,
+          const MinewApiException('Bad Request', statusCode: 400).isRetryable,
           isFalse,
         );
         expect(
-          MinewApiException('Unauthorized', statusCode: 401).isRetryable,
+          const MinewApiException('Unauthorized', statusCode: 401).isRetryable,
           isFalse,
         );
         expect(
-          MinewApiException('Forbidden', statusCode: 403).isRetryable,
+          const MinewApiException('Forbidden', statusCode: 403).isRetryable,
           isFalse,
         );
         expect(
-          MinewApiException('Not Found', statusCode: 404).isRetryable,
+          const MinewApiException('Not Found', statusCode: 404).isRetryable,
           isFalse,
         );
       });
@@ -153,13 +153,13 @@ void main() {
 
     group('SyncCancelledException', () {
       test('deve criar exceção de cancelamento', () {
-        final exception = SyncCancelledException('Sync cancelado pelo usuário');
+        const exception = SyncCancelledException('Sync cancelado pelo usuário');
         
         expect(exception.message, equals('Sync cancelado pelo usuário'));
       });
 
       test('deve indicar se foi cancelamento voluntário', () {
-        final exception = SyncCancelledException(
+        const exception = SyncCancelledException(
           'Operação abortada',
           voluntary: true,
         );
@@ -170,7 +170,7 @@ void main() {
 
     group('SyncConflictException', () {
       test('deve criar exceção de conflito', () {
-        final exception = SyncConflictException(
+        const exception = SyncConflictException(
           'Conflito de versÃ£o detectado',
         );
         
@@ -178,7 +178,7 @@ void main() {
       });
 
       test('deve incluir dados conflitantes', () {
-        final exception = SyncConflictException(
+        const exception = SyncConflictException(
           'Conflito',
           localData: {'price': 10.0},
           remoteData: {'price': 15.0},
@@ -229,7 +229,7 @@ void main() {
 
   group('Pattern Matching', () {
     test('deve permitir switch expression com sealed class', () {
-      SyncException exception = MinewApiException('Test', statusCode: 500);
+      SyncException exception = const MinewApiException('Test', statusCode: 500);
       
       final message = switch (exception) {
         SyncNetworkException() => 'Erro de rede',
@@ -245,7 +245,7 @@ void main() {
     });
 
     test('deve extrair propriedades com pattern matching', () {
-      final exception = MinewApiException(
+      const exception = MinewApiException(
         'Test error',
         statusCode: 404,
         responseBody: '{"error": "not found"}',

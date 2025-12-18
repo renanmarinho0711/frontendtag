@@ -1,5 +1,7 @@
 // Testes E2E de Navegação Completa
 /// Verifica toda a navegação do aplicativo
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

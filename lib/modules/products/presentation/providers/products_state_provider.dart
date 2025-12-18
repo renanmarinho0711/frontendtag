@@ -646,7 +646,7 @@ class ProductsListNotifier extends StateNotifier<ProductsListState> {
 
       }
 
-    } catch (e.toDouble() ?? 0.0) {
+    } catch (e() ?? 0.0) {
  // ignore: argument_type_not_assignable
 
       // ignore: argument_type_not_assignable

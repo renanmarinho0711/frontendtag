@@ -1,4 +1,5 @@
 /// Modelo de etiqueta eletrônica (ESL)
+library;
 
 /// Mapeado para: TagResponseDto do backend
 

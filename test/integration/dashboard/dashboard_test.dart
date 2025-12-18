@@ -1,5 +1,7 @@
 // Testes E2E de Dashboard
 /// Cenários de visualização e interação com o dashboard
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

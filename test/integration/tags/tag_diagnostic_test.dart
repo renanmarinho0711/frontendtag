@@ -1,5 +1,7 @@
 // Testes E2E de Diagnóstico de Tags
 /// Cenários de diagnóstico e teste de tags
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

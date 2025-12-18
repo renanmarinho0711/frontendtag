@@ -210,13 +210,13 @@ class LoginPage extends StatelessWidget {
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('RegisterPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('RegisterPage')));
 }
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('ForgotPasswordPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('ForgotPasswordPage')));
 }
 
 class DashboardPage extends StatelessWidget {
@@ -269,7 +269,7 @@ class DashboardPage extends StatelessWidget {
                 childAspectRatio: 1.5,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                children: [
+                children: const [
                   _StatCard(
                     title: 'Produtos',
                     value: '0',
@@ -466,7 +466,7 @@ class ProductsPage extends StatelessWidget {
 class NewProductPage extends StatelessWidget {
   const NewProductPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('NewProductPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('NewProductPage')));
 }
 
 class ProductDetailsPage extends StatelessWidget {
@@ -510,7 +510,7 @@ class TagsPage extends StatelessWidget {
 class BindTagPage extends StatelessWidget {
   const BindTagPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('BindTagPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('BindTagPage')));
 }
 
 class TagDetailsPage extends StatelessWidget {
@@ -550,19 +550,19 @@ class ReportsPage extends StatelessWidget {
 class DailyReportPage extends StatelessWidget {
   const DailyReportPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('DailyReportPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('DailyReportPage')));
 }
 
 class MonthlyReportPage extends StatelessWidget {
   const MonthlyReportPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('MonthlyReportPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('MonthlyReportPage')));
 }
 
 class CustomReportPage extends StatelessWidget {
   const CustomReportPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('CustomReportPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('CustomReportPage')));
 }
 
 class SettingsPage extends StatelessWidget {
@@ -621,19 +621,19 @@ class SettingsPage extends StatelessWidget {
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('ProfilePage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('ProfilePage')));
 }
 
 class StoreSettingsPage extends StatelessWidget {
   const StoreSettingsPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('StoreSettingsPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('StoreSettingsPage')));
 }
 
 class ThemeSettingsPage extends StatelessWidget {
   const ThemeSettingsPage({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold(body: Center(child: Text('ThemeSettingsPage')));
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('ThemeSettingsPage')));
 }
 
 class ErrorPage extends StatelessWidget {

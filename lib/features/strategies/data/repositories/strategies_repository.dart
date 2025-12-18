@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:tagbean/core/network/api_client.dart';
-
 import 'package:tagbean/core/network/api_response.dart';
-
 import 'package:tagbean/design_system/theme/theme_colors.dart';
-
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-
 import 'package:tagbean/features/strategies/data/models/strategy_models.dart';
 
 
@@ -285,40 +280,24 @@ class StrategiesRepository {
       '/strategies/$id/execute',
 
       parser: (data) => _parseExecution(data as Map<String, dynamic>),
- // ignore: argument_type_not_assignable
 
-    // ignore: argument_type_not_assignable
     );
- // ignore: argument_type_not_assignable
 
   }
 
 
 
   // ============================================================================
- // ignore: argument_type_not_assignable
 
-  // ignore: argument_type_not_assignable
   // EXECUTIONS
- // ignore: argument_type_not_assignable
 
   // ============================================================================
 
- // ignore: argument_type_not_assignable
+  /// Busca execuções de uma estratégia
 
- // ignore: argument_type_not_assignable
-
-  // ignore: argument_type_not_assignable
-  /// Busca execu��es de uma estratgia
- // ignore: argument_type_not_assignable
-
-  // ignore: argument_type_not_assignable
   /// GET /api/strategies/{strategyId}/executions
- // ignore: argument_type_not_assignable
 
-  // ignore: argument_type_not_assignable
   Future<ApiResponse<List<StrategyExecution>>> getExecutionsByStrategy(String strategyId) async {
- // ignore: argument_type_not_assignable
 
     return await _apiService.get<List<StrategyExecution>>(
 
@@ -332,7 +311,6 @@ class StrategiesRepository {
 
         return [];
 
-      // ignore: argument_type_not_assignable
       },
 
     );
@@ -341,21 +319,13 @@ class StrategiesRepository {
 
 
 
-  // ignore: argument_type_not_assignable
-  /// Busca execu��es recentes de todas as estrat�gias de uma loja
- // ignore: argument_type_not_assignable
+  /// Busca execuções recentes de todas as estratégias de uma loja
 
-  // ignore: argument_type_not_assignable
   /// GET /api/strategies/store/{storeId}/executions
- // ignore: argument_type_not_assignable
 
-  // ignore: argument_type_not_assignable
   Future<ApiResponse<List<StrategyExecution>>> getRecentExecutions({
- // ignore: argument_type_not_assignable
 
-    // ignore: argument_type_not_assignable
     required String storeId,
- // ignore: argument_type_not_assignable
 
     int limit = 10,
 
@@ -383,28 +353,19 @@ class StrategiesRepository {
 
   }
 
- // ignore: argument_type_not_assignable
 
- // ignore: argument_type_not_assignable
 
-  // ignore: argument_type_not_assignable
   // ============================================================================
- // ignore: argument_type_not_assignable
 
-  // ignore: argument_type_not_assignable
   // STATISTICS & RESULTS
- // ignore: argument_type_not_assignable
 
   // ============================================================================
 
 
 
-  /// Busca estat�sticas de uma estratgia
- // ignore: argument_type_not_assignable
+  /// Busca estatísticas de uma estratégia
 
-  // ignore: argument_type_not_assignable
   /// GET /api/strategies/{id}/stats
- // ignore: argument_type_not_assignable
 
   Future<ApiResponse<StrategyStats>> getStrategyStats(String id) async {
 
@@ -621,27 +582,14 @@ class StrategiesRepository {
       impactPercentage: (data['impactPercentage']).toString() ?? '+0%',
 
       impactValue: (data['impactValue']).toString() ?? 'R\$ 0',
-
-      // ignore: argument_type_not_assignable
       affectedProducts: data['affectedProducts'] ?? 0,
-
       lastExecution: data['lastExecution']?.toString(),
-
       nextExecution: data['nextExecution']?.toString(),
-
       frequency: (data['frequency']).toString() ?? 'Manual',
-
-      // ignore: argument_type_not_assignable
       reliability: (data['reliability'] ?? 0).toDouble(),
-
       savings: (data['savings']).toString() ?? 'R\$ 0',
-
       roi: (data['roi']).toString() ?? '0%',
-
-      // ignore: argument_type_not_assignable
       successfulExecutions: data['successfulExecutions'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       totalExecutions: data['totalExecutions'] ?? 0,
 
       createdAt: DateTime.tryParse((data['createdAt']).toString() ?? '') ?? DateTime.now(),
@@ -665,20 +613,11 @@ class StrategiesRepository {
       strategyName: (data['strategyName']).toString() ?? '',
 
       executedAt: DateTime.tryParse((data['executedAt']).toString() ?? '') ?? DateTime.now(),
-
       isSuccess: data['status'] == 'Completed' || data['isSuccess'] == true,
-
-      // ignore: argument_type_not_assignable
       productsAffected: data['productsAffected'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       priceChanges: data['priceChanges'] ?? 0,
-
       impactValue: (data['impactValue']).toString() ?? 'R\$ 0',
-
       status: _parseExecutionStatus(data['status']),
-
-      // ignore: argument_type_not_assignable
       duration: Duration(milliseconds: data['durationMs'] ?? 0),
 
       details: data['details']?.toString(),
@@ -695,27 +634,13 @@ class StrategiesRepository {
 
     return StrategyStats(
 
-      // ignore: argument_type_not_assignable
       totalExecutions: data['totalExecutions'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       successfulExecutions: data['successfulExecutions'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       failedExecutions: data['failedExecutions'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       totalProductsAffected: data['totalProductsAffected'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       totalPriceChanges: data['totalPriceChanges'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       totalImpactValue: (data['totalImpactValue'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       averageExecutionTime: Duration(milliseconds: data['averageExecutionTimeMs'] ?? 0),
-
       lastExecutedAt: DateTime.tryParse((data['lastExecutedAt']).toString() ?? ''),
 
     );
@@ -743,16 +668,9 @@ class StrategiesRepository {
       strategy: ((data['strategyName']).toString()).toString() ?? data['category'] ?? '',
 
       gain: (data['gain']).toString() ?? 'R\$ ${(data['revenue'] ?? 0).toStringAsFixed(2)}',
-
-      // ignore: argument_type_not_assignable
       quantity: data['quantity'] ?? data['unitsSold'] ?? 0,
-
       color: themeData['color'] as Color,
-
-      // ignore: argument_type_not_assignable
       profitMargin: (data['profitMargin'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       salesVariation: (data['salesVariation'] ?? 0).toDouble(),
 
     );
@@ -766,32 +684,14 @@ class StrategiesRepository {
     return StrategyPeriodStats(
 
       period: (data['period']).toString() ?? '',
-
-      // ignore: argument_type_not_assignable
       totalSales: data['totalSales'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       totalRevenue: (data['totalRevenue'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       averageTicket: (data['averageTicket'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       roi: (data['roi'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       savings: (data['savings'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       conversionRate: (data['conversionRate'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       productsAffected: data['productsAffected'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       salesVariation: (data['salesVariation'] ?? 0).toDouble(),
-
-      // ignore: argument_type_not_assignable
       revenueVariation: (data['revenueVariation'] ?? 0).toDouble(),
 
     );
@@ -805,11 +705,7 @@ class StrategiesRepository {
     return DailySalesData(
 
       date: DateTime.tryParse((data['date']).toString() ?? '') ?? DateTime.now(),
-
-      // ignore: argument_type_not_assignable
       sales: data['sales'] ?? 0,
-
-      // ignore: argument_type_not_assignable
       revenue: (data['revenue'] ?? 0).toDouble(),
 
     );

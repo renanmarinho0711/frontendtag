@@ -1,5 +1,7 @@
 // Testes E2E de Recuperação de Senha
 /// TC014 - TC018: Cenários de recuperação de senha
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

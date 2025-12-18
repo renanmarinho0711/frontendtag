@@ -128,8 +128,7 @@ class MinewApiException extends SyncException {
 
 /// Erro de operação cancelada pelo usuário
 class SyncCancelledException extends SyncException {
-  const SyncCancelledException([String message = 'Operação cancelada'])
-      : super(message);
+  const SyncCancelledException([super.message = 'Operação cancelada']);
 
   @override
   String toString() => 'SyncCancelledException: $message';

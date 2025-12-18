@@ -1,4 +1,5 @@
 /// Modelo para vinculação Produto-Tag (N:N)
+library;
 
 /// Um produto pode ter múltiplas tags vinculadas
 
@@ -189,11 +190,7 @@ class ProductTagModel {
 
       isActive: json['isActive'] ?? true,
 
-      createdAt: (json['createdAt']).toString() != null 
-
-          ? DateTime.parse((json['createdAt']).toString()) 
-
-          : DateTime.now(),
+      createdAt: DateTime.parse((json['createdAt']).toString()),
 
       lastPriceSync: json['lastPriceSync'] != null 
 

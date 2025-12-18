@@ -1,5 +1,7 @@
 // Testes E2E de Listagem de Tags
 /// Cenários de listagem, busca e filtros de tags
+library;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

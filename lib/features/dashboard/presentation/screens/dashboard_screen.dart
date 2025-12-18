@@ -47,9 +47,7 @@ class DashboardScreen extends ConsumerStatefulWidget {
 class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerProviderStateMixin {
   int _selectedIndex = 0;
   bool _isRailExpanded = true;
-  // ignore: unused_field
-  bool _isEstrategiasExpanded = false;
-  int _rebuildCounter = 0; // Contador para forar rebuild ao clicar no mesmo menu
+  int _rebuildCounter = 0; // Contador para forçar rebuild ao clicar no mesmo menu
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
   final ScrollController _bottomNavScrollController = ScrollController();
@@ -229,60 +227,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     _fadeController.dispose();
     _bottomNavScrollController.dispose();
     super.dispose();
-  }
-
-  // OTIMIZAO: Reduzir clculos e chamadas MediaQuery
-  // ignore: unused_element
-  void _scrollToSelectedItem() {
-    if (!ResponsiveHelper.isMobile(context)) return;
-    
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!_bottomNavScrollController.hasClients) return;
-      
-      const itemWidth = 90.0; // largura aproximada de cada item
-      const totalItems = 10; // _menuItems.length (constante)
-      final screenWidth = MediaQuery.sizeOf(context).width; // OTIMIZAO: sizeOf  mais rápido
-      final currentScroll = _bottomNavScrollController.offset;
-      final itemPosition = _selectedIndex * itemWidth;
-      final itemEnd = itemPosition + itemWidth;
-      
-      // Detectar se clicou nos extremos (primeiros 3 ou ltimos 3)
-      final isFirstThree = _selectedIndex < 3;
-      final isLastThree = _selectedIndex >= (totalItems - 3);
-      
-      double targetScroll;
-      
-      if (isFirstThree) {
-        // Clicou nos primeiros 3 ? rolar para o incio (mostrando at 3 menus)
-        targetScroll = 0.0;
-      } else if (isLastThree) {
-        // Clicou nos ltimos 3 ? rolar para o final (mostrando at 3 menus)
-        targetScroll = _bottomNavScrollController.position.maxScrollExtent;
-      } else {
-        // Clicou no meio ? centralizar o item ou rolar para deixar visvel
-        final isLeftVisible = itemPosition >= currentScroll;
-        final isRightVisible = itemEnd <= (currentScroll + screenWidth);
-        final isFullyVisible = isLeftVisible && isRightVisible;
-        
-        if (!isFullyVisible) {
-          if (itemPosition < currentScroll) {
-            // Item  esquerda ? rolar para trs 3 menus
-            targetScroll = (itemPosition - (itemWidth * 2)).clamp(0.0, _bottomNavScrollController.position.maxScrollExtent);
-          } else {
-            // Item  direita ? rolar para frente 3 menus
-            targetScroll = (itemPosition - screenWidth + (itemWidth * 3)).clamp(0.0, _bottomNavScrollController.position.maxScrollExtent);
-          }
-        } else {
-          return; // J est visvel, no rolar
-        }
-      }
-      
-      _bottomNavScrollController.animateTo(
-        targetScroll,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    });
   }
 
   // Keys para forar rebuild quando clicar no mesmo menu
@@ -940,94 +884,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
-  // ignore: unused_element
-  void _showNotificationsPanel(BuildContext context) {
-    final isMobile = ResponsiveHelper.isMobile(context);
-
-    showDialog(
-      context: context,
-      builder: (context) => Dialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
-        ),
-        child: Container(
-          width: isMobile ? double.infinity : 400,
-          padding: EdgeInsets.all(
-            ResponsiveHelper.getResponsivePadding(
-              context,
-              mobile: 18,
-              tablet: 20,
-              desktop: 24,
-            ),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Notificações',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.close_rounded),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              const Text('Nenhuma notificação no momento.'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  // ignore: unused_element
-  void _showLogoutDialog(BuildContext context) {
-    final isMobile = ResponsiveHelper.isMobile(context);
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(isMobile ? 16 : 20),
-        ),
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.logout_rounded, color: ThemeColors.of(context).redMain),
-            const SizedBox(width: 12),
-            const Text('Confirmar Saída', style: TextStyle(fontSize: 17)),
-          ],
-        ),
-        content: const Text('Tem certeza que deseja sair do sistema?'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancelar'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.pop(context);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.of(context).redMain,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
-              ),
-            ),
-            child: const Text('Sair'),
-          ),
-        ],
-      ),
-    );
-  }
-
   // ============================================================================
   // NAVIGATION HELPERS
   // ============================================================================
@@ -1040,77 +896,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
         _fadeController.forward();
       });
     }
-  }
-
-  // ignore: unused_element
-  void _navegarParaNovoProduto() {
-    setState(() => _selectedIndex = 1);
-    Future.delayed(const Duration(milliseconds: 300), () {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: ThemeColors.of(context).surfaceOverlay20,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Icon(Icons.add_box_rounded, color: ThemeColors.of(context).surface, size: 18),
-              ),
-              const SizedBox(width: 12),
-              const Expanded(
-                child: Text('Use o botão "+" para adicionar um novo produto'),
-              ),
-            ],
-          ),
-          backgroundColor: ThemeColors.of(context).moduleProdutos,
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          margin: const EdgeInsets.all(16),
-          duration: const Duration(seconds: 3),
-        ),
-      );
-    });
-  }
-
-  // ignore: unused_element
-  void _navegarParaImportacao() {
-    setState(() => _selectedIndex = 7);
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: ThemeColors.of(context).surfaceOverlay20,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Icon(Icons.upload_file_rounded, color: ThemeColors.of(context).surface, size: 18),
-            ),
-            const SizedBox(width: 12),
-            const Expanded(
-              child: Text('Selecione "Importar" para adicionar produtos via Excel'),
-            ),
-          ],
-        ),
-        backgroundColor: ThemeColors.of(context).modulePrecificacao,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        margin: const EdgeInsets.all(16),
-        duration: const Duration(seconds: 3),
-      ),
-    );
-  }
-
-  // ignore: unused_element
-  String _formatDate(DateTime date) {
-    final months = [
-      'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
-      'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
-    ];
-    return '${date.day} de ${months[date.month - 1]}, ${date.year}';
   }
 }
 
