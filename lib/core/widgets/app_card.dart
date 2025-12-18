@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-import 'package:tagbean/core/theme/app_spacing.dart';
-import 'package:tagbean/core/theme/app_shadows.dart';
+import 'package:tagbean/design_system/theme/spacing.dart';
+import 'package:tagbean/design_system/theme/shadows.dart';
+import 'package:tagbean/design_system/design_system.dart';
 
 /// # Cards Padronizados do TagBean
 /// 

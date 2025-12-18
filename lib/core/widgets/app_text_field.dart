@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tagbean/core/theme/app_colors.dart';
-import 'package:tagbean/core/theme/app_typography.dart';
-import 'package:tagbean/core/theme/app_spacing.dart';
+import 'package:tagbean/design_system/theme/colors.dart';
+import 'package:tagbean/design_system/theme/typography.dart';
+import 'package:tagbean/design_system/theme/spacing.dart';
+import 'package:tagbean/design_system/design_system.dart';
 
 /// # Campos de Texto Customizados
 /// 
