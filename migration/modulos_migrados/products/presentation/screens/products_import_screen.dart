@@ -98,6 +98,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
       margin: AppSizes.paddingMd.toEdgeInsetsAll(isMobile, isTablet),
       padding: AppSizes.paddingLg.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: AppGradients.blueCyan,
         borderRadius: AppRadius.card,
         boxShadow: AppShadows.primaryHeaderGlowMobile,
@@ -243,6 +244,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
           width: size,
           height: size,
           decoration: BoxDecoration(
+            // ignore: argument_type_not_assignable
             gradient: completed ? AppGradients.blueCyan : null,
             color: completed ? null : ThemeColors.of(context).textSecondaryOverlay30,
             shape: BoxShape.circle,
@@ -282,6 +284,7 @@ class _ProdutosImportarScreenState extends ConsumerState<ProdutosImportarScreen>
       height: 2,
       margin: const EdgeInsets.only(bottom: AppSpacing.lg),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: completed ? AppGradients.blueCyan : null,
         color: completed ? null : ThemeColors.of(context).textSecondaryOverlay30,
       ),

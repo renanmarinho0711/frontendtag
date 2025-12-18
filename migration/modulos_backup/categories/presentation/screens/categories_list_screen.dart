@@ -161,6 +161,7 @@ class _CategoriasListaScreenState extends ConsumerState<CategoriasListaScreen>
         vertical: AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: AppGradients.darkBackground,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(

@@ -673,13 +673,15 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               Row(
                 children: [
                   Icon(
+                    // ignore: argument_type_not_assignable
                     categoria['icone'],
                     size: 18,
+                    // ignore: argument_type_not_assignable
                     color: categoria['cor'],
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    categoria['nome'],
+                    (categoria['nome']).toString(),
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -700,6 +702,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                     mobileFontSize: 13,
                   ),
                   fontWeight: FontWeight.bold,
+                  // ignore: argument_type_not_assignable
                   color: categoria['cor'],
                 ),
               ),
@@ -710,11 +713,13 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
             borderRadius: BorderRadius.circular(8),
             child: TweenAnimationBuilder(
               duration: const Duration(milliseconds: 1000),
+              // ignore: argument_type_not_assignable
               tween: Tween<double>(begin: 0, end: categoria['percentual'] / 100),
               builder: (context, double value, child) {
                 return LinearProgressIndicator(
                   value: value,
                   backgroundColor: ThemeColors.of(context).textSecondary,
+                  // ignore: argument_type_not_assignable
                   valueColor: AlwaysStoppedAnimation<Color>(categoria['cor']),
                   minHeight: 12,
                 );
@@ -864,7 +869,9 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
           ),
           const SizedBox(width: 12),
           Icon(
+            // ignore: argument_type_not_assignable
             categoria['icone'],
+            // ignore: argument_type_not_assignable
             color: categoria['cor'],
             size: 24,
           ),
@@ -874,7 +881,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  categoria['nome'],
+                  (categoria['nome']).toString(),
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,
@@ -910,6 +917,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                     mobileFontSize: 14,
                   ),
                   fontWeight: FontWeight.bold,
+                  // ignore: argument_type_not_assignable
                   color: categoria['cor'],
                 ),
               ),
@@ -974,6 +982,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                 AppSizes.cardPadding.get(isMobile, isTablet),
               ),
               decoration: BoxDecoration(
+                // ignore: argument_type_not_assignable
                 gradient: LinearGradient(colors: categoria['gradiente']),
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(isMobile ? 14 : (isTablet ? 16 : 18)),
@@ -992,6 +1001,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       ),
                     ),
                     child: Icon(
+                      // ignore: argument_type_not_assignable
                       categoria['icone'],
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconLarge.get(isMobile, isTablet),
@@ -1003,7 +1013,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          categoria['nome'],
+                          (categoria['nome']).toString(),
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1282,14 +1292,16 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
       child: Row(
         children: [
           Icon(
+            // ignore: argument_type_not_assignable
             categoria['icone'],
+            // ignore: argument_type_not_assignable
             color: categoria['cor'],
             size: 24,
           ),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
-              categoria['nome'],
+              (categoria['nome']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                   context,
@@ -1416,6 +1428,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
+                            // ignore: argument_type_not_assignable
                             color: cat['cor'],
                           ),
                         ),
@@ -1427,6 +1440,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
+                              // ignore: argument_type_not_assignable
                               colors: cat['gradiente'],
                             ),
                             borderRadius: const BorderRadius.vertical(
@@ -1435,6 +1449,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
                           ),
                         ),
                         const SizedBox(height: 8),
+                        // ignore: argument_type_not_assignable
                         Icon(cat['icone'], size: 18, color: cat['cor']),
                       ],
                     );

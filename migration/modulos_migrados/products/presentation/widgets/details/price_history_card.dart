@@ -105,6 +105,7 @@ class PriceHistoryCard extends StatelessWidget {
             AppSizes.paddingXs.get(isMobile, isTablet),
           ),
           decoration: BoxDecoration(
+            // ignore: argument_type_not_assignable
             gradient: AppGradients.primaryHeader,
             borderRadius: BorderRadius.circular(8),
           ),

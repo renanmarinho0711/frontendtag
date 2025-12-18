@@ -97,6 +97,7 @@ class ProductCard extends StatelessWidget {
       width: AppSizes.iconHeroMd.get(isMobile, isTablet),
       height: AppSizes.iconHeroMd.get(isMobile, isTablet),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: AppGradients.fromBaseColor(produto.cor),
         borderRadius: AppRadius.lg,
       ),

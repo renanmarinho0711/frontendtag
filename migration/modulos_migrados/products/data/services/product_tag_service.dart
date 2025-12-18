@@ -29,6 +29,7 @@ class ProductTagService {
     );
 
     if (response.statusCode == 201 || response.statusCode == 200) {
+      // ignore: argument_type_not_assignable
       return ProductTagModel.fromJson(jsonDecode(response.body));
     }
     throw Exception('Erro ao criar vinculação: ${response.body}');
@@ -42,6 +43,7 @@ class ProductTagService {
     );
 
     if (response.statusCode == 200) {
+      // ignore: argument_type_not_assignable
       return ProductTagModel.fromJson(jsonDecode(response.body));
     } else if (response.statusCode == 404) {
       return null;
@@ -58,6 +60,7 @@ class ProductTagService {
     );
 
     if (response.statusCode == 200) {
+      // ignore: argument_type_not_assignable
       return ProductTagModel.fromJson(jsonDecode(response.body));
     } else if (response.statusCode == 404) {
       return null;
@@ -85,6 +88,7 @@ class ProductTagService {
     );
 
     if (response.statusCode == 200) {
+      // ignore: argument_type_not_assignable
       return ProductTagsList.fromJson(jsonDecode(response.body));
     } else if (response.statusCode == 404) {
       return null;
@@ -101,6 +105,7 @@ class ProductTagService {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
+      // ignore: argument_type_not_assignable
       return data.map((e) => ProductTagModel.fromJson(e)).toList();
     }
     throw Exception('Erro ao buscar vinculações: ${response.body}');
@@ -119,6 +124,7 @@ class ProductTagService {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
+      // ignore: argument_type_not_assignable
       return data.map((e) => PriceSyncResult.fromJson(e)).toList();
     }
     throw Exception('Erro ao sincronizar preços: ${response.body}');
@@ -132,6 +138,7 @@ class ProductTagService {
     );
 
     if (response.statusCode == 200) {
+      // ignore: argument_type_not_assignable
       return PriceSyncResult.fromJson(jsonDecode(response.body));
     }
     throw Exception('Erro ao sincronizar: ${response.body}');
@@ -146,6 +153,7 @@ class ProductTagService {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
+      // ignore: argument_type_not_assignable
       return data.map((e) => PriceSyncResult.fromJson(e)).toList();
     }
     throw Exception('Erro ao sincronizar loja: ${response.body}');
@@ -167,6 +175,7 @@ class ProductTagService {
 
     if (response.statusCode == 200 || response.statusCode == 201) {
       final List<dynamic> data = jsonDecode(response.body);
+      // ignore: argument_type_not_assignable
       return data.map((e) => ProductTagModel.fromJson(e)).toList();
     }
     throw Exception('Erro ao vincular tags: ${response.body}');

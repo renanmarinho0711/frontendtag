@@ -833,7 +833,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    _buildTrendIndicator(((relatorio['trend']).toString()).toString(), relatorio['change']),
+                    _buildTrendIndicator((((relatorio['trend']).toString()).toString()).toString(), relatorio['change']),
                     SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
                     _buildPriorityBadge((relatorio['prioridade']).toString()),
                   ],

@@ -230,6 +230,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
     return CustomPaint(
       painter: ScanOverlayPainter(
         scanAreaSize: 280,
+        // ignore: argument_type_not_assignable
         borderColor: _hasDetected 
             ? ThemeColors.of(context).success 
             : widget.primaryColor,

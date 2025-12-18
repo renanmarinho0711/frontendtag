@@ -329,6 +329,7 @@ class StrategiesRepository {
         if (data is List) {
  // ignore: argument_type_not_assignable
 
+          // ignore: argument_type_not_assignable
           return data.map((item.toString()) => _parseExecution(item as Map<String, dynamic>)).toList();
 
         // ignore: argument_type_not_assignable
@@ -374,6 +375,7 @@ class StrategiesRepository {
       queryParams: {'limit': limit},
  // ignore: argument_type_not_assignable
 
+      // ignore: argument_type_not_assignable
       parser: (data.toString()) {
  // ignore: argument_type_not_assignable
 
@@ -618,11 +620,11 @@ class StrategiesRepository {
 
       id: data['id']?.toString() ?? '',
 
-      name: data['name'] ?? '',
+      name: (data['name']).toString() ?? '',
 
-      description: data['description'] ?? '',
+      description: (data['description']).toString() ?? '',
 
-      fullDescription: data['fullDescription'] ?? data['description'] ?? '',
+      fullDescription: (data['fullDescription']).toString() ?? data['description'] ?? '',
 
       category: category,
 
@@ -634,31 +636,35 @@ class StrategiesRepository {
 
       gradient: themeData['gradient'] as List<Color>,
 
-      impactPercentage: data['impactPercentage'] ?? '+0%',
+      impactPercentage: (data['impactPercentage']).toString() ?? '+0%',
 
-      impactValue: data['impactValue'] ?? 'R\$ 0',
+      impactValue: (data['impactValue']).toString() ?? 'R\$ 0',
 
+      // ignore: argument_type_not_assignable
       affectedProducts: data['affectedProducts'] ?? 0,
 
       lastExecution: data['lastExecution']?.toString(),
 
       nextExecution: data['nextExecution']?.toString(),
 
-      frequency: data['frequency'] ?? 'Manual',
+      frequency: (data['frequency']).toString() ?? 'Manual',
 
+      // ignore: argument_type_not_assignable
       reliability: (data['reliability'] ?? 0).toDouble(),
 
-      savings: data['savings'] ?? 'R\$ 0',
+      savings: (data['savings']).toString() ?? 'R\$ 0',
 
-      roi: data['roi'] ?? '0%',
+      roi: (data['roi']).toString() ?? '0%',
 
+      // ignore: argument_type_not_assignable
       successfulExecutions: data['successfulExecutions'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalExecutions: data['totalExecutions'] ?? 0,
 
-      createdAt: DateTime.tryParse(data['createdAt'] ?? '') ?? DateTime.now(),
+      createdAt: DateTime.tryParse((data['createdAt']).toString() ?? '') ?? DateTime.now(),
 
-      updatedAt: DateTime.tryParse(data['updatedAt'] ?? '') ?? DateTime.now(),
+      updatedAt: DateTime.tryParse((data['updatedAt']).toString() ?? '') ?? DateTime.now(),
 
     );
 
@@ -674,20 +680,23 @@ class StrategiesRepository {
 
       strategyId: data['strategyId']?.toString() ?? '',
 
-      strategyName: data['strategyName'] ?? '',
+      strategyName: (data['strategyName']).toString() ?? '',
 
-      executedAt: DateTime.tryParse(data['executedAt'] ?? '') ?? DateTime.now(),
+      executedAt: DateTime.tryParse((data['executedAt']).toString() ?? '') ?? DateTime.now(),
 
       isSuccess: data['status'] == 'Completed' || data['isSuccess'] == true,
 
+      // ignore: argument_type_not_assignable
       productsAffected: data['productsAffected'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       priceChanges: data['priceChanges'] ?? 0,
 
-      impactValue: data['impactValue'] ?? 'R\$ 0',
+      impactValue: (data['impactValue']).toString() ?? 'R\$ 0',
 
       status: _parseExecutionStatus(data['status']),
 
+      // ignore: argument_type_not_assignable
       duration: Duration(milliseconds: data['durationMs'] ?? 0),
 
       details: data['details']?.toString(),
@@ -704,21 +713,28 @@ class StrategiesRepository {
 
     return StrategyStats(
 
+      // ignore: argument_type_not_assignable
       totalExecutions: data['totalExecutions'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       successfulExecutions: data['successfulExecutions'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failedExecutions: data['failedExecutions'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalProductsAffected: data['totalProductsAffected'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalPriceChanges: data['totalPriceChanges'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalImpactValue: (data['totalImpactValue'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       averageExecutionTime: Duration(milliseconds: data['averageExecutionTimeMs'] ?? 0),
 
-      lastExecutedAt: DateTime.tryParse(data['lastExecutedAt'] ?? ''),
+      lastExecutedAt: DateTime.tryParse((data['lastExecutedAt']).toString() ?? ''),
 
     );
 
@@ -738,20 +754,23 @@ class StrategiesRepository {
 
       id: data['id']?.toString() ?? '',
 
-      name: data['name'] ?? '',
+      name: (data['name']).toString() ?? '',
 
-      sku: data['sku'] ?? data['código'] ?? '',
+      sku: (data['sku']).toString() ?? data['código'] ?? '',
 
-      strategy: data['strategyName'] ?? data['category'] ?? '',
+      strategy: (data['strategyName']).toString() ?? data['category'] ?? '',
 
-      gain: data['gain'] ?? 'R\$ ${(data['revenue'] ?? 0).toStringAsFixed(2)}',
+      gain: (data['gain']).toString() ?? 'R\$ ${(data['revenue'] ?? 0).toStringAsFixed(2)}',
 
+      // ignore: argument_type_not_assignable
       quantity: data['quantity'] ?? data['unitsSold'] ?? 0,
 
       color: themeData['color'] as Color,
 
+      // ignore: argument_type_not_assignable
       profitMargin: (data['profitMargin'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       salesVariation: (data['salesVariation'] ?? 0).toDouble(),
 
     );
@@ -764,24 +783,33 @@ class StrategiesRepository {
 
     return StrategyPeriodStats(
 
-      period: data['period'] ?? '',
+      period: (data['period']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalSales: data['totalSales'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalRevenue: (data['totalRevenue'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       averageTicket: (data['averageTicket'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       roi: (data['roi'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       savings: (data['savings'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       conversionRate: (data['conversionRate'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       productsAffected: data['productsAffected'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       salesVariation: (data['salesVariation'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       revenueVariation: (data['revenueVariation'] ?? 0).toDouble(),
 
     );
@@ -794,10 +822,12 @@ class StrategiesRepository {
 
     return DailySalesData(
 
-      date: DateTime.tryParse(data['date'] ?? '') ?? DateTime.now(),
+      date: DateTime.tryParse((data['date']).toString() ?? '') ?? DateTime.now(),
 
+      // ignore: argument_type_not_assignable
       sales: data['sales'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       revenue: (data['revenue'] ?? 0).toDouble(),
 
     );

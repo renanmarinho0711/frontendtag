@@ -106,6 +106,7 @@ void main() {
           created: 5,
           updated: 10,
           deleted: 0,
+          // ignore: argument_type_not_assignable
           errors: 0,
           duration: const Duration(seconds: 3),
         ),
@@ -115,6 +116,7 @@ void main() {
           created: 1,
           updated: 2,
           deleted: 0,
+          // ignore: argument_type_not_assignable
           errors: 0,
           duration: const Duration(seconds: 1),
         ),
@@ -174,7 +176,7 @@ void main() {
       // Act
       await syncMinewStoreUseCase.call(
         testStoreId,
-        onProgress: (p) => progressValues.add(p),
+        onProgress: (p.toDouble() ?? 0.0) => progressValues.add(p),
       );
 
       // Assert
@@ -191,6 +193,7 @@ void main() {
         created: 10,
         updated: 20,
         deleted: 2,
+        // ignore: argument_type_not_assignable
         errors: 0,
         duration: const Duration(seconds: 5),
       );
@@ -222,6 +225,7 @@ void main() {
         created: 50,
         updated: 0,
         deleted: 0,
+        // ignore: argument_type_not_assignable
         errors: 2,
         duration: const Duration(seconds: 10),
       );

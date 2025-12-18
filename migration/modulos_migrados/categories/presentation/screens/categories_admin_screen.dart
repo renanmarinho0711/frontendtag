@@ -573,6 +573,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
       },
       child: Container(
         decoration: BoxDecoration(
+          // ignore: argument_type_not_assignable
           gradient: LinearGradient(colors: categoria['gradiente']),
           borderRadius: BorderRadius.circular(
             isMobile ? 16 : (isTablet ? 18 : 20),
@@ -634,6 +635,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           ),
                         ),
                         child: Icon(
+                          // ignore: argument_type_not_assignable
                           categoria['icone'],
                           color: ThemeColors.of(context).surface,
                           size: ResponsiveHelper.getResponsiveIconSize(
@@ -646,7 +648,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        categoria['nome'],
+                        (categoria['nome']).toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -701,6 +703,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       child: isSelected
                           ? Icon(
                               Icons.check_rounded,
+                              // ignore: argument_type_not_assignable
                               color: categoria['cor'],
                               size: 18,
                             )
@@ -827,6 +830,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                     width: AppSizes.iconHeroXl.get(isMobile, isTablet),
                     height: AppSizes.iconHeroXl.get(isMobile, isTablet),
                     decoration: BoxDecoration(
+                      // ignore: argument_type_not_assignable
                       gradient: LinearGradient(colors: categoria['gradiente']),
                       borderRadius: BorderRadius.circular(
                         isMobile ? 14 : 16,
@@ -840,6 +844,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                       ],
                     ),
                     child: Icon(
+                      // ignore: argument_type_not_assignable
                       categoria['icone'],
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
@@ -854,7 +859,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
                           children: [
                             Expanded(
                               child: Text(
-                                categoria['nome'],
+                                (categoria['nome']).toString(),
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -1090,7 +1095,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
           ElevatedButton(
             onPressed: () async {
               // Chamar backend para excluir
-              final success = await ref.read(categoriesProvider.notifier).deleteCategory(categoria['id']);
+              final success = await ref.read(categoriesProvider.notifier).deleteCategory((categoria['id']).toString());
               Navigator.pop(context);
               if (success) {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -1152,7 +1157,7 @@ class _CategoriasAdminScreenState extends ConsumerState<CategoriasAdminScreen>
             onPressed: () async {
               int deleted = 0;
               for (var item in _selectedItems) {
-                final success = await ref.read(categoriesProvider.notifier).deleteCategory(item['id']);
+                final success = await ref.read(categoriesProvider.notifier).deleteCategory((item['id']).toString());
                 if (success) deleted++;
               }
               setState(() {

@@ -120,6 +120,7 @@ class ProdutoModel {
     // Tentar ler tags como lista
     if (map['tags'] != null && map['tags'] is List) {
       tagsList = (map['tags'] as List)
+          // ignore: argument_type_not_assignable
           .map((t) => TagBinding.fromJson(t))
           .toList();
     }
@@ -136,17 +137,21 @@ class ProdutoModel {
     }
     
     return ProdutoModel(
-      codigo: map['codigo'] ?? '',
-      nome: map['nome'] ?? '',
+      codigo: (map['codigo']).toString() ?? '',
+      nome: (map['nome']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       preco: map['preco']?.toDouble() ?? 0.0,
+      // ignore: argument_type_not_assignable
       precoKg: map['precoKg']?.toDouble(),
-      categoria: map['categoria'] ?? '',
+      categoria: (map['categoria']).toString() ?? '',
       tags: tagsList,
-      tag: map['tag'],
-      status: map['status'] ?? 'Ativo',
-      descricao: map['descricao'],
-      ultimaAtualizacao: map['ultimaAtualizacao'] ?? '',
+      tag: (map['tag']).toString(),
+      status: (map['status']).toString() ?? 'Ativo',
+      descricao: (map['descricao']).toString(),
+      ultimaAtualizacao: (map['ultimaAtualizacao']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       cor: Color(map['cor'] ?? 0xFF2196F3),
+      // ignore: argument_type_not_assignable
       icone: IconData(map['icone'] ?? 0xe047, fontFamily: 'MaterialIcons'),
     );
   }
@@ -176,10 +181,12 @@ class HistoricoPreco {
 
   factory HistoricoPreco.fromMap(Map<String, dynamic> map) {
     return HistoricoPreco(
-      data: map['data'] ?? '',
+      data: (map['data']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       precoAnterior: map['precoAnterior']?.toDouble() ?? 0.0,
+      // ignore: argument_type_not_assignable
       precoNovo: map['precoNovo']?.toDouble() ?? 0.0,
-      usuario: map['usuario'] ?? '',
+      usuario: (map['usuario']).toString() ?? '',
     );
   }
 }

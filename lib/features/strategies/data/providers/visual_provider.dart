@@ -589,7 +589,7 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
               // ignore: argument_type_not_assignable
               posicao: p['posicao'] ?? p['position'] ?? (i + 1),
 
-              nome: (p['nome']).toString() ?? p['name'] ?? '',
+              nome: ((p['nome']).toString()).toString() ?? p['name'] ?? '',
 
               // ignore: argument_type_not_assignable
               vendas: p['vendas'] ?? p['sales'] ?? 0,
@@ -627,7 +627,7 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
           // ignore: argument_type_not_assignable
           intervaloAtualizacao: data['intervaloAtualizacao'] ?? data['update_interval'] ?? state.intervaloAtualizacao,
 
-          tipoRanking: (data['tipoRanking']).toString() ?? data['ranking_type'] ?? state.tipoRanking,
+          tipoRanking: ((data['tipoRanking']).toString()).toString() ?? data['ranking_type'] ?? state.tipoRanking,
 
           // ignore: argument_type_not_assignable
           exibirPosicao: data['exibirPosicao'] ?? data['show_position'] ?? state.exibirPosicao,

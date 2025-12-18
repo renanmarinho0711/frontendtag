@@ -394,28 +394,30 @@ class StoreSettingsModel {
 
     return StoreSettingsModel(
 
-      nome: json['nome'] ?? '',
+      nome: (json['nome']).toString() ?? '',
 
-      cnpj: json['cnpj'] ?? '',
+      cnpj: (json['cnpj']).toString() ?? '',
 
-      endereco: json['endereco'] ?? '',
+      endereco: (json['endereco']).toString() ?? '',
 
-      cidade: json['cidade'] ?? '',
+      cidade: (json['cidade']).toString() ?? '',
 
-      estado: json['estado'] ?? '',
+      estado: (json['estado']).toString() ?? '',
 
-      cep: json['cep'] ?? '',
+      cep: (json['cep']).toString() ?? '',
 
-      telefone: json['telefone'] ?? '',
+      telefone: (json['telefone']).toString() ?? '',
 
-      email: json['email'] ?? '',
+      email: (json['email']).toString() ?? '',
 
-      logoUrl: json['logoUrl'],
+      logoUrl: (json['logoUrl']).toString(),
 
-      website: json['website'],
+      website: (json['website']).toString(),
 
+      // ignore: argument_type_not_assignable
       horarioFuncionamento: json['horarioFuncionamento'] ?? {},
 
+      // ignore: argument_type_not_assignable
       ativo: json['ativo'] ?? true,
 
     );
@@ -611,16 +613,18 @@ class ERPSettingsModel {
 
       ),
 
-      url: json['url'],
+      url: (json['url']).toString(),
 
-      apiKey: json['apiKey'],
+      apiKey: (json['apiKey']).toString(),
 
-      usuario: json['usuario'],
+      usuario: (json['usuario']).toString(),
 
-      senha: json['senha'],
+      senha: (json['senha']).toString(),
 
+      // ignore: argument_type_not_assignable
       autoSync: json['autoSync'] ?? false,
 
+      // ignore: argument_type_not_assignable
       syncIntervalMinutes: json['syncIntervalMinutes'] ?? 30,
 
       connectionStatus: ERPConnectionStatus.values.firstWhere(
@@ -633,11 +637,11 @@ class ERPSettingsModel {
 
       lastSync: json['lastSync'] != null 
 
-          ? DateTime.parse(json['lastSync']) 
+          ? DateTime.parse((json['lastSync']).toString()) 
 
           : null,
 
-      lastError: json['lastError'],
+      lastError: (json['lastError']).toString(),
 
       syncOptions: (json['syncOptions'] as Map<String, dynamic>?)?.cast<String, bool>() ?? {},
 
@@ -843,18 +847,21 @@ class NotificationSettingsModel {
 
       events: (json['events'] as Map<String, dynamic>?)?.cast<String, bool>() ?? {},
 
+      // ignore: argument_type_not_assignable
       doNotDisturb: json['doNotDisturb'] ?? false,
 
-      doNotDisturbStart: _timeFromJson(json['doNotDisturbStart']) ?? const TimeOfDay(hour: 22, minute: 0),
+      doNotDisturbStart: _timeFromJson((json['doNotDisturbStart']).toString()) ?? const TimeOfDay(hour: 22, minute: 0),
 
-      doNotDisturbEnd: _timeFromJson(json['doNotDisturbEnd']) ?? const TimeOfDay(hour: 7, minute: 0),
+      doNotDisturbEnd: _timeFromJson((json['doNotDisturbEnd']).toString()) ?? const TimeOfDay(hour: 7, minute: 0),
 
       emailRecipients: (json['emailRecipients'] as List?)?.cast<String>() ?? [],
 
       smsRecipients: (json['smsRecipients'] as List?)?.cast<String>() ?? [],
 
+      // ignore: argument_type_not_assignable
       soundEnabled: json['soundEnabled'] ?? true,
 
+      // ignore: argument_type_not_assignable
       vibrationEnabled: json['vibrationEnabled'] ?? true,
 
     );
@@ -961,7 +968,7 @@ class BackupInfoModel {
 
       name: json['name'] as String,
 
-      createdAt: DateTime.parse(json['createdAt']),
+      createdAt: DateTime.parse((json['createdAt']).toString()),
 
       size: json['size'] as String,
 
@@ -973,11 +980,13 @@ class BackupInfoModel {
 
       ),
 
+      // ignore: argument_type_not_assignable
       isAutomatic: json['isAutomatic'] ?? false,
 
+      // ignore: argument_type_not_assignable
       isComplete: json['isComplete'] ?? true,
 
-      downloadUrl: json['downloadUrl'],
+      downloadUrl: (json['downloadUrl']).toString(),
 
       itemCounts: (json['itemCounts'] as Map<String, dynamic>?)?.cast<String, int>() ?? {},
 

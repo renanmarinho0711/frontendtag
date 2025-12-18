@@ -368,7 +368,7 @@ class ImportHistoryModel {
 
       fileName: (json['fileName']).toString() ?? json['nome'] as String,
 
-      dateTime: DateTime.tryParse((json['dateTime']).toString() ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse(((json['dateTime']).toString()).toString() ?? json['data'] ?? '') ?? DateTime.now(),
 
       // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? json['total'] as int,
@@ -1303,12 +1303,12 @@ class ExportHistoryModel {
 
       ),
 
-      dateTime: DateTime.tryParse((json['dateTime']).toString() ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse(((json['dateTime']).toString()).toString() ?? json['data'] ?? '') ?? DateTime.now(),
 
       // ignore: argument_type_not_assignable
       recordCount: json['recordCount'] ?? json['total'] as int,
 
-      fileSize: (json['fileSize']).toString() ?? json['tamanho'] ?? '0 KB',
+      fileSize: ((json['fileSize']).toString()).toString() ?? json['tamanho'] ?? '0 KB',
 
       downloadUrl: (json['downloadUrl']).toString(),
 
@@ -3532,13 +3532,13 @@ class ImportExportStatisticsModel {
 
       lastImportAt: json['lastImportAt'] != null || json['last_import_at'] != null
 
-          ? DateTime.tryParse((json['lastImportAt']).toString() ?? json['last_import_at'] ?? '')
+          ? DateTime.tryParse(((json['lastImportAt']).toString()).toString() ?? json['last_import_at'] ?? '')
 
           : null,
 
       lastExportAt: json['lastExportAt'] != null || json['last_export_at'] != null
 
-          ? DateTime.tryParse((json['lastExportAt']).toString() ?? json['last_export_at'] ?? '')
+          ? DateTime.tryParse(((json['lastExportAt']).toString()).toString() ?? json['last_export_at'] ?? '')
 
           : null,
 

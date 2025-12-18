@@ -125,7 +125,7 @@ class EstrategiasLucroCard extends StatelessWidget {
                       border: Border.all(color: AppThemeColors.surfaceOverlay30),
                     ),
                     child: Text(
-                      estrategiasData['crescimento'],
+                      (estrategiasData['crescimento']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,

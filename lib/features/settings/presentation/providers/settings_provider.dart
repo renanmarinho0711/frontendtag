@@ -563,21 +563,21 @@ class StoreSettingsNotifier extends StateNotifier<StoreSettingsState> {
 
         setLoaded(StoreSettingsModel(
 
-          nome: data['name'] ?? '',
+          nome: (data['name']).toString() ?? '',
 
-          cnpj: data['cnpj'] ?? '',
+          cnpj: (data['cnpj']).toString() ?? '',
 
-          endereco: data['address'] ?? '',
+          endereco: (data['address']).toString() ?? '',
 
-          cidade: data['city'] ?? '',
+          cidade: (data['city']).toString() ?? '',
 
-          estado: data['state'] ?? '',
+          estado: (data['state']).toString() ?? '',
 
-          cep: data['zipCode'] ?? '',
+          cep: (data['zipCode']).toString() ?? '',
 
-          telefone: data['phone'] ?? '',
+          telefone: (data['phone']).toString() ?? '',
 
-          email: data['email'] ?? '',
+          email: (data['email']).toString() ?? '',
 
         ));
 
@@ -969,16 +969,18 @@ class ERPSettingsNotifier extends StateNotifier<ERPSettingsState> {
 
         setLoaded(ERPSettingsModel(
 
-          tipo: _parseERPType(data['type']),
+          tipo: _parseERPType((data['type']).toString()),
  // ignore: argument_type_not_assignable
 
           url: (data['apiUrl']).toString() ?? '',
  // ignore: argument_type_not_assignable
 
-          apiKey: data['apiKey'] ?? '',
+          apiKey: (data['apiKey']).toString() ?? '',
 
+          // ignore: argument_type_not_assignable
           autoSync: data['syncProducts'] ?? true,
 
+          // ignore: argument_type_not_assignable
           syncIntervalMinutes: data['syncInterval'] ?? 30,
 
         ));
@@ -1533,8 +1535,10 @@ class NotificationSettingsNotifier extends StateNotifier<NotificationSettingsSta
 
           },
 
+          // ignore: argument_type_not_assignable
           emailRecipients: List<String>.from(data['emailRecipients'] ?? []),
 
+          // ignore: argument_type_not_assignable
           smsRecipients: List<String>.from(data['smsRecipients'] ?? []),
 
         ));
@@ -1855,12 +1859,13 @@ class BackupNotifier extends StateNotifier<BackupState> {
 
           id: data['id']?.toString() ?? '',
 
-          name: data['name'] ?? '',
+          name: (data['name']).toString() ?? '',
 
-          createdAt: DateTime.tryParse(data['createdAt'] ?? '') ?? DateTime.now(),
+          createdAt: DateTime.tryParse((data['createdAt']).toString() ?? '') ?? DateTime.now(),
 
-          size: data['size'] ?? '0 MB',
+          size: (data['size']).toString() ?? '0 MB',
 
+          // ignore: argument_type_not_assignable
           isAutomatic: data['isAutomatic'] ?? false,
 
         )).toList();
@@ -1925,11 +1930,11 @@ class BackupNotifier extends StateNotifier<BackupState> {
 
           id: data['id']?.toString() ?? DateTime.now().millisecondsSinceEpoch.toString(),
 
-          name: data['name'] ?? 'Backup_${DateTime.now().toString().substring(0, 10)}',
+          name: (data['name']).toString() ?? 'Backup_${DateTime.now().toString().substring(0, 10)}',
 
-          createdAt: DateTime.tryParse(data['createdAt'] ?? '') ?? DateTime.now(),
+          createdAt: DateTime.tryParse((data['createdAt']).toString() ?? '') ?? DateTime.now(),
 
-          size: data['size'] ?? '0 MB',
+          size: (data['size']).toString() ?? '0 MB',
 
           isAutomatic: false,
 

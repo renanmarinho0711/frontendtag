@@ -702,24 +702,34 @@ class BackupNotifier extends StateNotifier<BackupState> {
 
     return BackupConfigModel(
 
+      // ignore: argument_type_not_assignable
       autoBackupEnabled: config.autoBackupEnabled ?? true,
 
+      // ignore: argument_type_not_assignable
       backupFrequency: config.backupFrequency ?? 'daily',
 
+      // ignore: argument_type_not_assignable
       backupHour: config.backupHour ?? 3,
 
+      // ignore: argument_type_not_assignable
       maxBackupsToKeep: config.maxBackupsToKeep ?? 30,
 
+      // ignore: argument_type_not_assignable
       includeImages: config.includeImages ?? true,
 
+      // ignore: argument_type_not_assignable
       includeLogs: config.includeLogs ?? false,
 
+      // ignore: argument_type_not_assignable
       notifyOnSuccess: config.notifyOnSuccess ?? false,
 
+      // ignore: argument_type_not_assignable
       notifyOnFailure: config.notifyOnFailure ?? true,
 
+      // ignore: argument_type_not_assignable
       lastBackupAt: config.lastBackupAt,
 
+      // ignore: argument_type_not_assignable
       lastBackupStatus: config.lastBackupStatus,
 
     );

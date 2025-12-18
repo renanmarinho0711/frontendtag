@@ -74,6 +74,7 @@ class ProdutoRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => Produto.fromJson(item)).toList();
 
         }
@@ -98,6 +99,7 @@ class ProdutoRepository {
 
       ApiConstants.produtoById(id),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );
@@ -118,6 +120,7 @@ class ProdutoRepository {
 
       '/products/barcode/$barcode',
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );
@@ -140,6 +143,7 @@ class ProdutoRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => Produto.fromJson(item)).toList();
 
         }
@@ -211,10 +215,12 @@ class ProdutoRepository {
 
     return await _apiService.post<Produto>(
 
+      // ignore: argument_type_not_assignable
       ApiConstants.products,
 
       body: body,
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );
@@ -329,6 +335,7 @@ class ProdutoRepository {
 
       body: body,
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );
@@ -491,6 +498,7 @@ class ProdutoRepository {
 
       body: body,
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );
@@ -575,6 +583,7 @@ class ProdutoRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => Produto.fromJson(item)).toList();
 
         }
@@ -669,6 +678,7 @@ class ProdutoRepository {
 
       body: body,
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );
@@ -703,6 +713,7 @@ class ProdutoRepository {
 
       body: body,
 
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
 
     );

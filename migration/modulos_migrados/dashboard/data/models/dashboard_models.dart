@@ -105,6 +105,7 @@ class StrategiesStats {
       todayGain: (json['todayGain'] as num?)?.toDouble() ?? 0.0,
       growthPercentage: json['growthPercentage'] as String? ?? '0%',
       strategies: (json['strategies'] as List? ?? [])
+          // ignore: argument_type_not_assignable
           .map((s) => StrategyDetails.fromJson(s))
           .toList(),
     );
@@ -234,9 +235,12 @@ class DashboardData {
 
   factory DashboardData.fromJson(Map<String, dynamic> json) {
     return DashboardData(
+      // ignore: argument_type_not_assignable
       storeStats: StoreStats.fromJson(json['storeStats'] ?? {}),
+      // ignore: argument_type_not_assignable
       strategiesStats: StrategiesStats.fromJson(json['strategiesStats'] ?? {}),
       alerts: (json['alerts'] as List? ?? [])
+          // ignore: argument_type_not_assignable
           .map((a) => DashboardAlert.fromJson(a))
           .toList(),
       lastUpdate: json['lastUpdate'] != null

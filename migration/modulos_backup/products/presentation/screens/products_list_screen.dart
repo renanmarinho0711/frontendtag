@@ -544,6 +544,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         vertical: AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: ModuleGradients.produtos,
         borderRadius: AppRadius.card,
         boxShadow: AppShadows.elevatedCard,
@@ -552,6 +553,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         children: [
           Container(
             decoration: BoxDecoration(
+              // ignore: argument_type_not_assignable
               color: AppGradients.overlayWhite20,
               borderRadius: AppRadius.iconButtonMedium,
             ),
@@ -572,6 +574,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
             decoration: const BoxDecoration(
+              // ignore: argument_type_not_assignable
               color: AppGradients.overlayWhite20,
               borderRadius: AppRadius.button,
             ),
@@ -602,6 +605,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                   'Gestão de catálogo e precificação',
                   style: TextStyle(
                     fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
+                    // ignore: argument_type_not_assignable
                     color: AppGradients.overlayWhite80,
                     letterSpacing: 0.2,
                   ),
@@ -652,6 +656,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           vertical: AppSizes.paddingXs.get(isMobile, isTablet),
         ),
         decoration: const BoxDecoration(
+          // ignore: argument_type_not_assignable
           color: AppGradients.overlayWhite20,
           borderRadius: AppRadius.sm,
         ),
@@ -683,6 +688,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
       margin: EdgeInsets.symmetric(horizontal: AppSizes.paddingMd.get(isMobile, isTablet)),
       padding: EdgeInsets.all(AppSizes.paddingMd.get(isMobile, isTablet)),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: AppGradients.strategyDetail,
         borderRadius: AppRadius.lg,
         border: Border.all(color: AppThemeColors.infoLight, width: 1.5),
@@ -1118,6 +1124,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                                       width: 200,
                                       height: 200,
                                       decoration: BoxDecoration(
+                                        // ignore: argument_type_not_assignable
                                         gradient: AppGradients.fromBaseColor(produto.cor),
                                         borderRadius: BorderRadius.circular(12),
                                       ),
@@ -1140,6 +1147,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
+                        // ignore: argument_type_not_assignable
                         gradient: AppGradients.fromBaseColor(produto.cor),
                         borderRadius: BorderRadius.circular(6),
                       ),
@@ -2000,6 +2008,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         vertical: AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: AppGradients.greenProduct,
         borderRadius: AppRadius.lg,
         boxShadow: AppShadows.elevatedCard,

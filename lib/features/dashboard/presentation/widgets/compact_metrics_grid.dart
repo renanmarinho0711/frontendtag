@@ -365,8 +365,10 @@ class CompactMetricsGrid extends ConsumerWidget {
 
             Icon(
 
+              // ignore: argument_type_not_assignable
               stat['icon'],
 
+              // ignore: argument_type_not_assignable
               color: stat['cor'],
 
               size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
@@ -395,7 +397,7 @@ class CompactMetricsGrid extends ConsumerWidget {
 
                 : Text(
 
-                    stat['valor'],
+                    (stat['valor']).toString(),
 
                     style: TextStyle(
 
@@ -405,6 +407,7 @@ class CompactMetricsGrid extends ConsumerWidget {
 
                       fontWeight: FontWeight.bold,
 
+                      // ignore: argument_type_not_assignable
                       color: stat['cor'],
 
                       letterSpacing: -0.5,
@@ -417,7 +420,7 @@ class CompactMetricsGrid extends ConsumerWidget {
 
             Text(
 
-              stat['label'],
+              (stat['label']).toString(),
 
               style: TextStyle(
 
@@ -467,6 +470,7 @@ class CompactMetricsGrid extends ConsumerWidget {
 
                       size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 9, tablet: 9.5, desktop: 10),
 
+                      // ignore: argument_type_not_assignable
                       color: stat['cor'],
 
                     ),
@@ -479,7 +483,7 @@ class CompactMetricsGrid extends ConsumerWidget {
 
                     child: Text(
 
-                      stat['mudanca'],
+                      (stat['mudanca']).toString(),
 
                       style: TextStyle(
 
@@ -489,6 +493,7 @@ class CompactMetricsGrid extends ConsumerWidget {
 
                         fontWeight: FontWeight.bold,
 
+                        // ignore: argument_type_not_assignable
                         color: stat['cor'],
 
                       ),

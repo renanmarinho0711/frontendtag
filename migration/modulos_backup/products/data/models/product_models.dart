@@ -304,6 +304,7 @@ class ProductModel {
       categoriaId: produto.categoriaId?.toString(),
       status: produto.ativo == true ? ProductStatus.ativo : ProductStatus.inativo,
       estoque: (produto.estoque as num?)?.toDouble(),
+      // ignore: argument_type_not_assignable
       dataAtualizacao: produto.updatedAt,
       imagem: produto.imageUrl?.toString(),
       custoMedio: (produto.precoCusto as num?)?.toDouble(),
@@ -315,8 +316,10 @@ class ProductModel {
       unidade: produto.unidade?.toString(),
       especificacao: produto.especificacao?.toString(),
       origem: produto.origem?.toString(),
+      // ignore: argument_type_not_assignable
       syncWithMinew: produto.syncWithMinew ?? false,
       minewSyncStatus: produto.minewSyncStatus?.toString(),
+      // ignore: argument_type_not_assignable
       lastMinewSync: produto.lastMinewSync,
       minewProductId: produto.minewProductId?.toString(),
     );
@@ -529,7 +532,9 @@ class PriceHistoryModel {
           ?? json['changedBy']?.toString() 
           ?? json['user']?.toString() 
           ?? 'Sistema',
+      // ignore: argument_type_not_assignable
       precoAnterior: (json['precoAnterior'] ?? json['previousPrice'] ?? json['oldPrice'] ?? 0).toDouble(),
+      // ignore: argument_type_not_assignable
       precoNovo: (json['precoNovo'] ?? json['newPrice'] ?? json['price'] ?? 0).toDouble(),
       motivo: json['motivo']?.toString() ?? json['reason']?.toString(),
     );

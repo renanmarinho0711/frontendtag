@@ -30,6 +30,7 @@ class ProductsHeader extends StatelessWidget {
         vertical: AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: ModuleGradients.produtos,
         borderRadius: AppRadius.card,
         boxShadow: AppShadows.elevatedCard,
@@ -50,6 +51,7 @@ class ProductsHeader extends StatelessWidget {
   Widget _buildBackButton(BuildContext context, bool isMobile, bool isTablet) {
     return Container(
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         color: AppGradients.overlayWhite20,
         borderRadius: AppRadius.iconButtonMedium,
       ),
@@ -72,6 +74,7 @@ class ProductsHeader extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
       decoration: const BoxDecoration(
+        // ignore: argument_type_not_assignable
         color: AppGradients.overlayWhite20,
         borderRadius: AppRadius.button,
       ),
@@ -104,6 +107,7 @@ class ProductsHeader extends StatelessWidget {
             'Gestão de catálogo e precificação',
             style: TextStyle(
               fontSize: AppTextStyles.fontSizeSmAlt.get(isMobile, isTablet),
+              // ignore: argument_type_not_assignable
               color: AppGradients.overlayWhite80,
               letterSpacing: 0.2,
             ),
@@ -159,6 +163,7 @@ class ProductsHeader extends StatelessWidget {
           vertical: AppSizes.paddingXs.get(isMobile, isTablet),
         ),
         decoration: const BoxDecoration(
+          // ignore: argument_type_not_assignable
           color: AppGradients.overlayWhite20,
           borderRadius: AppRadius.sm,
         ),

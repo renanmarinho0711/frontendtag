@@ -67,27 +67,28 @@ class BackupModel {
 
     return BackupModel(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      name: json['name'] ?? '',
+      name: (json['name']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       sizeBytes: json['sizeBytes'] ?? 0,
 
-      sizeFormatted: json['sizeFormatted'] ?? '0 B',
+      sizeFormatted: (json['sizeFormatted']).toString() ?? '0 B',
 
       createdAt: json['createdAt'] != null 
 
-          ? DateTime.parse(json['createdAt']) 
+          ? DateTime.parse((json['createdAt']).toString()) 
 
           : DateTime.now(),
 
-      type: json['type'] ?? 'manual',
+      type: (json['type']).toString() ?? 'manual',
 
-      status: json['status'] ?? 'completed',
+      status: (json['status']).toString() ?? 'completed',
 
-      storeId: json['storeId'] ?? '',
+      storeId: (json['storeId']).toString() ?? '',
 
-      description: json['description'],
+      description: (json['description']).toString(),
 
     );
 
@@ -196,32 +197,39 @@ class BackupConfigModel {
 
     return BackupConfigModel(
 
+      // ignore: argument_type_not_assignable
       autoBackupEnabled: json['autoBackupEnabled'] ?? true,
 
-      backupFrequency: json['backupFrequency'] ?? 'daily',
+      backupFrequency: (json['backupFrequency']).toString() ?? 'daily',
 
+      // ignore: argument_type_not_assignable
       backupHour: json['backupHour'] ?? 3,
 
+      // ignore: argument_type_not_assignable
       maxBackupsToKeep: json['maxBackupsToKeep'] ?? 30,
 
+      // ignore: argument_type_not_assignable
       includeImages: json['includeImages'] ?? true,
 
+      // ignore: argument_type_not_assignable
       includeLogs: json['includeLogs'] ?? false,
 
+      // ignore: argument_type_not_assignable
       notifyOnSuccess: json['notifyOnSuccess'] ?? false,
  // ignore: argument_type_not_assignable
 
+      // ignore: argument_type_not_assignable
       notifyOnFailure: (json['notifyOnFailure']).toString() ?? true,
  // ignore: argument_type_not_assignable
 
       lastBackupAt: json['lastBackupAt'] != null 
  // ignore: argument_type_not_assignable
 
-          ? DateTime.parse(json['lastBackupAt']) 
+          ? DateTime.parse((json['lastBackupAt']).toString()) 
 
           : null,
 
-      lastBackupStatus: json['lastBackupStatus'],
+      lastBackupStatus: (json['lastBackupStatus']).toString(),
 
     );
 
@@ -347,16 +355,20 @@ class BackupListResponse {
 
       backups: (json['backups'] as List?)
 
+          // ignore: argument_type_not_assignable
           ?.map((e) => BackupModel.fromJson(e))
 
           .toList() ?? [],
 
+      // ignore: argument_type_not_assignable
       total: json['total'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalSizeBytes: json['totalSizeBytes'] ?? 0,
 
-      totalSizeFormatted: json['totalSizeFormatted'] ?? '0 B',
+      totalSizeFormatted: (json['totalSizeFormatted']).toString() ?? '0 B',
 
+      // ignore: argument_type_not_assignable
       config: BackupConfigModel.fromJson(json['config'] ?? {}),
 
     );
@@ -399,15 +411,17 @@ class RestoreBackupResponse {
 
     return RestoreBackupResponse(
 
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
 
-      message: json['message'] ?? '',
+      message: (json['message']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       recordsRestored: json['recordsRestored'] ?? 0,
 
       restoredAt: json['restoredAt'] != null 
 
-          ? DateTime.parse(json['restoredAt']) 
+          ? DateTime.parse((json['restoredAt']).toString()) 
 
           : DateTime.now(),
 

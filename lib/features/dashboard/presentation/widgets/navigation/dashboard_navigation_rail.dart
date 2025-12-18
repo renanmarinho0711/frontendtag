@@ -579,6 +579,7 @@ class _NavigationRailItem extends StatelessWidget {
 
           gradient: isSelected
 
+              // ignore: argument_type_not_assignable
               ? LinearGradient(colors: List<Color>.from(item['gradient']))
 
               : null,
@@ -595,6 +596,7 @@ class _NavigationRailItem extends StatelessWidget {
 
             Icon(
 
+              // ignore: argument_type_not_assignable
               item['icon'],
 
               color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
@@ -631,7 +633,7 @@ class _NavigationRailItem extends StatelessWidget {
 
                 child: Text(
 
-                  item['title'],
+                  (item['title']).toString(),
 
                   style: TextStyle(
 

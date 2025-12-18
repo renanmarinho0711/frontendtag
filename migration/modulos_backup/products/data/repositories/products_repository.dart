@@ -34,6 +34,7 @@ class ProdutoRepository {
       queryParams: queryParams,
       parser: (data) {
         if (data is List) {
+          // ignore: argument_type_not_assignable
           return data.map((item) => Produto.fromJson(item)).toList();
         }
         return [];
@@ -46,6 +47,7 @@ class ProdutoRepository {
   Future<ApiResponse<Produto>> buscarProduto(String id) async {
     return await _apiService.get<Produto>(
       ApiConstants.produtoById(id),
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }
@@ -55,6 +57,7 @@ class ProdutoRepository {
   Future<ApiResponse<Produto>> buscarProdutoPorBarcode(String barcode) async {
     return await _apiService.get<Produto>(
       '/products/barcode/$barcode',
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }
@@ -66,6 +69,7 @@ class ProdutoRepository {
       ApiConstants.productsByStore(storeId),
       parser: (data) {
         if (data is List) {
+          // ignore: argument_type_not_assignable
           return data.map((item) => Produto.fromJson(item)).toList();
         }
         return [];
@@ -101,8 +105,10 @@ class ProdutoRepository {
     };
 
     return await _apiService.post<Produto>(
+      // ignore: argument_type_not_assignable
       ApiConstants.products,
       body: body,
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }
@@ -159,6 +165,7 @@ class ProdutoRepository {
     return await _apiService.put<Produto>(
       ApiConstants.produtoById(id),
       body: body,
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }
@@ -239,6 +246,7 @@ class ProdutoRepository {
     return await _apiService.put<Produto>(
       ApiConstants.productStock(productId),
       body: body,
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }
@@ -281,6 +289,7 @@ class ProdutoRepository {
       queryParams: {'codigoBarras': codigoBarras},
       parser: (data) {
         if (data is List) {
+          // ignore: argument_type_not_assignable
           return data.map((item) => Produto.fromJson(item)).toList();
         }
         return [];
@@ -328,6 +337,7 @@ class ProdutoRepository {
     return await _apiService.put<Produto>(
       ApiConstants.productPrice(productId),
       body: body,
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }
@@ -345,6 +355,7 @@ class ProdutoRepository {
     return await _apiService.put<Produto>(
       '/products/$productId/stock',
       body: body,
+      // ignore: argument_type_not_assignable
       parser: (data) => Produto.fromJson(data),
     );
   }

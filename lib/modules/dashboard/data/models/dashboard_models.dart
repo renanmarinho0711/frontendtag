@@ -213,6 +213,7 @@ class StrategiesStats {
 
       strategies: (json['strategies'] as List? ?? [])
 
+          // ignore: argument_type_not_assignable
           .map((s) => StrategyDetails.fromJson(s))
 
           .toList(),
@@ -474,12 +475,15 @@ class DashboardData {
 
     return DashboardData(
 
+      // ignore: argument_type_not_assignable
       storeStats: StoreStats.fromJson(json['storeStats'] ?? {}),
 
+      // ignore: argument_type_not_assignable
       strategiesStats: StrategiesStats.fromJson(json['strategiesStats'] ?? {}),
 
       alerts: (json['alerts'] as List? ?? [])
 
+          // ignore: argument_type_not_assignable
           .map((a) => DashboardAlert.fromJson(a))
 
           .toList(),

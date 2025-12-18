@@ -77,7 +77,7 @@ class ImportHistoryModel {
     return ImportHistoryModel(
       id: ((json['id']) as String?) ?? '',
       fileName: (((json['fileName'] ?? json['nome']) as String?) ?? ''),
-      dateTime: DateTime.tryParse((json['dateTime']).toString() ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse(((json['dateTime']).toString()).toString() ?? json['data'] ?? '') ?? DateTime.now(),
       totalRecords: (((json['totalRecords'] ?? json['total']) as int?) ?? 0),
       successCount: (((json['successCount'] ?? json['sucesso']) as int?) ?? 0),
       // ignore: argument_type_not_assignable

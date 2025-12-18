@@ -538,6 +538,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   ),
                   decoration: BoxDecoration(
                     gradient: isSelected
+                        // ignore: argument_type_not_assignable
                         ? LinearGradient(colors: item['gradient'])
                         : null,
                     borderRadius: BorderRadius.circular(12),
@@ -546,6 +547,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
+                        // ignore: argument_type_not_assignable
                         item['icon'],
                         color: isSelected
                             ? ThemeColors.of(context).surface
@@ -554,7 +556,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        item['title'],
+                        (item['title']).toString(),
                         style: TextStyle(
                           color: isSelected
                               ?  ThemeColors.of(context).surface
@@ -1174,6 +1176,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       ),
                       decoration: BoxDecoration(
                         gradient: isSelected
+                            // ignore: argument_type_not_assignable
                             ? LinearGradient(colors: item['gradient'])
                             : null,
                         borderRadius: BorderRadius.circular(isTablet ? 10 : 12),
@@ -1182,6 +1185,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
+                            // ignore: argument_type_not_assignable
                             item['icon'],
                             color: isSelected ?  ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
                             size: ResponsiveHelper.getResponsiveIconSize(
@@ -1200,7 +1204,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                             ),
                             Expanded(
                               child: Text(
-                                item['title'],
+                                (item['title']).toString(),
                                 style: TextStyle(
                                   color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey700,
                                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
@@ -1712,24 +1716,27 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
+              // ignore: argument_type_not_assignable
               stat['icon'],
+              // ignore: argument_type_not_assignable
               color: stat['cor'],
               size: AppSizes.iconMediumLarge.get(isMobile, ResponsiveHelper.isTablet(context)),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
             Text(
-              stat['valor'],
+              (stat['valor']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
+                // ignore: argument_type_not_assignable
                 color: stat['cor'],
                 letterSpacing: -0.5,
               ),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
             Text(
-              stat['label'],
+              (stat['label']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9, tabletFontSize: 9.5),
                 overflow: TextOverflow.ellipsis,
@@ -1754,17 +1761,19 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                     Icon(
                       Icons.arrow_upward_rounded,
                       size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 9, tablet: 9.5, desktop: 10),
+                      // ignore: argument_type_not_assignable
                       color: stat['cor'],
                     ),
                   if (stat['tipo'] == 'aumento')
                     SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 2.5, tablet: 2.75, desktop: 3)),
                   Flexible(
                     child: Text(
-                      stat['mudanca'],
+                      (stat['mudanca']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 9, mobileFontSize: 8, tabletFontSize: 8.5),
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
+                        // ignore: argument_type_not_assignable
                         color: stat['cor'],
                       ),
                     ),
@@ -2216,7 +2225,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                       border: Border.all(color: ThemeColors.of(context).surfaceOverlay30),
                     ),
                     child: Text(
-                      _estrategiasData['crescimento'],
+                      (_estrategiasData['crescimento']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -2815,9 +2824,10 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                                           desktop: 12,
                                         ),
                                       ),
-                                      child: _buildEstrategiaItem(context, estrategia['nome'],
+                                      child: _buildEstrategiaItem(context, (estrategia['nome']).toString(),
                                         'R\$ ${estrategia['ganho'].toStringAsFixed(2)}',
                                         '${estrategia['produtos']} produtos',
+                                        // ignore: argument_type_not_assignable
                                         estrategia['cor'],
                                       ),
                                     ),
@@ -4098,6 +4108,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   ),
                 ),
                 child: Icon(
+                  // ignore: argument_type_not_assignable
                   alerta['icone'],
                   color: ThemeColors.of(context).surface,
                   size: ResponsiveHelper.getResponsiveIconSize(
@@ -4121,7 +4132,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      alerta['tipo'],
+                      (alerta['tipo']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -4134,7 +4145,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      alerta['descricao'],
+                      (alerta['descricao']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,
@@ -4164,6 +4175,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                   ),
                 ),
                 decoration: BoxDecoration(
+                  // ignore: argument_type_not_assignable
                   color: alerta['cor'],
                   borderRadius: BorderRadius.circular(isMobile ? 6 : 8),
                 ),
@@ -4192,7 +4204,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
             ),
           ),
           Text(
-            alerta['detalhes'],
+            (alerta['detalhes']).toString(),
             style: TextStyle(
               fontSize: ResponsiveHelper.getResponsiveFontSize(
                 context,
@@ -4237,6 +4249,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
                 ),
               ),
               style: ElevatedButton.styleFrom(
+                // ignore: argument_type_not_assignable
                 backgroundColor: alerta['cor'],
                 foregroundColor: ThemeColors.of(context).surface,
                 padding: EdgeInsets.symmetric(
@@ -4863,11 +4876,11 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             ),
           ),
           title: Text(
-            isProduto ? r['nome'] ?? '' : r['mac'] ?? '',
+            isProduto ? (r['nome']).toString() ?? '' : r['mac'] ?? '',
             style: const TextStyle(fontWeight: FontWeight.w600),
           ),
           subtitle: Text(
-            isProduto ? r['codigo'] ?? '' : r['produto'] ?? 'Sem vínculo',
+            isProduto ? (r['codigo']).toString() ?? '' : r['produto'] ?? 'Sem vínculo',
             style: TextStyle(
               fontSize: 12,
               color: ThemeColors.of(context).textSecondary,
@@ -4875,7 +4888,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
           ),
           trailing: isProduto
               ? Text(
-                  r['preco'] ?? '',
+                  (r['preco']).toString() ?? '',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: ThemeColors.of(context).greenMain,
@@ -4888,7 +4901,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    r['status'] ?? '',
+                    (r['status']).toString() ?? '',
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
@@ -4897,7 +4910,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                   ),
                 ),
           onTap: () {
-            close(context, r['nome'] ?? r['mac']);
+            close(context, (r['nome']).toString() ?? r['mac']);
           },
         );
       },

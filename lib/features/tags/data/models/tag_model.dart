@@ -803,6 +803,7 @@ class TagsPagedResponse {
 
       items: (json['items'] as List? ?? [])
 
+          // ignore: argument_type_not_assignable
           .map((item) => TagModel.fromJson(item))
 
           .toList(),

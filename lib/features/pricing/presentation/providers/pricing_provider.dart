@@ -253,17 +253,21 @@ class PricingAdjustmentNotifier extends StateNotifier<PricingAdjustmentState> {
 
         final result = PricingSimulationResultModel(
 
+          // ignore: argument_type_not_assignable
           produtosAfetados: data['affectedProducts'] ?? productsList.length,
 
+          // ignore: argument_type_not_assignable
           impactoTotal: (data['totalImpact'] ?? 0).toDouble(),
 
+          // ignore: argument_type_not_assignable
           margemMediaAtual: (data['currentAverageMargin'] ?? 0).toDouble(),
 
+          // ignore: argument_type_not_assignable
           margemMediaNova: (data['newAverageMargin'] ?? 0).toDouble(),
 
           produtos: productsList,
 
-          dataSimulacao: DateTime.tryParse(data['simulationDate'] ?? '') ?? DateTime.now(),
+          dataSimulacao: DateTime.tryParse((data['simulationDate']).toString() ?? '') ?? DateTime.now(),
 
         );
 
@@ -1561,17 +1565,21 @@ class DynamicPricingNotifier extends StateNotifier<DynamicPricingState> {
 
           config: DynamicPricingConfigModel(
 
+            // ignore: argument_type_not_assignable
             ativo: data['ativo'] ?? false,
 
+            // ignore: argument_type_not_assignable
             margemMinima: (data['margemMinima'] ?? 15.0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             margemMaxima: (data['margemMaxima'] ?? 50.0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             ajusteMaximoDiario: (data['ajusteMaximoDiario'] ?? 10.0).toDouble(),
 
-            horarioPico: data['horarioPico'] ?? '12:00',
+            horarioPico: (data['horarioPico']).toString() ?? '12:00',
 
-            horarioVale: data['horarioVale'] ?? '03:00',
+            horarioVale: (data['horarioVale']).toString() ?? '03:00',
 
           ),
 

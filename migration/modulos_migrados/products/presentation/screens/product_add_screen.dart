@@ -717,6 +717,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                       Container(
                         padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                         decoration: BoxDecoration(
+                          // ignore: argument_type_not_assignable
                           gradient: AppGradients.primaryHeader,
                           borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                         ),
@@ -821,6 +822,7 @@ class _ProdutosAdicionarScreenState extends ConsumerState<ProdutosAdicionarScree
                     Container(
                       padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                       decoration: BoxDecoration(
+                        // ignore: argument_type_not_assignable
                         gradient: ModuleGradients.precificacao,
                         borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                       ),

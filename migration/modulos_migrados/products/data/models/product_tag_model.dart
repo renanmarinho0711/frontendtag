@@ -78,22 +78,25 @@ class ProductTagModel {
 
   factory ProductTagModel.fromJson(Map<String, dynamic> json) {
     return ProductTagModel(
+      // ignore: argument_type_not_assignable
       id: json['id'] ?? 0,
-      productId: json['productId'] ?? '',
-      productName: json['productName'] ?? '',
-      tagMacAddress: json['tagMacAddress'] ?? '',
-      storeId: json['storeId'] ?? '',
-      location: json['location'],
-      description: json['description'],
+      productId: (json['productId']).toString() ?? '',
+      productName: (json['productName']).toString() ?? '',
+      tagMacAddress: (json['tagMacAddress']).toString() ?? '',
+      storeId: (json['storeId']).toString() ?? '',
+      location: (json['location']).toString(),
+      description: (json['description']).toString(),
+      // ignore: argument_type_not_assignable
       isPrimary: json['isPrimary'] ?? false,
+      // ignore: argument_type_not_assignable
       isActive: json['isActive'] ?? true,
       createdAt: json['createdAt'] != null 
-          ? DateTime.parse(json['createdAt']) 
+          ? DateTime.parse((json['createdAt']).toString()) 
           : DateTime.now(),
       lastPriceSync: json['lastPriceSync'] != null 
-          ? DateTime.parse(json['lastPriceSync']) 
+          ? DateTime.parse((json['lastPriceSync']).toString()) 
           : null,
-      syncStatus: TagSyncStatus.fromString(json['syncStatus'] ?? 'pending'),
+      syncStatus: TagSyncStatus.fromString((json['syncStatus']).toString() ?? 'pending'),
     );
   }
 }
@@ -171,14 +174,17 @@ class PriceSyncResult {
 
   factory PriceSyncResult.fromJson(Map<String, dynamic> json) {
     return PriceSyncResult(
+      // ignore: argument_type_not_assignable
       productTagId: json['productTagId'] ?? 0,
-      tagMacAddress: json['tagMacAddress'] ?? '',
-      productId: json['productId'] ?? '',
+      tagMacAddress: (json['tagMacAddress']).toString() ?? '',
+      productId: (json['productId']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       price: (json['price'] ?? 0).toDouble(),
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
-      error: json['error'],
+      error: (json['error']).toString(),
       syncedAt: json['syncedAt'] != null 
-          ? DateTime.parse(json['syncedAt']) 
+          ? DateTime.parse((json['syncedAt']).toString()) 
           : DateTime.now(),
     );
   }
@@ -200,10 +206,12 @@ class ProductTagsList {
 
   factory ProductTagsList.fromJson(Map<String, dynamic> json) {
     return ProductTagsList(
-      productId: json['productId'] ?? '',
-      productName: json['productName'] ?? '',
+      productId: (json['productId']).toString() ?? '',
+      productName: (json['productName']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       currentPrice: (json['currentPrice'] ?? 0).toDouble(),
       linkedTags: (json['linkedTags'] as List<dynamic>?)
+          // ignore: argument_type_not_assignable
           ?.map((e) => TagBinding.fromJson(e))
           .toList() ?? [],
     );
@@ -232,15 +240,18 @@ class TagBinding {
 
   factory TagBinding.fromJson(Map<String, dynamic> json) {
     return TagBinding(
+      // ignore: argument_type_not_assignable
       productTagId: json['productTagId'] ?? 0,
-      tagMacAddress: json['tagMacAddress'] ?? '',
-      location: json['location'],
+      tagMacAddress: (json['tagMacAddress']).toString() ?? '',
+      location: (json['location']).toString(),
+      // ignore: argument_type_not_assignable
       isPrimary: json['isPrimary'] ?? false,
+      // ignore: argument_type_not_assignable
       isActive: json['isActive'] ?? true,
       lastPriceSync: json['lastPriceSync'] != null 
-          ? DateTime.parse(json['lastPriceSync']) 
+          ? DateTime.parse((json['lastPriceSync']).toString()) 
           : null,
-      syncStatus: TagSyncStatus.fromString(json['syncStatus'] ?? 'pending'),
+      syncStatus: TagSyncStatus.fromString((json['syncStatus']).toString() ?? 'pending'),
     );
   }
 }

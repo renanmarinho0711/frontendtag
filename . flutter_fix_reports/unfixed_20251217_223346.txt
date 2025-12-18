@@ -1,0 +1,27 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1445
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\category_products_screen.dart
+Linha: 1421
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1438
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart
+Linha: 1421
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Ignore já existe
+----------------------------------------

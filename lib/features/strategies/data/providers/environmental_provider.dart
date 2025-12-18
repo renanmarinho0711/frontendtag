@@ -156,12 +156,12 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
           isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
           // ignore: argument_type_not_assignable
           isConnected: data['isConnected'] ?? data['conectado'] ?? state.isConnected,
-          apiKey: (data['apiKey']).toString() ?? data['chaveApi'] ?? state.apiKey,
-          city: (data['city']).toString() ?? data['cidade'] ?? state.city,
+          apiKey: ((data['apiKey']).toString()).toString() ?? data['chaveApi'] ?? state.apiKey,
+          city: ((data['city']).toString()).toString() ?? data['cidade'] ?? state.city,
           // ignore: argument_type_not_assignable
           currentTemperature: (data['currentTemperature'] ?? data['temperaturaAtual'] ?? state.currentTemperature).toDouble(),
-          currentCondition: (data['currentCondition']).toString() ?? data['condicaoAtual'] ?? state.currentCondition,
-          selectedFrequency: (data['selectedFrequency']).toString() ?? data['frequenciaSelecionada'] ?? state.selectedFrequency,
+          currentCondition: ((data['currentCondition']).toString()).toString() ?? data['condicaoAtual'] ?? state.currentCondition,
+          selectedFrequency: ((data['selectedFrequency']).toString()).toString() ?? data['frequenciaSelecionada'] ?? state.selectedFrequency,
         );
       } else {
         state = state.copyWith(isLoading: false, temperatureRanges: [], history: []);

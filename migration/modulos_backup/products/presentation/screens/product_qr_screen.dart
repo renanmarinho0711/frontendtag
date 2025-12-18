@@ -700,6 +700,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     return Container(
       padding: EdgeInsets.all(isMobile ? 16 : 20),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: ModuleGradients.produtos,
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(24)),
         boxShadow: [

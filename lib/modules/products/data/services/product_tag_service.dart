@@ -63,6 +63,7 @@ class ProductTagService {
     // ignore: argument_type_not_assignable
     if (response.statusCode == 201 || response.statusCode == 200) {
 
+      // ignore: argument_type_not_assignable
       return ProductTagModel.fromJson(jsonDecode(response.body));
 
     }
@@ -90,6 +91,7 @@ class ProductTagService {
     if (response.statusCode == 200) {
  // ignore: argument_type_not_assignable
 
+      // ignore: argument_type_not_assignable
       return ProductTagModel.fromJson(jsonDecode(response.body));
 
     } else if (response.statusCode == 404) {
@@ -123,6 +125,7 @@ class ProductTagService {
 
     if (response.statusCode == 200) {
 
+      // ignore: argument_type_not_assignable
       return ProductTagModel.fromJson(jsonDecode(response.body));
  // ignore: argument_type_not_assignable
 
@@ -181,6 +184,7 @@ class ProductTagService {
 
     if (response.statusCode == 200) {
 
+      // ignore: argument_type_not_assignable
       return ProductTagsList.fromJson(jsonDecode(response.body));
 
     } else if (response.statusCode == 404) {
@@ -213,6 +217,7 @@ class ProductTagService {
 
       final List<dynamic> data = jsonDecode(response.body);
 
+      // ignore: argument_type_not_assignable
       return data.map((e) => ProductTagModel.fromJson(e)).toList();
 
     }
@@ -249,6 +254,7 @@ class ProductTagService {
 
       final List<dynamic> data = jsonDecode(response.body);
 
+      // ignore: argument_type_not_assignable
       return data.map((e) => PriceSyncResult.fromJson(e)).toList();
 
     }
@@ -275,6 +281,7 @@ class ProductTagService {
 
     if (response.statusCode == 200) {
 
+      // ignore: argument_type_not_assignable
       return PriceSyncResult.fromJson(jsonDecode(response.body));
 
     }
@@ -303,6 +310,7 @@ class ProductTagService {
 
       final List<dynamic> data = jsonDecode(response.body);
 
+      // ignore: argument_type_not_assignable
       return data.map((e) => PriceSyncResult.fromJson(e)).toList();
 
     }
@@ -345,6 +353,7 @@ class ProductTagService {
 
       final List<dynamic> data = jsonDecode(response.body);
 
+      // ignore: argument_type_not_assignable
       return data.map((e) => ProductTagModel.fromJson(e)).toList();
 
     }

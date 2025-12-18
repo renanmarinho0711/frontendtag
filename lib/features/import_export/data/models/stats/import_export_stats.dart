@@ -214,10 +214,10 @@ class ImportExportStatisticsModel {
       // ignore: argument_type_not_assignable
       totalRecordsExported: json['totalRecordsExported'] ?? json['total_records_exported'] ?? 0,
       lastImportAt: json['lastImportAt'] != null || json['last_import_at'] != null
-          ? DateTime.tryParse((json['lastImportAt']).toString() ?? json['last_import_at'] ?? '')
+          ? DateTime.tryParse(((json['lastImportAt']).toString()).toString() ?? json['last_import_at'] ?? '')
           : null,
       lastExportAt: json['lastExportAt'] != null || json['last_export_at'] != null
-          ? DateTime.tryParse((json['lastExportAt']).toString() ?? json['last_export_at'] ?? '')
+          ? DateTime.tryParse(((json['lastExportAt']).toString()).toString() ?? json['last_export_at'] ?? '')
           : null,
       // ignore: argument_type_not_assignable
       pendingJobs: json['pendingJobs'] ?? json['pending_jobs'] ?? 0,

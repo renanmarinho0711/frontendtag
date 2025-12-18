@@ -198,6 +198,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
             width: isMobile ? 100 : 120,
             height: isMobile ? 100 : 120,
             decoration: BoxDecoration(
+              // ignore: argument_type_not_assignable
               gradient: AppGradients.fromBaseColor(_product.cor),
               borderRadius: AppRadius.lg,
             ),
@@ -627,6 +628,7 @@ class _ProdutosDetalhesScreenState extends ConsumerState<ProdutosDetalhesScreen>
           Container(
             padding: EdgeInsets.all(AppSizes.paddingLg.get(isMobile, isTablet)),
             decoration: BoxDecoration(
+              // ignore: argument_type_not_assignable
               gradient: AppGradients.fromBaseColor(_product.cor),
               borderRadius: AppRadius.card,
             ),

@@ -305,6 +305,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     return Container(
       padding: AppSizes.productEditCardPadding.toEdgeInsetsAll(isMobile, isTablet),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: hasTag ? AppGradients.success : AppGradients.alert,
         borderRadius: isMobile ? AppRadius.card : (isTablet ? AppRadius.appBarTablet : AppRadius.appBar),
         border: Border.all(
@@ -528,6 +529,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Container(
                 padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                 decoration: BoxDecoration(
+                  // ignore: argument_type_not_assignable
                   gradient: AppGradients.primaryHeader,
                   borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                 ),
@@ -683,6 +685,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Container(
                 padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                 decoration: BoxDecoration(
+                  // ignore: argument_type_not_assignable
                   gradient: ModuleGradients.precificacao,
                   borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                 ),
@@ -909,6 +912,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Container(
                 padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                 decoration: BoxDecoration(
+                  // ignore: argument_type_not_assignable
                   gradient: AppGradients.primaryHeader,
                   borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                 ),

@@ -1278,22 +1278,31 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
 
           final stats = ProductStatisticsModel(
 
+            // ignore: argument_type_not_assignable
             totalProdutos: data['totalProducts'] ?? data['totalProdutos'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             comTag: data['withTag'] ?? data['comTag'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             semTag: data['withoutTag'] ?? data['semTag'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             ativos: data['active'] ?? data['ativos'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             inativos: data['inactive'] ?? data['inativos'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             categorias: data['categories'] ?? data['categorias'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             valorEstoque: (data['stockValue'] ?? data['valorEstoque'] ?? 0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             ticketMedio: (data['averageTicket'] ?? data['ticketMedio'] ?? 0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             margemMedia: (data['averageMargin'] ?? data['margemMedia'] ?? 0).toDouble(),
 
             ultimaAtualizacao: data['lastUpdate'] != null 
@@ -1302,12 +1311,16 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
 
                 : DateTime.now(),
 
+            // ignore: argument_type_not_assignable
             crescimentoMensal: (data['monthlyGrowth'] ?? data['crescimentoMensal'] ?? 0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             produtosMaisVendidos: data['topSelling'] ?? data['produtosMaisVendidos'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             alertasEstoque: data['stockAlerts'] ?? data['alertasEstoque'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             tagsDisponiveis: data['availableTags'] ?? data['tagsDisponiveis'] ?? 0,
 
           );
@@ -1330,16 +1343,18 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
 
                 id: cat['id']?.toString() ?? '',
 
-                nome: cat['name'] ?? cat['nome'] ?? '',
+                nome: (cat['name']).toString() ?? cat['nome'] ?? '',
 
-                icone: _getCategoryIcon(cat['name'] ?? cat['nome'] ?? ''),
+                icone: _getCategoryIcon((cat['name']).toString() ?? cat['nome'] ?? ''),
 
-                cor: _getCategoryColor(cat['name'] ?? cat['nome'] ?? ''),
+                cor: _getCategoryColor((cat['name']).toString() ?? cat['nome'] ?? ''),
 
-                gradient: _getCategoryGradient(cat['name'] ?? cat['nome'] ?? ''),
+                gradient: _getCategoryGradient((cat['name']).toString() ?? cat['nome'] ?? ''),
 
+                // ignore: argument_type_not_assignable
                 quantidade: cat['totalProducts'] ?? cat['totalProdutos'] ?? cat['quantidade'] ?? 0,
 
+                // ignore: argument_type_not_assignable
                 tagAssociadas: cat['withTag'] ?? cat['comTag'] ?? cat['tagAssociadas'] ?? 0,
 
               );
@@ -2220,22 +2235,29 @@ class StockNotifier extends StateNotifier<StockState> {
 
             productId: data['productId']?.toString() ?? data['id']?.toString() ?? '',
 
-            nome: data['name'] ?? data['nome'] ?? '',
+            nome: (data['name']).toString() ?? data['nome'] ?? '',
 
-            categoria: data['category'] ?? data['categoria'] ?? '',
+            categoria: (data['category']).toString() ?? data['categoria'] ?? '',
 
+            // ignore: argument_type_not_assignable
             estoqueAtual: data['currentStock'] ?? data['estoqueAtual'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             estoqueMinimo: data['minStock'] ?? data['estoqueMinimo'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             estoqueMaximo: data['maxStock'] ?? data['estoqueMaximo'] ?? 0,
 
+            // ignore: argument_type_not_assignable
             custoUnitario: (data['unitCost'] ?? data['custoUnitario'] ?? 0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             valorTotal: (data['totalValue'] ?? data['valorTotal'] ?? 0).toDouble(),
 
+            // ignore: argument_type_not_assignable
             emAlerta: data['isAlert'] ?? data['emAlerta'] ?? false,
 
+            // ignore: argument_type_not_assignable
             esgotado: data['isOut'] ?? data['esgotado'] ?? false,
 
             ultimaMovimentacao: data['lastMovement'] != null

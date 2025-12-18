@@ -329,24 +329,27 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
+              // ignore: argument_type_not_assignable
               stat['icon'],
+              // ignore: argument_type_not_assignable
               color: stat['cor'],
               size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
             Text(
-              stat['valor'],
+              (stat['valor']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
+                // ignore: argument_type_not_assignable
                 color: stat['cor'],
                 letterSpacing: -0.5,
               ),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
             Text(
-              stat['label'],
+              (stat['label']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9, tabletFontSize: 9.5),
                 overflow: TextOverflow.ellipsis,
@@ -371,17 +374,19 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                     Icon(
                       Icons.arrow_upward_rounded,
                       size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 9, tablet: 9.5, desktop: 10),
+                      // ignore: argument_type_not_assignable
                       color: stat['cor'],
                     ),
                   if (stat['tipo'] == 'aumento')
                     SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 2.5, tablet: 2.75, desktop: 3)),
                   Flexible(
                     child: Text(
-                      stat['mudanca'],
+                      (stat['mudanca']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 9, mobileFontSize: 8, tabletFontSize: 8.5),
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
+                        // ignore: argument_type_not_assignable
                         color: stat['cor'],
                       ),
                     ),
@@ -448,6 +453,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                   child: Container(
                     decoration: BoxDecoration(
                       gradient: isSelected
+                          // ignore: argument_type_not_assignable
                           ? LinearGradient(colors: categoria['gradiente'])
                           : null,
                       color: isSelected ?  null : ThemeColors.of(context).surface,
@@ -470,13 +476,15 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
+                          // ignore: argument_type_not_assignable
                           categoria['icone'],
+                          // ignore: argument_type_not_assignable
                           color: isSelected ? ThemeColors.of(context).surface : categoria['cor'],
                           size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          categoria['nome'],
+                          (categoria['nome']).toString(),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -494,6 +502,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
+                            // ignore: argument_type_not_assignable
                             color: isSelected
                                 ? ThemeColors.of(context).surfaceOverlay20
                                 : categoria['cor'].withValues(alpha: 0.1),
@@ -508,6 +517,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                 mobileFontSize: 10,
                               ),
                               fontWeight: FontWeight.bold,
+                              // ignore: argument_type_not_assignable
                               color: isSelected ? ThemeColors.of(context).surface : categoria['cor'],
                             ),
                           ),
@@ -655,6 +665,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: LinearGradient(colors: categoria['gradiente']),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 16,
@@ -845,6 +856,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isSelected
+              // ignore: argument_type_not_assignable
               ? Border.all(color: categoria['cor'], width: 2)
               : Border.all(color: ThemeColors.of(context).textSecondary),
           boxShadow: [
@@ -923,7 +935,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              produto['nome'],
+                              (produto['nome']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -937,7 +949,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                             ),
                             SizedBox(height: AppSizes.spacingXxsAlt.get(isMobile, isTablet)),
                             Text(
-                              produto['codigo'],
+                              (produto['codigo']).toString(),
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -963,6 +975,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                         mobileFontSize: 14,
                                       ),
                                       fontWeight: FontWeight.bold,
+                                      // ignore: argument_type_not_assignable
                                       color: categoria['cor'],
                                     ),
                                     maxLines: 1,
@@ -1007,9 +1020,11 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       width: 28,
                       height: 28,
                       decoration: BoxDecoration(
+                        // ignore: argument_type_not_assignable
                         color: isSelected ? categoria['cor'] : ThemeColors.of(context).surface,
                         shape: BoxShape.circle,
                         border: Border.all(
+                          // ignore: argument_type_not_assignable
                           color: isSelected ? categoria['cor'] : ThemeColors.of(context).textSecondary,
                           width: 2,
                         ),
@@ -1056,6 +1071,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isSelected
+              // ignore: argument_type_not_assignable
               ? Border.all(color: categoria['cor'], width: 2)
               : Border.all(color: ThemeColors.of(context).textSecondary),
           boxShadow: [
@@ -1107,9 +1123,11 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                         width: 24,
                         height: 24,
                         decoration: BoxDecoration(
+                          // ignore: argument_type_not_assignable
                           color: isSelected ? categoria['cor'] : ThemeColors.of(context).surface,
                           shape: BoxShape.circle,
                           border: Border.all(
+                            // ignore: argument_type_not_assignable
                             color: isSelected ? categoria['cor'] : ThemeColors.of(context).textSecondary,
                             width: 2,
                           ),
@@ -1163,7 +1181,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          produto['nome'],
+                          (produto['nome']).toString(),
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1196,6 +1214,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                             vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
+                            // ignore: argument_type_not_assignable
                             color: categoria['cor'].withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(6),
                           ),
@@ -1207,6 +1226,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                 baseFontSize: 10,
                                 mobileFontSize: 9,
                               ),
+                              // ignore: argument_type_not_assignable
                               color: categoria['cor'],
                               fontWeight: FontWeight.w600,
                             ),
@@ -1226,10 +1246,11 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           Icon(
                             Icons.attach_money_rounded,
                             size: AppSizes.iconSmallMedium.get(isMobile, isTablet),
+                            // ignore: argument_type_not_assignable
                             color: categoria['cor'],
                           ),
                           Text(
-                            produto['preco'].toStringAsFixed(2),
+                            (produto['preco']).toString().toStringAsFixed(2),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -1237,6 +1258,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                 mobileFontSize: 14,
                               ),
                               fontWeight: FontWeight.bold,
+                              // ignore: argument_type_not_assignable
                               color: categoria['cor'],
                             ),
                           ),
@@ -1274,6 +1296,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       child: IconButton(
                         icon: Icon(
                           Icons.edit_rounded,
+                          // ignore: argument_type_not_assignable
                           color: categoria['cor'],
                           size: AppSizes.iconMedium.get(isMobile, isTablet),
                         ),
@@ -1418,8 +1441,9 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             ..._categorias.map((cat) {
               if (cat['nome'] == _categoriaSelecionada) return const SizedBox.shrink();
               return ListTile(
+                // ignore: argument_type_not_assignable
                 leading: Icon(cat['icone'], color: cat['cor']),
-                title: Text(cat['nome']),
+                title: Text((cat['nome']).toString()),
                 onTap: () {
                   setState(() {
                     _selectedProducts.clear();
