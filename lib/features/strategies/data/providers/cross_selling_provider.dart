@@ -367,7 +367,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
           for (final t in trilhasList) {
             trilhas.add(OffersTrailModel(
               id: t['id']?.toString() ?? '',
-              nome: ((t['nome']).toString()).toString() ?? t['name'] ?? '',
+              nome: (((t['nome']).toString()).toString()).toString() ?? t['name'] ?? '',
               produtos: t['produtos'] is List 
                   // ignore: argument_type_not_assignable
                   ? List<String>.from(t['produtos']) 
@@ -404,7 +404,7 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
           destacarInicio: data['destacarInicio'] ?? data['highlightStart'] ?? state.destacarInicio,
           // ignore: argument_type_not_assignable
           destacarFim: data['destacarFim'] ?? data['highlightEnd'] ?? state.destacarFim,
-          estilo: ((data['estilo']).toString()).toString() ?? data['style'] ?? state.estilo,
+          estilo: (((data['estilo']).toString()).toString()).toString() ?? data['style'] ?? state.estilo,
           // ignore: argument_type_not_assignable
           notificarCliente: data['notificarCliente'] ?? data['notifyClient'] ?? state.notificarCliente,
         );
@@ -675,7 +675,7 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
           for (final c in combosList) {
             combos.add(SmartComboModel(
               id: c['id']?.toString() ?? '',
-              nome: ((c['nome']).toString()).toString() ?? c['name'] ?? '',
+              nome: (((c['nome']).toString()).toString()).toString() ?? c['name'] ?? '',
               emoji: c['emoji']?.toString() ?? '??',
               produtos: c['produtos'] is List 
                   // ignore: argument_type_not_assignable
@@ -717,7 +717,7 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
           sugestaoAutomatica: data['sugestaoAutomatica'] ?? data['autoSuggestion'] ?? state.sugestaoAutomatica,
           // ignore: argument_type_not_assignable
           integracaoPdv: data['integracaoPdv'] ?? data['pdvIntegration'] ?? state.integracaoPdv,
-          tipoDesconto: ((data['tipoDesconto']).toString()).toString() ?? data['discountType'] ?? state.tipoDesconto,
+          tipoDesconto: (((data['tipoDesconto']).toString()).toString()).toString() ?? data['discountType'] ?? state.tipoDesconto,
           // ignore: argument_type_not_assignable
           exibirEconomia: data['exibirEconomia'] ?? data['showSavings'] ?? state.exibirEconomia,
         );

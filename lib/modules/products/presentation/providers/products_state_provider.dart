@@ -1343,13 +1343,13 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
 
                 id: cat['id']?.toString() ?? '',
 
-                nome: (cat['name']).toString() ?? cat['nome'] ?? '',
+                nome: ((cat['name']).toString()).toString() ?? cat['nome'] ?? '',
 
-                icone: _getCategoryIcon((cat['name']).toString() ?? cat['nome'] ?? ''),
+                icone: _getCategoryIcon(((cat['name']).toString()).toString() ?? cat['nome'] ?? ''),
 
-                cor: _getCategoryColor((cat['name']).toString() ?? cat['nome'] ?? ''),
+                cor: _getCategoryColor(((cat['name']).toString()).toString() ?? cat['nome'] ?? ''),
 
-                gradient: _getCategoryGradient((cat['name']).toString() ?? cat['nome'] ?? ''),
+                gradient: _getCategoryGradient(((cat['name']).toString()).toString() ?? cat['nome'] ?? ''),
 
                 // ignore: argument_type_not_assignable
                 quantidade: cat['totalProducts'] ?? cat['totalProdutos'] ?? cat['quantidade'] ?? 0,
@@ -2235,9 +2235,9 @@ class StockNotifier extends StateNotifier<StockState> {
 
             productId: data['productId']?.toString() ?? data['id']?.toString() ?? '',
 
-            nome: (data['name']).toString() ?? data['nome'] ?? '',
+            nome: ((data['name']).toString()).toString() ?? data['nome'] ?? '',
 
-            categoria: (data['category']).toString() ?? data['categoria'] ?? '',
+            categoria: ((data['category']).toString()).toString() ?? data['categoria'] ?? '',
 
             // ignore: argument_type_not_assignable
             estoqueAtual: data['currentStock'] ?? data['estoqueAtual'] ?? 0,

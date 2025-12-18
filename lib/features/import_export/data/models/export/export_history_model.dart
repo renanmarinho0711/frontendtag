@@ -57,10 +57,10 @@ class ExportHistoryModel {
         (f) => f.id == json['format'],
         orElse: () => ExportFormat.excel,
       ),
-      dateTime: DateTime.tryParse(((json['dateTime']).toString()).toString() ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse((((json['dateTime']).toString()).toString()).toString() ?? json['data'] ?? '') ?? DateTime.now(),
       // ignore: argument_type_not_assignable
       recordCount: json['recordCount'] ?? json['total'] as int,
-      fileSize: ((json['fileSize']).toString()).toString() ?? json['tamanho'] ?? '0 KB',
+      fileSize: (((json['fileSize']).toString()).toString()).toString() ?? json['tamanho'] ?? '0 KB',
       downloadUrl: (json['downloadUrl']).toString(),
       // ignore: argument_type_not_assignable
       isAvailable: json['isAvailable'] ?? true,

@@ -221,11 +221,11 @@ class Produto extends BaseModel {
 
       updatedAt: DateTime.parse(json['updatedAt'] as String),
 
-      codigo: ((json['código']).toString()).toString() ?? json['barcode'] ?? '',
+      codigo: (((json['código']).toString()).toString()).toString() ?? json['barcode'] ?? '',
 
-      nome: ((json['nome']).toString()).toString() ?? json['name'] ?? '',
+      nome: (((json['nome']).toString()).toString()).toString() ?? json['name'] ?? '',
 
-      descricao: ((json['descricao']).toString()).toString() ?? json['description'],
+      descricao: (((json['descricao']).toString()).toString()).toString() ?? json['description'],
 
       // ignore: argument_type_not_assignable
       preco: (json['preco'] ?? json['price'] ?? 0 as num).toDouble(),

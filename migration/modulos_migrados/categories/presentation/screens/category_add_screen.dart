@@ -23,6 +23,7 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
   final _descricaoController = TextEditingController();
   String? _categoriaPai;
   IconData _iconeSelecionado = Icons.category_rounded;
+  // ignore: implicit_this_reference_in_initializer
   Color _corSelecionada = ThemeColors.of(context).blueMaterial;
   late TabController _tabController;
 
@@ -51,17 +52,29 @@ class _CategoriasAdicionarScreenState extends ConsumerState<CategoriasAdicionarS
   ];
 
   final List<Color> _coresDisponiveis = [
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueMaterial,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).greenMaterial,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).yellowGold,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueCyan,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueLight,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).brownMain,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).cyanMain,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).error,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).greenLightMaterial,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).gold,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueIndigo,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).tealMain,
   ];
 

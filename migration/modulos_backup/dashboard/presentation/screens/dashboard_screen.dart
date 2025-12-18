@@ -4905,11 +4905,11 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             ),
           ),
           title: Text(
-            isProduto ? (r['nome']).toString() ?? '' : r['mac'] ?? '',
+            isProduto ? ((r['nome']).toString()).toString() ?? '' : r['mac'] ?? '',
             style: const TextStyle(fontWeight: FontWeight.w600),
           ),
           subtitle: Text(
-            isProduto ? (r['codigo']).toString() ?? '' : r['produto'] ?? 'Sem vínculo',
+            isProduto ? ((r['codigo']).toString()).toString() ?? '' : r['produto'] ?? 'Sem vínculo',
             style: const TextStyle(
               fontSize: 12,
               color: AppThemeColors.textSecondary,
@@ -4939,7 +4939,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                   ),
                 ),
           onTap: () {
-            close(context, (r['nome']).toString() ?? r['mac']);
+            close(context, ((r['nome']).toString()).toString() ?? r['mac']);
           },
         );
       },

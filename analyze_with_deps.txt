@@ -1,38 +1,3 @@
-Resolving dependencies...
-Downloading packages...
-  _fe_analyzer_shared 47.0.0 (92.0.0 available)
-  analyzer 4.7.0 (9.0.0 available)
-  analyzer_plugin 0.10.0 (0.13.11 available)
-  characters 1.4.0 (1.4.1 available)
-  connectivity_plus 6.1.5 (7.0.0 available)
-  dart_code_metrics 4.19.2 (discontinued)
-  dart_style 2.2.4 (3.1.3 available)
-  file 6.1.4 (7.0.1 available)
-  file_picker 6.2.1 (10.3.7 available)
-  flutter_lints 3.0.2 (6.0.0 available)
-  flutter_riverpod 2.6.1 (3.0.3 available)
-  flutter_secure_storage 9.2.4 (10.0.0 available)
-  flutter_secure_storage_linux 1.2.3 (3.0.0 available)
-  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
-  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
-  flutter_secure_storage_web 1.2.1 (2.1.0 available)
-  flutter_secure_storage_windows 3.1.2 (4.1.0 available)
-  intl 0.18.1 (0.20.2 available)
-  js 0.6.7 (0.7.2 available)
-  lints 3.0.0 (6.0.0 available)
-  matcher 0.12.17 (0.12.18 available)
-  material_color_utilities 0.11.1 (0.13.0 available)
-  mobile_scanner 5.2.3 (7.1.4 available)
-  riverpod 2.6.1 (3.0.3 available)
-  shared_preferences 2.5.3 (2.5.4 available)
-  shared_preferences_android 2.4.17 (2.4.18 available)
-  test_api 0.7.7 (0.7.8 available)
-Got dependencies!
-1 package is discontinued.
-27 packages have newer versions incompatible with dependency constraints.
-Try `flutter pub outdated` for more information.
-Analyzing frontend...                                           
-
   error - Expected a method, getter, setter or operator declaration - lib\core\di\injection.config.dart:1:1 - expected_executable
   error - Undefined class 'Stub' - lib\core\di\injection.config.dart:1:3 - undefined_class
    info - The variable name 'temporário' isn't a lowerCamelCase identifier - lib\core\di\injection.config.dart:1:8 - non_constant_identifier_names
@@ -268,13 +233,13 @@ warning - The import of 'package:tagbean/design_system/theme/theme_colors_dynami
    info - Don't use 'BuildContext's across async gaps - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1059:74 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1067:43 - use_build_context_synchronously
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1257:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1257:64 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1257:77 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1261:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1261:66 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1261:79 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1269:46 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1282:49 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1291:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1291:67 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\dashboard\presentation\screens\dashboard_screen.dart:1291:80 - dead_null_aware_expression
   error - Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/cards/cards.dart' - lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart:11:8 - uri_does_not_exist
   error - Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/dialogs/dialogs.dart' - lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart:12:8 - uri_does_not_exist
   error - Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/sections/sections.dart' - lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart:13:8 - uri_does_not_exist
@@ -539,16 +504,16 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:81:46 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:91:70 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:217:31 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:217:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:217:94 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:220:31 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:220:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\stats\import_export_stats.dart:220:94 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_data.dart:23:50 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_data.dart:24:42 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_data.dart:25:46 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\export\export_history_model.dart:60:35 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_history_model.dart:60:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_history_model.dart:60:94 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\export\export_history_model.dart:63:17 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_history_model.dart:63:63 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_history_model.dart:63:76 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_result_model.dart:28:74 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_result_model.dart:86:50 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\export\export_result_model.dart:87:42 - dead_null_aware_expression
@@ -564,7 +529,7 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_error.dart:96:48 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_error.dart:128:48 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\import\import_history_model.dart:80:35 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_history_model.dart:80:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_history_model.dart:80:94 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_history_model.dart:146:38 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_history_model.dart:147:60 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_history_model.dart:148:50 - dead_null_aware_expression
@@ -586,7 +551,7 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import\import_template.dart:80:70 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:369:50 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\import_export_models.dart:371:35 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:371:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:371:94 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:385:50 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:733:38 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:743:45 - dead_null_aware_expression
@@ -597,9 +562,9 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1156:74 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1296:50 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\import_export_models.dart:1306:35 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1306:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1306:94 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\import_export_models.dart:1311:17 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1311:63 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1311:76 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1561:44 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1563:44 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:1565:52 - dead_null_aware_expression
@@ -660,9 +625,9 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:3366:70 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:3437:52 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\import_export_models.dart:3535:31 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:3535:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:3535:94 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\import_export_models.dart:3541:31 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:3541:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\import_export_models.dart:3541:94 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:77:38 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:78:60 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:79:50 - dead_null_aware_expression
@@ -670,9 +635,9 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:81:46 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:91:70 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\stats\import_export_stats.dart:217:31 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:217:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:217:94 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\import_export\data\models\stats\import_export_stats.dart:220:31 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:220:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models\stats\import_export_stats.dart:220:94 - dead_null_aware_expression
   error - Conditions must have a static type of 'bool' - lib\features\import_export\presentation\screens\batch_operations_screen.dart:933:23 - non_bool_condition
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\import_export\presentation\screens\batch_operations_screen.dart:1288:31 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\import_export\presentation\screens\batch_operations_screen.dart:1291:40 - use_build_context_synchronously
@@ -759,17 +724,17 @@ warning - The left operand can't be null, so the right operand is never executed
   error - The getter 'categoryDefault' isn't defined for the type 'ThemeColorsData' - lib\features\products\presentation\helpers\category_color_helper.dart:52:23 - undefined_getter
   error - The getter 'beauty_products' isn't defined for the type 'Icons' - lib\features\products\presentation\helpers\category_color_helper.dart:68:22 - undefined_getter
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\products\presentation\providers\products_state_provider.dart:666:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:666:64 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:666:77 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\products\presentation\providers\products_state_provider.dart:667:41 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:667:82 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:667:95 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\products\presentation\providers\products_state_provider.dart:668:40 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:668:81 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:668:94 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\products\presentation\providers\products_state_provider.dart:669:48 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:669:89 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:669:102 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\products\presentation\providers\products_state_provider.dart:1113:19 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:1113:61 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:1113:74 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\products\presentation\providers\products_state_provider.dart:1114:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:1114:70 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\providers\products_state_provider.dart:1114:83 - dead_null_aware_expression
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\products\presentation\screens\product_add_screen.dart:373:28 - use_build_context_synchronously
 warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\screens\product_edit_screen.dart:130:78 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\products\presentation\screens\product_edit_screen.dart:393:48 - dead_null_aware_expression
@@ -869,49 +834,49 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The library 'package:tagbean/features/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryItem' - lib\features\products\products.dart:17:26 - undefined_hidden_name
 warning - The library 'package:tagbean/features/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryModel' - lib\features\products\products.dart:17:95 - undefined_hidden_name
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:117:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:117:67 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:117:80 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:118:26 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:118:73 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:118:86 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:121:22 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:121:65 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:121:78 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:123:27 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:123:75 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:123:88 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:125:25 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:125:71 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:125:84 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:126:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:126:63 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:126:76 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:129:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:129:77 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:129:90 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\reports\presentation\providers\reports_provider.dart:130:22 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:130:65 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:130:78 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:236:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:236:67 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:236:80 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:237:26 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:237:73 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:237:86 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:238:48 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:238:99 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:238:112 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:239:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:239:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:239:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:325:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:325:67 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:325:80 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:326:26 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:326:73 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:326:86 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:329:22 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:329:65 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:329:78 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:330:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:330:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:330:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:333:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:333:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:333:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:459:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:459:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:459:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:460:26 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:460:73 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:460:86 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:464:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:464:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:464:82 - dead_null_aware_expression
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\features\reports\presentation\screens\audit_report_screen.dart:630:28 - list_element_type_not_assignable
    info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\reports\presentation\screens\operational_report_screen.dart:30:28 - deprecated_member_use_from_same_package
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\features\reports\presentation\screens\operational_report_screen.dart:761:21 - list_element_type_not_assignable
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\screens\operational_report_screen.dart:836:101 - argument_type_not_assignable
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\screens\operational_report_screen.dart:836:114 - argument_type_not_assignable
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\features\reports\presentation\screens\performance_report_screen.dart:587:21 - list_element_type_not_assignable
 warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\screens\performance_report_screen.dart:1056:65 - dead_null_aware_expression
   error - The returned type 'dynamic' isn't returnable from a 'Widget' function, as required by the closure's context - lib\features\reports\presentation\screens\reports_menu_screen.dart:939:57 - return_of_invalid_type_from_closure
@@ -1026,35 +991,35 @@ warning - The generic type 'List<dynamic>' should have explicit type arguments b
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\settings\presentation\screens\users_screen.dart:2074:63 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\settings\presentation\screens\users_screen.dart:2074:97 - use_build_context_synchronously
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\calendar_provider.dart:650:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\calendar_provider.dart:650:63 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\calendar_provider.dart:650:76 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\calendar_provider.dart:899:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\calendar_provider.dart:899:60 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\calendar_provider.dart:899:73 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\cross_selling_provider.dart:370:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:370:60 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:370:73 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\cross_selling_provider.dart:407:19 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:407:63 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:407:76 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\cross_selling_provider.dart:678:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:678:60 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:678:73 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\cross_selling_provider.dart:720:25 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:720:75 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\cross_selling_provider.dart:720:88 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\environmental_provider.dart:159:19 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:159:63 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:159:76 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\environmental_provider.dart:160:17 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:160:59 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:160:72 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\environmental_provider.dart:163:29 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:163:83 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:163:96 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\environmental_provider.dart:164:30 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:164:85 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\environmental_provider.dart:164:98 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\performance_provider.dart:158:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\performance_provider.dart:158:61 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\performance_provider.dart:158:74 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\performance_provider.dart:442:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\performance_provider.dart:442:60 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\performance_provider.dart:442:73 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\performance_provider.dart:737:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\performance_provider.dart:737:60 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\performance_provider.dart:737:73 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\visual_provider.dart:592:21 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\visual_provider.dart:592:60 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\visual_provider.dart:592:73 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\features\strategies\data\providers\visual_provider.dart:630:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\visual_provider.dart:630:73 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\visual_provider.dart:630:86 - dead_null_aware_expression
   error - The returned type 'List<dynamic>' isn't returnable from a 'List<StrategyExecution>' function, as required by the closure's context - lib\features\strategies\data\repositories\strategies_repository.dart:333:18 - return_of_invalid_type_from_closure
    info - Use the generic function type syntax to declare the parameter '' - lib\features\strategies\data\repositories\strategies_repository.dart:333:28 - use_function_type_syntax_for_parameters
   error - Undefined class 'toString' - lib\features\strategies\data\repositories\strategies_repository.dart:333:28 - undefined_class
@@ -1068,7 +1033,7 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:623:42 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:625:56 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\repositories\strategies_repository.dart:627:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:627:64 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:627:77 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:639:66 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:641:56 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:650:52 - dead_null_aware_expression
@@ -1082,9 +1047,9 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:737:80 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:757:42 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\repositories\strategies_repository.dart:759:12 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:759:40 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:759:53 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\repositories\strategies_repository.dart:761:17 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:761:54 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:761:67 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:763:42 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:786:46 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\repositories\strategies_repository.dart:825:60 - dead_null_aware_expression
@@ -1272,19 +1237,6 @@ warning - The left operand can't be null, so the right operand is never executed
   error - Conditions must have a static type of 'bool' - lib\modules\categories\presentation\screens\categories_stats_screen.dart:1329:22 - non_bool_condition
   error - Undefined name 'constraints' - lib\modules\categories\presentation\screens\categories_stats_screen.dart:1421:55 - undefined_identifier
   error - Methods can't be invoked in constant expressions - lib\modules\categories\presentation\screens\categories_stats_screen.dart:1648:38 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:26:42 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:54:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:55:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:56:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:57:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:58:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:59:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:60:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:61:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:62:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:63:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:64:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\categories\presentation\screens\category_add_screen.dart:65:20 - implicit_this_reference_in_initializer
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\categories\presentation\screens\category_edit_screen.dart:191:35 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\categories\presentation\screens\category_edit_screen.dart:940:39 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\categories\presentation\screens\category_edit_screen.dart:1020:39 - use_build_context_synchronously
@@ -1297,70 +1249,50 @@ warning - The left operand can't be null, so the right operand is never executed
   error - Target of URI doesn't exist: 'presentation/widgets/estratégias_lucro_card.dart' - lib\modules\dashboard\dashboard.dart:22:8 - uri_does_not_exist
    info - Dangling library doc comment - lib\modules\dashboard\data\models\dashboard_models.dart:1:1 - dangling_library_doc_comments
   error - Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/estratégias_ativas_card.dart' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:28:8 - uri_does_not_exist
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:61 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:76 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:70:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:70:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:70:60 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:70:75 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:75:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:75:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:75:61 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:75:76 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:80:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:80:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:80:63 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:80:78 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:85:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:85:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:85:65 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:85:80 - implicit_this_reference_in_initializer
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:66:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:66:61 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:72:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:72:60 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:78:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:78:61 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:84:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:84:63 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:90:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:90:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:90:64 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:90:79 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:95:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:95:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:95:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:95:77 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:100:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:100:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:100:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:100:77 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:105:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:105:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:105:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:105:77 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:110:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:110:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:110:65 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:110:80 - implicit_this_reference_in_initializer
-warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:987:3 - strict_raw_type
-  error - The method 'EstrategiasAtivasCard' isn't defined for the type '_DashboardScreenState' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:1376:9 - undefined_method
-  error - The method 'EstrategiasAtivasCard' isn't defined for the type '_DashboardScreenState' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:1427:9 - undefined_method
-  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2196:28 - undefined_identifier
-  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2196:35 - illegal_character
-  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2285:30 - undefined_identifier
-  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2285:37 - illegal_character
-  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2286:29 - undefined_identifier
-  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2286:36 - illegal_character
-  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2300:30 - undefined_identifier
-  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2300:37 - illegal_character
-  error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4126:30 - list_element_type_not_assignable
-   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4407:28 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4414:41 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4417:72 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4425:43 - use_build_context_synchronously
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4913:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4913:64 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4917:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4917:66 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4925:46 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4938:49 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4947:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4947:67 - dead_null_aware_expression
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:90:65 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:96:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:96:64 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:102:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:102:62 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:108:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:108:62 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:114:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:114:62 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:120:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:120:65 - const_eval_method_invocation
+warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:997:3 - strict_raw_type
+  error - The method 'EstrategiasAtivasCard' isn't defined for the type '_DashboardScreenState' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:1386:9 - undefined_method
+  error - The method 'EstrategiasAtivasCard' isn't defined for the type '_DashboardScreenState' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:1437:9 - undefined_method
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2206:28 - undefined_identifier
+  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2206:35 - illegal_character
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2295:30 - undefined_identifier
+  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2295:37 - illegal_character
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2296:29 - undefined_identifier
+  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2296:36 - illegal_character
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2310:30 - undefined_identifier
+  error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2310:37 - illegal_character
+  error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4136:30 - list_element_type_not_assignable
+   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4417:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4424:41 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4427:72 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4435:43 - use_build_context_synchronously
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4923:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4923:77 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4927:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4927:79 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4935:46 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4948:49 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4957:28 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4957:80 - dead_null_aware_expression
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\atalhos_rapidos_card.dart:274:35 - undefined_identifier
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\atalhos_rapidos_card.dart:286:41 - undefined_identifier
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\atalhos_rapidos_card.dart:288:60 - undefined_identifier
@@ -1477,17 +1409,17 @@ warning - The left operand can't be null, so the right operand is never executed
 warning - The stack trace variable 'toDouble' isn't used and can be removed - lib\modules\products\presentation\providers\products_state_provider.dart:649:16 - unused_catch_stack
   error - Expected to find ')' - lib\modules\products\presentation\providers\products_state_provider.dart:649:27 - expected_token
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\products\presentation\providers\products_state_provider.dart:1346:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1346:51 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1346:64 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\products\presentation\providers\products_state_provider.dart:1348:41 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1348:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1348:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\products\presentation\providers\products_state_provider.dart:1350:40 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1350:68 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1350:81 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\products\presentation\providers\products_state_provider.dart:1352:48 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1352:76 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:1352:89 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\products\presentation\providers\products_state_provider.dart:2238:19 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:2238:48 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:2238:61 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\modules\products\presentation\providers\products_state_provider.dart:2240:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:2240:57 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\modules\products\presentation\providers\products_state_provider.dart:2240:70 - dead_null_aware_expression
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\product_add_screen.dart:372:28 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\product_add_screen.dart:441:34 - use_build_context_synchronously
   error - Methods can't be invoked in constant expressions - lib\modules\products\presentation\screens\product_add_screen.dart:511:67 - const_eval_method_invocation
@@ -1655,11 +1587,11 @@ warning - The library 'package:tagbean/modules/products/presentation/providers/p
   error - The method 'storeById' isn't defined for the type 'ApiConstants' - lib\shared\data\repositories\stores_repository.dart:149:20 - undefined_method
   error - The method 'storeById' isn't defined for the type 'ApiConstants' - lib\shared\data\repositories\stores_repository.dart:221:50 - undefined_method
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\shared\models\models.dart:224:15 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\shared\models\models.dart:224:59 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\shared\models\models.dart:224:72 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\shared\models\models.dart:226:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\shared\models\models.dart:226:55 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\shared\models\models.dart:226:68 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - lib\shared\models\models.dart:228:18 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - lib\shared\models\models.dart:228:65 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\shared\models\models.dart:228:78 - dead_null_aware_expression
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\categories\data\models\category_models.dart:150:22 - deprecated_member_use
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\categories\data\models\category_models.dart:483:24 - deprecated_member_use
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\categories\presentation\providers\categories_provider.dart:152:31 - deprecated_member_use
@@ -1724,13 +1656,13 @@ warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type a
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4328:72 - deprecated_member_use
    info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4400:28 - use_build_context_synchronously
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4908:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4908:51 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4908:64 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4912:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4912:53 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4912:66 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4920:46 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4933:49 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4942:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4942:54 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4942:67 - dead_null_aware_expression
   error - The getter 'tealMainOverlay60' isn't defined for the type 'AppThemeColors' - migration\modulos_backup\dashboard\presentation\widgets\estrategias_lucro_card.dart:23:59 - undefined_getter
   error - The getter 'greenMainOverlay30' isn't defined for the type 'AppThemeColors' - migration\modulos_backup\dashboard\presentation\widgets\estrategias_lucro_card.dart:30:35 - undefined_getter
   error - The getter 'primaryColor' isn't defined for the type 'ThemeColorsData' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_app_bar.dart:514:25 - undefined_getter
@@ -1773,17 +1705,17 @@ warning - The left operand can't be null, so the right operand is never executed
   error - A value of type 'dynamic' can't be assigned to a variable of type 'List<dynamic>' - migration\modulos_backup\products\data\services\product_tag_service.dart:177:34 - invalid_assignment
   error - A value of type 'dynamic' can't be returned from the method 'unlinkAllTagsFromProduct' because it has a return type of 'Future<int>' - migration\modulos_backup\products\data\services\product_tag_service.dart:193:14 - return_of_invalid_type
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:666:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:666:51 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:666:64 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:667:41 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:667:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:667:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:668:40 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:668:68 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:668:81 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:669:48 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:669:76 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:669:89 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:1102:19 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:1102:48 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:1102:61 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:1103:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:1103:57 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\providers\products_state_provider.dart:1103:70 - dead_null_aware_expression
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_backup\products\presentation\screens\product_add_screen.dart:372:28 - use_build_context_synchronously
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_backup\products\presentation\screens\product_details_screen.dart:202:64 - not_enough_positional_arguments
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_backup\products\presentation\screens\product_details_screen.dart:632:64 - not_enough_positional_arguments
@@ -1863,132 +1795,79 @@ warning - The library 'file:///d:/tagbean/frontend/migration/modulos_backup/prod
   error - Conditions must have a static type of 'bool' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1330:22 - non_bool_condition
   error - Undefined name 'constraints' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1422:55 - undefined_identifier
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1633:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:26:42 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:54:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:55:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:56:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:57:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:58:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:59:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:60:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:61:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:62:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:63:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:64:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:65:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:42:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:43:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:44:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:45:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:46:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:47:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:48:20 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:49:20 - implicit_this_reference_in_initializer
-   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:189:35 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:933:39 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:1013:39 - use_build_context_synchronously
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:37:29 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:38:36 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:38:74 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:44:29 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:45:36 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:45:71 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:51:29 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:52:36 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:52:75 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:58:29 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:59:36 - implicit_this_reference_in_initializer
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:59:70 - implicit_this_reference_in_initializer
-  error - A value of type 'dynamic' can't be assigned to a variable of type 'String' - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:446:47 - invalid_assignment
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:721:68 - const_eval_method_invocation
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:725:61 - const_eval_method_invocation
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1035:38 - const_eval_method_invocation
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1138:40 - const_eval_method_invocation
-  error - The method 'toStringAsFixed' isn't defined for the type 'String' - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1253:59 - undefined_method
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1412:36 - const_eval_method_invocation
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:61 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:76 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:69:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:69:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:69:60 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:69:75 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:74:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:74:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:74:61 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:74:76 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:79:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:79:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:79:63 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:79:78 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:84:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:84:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:84:65 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:84:80 - implicit_this_reference_in_initializer
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:197:35 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:941:39 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\categories\presentation\screens\category_edit_screen.dart:1021:39 - use_build_context_synchronously
+  error - A value of type 'dynamic' can't be assigned to a variable of type 'String' - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:454:47 - invalid_assignment
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:729:68 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:733:61 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1043:38 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1146:40 - const_eval_method_invocation
+  error - The method 'toStringAsFixed' isn't defined for the type 'String' - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1261:59 - undefined_method
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1420:36 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:65:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:65:61 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:71:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:71:60 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:77:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:77:61 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:83:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:83:63 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:89:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:89:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:89:64 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:89:79 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:94:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:94:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:94:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:94:77 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:99:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:99:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:99:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:99:77 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:104:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:104:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:104:62 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:104:77 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:20 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:35 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:65 - const_eval_method_invocation
-  error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:80 - implicit_this_reference_in_initializer
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:645:28 - const_eval_method_invocation
-warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:986:3 - strict_raw_type
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1516:20 - const_eval_method_invocation
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2759:38 - const_eval_method_invocation
-  error - The element type 'dynamic' can't be assigned to the list type 'Color' - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4125:30 - list_element_type_not_assignable
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4301:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4301:71 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4302:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4302:69 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4303:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4303:70 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4305:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4305:78 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4306:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4306:73 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4307:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4307:81 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4316:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4316:71 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4317:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4317:69 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4318:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4318:70 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4320:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4320:78 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4321:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4321:73 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4322:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4322:81 - deprecated_member_use
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4348:69 - const_eval_method_invocation
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4394:28 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4401:41 - use_build_context_synchronously
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4404:65 - const_eval_method_invocation
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4404:80 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4412:43 - use_build_context_synchronously
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4900:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4900:51 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4904:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4904:53 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4912:46 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4925:49 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4934:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4934:54 - dead_null_aware_expression
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:89:65 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:95:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:95:64 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:101:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:101:62 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:107:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:107:62 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:113:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:113:62 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:119:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:119:65 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:655:28 - const_eval_method_invocation
+warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:996:3 - strict_raw_type
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1526:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2769:38 - const_eval_method_invocation
+  error - The element type 'dynamic' can't be assigned to the list type 'Color' - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4135:30 - list_element_type_not_assignable
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4311:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4311:71 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4312:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4312:69 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4313:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4313:70 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4315:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4315:78 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4316:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4316:73 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4317:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4317:81 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4326:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4326:71 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4327:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4327:69 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4328:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4328:70 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4330:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4330:78 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4331:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4331:73 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4332:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4332:81 - deprecated_member_use
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4358:69 - const_eval_method_invocation
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4404:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4411:41 - use_build_context_synchronously
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4414:65 - const_eval_method_invocation
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4414:80 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4422:43 - use_build_context_synchronously
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4910:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4910:64 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4914:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4914:66 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4922:46 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4935:49 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4944:28 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4944:67 - dead_null_aware_expression
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\atalhos_rapidos_card.dart:274:35 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\atalhos_rapidos_card.dart:286:41 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\atalhos_rapidos_card.dart:288:60 - undefined_identifier
@@ -2096,17 +1975,17 @@ warning - The left operand can't be null, so the right operand is never executed
   error - A value of type 'dynamic' can't be assigned to a variable of type 'List<dynamic>' - migration\modulos_migrados\products\data\services\product_tag_service.dart:177:34 - invalid_assignment
   error - A value of type 'dynamic' can't be returned from the method 'unlinkAllTagsFromProduct' because it has a return type of 'Future<int>' - migration\modulos_migrados\products\data\services\product_tag_service.dart:193:14 - return_of_invalid_type
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:666:23 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:666:51 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:666:64 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:667:41 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:667:69 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:667:82 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:668:40 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:668:68 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:668:81 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:669:48 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:669:76 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:669:89 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:1102:19 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:1102:48 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:1102:61 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:1103:24 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:1103:57 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\providers\products_state_provider.dart:1103:70 - dead_null_aware_expression
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_add_screen.dart:300:54 - const_eval_method_invocation
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\products\presentation\screens\product_add_screen.dart:372:28 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\products\presentation\screens\product_add_screen.dart:441:34 - use_build_context_synchronously
@@ -2509,4 +2388,4 @@ Ask the maintainers of file_picker to either avoid referencing a default impleme
 Package file_picker:windows references file_picker:windows as the default plugin, but it does not provide an inline implementation.
 Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: windows: default_package: file_picker` or add an inline implementation to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
 
-2448 issues found. (ran in 5.0s)
+2362 issues found. (ran in 5.1s)

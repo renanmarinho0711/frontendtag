@@ -216,14 +216,10 @@ class BackupConfigModel {
 
       // ignore: argument_type_not_assignable
       notifyOnSuccess: json['notifyOnSuccess'] ?? false,
- // ignore: argument_type_not_assignable
 
-      // ignore: argument_type_not_assignable
-      notifyOnFailure: (json['notifyOnFailure']).toString() ?? true,
- // ignore: argument_type_not_assignable
+      notifyOnFailure: (json['notifyOnFailure'] as bool?) ?? true,
 
-      lastBackupAt: json['lastBackupAt'] != null 
- // ignore: argument_type_not_assignable
+      lastBackupAt: json['lastBackupAt'] != null
 
           ? DateTime.parse((json['lastBackupAt']).toString()) 
 

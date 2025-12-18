@@ -663,10 +663,10 @@ class ProductStatisticsNotifier extends StateNotifier<ProductStatisticsState> {
               final cat = c as Map<String, dynamic>;
               return ProductCategoryStatsModel(
                 id: cat['id']?.toString() ?? '',
-                nome: (cat['name']).toString() ?? cat['nome'] ?? '',
-                icone: _getCategoryIcon((cat['name']).toString() ?? cat['nome'] ?? ''),
-                cor: _getCategoryColor((cat['name']).toString() ?? cat['nome'] ?? ''),
-                gradient: _getCategoryGradient((cat['name']).toString() ?? cat['nome'] ?? ''),
+                nome: ((cat['name']).toString()).toString() ?? cat['nome'] ?? '',
+                icone: _getCategoryIcon(((cat['name']).toString()).toString() ?? cat['nome'] ?? ''),
+                cor: _getCategoryColor(((cat['name']).toString()).toString() ?? cat['nome'] ?? ''),
+                gradient: _getCategoryGradient(((cat['name']).toString()).toString() ?? cat['nome'] ?? ''),
                 // ignore: argument_type_not_assignable
                 quantidade: cat['totalProducts'] ?? cat['totalProdutos'] ?? cat['quantidade'] ?? 0,
                 // ignore: argument_type_not_assignable
@@ -1099,8 +1099,8 @@ class StockNotifier extends StateNotifier<StockState> {
           final items = response.data!.map((data) => StockItem(
             id: data['id']?.toString() ?? '',
             productId: data['productId']?.toString() ?? data['id']?.toString() ?? '',
-            nome: (data['name']).toString() ?? data['nome'] ?? '',
-            categoria: (data['category']).toString() ?? data['categoria'] ?? '',
+            nome: ((data['name']).toString()).toString() ?? data['nome'] ?? '',
+            categoria: ((data['category']).toString()).toString() ?? data['categoria'] ?? '',
             // ignore: argument_type_not_assignable
             estoqueAtual: data['currentStock'] ?? data['estoqueAtual'] ?? 0,
             // ignore: argument_type_not_assignable

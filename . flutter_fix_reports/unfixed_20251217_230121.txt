@@ -1,0 +1,147 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 110
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 105
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 100
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 95
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 90
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 85
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 80
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 75
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 70
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 65
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart
+Linha: 59
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart
+Linha: 52
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart
+Linha: 45
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart
+Linha: 38
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 109
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 104
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 99
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 94
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 89
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 84
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 79
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 74
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 69
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 64
+Regra: implicit_this_reference_in_initializer
+Mensagem:  The instance member 'context' can't be accessed in an initializer
+Motivo: Ignore já existe
+----------------------------------------

@@ -589,7 +589,7 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
               // ignore: argument_type_not_assignable
               posicao: p['posicao'] ?? p['position'] ?? (i + 1),
 
-              nome: ((p['nome']).toString()).toString() ?? p['name'] ?? '',
+              nome: (((p['nome']).toString()).toString()).toString() ?? p['name'] ?? '',
 
               // ignore: argument_type_not_assignable
               vendas: p['vendas'] ?? p['sales'] ?? 0,
@@ -627,7 +627,7 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
           // ignore: argument_type_not_assignable
           intervaloAtualizacao: data['intervaloAtualizacao'] ?? data['update_interval'] ?? state.intervaloAtualizacao,
 
-          tipoRanking: ((data['tipoRanking']).toString()).toString() ?? data['ranking_type'] ?? state.tipoRanking,
+          tipoRanking: (((data['tipoRanking']).toString()).toString()).toString() ?? data['ranking_type'] ?? state.tipoRanking,
 
           // ignore: argument_type_not_assignable
           exibirPosicao: data['exibirPosicao'] ?? data['show_position'] ?? state.exibirPosicao,
@@ -1537,12 +1537,9 @@ class SmartRouteNotifier extends StateNotifier<SmartRouteState> {
 
           duracaoDestaque: ((data['duracaoDestaque'] ?? data['highlight_duration'] ?? state.duracaoDestaque) as num?)?.toDouble() ?? state.duracaoDestaque,
 
-          // ignore: argument_type_not_assignable
-          corProgressiva: (((data['corProgressiva'] ?? data['progressive_color']) as String?) ?? state.corProgressiva),
+          corProgressiva: (data['corProgressiva'] ?? data['progressive_color'] ?? state.corProgressiva) as bool?,
 
           modoRota: (((data['modoRota'] ?? data['route_mode']) as String?) ?? state.modoRota),
-
-          // ignore: argument_type_not_assignable
           feedbackSonoro: data['feedbackSonoro'] ?? data['sound_feedback'] ?? state.feedbackSonoro,
 
           // ignore: argument_type_not_assignable

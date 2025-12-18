@@ -1,0 +1,417 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 933
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 1442
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 1425
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 1409
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 1478
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 1453
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 1439
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_tags_screen.dart
+Linha: 1270
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_tags_screen.dart
+Linha: 1264
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\pricing\data\models\pricing_models.dart
+Linha: 638
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\pricing\data\models\pricing_models.dart
+Linha: 621
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\pricing\data\models\pricing_models.dart
+Linha: 619
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\pricing\data\models\pricing_models.dart
+Linha: 434
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\pricing\data\models\pricing_models.dart
+Linha: 432
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 999
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 998
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 997
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 960
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\ai_suggestions_screen.dart
+Linha: 963
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\ai_suggestions_screen.dart
+Linha: 943
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_import_screen.dart
+Linha: 1268
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_import_screen.dart
+Linha: 1251
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_import_screen.dart
+Linha: 1237
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 2290
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 2252
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 2220
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 903
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 1072
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 983
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 976
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1329
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1323
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1317
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1288
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1285
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1139
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1131
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1124
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1121
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1112
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1107
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_admin_screen.dart
+Linha: 1072
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_admin_screen.dart
+Linha: 983
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_admin_screen.dart
+Linha: 976
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1337
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1331
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1325
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1296
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1293
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1147
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1139
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1132
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1129
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1120
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1115
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_admin_screen.dart
+Linha: 1072
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_admin_screen.dart
+Linha: 983
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_admin_screen.dart
+Linha: 976
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1330
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1324
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1318
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1289
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1286
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1140
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1132
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1125
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1122
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1113
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------
+Arquivo: migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1108
+Regra: non_bool_condition
+Mensagem:  Conditions must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_condition
+----------------------------------------

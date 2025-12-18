@@ -114,20 +114,20 @@ class SalesReportsNotifier extends StateNotifier<SalesReportsState> {
           for (final item in items) {
             apiReports.add(SalesReportModel(
               id: item['id']?.toString() ?? '',
-              titulo: ((item['titulo']).toString()).toString() ?? item['title'] ?? '',
-              subtitulo: ((item['subtitulo']).toString()).toString() ?? item['subtitle'] ?? '',
+              titulo: (((item['titulo']).toString()).toString()).toString() ?? item['title'] ?? '',
+              subtitulo: (((item['subtitulo']).toString()).toString()).toString() ?? item['subtitle'] ?? '',
               icone: Icons.trending_up_rounded,
               cor: AppThemeColors.success,
-              valor: ((item['valor']).toString()).toString() ?? item['value'] ?? '',
+              valor: (((item['valor']).toString()).toString()).toString() ?? item['value'] ?? '',
               valorNumerico: ((item['valorNumerico'] ?? item['numericValue'] ?? 0) as num?)?.toDouble() ?? 0.0,
-              quantidade: ((item['quantidade']).toString()).toString() ?? item['quantity'] ?? '',
+              quantidade: (((item['quantidade']).toString()).toString()).toString() ?? item['quantity'] ?? '',
               quantidadeNumerica: (((item['quantidadeNumerica'] ?? item['numericQuantity'] ?? 0) as int?) ?? 0),
-              detalhes: ((item['detalhes']).toString()).toString() ?? item['details'] ?? '',
-              meta: ((item['meta']).toString()).toString() ?? item['target'] ?? '',
+              detalhes: (((item['detalhes']).toString()).toString()).toString() ?? item['details'] ?? '',
+              meta: (((item['meta']).toString()).toString()).toString() ?? item['target'] ?? '',
               percentual: ((item['percentual'] ?? item['percentage'] ?? item['Percentual'] ?? 0) as num?)?.toDouble() ?? 0.0,
               trend: _parseTrend(item['trend'] ?? item['Trend']),
-              crescimento: ((item['crescimento']).toString()).toString() ?? item['growth'] ?? item['Crescimento'] ?? '',
-              badge: ((item['badge']).toString()).toString() ?? item['Badge'],
+              crescimento: (((item['crescimento']).toString()).toString()).toString() ?? item['growth'] ?? item['Crescimento'] ?? '',
+              badge: (((item['badge']).toString()).toString()).toString() ?? item['Badge'],
             ));
           }
         }
@@ -233,10 +233,10 @@ class AuditReportsNotifier extends StateNotifier<AuditReportsState> {
           for (final item in events) {
             apiReports.add(AuditReportModel(
               id: item['id']?.toString() ?? '',
-              titulo: ((item['titulo']).toString()).toString() ?? item['title'] ?? item['tipo'] ?? item['Tipo'] ?? '',
-              descricao: ((item['descricao']).toString()).toString() ?? item['description'] ?? item['Descricao'] ?? '',
-              dataAuditoria: DateTime.tryParse(((item['dataAuditoria']).toString()).toString() ?? item['auditDate'] ?? item['dataHora'] ?? item['DataHora'] ?? '') ?? DateTime.now(),
-              auditor: ((item['auditor']).toString()).toString() ?? item['usuario'] ?? item['Usuario'] ?? 'Sistema',
+              titulo: (((item['titulo']).toString()).toString()).toString() ?? item['title'] ?? item['tipo'] ?? item['Tipo'] ?? '',
+              descricao: (((item['descricao']).toString()).toString()).toString() ?? item['description'] ?? item['Descricao'] ?? '',
+              dataAuditoria: DateTime.tryParse((((item['dataAuditoria']).toString()).toString()).toString() ?? item['auditDate'] ?? item['dataHora'] ?? item['DataHora'] ?? '') ?? DateTime.now(),
+              auditor: (((item['auditor']).toString()).toString()).toString() ?? item['usuario'] ?? item['Usuario'] ?? 'Sistema',
               // ignore: argument_type_not_assignable
               itensVerificados: item['itensVerificados'] ?? item['itemsVerified'] ?? 1,
               // ignore: argument_type_not_assignable
@@ -322,15 +322,15 @@ class OperationalReportsNotifier extends StateNotifier<OperationalReportsState> 
           for (final item in items) {
             apiReports.add(OperationalReportModel(
               id: item['id']?.toString() ?? '',
-              titulo: ((item['titulo']).toString()).toString() ?? item['title'] ?? item['Titulo'] ?? '',
-              categoria: ((item['categoria']).toString()).toString() ?? item['category'] ?? 'Operacional',
+              titulo: (((item['titulo']).toString()).toString()).toString() ?? item['title'] ?? item['Titulo'] ?? '',
+              categoria: (((item['categoria']).toString()).toString()).toString() ?? item['category'] ?? 'Operacional',
               icone: Icons.analytics_rounded,
               cor: AppThemeColors.primary,
-              valor: ((item['valor']).toString()).toString() ?? item['value'] ?? item['Valor'] ?? '',
-              unidade: ((item['unidade']).toString()).toString() ?? item['unit'] ?? '',
+              valor: (((item['valor']).toString()).toString()).toString() ?? item['value'] ?? item['Valor'] ?? '',
+              unidade: (((item['unidade']).toString()).toString()).toString() ?? item['unit'] ?? '',
               percentualMeta: ((item['percentualMeta'] ?? item['targetPercentage'] ?? 0) as num?)?.toDouble() ?? 0.0,
               trend: _parseTrend(item['trend'] ?? item['status'] ?? item['Status']),
-              periodo: ((item['periodo']).toString()).toString() ?? item['period'] ?? '',
+              periodo: (((item['periodo']).toString()).toString()).toString() ?? item['period'] ?? '',
             ));
           }
         }
@@ -456,12 +456,12 @@ class PerformanceReportsNotifier extends StateNotifier<PerformanceReportsState> 
           for (final item in items) {
             apiReports.add(PerformanceReportModel(
               id: item['id']?.toString() ?? '',
-              metrica: ((item['metrica']).toString()).toString() ?? item['metric'] ?? item['titulo'] ?? item['Titulo'] ?? '',
-              descricao: ((item['descricao']).toString()).toString() ?? item['description'] ?? '',
+              metrica: (((item['metrica']).toString()).toString()).toString() ?? item['metric'] ?? item['titulo'] ?? item['Titulo'] ?? '',
+              descricao: (((item['descricao']).toString()).toString()).toString() ?? item['description'] ?? '',
               valorAtual: ((item['valorAtual'] ?? item['currentValue'] ?? item['percentual'] ?? item['Percentual'] ?? 0) as num?)?.toDouble() ?? 0.0,
               valorAnterior: ((item['valorAnterior'] ?? item['previousValue'] ?? 0) as num?)?.toDouble() ?? 0.0,
               meta: ((item['meta'] ?? item['target'] ?? 100) as num?)?.toDouble() ?? 100.0,
-              unidade: ((item['unidade']).toString()).toString() ?? item['unit'] ?? item['valor'] ?? item['Valor'] ?? '',
+              unidade: (((item['unidade']).toString()).toString()).toString() ?? item['unit'] ?? item['valor'] ?? item['Valor'] ?? '',
               trend: _parseTrend(item['trend'] ?? item['Trend']),
               variacao: ((item['variacao'] ?? item['variation'] ?? 0) as num?)?.toDouble() ?? 0.0,
             ));

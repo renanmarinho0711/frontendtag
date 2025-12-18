@@ -39,13 +39,21 @@ class _CategoriasEditarScreenState extends ConsumerState<CategoriasEditarScreen>
   ];
 
   final List<Color> _coresDisponiveis = [
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueMaterial,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).greenMaterial,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).yellowGold,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueCyan,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).blueLight,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).brownMain,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).cyanMain,
+    // ignore: implicit_this_reference_in_initializer
     ThemeColors.of(context).error,
   ];
 

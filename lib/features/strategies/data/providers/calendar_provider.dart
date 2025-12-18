@@ -647,7 +647,7 @@ class LongHolidaysNotifier extends StateNotifier<LongHolidaysState> {
           for (final item in holidaysList) {
             holidays.add(LongHolidayModel(
               id: item['id']?.toString() ?? '',
-              name: ((item['name']).toString()).toString() ?? item['nome'] ?? '',
+              name: (((item['name']).toString()).toString()).toString() ?? item['nome'] ?? '',
               startDate: item['startDate']?.toString() ?? item['dataInicio']?.toString() ?? '',
               endDate: item['endDate']?.toString() ?? item['dataFim']?.toString() ?? '',
               // ignore: argument_type_not_assignable
@@ -896,7 +896,7 @@ class SalaryCycleNotifier extends StateNotifier<SalaryCycleState> {
           for (final c in cyclesList) {
             cycles.add(SalaryCycleModel(
               id: c['id']?.toString() ?? '',
-              name: ((c['name']).toString()).toString() ?? c['nome'] ?? '',
+              name: (((c['name']).toString()).toString()).toString() ?? c['nome'] ?? '',
               // ignore: argument_type_not_assignable
               dayOfMonth: c['dayOfMonth'] ?? c['diaMes'] ?? 5,
               // ignore: argument_type_not_assignable

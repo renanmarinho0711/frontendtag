@@ -327,16 +327,9 @@ class StrategiesRepository {
       parser: (data) {
 
         if (data is List) {
- // ignore: argument_type_not_assignable
-
-          // ignore: argument_type_not_assignable
-          return data.map((item.toString()) => _parseExecution(item as Map<String, dynamic>)).toList();
-
-        // ignore: argument_type_not_assignable
+          return data.map((item) => _parseExecution(item as Map<String, dynamic>)).toList();
         }
- // ignore: argument_type_not_assignable
 
-        // ignore: argument_type_not_assignable
         return [];
 
       // ignore: argument_type_not_assignable
@@ -373,33 +366,22 @@ class StrategiesRepository {
       '/strategies/store/$storeId/executions',
 
       queryParams: {'limit': limit},
- // ignore: argument_type_not_assignable
 
-      // ignore: argument_type_not_assignable
-      parser: (data.toString()) {
- // ignore: argument_type_not_assignable
+      parser: (data) {
 
-        // ignore: argument_type_not_assignable
         if (data is List) {
- // ignore: argument_type_not_assignable
 
           return data.map((item) => _parseExecution(item as Map<String, dynamic>)).toList();
- // ignore: argument_type_not_assignable
 
-        // ignore: argument_type_not_assignable
         }
 
         return [];
 
       },
 
-    // ignore: argument_type_not_assignable
     );
- // ignore: argument_type_not_assignable
 
-  // ignore: argument_type_not_assignable
   }
- // ignore: argument_type_not_assignable
 
  // ignore: argument_type_not_assignable
 
@@ -624,7 +606,7 @@ class StrategiesRepository {
 
       description: (data['description']).toString() ?? '',
 
-      fullDescription: (data['fullDescription']).toString() ?? data['description'] ?? '',
+      fullDescription: ((data['fullDescription']).toString()).toString() ?? data['description'] ?? '',
 
       category: category,
 
@@ -756,9 +738,9 @@ class StrategiesRepository {
 
       name: (data['name']).toString() ?? '',
 
-      sku: (data['sku']).toString() ?? data['código'] ?? '',
+      sku: ((data['sku']).toString()).toString() ?? data['código'] ?? '',
 
-      strategy: (data['strategyName']).toString() ?? data['category'] ?? '',
+      strategy: ((data['strategyName']).toString()).toString() ?? data['category'] ?? '',
 
       gain: (data['gain']).toString() ?? 'R\$ ${(data['revenue'] ?? 0).toStringAsFixed(2)}',
 

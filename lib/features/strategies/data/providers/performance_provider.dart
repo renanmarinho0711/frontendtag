@@ -155,7 +155,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
           for (final pr in productsList) {
             products.add(ClearanceProductModel(
               id: pr['id']?.toString() ?? '',
-              nome: ((pr['nome']).toString()).toString() ?? pr['name'] ?? '',
+              nome: (((pr['nome']).toString()).toString()).toString() ?? pr['name'] ?? '',
               precoOriginal: pr['precoOriginal']?.toString() ?? pr['originalPrice']?.toString() ?? '',
               precoAtual: pr['precoAtual']?.toString() ?? pr['currentPrice']?.toString() ?? '',
               // ignore: argument_type_not_assignable
@@ -439,7 +439,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
           for (final p in productsList) {
             products.add(MarkdownProductModel(
               id: p['id']?.toString() ?? '',
-              nome: ((p['nome']).toString()).toString() ?? p['name'] ?? '',
+              nome: (((p['nome']).toString()).toString()).toString() ?? p['name'] ?? '',
               validade: p['validade']?.toString() ?? p['expiry']?.toString() ?? '',
               // ignore: argument_type_not_assignable
               diasRestantes: p['diasRestantes'] ?? p['daysRemaining'] ?? 0,
@@ -734,7 +734,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
           for (final f in factorsList) {
             factors.add(ForecastFactorModel(
               id: f['id']?.toString() ?? '',
-              nome: ((f['nome']).toString()).toString() ?? f['name'] ?? '',
+              nome: (((f['nome']).toString()).toString()).toString() ?? f['name'] ?? '',
               peso: ((f['peso'] ?? f['weight'] ?? 0) as num?)?.toDouble() ?? 0.0,
               cor: const Color(0xFF2196F3),
               icone: Icons.analytics,

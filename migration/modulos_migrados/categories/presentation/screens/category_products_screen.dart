@@ -34,28 +34,36 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
   static final List<Map<String, dynamic>> _categoriasMock = [
     {
       'nome': 'Bebidas',
+      // ignore: implicit_this_reference_in_initializer
       'cor': ThemeColors.of(context).blueMaterial,
+      // ignore: implicit_this_reference_in_initializer
       'gradiente': [ThemeColors.of(context).blueMaterial, ThemeColors.of(context).blueDark],
       'icone': Icons.local_drink_rounded,
       'produtos': 247,
     },
     {
       'nome': 'Mercearia',
+      // ignore: implicit_this_reference_in_initializer
       'cor': ThemeColors.of(context).brownMain,
+      // ignore: implicit_this_reference_in_initializer
       'gradiente': [ThemeColors.of(context).brownMain, ThemeColors.of(context).brownDark],
       'icone': Icons.shopping_basket_rounded,
       'produtos': 532,
     },
     {
       'nome': 'Perecíveis',
+      // ignore: implicit_this_reference_in_initializer
       'cor': ThemeColors.of(context).greenMaterial,
+      // ignore: implicit_this_reference_in_initializer
       'gradiente': [ThemeColors.of(context).greenMaterial, ThemeColors.of(context).successIcon],
       'icone': Icons.restaurant_rounded,
       'produtos': 189,
     },
     {
       'nome': 'Limpeza',
+      // ignore: implicit_this_reference_in_initializer
       'cor': ThemeColors.of(context).blueCyan,
+      // ignore: implicit_this_reference_in_initializer
       'gradiente': [ThemeColors.of(context).blueCyan, ThemeColors.of(context).blueMaterial],
       'icone': Icons.cleaning_services_rounded,
       'produtos': 156,

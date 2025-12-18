@@ -61,51 +61,61 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     {
       'icon': Icons.dashboard_rounded,
       'title': 'Dashboard',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleDashboard, ThemeColors.of(context).moduleDashboardDark]
     },
     {
       'icon': Icons.inventory_2_rounded,
       'title': 'Produtos',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleProdutos, ThemeColors.of(context).moduleProdutosDark]
     },
     {
       'icon': Icons.label_rounded,
       'title': 'Etiquetas',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleEtiquetas, ThemeColors.of(context).moduleEtiquetasDark]
     },
     {
       'icon': Icons.auto_awesome_rounded,
       'title': 'Estratégias',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleEstrategias, ThemeColors.of(context).moduleEstrategiasDark]
     },
     {
       'icon': Icons.sync_rounded,
       'title': 'Sincronização',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleSincronizacao, ThemeColors.of(context).moduleSincronizacaoDark]
     },
     {
       'icon': Icons.monetization_on_rounded,
       'title': 'Precificação',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).modulePrecificacao, ThemeColors.of(context).modulePrecificacaoDark]
     },
     {
       'icon': Icons.category_rounded,
       'title': 'Categorias',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleCategorias, ThemeColors.of(context).moduleCategoriasDark]
     },
     {
       'icon': Icons.import_export_rounded,
       'title': 'Importação',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleImportacao, ThemeColors.of(context).moduleImportacaoDark]
     },
     {
       'icon': Icons.assessment_rounded,
       'title': 'Relatórios',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleRelatorios, ThemeColors.of(context).moduleRelatoriosDark]
     },
     {
       'icon': Icons.settings_rounded,
       'title': 'Configurações',
+      // ignore: implicit_this_reference_in_initializer
       'gradient': [ThemeColors.of(context).moduleConfiguracoes, ThemeColors.of(context).moduleConfiguracoesDark]
     },
   ];
@@ -4897,11 +4907,11 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             ),
           ),
           title: Text(
-            isProduto ? (r['nome']).toString() ?? '' : r['mac'] ?? '',
+            isProduto ? ((r['nome']).toString()).toString() ?? '' : r['mac'] ?? '',
             style: const TextStyle(fontWeight: FontWeight.w600),
           ),
           subtitle: Text(
-            isProduto ? (r['codigo']).toString() ?? '' : r['produto'] ?? 'Sem vínculo',
+            isProduto ? ((r['codigo']).toString()).toString() ?? '' : r['produto'] ?? 'Sem vínculo',
             style: TextStyle(
               fontSize: 12,
               color: ThemeColors.of(context).textSecondary,
@@ -4931,7 +4941,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                   ),
                 ),
           onTap: () {
-            close(context, (r['nome']).toString() ?? r['mac']);
+            close(context, ((r['nome']).toString()).toString() ?? r['mac']);
           },
         );
       },

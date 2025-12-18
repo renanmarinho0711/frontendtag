@@ -184,15 +184,10 @@ class ProductTagModel {
       location: (json['location']).toString(),
 
       description: (json['description']).toString(),
- // ignore: argument_type_not_assignable
 
-      // ignore: argument_type_not_assignable
-      isPrimary: (json['isPrimary']).toString() ?? false,
- // ignore: argument_type_not_assignable
+      isPrimary: (json['isPrimary'] as bool?) ?? false,
 
-      // ignore: argument_type_not_assignable
       isActive: json['isActive'] ?? true,
- // ignore: argument_type_not_assignable
 
       createdAt: (json['createdAt']).toString() != null 
 
