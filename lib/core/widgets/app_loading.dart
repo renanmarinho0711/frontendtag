@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/colors.dart';
-import 'package:tagbean/design_system/theme/typography.dart';
-import 'package:tagbean/design_system/theme/spacing.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
 /// # Sistema de Loading do TagBean
@@ -43,10 +40,10 @@ class AppLoading extends StatelessWidget {
           ),
         ),
         if (message != null) ...[
-          AppSpacing.gapVerticalMd,
+          SizedBox(height: AppSpacing.gapVerticalMd),
           Text(
             message!,
-            style: AppTypography.bodyMedium(
+            style: AppTextStyles.bodyMedium.copyWith(
               color: theme.brightness == Brightness.dark
                   ? AppColors.textSecondaryDark
                   : AppColors.textSecondaryLight,
@@ -103,13 +100,13 @@ class AppLoadingOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onWillPop: () async => dismissible,
+      canPop: dismissible,
       child: Container(
         color: AppColors.scrim,
         child: Center(
           child: Card(
             child: Padding(
-              padding: AppSpacing.paddingLg,
+              padding: EdgeInsets.all(AppSpacing.paddingLg),
               child: AppLoading(
                 message: message,
                 size: 48,

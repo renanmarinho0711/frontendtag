@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tagbean/design_system/theme/colors.dart';
-import 'package:tagbean/design_system/theme/typography.dart';
-import 'package:tagbean/design_system/theme/spacing.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
 /// # Campos de Texto Customizados
@@ -211,11 +208,11 @@ class _AppTextFieldState extends State<AppTextField> {
         if (widget.label != null) ...[
           Text(
             widget.label!,
-            style: AppTypography.labelMedium(
+            style: AppTextStyles.labelMediumWith(
               color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
             ),
           ),
-          AppSpacing.gapVerticalXs,
+          SizedBox(height: AppSpacing.gapVerticalXs),
         ],
         TextFormField(
           controller: widget.controller,
@@ -231,25 +228,25 @@ class _AppTextFieldState extends State<AppTextField> {
           onChanged: widget.onChanged,
           onFieldSubmitted: widget.onSubmitted,
           validator: widget.validator,
-          style: AppTypography.bodyLarge(
+          style: AppTextStyles.bodyLargeWith(
             color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
           ),
           decoration: _getDecoration(isDark),
         ),
         if (widget.helper != null && widget.error == null) ...[
-          AppSpacing.gapVerticalXs,
+          SizedBox(height: AppSpacing.gapVerticalXs),
           Text(
             widget.helper!,
-            style: AppTypography.bodySmall(
+            style: AppTextStyles.bodySmallWith(
               color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
             ),
           ),
         ],
         if (widget.error != null) ...[
-          AppSpacing.gapVerticalXs,
+          SizedBox(height: AppSpacing.gapVerticalXs),
           Text(
             widget.error!,
-            style: AppTypography.bodySmall(color: AppColors.error),
+            style: AppTextStyles.bodySmallWith(color: AppColors.error),
           ),
         ],
       ],
@@ -259,7 +256,7 @@ class _AppTextFieldState extends State<AppTextField> {
   InputDecoration _getDecoration(bool isDark) {
     return InputDecoration(
       hintText: widget.hint,
-      hintStyle: AppTypography.bodyLarge(
+      hintStyle: AppTextStyles.bodyLargeWith(
         color: isDark ? AppColors.grey600 : AppColors.grey400,
       ),
       filled: widget.variant == AppTextFieldVariant.filled,
@@ -313,11 +310,11 @@ class _AppTextFieldState extends State<AppTextField> {
   InputBorder _getBorder() {
     return switch (widget.variant) {
       AppTextFieldVariant.filled => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide.none,
         ),
       AppTextFieldVariant.outlined => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
         ),
       AppTextFieldVariant.underlined => const UnderlineInputBorder(),
     };
@@ -328,11 +325,11 @@ class _AppTextFieldState extends State<AppTextField> {
     
     return switch (widget.variant) {
       AppTextFieldVariant.filled => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide.none,
         ),
       AppTextFieldVariant.outlined => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide(color: borderColor),
         ),
       AppTextFieldVariant.underlined => UnderlineInputBorder(
@@ -346,11 +343,11 @@ class _AppTextFieldState extends State<AppTextField> {
     
     return switch (widget.variant) {
       AppTextFieldVariant.filled => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide(color: focusColor, width: 2),
         ),
       AppTextFieldVariant.outlined => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide(color: focusColor, width: 2),
         ),
       AppTextFieldVariant.underlined => UnderlineInputBorder(
@@ -362,11 +359,11 @@ class _AppTextFieldState extends State<AppTextField> {
   InputBorder _getErrorBorder() {
     return switch (widget.variant) {
       AppTextFieldVariant.filled => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: const BorderSide(color: AppColors.error),
         ),
       AppTextFieldVariant.outlined => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: const BorderSide(color: AppColors.error),
         ),
       AppTextFieldVariant.underlined => const UnderlineInputBorder(
@@ -378,11 +375,11 @@ class _AppTextFieldState extends State<AppTextField> {
   InputBorder _getFocusedErrorBorder() {
     return switch (widget.variant) {
       AppTextFieldVariant.filled => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: const BorderSide(color: AppColors.error, width: 2),
         ),
       AppTextFieldVariant.outlined => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: const BorderSide(color: AppColors.error, width: 2),
         ),
       AppTextFieldVariant.underlined => const UnderlineInputBorder(
@@ -396,11 +393,11 @@ class _AppTextFieldState extends State<AppTextField> {
     
     return switch (widget.variant) {
       AppTextFieldVariant.filled => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide.none,
         ),
       AppTextFieldVariant.outlined => OutlineInputBorder(
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           borderSide: BorderSide(color: borderColor),
         ),
       AppTextFieldVariant.underlined => UnderlineInputBorder(

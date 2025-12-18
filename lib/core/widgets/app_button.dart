@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/colors.dart';
-import 'package:tagbean/design_system/theme/typography.dart';
-import 'package:tagbean/design_system/theme/spacing.dart';
-import 'package:tagbean/design_system/theme/shadows.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
 /// # Botões Customizados do TagBean
@@ -138,14 +134,14 @@ class AppButton extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: isLoading || onPressed == null ? null : onPressed,
-          borderRadius: AppSpacing.borderRadiusSm,
+          borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
           splashColor: _getSplashColor(isDark),
           highlightColor: _getHighlightColor(isDark),
           child: Container(
             padding: padding ?? _getPadding(),
             decoration: BoxDecoration(
               color: _getBackgroundColor(isDark),
-              borderRadius: AppSpacing.borderRadiusSm,
+              borderRadius: BorderRadius.circular(AppSpacing.borderRadiusSm),
               border: _getBorder(isDark),
               boxShadow: _getShadow(),
             ),
@@ -174,7 +170,7 @@ class AppButton extends StatelessWidget {
             size: _getIconSize(),
             color: textStyle.color,
           ),
-          AppSpacing.gapHorizontalSm,
+          SizedBox(width: AppSpacing.gapHorizontalSm),
           Text(label, style: textStyle),
         ],
       );

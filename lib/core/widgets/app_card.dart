@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
-import 'package:tagbean/design_system/theme/spacing.dart';
-import 'package:tagbean/design_system/theme/shadows.dart';
 import 'package:tagbean/design_system/design_system.dart';
 
 /// # Cards Padronizados do TagBean
@@ -78,10 +75,10 @@ class AppCard extends StatelessWidget {
     Widget content = Container(
       width: width,
       height: height,
-      padding: padding ?? AppSpacing.paddingMd,
+      padding: padding ?? EdgeInsets.all(AppSpacing.paddingMd),
       decoration: BoxDecoration(
         color: backgroundColor ?? _getBackgroundColor(isDark),
-        borderRadius: borderRadius ?? AppSpacing.borderRadiusMd,
+        borderRadius: borderRadius ?? BorderRadius.circular(AppSpacing.borderRadiusMd),
         border: _getBorder(isDark),
         boxShadow: _getShadow(),
       ),
@@ -93,7 +90,7 @@ class AppCard extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
-          borderRadius: borderRadius ?? AppSpacing.borderRadiusMd,
+          borderRadius: borderRadius ?? BorderRadius.circular(AppSpacing.borderRadiusMd),
           child: content,
         ),
       );

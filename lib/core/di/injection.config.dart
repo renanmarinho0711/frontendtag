@@ -4,9 +4,9 @@
 // Para regenerar, execute:
 // flutter pub run build_runner build --delete-conflicting-outputs
 
-part of 'injection.dart';
-
 import 'package:get_it/get_it.dart';
+
+part of 'injection.dart';
 
 // **************************************************************************
 // InjectableConfigGenerator

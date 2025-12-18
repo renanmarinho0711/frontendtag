@@ -1086,6 +1086,46 @@ extension ResponsiveTextStyle on TextStyle {
     final size = isMobile ? mobile : (isTablet ? tablet : desktop);
     return copyWith(fontSize: size);
   }
+
+  // ========== MÉTODOS DE COMPATIBILIDADE PARA WIDGETS ==========
+
+  /// Retorna labelSmall com cor opcional
+  static TextStyle labelSmallWith({Color? color}) {
+    return bodySmall.copyWith(color: color);
+  }
+
+  /// Retorna labelMedium com cor opcional
+  static TextStyle labelMediumWith({Color? color}) {
+    return body.copyWith(color: color);
+  }
+
+  /// Retorna labelLarge com cor opcional
+  static TextStyle labelLargeWith({Color? color}) {
+    return bodyMedium.copyWith(color: color);
+  }
+
+  /// Retorna bodyLarge (alias para h2) com cor opcional
+  static TextStyle bodyLargeWith({Color? color}) {
+    return h2.copyWith(color: color);
+  }
+
+  /// Retorna bodySmall com cor opcional
+  static TextStyle bodySmallWith({Color? color}) {
+    return bodySmall.copyWith(color: color);
+  }
+}
+
+
+/// Extension para adicionar métodos de compatibilidade a AppTextStyles
+extension AppTextStylesExtension on AppTextStyles {
+  /// Alias para bodySmall - estilo de label pequeno
+  static const TextStyle labelSmall = bodySmall;
+  
+  /// Alias para body - estilo de label médio
+  static TextStyle labelMedium() => body;
+  
+  /// Alias para bodyMedium - estilo de label grande
+  static const TextStyle labelLarge = bodyMedium;
 }
 
 
