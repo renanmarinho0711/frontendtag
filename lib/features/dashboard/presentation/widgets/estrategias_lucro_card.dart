@@ -90,7 +90,7 @@ class EstrategiasLucroCard extends StatelessWidget {
                         height: AppSizes.paddingMicro.get(isMobile, isTablet),
                       ),
                       Text(
-                        '${estratégiasData['ativas']} estratgias ativas',
+                        '${estrategiasData['ativas']} estrategias ativas',
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -166,8 +166,8 @@ class EstrategiasLucroCard extends StatelessWidget {
                       context,
                       'Ganho Mensal',
                       Icons.calendar_month_rounded,
-                      'R\$ ${estratégiasData['ganho_mensal'].toStringAsFixed(2)}',
-                      'em ${estratégiasData['produtos_afetados']} produtos',
+                      'R\$ ${estrategiasData['ganho_mensal'].toStringAsFixed(2)}',
+                      'em ${estrategiasData['produtos_afetados']} produtos',
                     ),
                   ),
                   SizedBox(
@@ -183,7 +183,7 @@ class EstrategiasLucroCard extends StatelessWidget {
                       context,
                       'Ganho Hoje',
                       Icons.today_rounded,
-                      'R\$ ${estratégiasData['ganho_hoje'].toStringAsFixed(2)}',
+                      'R\$ ${estrategiasData['ganho_hoje'].toStringAsFixed(2)}',
                       '+15% vs. ontem',
                     ),
                   ),
