@@ -1,4 +1,4 @@
-﻿name: tagbean
+name: tagbean
 description: Sistema de Gestão de Etiquetas Eletrônicas TagBean
 publish_to: 'none'
 version: 1.0.0+1
@@ -42,6 +42,9 @@ dependencies:
   
   # Web utilities (conditional import)
   universal_html: ^2.2.4
+  get_it: ^9.2.0
+  go_router: ^17.0.1
+  injectable: ^2.7.1+2
 
 dev_dependencies:
   flutter_test:
