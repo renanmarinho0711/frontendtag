@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import subprocess
 import os
+import re
 
 os.chdir('d:\\tagbean\\frontend')
 
@@ -12,7 +13,7 @@ result = subprocess.run(
     encoding='utf-8'
 )
 
-# Force write as UTF-8 (NOT UTF-16)
+# Combine stdout and stderr
 content = result.stdout
 if result.stderr:
     content += result.stderr
@@ -21,8 +22,26 @@ if result.stderr:
 if content.startswith('\ufeff'):
     content = content[1:]
 
-# Write ONLY UTF-8
-with open('analyze_with_deps.txt', 'w', encoding='utf-8', errors='replace') as f:
+# Skip everything before the first issue line (skip pub get output)
+lines = content.split('\n')
+start_idx = 0
+for i, line in enumerate(lines):
+    if re.match(r'^\s*(error|warning|info)\s+-', line):
+        start_idx = i
+        break
+
+# If we found issues, keep only from that point
+if start_idx > 0:
+    content = '\n'.join(lines[start_idx:])
+    print(f"Pulou {start_idx} linhas de output do pub get")
+
+# Delete old file first to prevent encoding issues
+import os
+if os.path.exists('analyze_with_deps.txt'):
+    os.remove('analyze_with_deps.txt')
+
+# Write ONLY UTF-8 (NOT UTF-16)
+with open('analyze_with_deps.txt', 'w', encoding='utf-8', errors='replace', newline='\n') as f:
     f.write(content)
 
 print(f"Análise salva ({len(content)} bytes) - verificando...")
