@@ -1,0 +1,3255 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\core\router\app_router.dart
+Linha: 213
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 180
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1291
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 243
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 238
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 232
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 207
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 201
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 196
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 182
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 181
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+Linha: 89
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+Linha: 81
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 165
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 156
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 316
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 298
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 290
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\common\transfer_progress_model.dart
+Linha: 53
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\common\transfer_progress_model.dart
+Linha: 48
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_data.dart
+Linha: 29
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_data.dart
+Linha: 28
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_data.dart
+Linha: 27
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 57
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 50
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 49
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 48
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 47
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 46
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_filters.dart
+Linha: 44
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_history_model.dart
+Linha: 63
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 153
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 152
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 151
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 149
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 148
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 100
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 99
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 98
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 97
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_config_model.dart
+Linha: 65
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 124
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 123
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 57
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 23
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 158
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 157
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 152
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 90
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_result.dart
+Linha: 122
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_result.dart
+Linha: 62
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 27
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3313
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3311
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3301
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3135
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3131
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3129
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3069
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3067
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3065
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3061
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3059
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3001
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2999
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2955
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2721
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2719
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2661
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2595
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2417
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2415
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2413
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2411
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2401
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2399
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2285
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2235
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2233
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2231
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1987
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1985
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1983
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1915
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1913
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1911
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1909
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1785
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1547
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1307
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 755
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 475
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 391
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 94
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 93
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 92
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 91
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 86
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 85
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 1306
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 1169
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 1144
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 1091
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 1063
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 1014
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 974
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 937
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 836
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 787
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 726
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 722
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 639
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 570
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\batch_operations_screen.dart
+Linha: 557
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 845
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 815
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 794
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_products_screen.dart
+Linha: 573
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_tags_screen.dart
+Linha: 1290
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_tags_screen.dart
+Linha: 1249
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_tags_screen.dart
+Linha: 579
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_tags_screen.dart
+Linha: 562
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\export_tags_screen.dart
+Linha: 561
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 1153
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 1108
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 695
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 684
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 653
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 643
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 642
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 826
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 798
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 793
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 573
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\data\models\pricing_models.dart
+Linha: 625
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 782
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 781
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 780
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 779
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 778
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 777
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 129
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 128
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 126
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\dynamic_pricing_screen.dart
+Linha: 631
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 878
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 791
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 760
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 749
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 718
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 708
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\pricing_menu_screen.dart
+Linha: 707
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 297
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 293
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 287
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 249
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_models.dart
+Linha: 549
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_models.dart
+Linha: 336
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'DateTime?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_models.dart
+Linha: 323
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'DateTime?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 473
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 413
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 357
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 173
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 171
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 167
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 124
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 120
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 93
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 54
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 53
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 52
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 51
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 50
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 49
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 48
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 47
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 46
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 45
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 695
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 661
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 567
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 483
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 323
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 211
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 137
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 115
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 97
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\products_repository.dart
+Linha: 73
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 170
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 149
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 135
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 122
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 104
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 88
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 61
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 45
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\data\services\product_tag_service.dart
+Linha: 32
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 1104
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 130
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\audit_report_screen.dart
+Linha: 729
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\audit_report_screen.dart
+Linha: 642
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 1080
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 1045
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 1040
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 997
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 956
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 947
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 891
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\operational_report_screen.dart
+Linha: 778
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 1082
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 1037
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 886
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 868
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 867
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 813
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 805
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 751
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 716
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 711
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 693
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 601
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 1016
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 906
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 654
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 630
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 951
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 821
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 819
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 611
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 591
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 589
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 587
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 585
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 397
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 395
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 393
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 192
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 190
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 188
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 167
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 166
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 164
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 162
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 99
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 94
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 92
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 91
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 90
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 88
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 41
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 40
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 38
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 36
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 34
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 33
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 32
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 31
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 357
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 356
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'DateTime?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 355
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 354
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 353
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 352
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 350
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 349
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\backup_provider.dart
+Linha: 348
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 956
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 954
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 922
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 920
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 919
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 759
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 758
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 481
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 480
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 479
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 478
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 477
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 284
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 283
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 282
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 280
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 278
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\settings_menu_screen.dart
+Linha: 479
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\settings_menu_screen.dart
+Linha: 431
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 925
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 924
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 922
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 921
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 920
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 919
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 918
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 917
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 891
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 890
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 673
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 672
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 670
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 669
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 668
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 667
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 666
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 655
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 654
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 452
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 451
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 450
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 693
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 692
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 691
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 690
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 689
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 688
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 687
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 686
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 669
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 668
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 396
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 395
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 394
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 393
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 392
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 391
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 390
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 376
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 375
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 373
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 372
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 455
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 454
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 453
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 420
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 419
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 157
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 156
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 155
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 154
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 153
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 152
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 151
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 127
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 126
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 1041
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 453
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 452
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 451
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1533
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1531
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1529
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1527
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1525
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1523
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1521
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1517
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'Object' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1045
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1043
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1039
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1035
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1033
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1031
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1029
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1027
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1007
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 1005
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 629
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 627
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 625
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 623
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 621
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 424
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 408
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 391
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 371
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 354
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 341
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 325
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 312
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 292
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 279
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_repository.dart
+Linha: 259
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\models\tag_model.dart
+Linha: 403
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 537
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 505
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 463
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 445
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 365
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 333
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 309
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 291
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 241
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 213
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 191
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 131
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 109
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 85
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 63
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\data\repositories\tags_repository.dart
+Linha: 39
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_batch_screen.dart
+Linha: 340
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_batch_screen.dart
+Linha: 339
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_batch_screen.dart
+Linha: 302
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 1040
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 965
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 964
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 946
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 939
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 872
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_store_map_screen.dart
+Linha: 744
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 843
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 830
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 704
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 637
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_admin_screen.dart
+Linha: 576
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 706
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 631
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 537
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 526
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 495
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 485
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_menu_screen.dart
+Linha: 484
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1438
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1438
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1430
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1419
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1285
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1284
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 994
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 976
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 912
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 867
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 866
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 712
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 702
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 677
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 675
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1420
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1420
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1276
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1239
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1228
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1209
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1198
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 1109
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\category_products_screen.dart
+Linha: 657
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\data\models\dashboard_models.dart
+Linha: 240
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\data\models\dashboard_models.dart
+Linha: 238
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\data\models\dashboard_models.dart
+Linha: 237
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\data\models\dashboard_models.dart
+Linha: 108
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\data\repositories\dashboard_repository.dart
+Linha: 19
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4988
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4299
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4226
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4160
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1789
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1778
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1747
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1737
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1736
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1202
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1194
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 562
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 554
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'List<Color>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 243
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 232
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 201
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 182
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 181
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 165
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 156
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 296
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 288
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 297
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 293
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 287
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 249
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_models.dart
+Linha: 549
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_models.dart
+Linha: 336
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'DateTime?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_models.dart
+Linha: 323
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'DateTime?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 473
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 413
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 357
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 173
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 171
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 167
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 124
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 120
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 93
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 54
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 53
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 52
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 51
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 50
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 49
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 48
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 47
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 46
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 45
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 348
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 331
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 284
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 242
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 162
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 106
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 104
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'ProductsEndpoints' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 69
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 58
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 49
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\products_repository.dart
+Linha: 37
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 170
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 149
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 135
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 122
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 104
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 88
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 61
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 45
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\data\services\product_tag_service.dart
+Linha: 32
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Map<String, dynamic>'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1107
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1105
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1103
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1101
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1099
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 659
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 657
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 656
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 655
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 643
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 642
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 641
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 640
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 635
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 634
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 633
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 631
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 629
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 628
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int'.
+Motivo: Nenhum padrão de cast aplicável
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_dashboard_screen.dart
+Linha: 240
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'LinearGradient Function(BuildContext)' can't be assigned to the parameter type 'Gradient?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_import_screen.dart
+Linha: 285
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'LinearGradient Function(BuildContext)?' can't be assigned to the parameter type 'Gradient?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_import_screen.dart
+Linha: 246
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'LinearGradient Function(BuildContext)?' can't be assigned to the parameter type 'Gradient?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_import_screen.dart
+Linha: 101
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'LinearGradient Function(BuildContext)' can't be assigned to the parameter type 'Gradient?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\price_history_card.dart
+Linha: 108
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'LinearGradient Function(BuildContext)' can't be assigned to the parameter type 'Gradient?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\list\products_header.dart
+Linha: 33
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'LinearGradient Function(BuildContext)' can't be assigned to the parameter type 'Gradient?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------
+Arquivo: lib\shared\models\models.dart
+Linha: 228
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não conseguiu extrair tipos do erro
+----------------------------------------

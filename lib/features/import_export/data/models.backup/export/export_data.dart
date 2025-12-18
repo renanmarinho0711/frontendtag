@@ -1,0 +1,42 @@
+/// Dados exportados (inline)
+class ExportData {
+  final String exportId;
+  final String type;
+  final String format;
+  final int totalRecords;
+  final String? fileName;
+  final String? contentType;
+  final String? base64Data;
+
+  const ExportData({
+    required this.exportId,
+    required this.type,
+    required this.format,
+    required this.totalRecords,
+    this.fileName,
+    this.contentType,
+    this.base64Data,
+  });
+
+  factory ExportData.fromJson(Map<String, dynamic> json) {
+    return ExportData(
+      exportId: json['exportId'] as String ?? '',
+      type: json['type'] as String ?? '',
+      format: json['format'] as String ?? '',
+      totalRecords: json['totalRecords'] as int ?? 0,
+      fileName: json['fileName'],
+      contentType: json['contentType'],
+      base64Data: json['base64Data'],
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    'exportId': exportId,
+    'type': type,
+    'format': format,
+    'totalRecords': totalRecords,
+    if (fileName != null) 'fileName': fileName,
+    if (contentType != null) 'contentType': contentType,
+    if (base64Data != null) 'base64Data': base64Data,
+  };
+}

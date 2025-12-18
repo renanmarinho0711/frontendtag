@@ -278,6 +278,7 @@ class _ConfiguracoesUsuariosScreenState extends ConsumerState<ConfiguracoesUsuar
                       AppSizes.paddingBase.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
+                      // ignore: deprecated_member_use
                       color: ThemeColors.of(context).surface.  withOpacity(0.2),
                       borderRadius: BorderRadius.circular(
                         isMobile ? 10 : 12,

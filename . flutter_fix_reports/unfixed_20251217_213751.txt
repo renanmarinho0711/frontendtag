@@ -1,0 +1,75 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4289
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4288
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4287
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4285
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4284
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4283
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4274
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4273
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4272
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4270
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4269
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4268
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------

@@ -1,0 +1,99 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: illegal_character
+Mensagem:  Illegal character '225'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 186
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 170
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 169
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 93
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_operations_screen.dart
+Linha: 1035
+Regra: illegal_character
+Mensagem:  Illegal character '231'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_operations_screen.dart
+Linha: 1035
+Regra: illegal_character
+Mensagem:  Illegal character '227'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 2309
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 2295
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 2294
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 2205
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 186
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 170
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 169
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 93
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Caractere ilegal não identificado
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_list_screen.dart
+Linha: 1555
+Regra: illegal_character
+Mensagem:  Illegal character '243'
+Motivo: Caractere ilegal não identificado
+----------------------------------------

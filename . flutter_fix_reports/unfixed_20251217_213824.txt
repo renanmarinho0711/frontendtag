@@ -1,0 +1,387 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 46
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 45
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 26
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_data.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 25
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_data.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 24
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_data.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 23
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_data.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 64
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 62
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 62
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 150
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 147
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 93
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 91
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 90
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 89
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 88
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 87
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 86
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 28
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\export\export_result_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 64
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_config_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 63
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_config_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_config_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 59
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_config_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 125
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 122
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 94
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 93
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 92
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 91
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 59
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 58
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 56
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_error.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 147
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 146
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 145
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 144
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 84
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 84
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 83
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 83
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Erro:  Arquivo não encontrado: lib\features\import_export\data\models.backup\import\import_history_model.dart
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_tags_screen.dart
+Linha: 42
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 2056
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 392
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 130
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\details\product_info_card.dart
+Linha: 142
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\details\product_info_card.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\details\product_info_card.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_history_repository.dart
+Linha: 212
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_history_repository.dart
+Linha: 211
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tag_edit_screen.dart
+Linha: 123
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 1023
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 196
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 65
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\product_info_card.dart
+Linha: 142
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\product_info_card.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\product_info_card.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Padrão de coalescência nula não reconhecido como seguro
+----------------------------------------

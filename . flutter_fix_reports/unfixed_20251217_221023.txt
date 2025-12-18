@@ -1,0 +1,27 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\features\categories\data\models\category_models.dart
+Linha: 328
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 224
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\categories\data\models\category_models.dart
+Linha: 328
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 224
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------

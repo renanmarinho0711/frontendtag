@@ -1,0 +1,2925 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: expected_executable
+Mensagem:  Expected a method, getter, setter or operator declaration
+Motivo: Sem correção automática para:  expected_executable
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: undefined_class
+Mensagem:  Undefined class 'Stub'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: non_constant_identifier_names
+Mensagem:  The variable name 'tempor├írio' isn't a lowerCamelCase identifier
+Motivo: Sem correção automática para:  non_constant_identifier_names
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: expected_token
+Mensagem:  Expected to find ';'
+Motivo: Sem correção automática para:  expected_token
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: illegal_character
+Mensagem:  Illegal character '225'
+Motivo: Sem correção automática para:  illegal_character
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: undefined_class
+Mensagem:  Undefined class 'para'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: expected_token
+Mensagem:  Expected to find ';'
+Motivo: Sem correção automática para:  expected_token
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: undefined_class
+Mensagem:  Undefined class 'erro'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: expected_token
+Mensagem:  Expected to find ';'
+Motivo: Sem correção automática para:  expected_token
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: missing_function_parameters
+Mensagem:  Functions must have an explicit list of parameters
+Motivo: Sem correção automática para:  missing_function_parameters
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: missing_function_body
+Mensagem:  A function body must be provided
+Motivo: Sem correção automática para:  missing_function_body
+----------------------------------------
+Arquivo: lib\core\di\injection.config.dart
+Linha: 1
+Regra: expected_executable
+Mensagem:  Expected a method, getter, setter or operator declaration
+Motivo: Sem correção automática para:  expected_executable
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 72
+Regra: undefined_annotation
+Mensagem:  Undefined name 'module' used as an annotation
+Motivo: Sem correção automática para:  undefined_annotation
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 28
+Regra: undefined_annotation
+Mensagem:  Undefined name 'InjectableInit' used as an annotation
+Motivo: Sem correção automática para:  undefined_annotation
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 26
+Regra: undefined_class
+Mensagem:  Undefined class 'GetIt'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 26
+Regra: undefined_identifier
+Mensagem:  Undefined name 'GetIt'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 2
+Regra: depend_on_referenced_packages
+Mensagem:  The imported package 'injectable' isn't a dependency of the importing package
+Motivo: Adicionar dependência ao pubspec.yaml
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:injectable/injectable.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 1
+Regra: depend_on_referenced_packages
+Mensagem:  The imported package 'get_it' isn't a dependency of the importing package
+Motivo: Adicionar dependência ao pubspec.yaml
+----------------------------------------
+Arquivo: lib\core\di\injection.dart
+Linha: 1
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:get_it/get_it.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\di\service_locator.dart
+Linha: 10
+Regra: undefined_class
+Mensagem:  Undefined class 'GetIt'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\di\service_locator.dart
+Linha: 10
+Regra: undefined_identifier
+Mensagem:  Undefined name 'GetIt'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\di\service_locator.dart
+Linha: 1
+Regra: depend_on_referenced_packages
+Mensagem:  The imported package 'get_it' isn't a dependency of the importing package
+Motivo: Adicionar dependência ao pubspec.yaml
+----------------------------------------
+Arquivo: lib\core\di\service_locator.dart
+Linha: 1
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:get_it/get_it.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\l10n\app_localizations.dart
+Linha: 49
+Regra: invalid_assignment
+Mensagem:  A value of type 'dynamic' can't be assigned to a variable of type 'Map<String, dynamic>'
+Motivo: Sem correção automática para:  invalid_assignment
+----------------------------------------
+Arquivo: lib\core\network\api_interceptors.dart
+Linha: 40
+Regra: strict_raw_type
+Mensagem:  The generic type 'Response<dynamic>' should have explicit type arguments but doesn't
+Motivo: Sem correção automática para:  strict_raw_type
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 96
+Regra: undefined_class
+Mensagem:  Undefined class 'Locale'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 92
+Regra: undefined_method
+Mensagem:  The method 'Locale' isn't defined for the type 'LocaleNotifier'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 84
+Regra: creation_with_non_type
+Mensagem:  The name 'Locale' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 80
+Regra: non_type_as_type_argument
+Mensagem:  The name 'Locale' isn't a type, so it can't be used as a type argument
+Motivo: Sem correção automática para:  non_type_as_type_argument
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 74
+Regra: non_type_as_type_argument
+Mensagem:  The name 'Locale' isn't a type, so it can't be used as a type argument
+Motivo: Sem correção automática para:  non_type_as_type_argument
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 64
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 64
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 64
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 57
+Regra: undefined_class
+Mensagem:  Undefined class 'ThemeMode'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 53
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 52
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 51
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 44
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ThemeMode'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 40
+Regra: non_type_as_type_argument
+Mensagem:  The name 'ThemeMode' isn't a type, so it can't be used as a type argument
+Motivo: Sem correção automática para:  non_type_as_type_argument
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 34
+Regra: non_type_as_type_argument
+Mensagem:  The name 'ThemeMode' isn't a type, so it can't be used as a type argument
+Motivo: Sem correção automática para:  non_type_as_type_argument
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 3
+Regra: directive_after_declaration
+Mensagem:  Directives must appear before any declarations
+Motivo: Sem correção automática para:  directive_after_declaration
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 2
+Regra: directive_after_declaration
+Mensagem:  Directives must appear before any declarations
+Motivo: Sem correção automática para:  directive_after_declaration
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 1
+Regra: expected_token
+Mensagem:  Expected to find ';'
+Motivo: Sem correção automática para:  expected_token
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 1
+Regra: missing_const_final_var_or_type
+Mensagem:  Variables must be declared using the keywords 'const', 'final', 'var' or a type name
+Motivo: Sem correção automática para:  missing_const_final_var_or_type
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 1
+Regra: expected_executable
+Mensagem:  Expected a method, getter, setter or operator declaration
+Motivo: Sem correção automática para:  expected_executable
+----------------------------------------
+Arquivo: lib\core\providers\app_providers.dart
+Linha: 1
+Regra: unexpected_token
+Mensagem:  Unexpected text ';'
+Motivo: Sem correção automática para:  unexpected_token
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 310
+Regra: non_type_as_type_argument
+Mensagem:  The name 'GoRouter' isn't a type, so it can't be used as a type argument
+Motivo: Sem correção automática para:  non_type_as_type_argument
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 290
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 287
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 281
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 278
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 272
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 269
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 264
+Regra: undefined_method
+Mensagem:  The method 'NoTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 261
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 251
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 248
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 242
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 239
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 233
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 230
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 225
+Regra: undefined_method
+Mensagem:  The method 'NoTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 222
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 213
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 211
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 206
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 200
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 197
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 192
+Regra: undefined_method
+Mensagem:  The method 'NoTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 189
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 180
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 178
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 173
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 167
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 164
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 159
+Regra: undefined_method
+Mensagem:  The method 'NoTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 156
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 149
+Regra: undefined_method
+Mensagem:  The method 'NoTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 146
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 143
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Widget'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 142
+Regra: undefined_method
+Mensagem:  The method 'ShellRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 132
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 129
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 123
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 120
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 114
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 111
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 106
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 98
+Regra: undefined_method
+Mensagem:  The method 'CustomTransitionPage' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 95
+Regra: undefined_method
+Mensagem:  The method 'GoRoute' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 77
+Regra: non_bool_operand
+Mensagem:  The operands of the operator '&&' must be assignable to 'bool'
+Motivo: Sem correção automática para:  non_bool_operand
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 72
+Regra: non_bool_negation_expression
+Mensagem:  A negation operand must have a static type of 'bool'
+Motivo: Sem correção automática para:  non_bool_negation_expression
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 61
+Regra: undefined_method
+Mensagem:  The method 'GoRouter' isn't defined for the type 'AppRouter'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 2
+Regra: depend_on_referenced_packages
+Mensagem:  The imported package 'go_router' isn't a dependency of the importing package
+Motivo: Adicionar dependência ao pubspec.yaml
+----------------------------------------
+Arquivo: lib\core\router\app_router.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:go_router/go_router.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\router\route_guards.dart
+Linha: 42
+Regra: undefined_getter
+Mensagem:  The getter 'hasCompletedOnboarding' isn't defined for the type 'UserModel'
+Motivo: Sem correção automática para:  undefined_getter
+----------------------------------------
+Arquivo: lib\core\router\route_guards.dart
+Linha: 34
+Regra: undefined_getter
+Mensagem:  The getter 'isPremium' isn't defined for the type 'UserModel'
+Motivo: Sem correção automática para:  undefined_getter
+----------------------------------------
+Arquivo: lib\core\router\route_guards.dart
+Linha: 25
+Regra: undefined_getter
+Mensagem:  The getter 'role' isn't defined for the type 'UserModel'
+Motivo: Sem correção automática para:  undefined_getter
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 330
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 329
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 327
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 319
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 318
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 316
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 307
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppShadows'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 294
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 293
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 288
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 288
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 287
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 275
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 274
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 270
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 269
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 267
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 266
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 252
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 251
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 249
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 248
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 246
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 245
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 243
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 243
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 242
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 240
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 240
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 239
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 237
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 236
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 234
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 233
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 226
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 225
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 224
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 176
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 147
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 140
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 5
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_shadows.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 4
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_spacing.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 3
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_typography.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_button.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_colors.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 134
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppShadows'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 125
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 125
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 117
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 116
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 114
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 114
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 95
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 83
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 80
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 4
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_shadows.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_card.dart
+Linha: 3
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_spacing.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 192
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 163
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 161
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 161
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 149
+Regra: prefer_initializing_formals
+Mensagem:  Use an initializing formal to assign a parameter to a field
+Motivo: Sem correção automática para:  prefer_initializing_formals
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 110
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 106
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 51
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 50
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 48
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 45
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 4
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_spacing.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 3
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_typography.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_loading.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_colors.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 402
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 398
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 394
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 394
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 388
+Regra: invalid_constant
+Mensagem:  Invalid constant value
+Motivo: Sem correção automática para:  invalid_constant
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 388
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 385
+Regra: invalid_constant
+Mensagem:  Invalid constant value
+Motivo: Sem correção automática para:  invalid_constant
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 385
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 384
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 381
+Regra: invalid_constant
+Mensagem:  Invalid constant value
+Motivo: Sem correção automática para:  invalid_constant
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 381
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 380
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 372
+Regra: invalid_constant
+Mensagem:  Invalid constant value
+Motivo: Sem correção automática para:  invalid_constant
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 372
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 369
+Regra: invalid_constant
+Mensagem:  Invalid constant value
+Motivo: Sem correção automática para:  invalid_constant
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 369
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 368
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 365
+Regra: invalid_constant
+Mensagem:  Invalid constant value
+Motivo: Sem correção automática para:  invalid_constant
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 365
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 364
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 352
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 348
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 344
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 344
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 334
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 330
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 326
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 326
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 319
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 315
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 304
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 304
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 296
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 296
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 275
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 275
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 274
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 274
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 266
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 266
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 262
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 262
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 261
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 251
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 251
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 248
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 243
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 243
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 242
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 239
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 234
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 234
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 233
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 217
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppSpacing'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 214
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 214
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppColors'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 213
+Regra: undefined_identifier
+Mensagem:  Undefined name 'AppTypography'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 5
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_spacing.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 4
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_typography.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\app_text_field.dart
+Linha: 3
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/core/theme/app_colors.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\core\widgets\stubs.dart
+Linha: 353
+Regra: deprecated_member_use
+Mensagem:  'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\design_system\theme\temas\BOA theme_colors_t10_indigo_night.dart
+Linha: 1
+Regra: file_names
+Mensagem:  The file name 'BOA theme_colors_t10_indigo_night.dart' isn't a lower_case_with_underscores identifier
+Motivo: Arquivo precisa ser renomeado: lib\design_system\theme\temas\BOA theme_colors_t10_indigo_night.dart
+----------------------------------------
+Arquivo: lib\design_system\theme\temas\BOA_theme_colors_t12_sky_blue.dart
+Linha: 1
+Regra: file_names
+Mensagem:  The file name 'BOA_theme_colors_t12_sky_blue.dart' isn't a lower_case_with_underscores identifier
+Motivo: Arquivo precisa ser renomeado: lib\design_system\theme\temas\BOA_theme_colors_t12_sky_blue.dart
+----------------------------------------
+Arquivo: lib\design_system\theme\temas\BOM_theme_colors_t14_forest_green.dart
+Linha: 1
+Regra: file_names
+Mensagem:  The file name 'BOM_theme_colors_t14_forest_green.dart' isn't a lower_case_with_underscores identifier
+Motivo: Arquivo precisa ser renomeado: lib\design_system\theme\temas\BOM_theme_colors_t14_forest_green.dart
+----------------------------------------
+Arquivo: lib\features\auth\data\models\user_model.dart
+Linha: 143
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\auth\data\models\user_model.dart
+Linha: 55
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\auth\data\models\user_model.dart
+Linha: 55
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\auth\presentation\providers\auth_provider.dart
+Linha: 307
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\auth\presentation\providers\auth_provider.dart
+Linha: 275
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\auth\presentation\providers\auth_provider.dart
+Linha: 228
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\auth\presentation\providers\auth_provider.dart
+Linha: 196
+Regra: deprecated_member_use_from_same_package
+Mensagem:  'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas
+Motivo: Sem correção automática para:  deprecated_member_use_from_same_package
+----------------------------------------
+Arquivo: lib\features\categories\presentation\screens\categories_stats_screen.dart
+Linha: 10
+Regra: unnecessary_import
+Mensagem:  The import of 'package:tagbean/design_system/theme/theme_colors_dynamic.dart' is unnecessary because all of the used elements are also provided by the import of 'package:tagbean/design_system/design_system.dart'
+Motivo: Linha não é um import
+----------------------------------------
+Arquivo: lib\features\dashboard\data\models\dashboard_models.dart
+Linha: 1
+Regra: dangling_library_doc_comments
+Mensagem:  Dangling library doc comment
+Motivo: Sem correção automática para:  dangling_library_doc_comments
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1280
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1271
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1258
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1250
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1246
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 50
+Regra: prefer_final_fields
+Mensagem:  The private field _isEstrategiasExpanded could be 'final'
+Motivo: Sem correção automática para:  prefer_final_fields
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 165
+Regra: undefined_method
+Mensagem:  The method 'DashboardContent' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 164
+Regra: undefined_method
+Mensagem:  The method 'ConfiguracoesMenuScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 163
+Regra: undefined_method
+Mensagem:  The method 'RelatoriosMenuScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 162
+Regra: undefined_method
+Mensagem:  The method 'ImportacaoMenuScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 161
+Regra: undefined_method
+Mensagem:  The method 'CategoriasMenuScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 160
+Regra: undefined_method
+Mensagem:  The method 'PrecificacaoMenuScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 159
+Regra: undefined_method
+Mensagem:  The method 'SincronizacaoControleScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 158
+Regra: undefined_method
+Mensagem:  The method 'EstrategiasMenuScreen' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 152
+Regra: undefined_method
+Mensagem:  The method 'DashboardContent' isn't defined for the type '_DashboardScreenState'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 114
+Regra: undefined_identifier
+Mensagem:  Undefined name 'LogoutDialog'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 113
+Regra: undefined_identifier
+Mensagem:  Undefined name 'NotificationsPanel'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 14
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/search/tagbean_search_delegate.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 13
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/sections/sections.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 12
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/dialogs/dialogs.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_screens_dashboard_screen.dart
+Linha: 11
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/cards/cards.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 7
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'compact_quick_actions_card.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 6
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'compact_alerts_card.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 5
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'compact_sync_card.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 4
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'sugestoes_ia_card.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 3
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'estrategias_detalhadas_card.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'estrategias_lucro_card.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_cards.dart
+Linha: 1
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'compact_metrics_grid.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 138
+Regra: undefined_method
+Mensagem:  The method 'Text' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 138
+Regra: undefined_method
+Mensagem:  The method 'TextStyle' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 137
+Regra: creation_with_non_type
+Mensagem:  The name 'SizedBox' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 136
+Regra: undefined_method
+Mensagem:  The method 'Text' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 136
+Regra: undefined_method
+Mensagem:  The method 'TextStyle' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 136
+Regra: undefined_identifier
+Mensagem:  Undefined name 'FontWeight'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 135
+Regra: creation_with_non_type
+Mensagem:  The name 'SizedBox' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 134
+Regra: undefined_method
+Mensagem:  The method 'Icon' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 132
+Regra: undefined_identifier
+Mensagem:  Undefined name 'MainAxisSize'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 131
+Regra: undefined_method
+Mensagem:  The method 'Column' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 126
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Border'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 125
+Regra: undefined_identifier
+Mensagem:  Undefined name 'BorderRadius'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 119
+Regra: undefined_method
+Mensagem:  The method 'LinearGradient' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 118
+Regra: undefined_method
+Mensagem:  The method 'BoxDecoration' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 117
+Regra: undefined_identifier
+Mensagem:  Undefined name 'EdgeInsets'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 116
+Regra: undefined_method
+Mensagem:  The method 'Container' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 114
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 113
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 112
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 112
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 105
+Regra: undefined_method
+Mensagem:  The method 'Opacity' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 103
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Transform'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 101
+Regra: undefined_method
+Mensagem:  The method 'Tween' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 99
+Regra: undefined_method
+Mensagem:  The method 'TweenAnimationBuilder' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 97
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 97
+Regra: override_on_non_overriding_member
+Mensagem:  The method doesn't override an inherited method
+Motivo: Sem correção automática para:  override_on_non_overriding_member
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 97
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 91
+Regra: extends_non_class
+Mensagem:  Classes can only extend other classes
+Motivo: Sem correção automática para:  extends_non_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 84
+Regra: undefined_class
+Mensagem:  Undefined class 'Color'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 83
+Regra: undefined_class
+Mensagem:  Undefined class 'IconData'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 71
+Regra: undefined_identifier
+Mensagem:  Undefined name 'EdgeInsets'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 70
+Regra: undefined_method
+Mensagem:  The method 'Padding' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 69
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 67
+Regra: undefined_method
+Mensagem:  The method 'Row' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 60
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 59
+Regra: undefined_method
+Mensagem:  The method 'SizedBox' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 59
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 58
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 56
+Regra: undefined_method
+Mensagem:  The method 'Row' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 55
+Regra: undefined_method
+Mensagem:  The method 'SizedBox' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 55
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 52
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 51
+Regra: undefined_method
+Mensagem:  The method 'SizedBox' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 51
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 50
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 48
+Regra: undefined_method
+Mensagem:  The method 'Row' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 46
+Regra: undefined_identifier
+Mensagem:  Undefined name 'MainAxisSize'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 45
+Regra: undefined_method
+Mensagem:  The method 'Column' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 44
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 43
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 43
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 35
+Regra: creation_with_non_type
+Mensagem:  The name 'Offset' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 32
+Regra: undefined_method
+Mensagem:  The method 'BoxShadow' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 28
+Regra: undefined_identifier
+Mensagem:  Undefined name 'BorderRadius'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 26
+Regra: undefined_method
+Mensagem:  The method 'BoxDecoration' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 25
+Regra: undefined_identifier
+Mensagem:  Undefined name 'EdgeInsets'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 24
+Regra: undefined_method
+Mensagem:  The method 'Container' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 20
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 18
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 16
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 14
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 11
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 10
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 9
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 9
+Regra: override_on_non_overriding_member
+Mensagem:  The method doesn't override an inherited method
+Motivo: Sem correção automática para:  override_on_non_overriding_member
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 9
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 6
+Regra: super_formal_parameter_without_associated_named
+Mensagem:  No associated named super constructor parameter
+Motivo: Sem correção automática para:  super_formal_parameter_without_associated_named
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 5
+Regra: extends_non_class
+Mensagem:  Classes can only extend other classes
+Motivo: Sem correção automática para:  extends_non_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 2
+Regra: depend_on_referenced_packages
+Mensagem:  The imported package ' tagbean' isn't a dependency of the importing package
+Motivo: Adicionar dependência ao pubspec.yaml
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package: tagbean/core/utils/responsive_helper.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 1
+Regra: file_names
+Mensagem:  The file name 'lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart' isn't a lower_case_with_underscores identifier
+Motivo: Arquivo precisa ser renomeado: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid (1).dart
+Linha: 1
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:flutter/material. dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 138
+Regra: undefined_method
+Mensagem:  The method 'Text' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 138
+Regra: undefined_method
+Mensagem:  The method 'TextStyle' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 137
+Regra: creation_with_non_type
+Mensagem:  The name 'SizedBox' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 136
+Regra: undefined_method
+Mensagem:  The method 'Text' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 136
+Regra: undefined_method
+Mensagem:  The method 'TextStyle' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 136
+Regra: undefined_identifier
+Mensagem:  Undefined name 'FontWeight'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 135
+Regra: creation_with_non_type
+Mensagem:  The name 'SizedBox' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 134
+Regra: undefined_method
+Mensagem:  The method 'Icon' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 132
+Regra: undefined_identifier
+Mensagem:  Undefined name 'MainAxisSize'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 131
+Regra: undefined_method
+Mensagem:  The method 'Column' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 126
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Border'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 125
+Regra: undefined_identifier
+Mensagem:  Undefined name 'BorderRadius'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 119
+Regra: undefined_method
+Mensagem:  The method 'LinearGradient' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 118
+Regra: undefined_method
+Mensagem:  The method 'BoxDecoration' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 117
+Regra: undefined_identifier
+Mensagem:  Undefined name 'EdgeInsets'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 116
+Regra: undefined_method
+Mensagem:  The method 'Container' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 114
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 113
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 112
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 112
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 105
+Regra: undefined_method
+Mensagem:  The method 'Opacity' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 103
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Transform'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 101
+Regra: undefined_method
+Mensagem:  The method 'Tween' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 99
+Regra: undefined_method
+Mensagem:  The method 'TweenAnimationBuilder' isn't defined for the type '_DashboardStatCard'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 97
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 97
+Regra: override_on_non_overriding_member
+Mensagem:  The method doesn't override an inherited method
+Motivo: Sem correção automática para:  override_on_non_overriding_member
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 97
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 91
+Regra: extends_non_class
+Mensagem:  Classes can only extend other classes
+Motivo: Sem correção automática para:  extends_non_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 84
+Regra: undefined_class
+Mensagem:  Undefined class 'Color'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 83
+Regra: undefined_class
+Mensagem:  Undefined class 'IconData'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 71
+Regra: undefined_identifier
+Mensagem:  Undefined name 'EdgeInsets'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 70
+Regra: undefined_method
+Mensagem:  The method 'Padding' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 69
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 67
+Regra: undefined_method
+Mensagem:  The method 'Row' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 60
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 59
+Regra: undefined_method
+Mensagem:  The method 'SizedBox' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 59
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 58
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 56
+Regra: undefined_method
+Mensagem:  The method 'Row' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 55
+Regra: undefined_method
+Mensagem:  The method 'SizedBox' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 55
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 52
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 51
+Regra: undefined_method
+Mensagem:  The method 'SizedBox' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 51
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 50
+Regra: undefined_method
+Mensagem:  The method 'Expanded' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 48
+Regra: undefined_method
+Mensagem:  The method 'Row' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 46
+Regra: undefined_identifier
+Mensagem:  Undefined name 'MainAxisSize'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 45
+Regra: undefined_method
+Mensagem:  The method 'Column' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 44
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 43
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 43
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 35
+Regra: creation_with_non_type
+Mensagem:  The name 'Offset' isn't a class
+Motivo: Sem correção automática para:  creation_with_non_type
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 32
+Regra: undefined_method
+Mensagem:  The method 'BoxShadow' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 28
+Regra: undefined_identifier
+Mensagem:  Undefined name 'BorderRadius'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 26
+Regra: undefined_method
+Mensagem:  The method 'BoxDecoration' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 25
+Regra: undefined_identifier
+Mensagem:  Undefined name 'EdgeInsets'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 24
+Regra: undefined_method
+Mensagem:  The method 'Container' isn't defined for the type 'CompactMetricsGrid'
+Motivo: Sem correção automática para:  undefined_method
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 20
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 18
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 16
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 14
+Regra: undefined_identifier
+Mensagem:  Undefined name 'Icons'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 11
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 10
+Regra: undefined_identifier
+Mensagem:  Undefined name 'ResponsiveHelper'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 9
+Regra: undefined_class
+Mensagem:  Undefined class 'Widget'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 9
+Regra: override_on_non_overriding_member
+Mensagem:  The method doesn't override an inherited method
+Motivo: Sem correção automática para:  override_on_non_overriding_member
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 9
+Regra: undefined_class
+Mensagem:  Undefined class 'BuildContext'
+Motivo: Sem correção automática para:  undefined_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 6
+Regra: super_formal_parameter_without_associated_named
+Mensagem:  No associated named super constructor parameter
+Motivo: Sem correção automática para:  super_formal_parameter_without_associated_named
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 5
+Regra: extends_non_class
+Mensagem:  Classes can only extend other classes
+Motivo: Sem correção automática para:  extends_non_class
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 2
+Regra: depend_on_referenced_packages
+Mensagem:  The imported package ' tagbean' isn't a dependency of the importing package
+Motivo: Adicionar dependência ao pubspec.yaml
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package: tagbean/core/utils/responsive_helper.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_cards_compact_metrics_grid.dart
+Linha: 1
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'package:flutter/material. dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_dialogs_dialogs.dart
+Linha: 5
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'aplicar_sugestoes_dialog.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_dialogs_dialogs.dart
+Linha: 4
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'erp_status_dialog.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_dialogs_dialogs.dart
+Linha: 3
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'notifications_panel.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_dialogs_dialogs.dart
+Linha: 2
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'logout_dialog.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\lib_features_dashboard_presentation_widgets_dialogs_dialogs.dart
+Linha: 1
+Regra: uri_does_not_exist
+Mensagem:  Target of URI doesn't exist: 'alertas_dialog.dart'
+Motivo: Import para arquivo inexistente - verificar manualmente
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 306
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 296
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 288
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 286
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 274
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 209
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 203
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 188
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 178
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 171
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\atalhos_rapidos_card.dart
+Linha: 169
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 243
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 238
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 232
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 207
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 201
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 196
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 182
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Color?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 181
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 54
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 46
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 38
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart
+Linha: 30
+Regra: undefined_identifier
+Mensagem:  Undefined name 'context'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 186
+Regra: undefined_identifier
+Mensagem:  Undefined name 'estrat├®giasData'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 186
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Sem correção automática para:  illegal_character
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 170
+Regra: undefined_identifier
+Mensagem:  Undefined name 'estrat├®giasData'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 170
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Sem correção automática para:  illegal_character
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 169
+Regra: undefined_identifier
+Mensagem:  Undefined name 'estrat├®giasData'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 169
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Sem correção automática para:  illegal_character
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 129
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 93
+Regra: undefined_identifier
+Mensagem:  Undefined name 'estrat├®giasData'
+Motivo: Correção automática não disponível
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart
+Linha: 93
+Regra: illegal_character
+Mensagem:  Illegal character '233'
+Motivo: Sem correção automática para:  illegal_character
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+Linha: 95
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+Linha: 89
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+Linha: 81
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 172
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 165
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart
+Linha: 156
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 316
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 298
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'IconData?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart
+Linha: 290
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'Iterable<dynamic>'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 53
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 48
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 29
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 28
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 27
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 57
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 50
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 49
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 48
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 47
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'double?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 46
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'bool?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_filters.dart
+Linha: 44
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 63
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 153
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 152
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 151
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 149
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 148
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 100
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 99
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 98
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 97
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 65
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'int?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 124
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 123
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 57
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 23
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 90
+Regra: argument_type_not_assignable
+Mensagem:  The argument type 'dynamic' can't be assigned to the parameter type 'String?'.
+Motivo: Não foi possível determinar correção automática
+----------------------------------------

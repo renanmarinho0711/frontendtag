@@ -492,6 +492,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   // _buildUserMenu, _buildModernNavigationRail(context, ~880 linhas)
   // ============================================================================
 
+  // ignore: unused_element
   Widget _buildMobileBottomNav(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -580,6 +581,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildModernAppBar(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -1006,6 +1008,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildModernNavigationRail(BuildContext context) {
     final isTablet = ResponsiveHelper.isTablet(context);
     final railWidth = isTablet ? (_isRailExpanded ? 200 : 70) : (_isRailExpanded ? 240 : 80);
@@ -1478,6 +1481,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildWelcomeSection(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -1618,6 +1622,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactMetricsGrid(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     
@@ -1779,6 +1784,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactMetricCard(BuildContext context, 
     String title,
     String value,
@@ -1913,6 +1919,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );  // Fechamento do RepaintBoundary
   }
 
+  // ignore: unused_element
   Widget _buildEstrategiasMetricCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2073,6 +2080,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildEstrategiasLucroCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2404,6 +2412,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildSugestoesIACard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2678,6 +2687,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildEstrategiasDetalhadasCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -3005,6 +3015,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactSyncCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -3343,6 +3354,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactAlertsCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -3575,6 +3587,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactQuickActionsCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -4026,6 +4039,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   /// Abre busca rãpida
+  // ignore: unused_element
   void _abrirBusca() {
     showSearch(
       context: context,
@@ -4034,6 +4048,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   /// Atualiza dados do dashboard
+  // ignore: unused_element
   void _atualizarDashboard() {
     ref.read(dashboardProvider.notifier).refresh();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -4265,12 +4280,18 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   // Funãães auxiliares para determinar cores dos cards de alerta baseado na cor do alerta
   Color _getAlertCardBackground(Color alertColor) {
     // Compara a cor do alerta com as cores conhecidas
+    // ignore: deprecated_member_use
     if (alertColor.value == ThemeColors.of(context).alertWarningLight.value ||
+        // ignore: deprecated_member_use
         alertColor.value == ThemeColors.of(context).alertOrangeMain.value ||
+        // ignore: deprecated_member_use
         alertColor.value == ThemeColors.of(context).alertWarningIcon.value) {
       return ThemeColors.of(context).alertWarningCardBackground;
+    // ignore: deprecated_member_use
     } else if (alertColor.value == ThemeColors.of(context).alertWarningLight.value ||
+               // ignore: deprecated_member_use
                alertColor.value == ThemeColors.of(context).alertRedMain.value ||
+               // ignore: deprecated_member_use
                alertColor.value == ThemeColors.of(context).alertErrorBackground.value) {
       return ThemeColors.of(context).alertErrorCardBackground;
     }
@@ -4280,12 +4301,18 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 
   Color _getAlertCardBorder(Color alertColor) {
     // Compara a cor do alerta com as cores conhecidas
+    // ignore: deprecated_member_use
     if (alertColor.value == ThemeColors.of(context).alertWarningLight.value ||
+        // ignore: deprecated_member_use
         alertColor.value == ThemeColors.of(context).alertOrangeMain.value ||
+        // ignore: deprecated_member_use
         alertColor.value == ThemeColors.of(context).alertWarningIcon.value) {
       return ThemeColors.of(context).alertWarningCardBorder;
+    // ignore: deprecated_member_use
     } else if (alertColor.value == ThemeColors.of(context).alertWarningLight.value ||
+               // ignore: deprecated_member_use
                alertColor.value == ThemeColors.of(context).alertRedMain.value ||
+               // ignore: deprecated_member_use
                alertColor.value == ThemeColors.of(context).alertErrorBackground.value) {
       return ThemeColors.of(context).alertErrorCardBorder;
     }

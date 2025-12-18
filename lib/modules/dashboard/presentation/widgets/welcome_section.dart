@@ -411,6 +411,7 @@ class WelcomeSection extends ConsumerWidget {
     );
   }
   
+  // ignore: unused_element
   Widget _buildMetricCard(BuildContext context, {
     required IconData icon,
     required String title,

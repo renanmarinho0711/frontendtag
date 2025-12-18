@@ -458,8 +458,8 @@ class DartFileFixer:
         if not original_line.strip().startswith('import '):
             return FixResult(False, issue, "Linha não é um import")
         
-        # Remove a linha (ou comenta)
-        lines[line_idx] = f"// REMOVED: {original_line}"
+        # Remove a linha (deleta completamente)
+        del lines[line_idx]
         
         self._write_file(issue.file_path, lines)
         
@@ -876,32 +876,32 @@ class ReportGenerator:
         failed_count = sum(1 for r in results if not r.success)
         
         report = f"""
-╔══════════════════════════════════════════════════════════════╗
-║                 RELATÓRIO DE CORREÇÕES FLUTTER               ║
-╠══════════════════════════════════════════════════════════════╣
-║ Data: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}                              ║
-╠══════════════════════════════════════════════════════════════╣
-║ ANÁLISE INICIAL                                              ║
-╠══════════════════════════════════════════════════════════════╣
-║ Total de Issues:      {summary['total']: >6}                                 ║
-║   - Erros:           {summary['errors']:>6}                                 ║
-║   - Warnings:        {summary['warnings']:>6}                                 ║
-║   - Infos:           {summary['infos']:>6}                                 ║
-║ Arquivos Afetados:   {summary['files_affected']:>6}                                 ║
-╠══════════════════════════════════════════════════════════════╣
-║ SEVERIDADE                                                   ║
-╠══════════════════════════════════════════════════════════════╣
-║   - Crítica:         {summary['by_severity']['critical']:>6}                                 ║
-║   - Alta:            {summary['by_severity']['high']:>6}                                 ║
-║   - Média:           {summary['by_severity']['medium']:>6}                                 ║
-║   - Baixa:           {summary['by_severity']['low']:>6}                                 ║
-╠══════════════════════════════════════════════════════════════╣
-║ CORREÇÕES                                                    ║
-╠══════════════════════════════════════════════════════════════╣
-║ Corrigidos:          {fixed_count:>6}                                 ║
-║ Não Corrigidos:      {failed_count:>6}                                 ║
-║ Taxa de Sucesso:     {(fixed_count/(fixed_count+failed_count)*100 if fixed_count+failed_count > 0 else 0):>5.1f}%                                ║
-╚══════════════════════════════════════════════════════════════╝
++================================================================+
+|                 RELATORIO DE CORRECOES FLUTTER               |
++================================================================+
+| Data: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}                              |
++================================================================+
+| ANALISE INICIAL                                              |
++================================================================+
+| Total de Issues:      {summary['total']: >6}                                 |
+|   - Erros:           {summary['errors']:>6}                                 |
+|   - Warnings:        {summary['warnings']:>6}                                 |
+|   - Infos:           {summary['infos']:>6}                                 |
+| Arquivos Afetados:   {summary['files_affected']:>6}                                 |
++================================================================+
+| SEVERIDADE                                                   |
++================================================================+
+|   - Critica:         {summary['by_severity']['critical']:>6}                                 |
+|   - Alta:            {summary['by_severity']['high']:>6}                                 |
+|   - Media:           {summary['by_severity']['medium']:>6}                                 |
+|   - Baixa:           {summary['by_severity']['low']:>6}                                 |
++================================================================+
+| CORRECOES                                                    |
++================================================================+
+| Corrigidos:          {fixed_count:>6}                                 |
+| Nao Corrigidos:      {failed_count:>6}                                 |
+| Taxa de Sucesso:     {(fixed_count/(fixed_count+failed_count)*100 if fixed_count+failed_count > 0 else 0):>5.1f}%                                |
++================================================================+
 """
         return report
     
@@ -1323,13 +1323,193 @@ Exemplos de uso:
     
     # Verifica dependências faltantes
     pubspec_fixer = PubspecFixer(args.project_path)
-    missing_deps = pubspec_fixer. find_missing_dependencies(issues)
+    missing_deps = pubspec_fixer.find_missing_dependencies(issues)
     
     if missing_deps:
         print("\n[+] Dependencias possivelmente faltantes:")
         for dep in sorted(missing_deps):
             print(f"  - {dep}")
         print("\nAdicione-as ao pubspec.yaml e execute 'flutter pub get'")
+    
+    # ========================================================================
+    # ANALISE POS-EXECUCAO E VALIDACAO FINAL É PROIBIDO APAGAR AS FUNÇÕES ABAIXO 
+    # ========================================================================
+    print("\n" + "="*80)
+    print("ANALISE POS-EXECUCAO E VALIDACAO FINAL")
+    print("="*80)
+    
+    # Re-analisa para comparar
+    if not args.dry_run and not args.report_only:
+        print("\n[*] Analisando codigo pos-correcao...")
+        try:
+            flutter_cmd = "C:\\temp_flutter\\flutter\\bin\\flutter.bat"  # Usar caminho completo
+            result = subprocess.run(
+                [flutter_cmd, "analyze", "lib", "--no-pub"],
+                cwd=args.project_path,
+                capture_output=True,
+                text=True,
+                timeout=300,
+                encoding='utf-8',
+                errors='replace'
+            )
+            
+            # Extrai número de issues do output
+            output = result.stdout + result.stderr
+            issues_match = re.search(r'(\d+)\s+issues? found', output)
+            
+            if issues_match:
+                final_issue_count = int(issues_match.group(1))
+                initial_issue_count = initial_summary['total']
+                difference = initial_issue_count - final_issue_count
+                
+                print(f"\n[*] RESULTADO DA ANALISE:")
+                print(f"   Issues Iniciais:  {initial_issue_count}")
+                print(f"   Issues Finais:    {final_issue_count}")
+                print(f"   Diferenca:        {difference:+d} issues")
+                print(f"   Reducao %:        {(difference/initial_issue_count*100):.2f}%")
+                
+                # ================================================================
+                # SITUACAO 1: ISSUES AUMENTARAM - REGRESSOR
+                # ================================================================
+                if difference < 0:
+                    print("\n" + "[!] "*40)
+                    print("[!] SITUACAO 1: ISSUES AUMENTARAM - ACAO NECESSARIA")
+                    print("[!] "*40)
+                    
+                    prompt_situation_1 = """
+================================================================================
+                    SITUACAO 1: ISSUES AUMENTARAM (REGRESSOR)
+================================================================================
+
+PROBLEMA: Issues aumentaram de {initial} para {final} ({diff:+d})
+
+ACAO IMEDIATA:
+1. Comparar arquivo modificado vs. backup para entender o erro
+2. Identificar qual fixer causou o problema
+3. Analisar o padrao de erro gerado pelo fixer
+4. Restaurar TODOS os arquivos do backup local (.backup)
+5. Re-testar com --dry-run antes de aplicar
+6. Se OK, aplicar novamente e verificar
+7. Fazer commit com mensagem descrevendo o fix
+8. Continuar o ciclo
+
+PERGUNTAS DE DIAGNOSTICO:
+- Qual regra de fixer foi aplicada? (ex: argument_type_not_assignable)
+- Qual arquivo teve problema? (verificar diffs)
+- Que tipo de erro o fixer criou? (verificar tipos de erros adicionados)
+- O fixer esta aplicando o padrao corretamente?
+- Ha casos edge que o fixer nao lida?
+
+PROXIMO PASSO:
+-> Chamar o agente novamente com a analise dos arquivos modificados
+-> Informar qual fixer causou aumento de issues
+-> Pedir para corrigir a logica do fixer especifico
+
+================================================================================
+""".format(initial=initial_issue_count, final=final_issue_count, diff=difference)
+                    print(prompt_situation_1)
+                    
+                    # Restaurar automaticamente
+                    print("[*] Restaurando arquivos do backup...")
+                    validator = ValidationManager(args.project_path)
+                    modified_files = set(r.issue.file_path for r in results if r.success)
+                    for file_path in modified_files:
+                        validator.restore_from_backup(file_path)
+                    print("[+] Arquivos restaurados!")
+                    
+                    sys.exit(1)
+                
+                # SITUACAO 2: ISSUES DIMINUIRAM - SUCESSO
+                elif difference > 0:
+                    print("\n" + "[+] "*40)
+                    print("[+] SITUACAO 2: ISSUES DIMINUIRAM - PROSSEGUIR COM AJUSTES")
+                    print("[+] "*40)
+                    
+                    prompt_situation_2 = """
+================================================================================
+              SITUACAO 2: ISSUES DIMINUIRAM - SUCESSO! (PROSSEGUIR) - NUNCA APAGUE ESSE SCRIPT
+================================================================================
+
+RESULTADO: Issues reduziram de {initial} para {final} ({diff:+d})
+Percentual: {percent:.2f}%
+
+ACAO IMEDIATA:
+1. [+] Manter as modificacoes (ja estao corretas)
+2. Atualizar o repositorio com git add, commit e push
+3. Manter os backups locais para referencia
+4. Identificar os proximos fixers a serem aplicados
+5. Testar novos fixers com --dry-run
+6. Se mostrarem promessa, aplicar e validar
+7. Repetir ate que nao haja mais reducao de issues
+8. Fazer commits incrementais a cada sucesso
+
+ESTRATEGIA PARA PROXIMOS FIXERS:
+- Focar nos fixers que tem alta taxa de sucesso (>70%)
+- Testar fixers "seguros" antes dos criativos
+- Ordem recomendada:
+  1. deprecated_member_use (ignore comments) - 78% sucesso
+  2. unused_element (ignore comments) - 100% sucesso
+  3. unused_local_variable (ignore comments) - 100% sucesso
+  4. unused_field (ignore comments) - 100% sucesso
+  5. argument_type_not_assignable (CUIDADO - testar bem)
+
+PROXIMO PASSO:
+-> Fazer commit: git add -A && git commit -m "..."
+-> Fazer push: git push origin main
+-> Executar nova analise com analyze_complete_updated.txt
+-> Testar novo fixer com --rules <next_fixer> --dry-run
+-> Se sucesso, aplicar e validar novamente
+-> Continuar ate nao haver mais reducao
+
+================================================================================
+""".format(initial=initial_issue_count, final=final_issue_count, 
+           diff=difference, percent=(difference/initial_issue_count*100))
+                    print(prompt_situation_2)
+                    
+                    # Sugerir commit
+                    print("\n[*] RECOMENDACAO: Fazer commit das mudancas...")
+                    print("   git add -A")
+                    print("   git commit -m 'fix: Reducao de {} issues com fixers aplicados'".format(difference))
+                    print("   git push origin main")
+                
+                # SITUACAO 3: SEM MUDANCAS
+                else:
+                    print("\n" + "[i] "*40)
+                    print("[i] SITUACAO 3: SEM MUDANCAS - ANALISAR")
+                    print("[i] "*40)
+                    
+                    prompt_situation_3 = """
+================================================================================
+                    SITUACAO 3: SEM MUDANCAS (0 DIFERENCA)
+================================================================================
+
+POSSIVEL PROBLEMA: Issues permaneceram em {initial}
+
+POSSVEIS CAUSAS:
+1. Fixer nao encontrou issues aplicaveis nesta execucao
+2. Todos os issues deste tipo ja foram corrigidos
+3. Fixer esta com taxa de sucesso 0% (bug no fixer)
+4. Arquivo analyze esta desatualizado
+
+ACOES RECOMENDADAS:
+1. Re-gerar arquivo de analise: flutter analyze > analyze_new.txt
+2. Verificar se o fixer esta ativo no dicionario
+3. Testar fixer com --dry-run para ver status
+4. Se Taxa de Sucesso = 0%, desativar fixer (pode ter bug)
+5. Tentar proximo fixer da lista
+
+PROXIMO PASSO:
+-> Atualizar arquivo de analise
+-> Testar outro fixer
+-> Se nenhum fixer reduz issues, revisar estrategia global
+
+================================================================================
+""".format(initial=initial_issue_count)
+                    print(prompt_situation_3)
+        
+        except Exception as e:
+            logger.error(f"Erro na analise pos-execucao: {e}")
+            print(f"\n[!] Erro ao analisar resultado: {e}")
 
 
 if __name__ == '__main__':

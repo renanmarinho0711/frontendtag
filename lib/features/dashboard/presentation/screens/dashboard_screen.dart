@@ -8,12 +8,12 @@ import 'package:tagbean/features/categories/presentation/screens/categories_menu
 import 'package:tagbean/features/import_export/presentation/screens/import_menu_screen.dart';
 import 'package:tagbean/features/reports/presentation/screens/reports_menu_screen.dart';
 import 'package:tagbean/features/strategies/presentation/screens/strategies_panel_screen.dart';
-import 'package:tagbean/features/strategies/presentation/screens/ai_suggestions_screen.dart';
+// REMOVED: import 'package:tagbean/features/strategies/presentation/screens/ai_suggestions_screen.dart';
 import 'package:tagbean/features/strategies/presentation/providers/strategies_provider.dart';
 import 'package:tagbean/features/settings/presentation/screens/settings_menu_screen.dart';
 import 'package:tagbean/core/utils/responsive_helper.dart';
 import 'package:tagbean/design_system/design_system.dart';
-import 'package:tagbean/features/auth/presentation/widgets/store_selector.dart';
+// REMOVED: import 'package:tagbean/features/auth/presentation/widgets/store_selector.dart';
 import 'package:tagbean/features/auth/presentation/widgets/store_switcher.dart';
 import 'package:tagbean/features/auth/presentation/providers/work_context_provider.dart';
 import 'package:tagbean/features/auth/presentation/providers/auth_provider.dart';
@@ -57,6 +57,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   // permite resetar módulo ao clicar no mesmo menu
 
   /// Retorna os itens do menu com cores DINMICAS baseadas no tema atual
+  // ignore: unused_element
   List<Map<String, dynamic>> _getMenuItems() {
     return [
       {
@@ -113,6 +114,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   /// Getter dinmico para dados de estratgias baseado no provider
+  // ignore: unused_element
   Map<String, dynamic> get _estrategiasData {
     final strategiesState = ref.watch(strategiesProvider);
     final strategiesStats = ref.watch(strategiesStatsProvider);
@@ -149,6 +151,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   /// Converte alertas do provider para formato Map usado na UI
+  // ignore: unused_element
   List<Map<String, dynamic>> get _alertas {
     final alerts = ref.watch(dashboardAlertsProvider);
     return alerts.map((alert) {
@@ -228,6 +231,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   // OTIMIZAO: Reduzir clculos e chamadas MediaQuery
+  // ignore: unused_element
   void _scrollToSelectedItem() {
     if (!ResponsiveHelper.isMobile(context)) return;
     
@@ -935,6 +939,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   void _showNotificationsPanel(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
 
@@ -980,6 +985,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   void _showLogoutDialog(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
 
@@ -1035,6 +1041,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     }
   }
 
+  // ignore: unused_element
   void _navegarParaNovoProduto() {
     setState(() => _selectedIndex = 1);
     Future.delayed(const Duration(milliseconds: 300), () {
@@ -1066,6 +1073,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     });
   }
 
+  // ignore: unused_element
   void _navegarParaImportacao() {
     setState(() => _selectedIndex = 7);
     ScaffoldMessenger.of(context).showSnackBar(
@@ -1095,6 +1103,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   String _formatDate(DateTime date) {
     final months = [
       'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
@@ -1105,6 +1114,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 }
 
 /// SearchDelegate para busca rápida no TagBean
+// ignore: unused_element
 class _TagBeanSearchDelegate extends SearchDelegate<String?> {
   @override
   String get searchFieldLabel => 'Buscar produtos, tags...';

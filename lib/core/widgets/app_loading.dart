@@ -81,6 +81,7 @@ class AppLinearLoading extends StatelessWidget {
       child: LinearProgressIndicator(
         value: value,
         valueColor: AlwaysStoppedAnimation<Color>(loadingColor),
+        // ignore: deprecated_member_use
         backgroundColor: loadingColor.withOpacity(0.2),
       ),
     );
@@ -100,7 +101,7 @@ class AppLoadingOverlay extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
+    return PopScope(
       onWillPop: () async => dismissible,
       child: Container(
         color: AppColors.scrim,

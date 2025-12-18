@@ -1,0 +1,471 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\features\categories\data\models\category_models.dart
+Linha: 995
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\categories\data\models\category_models.dart
+Linha: 328
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_menu_screen.dart
+Linha: 1102
+Regra: deprecated_member_use
+Mensagem:  'translate' is deprecated and shouldn't be used. Use translateByVector3, translateByVector4, or translateByDouble instead
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_products_screen.dart
+Linha: 20
+Regra: unused_field
+Mensagem:  The value of the field '_arquivoSelecionado' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_tags_screen.dart
+Linha: 19
+Regra: unused_field
+Mensagem:  The value of the field '_arquivoSelecionado' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\ai_suggestions_screen.dart
+Linha: 981
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isTablet' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\ai_suggestions_screen.dart
+Linha: 980
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isMobile' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\fixed_value_screen.dart
+Linha: 442
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\fixed_value_screen.dart
+Linha: 441
+Regra: deprecated_member_use
+Mensagem:  'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\fixed_value_screen.dart
+Linha: 427
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\screens\fixed_value_screen.dart
+Linha: 426
+Regra: deprecated_member_use
+Mensagem:  'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 112
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 392
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'productColor' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_dashboard_screen.dart
+Linha: 32
+Regra: unused_field
+Mensagem:  The value of the field '_headerSlideAnimation' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_dashboard_screen.dart
+Linha: 31
+Regra: unused_field
+Mensagem:  The value of the field '_headerFadeAnimation' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_list_screen.dart
+Linha: 4144
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'selectedCount' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_stock_screen.dart
+Linha: 1096
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_stock_screen.dart
+Linha: 1095
+Regra: deprecated_member_use
+Mensagem:  'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_stock_screen.dart
+Linha: 1086
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\products_stock_screen.dart
+Linha: 1085
+Regra: deprecated_member_use
+Mensagem:  'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\products_catalog_summary.dart
+Linha: 36
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isTablet' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 139
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isTablet' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\reports_menu_screen.dart
+Linha: 22
+Regra: unused_field
+Mensagem:  The value of the field '_hoveredIndex' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\api_test_screen.dart
+Linha: 34
+Regra: unused_field
+Mensagem:  The value of the field 'testUsers' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\backup_screen.dart
+Linha: 108
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isTablet' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\full_api_test_screen.dart
+Linha: 40
+Regra: unused_field
+Mensagem:  The value of the field '_testClientId' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\notifications_screen_backup.dart
+Linha: 56
+Regra: unused_field
+Mensagem:  The value of the field '_isLoading' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\settings\presentation\screens\users_screen.dart
+Linha: 281
+Regra: deprecated_member_use
+Mensagem:  'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\ai_suggestions_screen.dart
+Linha: 255
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\ai_suggestions_screen.dart
+Linha: 246
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\ai_suggestions_screen.dart
+Linha: 223
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isMobile' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\strategies_panel_screen.dart
+Linha: 46
+Regra: unused_field
+Mensagem:  The value of the field '_cachedEstrategiasFiltradas' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\strategies\presentation\screens\strategy_report_screen.dart
+Linha: 289
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'roiValue' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\sync\domain\usecases\sync_tags_usecase.dart
+Linha: 153
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'startTime' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\sync\domain\usecases\sync_tags_usecase.dart
+Linha: 3
+Regra: unused_import
+Mensagem:  Unused import: 'package:tagbean/features/sync/data/repositories/minew_sync_repository.dart'
+Motivo: Linha não é um import
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tag_add_screen.dart
+Linha: 28
+Regra: unused_field
+Mensagem:  The value of the field '_alteracoesFeitas' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_batch_screen.dart
+Linha: 667
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'tagsDisponiveis' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_dashboard_screen.dart
+Linha: 37
+Regra: unused_field
+Mensagem:  The value of the field '_filterStatus' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_dashboard_screen.dart
+Linha: 36
+Regra: unused_field
+Mensagem:  The value of the field '_isLoading' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_dashboard_screen.dart
+Linha: 35
+Regra: unused_field
+Mensagem:  The value of the field '_lastSync' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_list_screen.dart
+Linha: 1294
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'signalText' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 52
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'offline' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 51
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'disponiveis' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 50
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'associadas' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tags_menu_screen.dart
+Linha: 49
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'totalTags' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\categories\data\models\category_models.dart
+Linha: 498
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\categories\data\models\category_models.dart
+Linha: 165
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\providers\categories_provider.dart
+Linha: 176
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\providers\categories_provider.dart
+Linha: 152
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\categories\presentation\screens\categories_stats_screen.dart
+Linha: 1405
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'height' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4289
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4289
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4288
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4287
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4285
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4284
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4283
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4274
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4273
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4272
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4270
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4269
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4268
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 2298
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isTablet' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 2297
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isMobile' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart
+Linha: 118
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'visibleItems' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\widgets\sugestoes_ia_card.dart
+Linha: 20
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'activeStrategies' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 113
+Regra: deprecated_member_use
+Mensagem:  'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 196
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'productColor' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_dashboard_screen.dart
+Linha: 31
+Regra: unused_field
+Mensagem:  The value of the field '_headerSlideAnimation' isn't used
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_dashboard_screen.dart
+Linha: 30
+Regra: unused_field
+Mensagem:  The value of the field '_headerFadeAnimation' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_list_screen.dart
+Linha: 2067
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'selectedCount' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_stock_screen.dart
+Linha: 1090
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_stock_screen.dart
+Linha: 1089
+Regra: deprecated_member_use
+Mensagem:  'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_stock_screen.dart
+Linha: 1080
+Regra: deprecated_member_use
+Mensagem:  'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe na linha anterior
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\products_stock_screen.dart
+Linha: 1079
+Regra: deprecated_member_use
+Mensagem:  'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\products_catalog_summary.dart
+Linha: 36
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'isTablet' isn't used
+Motivo: Ignore já existe
+----------------------------------------
+Arquivo: lib\shared\widgets\buttons\interactive_buttons.dart
+Linha: 234
+Regra: unused_local_variable
+Mensagem:  The value of the local variable 'step' isn't used
+Motivo: Ignore já existe
+----------------------------------------

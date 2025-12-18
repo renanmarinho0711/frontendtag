@@ -1099,6 +1099,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           transform: Matrix4.identity()
+            // ignore: deprecated_member_use
             ..translate(0.0, _hoveredIndex == index ? -8.0 : 0.0),
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -1596,6 +1597,7 @@ class _ImportacaoMenuScreenState extends ConsumerState<ImportacaoMenuScreen>
   }
   
   /// Formata o tipo de operação para exibio
+  // ignore: unused_element
   String _formatOperationType(String operation) {
     switch (operation) {
       case 'import':

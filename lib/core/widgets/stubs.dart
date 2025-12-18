@@ -27,6 +27,7 @@ class SplashPage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(30),
                 decoration: BoxDecoration(
+                  // ignore: deprecated_member_use
                   color: Colors.white.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
@@ -350,6 +351,7 @@ class _StatCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           gradient: LinearGradient(
+            // ignore: deprecated_member_use
             colors: [color.withOpacity(0.1), color.withOpacity(0.05)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

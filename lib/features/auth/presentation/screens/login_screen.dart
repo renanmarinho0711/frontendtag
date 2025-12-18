@@ -680,6 +680,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with SingleTickerProv
   void _debugPrintLoginColors(BuildContext context) {
     final colors = ThemeColors.of(context);
     
+    // ignore: deprecated_member_use
     String colorToHex(Color c) => '#${c.value.toRadixString(16).padLeft(8, '0').toUpperCase()}';
     
     debugPrint('');

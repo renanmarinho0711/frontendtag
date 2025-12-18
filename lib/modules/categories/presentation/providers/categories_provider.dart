@@ -149,6 +149,7 @@ class CategoriesNotifier extends StateNotifier<CategoriesState> {
         nome: category.nome,
         descricao: category.descricao,
         icone: category.icone,
+        // ignore: deprecated_member_use
         cor: '#${category.cor.value.toRadixString(16).substring(2)}',
       );
       
@@ -173,6 +174,7 @@ class CategoriesNotifier extends StateNotifier<CategoriesState> {
         nome: category.nome,
         descricao: category.descricao,
         icone: category.icone,
+        // ignore: deprecated_member_use
         cor: '#${category.cor.value.toRadixString(16).substring(2)}',
         ativo: category.status == CategoryStatus.active,
       );
