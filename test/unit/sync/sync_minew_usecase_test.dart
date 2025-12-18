@@ -1,4 +1,4 @@
-mport 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tagbean/features/sync/domain/usecases/sync_minew_usecase.dart';
 import 'package:tagbean/features/sync/data/repositories/minew_sync_repository.dart';
