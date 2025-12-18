@@ -1089,5 +1089,5 @@ extension ResponsiveTextStyle on TextStyle {
 }
 
 
-
-
+/// Alias para compatibilidade com código legado
+typedef AppTypography = AppTextStyles;

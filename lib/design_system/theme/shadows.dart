@@ -40,6 +40,9 @@ class AppShadows {
     ),
   ];
 
+  // Alias para compatibilidade
+  static List<BoxShadow> cardShadow = elevatedCard;
+
   // Sombras para botões
   static List<BoxShadow> button = [
     BoxShadow(
@@ -48,6 +51,9 @@ class AppShadows {
       offset: const Offset(0, 4),
     ),
   ];
+
+  // Alias para compatibilidade
+  static List<BoxShadow> buttonShadow = button;
 
   static List<BoxShadow> buttonPressed = [
     BoxShadow(

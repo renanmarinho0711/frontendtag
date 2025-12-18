@@ -46,7 +46,10 @@ class AppLocalizations {
       'assets/l10n/${locale.languageCode}_${locale.countryCode}.json',
     );
     
-    _localizedStrings = json.decode(jsonString);
+    final decoded = json.decode(jsonString);
+    _localizedStrings = decoded is Map<String, dynamic> 
+      ? decoded 
+      : <String, dynamic>{};
     return true;
   }
   
