@@ -1050,6 +1050,78 @@ def run_flutter_analyze(project_path: str) -> str:
         return ""
 
 
+class ValidationManager:
+    """Valida e compara resultados das correções."""
+    
+    def __init__(self, project_root: str):
+        self.project_root = Path(project_root)
+        self.validation_log = Path(project_root) / ".validation_log.json"
+    
+    def compare_backups(self, file_path: str) -> Dict:
+        """Compara arquivo original (backup) com versão modificada."""
+        backup_path = str(file_path) + '.backup'
+        if not os.path.exists(backup_path):
+            return {'compared': False, 'reason': 'Sem backup'}
+        
+        try:
+            with open(backup_path, 'r', encoding='utf-8', errors='replace') as f:
+                backup_content = f.read()
+            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+                current_content = f.read()
+            
+            backup_lines = backup_content.splitlines()
+            current_lines = current_content.splitlines()
+            
+            return {
+                'compared': True,
+                'backup_lines': len(backup_lines),
+                'current_lines': len(current_lines),
+                'lines_removed': len(backup_lines) - len(current_lines),
+                'lines_added': len(current_lines) - len(backup_lines),
+                'file_path': file_path
+            }
+        except Exception as e:
+            return {'compared': False, 'error': str(e)}
+    
+    def validate_fixes(self, initial_issues: int, final_issues: int, results: List[FixResult]) -> Dict:
+        """Valida se as correções melhoraram ou pioraram a situação."""
+        successful = sum(1 for r in results if r.success)
+        failed = sum(1 for r in results if not r.success)
+        
+        improvement = initial_issues - final_issues
+        improvement_pct = (improvement / initial_issues * 100) if initial_issues > 0 else 0
+        
+        validation = {
+            'timestamp': datetime.now().isoformat(),
+            'initial_issues': initial_issues,
+            'final_issues': final_issues,
+            'improvement': improvement,
+            'improvement_percentage': improvement_pct,
+            'fixes_attempted': len(results),
+            'successful_fixes': successful,
+            'failed_fixes': failed,
+            'success_rate': (successful / len(results) * 100) if len(results) > 0 else 0,
+            'status': 'IMPROVED' if improvement > 0 else ('UNCHANGED' if improvement == 0 else 'REGRESSED')
+        }
+        
+        return validation
+    
+    def restore_from_backup(self, file_path: str) -> bool:
+        """Restaura arquivo do backup local."""
+        backup_path = str(file_path) + '.backup'
+        if not os.path.exists(backup_path):
+            logger.warning(f"Sem backup para: {file_path}")
+            return False
+        
+        try:
+            shutil.copy2(backup_path, file_path)
+            logger.info(f"Restaurado de backup: {file_path}")
+            return True
+        except Exception as e:
+            logger.error(f"Erro ao restaurar: {e}")
+            return False
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='Corretor automático de issues Flutter/Dart',
@@ -1151,6 +1223,7 @@ Exemplos de uso:
     print("\nAnalisando issues...")
     
     summary = analyzer_parser.get_summary()
+    initial_summary = summary.copy()  # Salvar estado inicial
     print(f"\nEncontrados {summary['total']} issues:")
     print(f"  - Erros: {summary['errors']}")
     print(f"  - Warnings: {summary['warnings']}")
@@ -1181,6 +1254,49 @@ Exemplos de uso:
     
     fixer = DartFileFixer(args.project_path, dry_run=args.dry_run)
     results = fixer. fix_all(issues, rules=rules, severity_threshold=severity)
+    
+    # VALIDAÇÃO: Verifica se as correções pioraram a situação
+    if not args.dry_run and args.run_analyze:
+        print("\n" + "="*70)
+        print("VALIDAÇÃO DAS CORREÇÕES")
+        print("="*70)
+        
+        # Re-analisa após correções
+        print("\nRe-analisando projeto após correções...")
+        try:
+            flutter_output = subprocess.run(
+                [args.flutter_path or "flutter", "analyze", args.project_path, "--format=json"],
+                capture_output=True,
+                text=True,
+                timeout=300
+            )
+            if flutter_output.stdout:
+                final_data = json.loads(flutter_output.stdout)
+                final_issues = len(final_data.get('issues', []))
+                
+                validator = ValidationManager(args.project_path)
+                validation = validator.validate_fixes(initial_summary['total'], final_issues, results)
+                
+                print(f"\nResultado: {validation['status']}")
+                print(f"Issues iniciais: {validation['initial_issues']}")
+                print(f"Issues finais: {validation['final_issues']}")
+                print(f"Melhoria: {validation['improvement']} issues ({validation['improvement_percentage']:.1f}%)")
+                print(f"Taxa de sucesso de fixes: {validation['success_rate']:.1f}%")
+                
+                # Se piorou, restaura e avisa
+                if validation['improvement'] < 0:
+                    print("\n⚠️  AVISO: Issues AUMENTARAM após as correções!")
+                    print(f"Aumentou {abs(validation['improvement'])} issues")
+                    print("\nRestaurando arquivos do backup...")
+                    
+                    modified_files = set(r.issue.file_path for r in results if r.success)
+                    for file_path in modified_files:
+                        validator.restore_from_backup(file_path)
+                    
+                    print("\n✅ Arquivos restaurados dos backups locais")
+                    sys.exit(1)
+        except Exception as e:
+            logger.warning(f"Erro na validação: {e}")
     
     # Gera relatórios
     print("\nGerando relatorios...")
