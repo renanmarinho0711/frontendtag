@@ -1,4 +1,5 @@
 /// Modelo de usuário retornado pela API
+library;
 
 class UserModel {
 

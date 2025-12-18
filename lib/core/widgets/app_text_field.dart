@@ -212,7 +212,7 @@ class _AppTextFieldState extends State<AppTextField> {
               color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
             ),
           ),
-          SizedBox(height: AppSpacing.gapVerticalXs),
+          const SizedBox(height: AppSpacing.gapVerticalXs),
         ],
         TextFormField(
           controller: widget.controller,
@@ -234,7 +234,7 @@ class _AppTextFieldState extends State<AppTextField> {
           decoration: _getDecoration(isDark),
         ),
         if (widget.helper != null && widget.error == null) ...[
-          SizedBox(height: AppSpacing.gapVerticalXs),
+          const SizedBox(height: AppSpacing.gapVerticalXs),
           Text(
             widget.helper!,
             style: AppTextStyles.bodySmallWith(
@@ -243,7 +243,7 @@ class _AppTextFieldState extends State<AppTextField> {
           ),
         ],
         if (widget.error != null) ...[
-          SizedBox(height: AppSpacing.gapVerticalXs),
+          const SizedBox(height: AppSpacing.gapVerticalXs),
           Text(
             widget.error!,
             style: AppTextStyles.bodySmallWith(color: AppColors.error),

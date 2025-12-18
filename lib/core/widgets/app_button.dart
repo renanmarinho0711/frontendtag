@@ -170,7 +170,7 @@ class AppButton extends StatelessWidget {
             size: _getIconSize(),
             color: textStyle.color,
           ),
-          SizedBox(width: AppSpacing.gapHorizontalSm),
+          const SizedBox(width: AppSpacing.gapHorizontalSm),
           Text(label, style: textStyle),
         ],
       );

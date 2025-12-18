@@ -1,4 +1,5 @@
 /// Espaçamentos padronizados da aplicação
+library;
 
 /// 
 

@@ -40,7 +40,7 @@ class AppLoading extends StatelessWidget {
           ),
         ),
         if (message != null) ...[
-          SizedBox(height: AppSpacing.gapVerticalMd),
+          const SizedBox(height: AppSpacing.gapVerticalMd),
           Text(
             message!,
             style: AppTextStyles.bodyMedium.copyWith(
@@ -106,7 +106,7 @@ class AppLoadingOverlay extends StatelessWidget {
         child: Center(
           child: Card(
             child: Padding(
-              padding: EdgeInsets.all(AppSpacing.paddingLg),
+              padding: const EdgeInsets.all(AppSpacing.paddingLg),
               child: AppLoading(
                 message: message,
                 size: 48,

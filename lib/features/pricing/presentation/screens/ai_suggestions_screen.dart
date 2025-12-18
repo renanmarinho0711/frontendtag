@@ -241,7 +241,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
                 ? SizedBox(
                     width: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                     height: AppSizes.iconMediumAlt.get(isMobile, isTablet),
-                    child: const CircularProgressIndicator(
+                    child: CircularProgressIndicator(
                       strokeWidth: 2,
                       valueColor:
                           AlwaysStoppedAnimation<Color>(ThemeColors.of(context).blueCyan),
