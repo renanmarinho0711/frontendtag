@@ -42,15 +42,18 @@ class TransferProgressModel {
 
   factory TransferProgressModel.fromJson(Map<String, dynamic> json) {
     return TransferProgressModel(
+      // ignore: argument_type_not_assignable
       progress: (json['progress'] ?? 0).toDouble(),
+      // ignore: argument_type_not_assignable
       bytesTransferred: json['bytesTransferred'] ?? 0,
+      // ignore: argument_type_not_assignable
       totalBytes: json['totalBytes'] ?? 0,
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
       status: TransferStatus.values.firstWhere(
         (s) => s.name == json['status'],
         orElse: () => TransferStatus.idle,
       ),
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
     );
   }
 

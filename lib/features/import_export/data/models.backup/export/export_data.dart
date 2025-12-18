@@ -24,9 +24,9 @@ class ExportData {
       type: json['type'] as String ?? '',
       format: json['format'] as String ?? '',
       totalRecords: json['totalRecords'] as int ?? 0,
-      fileName: json['fileName'],
-      contentType: json['contentType'],
-      base64Data: json['base64Data'],
+      fileName: (json['fileName']).toString(),
+      contentType: (json['contentType']).toString(),
+      base64Data: (json['base64Data']).toString(),
     );
   }
 

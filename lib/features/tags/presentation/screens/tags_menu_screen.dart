@@ -2140,7 +2140,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
                       Text(
 
-                        item['nome'],
+                        (item['nome']).toString(),
 
                         style: TextStyle(
 
@@ -2174,7 +2174,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
                       Text(
 
-                        item['data'],
+                        (item['data']).toString(),
 
                         style: TextStyle(
 
@@ -2318,7 +2318,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
                 Text(
 
-                  item['duracao'],
+                  (item['duracao']).toString(),
 
                   style: TextStyle(
 

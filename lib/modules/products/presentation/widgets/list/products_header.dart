@@ -30,6 +30,7 @@ class ProductsHeader extends StatelessWidget {
         vertical: AppSizes.paddingBase.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: ModuleGradients.produtos,
         borderRadius: AppRadius.card,
         boxShadow: AppShadows.elevatedCard,

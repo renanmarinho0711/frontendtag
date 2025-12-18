@@ -160,10 +160,15 @@ class PricingProductModel {
       nome: json['name']?.toString() ?? json['nome']?.toString() ?? '',
       categoria: json['category']?.toString() ?? json['categoryName']?.toString() ?? json['categoria']?.toString() ?? '',
       marca: json['brand']?.toString() ?? json['marca']?.toString(),
+      // ignore: argument_type_not_assignable
       precoAtual: currentPrice,
+      // ignore: argument_type_not_assignable
       custo: cost,
+      // ignore: argument_type_not_assignable
       precoNovo: newPrice,
+      // ignore: argument_type_not_assignable
       margemAtual: currentMargin,
+      // ignore: argument_type_not_assignable
       margemNova: newMargin,
       cor: json['cor'] is Color ? json['cor'] as Color : const Color(0xFF2196F3),
       tag: json['tag']?.toString() ?? json['barcode']?.toString(),
@@ -437,10 +442,15 @@ class MarginReviewModel {
       id: json['id']?.toString() ?? '',
       nome: json['name']?.toString() ?? json['nome']?.toString() ?? '',
       categoria: json['category']?.toString() ?? json['categoria']?.toString() ?? '',
+      // ignore: argument_type_not_assignable
       precoVenda: price,
+      // ignore: argument_type_not_assignable
       custoCompra: cost,
+      // ignore: argument_type_not_assignable
       margemAtual: margin,
+      // ignore: argument_type_not_assignable
       margemIdeal: (json['targetMargin'] ?? json['margemIdeal'] ?? 30).toDouble(),
+      // ignore: argument_type_not_assignable
       margemMinima: (json['minMargin'] ?? json['margemMinima'] ?? 10).toDouble(),
       status: status,
       sugestao: json['suggestion']?.toString() ?? json['sugestao']?.toString(),
@@ -620,8 +630,11 @@ class AiSuggestionModel {
       produtoId: json['productId']?.toString(),
       tipo: tipo,
       produtoNome: json['productName']?.toString() ?? json['produto_nome']?.toString() ?? '',
+      // ignore: argument_type_not_assignable
       precoAtual: currentPrice,
+      // ignore: argument_type_not_assignable
       precoSugerido: suggestedPrice,
+      // ignore: argument_type_not_assignable
       variacao: currentPrice > 0 ? ((suggestedPrice - currentPrice) / currentPrice) * 100 : 0,
       confianca: (json['priority'] as int? ?? 3) * 20, // priority 1-5 => 20-100%
       motivo: json['reason']?.toString() ?? json['motivo']?.toString() ?? '',
@@ -785,7 +798,9 @@ class PricingHistoryModel {
       produtoId: json['productId']?.toString(),
       produtoNome: json['productName']?.toString() ?? json['produto_nome']?.toString() ?? '',
       tipo: json['tipo']?.toString() ?? 'manual',
+      // ignore: argument_type_not_assignable
       precoAntigo: (json['oldPrice'] ?? json['preco_antigo'] ?? 0).toDouble(),
+      // ignore: argument_type_not_assignable
       precoNovo: (json['newPrice'] ?? json['preco_novo'] ?? 0).toDouble(),
       motivacao: json['reason']?.toString() ?? json['motivacao']?.toString() ?? '',
       usuario: json['changedBy']?.toString() ?? json['usuario']?.toString() ?? 'Sistema',

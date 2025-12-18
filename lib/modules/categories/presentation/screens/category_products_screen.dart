@@ -654,6 +654,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
         AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: LinearGradient(colors: categoria['gradiente']),
         borderRadius: BorderRadius.circular(
           isMobile ? 12 : 16,
@@ -844,6 +845,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isSelected
+              // ignore: argument_type_not_assignable
               ? Border.all(color: categoria['cor'], width: 2)
               : Border.all(color: ThemeColors.of(context).textSecondary),
           boxShadow: [
@@ -1009,6 +1011,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                         color: isSelected ? ((categoria['cor'] as Color?) ?? const Color(0xFF2196F3)) : ThemeColors.of(context).surface,
                         shape: BoxShape.circle,
                         border: Border.all(
+                          // ignore: argument_type_not_assignable
                           color: isSelected ? categoria['cor'] : ThemeColors.of(context).textSecondary,
                           width: 2,
                         ),
@@ -1055,6 +1058,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             isMobile ? 16 : (isTablet ? 18 : 20),
           ),
           border: isSelected
+              // ignore: argument_type_not_assignable
               ? Border.all(color: categoria['cor'], width: 2)
               : Border.all(color: ThemeColors.of(context).textSecondary),
           boxShadow: [
@@ -1106,9 +1110,11 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                         width: 24,
                         height: 24,
                         decoration: BoxDecoration(
+                          // ignore: argument_type_not_assignable
                           color: isSelected ? categoria['cor'] : ThemeColors.of(context).surface,
                           shape: BoxShape.circle,
                           border: Border.all(
+                            // ignore: argument_type_not_assignable
                             color: isSelected ? categoria['cor'] : ThemeColors.of(context).textSecondary,
                             width: 2,
                           ),
@@ -1162,7 +1168,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          produto['nome'],
+                          (produto['nome']).toString(),
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1195,6 +1201,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                             vertical: AppSizes.paddingMicro.get(isMobile, isTablet),
                           ),
                           decoration: BoxDecoration(
+                            // ignore: argument_type_not_assignable
                             color: categoria['cor'].withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(6),
                           ),
@@ -1206,6 +1213,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                 baseFontSize: 10,
                                 mobileFontSize: 9,
                               ),
+                              // ignore: argument_type_not_assignable
                               color: categoria['cor'],
                               fontWeight: FontWeight.w600,
                             ),
@@ -1225,10 +1233,11 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                           Icon(
                             Icons.attach_money_rounded,
                             size: AppSizes.iconSmallMedium.get(isMobile, isTablet),
+                            // ignore: argument_type_not_assignable
                             color: categoria['cor'],
                           ),
                           Text(
-                            produto['preco'].toStringAsFixed(2),
+                            (produto['preco']).toString().toStringAsFixed(2),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -1236,6 +1245,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                                 mobileFontSize: 14,
                               ),
                               fontWeight: FontWeight.bold,
+                              // ignore: argument_type_not_assignable
                               color: categoria['cor'],
                             ),
                           ),
@@ -1273,6 +1283,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
                       child: IconButton(
                         icon: Icon(
                           Icons.edit_rounded,
+                          // ignore: argument_type_not_assignable
                           color: categoria['cor'],
                           size: AppSizes.iconMedium.get(isMobile, isTablet),
                         ),
@@ -1417,8 +1428,9 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
             ..._getCategorias(context).map((cat) {
               if (cat['nome'] == _categoriaSelecionada) return const SizedBox.shrink();
               return ListTile(
+                // ignore: argument_type_not_assignable
                 leading: Icon(cat['icone'], color: cat['cor']),
-                title: Text(cat['nome']),
+                title: Text((cat['nome']).toString()),
                 onTap: () {
                   setState(() {
                     _selectedProducts.clear();

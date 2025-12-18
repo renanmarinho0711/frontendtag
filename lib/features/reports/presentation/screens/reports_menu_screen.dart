@@ -626,9 +626,11 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
       child: Container(
         padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
         decoration: BoxDecoration(
+          // ignore: argument_type_not_assignable
           color: stat['background'],
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
+            // ignore: argument_type_not_assignable
             color: stat['border'],
             width: isMobile ? 2 : 2.5,
           ),
@@ -650,6 +652,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
               ),
               child: Icon(
+                // ignore: argument_type_not_assignable
                 stat['icon'],
                 color: ThemeColors.of(context).surface,
                 size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
@@ -657,7 +660,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
             Text(
-              stat['valor'],
+              (stat['valor']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                 overflow: TextOverflow.ellipsis,
@@ -668,7 +671,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
             Text(
-              stat['label'],
+              (stat['label']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9, tabletFontSize: 9.5),
                 overflow: TextOverflow.ellipsis,
@@ -699,7 +702,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
                     SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 2.5, tablet: 2.75, desktop: 3)),
                   Flexible(
                     child: Text(
-                      stat['mudanca'],
+                      (stat['mudanca']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 9, mobileFontSize: 8, tabletFontSize: 8.5),
                         overflow: TextOverflow.ellipsis,
@@ -901,6 +904,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
+            // ignore: argument_type_not_assignable
             colors: relatorio['gradient'],
           ),
           borderRadius: BorderRadius.circular(
@@ -1011,6 +1015,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
                         ),
                       ),
                       child: Icon(
+                        // ignore: argument_type_not_assignable
                         relatorio['icon'],
                         color: ThemeColors.of(context).surface,
                         size: ResponsiveHelper.getResponsiveIconSize(
@@ -1025,7 +1030,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
                       height: AppSizes.spacingBaseAlt.get(isMobile, isTablet),
                     ),
                     Text(
-                      relatorio['title'],
+                      (relatorio['title']).toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1049,7 +1054,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
                       ),
                     ),
                     Text(
-                      relatorio['subtitle'],
+                      (relatorio['subtitle']).toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(

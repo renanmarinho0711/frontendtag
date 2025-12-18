@@ -569,6 +569,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
+                            // ignore: argument_type_not_assignable
                             formato['icone'],
                             color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
                             size: AppSizes.iconExtraLargeAlt.get(isMobile, isTablet),
@@ -577,7 +578,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                             height: AppSizes.paddingSmAlt.get(isMobile, isTablet),
                           ),
                           Text(
-                            formato['nome'],
+                            (formato['nome']).toString(),
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -594,7 +595,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                             height: AppSizes.paddingXxs.get(isMobile, isTablet),
                           ),
                           Text(
-                            formato['extensao'],
+                            (formato['extensao']).toString(),
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -790,6 +791,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
+                            // ignore: argument_type_not_assignable
                             formato['icone'],
                             color: ThemeColors.of(context).surface,
                             size: AppSizes.iconMedium.get(isMobile, isTablet),
@@ -811,6 +813,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                           ),
                         ],
                       ),
+                      // ignore: argument_type_not_assignable
                       backgroundColor: formato['cor'],
                       behavior: SnackBarBehavior.floating,
                       shape: RoundedRectangleBorder(
@@ -841,6 +844,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingMdAlt.get(isMobile, isTablet),
                   ),
+                  // ignore: argument_type_not_assignable
                   backgroundColor: formato['cor'],
                   foregroundColor: ThemeColors.of(context).surface,
                   shape: RoundedRectangleBorder(
@@ -1364,7 +1368,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        item['nome'],
+                        (item['nome']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1381,7 +1385,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                         height: AppSizes.paddingMicro.get(isMobile, isTablet),
                       ),
                       Text(
-                        item['data'],
+                        (item['data']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1451,7 +1455,7 @@ class _ExportacaoProdutosScreenState extends ConsumerState<ExportacaoProdutosScr
                   width: AppSizes.paddingXxs.get(isMobile, isTablet),
                 ),
                 Text(
-                  item['duracao'],
+                  (item['duracao']).toString(),
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,

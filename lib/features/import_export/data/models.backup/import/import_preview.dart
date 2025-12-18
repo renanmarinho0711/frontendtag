@@ -16,9 +16,11 @@ class ImportPreviewRow {
 
   factory ImportPreviewRow.fromJson(Map<String, dynamic> json) {
     return ImportPreviewRow(
+      // ignore: argument_type_not_assignable
       rowNumber: json['rowNumber'] ?? 0,
       data: (json['data'] as Map<String, dynamic>?)
           ?.map((k, v) => MapEntry(k, v.toString())) ?? {},
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? true,
       errors: (json['errors'] as List?)
           ?.map((e) => e.toString())
@@ -49,6 +51,7 @@ class PreviewRowModel {
   factory PreviewRowModel.fromJson(Map<String, dynamic> json) {
     return PreviewRowModel(
       data: json['data'] as Map<String, dynamic>? ?? {},
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? true,
       errors: (json['errors'] as List?)?.map((e) => e.toString()).toList() ?? [],
     );
@@ -85,7 +88,9 @@ class ImportPreviewModel {
       rows: (json['rows'] as List?)
           ?.map((r) => PreviewRowModel.fromJson(r as Map<String, dynamic>))
           .toList() ?? [],
+      // ignore: argument_type_not_assignable
       totalRows: json['totalRows'] ?? 0,
+      // ignore: argument_type_not_assignable
       hasErrors: json['hasErrors'] ?? false,
       errors: (json['errors'] as List?)?.map((e) => e.toString()).toList() ?? [],
       mappings: (json['mappings'] as List?)

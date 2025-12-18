@@ -428,6 +428,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
+            // ignore: argument_type_not_assignable
             colors: item['gradient'],
           ),
           borderRadius: BorderRadius.circular(
@@ -476,6 +477,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                       ),
                     ),
                     child: Icon(
+                      // ignore: argument_type_not_assignable
                       item['icon'],
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconMedium.get(isMobile, isTablet),
@@ -490,7 +492,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          item['title'],
+                          (item['title']).toString(),
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -508,7 +510,7 @@ class _ConfiguracoesMenuScreenState extends ConsumerState<ConfiguracoesMenuScree
                           height: AppSizes.paddingMicro.get(isMobile, isTablet),
                         ),
                         Text(
-                          item['subtitle'],
+                          (item['subtitle']).toString(),
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(

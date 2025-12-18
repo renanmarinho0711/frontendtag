@@ -550,6 +550,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               : ThemeColors.of(context).textSecondary,
           borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
           border: Border.all(
+            // ignore: argument_type_not_assignable
             color: isSelected ? formato['cor'] : ThemeColors.of(context).textSecondaryOverlay40,
             width: isSelected ? 2 : 1,
           ),
@@ -558,7 +559,9 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
+              // ignore: argument_type_not_assignable
               formato['icone'],
+              // ignore: argument_type_not_assignable
               color: isSelected ? formato['cor'] : ThemeColors.of(context).textSecondary,
               size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
             ),
@@ -566,7 +569,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               height: AppSizes.spacingSmAlt.get(isMobile, isTablet),
             ),
             Text(
-              formato['nome'],
+              (formato['nome']).toString(),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -576,6 +579,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
                   tabletFontSize: 11.5,
                 ),
                 fontWeight: FontWeight.bold,
+                // ignore: argument_type_not_assignable
                 color: isSelected ?  formato['cor'] : ThemeColors.of(context).textSecondary,
               ),
               maxLines: 2,
@@ -590,7 +594,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
               ),
             ),
             Text(
-              formato['subtitulo'],
+              (formato['subtitulo']).toString(),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -1178,7 +1182,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
           SizedBox(
             height: AppSizes.spacingSm.get(isMobile, isTablet),
           ),
-          _buildSummaryRow('Formato', formato['nome']),
+          _buildSummaryRow('Formato', (formato['nome']).toString()),
           _buildSummaryRow('Total de Tags', '$_totalTags'),
           _buildSummaryRow('Colunas', '$_totalColunas campos'),
           _buildSummaryRow('Tamanho estimado', '~$tamanhoEstimado MB'),
@@ -1246,6 +1250,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
 
     return FloatingActionButton.extended(
       onPressed: _executarExportacao,
+      // ignore: argument_type_not_assignable
       backgroundColor: formato['cor'],
       icon: Icon(
         Icons.file_download_rounded,
@@ -1287,6 +1292,7 @@ class _ExportacaoTagsScreenState extends ConsumerState<ExportacaoTagsScreen> wit
             Expanded(child: Text('Gerando arquivo ${formato['nome']}...')),
           ],
         ),
+        // ignore: argument_type_not_assignable
         backgroundColor: formato['cor'],
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(

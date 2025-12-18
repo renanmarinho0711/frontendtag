@@ -627,6 +627,7 @@ class _PrecificacaoDinamicaScreenState
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
+                    // ignore: argument_type_not_assignable
                     regra['icon'],
                     color: ThemeColors.of(context).surface,
                     size: 24,
@@ -638,7 +639,7 @@ class _PrecificacaoDinamicaScreenState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        regra['nome'],
+                        (regra['nome']).toString(),
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -647,7 +648,7 @@ class _PrecificacaoDinamicaScreenState
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        regra['descricao'],
+                        (regra['descricao']).toString(),
                         style: TextStyle(
                           fontSize: 12,
                           color: ThemeColors.of(context).textSecondary,

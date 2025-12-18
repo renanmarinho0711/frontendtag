@@ -739,6 +739,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
+                              // ignore: argument_type_not_assignable
                               setor['icone'],
                               color: ThemeColors.of(context).surface,
                               size: AppSizes.iconLarge.get(isMobile, isTablet),
@@ -747,7 +748,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                               height: AppSizes.paddingXs.get(isMobile, isTablet),
                             ),
                             Text(
-                              setor['nome'],
+                              (setor['nome']).toString(),
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -866,6 +867,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     borderRadius: BorderRadius.circular(AppSizes.paddingLg.get(isMobile, isTablet)),
                   ),
                   child: Icon(
+                    // ignore: argument_type_not_assignable
                     setor['icone'],
                     color: ThemeColors.of(context).surface,
                     size: AppSizes.iconMedium.get(isMobile, isTablet),
@@ -878,7 +880,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        setor['nome'],
+                        (setor['nome']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 17, mobileFontSize: 16, tabletFontSize: 16),
                         overflow: TextOverflow.ellipsis,
@@ -888,7 +890,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                       ),
                       SizedBox(height: AppSizes.paddingMicro.get(isMobile, isTablet)),
                       Text(
-                        setor['produtos'],
+                        (setor['produtos']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11),
                         overflow: TextOverflow.ellipsis,
@@ -933,6 +935,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('Status das Tags', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12), color: ThemeColors.of(context).textSecondary, fontWeight: FontWeight.w600)),
+                          // ignore: argument_type_not_assignable
                           Text('${setor['ativas']} / ${setor['total']}', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13), fontWeight: FontWeight.bold, color: setor['cor'])),
                         ],
                       ),
@@ -940,9 +943,11 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                       ClipRRect(
                         borderRadius: BorderRadius.circular(AppSizes.paddingSm.get(isMobile, isTablet)),
                         child: LinearProgressIndicator(
+                          // ignore: argument_type_not_assignable
                           value: percentual,
                           minHeight: ResponsiveHelper.getResponsiveHeight(context, mobile: 9, tablet: 10, desktop: 10),
                           backgroundColor: ThemeColors.of(context).textSecondary,
+                          // ignore: argument_type_not_assignable
                           valueColor: AlwaysStoppedAnimation<Color>(setor['cor']),
                         ),
                       ),
@@ -958,7 +963,9 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                 Expanded(
                   child: OutlinedButton.icon(
                     onPressed: () => _verDetalhesSetor(setor),
+                    // ignore: argument_type_not_assignable
                     icon: Icon(Icons.info_outline_rounded, size: AppSizes.iconTiny.get(isMobile, isTablet), color: setor['cor']),
+                    // ignore: argument_type_not_assignable
                     label: Text('Ver Detalhes', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11), color: setor['cor'])),
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(color: (setor['cor'] as Color).withValues(alpha: 0.5)),
@@ -1033,6 +1040,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                   Container(
                     padding: EdgeInsets.all(AppSizes.paddingSm.get(isMobile, isTablet)),
                     decoration: BoxDecoration(gradient: LinearGradient(colors: [setor['cor'], (setor['cor'] as Color).withValues(alpha: 0.7)]), borderRadius: BorderRadius.circular(ResponsiveHelper.isMobile(context) ? 14 : 16)),
+                    // ignore: argument_type_not_assignable
                     child: Icon(setor['icone'], color: ThemeColors.of(context).surface, size: AppSizes.iconLarge.get(isMobile, isTablet)),
                   ),
                   SizedBox(width: AppSizes.paddingMdAlt.get(isMobile, isTablet)),
@@ -1041,8 +1049,8 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(setor['nome'], style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 22, mobileFontSize: 20, tabletFontSize: 21), fontWeight: FontWeight.bold, letterSpacing: -0.8)),
-                        Text(setor['produtos'], style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13), color: ThemeColors.of(context).textSecondaryOverlay70)),
+                        Text((setor['nome']).toString(), style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 22, mobileFontSize: 20, tabletFontSize: 21), fontWeight: FontWeight.bold, letterSpacing: -0.8)),
+                        Text((setor['produtos']).toString(), style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 14, mobileFontSize: 13, tabletFontSize: 13), color: ThemeColors.of(context).textSecondaryOverlay70)),
                       ],
                     ),
                   ),
@@ -1059,7 +1067,7 @@ class _TagsMapaLojaScreenState extends ConsumerState<TagsMapaLojaScreen> with Re
                     _buildInfoRow('Total de Tags', '${setor['total']}', Icons.sell_rounded),
                     _buildInfoRow('Tags Ativas', '${setor['ativas']}', Icons.check_circle_rounded),
                     _buildInfoRow('Com Problemas', '${setor['problemas']}', Icons.warning_rounded),
-                    _buildInfoRow('Categoria', setor['produtos'], Icons.category_rounded),
+                    _buildInfoRow('Categoria', (setor['produtos']).toString(), Icons.category_rounded),
                     SizedBox(height: AppSizes.paddingLgAlt.get(isMobile, isTablet)),
                     Text('Ações Rápidas', style: TextStyle(fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 16, mobileFontSize: 15, tabletFontSize: 15), fontWeight: FontWeight.bold)),
                     SizedBox(height: AppSizes.paddingBase.get(isMobile, isTablet)),

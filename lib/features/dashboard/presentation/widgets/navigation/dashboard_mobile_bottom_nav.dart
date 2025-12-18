@@ -78,6 +78,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               gradient: isSelected
+                  // ignore: argument_type_not_assignable
                   ? LinearGradient(colors: List<Color>.from(item['gradient']))
                   : null,
               borderRadius: BorderRadius.circular(12),
@@ -86,13 +87,14 @@ class DashboardMobileBottomNav extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
+                  // ignore: argument_type_not_assignable
                   item['icon'],
                   color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
                   size: 24,
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  item['title'],
+                  (item['title']).toString(),
                   style: TextStyle(
                     color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
                     fontSize: 10,

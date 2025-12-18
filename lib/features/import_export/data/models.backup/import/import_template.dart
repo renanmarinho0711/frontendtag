@@ -18,13 +18,13 @@ class ImportTemplateModel {
 
   factory ImportTemplateModel.fromJson(Map<String, dynamic> json) {
     return ImportTemplateModel(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      dataType: json['dataType'] ?? '',
+      id: (json['id']).toString() ?? '',
+      name: (json['name']).toString() ?? '',
+      dataType: (json['dataType']).toString() ?? '',
       columns: (json['columns'] as List?)
           ?.map((c) => ColumnDefinitionModel.fromJson(c as Map<String, dynamic>))
           .toList() ?? [],
-      sampleData: json['sampleData'],
+      sampleData: (json['sampleData']).toString(),
     );
   }
 
@@ -65,20 +65,21 @@ class ImportExportTemplate {
 
   factory ImportExportTemplate.fromJson(Map<String, dynamic> json) {
     return ImportExportTemplate(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      type: json['type'] ?? '',
-      dataType: json['dataType'] ?? '',
-      format: json['format'] ?? '',
+      id: (json['id']).toString() ?? '',
+      name: (json['name']).toString() ?? '',
+      type: (json['type']).toString() ?? '',
+      dataType: (json['dataType']).toString() ?? '',
+      format: (json['format']).toString() ?? '',
       columnMappings: (json['columnMappings'] as Map<String, dynamic>?)
           ?.map((k, v) => MapEntry(k, v.toString())),
       columns: (json['columns'] as List?)
           ?.map((c) => c.toString())
           .toList(),
+      // ignore: argument_type_not_assignable
       isDefault: json['isDefault'] ?? false,
-      createdAt: DateTime.tryParse(json['createdAt'] ?? '') ?? DateTime.now(),
+      createdAt: DateTime.tryParse((json['createdAt']).toString() ?? '') ?? DateTime.now(),
       lastUsedAt: json['lastUsedAt'] != null 
-          ? DateTime.tryParse(json['lastUsedAt']) 
+          ? DateTime.tryParse((json['lastUsedAt']).toString()) 
           : null,
     );
   }

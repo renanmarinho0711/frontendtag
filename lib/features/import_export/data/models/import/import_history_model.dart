@@ -77,17 +77,19 @@ class ImportHistoryModel {
     return ImportHistoryModel(
       id: ((json['id']) as String?) ?? '',
       fileName: (((json['fileName'] ?? json['nome']) as String?) ?? ''),
-      dateTime: DateTime.tryParse(json['dateTime'] ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse((json['dateTime']).toString() ?? json['data'] ?? '') ?? DateTime.now(),
       totalRecords: (((json['totalRecords'] ?? json['total']) as int?) ?? 0),
       successCount: (((json['successCount'] ?? json['sucesso']) as int?) ?? 0),
+      // ignore: argument_type_not_assignable
       errorCount: json['errorCount'] ?? json['erros'] ?? 0,
+      // ignore: argument_type_not_assignable
       duplicateCount: json['duplicateCount'] ?? json['duplicados'] ?? 0,
       duration: (((json['duration'] ?? json['duracao']) as String?) ?? ''),
       status: ImportStatus.values.firstWhere(
         (s) => s.name == json['status'],
         orElse: () => ImportStatus.completed,
       ),
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
     );
   }
 
@@ -141,21 +143,24 @@ class ImportHistoryApiModel {
 
   factory ImportHistoryApiModel.fromJson(Map<String, dynamic> json) {
     return ImportHistoryApiModel(
-      id: json['id'] ?? '',
-      operationType: json['operationType'] ?? '',
-      dataType: json['dataType'] ?? '',
-      format: json['format'] ?? '',
-      status: json['status'] ?? '',
+      id: (json['id']).toString() ?? '',
+      operationType: (json['operationType']).toString() ?? '',
+      dataType: (json['dataType']).toString() ?? '',
+      format: (json['format']).toString() ?? '',
+      status: (json['status']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
-      fileName: json['fileName'],
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      fileName: (json['fileName']).toString(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
       completedAt: json['completedAt'] != null 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
           : null,
-      errorMessage: json['errorMessage'],
-      userId: json['userId'],
+      errorMessage: (json['errorMessage']).toString(),
+      userId: (json['userId']).toString(),
     );
   }
 

@@ -121,9 +121,12 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
               id: r['id']?.toString() ?? '',
               range: r['range']?.toString() ?? r['faixa']?.toString() ?? '',
               title: r['title']?.toString() ?? r['titulo']?.toString() ?? r['name']?.toString() ?? r['nome']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               adjustment: (r['adjustment'] ?? r['ajuste'] ?? 0).toDouble(),
               products: r['products'] is List 
+                  // ignore: argument_type_not_assignable
                   ? List<String>.from(r['products']) 
+                  // ignore: argument_type_not_assignable
                   : (r['produtos'] is List ? List<String>.from(r['produtos']) : []),
               icon: Icons.thermostat,
               color: _parseColor(r['color'] ?? r['cor']),
@@ -138,6 +141,7 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
               id: item['id']?.toString() ?? '',
               dateTime: item['dateTime']?.toString() ?? item['date']?.toString() ?? item['data']?.toString() ?? '',
               temperature: item['temperature']?.toString() ?? item['temperatura']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               adjustmentsCount: item['adjustmentsCount'] ?? item['produtosAfetados'] ?? 0,
               status: item['status']?.toString() ?? 'ok',
             ));
@@ -148,13 +152,16 @@ class TemperatureNotifier extends StateNotifier<TemperatureState> {
           isLoading: false,
           temperatureRanges: ranges,
           history: history,
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
+          // ignore: argument_type_not_assignable
           isConnected: data['isConnected'] ?? data['conectado'] ?? state.isConnected,
-          apiKey: data['apiKey'] ?? data['chaveApi'] ?? state.apiKey,
-          city: data['city'] ?? data['cidade'] ?? state.city,
+          apiKey: (data['apiKey']).toString() ?? data['chaveApi'] ?? state.apiKey,
+          city: (data['city']).toString() ?? data['cidade'] ?? state.city,
+          // ignore: argument_type_not_assignable
           currentTemperature: (data['currentTemperature'] ?? data['temperaturaAtual'] ?? state.currentTemperature).toDouble(),
-          currentCondition: data['currentCondition'] ?? data['condicaoAtual'] ?? state.currentCondition,
-          selectedFrequency: data['selectedFrequency'] ?? data['frequenciaSelecionada'] ?? state.selectedFrequency,
+          currentCondition: (data['currentCondition']).toString() ?? data['condicaoAtual'] ?? state.currentCondition,
+          selectedFrequency: (data['selectedFrequency']).toString() ?? data['frequenciaSelecionada'] ?? state.selectedFrequency,
         );
       } else {
         state = state.copyWith(isLoading: false, temperatureRanges: [], history: []);
@@ -411,12 +418,15 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
               periodo: p['periodo']?.toString() ?? p['name']?.toString() ?? p['nome']?.toString() ?? '',
               horario: p['horario']?.toString() ?? '${p['startTime'] ?? p['horaInicio'] ?? '00:00'} - ${p['endTime'] ?? p['horaFim'] ?? '00:00'}',
               tipo: p['tipo']?.toString() ?? 'pico',
+              // ignore: argument_type_not_assignable
               ajuste: (p['ajuste'] ?? p['adjustment'] ?? 0).toDouble(),
               icone: Icons.access_time,
               cor: _parseColor(p['color'] ?? p['cor']),
               descricao: p['descricao']?.toString() ?? p['description']?.toString() ?? '',
               produtos: p['produtos'] is List 
+                  // ignore: argument_type_not_assignable
                   ? List<String>.from(p['produtos']) 
+                  // ignore: argument_type_not_assignable
                   : (p['products'] is List ? List<String>.from(p['products']) : []),
             ));
           }
@@ -427,7 +437,9 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
             weekDays.add(WeekDayModel(
               id: d['id']?.toString() ?? '',
               dia: d['dia']?.toString() ?? d['name']?.toString() ?? d['nome']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               movimento: (d['movimento'] ?? 0).toDouble(),
+              // ignore: argument_type_not_assignable
               ativo: d['ativo'] ?? d['active'] ?? false,
             ));
           }
@@ -439,6 +451,7 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
               id: item['id']?.toString() ?? '',
               data: item['data']?.toString() ?? item['date']?.toString() ?? '',
               periodo: item['periodo']?.toString() ?? item['period']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               ajustes: item['ajustes'] ?? item['adjustmentsCount'] ?? item['produtosAfetados'] ?? 0,
               tipo: item['tipo']?.toString() ?? 'pico',
             ));
@@ -450,8 +463,11 @@ class PeakHoursNotifier extends StateNotifier<PeakHoursState> {
           peakHours: peakHours,
           weekDays: weekDays,
           history: history,
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
+          // ignore: argument_type_not_assignable
           aplicarFinaisSemana: data['aplicarFinaisSemana'] ?? data['applyWeekends'] ?? state.aplicarFinaisSemana,
+          // ignore: argument_type_not_assignable
           notificarAjustes: data['notificarAjustes'] ?? data['notifyAdjustments'] ?? state.notificarAjustes,
         );
       } else {

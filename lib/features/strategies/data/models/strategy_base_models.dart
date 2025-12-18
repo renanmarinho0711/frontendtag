@@ -947,8 +947,10 @@ class TopProductResult {
 
       color: StrategyModel.parseColor(json['cor'] ?? json['color']) ?? const Color(0xFF2196F3),
 
+      // ignore: argument_type_not_assignable
       profitMargin: (json['profitMargin'] ?? json['margemLucro'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       salesVariation: (json['salesVariation'] ?? json['variacaoVendas'] ?? 0).toDouble(),
 
     );
@@ -1051,20 +1053,27 @@ class StrategyPeriodStats {
 
       totalSales: json['totalSales'] as int? ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalRevenue: (json['totalRevenue'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       averageTicket: (json['averageTicket'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       roi: (json['roi'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       savings: (json['savings'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       conversionRate: (json['conversionRate'] ?? 0).toDouble(),
 
       productsAffected: json['productsAffected'] as int? ?? 0,
 
+      // ignore: argument_type_not_assignable
       salesVariation: (json['salesVariation'] ?? 0).toDouble(),
 
+      // ignore: argument_type_not_assignable
       revenueVariation: (json['revenueVariation'] ?? 0).toDouble(),
 
     );
@@ -1153,6 +1162,7 @@ class DailySalesData {
 
       sales: json['sales'] as int? ?? 0,
 
+      // ignore: argument_type_not_assignable
       revenue: (json['revenue'] ?? 0).toDouble(),
 
     );

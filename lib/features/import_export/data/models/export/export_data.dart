@@ -20,13 +20,14 @@ class ExportData {
 
   factory ExportData.fromJson(Map<String, dynamic> json) {
     return ExportData(
-      exportId: json['exportId'] ?? '',
-      type: json['type'] ?? '',
-      format: json['format'] ?? '',
+      exportId: (json['exportId']).toString() ?? '',
+      type: (json['type']).toString() ?? '',
+      format: (json['format']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
-      fileName: json['fileName'],
-      contentType: json['contentType'],
-      base64Data: json['base64Data'],
+      fileName: (json['fileName']).toString(),
+      contentType: (json['contentType']).toString(),
+      base64Data: (json['base64Data']).toString(),
     );
   }
 

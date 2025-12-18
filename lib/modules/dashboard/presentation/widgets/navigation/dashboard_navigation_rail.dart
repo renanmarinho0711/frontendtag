@@ -285,6 +285,7 @@ class _NavigationRailItem extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           gradient: isSelected
+              // ignore: argument_type_not_assignable
               ? LinearGradient(colors: List<Color>.from(item['gradient']))
               : null,
           borderRadius: BorderRadius.circular(isTablet ? 10 : 12),
@@ -293,6 +294,7 @@ class _NavigationRailItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
+              // ignore: argument_type_not_assignable
               item['icon'],
               color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey600,
               size: ResponsiveHelper.getResponsiveIconSize(
@@ -311,7 +313,7 @@ class _NavigationRailItem extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  item['title'],
+                  (item['title']).toString(),
                   style: TextStyle(
                     color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).grey700,
                     fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,

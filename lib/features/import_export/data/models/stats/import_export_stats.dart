@@ -74,24 +74,29 @@ class ImportExportHistory {
 
   factory ImportExportHistory.fromJson(Map<String, dynamic> json) {
     return ImportExportHistory(
-      id: json['id'] ?? '',
-      operationType: json['operationType'] ?? '',
-      dataType: json['dataType'] ?? '',
-      format: json['format'] ?? '',
-      status: json['status'] ?? '',
+      id: (json['id']).toString() ?? '',
+      operationType: (json['operationType']).toString() ?? '',
+      dataType: (json['dataType']).toString() ?? '',
+      format: (json['format']).toString() ?? '',
+      status: (json['status']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
+      // ignore: argument_type_not_assignable
       fileSizeBytes: json['fileSizeBytes'],
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
       completedAt: json['completedAt'] != null 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
           : null,
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
-      userId: json['userId'],
-      userName: json['userName'],
-      errorMessage: json['errorMessage'],
+      userId: (json['userId']).toString(),
+      userName: (json['userName']).toString(),
+      errorMessage: (json['errorMessage']).toString(),
     );
   }
 
@@ -196,18 +201,25 @@ class ImportExportStatisticsModel {
 
   factory ImportExportStatisticsModel.fromJson(Map<String, dynamic> json) {
     return ImportExportStatisticsModel(
+      // ignore: argument_type_not_assignable
       totalImports: json['totalImports'] ?? json['total_imports'] ?? 0,
+      // ignore: argument_type_not_assignable
       totalExports: json['totalExports'] ?? json['total_exports'] ?? 0,
+      // ignore: argument_type_not_assignable
       successfulImports: json['successfulImports'] ?? json['successful_imports'] ?? 0,
+      // ignore: argument_type_not_assignable
       failedImports: json['failedImports'] ?? json['failed_imports'] ?? 0,
+      // ignore: argument_type_not_assignable
       totalRecordsImported: json['totalRecordsImported'] ?? json['total_records_imported'] ?? 0,
+      // ignore: argument_type_not_assignable
       totalRecordsExported: json['totalRecordsExported'] ?? json['total_records_exported'] ?? 0,
       lastImportAt: json['lastImportAt'] != null || json['last_import_at'] != null
-          ? DateTime.tryParse(json['lastImportAt'] ?? json['last_import_at'] ?? '')
+          ? DateTime.tryParse((json['lastImportAt']).toString() ?? json['last_import_at'] ?? '')
           : null,
       lastExportAt: json['lastExportAt'] != null || json['last_export_at'] != null
-          ? DateTime.tryParse(json['lastExportAt'] ?? json['last_export_at'] ?? '')
+          ? DateTime.tryParse((json['lastExportAt']).toString() ?? json['last_export_at'] ?? '')
           : null,
+      // ignore: argument_type_not_assignable
       pendingJobs: json['pendingJobs'] ?? json['pending_jobs'] ?? 0,
     );
   }

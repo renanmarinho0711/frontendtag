@@ -25,7 +25,7 @@ class ExportResultModel {
       fileName: json['fileName'] as String?,
       recordCount: json['recordCount'] as int? ?? 0,
       errorMessage: json['errorMessage'] as String?,
-      generatedAt: DateTime.tryParse(json['generatedAt'] ?? '') ?? DateTime.now(),
+      generatedAt: DateTime.tryParse((json['generatedAt']).toString() ?? '') ?? DateTime.now(),
       jobId: json['jobId'] as String?,
     );
   }
@@ -83,23 +83,28 @@ class ExportResult {
 
   factory ExportResult.fromJson(Map<String, dynamic> json) {
     return ExportResult(
-      exportId: json['exportId'] ?? '',
-      type: json['type'] ?? '',
-      format: json['format'] ?? '',
-      status: json['status'] ?? '',
+      exportId: (json['exportId']).toString() ?? '',
+      type: (json['type']).toString() ?? '',
+      format: (json['format']).toString() ?? '',
+      status: (json['status']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       processedRecords: json['processedRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       progressPercent: (json['progressPercent'] ?? 0).toDouble(),
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
       completedAt: json['completedAt'] != null 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
           : null,
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
-      downloadUrl: json['downloadUrl'],
-      fileName: json['fileName'],
+      downloadUrl: (json['downloadUrl']).toString(),
+      fileName: (json['fileName']).toString(),
+      // ignore: argument_type_not_assignable
       fileSizeBytes: json['fileSizeBytes'],
       expiresAt: json['expiresAt'] != null 
-          ? DateTime.tryParse(json['expiresAt']) 
+          ? DateTime.tryParse((json['expiresAt']).toString()) 
           : null,
     );
   }
@@ -144,13 +149,15 @@ class ExportApiResultModel {
 
   factory ExportApiResultModel.fromJson(Map<String, dynamic> json) {
     return ExportApiResultModel(
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
-      jobId: json['jobId'],
-      format: json['format'],
+      jobId: (json['jobId']).toString(),
+      format: (json['format']).toString(),
+      // ignore: argument_type_not_assignable
       recordCount: json['recordCount'] ?? 0,
-      downloadUrl: json['downloadUrl'],
-      content: json['content'],
-      contentType: json['contentType'],
+      downloadUrl: (json['downloadUrl']).toString(),
+      content: (json['content']).toString(),
+      contentType: (json['contentType']).toString(),
     );
   }
 

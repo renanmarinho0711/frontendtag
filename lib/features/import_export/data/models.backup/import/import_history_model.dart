@@ -87,7 +87,7 @@ class ImportHistoryModel {
         (s) => s.name == json['status'],
         orElse: () => ImportStatus.completed,
       ),
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
     );
   }
 
@@ -145,17 +145,20 @@ class ImportHistoryApiModel {
       operationType: json['operationType'] as String ?? '',
       dataType: json['dataType'] as String ?? '',
       format: json['format'] as String ?? '',
-      status: json['status'] ?? '',
+      status: (json['status']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
-      fileName: json['fileName'],
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      fileName: (json['fileName']).toString(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
       completedAt: json['completedAt'] != null 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
           : null,
-      errorMessage: json['errorMessage'],
-      userId: json['userId'],
+      errorMessage: (json['errorMessage']).toString(),
+      userId: (json['userId']).toString(),
     );
   }
 

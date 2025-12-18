@@ -39,20 +39,25 @@ class GlobalProduct {
 
   factory GlobalProduct.fromJson(Map<String, dynamic> json) {
     return GlobalProduct(
-      id: json['id'] ?? '',
-      gtin: json['gtin'] ?? '',
-      name: json['name'] ?? '',
-      description: json['description'],
-      brand: json['brand'],
-      category: json['category'],
-      ncm: json['ncm'],
-      unit: json['unit'],
+      id: (json['id']).toString() ?? '',
+      gtin: (json['gtin']).toString() ?? '',
+      name: (json['name']).toString() ?? '',
+      description: (json['description']).toString(),
+      brand: (json['brand']).toString(),
+      category: (json['category']).toString(),
+      ncm: (json['ncm']).toString(),
+      unit: (json['unit']).toString(),
+      // ignore: argument_type_not_assignable
       netWeight: json['netWeight']?.toDouble(),
+      // ignore: argument_type_not_assignable
       grossWeight: json['grossWeight']?.toDouble(),
-      imageUrl: json['imageUrl'],
-      countryOfOrigin: json['countryOfOrigin'],
+      imageUrl: (json['imageUrl']).toString(),
+      countryOfOrigin: (json['countryOfOrigin']).toString(),
+      // ignore: argument_type_not_assignable
       referencePrice: json['referencePrice']?.toDouble(),
+      // ignore: argument_type_not_assignable
       isVerified: json['isVerified'] ?? false,
+      // ignore: argument_type_not_assignable
       found: json['found'] ?? true,
     );
   }
@@ -90,6 +95,7 @@ class GlobalProductsRepository {
   Future<ApiResponse<GlobalProduct>> buscarPorBarcode(String barcode) async {
     return await _apiService.get<GlobalProduct>(
       '/globalproducts/barcode/$barcode',
+      // ignore: argument_type_not_assignable
       parser: (data) => GlobalProduct.fromJson(data),
     );
   }
@@ -117,10 +123,12 @@ class GlobalProductsRepository {
       parser: (data) {
         if (data is Map && data['items'] is List) {
           return (data['items'] as List)
+              // ignore: argument_type_not_assignable
               .map((item) => GlobalProduct.fromJson(item))
               .toList();
         }
         if (data is List) {
+          // ignore: argument_type_not_assignable
           return data.map((item) => GlobalProduct.fromJson(item)).toList();
         }
         return [];
@@ -164,6 +172,7 @@ class GlobalProductsRepository {
     return await _apiService.post<GlobalProduct>(
       '/globalproducts',
       body: body,
+      // ignore: argument_type_not_assignable
       parser: (data) => GlobalProduct.fromJson(data),
     );
   }

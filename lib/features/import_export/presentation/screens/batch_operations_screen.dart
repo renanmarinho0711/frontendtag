@@ -554,6 +554,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       desktop: 64,
                     ),
                     decoration: BoxDecoration(
+                      // ignore: argument_type_not_assignable
                       gradient: LinearGradient(colors: operacao['gradiente']),
                       borderRadius: BorderRadius.circular(
                         isMobile ?  14 : 16,
@@ -567,6 +568,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       ],
                     ),
                     child: Icon(
+                      // ignore: argument_type_not_assignable
                       operacao['icone'],
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
@@ -581,7 +583,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          operacao['titulo'],
+                          (operacao['titulo']).toString(),
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -603,7 +605,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                           ),
                         ),
                         Text(
-                          operacao['subtitulo'],
+                          (operacao['subtitulo']).toString(),
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -636,6 +638,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                           ),
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
+                              // ignore: argument_type_not_assignable
                               colors: operacao['gradiente'],
                             ),
                             borderRadius: BorderRadius.circular(
@@ -719,10 +722,12 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                       AppSizes.cardPadding.get(isMobile, isTablet),
                     ),
                     decoration: BoxDecoration(
+                      // ignore: argument_type_not_assignable
                       gradient: LinearGradient(colors: operacao['gradiente']),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
+                      // ignore: argument_type_not_assignable
                       operacao['icone'],
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconHeroSm.get(isMobile, isTablet),
@@ -730,7 +735,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                   ),
                   ResponsiveSpacing.verticalMedium(context),
                   Text(
-                    operacao['titulo'],
+                    (operacao['titulo']).toString(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -748,7 +753,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                     height: AppSizes.spacingBase.get(isMobile, isTablet),
                   ),
                   Text(
-                    operacao['descricaoDetalhada'],
+                    (operacao['descricaoDetalhada']).toString(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -784,6 +789,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                             Icon(
                               Icons.table_chart_rounded,
                               size: AppSizes.iconSmall.get(isMobile, isTablet),
+                              // ignore: argument_type_not_assignable
                               color: operacao['gradiente'][0],
                             ),
                             SizedBox(
@@ -833,6 +839,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                                     tablet: 13.5,
                                     desktop: 14,
                                   ),
+                                  // ignore: argument_type_not_assignable
                                   color: operacao['gradiente'][0],
                                 ),
                                 SizedBox(
@@ -902,7 +909,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                               ),
                               Expanded(
                                 child: Text(
-                                  operacao['exemplo'],
+                                  (operacao['exemplo']).toString(),
                                   style: TextStyle(
                                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                                       context,
@@ -934,6 +941,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                               content: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
+                                  // ignore: argument_type_not_assignable
                                   Icon(Icons.download_rounded, color: operacao['gradiente'][0]),
                                   const SizedBox(width: 12),
                                   const Text('Baixando template... '),
@@ -968,9 +976,11 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                             vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                           ),
                           side: BorderSide(
+                            // ignore: argument_type_not_assignable
                             color: operacao['gradiente'][0],
                             width: isMobile ? 1.5 : 2,
                           ),
+                          // ignore: argument_type_not_assignable
                           foregroundColor: operacao['gradiente'][0],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
@@ -1011,6 +1021,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                         padding: EdgeInsets.symmetric(
                           vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                         ),
+                        // ignore: argument_type_not_assignable
                         backgroundColor: operacao['gradiente'][0],
                         foregroundColor: ThemeColors.of(context).surface,
                         shape: RoundedRectangleBorder(
@@ -1060,6 +1071,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // ignore: argument_type_not_assignable
             Icon(Icons.upload_file_rounded, color: operacao['gradiente'][0]),
             const SizedBox(width: 12),
             const Expanded(child: Text('Selecionar Arquivo')),
@@ -1078,6 +1090,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                 ),
               ),
               decoration: BoxDecoration(
+                // ignore: argument_type_not_assignable
                 border: Border.all(color: operacao['gradiente'][0], width: 2),
                 borderRadius: BorderRadius.circular(AppSizes.paddingMd.get(isMobile, isTablet)),
                 color: (operacao['gradiente'][0] as Color).withValues(alpha: 0.05),
@@ -1088,6 +1101,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                   Icon(
                     Icons.cloud_upload_rounded,
                     size: AppSizes.iconHeroXl.get(isMobile, isTablet),
+                    // ignore: argument_type_not_assignable
                     color: operacao['gradiente'][0],
                   ),
                   ResponsiveSpacing.verticalMedium(context),
@@ -1141,6 +1155,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               _executarOperacao(operacao);
             },
             style: ElevatedButton.styleFrom(
+              // ignore: argument_type_not_assignable
               backgroundColor: operacao['gradiente'][0],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1166,6 +1181,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // ignore: argument_type_not_assignable
             Icon(Icons.warning_rounded, color: operacao['gradiente'][0]),
             const SizedBox(width: 12),
             const Text('Confirmar OperAção'),
@@ -1188,7 +1204,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    operacao['titulo'],
+                    (operacao['titulo']).toString(),
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1240,6 +1256,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       CircularProgressIndicator(
+                        // ignore: argument_type_not_assignable
                         valueColor: AlwaysStoppedAnimation<Color>(operacao['gradiente'][0]),
                       ),
                       const SizedBox(height: 20),
@@ -1303,6 +1320,7 @@ class _ImportacaoOperacoesLoteScreenState extends ConsumerState<ImportacaoOperac
               }
             },
             style: ElevatedButton.styleFrom(
+              // ignore: argument_type_not_assignable
               backgroundColor: operacao['gradiente'][0],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),

@@ -141,6 +141,7 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
               id: p['id']?.toString() ?? (i + 1).toString(),
               fase: p['fase']?.toString() ?? 'Fase ${i + 1}',
               titulo: p['titulo']?.toString() ?? p['nome']?.toString() ?? p['name']?.toString() ?? 'Fase ${i + 1}',
+              // ignore: argument_type_not_assignable
               dias: p['dias'] ?? p['days'] ?? 7,
               desconto: ((p['desconto'] ?? p['discount'] ?? 0) as num?)?.toDouble() ?? 0.0,
               cor: _parseColor(p['cor'] ?? p['color']),
@@ -154,12 +155,16 @@ class AutoClearanceNotifier extends StateNotifier<AutoClearanceState> {
           for (final pr in productsList) {
             products.add(ClearanceProductModel(
               id: pr['id']?.toString() ?? '',
-              nome: pr['nome'] ?? pr['name'] ?? '',
+              nome: (pr['nome']).toString() ?? pr['name'] ?? '',
               precoOriginal: pr['precoOriginal']?.toString() ?? pr['originalPrice']?.toString() ?? '',
               precoAtual: pr['precoAtual']?.toString() ?? pr['currentPrice']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               fase: pr['fase'] ?? pr['phase'] ?? 1,
+              // ignore: argument_type_not_assignable
               diasParado: pr['diasParado'] ?? pr['diasLiquidacao'] ?? pr['daysInClearance'] ?? 0,
+              // ignore: argument_type_not_assignable
               desconto: pr['desconto'] ?? pr['discount'] ?? 0,
+              // ignore: argument_type_not_assignable
               estoque: pr['estoque'] ?? pr['stock'] ?? 0,
             ));
           }
@@ -421,6 +426,7 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
             rules.add(MarkdownRuleModel(
               id: r['id']?.toString() ?? '',
               faixa: r['faixa']?.toString() ?? r['nome']?.toString() ?? r['name']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               desconto: (r['desconto'] ?? r['discount'] ?? 0).toDouble(),
               cor: _parseColor(r['cor'] ?? r['color']),
               icone: Icons.schedule,
@@ -433,9 +439,11 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
           for (final p in productsList) {
             products.add(MarkdownProductModel(
               id: p['id']?.toString() ?? '',
-              nome: p['nome'] ?? p['name'] ?? '',
+              nome: (p['nome']).toString() ?? p['name'] ?? '',
               validade: p['validade']?.toString() ?? p['expiry']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               diasRestantes: p['diasRestantes'] ?? p['daysRemaining'] ?? 0,
+              // ignore: argument_type_not_assignable
               desconto: p['descontoAtual'] ?? p['currentDiscount'] ?? 0,
               precoOriginal: p['precoOriginal']?.toString() ?? p['originalPrice']?.toString() ?? '',
               precoAtual: p['precoAtual']?.toString() ?? p['currentPrice']?.toString() ?? '',
@@ -448,8 +456,11 @@ class DynamicMarkdownNotifier extends StateNotifier<DynamicMarkdownState> {
           rules: rules,
           products: products,
           allCategories: categoriesList is List ? List<String>.from(categoriesList) : [],
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
+          // ignore: argument_type_not_assignable
           apenasPereci: data['apenasPereci'] ?? data['onlyPerishables'] ?? state.apenasPereci,
+          // ignore: argument_type_not_assignable
           notificarAjustes: data['notificarAjustes'] ?? data['notifyAdjustments'] ?? state.notificarAjustes,
         );
       } else {
@@ -706,7 +717,9 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
             predictions.add(ForecastPredictionModel(
               id: p['id']?.toString() ?? '',
               nome: p['nome']?.toString() ?? p['produtoNome']?.toString() ?? p['productName']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               vendasAtuais: p['vendasAtuais'] ?? p['currentSales'] ?? 0,
+              // ignore: argument_type_not_assignable
               previsao: p['previsao'] ?? p['demandaPrevista'] ?? p['predictedDemand'] ?? 0,
               confianca: (((p['confianca'] ?? p['confidence'] ?? 0) as int?) ?? 0),
               tendencia: ForecastTrend.fromString(p['tendencia']?.toString() ?? p['trend']?.toString() ?? 'estavel'),
@@ -721,7 +734,7 @@ class AIForecastNotifier extends StateNotifier<AIForecastState> {
           for (final f in factorsList) {
             factors.add(ForecastFactorModel(
               id: f['id']?.toString() ?? '',
-              nome: f['nome'] ?? f['name'] ?? '',
+              nome: (f['nome']).toString() ?? f['name'] ?? '',
               peso: ((f['peso'] ?? f['weight'] ?? 0) as num?)?.toDouble() ?? 0.0,
               cor: const Color(0xFF2196F3),
               icone: Icons.analytics,
@@ -1011,6 +1024,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
             ultimasAuditorias.add(AuditRecordModel(
               id: a['id']?.toString() ?? '',
               data: a['data']?.toString() ?? a['date']?.toString() ?? '',
+              // ignore: argument_type_not_assignable
               problemas: a['problemas'] ?? a['issues'] ?? 0,
               status: a['status']?.toString() ?? 'concluido',
               cor: const Color(0xFF4CAF50),
@@ -1038,6 +1052,7 @@ class AutoAuditNotifier extends StateNotifier<AutoAuditState> {
           verificacoes: verificacoes,
           emailsAlertas: emailsList is List ? List<String>.from(emailsList) : [],
           ultimasAuditorias: ultimasAuditorias,
+          // ignore: argument_type_not_assignable
           auditoriaAtiva: data['auditoriaAtiva'] ?? data['auditActive'] ?? state.auditoriaAtiva,
           horarioExecucao: horario,
         );

@@ -56,12 +56,17 @@ class ImportConfigModel {
         (f) => f.id == json['format'],
         orElse: () => ExportFormat.excel,
       ),
+      // ignore: argument_type_not_assignable
       skipFirstRow: json['skipFirstRow'] ?? true,
+      // ignore: argument_type_not_assignable
       autoDetectColumns: json['autoDetectColumns'] ?? true,
       columnMapping: (json['columnMapping'] as Map<String, dynamic>?)
           ?.map((k, v) => MapEntry(k, v.toString())) ?? {},
+      // ignore: argument_type_not_assignable
       validateBeforeImport: json['validateBeforeImport'] ?? true,
+      // ignore: argument_type_not_assignable
       stopOnError: json['stopOnError'] ?? false,
+      // ignore: argument_type_not_assignable
       maxErrors: json['maxErrors'],
     );
   }

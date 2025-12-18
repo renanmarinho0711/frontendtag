@@ -41,12 +41,17 @@ class ExportFilters {
 
   factory ExportFilters.fromJson(Map<String, dynamic> json) {
     return ExportFilters(
-      categoryId: json['categoryId'],
+      categoryId: (json['categoryId']).toString(),
       categoryIds: (json['categoryIds'] as List?)?.map((e) => e.toString()).toList(),
+      // ignore: argument_type_not_assignable
       isActive: json['isActive'],
+      // ignore: argument_type_not_assignable
       minPrice: json['minPrice']?.toDouble(),
+      // ignore: argument_type_not_assignable
       maxPrice: json['maxPrice']?.toDouble(),
+      // ignore: argument_type_not_assignable
       minStock: json['minStock'],
+      // ignore: argument_type_not_assignable
       maxStock: json['maxStock'],
       createdFrom: json['createdFrom'] != null 
           ? DateTime.tryParse(json['createdFrom'] as String) 
@@ -54,7 +59,7 @@ class ExportFilters {
       createdTo: json['createdTo'] != null 
           ? DateTime.tryParse(json['createdTo'] as String) 
           : null,
-      searchTerm: json['searchTerm'],
+      searchTerm: (json['searchTerm']).toString(),
     );
   }
 

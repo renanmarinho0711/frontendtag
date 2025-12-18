@@ -36,6 +36,7 @@ class TagsRepository {
 
       body: request.toJson(),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => TagModel.fromJson(data),
 
     );
@@ -60,6 +61,7 @@ class TagsRepository {
 
       body: request.toJson(),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => BatchOperationResult.fromJson(data),
 
     );
@@ -82,6 +84,7 @@ class TagsRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => TagModel.fromJson(item)).toList();
 
         }
@@ -106,6 +109,7 @@ class TagsRepository {
 
       ApiConstants.tags.byMac(macAddress),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => TagModel.fromJson(data),
 
     );
@@ -128,6 +132,7 @@ class TagsRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => TagModel.fromJson(item)).toList();
 
         }
@@ -188,6 +193,7 @@ class TagsRepository {
 
       queryParams: queryParams,
 
+      // ignore: argument_type_not_assignable
       parser: (data) => TagsPagedResponse.fromJson(data),
 
     );
@@ -210,6 +216,7 @@ class TagsRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => TagModel.fromJson(item)).toList();
 
         }
@@ -238,6 +245,7 @@ class TagsRepository {
 
         if (data is List) {
 
+          // ignore: argument_type_not_assignable
           return data.map((item) => TagModel.fromJson(item)).toList();
 
         }
@@ -288,6 +296,7 @@ class TagsRepository {
 
       body: request.toJson(),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => TagModel.fromJson(data),
 
     );
@@ -306,6 +315,7 @@ class TagsRepository {
 
       ApiConstants.tagUnbind(macAddress),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => TagModel.fromJson(data),
 
     );
@@ -330,6 +340,7 @@ class TagsRepository {
 
       body: request.toJson(),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => BatchOperationResult.fromJson(data),
 
     );
@@ -362,6 +373,7 @@ class TagsRepository {
 
       },
 
+      // ignore: argument_type_not_assignable
       parser: (data) => BatchOperationResult.fromJson(data),
 
     );
@@ -442,6 +454,7 @@ class TagsRepository {
 
       },
 
+      // ignore: argument_type_not_assignable
       parser: (data) => BatchOperationResult.fromJson(data),
 
     );
@@ -460,6 +473,7 @@ class TagsRepository {
 
       ApiConstants.tagsStoreSync(storeId),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => BatchOperationResult.fromJson(data),
 
     );
@@ -502,6 +516,7 @@ class TagsRepository {
 
       body: dto.toJson(),
 
+      // ignore: argument_type_not_assignable
       parser: (data) => TagModel.fromJson(data),
 
     );
@@ -534,6 +549,7 @@ class TagsRepository {
 
       },
 
+      // ignore: argument_type_not_assignable
       parser: (data) => BatchOperationResult.fromJson(data),
 
     );

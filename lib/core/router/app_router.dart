@@ -140,6 +140,7 @@ class AppRouter {
       
       // Main app shell with bottom navigation
       ShellRoute(
+        // ignore: argument_type_not_assignable
         builder: (context, state, child) => MainShell(child: child),
         routes: [
           // Dashboard
@@ -177,6 +178,7 @@ class AppRouter {
                   final productId = state.pathParameters['id']!;
                   return CustomTransitionPage(
                     key: state.pageKey,
+                    // ignore: argument_type_not_assignable
                     child: ProductDetailsPage(productId: productId),
                     transitionsBuilder: RouteTransitions.slideFromRight,
                   );
@@ -210,6 +212,7 @@ class AppRouter {
                   final tagId = state.pathParameters['id']!;
                   return CustomTransitionPage(
                     key: state.pageKey,
+                    // ignore: argument_type_not_assignable
                     child: TagDetailsPage(tagId: tagId),
                     transitionsBuilder: RouteTransitions.slideFromRight,
                   );

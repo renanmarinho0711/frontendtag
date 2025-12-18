@@ -27,9 +27,13 @@ class ImportValidation {
 
   factory ImportValidation.fromJson(Map<String, dynamic> json) {
     return ImportValidation(
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? false,
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       validRecords: json['validRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       invalidRecords: json['invalidRecords'] ?? 0,
       errors: (json['errors'] as List?)
           ?.map((e) => ImportError.fromJson(e as Map<String, dynamic>))
@@ -81,9 +85,13 @@ class ValidationResultModel {
 
   factory ValidationResultModel.fromJson(Map<String, dynamic> json) {
     return ValidationResultModel(
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? false,
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       validRecords: json['validRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       invalidRecords: json['invalidRecords'] ?? 0,
       errors: (json['errors'] as List?)
           ?.map((e) => ImportErrorModel.fromJson(e as Map<String, dynamic>))

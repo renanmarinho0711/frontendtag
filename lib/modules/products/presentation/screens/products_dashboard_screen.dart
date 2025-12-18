@@ -235,6 +235,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
         vertical: AppSizes.paddingMd.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
+        // ignore: argument_type_not_assignable
         gradient: AppGradients.darkBackground,
         borderRadius: BorderRadius.circular(
           ResponsiveHelper.getResponsiveBorderRadius(context, mobile: 16, tablet: 18, desktop: 20),

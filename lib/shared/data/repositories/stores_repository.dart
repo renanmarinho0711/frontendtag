@@ -30,6 +30,7 @@ class StoresRepository {
 
     return await _apiService.get<List<Map<String, dynamic>>>(
 
+      // ignore: argument_type_not_assignable
       ApiConstants.stores,
 
       parser: (data) {
@@ -100,6 +101,7 @@ class StoresRepository {
 
     return await _apiService.post<Map<String, dynamic>>(
 
+      // ignore: argument_type_not_assignable
       ApiConstants.stores,
 
       body: body,

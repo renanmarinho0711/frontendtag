@@ -20,7 +20,7 @@ class ImportErrorDetail {
       field: json['field'] as String,
       value: json['value'] as String,
       errorMessage: json['errorMessage'] as String,
-      suggestion: json['suggestion'],
+      suggestion: (json['suggestion']).toString(),
     );
   }
 
@@ -54,7 +54,7 @@ class ImportError {
   factory ImportError.fromJson(Map<String, dynamic> json) {
     return ImportError(
       row: json['row'] as int ?? 0,
-      column: json['column'],
+      column: (json['column']).toString(),
       field: json['field'] as String ?? '',
       value: json['value'] as String ?? '',
       errorCode: json['errorCode'] as String ?? '',
@@ -120,8 +120,8 @@ class ImportErrorModel {
   factory ImportErrorModel.fromJson(Map<String, dynamic> json) {
     return ImportErrorModel(
       rowNumber: json['rowNumber'] as int ?? 0,
-      field: json['field'],
-      value: json['value'],
+      field: (json['field']).toString(),
+      value: (json['value']).toString(),
       message: json['message'] as String ?? '',
     );
   }

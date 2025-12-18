@@ -1159,7 +1159,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        item['nome'],
+                        (item['nome']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1187,7 +1187,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             width: AppSizes.paddingXxs.get(isMobile, isTablet),
                           ),
                           Text(
-                            item['usuario'],
+                            (item['usuario']).toString(),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -1211,7 +1211,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                             width: AppSizes.paddingXxs.get(isMobile, isTablet),
                           ),
                           Text(
-                            item['data'],
+                            (item['data']).toString(),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -1281,7 +1281,7 @@ class _TagsImportarScreenState extends ConsumerState<TagsImportarScreen>
                   width: AppSizes.paddingXxs.get(isMobile, isTablet),
                 ),
                 Text(
-                  item['duracao'],
+                  (item['duracao']).toString(),
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(
                       context,

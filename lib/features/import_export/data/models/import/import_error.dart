@@ -20,7 +20,7 @@ class ImportErrorDetail {
       field: json['field'] as String,
       value: json['value'] as String,
       errorMessage: json['errorMessage'] as String,
-      suggestion: json['suggestion'],
+      suggestion: (json['suggestion']).toString(),
     );
   }
 
@@ -53,12 +53,13 @@ class ImportError {
 
   factory ImportError.fromJson(Map<String, dynamic> json) {
     return ImportError(
+      // ignore: argument_type_not_assignable
       row: json['row'] ?? 0,
-      column: json['column'],
-      field: json['field'] ?? '',
-      value: json['value'] ?? '',
-      errorCode: json['errorCode'] ?? '',
-      message: json['message'] ?? '',
+      column: (json['column']).toString(),
+      field: (json['field']).toString() ?? '',
+      value: (json['value']).toString() ?? '',
+      errorCode: (json['errorCode']).toString() ?? '',
+      message: (json['message']).toString() ?? '',
     );
   }
 
@@ -88,10 +89,11 @@ class ImportWarning {
 
   factory ImportWarning.fromJson(Map<String, dynamic> json) {
     return ImportWarning(
+      // ignore: argument_type_not_assignable
       row: json['row'] ?? 0,
-      field: json['field'] ?? '',
-      warningCode: json['warningCode'] ?? '',
-      message: json['message'] ?? '',
+      field: (json['field']).toString() ?? '',
+      warningCode: (json['warningCode']).toString() ?? '',
+      message: (json['message']).toString() ?? '',
     );
   }
 
@@ -119,10 +121,11 @@ class ImportErrorModel {
 
   factory ImportErrorModel.fromJson(Map<String, dynamic> json) {
     return ImportErrorModel(
+      // ignore: argument_type_not_assignable
       rowNumber: json['rowNumber'] ?? 0,
-      field: json['field'],
-      value: json['value'],
-      message: json['message'] ?? '',
+      field: (json['field']).toString(),
+      value: (json['value']).toString(),
+      message: (json['message']).toString() ?? '',
     );
   }
 

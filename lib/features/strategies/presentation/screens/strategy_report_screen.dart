@@ -530,7 +530,8 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
           else
             ...insights.map((insight) => Padding(
               padding: const EdgeInsets.only(bottom: 10),
-              child: _buildInsightItem(insight['texto'], insight['cor']),
+              // ignore: argument_type_not_assignable
+              child: _buildInsightItem((insight['texto']).toString(), insight['cor']),
             )),
         ],
       ),

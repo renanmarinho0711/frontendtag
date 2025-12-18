@@ -256,6 +256,7 @@ class SyncRepository {
     try {
       return await _apiService.post<MinewSyncResult>(
         '/sync/tags/$macAddress',
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -276,6 +277,7 @@ class SyncRepository {
           storeId: storeId,
           macAddresses: macAddresses,
         ).toJson(),
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -289,6 +291,7 @@ class SyncRepository {
     try {
       return await _apiService.post<MinewSyncResult>(
         '/sync/products/$productId',
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -309,6 +312,7 @@ class SyncRepository {
           storeId: storeId,
           productIds: productIds,
         ).toJson(),
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -322,6 +326,7 @@ class SyncRepository {
     try {
       return await _apiService.post<MinewSyncResult>(
         '/sync/store/$storeId',
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -338,6 +343,7 @@ class SyncRepository {
     try {
       return await _apiService.post<BindResultDto>(
         '/sync/tags/$macAddress/bind/$productId',
+        // ignore: argument_type_not_assignable
         parser: (data) => BindResultDto.fromJson(data),
       );
     } catch (e) {
@@ -351,6 +357,7 @@ class SyncRepository {
     try {
       return await _apiService.post<MinewSyncResult>(
         '/sync/tags/$macAddress/unbind',
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -368,6 +375,7 @@ class SyncRepository {
       return await _apiService.post<MinewSyncResult>(
         '/sync/tags/$macAddress/refresh',
         body: templateId != null ? {'templateId': templateId} : null,
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -388,6 +396,7 @@ class SyncRepository {
           'storeId': storeId,
           'macAddresses': macAddresses,
         },
+        // ignore: argument_type_not_assignable
         parser: (data) => MinewSyncResult.fromJson(data),
       );
     } catch (e) {
@@ -405,6 +414,7 @@ class SyncRepository {
       return await _apiService.post<ImportTagsResult>(
         '/sync/tags/import/$storeId',
         body: {'overwriteExisting': overwriteExisting},
+        // ignore: argument_type_not_assignable
         parser: (data) => ImportTagsResult.fromJson(data),
       );
     } catch (e) {
@@ -421,6 +431,7 @@ class SyncRepository {
     try {
       return await _apiService.get<SyncStatusInfo>(
         '/sync/status/$entityType/$entityId',
+        // ignore: argument_type_not_assignable
         parser: (data) => SyncStatusInfo.fromJson(data),
       );
     } catch (e) {

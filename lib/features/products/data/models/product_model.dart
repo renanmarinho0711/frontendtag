@@ -246,6 +246,7 @@ class ProdutoModel {
 
       tagsList = (map['tags'] as List)
 
+          // ignore: argument_type_not_assignable
           .map((t) => TagBinding.fromJson(t))
 
           .toList();
@@ -278,28 +279,32 @@ class ProdutoModel {
 
     return ProdutoModel(
 
-      codigo: map['código'] ?? '',
+      codigo: (map['código']).toString() ?? '',
 
-      nome: map['nome'] ?? '',
+      nome: (map['nome']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       preco: map['preco']?.toDouble() ?? 0.0,
 
+      // ignore: argument_type_not_assignable
       precoKg: map['precoKg']?.toDouble(),
 
-      categoria: map['categoria'] ?? '',
+      categoria: (map['categoria']).toString() ?? '',
 
       tags: tagsList,
 
-      tag: map['tag'],
+      tag: (map['tag']).toString(),
 
-      status: map['status'] ?? 'Ativo',
+      status: (map['status']).toString() ?? 'Ativo',
 
-      descricao: map['descricao'],
+      descricao: (map['descricao']).toString(),
 
-      ultimaAtualizacao: map['ultimaAtualizacao'] ?? '',
+      ultimaAtualizacao: (map['ultimaAtualizacao']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       cor: Color(map['cor'] ?? 0xFF2196F3),
 
+      // ignore: argument_type_not_assignable
       icone: IconData(map['icone'] ?? 0xe047, fontFamily: 'MaterialIcons'),
 
     );
@@ -358,13 +363,15 @@ class HistoricoPreco {
 
     return HistoricoPreco(
 
-      data: map['data'] ?? '',
+      data: (map['data']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       precoAnterior: map['precoAnterior']?.toDouble() ?? 0.0,
 
+      // ignore: argument_type_not_assignable
       precoNovo: map['precoNovo']?.toDouble() ?? 0.0,
 
-      usuario: map['usuario'] ?? '',
+      usuario: (map['usuario']).toString() ?? '',
 
     );
 

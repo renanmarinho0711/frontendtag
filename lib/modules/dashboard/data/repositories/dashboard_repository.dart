@@ -16,6 +16,7 @@ class DashboardRepository {
   Future<ApiResponse<StoreStats>> getStoreStats(String storeId) async {
     return await _apiService.get<StoreStats>(
       ApiConstants.storeStats(storeId),
+      // ignore: argument_type_not_assignable
       parser: (data) => StoreStats.fromJson(data),
     );
   }

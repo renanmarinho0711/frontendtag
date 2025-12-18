@@ -586,12 +586,15 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
 
               id: p['id']?.toString() ?? '',
 
+              // ignore: argument_type_not_assignable
               posicao: p['posicao'] ?? p['position'] ?? (i + 1),
 
-              nome: p['nome'] ?? p['name'] ?? '',
+              nome: (p['nome']).toString() ?? p['name'] ?? '',
 
+              // ignore: argument_type_not_assignable
               vendas: p['vendas'] ?? p['sales'] ?? 0,
 
+              // ignore: argument_type_not_assignable
               variacao: p['variacao'] ?? p['variation'] ?? 0,
 
               cor: AppThemeColors.orangeMaterial,
@@ -618,14 +621,18 @@ class RealtimeRankingNotifier extends StateNotifier<RealtimeRankingState> {
 
           allCategorias: categoriasList is List ? categoriasList.cast<String>() : [],
 
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['is_active'] ?? state.isStrategyActive,
 
+          // ignore: argument_type_not_assignable
           intervaloAtualizacao: data['intervaloAtualizacao'] ?? data['update_interval'] ?? state.intervaloAtualizacao,
 
-          tipoRanking: data['tipoRanking'] ?? data['ranking_type'] ?? state.tipoRanking,
+          tipoRanking: (data['tipoRanking']).toString() ?? data['ranking_type'] ?? state.tipoRanking,
 
+          // ignore: argument_type_not_assignable
           exibirPosicao: data['exibirPosicao'] ?? data['show_position'] ?? state.exibirPosicao,
 
+          // ignore: argument_type_not_assignable
           animacaoSubida: data['animacaoSubida'] ?? data['rise_animation'] ?? state.animacaoSubida,
 
         );
@@ -988,10 +995,13 @@ class FlashPromosNotifier extends StateNotifier<FlashPromosState> {
 
               horario: p['horario']?.toString() ?? '',
 
+              // ignore: argument_type_not_assignable
               ativa: p['ativa'] ?? p['active'] ?? false,
 
+              // ignore: argument_type_not_assignable
               desconto: p['desconto'] ?? p['discount'] ?? 0,
 
+              // ignore: argument_type_not_assignable
               produtos: p['produtos'] ?? p['products'] ?? 0,
 
               cor: const Color(0xFFFF5252),
@@ -1002,10 +1012,13 @@ class FlashPromosNotifier extends StateNotifier<FlashPromosState> {
 
               produtosLista: p['produtosLista'] is List 
 
+                  // ignore: argument_type_not_assignable
                   ? List<String>.from(p['produtosLista']) 
 
+                  // ignore: argument_type_not_assignable
                   : (p['produtos_lista'] is List ? List<String>.from(p['produtos_lista']) : []),
 
+              // ignore: argument_type_not_assignable
               vendasPrevistas: p['vendasPrevistas'] ?? p['expectedSales'] ?? 0,
 
               nome: p['nome']?.toString() ?? p['name']?.toString() ?? '',
@@ -1024,24 +1037,32 @@ class FlashPromosNotifier extends StateNotifier<FlashPromosState> {
 
           promocoes: promocoes,
 
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['is_active'] ?? state.isStrategyActive,
 
+          // ignore: argument_type_not_assignable
           notificarClientes: data['notificarClientes'] ?? data['notify_customers'] ?? state.notificarClientes,
 
+          // ignore: argument_type_not_assignable
           exibirContador: data['exibirContador'] ?? data['show_counter'] ?? state.exibirContador,
 
+          // ignore: argument_type_not_assignable
           duracaoMinutos: data['duracaoMinutos'] ?? data['duration_minutes'] ?? state.duracaoMinutos,
 
+          // ignore: argument_type_not_assignable
           intensidadeLed: data['intensidadeLed'] ?? data['led_intensity'] ?? state.intensidadeLed,
 
           horariosAtivos: (data['horariosAtivos'] ?? data['active_schedules'] ?? state.horariosAtivos) is List 
 
+              // ignore: argument_type_not_assignable
               ? List<String>.from(data['horariosAtivos'] ?? data['active_schedules'] ?? state.horariosAtivos)
 
               : state.horariosAtivos,
 
+          // ignore: argument_type_not_assignable
           contagemRegressiva: data['contagemRegressiva'] ?? data['countdown'] ?? state.contagemRegressiva,
 
+          // ignore: argument_type_not_assignable
           animacaoPiscante: data['animacaoPiscante'] ?? data['blink_animation'] ?? state.animacaoPiscante,
 
         );
@@ -1478,8 +1499,10 @@ class SmartRouteNotifier extends StateNotifier<SmartRouteState> {
 
               numero: r['número']?.toString() ?? r['number']?.toString() ?? r['nome']?.toString() ?? r['name']?.toString() ?? '',
 
+              // ignore: argument_type_not_assignable
               itens: r['itens'] ?? r['items'] ?? r['itensTotal'] ?? r['total_items'] ?? 0,
 
+              // ignore: argument_type_not_assignable
               progresso: r['progresso'] ?? r['progress'] ?? r['itensColetados'] ?? r['collected_items'] ?? 0,
 
               setor: r['setor']?.toString() ?? r['sector']?.toString() ?? '',
@@ -1514,22 +1537,30 @@ class SmartRouteNotifier extends StateNotifier<SmartRouteState> {
 
           duracaoDestaque: ((data['duracaoDestaque'] ?? data['highlight_duration'] ?? state.duracaoDestaque) as num?)?.toDouble() ?? state.duracaoDestaque,
 
+          // ignore: argument_type_not_assignable
           corProgressiva: (((data['corProgressiva'] ?? data['progressive_color']) as String?) ?? state.corProgressiva),
 
           modoRota: (((data['modoRota'] ?? data['route_mode']) as String?) ?? state.modoRota),
 
+          // ignore: argument_type_not_assignable
           feedbackSonoro: data['feedbackSonoro'] ?? data['sound_feedback'] ?? state.feedbackSonoro,
 
+          // ignore: argument_type_not_assignable
           confirmarColeta: data['confirmarColeta'] ?? data['confirm_collection'] ?? state.confirmarColeta,
 
+          // ignore: argument_type_not_assignable
           integracaoWms: data['integracaoWms'] ?? data['wms_integration'] ?? state.integracaoWms,
 
+          // ignore: argument_type_not_assignable
           tempoPiscar: data['tempoPiscar'] ?? data['blink_time'] ?? state.tempoPiscar,
 
+          // ignore: argument_type_not_assignable
           confirmacaoScan: data['confirmacaoScan'] ?? data['scan_confirmation'] ?? state.confirmacaoScan,
 
+          // ignore: argument_type_not_assignable
           somConfirmacao: data['somConfirmacao'] ?? data['confirmation_sound'] ?? state.somConfirmacao,
 
+          // ignore: argument_type_not_assignable
           mostrarProximoItem: data['mostrarProximoItem'] ?? data['show_next_item'] ?? state.mostrarProximoItem,
 
         );

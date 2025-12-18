@@ -94,9 +94,11 @@ class ExportResult {
       completedAt: json['completedAt'] != null 
           ? DateTime.tryParse(json['completedAt'] as String) 
           : null,
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
-      downloadUrl: json['downloadUrl'],
-      fileName: json['fileName'],
+      downloadUrl: (json['downloadUrl']).toString(),
+      fileName: (json['fileName']).toString(),
+      // ignore: argument_type_not_assignable
       fileSizeBytes: json['fileSizeBytes'],
       expiresAt: json['expiresAt'] != null 
           ? DateTime.tryParse(json['expiresAt'] as String) 
@@ -145,12 +147,12 @@ class ExportApiResultModel {
   factory ExportApiResultModel.fromJson(Map<String, dynamic> json) {
     return ExportApiResultModel(
       success: json['success'] as bool ?? false,
-      jobId: json['jobId'],
-      format: json['format'],
+      jobId: (json['jobId']).toString(),
+      format: (json['format']).toString(),
       recordCount: json['recordCount'] as int ?? 0,
-      downloadUrl: json['downloadUrl'],
-      content: json['content'],
-      contentType: json['contentType'],
+      downloadUrl: (json['downloadUrl']).toString(),
+      content: (json['content']).toString(),
+      contentType: (json['contentType']).toString(),
     );
   }
 

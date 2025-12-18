@@ -654,7 +654,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
   Widget _buildSugestaoCard(Map<String, dynamic> sugestao, int index) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    final cor = _getCorSugestao(context, sugestao['tipo']);
+    final cor = _getCorSugestao(context, (sugestao['tipo']).toString());
 
     return TweenAnimationBuilder(
       duration: Duration(milliseconds: 300 + (index * 50)),
@@ -724,7 +724,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       ),
                     ),
                     child: Icon(
-                      _getTipoIcon(sugestao['tipo']),
+                      _getTipoIcon((sugestao['tipo']).toString()),
                       color: ThemeColors.of(context).surface,
                       size: AppSizes.iconMediumAlt.get(isMobile, isTablet),
                     ),
@@ -738,7 +738,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          sugestao['produto'],
+                          (sugestao['produto']).toString(),
                           style: TextStyle(
                             fontSize: ResponsiveHelper.getResponsiveFontSize(
                               context,
@@ -1029,7 +1029,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                     ),
                   ),
                   Text(
-                    sugestao['motivo'],
+                    (sugestao['motivo']).toString(),
                     style: TextStyle(
                       fontSize: ResponsiveHelper.getResponsiveFontSize(
                         context,
@@ -1089,7 +1089,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                                 ),
                               ),
                               Text(
-                                sugestao['impacto_vendas'],
+                                (sugestao['impacto_vendas']).toString(),
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -1154,7 +1154,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
                                 ),
                               ),
                               Text(
-                                sugestao['impacto_margem'],
+                                (sugestao['impacto_margem']).toString(),
                                 style: TextStyle(
                                   fontSize: ResponsiveHelper.getResponsiveFontSize(
                                     context,
@@ -1392,7 +1392,7 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
 
   void _aplicarSugestao(Map<String, dynamic> sugestao) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    final cor = _getCorSugestao(context, sugestao['tipo']);
+    final cor = _getCorSugestao(context, (sugestao['tipo']).toString());
 
     showDialog(
       context: context,

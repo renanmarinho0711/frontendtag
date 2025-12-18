@@ -569,6 +569,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
+                            // ignore: argument_type_not_assignable
                             formato['icone'],
                             color: isSelected ? ThemeColors.of(context).surface : ThemeColors.of(context).textSecondary,
                             size: AppSizes.iconExtraLargeAlt.get(isMobile, isTablet),
@@ -577,7 +578,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                             height: AppSizes.spacingSmAlt.get(isMobile, isTablet),
                           ),
                           Text(
-                            formato['nome'],
+                            (formato['nome']).toString(),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -599,7 +600,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                             ),
                           ),
                           Text(
-                            formato['extensao'],
+                            (formato['extensao']).toString(),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -789,11 +790,13 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                       content: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          // ignore: argument_type_not_assignable
                           Icon(formato['icone'], color: ThemeColors.of(context).surface),
                           const SizedBox(width: 12),
                           Text('Template ${formato['nome']} baixado!'),
                         ],
                       ),
+                      // ignore: argument_type_not_assignable
                       backgroundColor: formato['cor'],
                       behavior: SnackBarBehavior.floating,
                       shape: RoundedRectangleBorder(
@@ -822,6 +825,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizes.paddingMdAlt.get(isMobile, isTablet),
                   ),
+                  // ignore: argument_type_not_assignable
                   backgroundColor: formato['cor'],
                   foregroundColor: ThemeColors.of(context).surface,
                   shape: RoundedRectangleBorder(
@@ -1379,7 +1383,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        item['nome'],
+                        (item['nome']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1401,7 +1405,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                         ),
                       ),
                       Text(
-                        item['data'],
+                        (item['data']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -1494,7 +1498,7 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
                       ),
                     ),
                     Text(
-                      item['duracao'],
+                      (item['duracao']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
                           context,

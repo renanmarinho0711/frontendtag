@@ -1254,11 +1254,11 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
             ),
           ),
           title: Text(
-            isProduto ? r['nome'] ?? '' : r['mac'] ?? '',
+            isProduto ? (r['nome']).toString() ?? '' : r['mac'] ?? '',
             style: const TextStyle(fontWeight: FontWeight.w600),
           ),
           subtitle: Text(
-            isProduto ? r['codigo'] ?? '' : r['produto'] ?? 'Sem vínculo',
+            isProduto ? (r['codigo']).toString() ?? '' : r['produto'] ?? 'Sem vínculo',
             style: TextStyle(
               fontSize: 12,
               color: ThemeColors.of(context).textSecondary,
@@ -1266,7 +1266,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
           ),
           trailing: isProduto
               ? Text(
-                  r['preco'] ?? '',
+                  (r['preco']).toString() ?? '',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: ThemeColors.of(context).greenMain,
@@ -1279,7 +1279,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    r['status'] ?? '',
+                    (r['status']).toString() ?? '',
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
@@ -1288,7 +1288,7 @@ class _TagBeanSearchDelegate extends SearchDelegate<String?> {
                   ),
                 ),
           onTap: () {
-            close(context, r['nome'] ?? r['mac']);
+            close(context, (r['nome']).toString() ?? r['mac']);
           },
         );
       },

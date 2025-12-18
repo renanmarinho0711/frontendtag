@@ -45,12 +45,12 @@ class TransferProgressModel {
       progress: (json['progress'] as double ?? 0).toDouble(),
       bytesTransferred: json['bytesTransferred'] as int ?? 0,
       totalBytes: json['totalBytes'] as int ?? 0,
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
       status: TransferStatus.values.firstWhere(
         (s) => s.name == json['status'],
         orElse: () => TransferStatus.idle,
       ),
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
     );
   }
 

@@ -638,13 +638,14 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
                   ),
                 ],
               ),
+              // ignore: argument_type_not_assignable
               child: Icon(log['icone'], color: ThemeColors.of(context).surface, size: 28),
             ),
             title: Row(
               children: [
                 Expanded(
                   child: Text(
-                    log['tipo'],
+                    (log['tipo']).toString(),
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -655,18 +656,18 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: AppSizes.extraSmallPadding.get(isMobile, isTablet), vertical: 4),
                   decoration: BoxDecoration(
-                    color: _getCategoriaCor(log['categoria']).withValues(alpha: 0.1),
+                    color: _getCategoriaCor((log['categoria']).toString()).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(6),
                     border: Border.all(
-                      color: _getCategoriaCor(log['categoria']).withValues(alpha: 0.3),
+                      color: _getCategoriaCor((log['categoria']).toString()).withValues(alpha: 0.3),
                     ),
                   ),
                   child: Text(
-                    log['categoria'],
+                    (log['categoria']).toString(),
                     style: TextStyle(
                       fontSize: 9,
                       fontWeight: FontWeight.bold,
-                      color: _getCategoriaCor(log['categoria']),
+                      color: _getCategoriaCor((log['categoria']).toString()),
                       letterSpacing: 0.5,
                     ),
                   ),
@@ -678,7 +679,7 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
               children: [
                 const SizedBox(height: 6),
                 Text(
-                  log['descricao'],
+                  (log['descricao']).toString(),
                   style: TextStyle(
                     fontSize: 13,
                     color: ThemeColors.of(context).textSecondary,
@@ -692,9 +693,9 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
                   spacing: 12,
                   runSpacing: 8,
                   children: [
-                    _buildInfoChip(Icons.person_rounded, log['usuario'], ThemeColors.of(context).primary),
-                    _buildInfoChip(Icons.access_time_rounded, log['data'].split(' ')[1], ThemeColors.of(context).blueCyan),
-                    _buildInfoChip(Icons.devices_rounded, log['dispositivo'].split(' - ')[0], ThemeColors.of(context).success),
+                    _buildInfoChip(Icons.person_rounded, (log['usuario']).toString(), ThemeColors.of(context).primary),
+                    _buildInfoChip(Icons.access_time_rounded, (log['data']).toString().split(' ')[1], ThemeColors.of(context).blueCyan),
+                    _buildInfoChip(Icons.devices_rounded, (log['dispositivo']).toString().split(' - ')[0], ThemeColors.of(context).success),
                   ],
                 ),
               ],
@@ -725,6 +726,7 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
                           child: Icon(
                             Icons.info_rounded,
                             size: 16,
+                            // ignore: argument_type_not_assignable
                             color: log['cor'],
                           ),
                         ),
@@ -740,11 +742,11 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
                       ],
                     ),
                     const SizedBox(height: 14),
-                    _buildDetailRow('Antes', log['antes']),
+                    _buildDetailRow('Antes', (log['antes']).toString()),
                     const SizedBox(height: 8),
-                    _buildDetailRow('Depois', log['depois']),
+                    _buildDetailRow('Depois', (log['depois']).toString()),
                     const SizedBox(height: 8),
-                    _buildDetailRow('Impacto', log['impacto']),
+                    _buildDetailRow('Impacto', (log['impacto']).toString()),
                     const SizedBox(height: 14),
                     Container(
                       padding: const EdgeInsets.all(12),
@@ -762,7 +764,7 @@ class _RelatoriosAuditoriaScreenState extends ConsumerState<RelatoriosAuditoriaS
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
-                                  log['dispositivo'],
+                                  (log['dispositivo']).toString(),
                                   style: TextStyle(
                                     fontSize: 11,
                                     color: ThemeColors.of(context).textSecondary,

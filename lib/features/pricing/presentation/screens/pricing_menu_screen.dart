@@ -704,24 +704,27 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
+              // ignore: argument_type_not_assignable
               stat['icon'],
+              // ignore: argument_type_not_assignable
               color: stat['cor'],
               size: AppSizes.iconMediumLarge.get(isMobile, isTablet),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
             Text(
-              stat['valor'],
+              (stat['valor']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 18, mobileFontSize: 16, tabletFontSize: 17),
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.bold,
+                // ignore: argument_type_not_assignable
                 color: stat['cor'],
                 letterSpacing: -0.5,
               ),
             ),
             SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
             Text(
-              stat['label'],
+              (stat['label']).toString(),
               style: TextStyle(
                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 10, mobileFontSize: 9, tabletFontSize: 9.5),
                 overflow: TextOverflow.ellipsis,
@@ -746,17 +749,19 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                     Icon(
                       Icons.arrow_upward_rounded,
                       size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 9, tablet: 9.5, desktop: 10),
+                      // ignore: argument_type_not_assignable
                       color: stat['cor'],
                     ),
                   if (stat['tipo'] == 'aumento')
                     SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 2.5, tablet: 2.75, desktop: 3)),
                   Flexible(
                     child: Text(
-                      stat['mudanca'],
+                      (stat['mudanca']).toString(),
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 9, mobileFontSize: 8, tabletFontSize: 8.5),
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
+                        // ignore: argument_type_not_assignable
                         color: stat['cor'],
                       ),
                     ),
@@ -788,6 +793,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
+            // ignore: argument_type_not_assignable
             colors: opcao['gradiente'],
           ),
           borderRadius: BorderRadius.circular(
@@ -875,6 +881,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                         ),
                       ),
                       child: Icon(
+                        // ignore: argument_type_not_assignable
                         opcao['icone'],
                         color: ThemeColors.of(context).surface,
                         size: ResponsiveHelper.getResponsiveIconSize(
@@ -889,7 +896,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                       height: AppSizes.paddingBaseAlt.get(isMobile, isTablet),
                     ),
                     Text(
-                      opcao['titulo'],
+                      (opcao['titulo']).toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(
@@ -913,7 +920,7 @@ class _PrecificacaoMenuScreenState extends ConsumerState<PrecificacaoMenuScreen>
                       ),
                     ),
                     Text(
-                      opcao['subtitulo'],
+                      (opcao['subtitulo']).toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveHelper.getResponsiveFontSize(

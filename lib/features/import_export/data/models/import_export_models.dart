@@ -366,19 +366,23 @@ class ImportHistoryModel {
 
       id: ((json['id'] as String?) ?? ''),
 
-      fileName: json['fileName'] ?? json['nome'] as String,
+      fileName: (json['fileName']).toString() ?? json['nome'] as String,
 
-      dateTime: DateTime.tryParse(json['dateTime'] ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse((json['dateTime']).toString() ?? json['data'] ?? '') ?? DateTime.now(),
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? json['total'] as int,
 
+      // ignore: argument_type_not_assignable
       successCount: json['successCount'] ?? json['sucesso'] as int,
 
+      // ignore: argument_type_not_assignable
       errorCount: json['errorCount'] ?? json['erros'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       duplicateCount: json['duplicateCount'] ?? json['duplicados'] ?? 0,
 
-      duration: json['duration'] ?? json['duracao'] as String,
+      duration: (json['duration']).toString() ?? json['duracao'] as String,
 
       status: ImportStatus.values.firstWhere(
 
@@ -388,7 +392,7 @@ class ImportHistoryModel {
 
       ),
 
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
 
     );
 
@@ -472,7 +476,7 @@ class ImportErrorDetail {
 
       errorMessage: ((json['errorMessage'] as String?) ?? ''),
 
-      suggestion: json['suggestion'],
+      suggestion: (json['suggestion']).toString(),
 
     );
 
@@ -726,7 +730,7 @@ class BatchOperationModel {
 
     return BatchOperationModel(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
       type: OperationType.values.firstWhere(
 
@@ -736,23 +740,24 @@ class BatchOperationModel {
 
       ),
 
-      title: json['titulo'] ?? json['title'] as String,
+      title: (json['titulo']).toString() ?? json['title'] as String,
 
-      subtitle: json['subtitulo'] ?? json['subtitle'] as String,
+      subtitle: (json['subtitulo']).toString() ?? json['subtitle'] as String,
 
-      description: json['descricao'] ?? json['description'] as String,
+      description: (json['descricao']).toString() ?? json['description'] as String,
 
-      detailedDescription: json['descricaoDetalhada'] ?? json['detailedDescription'] as String,
+      detailedDescription: (json['descricaoDetalhada']).toString() ?? json['detailedDescription'] as String,
 
       gradientColors: (json['gradiente'] as List?)?.cast<Color>() ?? [],
 
+      // ignore: argument_type_not_assignable
       hasTemplate: json['template'] ?? true,
 
       requiredColumns: (json['colunas'] as List?)?.cast<String>() ?? [],
 
-      example: json['exemplo'] ?? json['example'] as String,
+      example: (json['exemplo']).toString() ?? json['example'] as String,
 
-      templateUrl: json['templateUrl'],
+      templateUrl: (json['templateUrl']).toString(),
 
     );
 
@@ -1148,7 +1153,7 @@ class ExportResultModel {
 
       errorMessage: json['errorMessage'] as String?,
 
-      generatedAt: DateTime.tryParse(json['generatedAt'] ?? '') ?? DateTime.now(),
+      generatedAt: DateTime.tryParse((json['generatedAt']).toString() ?? '') ?? DateTime.now(),
 
       jobId: json['jobId'] as String?,
 
@@ -1288,7 +1293,7 @@ class ExportHistoryModel {
 
       id: ((json['id'] as String?) ?? ''),
 
-      fileName: json['fileName'] ?? json['nome'] as String,
+      fileName: (json['fileName']).toString() ?? json['nome'] as String,
 
       format: ExportFormat.values.firstWhere(
 
@@ -1298,14 +1303,16 @@ class ExportHistoryModel {
 
       ),
 
-      dateTime: DateTime.tryParse(json['dateTime'] ?? json['data'] ?? '') ?? DateTime.now(),
+      dateTime: DateTime.tryParse((json['dateTime']).toString() ?? json['data'] ?? '') ?? DateTime.now(),
 
+      // ignore: argument_type_not_assignable
       recordCount: json['recordCount'] ?? json['total'] as int,
 
-      fileSize: json['fileSize'] ?? json['tamanho'] ?? '0 KB',
+      fileSize: (json['fileSize']).toString() ?? json['tamanho'] ?? '0 KB',
 
-      downloadUrl: json['downloadUrl'],
+      downloadUrl: (json['downloadUrl']).toString(),
 
+      // ignore: argument_type_not_assignable
       isAvailable: json['isAvailable'] ?? true,
 
     );
@@ -1458,12 +1465,16 @@ class ImportValidation {
 
     return ImportValidation(
 
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? false,
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       validRecords: json['validRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       invalidRecords: json['invalidRecords'] ?? 0,
 
       errors: (json['errors'] as List?)
@@ -1542,17 +1553,18 @@ class ImportError {
 
     return ImportError(
 
+      // ignore: argument_type_not_assignable
       row: json['row'] ?? 0,
 
-      column: json['column'],
+      column: (json['column']).toString(),
 
-      field: json['field'] ?? '',
+      field: (json['field']).toString() ?? '',
 
-      value: json['value'] ?? '',
+      value: (json['value']).toString() ?? '',
 
-      errorCode: json['errorCode'] ?? '',
+      errorCode: (json['errorCode']).toString() ?? '',
 
-      message: json['message'] ?? '',
+      message: (json['message']).toString() ?? '',
 
     );
 
@@ -1594,13 +1606,14 @@ class ImportWarning {
 
     return ImportWarning(
 
+      // ignore: argument_type_not_assignable
       row: json['row'] ?? 0,
 
-      field: json['field'] ?? '',
+      field: (json['field']).toString() ?? '',
 
-      warningCode: json['warningCode'] ?? '',
+      warningCode: (json['warningCode']).toString() ?? '',
 
-      message: json['message'] ?? '',
+      message: (json['message']).toString() ?? '',
 
     );
 
@@ -1642,12 +1655,14 @@ class ImportPreviewRow {
 
     return ImportPreviewRow(
 
+      // ignore: argument_type_not_assignable
       rowNumber: json['rowNumber'] ?? 0,
 
       data: (json['data'] as Map<String, dynamic>?)
 
           ?.map((k, v) => MapEntry(k, v.toString())) ?? {},
 
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? true,
 
       errors: (json['errors'] as List?)
@@ -1752,36 +1767,44 @@ class ImportResult {
 
     return ImportResult(
 
-      importId: json['importId'] ?? '',
+      importId: (json['importId']).toString() ?? '',
 
-      type: json['type'] ?? '',
+      type: (json['type']).toString() ?? '',
 
-      status: json['status'] ?? '',
+      status: (json['status']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       processedRecords: json['processedRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       skippedRecords: json['skippedRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       newRecords: json['newRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       updatedRecords: json['updatedRecords'] ?? 0,
 
       progressPercent: ((json['progressPercent'] ?? 0) as num?)?.toDouble() ?? 0.0,
 
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
 
       completedAt: json['completedAt'] != null 
 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
 
           : null,
 
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
 
       errors: (json['errors'] as List?)
@@ -1884,39 +1907,43 @@ class ExportResult {
 
     return ExportResult(
 
-      exportId: json['exportId'] ?? '',
+      exportId: (json['exportId']).toString() ?? '',
 
-      type: json['type'] ?? '',
+      type: (json['type']).toString() ?? '',
 
-      format: json['format'] ?? '',
+      format: (json['format']).toString() ?? '',
 
-      status: json['status'] ?? '',
+      status: (json['status']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       processedRecords: json['processedRecords'] ?? 0,
 
       progressPercent: ((json['progressPercent'] ?? 0) as num?)?.toDouble() ?? 0.0,
 
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
 
       completedAt: json['completedAt'] != null 
 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
 
           : null,
 
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
 
-      downloadUrl: json['downloadUrl'],
+      downloadUrl: (json['downloadUrl']).toString(),
 
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
 
+      // ignore: argument_type_not_assignable
       fileSizeBytes: json['fileSizeBytes'],
 
       expiresAt: json['expiresAt'] != null 
 
-          ? DateTime.tryParse(json['expiresAt']) 
+          ? DateTime.tryParse((json['expiresAt']).toString()) 
 
           : null,
 
@@ -1972,19 +1999,20 @@ class ExportData {
 
     return ExportData(
 
-      exportId: json['exportId'] ?? '',
+      exportId: (json['exportId']).toString() ?? '',
 
-      type: json['type'] ?? '',
+      type: (json['type']).toString() ?? '',
 
-      format: json['format'] ?? '',
+      format: (json['format']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
 
-      contentType: json['contentType'],
+      contentType: (json['contentType']).toString(),
 
-      base64Data: json['base64Data'],
+      base64Data: (json['base64Data']).toString(),
 
     );
 
@@ -2134,15 +2162,15 @@ class ImportExportTemplate {
 
     return ImportExportTemplate(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      name: json['name'] ?? '',
+      name: (json['name']).toString() ?? '',
 
-      type: json['type'] ?? '',
+      type: (json['type']).toString() ?? '',
 
-      dataType: json['dataType'] ?? '',
+      dataType: (json['dataType']).toString() ?? '',
 
-      format: json['format'] ?? '',
+      format: (json['format']).toString() ?? '',
 
       columnMappings: (json['columnMappings'] as Map<String, dynamic>?)
 
@@ -2154,13 +2182,14 @@ class ImportExportTemplate {
 
           .toList(),
 
+      // ignore: argument_type_not_assignable
       isDefault: json['isDefault'] ?? false,
 
-      createdAt: DateTime.tryParse(json['createdAt'] ?? '') ?? DateTime.now(),
+      createdAt: DateTime.tryParse((json['createdAt']).toString() ?? '') ?? DateTime.now(),
 
       lastUsedAt: json['lastUsedAt'] != null 
 
-          ? DateTime.tryParse(json['lastUsedAt']) 
+          ? DateTime.tryParse((json['lastUsedAt']).toString()) 
 
           : null,
 
@@ -2220,19 +2249,20 @@ class ColumnDefinition {
 
     return ColumnDefinition(
 
-      field: json['field'] ?? '',
+      field: (json['field']).toString() ?? '',
 
-      displayName: json['displayName'] ?? '',
+      displayName: (json['displayName']).toString() ?? '',
 
-      dataType: json['dataType'] ?? 'string',
+      dataType: (json['dataType']).toString() ?? 'string',
 
+      // ignore: argument_type_not_assignable
       isRequired: json['isRequired'] ?? false,
 
-      defaultValue: json['defaultValue'],
+      defaultValue: (json['defaultValue']).toString(),
 
-      description: json['description'],
+      description: (json['description']).toString(),
 
-      validationPattern: json['validationPattern'],
+      validationPattern: (json['validationPattern']).toString(),
 
       allowedValues: (json['allowedValues'] as List?)
 
@@ -2280,9 +2310,9 @@ class ColumnMappingSuggestion {
 
     return ColumnMappingSuggestion(
 
-      sourceColumn: json['sourceColumn'] ?? '',
+      sourceColumn: (json['sourceColumn']).toString() ?? '',
 
-      suggestedField: json['suggestedField'],
+      suggestedField: (json['suggestedField']).toString(),
 
       confidence: ((json['confidence'] ?? 0) as num?)?.toDouble() ?? 0.0,
 
@@ -2380,41 +2410,46 @@ class ImportExportHistory {
 
     return ImportExportHistory(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      operationType: json['operationType'] ?? '',
+      operationType: (json['operationType']).toString() ?? '',
 
-      dataType: json['dataType'] ?? '',
+      dataType: (json['dataType']).toString() ?? '',
 
-      format: json['format'] ?? '',
+      format: (json['format']).toString() ?? '',
 
-      status: json['status'] ?? '',
+      status: (json['status']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
 
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
 
+      // ignore: argument_type_not_assignable
       fileSizeBytes: json['fileSizeBytes'],
 
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
 
       completedAt: json['completedAt'] != null 
 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
 
           : null,
 
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
 
-      userId: json['userId'],
+      userId: (json['userId']).toString(),
 
-      userName: json['userName'],
+      userName: (json['userName']).toString(),
 
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
 
     );
 
@@ -2476,16 +2511,22 @@ class ImportExportStats {
 
     return ImportExportStats(
 
+      // ignore: argument_type_not_assignable
       totalImports: json['totalImports'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalExports: json['totalExports'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       successfulOperations: json['successfulOperations'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failedOperations: json['failedOperations'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalRecordsImported: json['totalRecordsImported'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalRecordsExported: json['totalRecordsExported'] ?? 0,
 
       byDataType: (json['byDataType'] as Map<String, dynamic>?)
@@ -2566,33 +2607,34 @@ class ScheduledOperation {
 
     return ScheduledOperation(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      name: json['name'] ?? '',
+      name: (json['name']).toString() ?? '',
 
-      operationType: json['operationType'] ?? '',
+      operationType: (json['operationType']).toString() ?? '',
 
-      dataType: json['dataType'] ?? '',
+      dataType: (json['dataType']).toString() ?? '',
 
-      format: json['format'] ?? '',
+      format: (json['format']).toString() ?? '',
 
-      cronExpression: json['cronExpression'] ?? '',
+      cronExpression: (json['cronExpression']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       isActive: json['isActive'] ?? false,
 
       lastRun: json['lastRun'] != null 
 
-          ? DateTime.tryParse(json['lastRun']) 
+          ? DateTime.tryParse((json['lastRun']).toString()) 
 
           : null,
 
       nextRun: json['nextRun'] != null 
 
-          ? DateTime.tryParse(json['nextRun']) 
+          ? DateTime.tryParse((json['nextRun']).toString()) 
 
           : null,
 
-      templateId: json['templateId'],
+      templateId: (json['templateId']).toString(),
 
     );
 
@@ -2646,11 +2688,11 @@ class ImportTemplateModel {
 
     return ImportTemplateModel(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      name: json['name'] ?? '',
+      name: (json['name']).toString() ?? '',
 
-      dataType: json['dataType'] ?? '',
+      dataType: (json['dataType']).toString() ?? '',
 
       columns: (json['columns'] as List?)
 
@@ -2658,7 +2700,7 @@ class ImportTemplateModel {
 
           .toList() ?? [],
 
-      sampleData: json['sampleData'],
+      sampleData: (json['sampleData']).toString(),
 
     );
 
@@ -2708,17 +2750,18 @@ class ColumnDefinitionModel {
 
     return ColumnDefinitionModel(
 
-      field: json['field'] ?? '',
+      field: (json['field']).toString() ?? '',
 
-      displayName: json['displayName'] ?? '',
+      displayName: (json['displayName']).toString() ?? '',
 
-      dataType: json['dataType'] ?? 'string',
+      dataType: (json['dataType']).toString() ?? 'string',
 
+      // ignore: argument_type_not_assignable
       isRequired: json['isRequired'] ?? false,
 
-      defaultValue: json['defaultValue'],
+      defaultValue: (json['defaultValue']).toString(),
 
-      validationPattern: json['validationPattern'],
+      validationPattern: (json['validationPattern']).toString(),
 
     );
 
@@ -2756,10 +2799,11 @@ class ColumnMappingModel {
 
     return ColumnMappingModel(
 
-      sourceColumn: json['sourceColumn'] ?? '',
+      sourceColumn: (json['sourceColumn']).toString() ?? '',
 
-      targetField: json['targetField'] ?? '',
+      targetField: (json['targetField']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       confidence: (json['confidence'] ?? 1.0).toDouble(),
 
     );
@@ -2830,8 +2874,10 @@ class ImportPreviewModel {
 
           .toList() ?? [],
 
+      // ignore: argument_type_not_assignable
       totalRows: json['totalRows'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       hasErrors: json['hasErrors'] ?? false,
 
       errors: (json['errors'] as List?)?.map((e) => e.toString()).toList() ?? [],
@@ -2880,6 +2926,7 @@ class PreviewRowModel {
 
       data: json['data'] as Map<String, dynamic>? ?? {},
 
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? true,
 
       errors: (json['errors'] as List?)?.map((e) => e.toString()).toList() ?? [],
@@ -2936,14 +2983,19 @@ class ImportResultModel {
 
     return ImportResultModel(
 
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
 
+      // ignore: argument_type_not_assignable
       totalProcessed: json['totalProcessed'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       inserted: json['inserted'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       updated: json['updated'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failed: json['failed'] ?? 0,
 
       errors: (json['errors'] as List?)
@@ -2952,7 +3004,7 @@ class ImportResultModel {
 
           .toList() ?? [],
 
-      jobId: json['jobId'],
+      jobId: (json['jobId']).toString(),
 
     );
 
@@ -2994,13 +3046,14 @@ class ImportErrorModel {
 
     return ImportErrorModel(
 
+      // ignore: argument_type_not_assignable
       rowNumber: json['rowNumber'] ?? 0,
 
-      field: json['field'],
+      field: (json['field']).toString(),
 
-      value: json['value'],
+      value: (json['value']).toString(),
 
-      message: json['message'] ?? '',
+      message: (json['message']).toString() ?? '',
 
     );
 
@@ -3054,19 +3107,21 @@ class ExportApiResultModel {
 
     return ExportApiResultModel(
 
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
 
-      jobId: json['jobId'],
+      jobId: (json['jobId']).toString(),
 
-      format: json['format'],
+      format: (json['format']).toString(),
 
+      // ignore: argument_type_not_assignable
       recordCount: json['recordCount'] ?? 0,
 
-      downloadUrl: json['downloadUrl'],
+      downloadUrl: (json['downloadUrl']).toString(),
 
-      content: json['content'],
+      content: (json['content']).toString(),
 
-      contentType: json['contentType'],
+      contentType: (json['contentType']).toString(),
 
     );
 
@@ -3120,19 +3175,20 @@ class JobStatusModel {
 
     return JobStatusModel(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      status: json['status'] ?? '',
+      status: (json['status']).toString() ?? '',
 
       progress: ((json['progress'] ?? 0) as num?)?.toDouble() ?? 0.0,
 
-      currentStep: json['currentStep'],
+      currentStep: (json['currentStep']).toString(),
 
+      // ignore: argument_type_not_assignable
       totalSteps: json['totalSteps'],
 
       result: json['result'] as Map<String, dynamic>?,
 
-      error: json['error'],
+      error: (json['error']).toString(),
 
     );
 
@@ -3190,12 +3246,16 @@ class ValidationResultModel {
 
     return ValidationResultModel(
 
+      // ignore: argument_type_not_assignable
       isValid: json['isValid'] ?? false,
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       validRecords: json['validRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       invalidRecords: json['invalidRecords'] ?? 0,
 
       errors: (json['errors'] as List?)
@@ -3282,35 +3342,38 @@ class ImportHistoryApiModel {
 
     return ImportHistoryApiModel(
 
-      id: json['id'] ?? '',
+      id: (json['id']).toString() ?? '',
 
-      operationType: json['operationType'] ?? '',
+      operationType: (json['operationType']).toString() ?? '',
 
-      dataType: json['dataType'] ?? '',
+      dataType: (json['dataType']).toString() ?? '',
 
-      format: json['format'] ?? '',
+      format: (json['format']).toString() ?? '',
 
-      status: json['status'] ?? '',
+      status: (json['status']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
 
-      fileName: json['fileName'],
+      fileName: (json['fileName']).toString(),
 
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
 
       completedAt: json['completedAt'] != null 
 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
 
           : null,
 
-      errorMessage: json['errorMessage'],
+      errorMessage: (json['errorMessage']).toString(),
 
-      userId: json['userId'],
+      userId: (json['userId']).toString(),
 
     );
 
@@ -3368,16 +3431,21 @@ class BulkOperationResultModel {
 
     return BulkOperationResultModel(
 
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
 
-      operation: json['operation'] ?? '',
+      operation: (json['operation']).toString() ?? '',
 
+      // ignore: argument_type_not_assignable
       totalRequested: json['totalRequested'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalProcessed: json['totalProcessed'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       succeeded: json['succeeded'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failed: json['failed'] ?? 0,
 
       failedIds: (json['failedIds'] as List?)?.map((id) => id.toString()).toList() ?? [],
@@ -3444,30 +3512,37 @@ class ImportExportStatisticsModel {
 
     return ImportExportStatisticsModel(
 
+      // ignore: argument_type_not_assignable
       totalImports: json['totalImports'] ?? json['total_imports'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalExports: json['totalExports'] ?? json['total_exports'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       successfulImports: json['successfulImports'] ?? json['successful_imports'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       failedImports: json['failedImports'] ?? json['failed_imports'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalRecordsImported: json['totalRecordsImported'] ?? json['total_records_imported'] ?? 0,
 
+      // ignore: argument_type_not_assignable
       totalRecordsExported: json['totalRecordsExported'] ?? json['total_records_exported'] ?? 0,
 
       lastImportAt: json['lastImportAt'] != null || json['last_import_at'] != null
 
-          ? DateTime.tryParse(json['lastImportAt'] ?? json['last_import_at'] ?? '')
+          ? DateTime.tryParse((json['lastImportAt']).toString() ?? json['last_import_at'] ?? '')
 
           : null,
 
       lastExportAt: json['lastExportAt'] != null || json['last_export_at'] != null
 
-          ? DateTime.tryParse(json['lastExportAt'] ?? json['last_export_at'] ?? '')
+          ? DateTime.tryParse((json['lastExportAt']).toString() ?? json['last_export_at'] ?? '')
 
           : null,
 
+      // ignore: argument_type_not_assignable
       pendingJobs: json['pendingJobs'] ?? json['pending_jobs'] ?? 0,
 
     );

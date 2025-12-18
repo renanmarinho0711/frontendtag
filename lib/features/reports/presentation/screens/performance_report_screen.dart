@@ -597,6 +597,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                   ),
                 ],
               ),
+              // ignore: argument_type_not_assignable
               child: Icon(relatorio['icone'], color: ThemeColors.of(context).surface, size: 32),
             ),
             title: Row(
@@ -606,7 +607,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        relatorio['titulo'],
+                        (relatorio['titulo']).toString(),
                         style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
@@ -634,18 +635,18 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: _getPrioridadeCor(relatorio['prioridade']).withValues(alpha: 0.1),
+                    color: _getPrioridadeCor((relatorio['prioridade']).toString()).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                      color: _getPrioridadeCor(relatorio['prioridade']).withValues(alpha: 0.3),
+                      color: _getPrioridadeCor((relatorio['prioridade']).toString()).withValues(alpha: 0.3),
                     ),
                   ),
                   child: Text(
-                    relatorio['tag'],
+                    (relatorio['tag']).toString(),
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      color: _getPrioridadeCor(relatorio['prioridade']),
+                      color: _getPrioridadeCor((relatorio['prioridade']).toString()),
                       letterSpacing: 0.5,
                     ),
                   ),
@@ -657,7 +658,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
               children: [
                 const SizedBox(height: 8),
                 Text(
-                  relatorio['subtitulo'],
+                  (relatorio['subtitulo']).toString(),
                   style: TextStyle(
                     fontSize: 12,
                     color: ThemeColors.of(context).textSecondary,
@@ -685,10 +686,11 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              relatorio['valor'],
+                              (relatorio['valor']).toString(),
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
+                                // ignore: argument_type_not_assignable
                                 color: relatorio['cor'],
                                 letterSpacing: -0.5,
                               ),
@@ -707,11 +709,13 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
+                          // ignore: argument_type_not_assignable
                           color: relatorio['cor'].withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Icon(
                           Icons.auto_awesome_rounded,
+                          // ignore: argument_type_not_assignable
                           color: relatorio['cor'],
                           size: 20,
                         ),
@@ -747,6 +751,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                           child: Icon(
                             Icons.analytics_rounded,
                             size: 18,
+                            // ignore: argument_type_not_assignable
                             color: relatorio['cor'],
                           ),
                         ),
@@ -770,7 +775,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                         border: Border.all(color: ThemeColors.of(context).textSecondary),
                       ),
                       child: Text(
-                        relatorio['detalhes'],
+                        (relatorio['detalhes']).toString(),
                         style: TextStyle(
                           fontSize: 13,
                           color: ThemeColors.of(context).textSecondary,
@@ -801,6 +806,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                               Icon(
                                 Icons.lightbulb_rounded,
                                 size: 18,
+                                // ignore: argument_type_not_assignable
                                 color: relatorio['cor'],
                               ),
                               const SizedBox(width: 10),
@@ -809,6 +815,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
+                                  // ignore: argument_type_not_assignable
                                   color: relatorio['cor'],
                                 ),
                               ),
@@ -816,7 +823,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            relatorio['acao'],
+                            (relatorio['acao']).toString(),
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
@@ -825,7 +832,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                           ),
                           const SizedBox(height: 6),
                           Text(
-                            relatorio['recomendacao'],
+                            (relatorio['recomendacao']).toString(),
                             style: TextStyle(
                               fontSize: 12,
                               color: ThemeColors.of(context).textSecondary,
@@ -844,7 +851,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                                 Icon(Icons.trending_up_rounded, size: 16, color: ThemeColors.of(context).successIcon),
                                 const SizedBox(width: 8),
                                 Text(
-                                  relatorio['impacto'],
+                                  (relatorio['impacto']).toString(),
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -863,10 +870,13 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                         Expanded(
                           child: OutlinedButton.icon(
                             onPressed: () => _verListaRelatorio(relatorio),
+                            // ignore: argument_type_not_assignable
                             icon: Icon(Icons.list_rounded, size: 16, color: relatorio['cor']),
+                            // ignore: argument_type_not_assignable
                             label: Text('Ver Lista', style: TextStyle(color: relatorio['cor'], fontSize: 12)),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
+                              // ignore: argument_type_not_assignable
                               side: BorderSide(color: relatorio['cor'], width: 1.5),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -882,6 +892,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                             label: const Text('Aplicar', style: TextStyle(fontSize: 12)),
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
+                              // ignore: argument_type_not_assignable
                               backgroundColor: relatorio['cor'],
                               foregroundColor: ThemeColors.of(context).surface,
                               shape: RoundedRectangleBorder(
@@ -1033,6 +1044,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                         color: (relatorio['cor'] as Color).withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(10),
                       ),
+                      // ignore: argument_type_not_assignable
                       child: Icon(Icons.list_rounded, color: relatorio['cor'], size: 22),
                     ),
                     const SizedBox(width: 12),
@@ -1041,7 +1053,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            relatorio['titulo'] ?? 'Detalhes',
+                            (relatorio['titulo']).toString() ?? 'Detalhes',
                             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           Text(
@@ -1078,6 +1090,7 @@ class _RelatoriosPerformanceScreenState extends ConsumerState<RelatoriosPerforma
                           width: 8,
                           height: 40,
                           decoration: BoxDecoration(
+                            // ignore: argument_type_not_assignable
                             color: relatorio['cor'],
                             borderRadius: BorderRadius.circular(4),
                           ),

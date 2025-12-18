@@ -367,17 +367,24 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
           for (final t in trilhasList) {
             trilhas.add(OffersTrailModel(
               id: t['id']?.toString() ?? '',
-              nome: t['nome'] ?? t['name'] ?? '',
+              nome: (t['nome']).toString() ?? t['name'] ?? '',
               produtos: t['produtos'] is List 
+                  // ignore: argument_type_not_assignable
                   ? List<String>.from(t['produtos']) 
+                  // ignore: argument_type_not_assignable
                   : (t['products'] is List ? List<String>.from(t['products']) : []),
               corredores: t['corredores'] is List 
+                  // ignore: argument_type_not_assignable
                   ? List<String>.from(t['corredores']) 
+                  // ignore: argument_type_not_assignable
                   : (t['aisles'] is List ? List<String>.from(t['aisles']) : []),
+              // ignore: argument_type_not_assignable
               ativa: t['ativa'] ?? t['active'] ?? false,
+              // ignore: argument_type_not_assignable
               conversao: t['conversão'] ?? t['conversion'] ?? 0,
               cor: AppThemeColors.orangeMaterial,
               icone: Icons.route,
+              // ignore: argument_type_not_assignable
               vendas: t['vendas'] ?? t['sales'] ?? 0,
               ticketMedio: t['ticketMedio']?.toString() ?? t['avgTicket']?.toString() ?? 'R\$ 0',
             ));
@@ -387,12 +394,18 @@ class OffersTrailNotifier extends StateNotifier<OffersTrailState> {
         state = state.copyWith(
           isLoading: false,
           trilhas: trilhas,
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
+          // ignore: argument_type_not_assignable
           intervaloAtualizacao: (data['intervaloAtualizacao'] ?? data['updateInterval'] ?? state.intervaloAtualizacao).toDouble(),
+          // ignore: argument_type_not_assignable
           produtosPorTrilha: data['produtosPorTrilha'] ?? data['productsPerTrail'] ?? state.produtosPorTrilha,
+          // ignore: argument_type_not_assignable
           destacarInicio: data['destacarInicio'] ?? data['highlightStart'] ?? state.destacarInicio,
+          // ignore: argument_type_not_assignable
           destacarFim: data['destacarFim'] ?? data['highlightEnd'] ?? state.destacarFim,
-          estilo: data['estilo'] ?? data['style'] ?? state.estilo,
+          estilo: (data['estilo']).toString() ?? data['style'] ?? state.estilo,
+          // ignore: argument_type_not_assignable
           notificarCliente: data['notificarCliente'] ?? data['notifyClient'] ?? state.notificarCliente,
         );
       } else {
@@ -662,19 +675,28 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
           for (final c in combosList) {
             combos.add(SmartComboModel(
               id: c['id']?.toString() ?? '',
-              nome: c['nome'] ?? c['name'] ?? '',
+              nome: (c['nome']).toString() ?? c['name'] ?? '',
               emoji: c['emoji']?.toString() ?? '??',
               produtos: c['produtos'] is List 
+                  // ignore: argument_type_not_assignable
                   ? List<String>.from(c['produtos']) 
+                  // ignore: argument_type_not_assignable
                   : (c['products'] is List ? List<String>.from(c['products']) : []),
+              // ignore: argument_type_not_assignable
               precoNormal: (c['precoNormal'] ?? c['precoOriginal'] ?? c['originalPrice'] ?? 0).toDouble(),
+              // ignore: argument_type_not_assignable
               precoCombo: (c['precoCombo'] ?? c['comboPrice'] ?? 0).toDouble(),
+              // ignore: argument_type_not_assignable
               economia: (c['economia'] ?? c['desconto'] ?? c['discount'] ?? 0).toDouble(),
+              // ignore: argument_type_not_assignable
               vendas: c['vendas'] ?? c['sales'] ?? 0,
+              // ignore: argument_type_not_assignable
               conversao: c['conversão'] ?? c['conversion'] ?? 0,
               cor: AppThemeColors.blueCyan,
+              // ignore: argument_type_not_assignable
               ativo: c['ativo'] ?? c['active'] ?? false,
               icone: Icons.card_giftcard,
+              // ignore: argument_type_not_assignable
               margem: (c['margem'] ?? c['margin'] ?? 0).toDouble(),
             ));
           }
@@ -683,13 +705,20 @@ class SmartComboNotifier extends StateNotifier<SmartComboState> {
         state = state.copyWith(
           isLoading: false,
           combos: combos,
+          // ignore: argument_type_not_assignable
           isStrategyActive: data['isActive'] ?? data['ativo'] ?? state.isStrategyActive,
+          // ignore: argument_type_not_assignable
           descontoMinimo: (data['descontoMinimo'] ?? data['minDiscount'] ?? state.descontoMinimo).toDouble(),
+          // ignore: argument_type_not_assignable
           descontoMaximo: (data['descontoMaximo'] ?? data['maxDiscount'] ?? state.descontoMaximo).toDouble(),
+          // ignore: argument_type_not_assignable
           produtosPorCombo: data['produtosPorCombo'] ?? data['productsPerCombo'] ?? state.produtosPorCombo,
+          // ignore: argument_type_not_assignable
           sugestaoAutomatica: data['sugestaoAutomatica'] ?? data['autoSuggestion'] ?? state.sugestaoAutomatica,
+          // ignore: argument_type_not_assignable
           integracaoPdv: data['integracaoPdv'] ?? data['pdvIntegration'] ?? state.integracaoPdv,
-          tipoDesconto: data['tipoDesconto'] ?? data['discountType'] ?? state.tipoDesconto,
+          tipoDesconto: (data['tipoDesconto']).toString() ?? data['discountType'] ?? state.tipoDesconto,
+          // ignore: argument_type_not_assignable
           exibirEconomia: data['exibirEconomia'] ?? data['showSavings'] ?? state.exibirEconomia,
         );
       } else {

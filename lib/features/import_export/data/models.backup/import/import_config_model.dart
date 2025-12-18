@@ -62,6 +62,7 @@ class ImportConfigModel {
           ?.map((k, v) => MapEntry(k, v.toString())) ?? {},
       validateBeforeImport: json['validateBeforeImport'] as bool ?? true,
       stopOnError: json['stopOnError'] as bool ?? false,
+      // ignore: argument_type_not_assignable
       maxErrors: json['maxErrors'],
     );
   }

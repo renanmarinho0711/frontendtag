@@ -299,6 +299,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                   ),
                   decoration: BoxDecoration(
                     gradient: isSelected
+                        // ignore: argument_type_not_assignable
                         ? LinearGradient(colors: op['gradiente'])
                         : null,
                     color: isSelected ? null : ThemeColors.of(context).surface,
@@ -336,7 +337,9 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                           borderRadius: BorderRadius.circular(isMobile ? 10 : 12),
                         ),
                         child: Icon(
+                          // ignore: argument_type_not_assignable
                           op['icone'],
+                          // ignore: argument_type_not_assignable
                           color: isSelected ? ThemeColors.of(context).surface : op['cor'],
                           size: AppSizes.iconLarge.get(isMobile, isTablet),
                         ),
@@ -345,7 +348,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         height: AppSizes.paddingBase.get(isMobile, isTablet),
                       ),
                       Text(
-                        op['titulo'],
+                        (op['titulo']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -362,7 +365,7 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
                         height: AppSizes.paddingXxs.get(isMobile, isTablet),
                       ),
                       Text(
-                        op['subtitulo'],
+                        (op['subtitulo']).toString(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(

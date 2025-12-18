@@ -44,21 +44,29 @@ class ImportResult {
 
   factory ImportResult.fromJson(Map<String, dynamic> json) {
     return ImportResult(
-      importId: json['importId'] ?? '',
-      type: json['type'] ?? '',
-      status: json['status'] ?? '',
+      importId: (json['importId']).toString() ?? '',
+      type: (json['type']).toString() ?? '',
+      status: (json['status']).toString() ?? '',
+      // ignore: argument_type_not_assignable
       totalRecords: json['totalRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       processedRecords: json['processedRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       successfulRecords: json['successfulRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       failedRecords: json['failedRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       skippedRecords: json['skippedRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       newRecords: json['newRecords'] ?? 0,
+      // ignore: argument_type_not_assignable
       updatedRecords: json['updatedRecords'] ?? 0,
       progressPercent: ((json['progressPercent'] ?? 0) as num?)?.toDouble() ?? 0.0,
-      startedAt: DateTime.tryParse(json['startedAt'] ?? '') ?? DateTime.now(),
+      startedAt: DateTime.tryParse((json['startedAt']).toString() ?? '') ?? DateTime.now(),
       completedAt: json['completedAt'] != null 
-          ? DateTime.tryParse(json['completedAt']) 
+          ? DateTime.tryParse((json['completedAt']).toString()) 
           : null,
+      // ignore: argument_type_not_assignable
       durationMs: json['durationMs'],
       errors: (json['errors'] as List?)
           ?.map((e) => ImportError.fromJson(e as Map<String, dynamic>))
@@ -111,15 +119,20 @@ class ImportResultModel {
 
   factory ImportResultModel.fromJson(Map<String, dynamic> json) {
     return ImportResultModel(
+      // ignore: argument_type_not_assignable
       success: json['success'] ?? false,
+      // ignore: argument_type_not_assignable
       totalProcessed: json['totalProcessed'] ?? 0,
+      // ignore: argument_type_not_assignable
       inserted: json['inserted'] ?? 0,
+      // ignore: argument_type_not_assignable
       updated: json['updated'] ?? 0,
+      // ignore: argument_type_not_assignable
       failed: json['failed'] ?? 0,
       errors: (json['errors'] as List?)
           ?.map((e) => ImportErrorModel.fromJson(e as Map<String, dynamic>))
           .toList() ?? [],
-      jobId: json['jobId'],
+      jobId: (json['jobId']).toString(),
     );
   }
 

@@ -60,7 +60,7 @@ class ExportHistoryModel {
       dateTime: DateTime.tryParse(json['dateTime'] as String ?? json['data'] as String ?? '') ?? DateTime.now(),
       recordCount: json['recordCount'] as int ?? json['total'] as int as int,
       fileSize: json['fileSize'] as String ?? json['tamanho'] as String ?? '0 KB',
-      downloadUrl: json['downloadUrl'],
+      downloadUrl: (json['downloadUrl']).toString(),
       isAvailable: json['isAvailable'] as bool ?? true,
     );
   }

@@ -774,6 +774,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                 ],
               ),
               child: Icon(
+                // ignore: argument_type_not_assignable
                 relatorio['icone'],
                 color: ThemeColors.of(context).surface,
                 size: AppSizes.iconExtraLarge.get(isMobile, isTablet),
@@ -788,7 +789,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        relatorio['titulo'],
+                        (relatorio['titulo']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(
                             context,
@@ -812,7 +813,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                           ),
                           SizedBox(width: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
                           Text(
-                            relatorio['ultimaAtualizacao'],
+                            (relatorio['ultimaAtualizacao']).toString(),
                             style: TextStyle(
                               fontSize: ResponsiveHelper.getResponsiveFontSize(
                                 context,
@@ -832,9 +833,9 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    _buildTrendIndicator(relatorio['trend'], relatorio['change']),
+                    _buildTrendIndicator(((relatorio['trend']).toString()).toString(), relatorio['change']),
                     SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 3, tablet: 3.5, desktop: 4)),
-                    _buildPriorityBadge(relatorio['prioridade']),
+                    _buildPriorityBadge((relatorio['prioridade']).toString()),
                   ],
                 ),
               ],
@@ -845,7 +846,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
               children: [
                 SizedBox(height: ResponsiveHelper.getResponsiveSpacing(context, mobile: 7, tablet: 7.5, desktop: 8)),
                 Text(
-                  relatorio['subtitulo'],
+                  (relatorio['subtitulo']).toString(),
                   style: TextStyle(
                     fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                   overflow: TextOverflow.ellipsis,
@@ -877,7 +878,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              relatorio['valor'],
+                              (relatorio['valor']).toString(),
                               style: TextStyle(
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(
                                   context,
@@ -887,6 +888,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                                 ),
                               overflow: TextOverflow.ellipsis,
                                 fontWeight: FontWeight.bold,
+                                // ignore: argument_type_not_assignable
                                 color: relatorio['cor'],
                                 letterSpacing: -0.5,
                               ),
@@ -943,6 +945,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                                   ),
                                 overflow: TextOverflow.ellipsis,
                                   fontWeight: FontWeight.bold,
+                                  // ignore: argument_type_not_assignable
                                   color: relatorio['cor'],
                                 ),
                               ),
@@ -952,8 +955,10 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                           ClipRRect(
                             borderRadius: BorderRadius.circular(AppSizes.paddingSmAlt.get(isMobile, isTablet)),
                             child: LinearProgressIndicator(
+                              // ignore: argument_type_not_assignable
                               value: relatorio['percentual'] / 100,
                               backgroundColor: ThemeColors.of(context).textSecondary,
+                              // ignore: argument_type_not_assignable
                               valueColor: AlwaysStoppedAnimation<Color>(relatorio['cor']),
                               minHeight: isMobile ? 7 : 8,
                             ),
@@ -993,6 +998,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                           child: Icon(
                             Icons.analytics_rounded,
                             size: AppSizes.iconSmall.get(isMobile, isTablet),
+                            // ignore: argument_type_not_assignable
                             color: relatorio['cor'],
                           ),
                         ),
@@ -1017,7 +1023,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                         border: Border.all(color: ThemeColors.of(context).textSecondary),
                       ),
                       child: Text(
-                        relatorio['detalhes'],
+                        (relatorio['detalhes']).toString(),
                         style: TextStyle(
                           fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 13, mobileFontSize: 12, tabletFontSize: 12.5),
                         overflow: TextOverflow.ellipsis,
@@ -1032,15 +1038,17 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                       children: [
                         Expanded(
                           child: OutlinedButton.icon(
-                            onPressed: () => _exportarRelatorio(relatorio['titulo']),
+                            onPressed: () => _exportarRelatorio((relatorio['titulo']).toString()),
                             icon: Icon(
                               Icons.download_rounded,
                               size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 15, tablet: 15.5, desktop: 16),
+                              // ignore: argument_type_not_assignable
                               color: relatorio['cor'],
                             ),
                             label: Text(
                               'Exportar',
                               style: TextStyle(
+                                // ignore: argument_type_not_assignable
                                 color: relatorio['cor'],
                                 fontSize: ResponsiveHelper.getResponsiveFontSize(context, baseFontSize: 12, mobileFontSize: 11, tabletFontSize: 11.5),
                               overflow: TextOverflow.ellipsis,
@@ -1050,6 +1058,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                               padding: EdgeInsets.symmetric(
                                 vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                               ),
+                              // ignore: argument_type_not_assignable
                               side: BorderSide(color: relatorio['cor'], width: isMobile ? 1.25 : 1.5),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(AppSizes.paddingBase.get(isMobile, isTablet)),
@@ -1060,7 +1069,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                         SizedBox(width: AppSizes.paddingBase.get(isMobile, isTablet)),
                         Expanded(
                           child: ElevatedButton.icon(
-                            onPressed: () => _verMaisDetalhes(relatorio['titulo']),
+                            onPressed: () => _verMaisDetalhes((relatorio['titulo']).toString()),
                             icon: Icon(
                               Icons.visibility_rounded,
                               size: ResponsiveHelper.getResponsiveIconSize(context, mobile: 15, tablet: 15.5, desktop: 16),
@@ -1076,6 +1085,7 @@ class _RelatoriosOperacionaisScreenState extends ConsumerState<RelatoriosOperaci
                               padding: EdgeInsets.symmetric(
                                 vertical: AppSizes.paddingSm.get(isMobile, isTablet),
                               ),
+                              // ignore: argument_type_not_assignable
                               backgroundColor: relatorio['cor'],
                               foregroundColor: ThemeColors.of(context).surface,
                               shape: RoundedRectangleBorder(
