@@ -87,7 +87,6 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
 
   String? _filtroCategoria;
 
-  // ignore: unused_field
   List<StrategyModel>? _cachedEstrategiasFiltradas;
 
   String _searchQuery = '';

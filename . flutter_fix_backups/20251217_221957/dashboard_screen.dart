@@ -47,7 +47,6 @@ class DashboardScreen extends ConsumerStatefulWidget {
 class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerProviderStateMixin {
   int _selectedIndex = 0;
   bool _isRailExpanded = true;
-  // ignore: unused_field
   bool _isEstrategiasExpanded = false;
   int _rebuildCounter = 0; // Contador para forar rebuild ao clicar no mesmo menu
   late AnimationController _fadeController;

@@ -27,12 +27,15 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   late AnimationController _headerAnimationController;
   late AnimationController _cardsAnimationController;
   late AnimationController _pulseController;
+  // ignore: unused_field
   late Animation<double> _headerFadeAnimation;
+  // ignore: unused_field
   late Animation<Offset> _headerSlideAnimation;
 
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
   final TextEditingController _searchController = TextEditingController();
 
+  // ignore: unused_field
   bool _isLoading = false;
   bool _isSyncing = false;
   bool _showOnboarding = true;

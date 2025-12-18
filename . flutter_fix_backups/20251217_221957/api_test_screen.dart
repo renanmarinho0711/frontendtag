@@ -31,7 +31,6 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
   static const String baseUrl = 'http://localhost:5000/api';
   
   // Usuários de teste
-  // ignore: unused_field
   static const Map<String, Map<String, String>> testUsers = {
     'PlatformAdmin': {
       'username': 'tagbean_admin',

@@ -17,6 +17,7 @@ class ImportacaoProdutosScreen extends ConsumerStatefulWidget {
 class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScreen>
     with SingleTickerProviderStateMixin, ResponsiveCache {
   late AnimationController _animationController;
+  // ignore: unused_field
   File? _arquivoSelecionado;
   
   // Acesso ao provider

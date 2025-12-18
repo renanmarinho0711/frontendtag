@@ -37,13 +37,11 @@ class _FullApiTestScreenState extends ConsumerState<FullApiTestScreen> {
   // Tokens e IDs criados durante os testes
   final Map<String, String> _tokens = {};
   final Map<String, String> _userIds = {};
-  // ignore: unused_field
   String? _testClientId;
   String? _testStoreId;
   String? _testProductId;
 
   // Credenciais base
-  // ignore: unused_field
   static const Map<String, Map<String, String>> baseUsers = {
     'PlatformAdmin': {
       'username': 'tagbean_admin',

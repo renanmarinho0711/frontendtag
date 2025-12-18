@@ -25,7 +25,6 @@ class _EtiquetasAdicionarScreenState extends ConsumerState<EtiquetasAdicionarScr
   final _localizacaoController = TextEditingController();
   final _observacoesController = TextEditingController();
   
-  // ignore: unused_field
   bool _alteracoesFeitas = false;
   bool _uploading = false;
 

@@ -32,11 +32,8 @@ class _TagsDashboardScreenState extends ConsumerState<TagsDashboardScreen>
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
   
   // Campos faltantes
-  // ignore: unused_field
   DateTime? _lastSync;
-  // ignore: unused_field
   bool _isLoading = false;
-  // ignore: unused_field
   String _filterStatus = 'all';
   final TextEditingController _searchController = TextEditingController();
 

@@ -1459,7 +1459,7 @@ PROXIMO PASSO:
 -> Executar nova analise com analyze_complete_updated.txt
 -> Testar novo fixer com --rules <next_fixer> --dry-run
 -> Se sucesso, aplicar e validar novamente
--> Continuar ate nao haver mais reducao
+-> CONTINUE ATÉ ZERAR OS COMITS
 
 ================================================================================
 """.format(initial=initial_issue_count, final=final_issue_count, 
@@ -1499,6 +1499,7 @@ ACOES RECOMENDADAS:
 5. Tentar proximo fixer da lista
 
 PROXIMO PASSO:
+CONTINUE ATÉ ZERAR OS COMITS
 -> Atualizar arquivo de analise
 -> Testar outro fixer
 -> Se nenhum fixer reduz issues, revisar estrategia global

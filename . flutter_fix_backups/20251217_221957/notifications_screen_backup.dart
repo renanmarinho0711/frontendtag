@@ -53,7 +53,6 @@ class _ConfiguracoesNotificacoesScreenState
   ];
 
   bool _alteracoesFeitas = false;
-  // ignore: unused_field
   bool _isLoading = false;
   bool _isSaving = false;
 

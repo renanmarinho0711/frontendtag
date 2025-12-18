@@ -19,7 +19,6 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
   late AnimationController _animationController;
   late AnimationController _pulseController;
-  // ignore: unused_field
   int?  _hoveredIndex;
 
   List<Map<String, dynamic>> _getRelatorios(BuildContext context) => [
