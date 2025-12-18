@@ -794,7 +794,6 @@ class _ApiTestScreenState extends ConsumerState<ApiTestScreen> {
 
     final token = _tokens['PlatformAdmin']!;
     String? createdProductId;
-    // ignore: unused_local_variable
     String? createdCategoryId;
 
     // ---- CATEGORIAS ----

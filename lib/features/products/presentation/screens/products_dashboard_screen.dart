@@ -631,7 +631,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }
 
   Widget _buildDashboardContent() {
+    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
     final isLoading = _productsState.status == LoadingStatus.loading;
 
@@ -1691,6 +1693,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   /// SEããO 7: Mapa do Módulo - Todos os menus disponveis em cards pequenos
   Widget _buildMapaModulo() {
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     // Lista de todos os menus/telas disponveis no módulo

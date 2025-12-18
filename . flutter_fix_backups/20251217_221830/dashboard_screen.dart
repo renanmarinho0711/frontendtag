@@ -2302,9 +2302,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   Widget _buildGanhoInfo(BuildContext context, String title, IconData icon, String value, String subtitle) {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Padding(
@@ -2422,7 +2420,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     // Obtãm contagem de produtos afetados pelas Estratégias ativas
     final strategiesState = ref.watch(strategiesProvider);
     final strategiesStats = ref.watch(strategiesStatsProvider);
-    // ignore: unused_local_variable
     final activeStrategies = strategiesState.strategies.where((s) => s.status.isActive).toList();
     final affectedProducts = strategiesStats.affectedProductsCount;
 
@@ -2853,7 +2850,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 
   Widget _buildEstrategiaItem(BuildContext context, String nome, String ganho, String produtos, Color cor) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(
@@ -3305,7 +3301,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   Widget _buildCompactSyncStat(BuildContext context, String value, String label, IconData icon) {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Column(
@@ -4074,7 +4069,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 
   Widget _buildAlertItemDetalhado(BuildContext context, Map<String, dynamic> alerta) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(

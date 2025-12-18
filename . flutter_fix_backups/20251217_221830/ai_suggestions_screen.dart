@@ -977,9 +977,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
   }
 
   Widget _buildMotivo(AiSuggestionModel sugestao) {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Column(
@@ -1048,9 +1046,7 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
   }
 
   Widget _buildImpactoRow(AiSuggestionModel sugestao) {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Row(
@@ -1136,7 +1132,6 @@ class _SugestoesIaScreenState extends ConsumerState<SugestoesIaScreen>
 
   Widget _buildActionButtons(AiSuggestionModel sugestao, Color cor) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Row(

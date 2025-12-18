@@ -93,16 +93,12 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
     
 
-    // ignore: unused_local_variable
     final totalTags = stats?.total ?? 0;
 
-    // ignore: unused_local_variable
     final associadas = stats?.bound ?? 0;
 
-    // ignore: unused_local_variable
     final disponiveis = stats?.available ?? 0;
 
-    // ignore: unused_local_variable
     final offline = stats?.offline ?? 0;
 
     
@@ -353,7 +349,6 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
     final associadas = stats?.bound ?? 0;
 
-    // ignore: unused_local_variable
     final disponiveis = stats?.available ?? 0;
 
     final offline = stats?.offline ?? 0;

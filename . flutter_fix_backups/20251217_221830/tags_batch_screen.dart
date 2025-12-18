@@ -664,7 +664,6 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
   Widget _buildExcluirContent(List<TagModel> allTags) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    // ignore: unused_local_variable
     final tagsDisponiveis = allTags;
 
     return Column(
@@ -918,7 +917,6 @@ class _EtiquetasOperacoesLoteScreenState extends ConsumerState<EtiquetasOperacoe
   Widget _buildSincronizarContent(List<TagModel> allTags) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    // ignore: unused_local_variable
     final tagsDisponiveis = _getTagsDisponiveis(allTags);
 
     return Column(

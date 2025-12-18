@@ -1,10 +1,11 @@
+import 'package:tagbean/design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:tagbean/features/dashboard/presentation/widgets/navigation/dashboard_navigation_rail.dart';
-import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 
+import 'package:tagbean/design_system/theme/theme_colors_dynamic.dart';
 /// Bottom Navigation bar mobile para o Dashboard
 /// 
-/// Extrado de dashboard_screen.dart para modularizao
+/// Extraãdo de dashboard_screen.dart para modularizAção
 class DashboardMobileBottomNav extends StatelessWidget {
   final int selectedIndex;
   final ValueChanged<int> onItemSelected;
@@ -43,7 +44,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: List.generate(
-              DashboardNavigationRail.getMenuItems(context).length,
+              DashboardNavigationRail.menuItems.length,
               (index) => _buildNavItem(context, index),
             ),
           ),
@@ -53,8 +54,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
   }
 
   Widget _buildNavItem(BuildContext context, int index) {
-    final menuItems = DashboardNavigationRail.getMenuItems(context);
-    final item = menuItems[index];
+    final item = DashboardNavigationRail.menuItems[index];
     final isSelected = selectedIndex == index;
 
     return RepaintBoundary(
@@ -67,7 +67,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
               fadeController?.reset();
               fadeController?.forward();
               onScrollToSelected?.call();
-              _autoScrollToItem(context, index);
+              _autoScrollToItem(index);
             }
           },
           borderRadius: BorderRadius.circular(12),
@@ -108,25 +108,24 @@ class DashboardMobileBottomNav extends StatelessWidget {
     );
   }
 
-  /// Auto-scroll para o item selecionado com navegao inteligente
-  /// Quando clicar no Último visvel  direita/esquerda, avana 3 itens
-  void _autoScrollToItem(BuildContext context, int index) {
+  /// Auto-scroll para o item selecionado com navegação inteligente
+  /// Quando clicar no ãÚltimo visível é direita/esquerda, avanãa 3 itens
+  void _autoScrollToItem(int index) {
     if (!scrollController.hasClients) return;
 
-    final totalItems = DashboardNavigationRail.getMenuItems(context).length;
+    final totalItems = DashboardNavigationRail.menuItems.length;
     const itemWidth = 90.0; // largura aproximada de cada item + padding
-    // ignore: unused_local_variable
-    const visibleItems = 4; // nmero aproximado de itens visveis
+    const visibleItems = 4; // Número aproximado de itens visãveis
 
-    // Verificar se clicou em um dos ltimos visveis  direita
+    // Verificar se clicou em um dos últimos visãveis é direita
     final currentOffset = scrollController.offset;
     final maxScroll = scrollController.position.maxScrollExtent;
     final viewportWidth = scrollController.position.viewportDimension;
     
-    // Calcular posio do item
+    // Calcular posição do item
     final itemOffset = index * itemWidth;
     
-    // Se clicar em um item no totalmente visvel  direita, avanar 3 itens
+    // Se clicar em um item não totalmente visível é direita, avanãar 3 itens
     if (itemOffset > currentOffset + viewportWidth - itemWidth) {
       final targetIndex = (index + 3).clamp(0, totalItems - 1);
       final targetOffset = (targetIndex * itemWidth - viewportWidth + itemWidth * 2).clamp(0.0, maxScroll);
@@ -137,7 +136,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
         curve: Curves.easeOutCubic,
       );
     }
-    // Se clicar em um item no totalmente visvel  esquerda, retroceder 3 itens
+    // Se clicar em um item não totalmente visível é esquerda, retroceder 3 itens
     else if (itemOffset < currentOffset) {
       final targetIndex = (index - 3).clamp(0, totalItems - 1);
       final targetOffset = (targetIndex * itemWidth).clamp(0.0, maxScroll);
@@ -148,7 +147,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
         curve: Curves.easeOutCubic,
       );
     }
-    // Caso contrrio, centralizar o item selecionado
+    // Caso contrário, centralizar o item selecionado
     else {
       final targetOffset = (itemOffset - viewportWidth / 2 + itemWidth / 2).clamp(0.0, maxScroll);
       

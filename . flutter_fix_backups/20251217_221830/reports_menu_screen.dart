@@ -135,9 +135,7 @@ class _RelatoriosMenuScreenState extends ConsumerState<RelatoriosMenuScreen> wit
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
     return PopScope(
       canPop: !(_navigatorKey.currentState?.canPop() ?? false),

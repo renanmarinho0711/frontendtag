@@ -33,7 +33,6 @@ class ProductsCatalogSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(
@@ -63,7 +62,7 @@ class ProductsCatalogSummary extends StatelessWidget {
                   color: ThemeColors.of(context).textPrimary,
                 ),
               ),
-              Icon(
+              const Icon(
                 Icons.insights_rounded,
                 color: ThemeColors.of(context).textTertiary,
                 size: 20,

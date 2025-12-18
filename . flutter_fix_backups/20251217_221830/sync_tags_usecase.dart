@@ -150,7 +150,6 @@ class RefreshTagsUseCase {
       throw const SyncDataException('Nenhuma tag selecionada');
     }
 
-    // ignore: unused_local_variable
     final startTime = DateTime.now();
 
     try {

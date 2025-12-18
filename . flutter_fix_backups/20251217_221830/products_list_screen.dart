@@ -4141,7 +4141,6 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
 
                      MediaQuery.of(context).size.width < 900;
 
-    // ignore: unused_local_variable
     final selectedCount = _selectedProductIds.length;
 
 

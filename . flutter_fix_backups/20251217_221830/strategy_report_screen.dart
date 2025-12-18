@@ -286,7 +286,6 @@ class _EstrategiaRelatorioScreenState extends ConsumerState<EstrategiaRelatorioS
   Widget _buildEstrategiaCard(StrategyModel estrategia, int index) {
     // Calcula crescimento baseado no ROI
     final crescimento = double.tryParse(estrategia.roi.replaceAll('%', '')) ?? 0.0;
-    // ignore: unused_local_variable
     final roiValue = double.tryParse(estrategia.roi.replaceAll('%', '')) ?? 0.0;
     
     return TweenAnimationBuilder(

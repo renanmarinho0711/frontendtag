@@ -231,7 +231,6 @@ class _ExpandableFabState extends State<ExpandableFab>
 
     final count = widget.actions.length;
 
-    // ignore: unused_local_variable
     final step = 90.0 / (count > 1 ? count - 1 : 1);
 
 

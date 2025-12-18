@@ -220,7 +220,6 @@ class _SugestoesIaScreenState extends State<SugestoesIaScreen> with ResponsiveCa
   }
 
   void _mostrarDialogoFiltro() {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
 
     showDialog(

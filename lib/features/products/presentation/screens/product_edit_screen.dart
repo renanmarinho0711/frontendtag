@@ -389,6 +389,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
 
     final isTablet = ResponsiveHelper.isTablet(context);
 
+    // ignore: unused_local_variable
     final productColor = widget.product.cor ?? ThemeColors.of(context).brandPrimaryGreen;
 
 

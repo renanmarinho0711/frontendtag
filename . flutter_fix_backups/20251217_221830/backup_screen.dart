@@ -105,7 +105,6 @@ class _ConfiguracoesBackupScreenState extends ConsumerState<ConfiguracoesBackupS
 
   Widget _buildModernAppBar(BackupState backupState) {
     final isMobile = ResponsiveHelper.isMobile(context);
-    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(

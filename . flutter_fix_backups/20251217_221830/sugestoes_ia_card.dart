@@ -14,10 +14,9 @@ class SugestoesIACard extends ConsumerWidget {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
     
-    // Obtãm contagem de Estratégias ativas do provider
+    // Obtm contagem de estratgias ativas do provider
     final strategiesState = ref.watch(strategiesProvider);
     final strategiesStats = ref.watch(strategiesStatsProvider);
-    // ignore: unused_local_variable
     final activeStrategies = strategiesState.strategies.where((s) => s.status.isActive).toList();
     final affectedProducts = strategiesStats.affectedProductsCount;
 
@@ -186,7 +185,7 @@ class SugestoesIACard extends ConsumerWidget {
                     child: _buildSugestaoTag(
                       context,
                       Icons.trending_down_rounded,
-                      '24 promoções',
+                      '24 promoes',
                       ThemeColors.of(context).suggestionPromocoesBackground,
                       ThemeColors.of(context).suggestionPromocoesText,
                     ),

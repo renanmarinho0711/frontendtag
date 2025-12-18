@@ -2064,6 +2064,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
     final isMobile = MediaQuery.of(context).size.width < 600;
     final isTablet = MediaQuery.of(context).size.width >= 600 && 
                      MediaQuery.of(context).size.width < 900;
+    // ignore: unused_local_variable
     final selectedCount = _selectedProductIds.length;
 
     return Container(

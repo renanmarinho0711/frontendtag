@@ -193,7 +193,6 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
   Widget _buildModernAppBar(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
-    // ignore: unused_local_variable
     final productColor = widget.product.cor ?? ThemeColors.of(context).brandPrimaryGreen;
 
     return Container(

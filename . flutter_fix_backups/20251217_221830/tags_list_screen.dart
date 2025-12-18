@@ -1294,7 +1294,6 @@ class _EtiquetasListaScreenState extends ConsumerState<EtiquetasListaScreen>
 
     final batteryColor = _getBatteryColor(tag.batteryLevel);
 
-    // ignore: unused_local_variable
     final signalText = _getSignalText(tag);
 
     final lastSyncTime = _getLastSyncTime(tag);

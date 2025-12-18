@@ -1253,7 +1253,6 @@ class _ImportacaoProdutosScreenState extends ConsumerState<ImportacaoProdutosScr
   }
 
   Widget _buildTipItem(String text) {
-    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Padding(
