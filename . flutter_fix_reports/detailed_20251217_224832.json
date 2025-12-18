@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-12-17T22:48:32.952988",
+  "summary": {
+    "total": 0,
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "files_affected": 0,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "issues_by_rule": {},
+  "files_summary": {},
+  "fix_results": {},
+  "unfixed_critical": []
+}

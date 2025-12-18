@@ -2275,6 +2275,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
 
 
 
+  // ignore: unused_element
   Widget _buildScrollableContentWithSugestoes(int ativas, int pausadas, int inativas, double impacto, {required bool isGrid}) {
 
     return CustomScrollView(
@@ -2415,6 +2416,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
 
 
 
+  // ignore: unused_element
   Widget _buildGridView() {
 
     final crossAxisCount = ResponsiveHelper.getGridCrossAxisCount(
@@ -2473,6 +2475,7 @@ class _EstrategiasMenuScreenState extends ConsumerState<EstrategiasMenuScreen>
 
 
 
+  // ignore: unused_element
   Widget _buildListView() {
 
     return ListView.builder(

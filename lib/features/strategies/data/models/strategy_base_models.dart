@@ -617,6 +617,7 @@ class StrategyModel {
 
   @Deprecated('Use parseColor instead')
 
+  // ignore: unused_element
   static Color? _parseColor(dynamic color) => parseColor(color);
 
 

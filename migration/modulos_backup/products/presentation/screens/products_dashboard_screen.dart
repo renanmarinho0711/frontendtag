@@ -27,12 +27,15 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   late AnimationController _headerAnimationController;
   late AnimationController _cardsAnimationController;
   late AnimationController _pulseController;
+  // ignore: unused_field
   late Animation<double> _headerFadeAnimation;
+  // ignore: unused_field
   late Animation<Offset> _headerSlideAnimation;
 
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
   final TextEditingController _searchController = TextEditingController();
 
+  // ignore: unused_field
   bool _isLoading = false;
   bool _isSyncing = false;
   bool _showOnboarding = true;
@@ -192,6 +195,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
       : _productsState.products.length;
   int get _comTag => _productsState.produtosComTag;
   int get _semTag => _productsState.produtosSemTag;
+  // ignore: unused_element
   int get _ativos => _productsState.produtosAtivos;
   int get _categorias => _statsState.categoriesStats.length;
   double get _valorEstoque => _statsState.statistics?.valorEstoque ?? 0;
@@ -611,7 +615,9 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }
 
   Widget _buildDashboardContent() {
+    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
     final isLoading = _productsState.status == LoadingStatus.loading;
 
@@ -1671,6 +1677,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   /// SEÃ‡ÃƒO 7: Mapa do Módulo - Todos os menus disponíveis em cards pequenos
   Widget _buildMapaModulo() {
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     // Lista de todos os menus/telas disponíveis no módulo
@@ -1899,6 +1906,7 @@ class _ProdutosDashboardScreenState extends ConsumerState<ProdutosDashboardScree
   }
 
   // Método antigo mantido para compatibilidade
+  // ignore: unused_element
   Widget _buildMapaCard(_ModuloMenuItem menu, bool isMobile) {
     return Material(
       color: AppThemeColors.transparent,

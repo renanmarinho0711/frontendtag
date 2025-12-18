@@ -304,6 +304,7 @@ class _BarcodeScannerWidgetState extends State<BarcodeScannerWidget>
   }
 
   Widget _buildCorners(BuildContext context) {
+    // ignore: unused_local_variable
     final color = _hasDetected 
         ? ThemeColors.of(context).success 
         : widget.primaryColor;

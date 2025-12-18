@@ -114,6 +114,7 @@ class DashboardMobileBottomNav extends StatelessWidget {
 
     final totalItems = DashboardNavigationRail.menuItems.length;
     const itemWidth = 90.0; // largura aproximada de cada item + padding
+    // ignore: unused_local_variable
     const visibleItems = 4; // número aproximado de itens visíveis
 
     // Verificar se clicou em um dos últimos visíveis à direita

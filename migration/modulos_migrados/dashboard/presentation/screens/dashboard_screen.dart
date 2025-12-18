@@ -491,6 +491,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   // _buildUserMenu, _buildModernNavigationRail(context, ~880 linhas)
   // ============================================================================
 
+  // ignore: unused_element
   Widget _buildMobileBottomNav(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -581,6 +582,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildModernAppBar(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -1007,6 +1009,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildModernNavigationRail(BuildContext context) {
     final isTablet = ResponsiveHelper.isTablet(context);
     final railWidth = isTablet ? (_isRailExpanded ? 200 : 70) : (_isRailExpanded ? 240 : 80);
@@ -1481,6 +1484,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildWelcomeSection(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -1621,6 +1625,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactMetricsGrid(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     
@@ -1787,6 +1792,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactMetricCard(BuildContext context, 
     String title,
     String value,
@@ -1921,6 +1927,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );  // Fechamento do RepaintBoundary
   }
 
+  // ignore: unused_element
   Widget _buildEstrategiasMetricCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2081,6 +2088,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildEstrategiasLucroCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2302,7 +2310,9 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   Widget _buildGanhoInfo(BuildContext context, String title, IconData icon, String value, String subtitle) {
+    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Padding(
@@ -2412,6 +2422,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildSugestoesIACard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2419,6 +2430,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     // Obtém contagem de produtos afetados pelas estratégias ativas
     final strategiesState = ref.watch(strategiesProvider);
     final strategiesStats = ref.watch(strategiesStatsProvider);
+    // ignore: unused_local_variable
     final activeStrategies = strategiesState.strategies.where((s) => s.status.isActive).toList();
     final affectedProducts = strategiesStats.affectedProductsCount;
 
@@ -2686,6 +2698,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildEstrategiasDetalhadasCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -2849,6 +2862,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 
   Widget _buildEstrategiaItem(BuildContext context, String nome, String ganho, String produtos, Color cor) {
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(
@@ -3014,6 +3028,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactSyncCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -3299,6 +3314,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   Widget _buildCompactSyncStat(BuildContext context, String value, String label, IconData icon) {
+    // ignore: unused_local_variable
     final isMobile = ResponsiveHelper.isMobile(context);
 
     return Column(
@@ -3352,6 +3368,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactAlertsCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -3584,6 +3601,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
     );
   }
 
+  // ignore: unused_element
   Widget _buildCompactQuickActionsCard(BuildContext context) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isTablet = ResponsiveHelper.isTablet(context);
@@ -4035,6 +4053,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   /// Abre busca rápida
+  // ignore: unused_element
   void _abrirBusca() {
     showSearch(
       context: context,
@@ -4043,6 +4062,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
   }
 
   /// Atualiza dados do dashboard
+  // ignore: unused_element
   void _atualizarDashboard() {
     ref.read(dashboardProvider.notifier).refresh();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -4063,6 +4083,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with TickerPr
 
   Widget _buildAlertItemDetalhado(BuildContext context, Map<String, dynamic> alerta) {
     final isMobile = ResponsiveHelper.isMobile(context);
+    // ignore: unused_local_variable
     final isTablet = ResponsiveHelper.isTablet(context);
 
     return Container(

@@ -1,0 +1,2679 @@
+ISSUES NÃO CORRIGIDOS AUTOMATICAMENTE
+============================================================
+
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1291
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1282
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1269
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1261
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 1257
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 46
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\common\transfer_progress_model.dart
+Linha: 45
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 26
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 25
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 24
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_data.dart
+Linha: 23
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 64
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 62
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 62
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_history_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 152
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 149
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 93
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 91
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 90
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 89
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 88
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 87
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 86
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\export\export_result_model.dart
+Linha: 28
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 64
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 63
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_config_model.dart
+Linha: 59
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 125
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 122
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 94
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 93
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 92
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 91
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 59
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 58
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_error.dart
+Linha: 56
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 156
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 148
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 147
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 146
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 145
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 144
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 84
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 84
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 83
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 83
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_history_model.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_result.dart
+Linha: 65
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_result.dart
+Linha: 49
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_result.dart
+Linha: 48
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_result.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 72
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 71
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 70
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 69
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 68
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 23
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 22
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\import\import_template.dart
+Linha: 21
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 220
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 217
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 91
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 81
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 79
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 78
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models.backup\stats\import_export_stats.dart
+Linha: 77
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_data.dart
+Linha: 25
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_data.dart
+Linha: 24
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_data.dart
+Linha: 23
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_history_model.dart
+Linha: 63
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_history_model.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 96
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 89
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 88
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 87
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 86
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\export\export_result_model.dart
+Linha: 28
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 128
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 96
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 95
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 94
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 62
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 60
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_error.dart
+Linha: 59
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 158
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 150
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 149
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 148
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 147
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 146
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_history_model.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_result.dart
+Linha: 66
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_result.dart
+Linha: 49
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_result.dart
+Linha: 48
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_result.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 72
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 71
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 70
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 69
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 68
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 23
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 22
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import\import_template.dart
+Linha: 21
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3541
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3535
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3437
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3366
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3353
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3351
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3349
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3347
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3345
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3180
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3178
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 3056
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2804
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2802
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2757
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2755
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2753
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2695
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2693
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2691
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2620
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2618
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2616
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2614
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2612
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2610
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2437
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2421
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2419
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2417
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2415
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2413
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2313
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2256
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2254
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2252
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2188
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2173
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2171
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2169
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2167
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2165
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2006
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2004
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 2002
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1926
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1916
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1914
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1912
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1910
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1799
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1774
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1772
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1770
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1616
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1614
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1612
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1567
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1565
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1563
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1561
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1311
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1306
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1296
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 1156
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 758
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 749
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 747
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 745
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 743
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 733
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 385
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 371
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\import_export_models.dart
+Linha: 369
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 220
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 217
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 91
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 81
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 80
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 79
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 78
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\data\models\stats\import_export_stats.dart
+Linha: 77
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\import_export\presentation\screens\import_tags_screen.dart
+Linha: 43
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 1582
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 1580
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\pricing\presentation\providers\pricing_provider.dart
+Linha: 270
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 374
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 366
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 302
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 298
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 292
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 284
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_model.dart
+Linha: 282
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 522
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 506
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 439
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 437
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 381
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 379
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 209
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 190
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 182
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 180
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 178
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\models\product_tag_model.dart
+Linha: 176
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 44
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 43
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\data\repositories\global_products_repository.dart
+Linha: 42
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 1114
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 1113
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 669
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 668
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 667
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\providers\products_state_provider.dart
+Linha: 666
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 2057
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 393
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\screens\product_edit_screen.dart
+Linha: 130
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\details\product_info_card.dart
+Linha: 142
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\details\product_info_card.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\products\presentation\widgets\details\product_info_card.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 464
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 460
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 459
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 333
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 330
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 329
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 326
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 325
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 239
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 238
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 237
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 236
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 130
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 129
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 126
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 125
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 123
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 121
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 118
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\providers\reports_provider.dart
+Linha: 117
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\reports\presentation\screens\performance_report_screen.dart
+Linha: 1056
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 411
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 409
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 407
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 405
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 403
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 401
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 399
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\models\settings_models.dart
+Linha: 397
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 417
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 369
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 222
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 203
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 89
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 87
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 85
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 77
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 72
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\data\repositories\backup_repository.dart
+Linha: 70
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 1937
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 1935
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 1933
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 1866
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 1864
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 1862
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 978
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 975
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 580
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 578
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 576
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 574
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 572
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 570
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 568
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\settings\presentation\providers\settings_provider.dart
+Linha: 566
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 899
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\calendar_provider.dart
+Linha: 650
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 720
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 678
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 407
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\cross_selling_provider.dart
+Linha: 370
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 164
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 163
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 160
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\environmental_provider.dart
+Linha: 159
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 737
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 442
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\performance_provider.dart
+Linha: 158
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 630
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\providers\visual_provider.dart
+Linha: 592
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 825
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 786
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 763
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 761
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 759
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 757
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 737
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 695
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 685
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 683
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 667
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 665
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 657
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 655
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 650
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 641
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 639
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 627
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 625
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\strategies\data\repositories\strategies_repository.dart
+Linha: 623
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_history_repository.dart
+Linha: 212
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\sync\data\repositories\sync_history_repository.dart
+Linha: 211
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\features\tags\presentation\screens\tag_edit_screen.dart
+Linha: 123
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4947
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4938
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4925
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4917
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4913
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 374
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 366
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 302
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 298
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 292
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 284
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_model.dart
+Linha: 282
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 522
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 506
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 439
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 437
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 381
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 379
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 209
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 190
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 182
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 180
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 178
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\models\product_tag_model.dart
+Linha: 176
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 44
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 43
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\data\repositories\global_products_repository.dart
+Linha: 42
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 2240
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 2238
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1352
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1350
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1348
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\providers\products_state_provider.dart
+Linha: 1346
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 1024
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 197
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\screens\product_edit_screen.dart
+Linha: 65
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\product_info_card.dart
+Linha: 142
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\product_info_card.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\modules\products\presentation\widgets\details\product_info_card.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\shared\models\models.dart
+Linha: 228
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\shared\models\models.dart
+Linha: 226
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: lib\shared\models\models.dart
+Linha: 224
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4921
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4912
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4899
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4891
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4887
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 189
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 184
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 151
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 149
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 146
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 141
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_model.dart
+Linha: 140
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 254
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 245
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 210
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 209
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 180
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 179
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 99
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 86
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 85
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 84
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\models\product_tag_model.dart
+Linha: 83
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\repositories\global_products_repository.dart
+Linha: 44
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\repositories\global_products_repository.dart
+Linha: 43
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\data\repositories\global_products_repository.dart
+Linha: 42
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\providers\products_state_provider.dart
+Linha: 1103
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\providers\products_state_provider.dart
+Linha: 1102
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\providers\products_state_provider.dart
+Linha: 669
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\providers\products_state_provider.dart
+Linha: 668
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\providers\products_state_provider.dart
+Linha: 667
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\providers\products_state_provider.dart
+Linha: 666
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\screens\product_edit_screen.dart
+Linha: 1032
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\screens\product_edit_screen.dart
+Linha: 196
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\screens\product_edit_screen.dart
+Linha: 65
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\widgets\details\product_info_card.dart
+Linha: 142
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\widgets\details\product_info_card.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_backup\products\presentation\widgets\details\product_info_card.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4913
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4904
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4891
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4883
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart
+Linha: 4879
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 189
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 184
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 151
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 149
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 146
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 141
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_model.dart
+Linha: 140
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 254
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 245
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 210
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 209
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 180
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 179
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 99
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 86
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 85
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 84
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\models\product_tag_model.dart
+Linha: 83
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\repositories\global_products_repository.dart
+Linha: 44
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\repositories\global_products_repository.dart
+Linha: 43
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\data\repositories\global_products_repository.dart
+Linha: 42
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\providers\products_state_provider.dart
+Linha: 1103
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\providers\products_state_provider.dart
+Linha: 1102
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\providers\products_state_provider.dart
+Linha: 669
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\providers\products_state_provider.dart
+Linha: 668
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\providers\products_state_provider.dart
+Linha: 667
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\providers\products_state_provider.dart
+Linha: 666
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart
+Linha: 1027
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart
+Linha: 196
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart
+Linha: 65
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\widgets\details\product_info_card.dart
+Linha: 142
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\widgets\details\product_info_card.dart
+Linha: 61
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------
+Arquivo: migration\modulos_migrados\products\presentation\widgets\details\product_info_card.dart
+Linha: 47
+Regra: dead_null_aware_expression
+Mensagem:  The left operand can't be null, so the right operand is never executed
+Motivo: Sem correção automática para:  dead_null_aware_expression
+----------------------------------------

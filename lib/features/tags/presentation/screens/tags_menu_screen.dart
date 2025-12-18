@@ -2018,6 +2018,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
 
 
+  // ignore: unused_element
   Widget _buildHistoricoItem(Map<String, dynamic> item, int index) {
 
     final isMobile = ResponsiveHelper.isMobile(context);
@@ -3268,6 +3269,7 @@ class _EtiquetasMenuScreenState extends ConsumerState<EtiquetasMenuScreen>
 
 
 
+  // ignore: unused_element
   void _mostrarAjuda() {
 
     final isMobile = ResponsiveHelper.isMobile(context);

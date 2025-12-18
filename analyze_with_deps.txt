@@ -1,70 +1,41 @@
-﻿C:\temp_flutter\flutter\bin\flutter.bat : Package file_picker:linux references 
-file_picker:linux as the default plugin, but it does not provide an inline 
-implementation.
-No linha:1 caractere:1
-+ C:\temp_flutter\flutter\bin\flutter.bat analyze 2>&1 | Out-File -Enco ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (Package file_pi...implementation.:String)  
-   [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: linux: default_package: file_picker` or add an inline implementation to 
-file_picker via `platforms: linux:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:macos references file_picker:macos as the default plugin, but it 
-does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: macos: default_package: file_picker` or add an inline implementation to 
-file_picker via `platforms: macos:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:windows references file_picker:windows as the default plugin, but 
-it does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: windows: default_package: file_picker` or add an inline implementation 
-to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:linux references file_picker:linux as the default plugin, but it 
-does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: linux: default_package: file_picker` or add an inline implementation to 
-file_picker via `platforms: linux:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:macos references file_picker:macos as the default plugin, but it 
-does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: macos: default_package: file_picker` or add an inline implementation to 
-file_picker via `platforms: macos:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:windows references file_picker:windows as the default plugin, but 
-it does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: windows: default_package: file_picker` or add an inline implementation 
-to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:linux references file_picker:linux as the default plugin, but it 
-does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: linux: default_package: file_picker` or add an inline implementation to 
-file_picker via `platforms: linux:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:macos references file_picker:macos as the default plugin, but it 
-does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: macos: default_package: file_picker` or add an inline implementation to 
-file_picker via `platforms: macos:` `pluginClass` or `dartPluginClass`.
-
-Package file_picker:windows references file_picker:windows as the default plugin, but 
-it does not provide an inline implementation.
-Ask the maintainers of file_picker to either avoid referencing a default implementation 
-via `platforms: windows: default_package: file_picker` or add an inline implementation 
-to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
-
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 47.0.0 (92.0.0 available)
+  analyzer 4.7.0 (9.0.0 available)
+  analyzer_plugin 0.10.0 (0.13.11 available)
+  characters 1.4.0 (1.4.1 available)
+  connectivity_plus 6.1.5 (7.0.0 available)
+  dart_code_metrics 4.19.2 (discontinued)
+  dart_style 2.2.4 (3.1.3 available)
+  file 6.1.4 (7.0.1 available)
+  file_picker 6.2.1 (10.3.7 available)
+  flutter_lints 3.0.2 (6.0.0 available)
+  flutter_riverpod 2.6.1 (3.0.3 available)
+  flutter_secure_storage 9.2.4 (10.0.0 available)
+  flutter_secure_storage_linux 1.2.3 (3.0.0 available)
+  flutter_secure_storage_macos 3.1.3 (4.0.0 available)
+  flutter_secure_storage_platform_interface 1.1.2 (2.0.1 available)
+  flutter_secure_storage_web 1.2.1 (2.1.0 available)
+  flutter_secure_storage_windows 3.1.2 (4.1.0 available)
+  intl 0.18.1 (0.20.2 available)
+  js 0.6.7 (0.7.2 available)
+  lints 3.0.0 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  mobile_scanner 5.2.3 (7.1.4 available)
+  riverpod 2.6.1 (3.0.3 available)
+  shared_preferences 2.5.3 (2.5.4 available)
+  shared_preferences_android 2.4.17 (2.4.18 available)
+  test_api 0.7.7 (0.7.8 available)
+Got dependencies!
+1 package is discontinued.
+27 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
 Analyzing frontend...                                           
 
   error - Expected a method, getter, setter or operator declaration - lib\core\di\injection.config.dart:1:1 - expected_executable
   error - Undefined class 'Stub' - lib\core\di\injection.config.dart:1:3 - undefined_class
-   info - The variable name 'tempor├írio' isn't a lowerCamelCase identifier - lib\core\di\injection.config.dart:1:8 - non_constant_identifier_names
+   info - The variable name 'temporário' isn't a lowerCamelCase identifier - lib\core\di\injection.config.dart:1:8 - non_constant_identifier_names
   error - Expected to find ';' - lib\core\di\injection.config.dart:1:8 - expected_token
   error - Illegal character '225' - lib\core\di\injection.config.dart:1:14 - illegal_character
   error - Undefined class 'para' - lib\core\di\injection.config.dart:1:19 - undefined_class
@@ -74,7 +45,6 @@ Analyzing frontend...
   error - Functions must have an explicit list of parameters - lib\core\di\injection.config.dart:1:39 - missing_function_parameters
   error - A function body must be provided - lib\core\di\injection.config.dart:1:44 - missing_function_body
   error - Expected a method, getter, setter or operator declaration - lib\core\di\injection.config.dart:1:44 - expected_executable
-warning - Unused import: 'injection.config.dart' - lib\core\di\injection.dart:5:8 - unused_import
   error - A value of type 'dynamic' can't be assigned to a variable of type 'Map<String, dynamic>' - lib\core\l10n\app_localizations.dart:49:25 - invalid_assignment
 warning - The generic type 'Response<dynamic>' should have explicit type arguments but doesn't - lib\core\network\api_interceptors.dart:40:19 - strict_raw_type
    info - An uninitialized variable should have an explicit type annotation - lib\core\providers\app_providers.dart:1:1 - prefer_typing_uninitialized_variables
@@ -272,14 +242,14 @@ warning - The generic type 'Response<dynamic>' should have explicit type argumen
    info - The file name 'BOA theme_colors_t10_indigo_night.dart' isn't a lower_case_with_underscores identifier - lib\design_system\theme\temas\BOA theme_colors_t10_indigo_night.dart:1:1 - file_names
    info - The file name 'BOA_theme_colors_t12_sky_blue.dart' isn't a lower_case_with_underscores identifier - lib\design_system\theme\temas\BOA_theme_colors_t12_sky_blue.dart:1:1 - file_names
    info - The file name 'BOM_theme_colors_t14_forest_green.dart' isn't a lower_case_with_underscores identifier - lib\design_system\theme\temas\BOM_theme_colors_t14_forest_green.dart:1:1 - file_names
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\data\models\user_model.dart:55:11 - deprecated_member_use_from_same_package
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\data\models\user_model.dart:55:39 - deprecated_member_use_from_same_package
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\data\models\user_model.dart:143:32 - deprecated_member_use_from_same_package
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:392:29 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\data\models\user_model.dart:55:11 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\data\models\user_model.dart:55:39 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\data\models\user_model.dart:143:32 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:392:29 - deprecated_member_use_from_same_package
 warning - Dead code - lib\features\auth\presentation\providers\auth_provider.dart:430:5 - dead_code
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:456:33 - deprecated_member_use_from_same_package
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:550:33 - deprecated_member_use_from_same_package
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:614:33 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:456:33 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:550:33 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\auth\presentation\providers\auth_provider.dart:614:33 - deprecated_member_use_from_same_package
    info - Don't use 'BuildContext's across async gaps - lib\features\categories\presentation\screens\categories_admin_screen.dart:1094:29 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps - lib\features\categories\presentation\screens\categories_admin_screen.dart:1096:38 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps - lib\features\categories\presentation\screens\categories_admin_screen.dart:1099:53 - use_build_context_synchronously
@@ -490,13 +460,13 @@ warning - The method doesn't override an inherited method - lib\features\dashboa
   error - Undefined name 'context' - lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart:74:31 - undefined_identifier
   error - Undefined name 'context' - lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart:90:31 - undefined_identifier
   error - Undefined name 'context' - lib\features\dashboard\presentation\widgets\compact_metrics_grid.dart:106:31 - undefined_identifier
-  error - Undefined name 'estrat├®giasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:93:28 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:93:28 - undefined_identifier
   error - Illegal character '233' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:93:34 - illegal_character
-  error - Undefined name 'estrat├®giasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:169:30 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:169:30 - undefined_identifier
   error - Illegal character '233' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:169:36 - illegal_character
-  error - Undefined name 'estrat├®giasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:170:29 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:170:29 - undefined_identifier
   error - Illegal character '233' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:170:35 - illegal_character
-  error - Undefined name 'estrat├®giasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:186:30 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:186:30 - undefined_identifier
   error - Illegal character '233' - lib\features\dashboard\presentation\widgets\estrategias_lucro_card.dart:186:36 - illegal_character
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\common\transfer_progress_model.dart:45:48 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - lib\features\import_export\data\models.backup\common\transfer_progress_model.dart:46:60 - dead_null_aware_expression
@@ -939,7 +909,7 @@ warning - The left operand can't be null, so the right operand is never executed
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\providers\reports_provider.dart:464:24 - argument_type_not_assignable
 warning - The left operand can't be null, so the right operand is never executed - lib\features\reports\presentation\providers\reports_provider.dart:464:69 - dead_null_aware_expression
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\features\reports\presentation\screens\audit_report_screen.dart:630:28 - list_element_type_not_assignable
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\reports\presentation\screens\operational_report_screen.dart:30:28 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\reports\presentation\screens\operational_report_screen.dart:30:28 - deprecated_member_use_from_same_package
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\features\reports\presentation\screens\operational_report_screen.dart:761:21 - list_element_type_not_assignable
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\reports\presentation\screens\operational_report_screen.dart:836:101 - argument_type_not_assignable
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\features\reports\presentation\screens\performance_report_screen.dart:587:21 - list_element_type_not_assignable
@@ -1055,7 +1025,6 @@ warning - The generic type 'List<dynamic>' should have explicit type arguments b
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\settings\presentation\screens\users_screen.dart:2065:31 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\settings\presentation\screens\users_screen.dart:2074:63 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\settings\presentation\screens\users_screen.dart:2074:97 - use_build_context_synchronously
-warning - The declaration '_parseColor' isn't referenced - lib\features\strategies\data\models\strategy_base_models.dart:620:17 - unused_element
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\calendar_provider.dart:650:21 - argument_type_not_assignable
 warning - The left operand can't be null, so the right operand is never executed - lib\features\strategies\data\providers\calendar_provider.dart:650:63 - dead_null_aware_expression
   error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - lib\features\strategies\data\providers\calendar_provider.dart:899:21 - argument_type_not_assignable
@@ -1123,7 +1092,7 @@ warning - The left operand can't be null, so the right operand is never executed
   error - The getter 'clearanceApproved' isn't defined for the type 'ThemeColorsData' - lib\features\strategies\presentation\helpers\clearance_status_color_helper.dart:42:23 - undefined_getter
   error - The getter 'clearanceRejected' isn't defined for the type 'ThemeColorsData' - lib\features\strategies\presentation\helpers\clearance_status_color_helper.dart:44:23 - undefined_getter
   error - The getter 'clearanceExpired' isn't defined for the type 'ThemeColorsData' - lib\features\strategies\presentation\helpers\clearance_status_color_helper.dart:46:23 - undefined_getter
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\strategies\presentation\providers\strategies_provider.dart:133:28 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\strategies\presentation\providers\strategies_provider.dart:133:28 - deprecated_member_use_from_same_package
   error - Conditions must have a static type of 'bool' - lib\features\strategies\presentation\screens\ai_suggestions_screen.dart:943:29 - non_bool_condition
   error - Conditions must have a static type of 'bool' - lib\features\strategies\presentation\screens\ai_suggestions_screen.dart:963:32 - non_bool_condition
    info - Don't use 'BuildContext's across async gaps - lib\features\strategies\presentation\screens\ai_suggestions_screen.dart:1355:28 - use_build_context_synchronously
@@ -1154,9 +1123,6 @@ warning - The left operand can't be null, so the right operand is never executed
    info - Don't use 'BuildContext's across async gaps - lib\features\strategies\presentation\screens\environmental\temperature_screen.dart:1536:43 - use_build_context_synchronously
    info - The type of the right operand ('String') isn't a subtype or a supertype of the left operand ('ForecastTrend') - lib\features\strategies\presentation\screens\performance\ai_forecast_screen.dart:1073:42 - unrelated_type_equality_checks
    info - The type of the right operand ('String') isn't a subtype or a supertype of the left operand ('ForecastTrend') - lib\features\strategies\presentation\screens\performance\ai_forecast_screen.dart:1075:25 - unrelated_type_equality_checks
-warning - The declaration '_buildScrollableContentWithSugestoes' isn't referenced - lib\features\strategies\presentation\screens\strategies_panel_screen.dart:2278:10 - unused_element
-warning - The declaration '_buildGridView' isn't referenced - lib\features\strategies\presentation\screens\strategies_panel_screen.dart:2418:10 - unused_element
-warning - The declaration '_buildListView' isn't referenced - lib\features\strategies\presentation\screens\strategies_panel_screen.dart:2476:10 - unused_element
   error - Methods can't be invoked in constant expressions - lib\features\strategies\presentation\screens\strategy_report_screen.dart:126:26 - const_eval_method_invocation
   error - Undefined name 'estrat' - lib\features\strategies\presentation\screens\strategy_report_screen.dart:162:21 - undefined_identifier
   error - Methods can't be invoked in constant expressions - lib\features\strategies\presentation\screens\strategy_report_screen.dart:789:55 - const_eval_method_invocation
@@ -1242,20 +1208,18 @@ warning - The left operand can't be null, so the right operand is never executed
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\tags\presentation\screens\tags_list_screen.dart:2756:49 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\tags\presentation\screens\tags_list_screen.dart:2768:63 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\tags\presentation\screens\tags_list_screen.dart:2768:99 - use_build_context_synchronously
-   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a m├║ltiplas lojas - lib\features\tags\presentation\screens\tags_menu_screen.dart:60:28 - deprecated_member_use_from_same_package
+   info - 'storeId' is deprecated and shouldn't be used. Use availableStores para gerenciar acesso a múltiplas lojas - lib\features\tags\presentation\screens\tags_menu_screen.dart:60:28 - deprecated_member_use_from_same_package
    info - Unnecessary instance of 'Container' - lib\features\tags\presentation\screens\tags_menu_screen.dart:128:13 - avoid_unnecessary_containers
-warning - The declaration '_buildHistoricoItem' isn't referenced - lib\features\tags\presentation\screens\tags_menu_screen.dart:2021:10 - unused_element
-  error - Conditions must have a static type of 'bool' - lib\features\tags\presentation\screens\tags_menu_screen.dart:2219:28 - non_bool_condition
-  error - Conditions must have a static type of 'bool' - lib\features\tags\presentation\screens\tags_menu_screen.dart:2251:30 - non_bool_condition
-  error - Conditions must have a static type of 'bool' - lib\features\tags\presentation\screens\tags_menu_screen.dart:2289:21 - non_bool_condition
-  error - Methods can't be invoked in constant expressions - lib\features\tags\presentation\screens\tags_menu_screen.dart:3165:69 - const_eval_method_invocation
-warning - The declaration '_mostrarAjuda' isn't referenced - lib\features\tags\presentation\screens\tags_menu_screen.dart:3271:8 - unused_element
+  error - Conditions must have a static type of 'bool' - lib\features\tags\presentation\screens\tags_menu_screen.dart:2220:28 - non_bool_condition
+  error - Conditions must have a static type of 'bool' - lib\features\tags\presentation\screens\tags_menu_screen.dart:2252:30 - non_bool_condition
+  error - Conditions must have a static type of 'bool' - lib\features\tags\presentation\screens\tags_menu_screen.dart:2290:21 - non_bool_condition
+  error - Methods can't be invoked in constant expressions - lib\features\tags\presentation\screens\tags_menu_screen.dart:3166:69 - const_eval_method_invocation
    info - Unnecessary instance of 'Container' - lib\features\tags\presentation\screens\tags_operations_screen.dart:41:13 - avoid_unnecessary_containers
   error - The getter 'mintPastel' isn't defined for the type 'ThemeColorsData' - lib\features\tags\presentation\screens\tags_operations_screen.dart:161:50 - undefined_getter
   error - The getter 'mintPastel' isn't defined for the type 'ThemeColorsData' - lib\features\tags\presentation\screens\tags_operations_screen.dart:166:50 - undefined_getter
   error - The getter 'mintPastel' isn't defined for the type 'ThemeColorsData' - lib\features\tags\presentation\screens\tags_operations_screen.dart:800:62 - undefined_getter
   error - The getter 'mintPastel' isn't defined for the type 'ThemeColorsData' - lib\features\tags\presentation\screens\tags_operations_screen.dart:806:67 - undefined_getter
-  error - The method '_getOpera├º├úoTexto' isn't defined for the type '_TagsOperacoesLoteScreenState' - lib\features\tags\presentation\screens\tags_operations_screen.dart:1035:38 - undefined_method
+  error - The method '_getOperaçãoTexto' isn't defined for the type '_TagsOperacoesLoteScreenState' - lib\features\tags\presentation\screens\tags_operations_screen.dart:1035:38 - undefined_method
   error - Illegal character '231' - lib\features\tags\presentation\screens\tags_operations_screen.dart:1035:47 - illegal_character
   error - Illegal character '227' - lib\features\tags\presentation\screens\tags_operations_screen.dart:1035:48 - illegal_character
    info - Unnecessary instance of 'Container' - lib\features\tags\presentation\screens\tags_store_map_screen.dart:73:13 - avoid_unnecessary_containers
@@ -1330,9 +1294,9 @@ warning - The declaration '_mostrarAjuda' isn't referenced - lib\features\tags\p
   error - The method 'toStringAsFixed' isn't defined for the type 'String' - lib\modules\categories\presentation\screens\category_products_screen.dart:1240:59 - undefined_method
   error - Methods can't be invoked in constant expressions - lib\modules\categories\presentation\screens\category_products_screen.dart:1399:36 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - lib\modules\categories\presentation\screens\category_products_screen.dart:1491:36 - const_eval_method_invocation
-  error - Target of URI doesn't exist: 'presentation/widgets/estrat├®gias_lucro_card.dart' - lib\modules\dashboard\dashboard.dart:22:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'presentation/widgets/estratégias_lucro_card.dart' - lib\modules\dashboard\dashboard.dart:22:8 - uri_does_not_exist
    info - Dangling library doc comment - lib\modules\dashboard\data\models\dashboard_models.dart:1:1 - dangling_library_doc_comments
-  error - Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/estrat├®gias_ativas_card.dart' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:28:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:tagbean/features/dashboard/presentation/widgets/estratégias_ativas_card.dart' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:28:8 - uri_does_not_exist
   error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:20 - const_eval_method_invocation
   error - The instance member 'context' can't be accessed in an initializer - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:35 - implicit_this_reference_in_initializer
   error - Methods can't be invoked in constant expressions - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:65:61 - const_eval_method_invocation
@@ -1376,13 +1340,13 @@ warning - The declaration '_mostrarAjuda' isn't referenced - lib\features\tags\p
 warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:987:3 - strict_raw_type
   error - The method 'EstrategiasAtivasCard' isn't defined for the type '_DashboardScreenState' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:1376:9 - undefined_method
   error - The method 'EstrategiasAtivasCard' isn't defined for the type '_DashboardScreenState' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:1427:9 - undefined_method
-  error - Undefined name '_estrat├®giasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2196:28 - undefined_identifier
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2196:28 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2196:35 - illegal_character
-  error - Undefined name '_estrat├®giasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2285:30 - undefined_identifier
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2285:30 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2285:37 - illegal_character
-  error - Undefined name '_estrat├®giasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2286:29 - undefined_identifier
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2286:29 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2286:36 - illegal_character
-  error - Undefined name '_estrat├®giasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2300:30 - undefined_identifier
+  error - Undefined name '_estratégiasData' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2300:30 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:2300:37 - illegal_character
   error - The element type 'dynamic' can't be assigned to the list type 'Color' - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4126:30 - list_element_type_not_assignable
    info - Don't use 'BuildContext's across async gaps - lib\modules\dashboard\presentation\screens\dashboard_screen.dart:4407:28 - use_build_context_synchronously
@@ -1406,13 +1370,13 @@ warning - The left operand can't be null, so the right operand is never executed
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart:38:31 - undefined_identifier
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart:46:31 - undefined_identifier
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\compact_metrics_grid.dart:54:31 - undefined_identifier
-  error - Undefined name 'estrat├®giasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:93:28 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:93:28 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:93:34 - illegal_character
-  error - Undefined name 'estrat├®giasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:169:30 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:169:30 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:169:36 - illegal_character
-  error - Undefined name 'estrat├®giasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:170:29 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:170:29 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:170:35 - illegal_character
-  error - Undefined name 'estrat├®giasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:186:30 - undefined_identifier
+  error - Undefined name 'estratégiasData' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:186:30 - undefined_identifier
   error - Illegal character '233' - lib\modules\dashboard\presentation\widgets\estrategias_lucro_card.dart:186:36 - illegal_character
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\fluxos_inteligentes_card.dart:118:29 - undefined_identifier
   error - Undefined name 'context' - lib\modules\dashboard\presentation\widgets\fluxos_inteligentes_card.dart:133:29 - undefined_identifier
@@ -1638,7 +1602,7 @@ warning - The left operand can't be null, so the right operand is never executed
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\products_list_screen.dart:1526:40 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\products_list_screen.dart:1531:65 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\products_list_screen.dart:1531:109 - use_build_context_synchronously
-  error - The getter 'c├│digo' isn't defined for the type 'ProductModel' - lib\modules\products\presentation\screens\products_list_screen.dart:1555:26 - undefined_getter
+  error - The getter 'código' isn't defined for the type 'ProductModel' - lib\modules\products\presentation\screens\products_list_screen.dart:1555:26 - undefined_getter
   error - Illegal character '243' - lib\modules\products\presentation\screens\products_list_screen.dart:1555:27 - illegal_character
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\products_list_screen.dart:1936:38 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\modules\products\presentation\screens\products_list_screen.dart:1943:51 - use_build_context_synchronously
@@ -1729,67 +1693,44 @@ warning - The left operand can't be null, so the right operand is never executed
   error - Conditions must have a static type of 'bool' - migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart:1325:22 - non_bool_condition
   error - Conditions must have a static type of 'bool' - migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart:1331:19 - non_bool_condition
   error - Conditions must have a static type of 'bool' - migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart:1337:22 - non_bool_condition
-warning - The value of the local variable 'height' isn't used - migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart:1425:23 - unused_local_variable
-  error - Undefined name 'constraints' - migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart:1428:55 - undefined_identifier
+  error - Undefined name 'constraints' - migration\modulos_backup\categories\presentation\screens\categories_stats_screen.dart:1429:55 - undefined_identifier
   error - A value of type 'dynamic' can't be assigned to a variable of type 'String' - migration\modulos_backup\categories\presentation\screens\category_products_screen.dart:446:47 - invalid_assignment
   error - The method 'toStringAsFixed' isn't defined for the type 'String' - migration\modulos_backup\categories\presentation\screens\category_products_screen.dart:1253:59 - undefined_method
-warning - The declaration '_unlinkSingleProduct' isn't referenced - migration\modulos_backup\categories\presentation\screens\category_products_screen.dart:1522:8 - unused_element
-warning - The declaration '_buildMobileBottomNav' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:494:10 - unused_element
-warning - The declaration '_buildModernAppBar' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:584:10 - unused_element
-warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:984:3 - strict_raw_type
-warning - The declaration '_buildModernNavigationRail' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:1010:10 - unused_element
-warning - The declaration '_buildWelcomeSection' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:1484:10 - unused_element
-warning - The declaration '_buildCompactMetricsGrid' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:1624:10 - unused_element
-warning - The declaration '_buildCompactMetricCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:1790:10 - unused_element
-warning - The declaration '_buildEstrategiasMetricCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:1924:10 - unused_element
-warning - The declaration '_buildEstrategiasLucroCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2084:10 - unused_element
-warning - The value of the local variable 'isMobile' isn't used - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2307:11 - unused_local_variable
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2308:11 - unused_local_variable
-warning - The declaration '_buildSugestoesIACard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2417:10 - unused_element
-warning - The value of the local variable 'activeStrategies' isn't used - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2424:11 - unused_local_variable
-warning - The declaration '_buildEstrategiasDetalhadasCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2691:10 - unused_element
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:2855:11 - unused_local_variable
-warning - The declaration '_buildCompactSyncCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:3020:10 - unused_element
-warning - The value of the local variable 'isMobile' isn't used - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:3305:11 - unused_local_variable
-warning - The declaration '_buildCompactAlertsCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:3358:10 - unused_element
-warning - The declaration '_buildCompactQuickActionsCard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:3590:10 - unused_element
-warning - The declaration '_abrirBusca' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4044:8 - unused_element
-warning - The declaration '_atualizarDashboard' isn't referenced - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4052:8 - unused_element
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4072:11 - unused_local_variable
-  error - The element type 'dynamic' can't be assigned to the list type 'Color' - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4110:30 - list_element_type_not_assignable
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4286:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4286:62 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4287:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4287:60 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4288:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4288:61 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4290:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4290:69 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4291:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4291:64 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4292:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4292:72 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4301:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4301:62 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4302:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4302:60 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4303:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4303:61 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4305:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4305:69 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4306:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4306:64 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4307:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4307:72 - deprecated_member_use
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4379:28 - use_build_context_synchronously
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4887:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4887:51 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4891:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4891:53 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4899:46 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4912:49 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4921:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4921:54 - dead_null_aware_expression
+warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:986:3 - strict_raw_type
+  error - The element type 'dynamic' can't be assigned to the list type 'Color' - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4131:30 - list_element_type_not_assignable
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4307:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4307:62 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4308:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4308:60 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4309:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4309:61 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4311:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4311:69 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4312:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4312:64 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4313:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4313:72 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4322:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4322:62 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4323:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4323:60 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4324:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4324:61 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4326:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4326:69 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4327:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4327:64 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4328:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4328:72 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4400:28 - use_build_context_synchronously
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4908:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4908:51 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4912:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4912:53 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4920:46 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4933:49 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4942:28 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\dashboard\presentation\screens\dashboard_screen.dart:4942:54 - dead_null_aware_expression
   error - The getter 'tealMainOverlay60' isn't defined for the type 'AppThemeColors' - migration\modulos_backup\dashboard\presentation\widgets\estrategias_lucro_card.dart:23:59 - undefined_getter
   error - The getter 'greenMainOverlay30' isn't defined for the type 'AppThemeColors' - migration\modulos_backup\dashboard\presentation\widgets\estrategias_lucro_card.dart:30:35 - undefined_getter
   error - The getter 'primaryColor' isn't defined for the type 'ThemeColorsData' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_app_bar.dart:514:25 - undefined_getter
@@ -1799,11 +1740,8 @@ warning - The left operand can't be null, so the right operand is never executed
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:46:39 - undefined_getter
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:56:42 - undefined_getter
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:115:48 - undefined_getter
-warning - The value of the local variable 'visibleItems' isn't used - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:117:11 - unused_local_variable
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart:106:42 - undefined_getter
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_backup\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart:108:46 - undefined_getter
-warning - The value of the local variable 'activeStrategies' isn't used - migration\modulos_backup\dashboard\presentation\widgets\sugestoes_ia_card.dart:20:11 - unused_local_variable
-warning - The declaration '_buildMetricCard' isn't referenced - migration\modulos_backup\dashboard\presentation\widgets\welcome_section.dart:414:10 - unused_element
    info - 'tag' is deprecated and shouldn't be used. Usar tags para relacionamento N:N - migration\modulos_backup\products\data\models\product_model.dart:82:24 - deprecated_member_use_from_same_package
    info - 'tag' is deprecated and shouldn't be used. Usar tags para relacionamento N:N - migration\modulos_backup\products\data\models\product_model.dart:107:14 - deprecated_member_use_from_same_package
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_backup\products\data\models\product_model.dart:111:18 - deprecated_member_use
@@ -1850,20 +1788,11 @@ warning - The left operand can't be null, so the right operand is never executed
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_backup\products\presentation\screens\product_details_screen.dart:202:64 - not_enough_positional_arguments
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_backup\products\presentation\screens\product_details_screen.dart:632:64 - not_enough_positional_arguments
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:65:78 - dead_null_aware_expression
-warning - The value of the local variable 'productColor' isn't used - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:196:11 - unused_local_variable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:196:48 - dead_null_aware_expression
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:225:50 - use_build_context_synchronously
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:1032:33 - dead_null_aware_expression
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:1092:52 - use_build_context_synchronously
-warning - The value of the field '_headerFadeAnimation' isn't used - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:30:26 - unused_field
-warning - The value of the field '_headerSlideAnimation' isn't used - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:31:26 - unused_field
-warning - The value of the field '_isLoading' isn't used - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:36:8 - unused_field
-warning - The declaration '_ativos' isn't referenced - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:195:11 - unused_element
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:399:33 - use_build_context_synchronously
-warning - The value of the local variable 'isMobile' isn't used - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:614:11 - unused_local_variable
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:615:11 - unused_local_variable
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:1674:11 - unused_local_variable
-warning - The declaration '_buildMapaCard' isn't referenced - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:1902:10 - unused_element
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:197:48 - dead_null_aware_expression
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:226:50 - use_build_context_synchronously
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:1033:33 - dead_null_aware_expression
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\product_edit_screen.dart:1093:52 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\products_dashboard_screen.dart:403:33 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:216:34 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:259:34 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:304:38 - use_build_context_synchronously
@@ -1874,7 +1803,6 @@ warning - The declaration '_buildMapaCard' isn't referenced - migration\modulos_
    info - Don't use 'BuildContext's across async gaps - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:1421:28 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:1539:40 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:1949:38 - use_build_context_synchronously
-warning - The value of the local variable 'selectedCount' isn't used - migration\modulos_backup\products\presentation\screens\products_list_screen.dart:2081:11 - unused_local_variable
    info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - migration\modulos_backup\products\presentation\screens\products_stock_screen.dart:1085:25 - deprecated_member_use
    info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - migration\modulos_backup\products\presentation\screens\products_stock_screen.dart:1086:25 - deprecated_member_use
    info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - migration\modulos_backup\products\presentation\screens\products_stock_screen.dart:1095:25 - deprecated_member_use
@@ -1886,9 +1814,8 @@ warning - The left operand can't be null, so the right operand is never executed
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_backup\products\presentation\widgets\list\product_card.dart:101:57 - not_enough_positional_arguments
   error - A value of type 'Color Function(BuildContext)' can't be assigned to a parameter of type 'Color?' in a const constructor - migration\modulos_backup\products\presentation\widgets\list\products_header.dart:78:9 - const_constructor_param_type_mismatch
   error - A value of type 'Color Function(BuildContext)' can't be assigned to a parameter of type 'Color?' in a const constructor - migration\modulos_backup\products\presentation\widgets\list\products_header.dart:170:11 - const_constructor_param_type_mismatch
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_backup\products\presentation\widgets\products_catalog_summary.dart:36:11 - unused_local_variable
-warning - The library 'file:///D:/tagbean/frontend/migration/modulos_backup/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryItem' - migration\modulos_backup\products\products.dart:17:26 - undefined_hidden_name
-warning - The library 'file:///D:/tagbean/frontend/migration/modulos_backup/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryModel' - migration\modulos_backup\products\products.dart:17:95 - undefined_hidden_name
+warning - The library 'file:///d:/tagbean/frontend/migration/modulos_backup/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryItem' - migration\modulos_backup\products\products.dart:17:26 - undefined_hidden_name
+warning - The library 'file:///d:/tagbean/frontend/migration/modulos_backup/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryModel' - migration\modulos_backup\products\products.dart:17:95 - undefined_hidden_name
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\categories\data\models\category_models.dart:150:22 - deprecated_member_use
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\categories\data\models\category_models.dart:483:24 - deprecated_member_use
    info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\categories\presentation\providers\categories_provider.dart:152:31 - deprecated_member_use
@@ -1934,9 +1861,8 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_backup/prod
   error - Conditions must have a static type of 'bool' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1318:22 - non_bool_condition
   error - Conditions must have a static type of 'bool' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1324:19 - non_bool_condition
   error - Conditions must have a static type of 'bool' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1330:22 - non_bool_condition
-warning - The value of the local variable 'height' isn't used - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1418:23 - unused_local_variable
-  error - Undefined name 'constraints' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1421:55 - undefined_identifier
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1632:62 - const_eval_method_invocation
+  error - Undefined name 'constraints' - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1422:55 - undefined_identifier
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\categories_stats_screen.dart:1633:62 - const_eval_method_invocation
   error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:26:42 - implicit_this_reference_in_initializer
   error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:54:20 - implicit_this_reference_in_initializer
   error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\categories\presentation\screens\category_add_screen.dart:55:20 - implicit_this_reference_in_initializer
@@ -1980,7 +1906,6 @@ warning - The value of the local variable 'height' isn't used - migration\modulo
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1138:40 - const_eval_method_invocation
   error - The method 'toStringAsFixed' isn't defined for the type 'String' - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1253:59 - undefined_method
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1412:36 - const_eval_method_invocation
-warning - The declaration '_unlinkSingleProduct' isn't referenced - migration\modulos_migrados\categories\presentation\screens\category_products_screen.dart:1522:8 - unused_element
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:20 - const_eval_method_invocation
   error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:35 - implicit_this_reference_in_initializer
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:64:61 - const_eval_method_invocation
@@ -2021,70 +1946,49 @@ warning - The declaration '_unlinkSingleProduct' isn't referenced - migration\mo
   error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:35 - implicit_this_reference_in_initializer
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:65 - const_eval_method_invocation
   error - The instance member 'context' can't be accessed in an initializer - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:109:80 - implicit_this_reference_in_initializer
-warning - The declaration '_buildMobileBottomNav' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:494:10 - unused_element
-warning - The declaration '_buildModernAppBar' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:584:10 - unused_element
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:643:28 - const_eval_method_invocation
-warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:984:3 - strict_raw_type
-warning - The declaration '_buildModernNavigationRail' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1010:10 - unused_element
-warning - The declaration '_buildWelcomeSection' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1484:10 - unused_element
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1512:20 - const_eval_method_invocation
-warning - The declaration '_buildCompactMetricsGrid' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1624:10 - unused_element
-warning - The declaration '_buildCompactMetricCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1790:10 - unused_element
-warning - The declaration '_buildEstrategiasMetricCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1924:10 - unused_element
-warning - The declaration '_buildEstrategiasLucroCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2084:10 - unused_element
-warning - The value of the local variable 'isMobile' isn't used - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2305:11 - unused_local_variable
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2306:11 - unused_local_variable
-warning - The declaration '_buildSugestoesIACard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2415:10 - unused_element
-warning - The value of the local variable 'activeStrategies' isn't used - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2422:11 - unused_local_variable
-warning - The declaration '_buildEstrategiasDetalhadasCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2689:10 - unused_element
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2746:38 - const_eval_method_invocation
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2852:11 - unused_local_variable
-warning - The declaration '_buildCompactSyncCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:3017:10 - unused_element
-warning - The value of the local variable 'isMobile' isn't used - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:3302:11 - unused_local_variable
-warning - The declaration '_buildCompactAlertsCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:3355:10 - unused_element
-warning - The declaration '_buildCompactQuickActionsCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:3587:10 - unused_element
-warning - The declaration '_abrirBusca' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4038:8 - unused_element
-warning - The declaration '_atualizarDashboard' isn't referenced - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4046:8 - unused_element
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4066:11 - unused_local_variable
-  error - The element type 'dynamic' can't be assigned to the list type 'Color' - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4104:30 - list_element_type_not_assignable
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4280:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4280:71 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4281:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4281:69 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4282:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4282:70 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4284:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4284:78 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4285:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4285:73 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4286:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4286:81 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4295:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4295:71 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4296:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4296:69 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4297:20 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4297:70 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4299:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4299:78 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4300:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4300:73 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4301:27 - deprecated_member_use
-   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4301:81 - deprecated_member_use
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4327:69 - const_eval_method_invocation
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4373:28 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4380:41 - use_build_context_synchronously
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4383:65 - const_eval_method_invocation
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4383:80 - use_build_context_synchronously
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4391:43 - use_build_context_synchronously
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4879:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4879:51 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4883:13 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4883:53 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4891:46 - dead_null_aware_expression
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4904:49 - dead_null_aware_expression
-  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4913:28 - argument_type_not_assignable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4913:54 - dead_null_aware_expression
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:645:28 - const_eval_method_invocation
+warning - The generic type 'PopupMenuEntry<dynamic>' should have explicit type arguments but doesn't - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:986:3 - strict_raw_type
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:1516:20 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:2759:38 - const_eval_method_invocation
+  error - The element type 'dynamic' can't be assigned to the list type 'Color' - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4125:30 - list_element_type_not_assignable
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4301:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4301:71 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4302:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4302:69 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4303:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4303:70 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4305:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4305:78 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4306:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4306:73 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4307:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4307:81 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4316:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4316:71 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4317:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4317:69 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4318:20 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4318:70 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4320:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4320:78 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4321:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4321:73 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4322:27 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use component accessors like .r or .g, or toARGB32 for an explicit conversion - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4322:81 - deprecated_member_use
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4348:69 - const_eval_method_invocation
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4394:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4401:41 - use_build_context_synchronously
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4404:65 - const_eval_method_invocation
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4404:80 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4412:43 - use_build_context_synchronously
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4900:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4900:51 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4904:13 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4904:53 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4912:46 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4925:49 - dead_null_aware_expression
+  error - The argument type 'dynamic' can't be assigned to the parameter type 'String?'.  - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4934:28 - argument_type_not_assignable
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\dashboard\presentation\screens\dashboard_screen.dart:4934:54 - dead_null_aware_expression
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\atalhos_rapidos_card.dart:274:35 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\atalhos_rapidos_card.dart:286:41 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\atalhos_rapidos_card.dart:288:60 - undefined_identifier
@@ -2109,7 +2013,6 @@ warning - The left operand can't be null, so the right operand is never executed
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:46:39 - undefined_getter
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:56:42 - undefined_getter
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:115:48 - undefined_getter
-warning - The value of the local variable 'visibleItems' isn't used - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_mobile_bottom_nav.dart:117:11 - unused_local_variable
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart:106:42 - undefined_getter
   error - The getter 'menuItems' isn't defined for the type 'DashboardNavigationRail' - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_mobile_drawer.dart:108:46 - undefined_getter
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\dashboard\presentation\widgets\navigation\dashboard_navigation_rail.dart:21:20 - const_eval_method_invocation
@@ -2158,8 +2061,6 @@ warning - The value of the local variable 'visibleItems' isn't used - migration\
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\next_action_card.dart:289:33 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\next_action_card.dart:304:33 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\dashboard\presentation\widgets\next_action_card.dart:318:33 - undefined_identifier
-warning - The value of the local variable 'activeStrategies' isn't used - migration\modulos_migrados\dashboard\presentation\widgets\sugestoes_ia_card.dart:20:11 - unused_local_variable
-warning - The declaration '_buildMetricCard' isn't referenced - migration\modulos_migrados\dashboard\presentation\widgets\welcome_section.dart:414:10 - unused_element
   error - Undefined name 'context' - migration\modulos_migrados\products\data\datasources\products_datasource.dart:143:29 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\products\data\datasources\products_datasource.dart:176:29 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\products\data\datasources\products_datasource.dart:189:29 - undefined_identifier
@@ -2221,14 +2122,13 @@ warning - The left operand can't be null, so the right operand is never executed
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_migrados\products\presentation\screens\product_details_screen.dart:202:64 - not_enough_positional_arguments
   error - 2 positional arguments expected by 'fromBaseColor', but 1 found - migration\modulos_migrados\products\presentation\screens\product_details_screen.dart:625:64 - not_enough_positional_arguments
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:65:78 - dead_null_aware_expression
-warning - The value of the local variable 'productColor' isn't used - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:196:11 - unused_local_variable
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:196:48 - dead_null_aware_expression
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:225:50 - use_build_context_synchronously
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:558:28 - const_eval_method_invocation
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:711:28 - const_eval_method_invocation
-warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:1027:33 - dead_null_aware_expression
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:1087:52 - use_build_context_synchronously
-  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:1154:16 - const_eval_method_invocation
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:197:48 - dead_null_aware_expression
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:226:50 - use_build_context_synchronously
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:559:28 - const_eval_method_invocation
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:712:28 - const_eval_method_invocation
+warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:1028:33 - dead_null_aware_expression
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:1088:52 - use_build_context_synchronously
+  error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_edit_screen.dart:1155:16 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_qr_screen.dart:300:70 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_qr_screen.dart:328:95 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_qr_screen.dart:345:70 - const_eval_method_invocation
@@ -2241,13 +2141,7 @@ warning - The left operand can't be null, so the right operand is never executed
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_qr_screen.dart:499:59 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_qr_screen.dart:576:63 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\product_qr_screen.dart:605:57 - const_eval_method_invocation
-warning - The value of the field '_headerFadeAnimation' isn't used - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:31:26 - unused_field
-warning - The value of the field '_headerSlideAnimation' isn't used - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:32:26 - unused_field
-warning - The value of the field '_isLoading' isn't used - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:37:8 - unused_field
-warning - The declaration '_ativos' isn't referenced - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:196:11 - unused_element
-   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:400:33 - use_build_context_synchronously
-warning - The value of the local variable 'isMobile' isn't used - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:611:11 - unused_local_variable
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:612:11 - unused_local_variable
+   info - Don't use 'BuildContext's across async gaps - migration\modulos_migrados\products\presentation\screens\products_dashboard_screen.dart:404:33 - use_build_context_synchronously
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\products_import_screen.dart:111:22 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\products_import_screen.dart:424:24 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\screens\products_import_screen.dart:521:60 - const_eval_method_invocation
@@ -2282,11 +2176,10 @@ warning - The value of the local variable 'isTablet' isn't used - migration\modu
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\products\presentation\screens\products_stock_screen.dart:1207:40 - use_build_context_synchronously
    info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - migration\modulos_migrados\products\presentation\screens\products_stock_screen.dart:1210:55 - use_build_context_synchronously
   error - The element type 'Color?' can't be assigned to the list type 'Color' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:267:35 - list_element_type_not_assignable
-warning - The value of the local variable 'color' isn't used - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:307:11 - unused_local_variable
-  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:317:31 - undefined_identifier
-  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:323:31 - undefined_identifier
-  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:329:31 - undefined_identifier
-  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:335:31 - undefined_identifier
+  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:318:31 - undefined_identifier
+  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:324:31 - undefined_identifier
+  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:330:31 - undefined_identifier
+  error - Undefined name 'backgroundColor' - migration\modulos_migrados\products\presentation\widgets\barcode_scanner_widget.dart:336:31 - undefined_identifier
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\widgets\details\product_info_card.dart:47:31 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\widgets\details\product_info_card.dart:61:40 - dead_null_aware_expression
 warning - The left operand can't be null, so the right operand is never executed - migration\modulos_migrados\products\presentation\widgets\details\product_info_card.dart:142:37 - dead_null_aware_expression
@@ -2303,7 +2196,6 @@ warning - The left operand can't be null, so the right operand is never executed
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\products_alerts_card.dart:32:31 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\products_alerts_card.dart:34:31 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\products_alerts_card.dart:36:31 - undefined_identifier
-warning - The value of the local variable 'isTablet' isn't used - migration\modulos_migrados\products\presentation\widgets\products_catalog_summary.dart:36:11 - unused_local_variable
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\products_onboarding_card.dart:147:33 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\products_onboarding_card.dart:159:33 - undefined_identifier
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\products_onboarding_card.dart:170:33 - undefined_identifier
@@ -2318,8 +2210,8 @@ warning - The value of the local variable 'isTablet' isn't used - migration\modu
   error - Undefined name 'context' - migration\modulos_migrados\products\presentation\widgets\qr\products_empty_state.dart:105:33 - undefined_identifier
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\widgets\recent_products_card.dart:57:30 - const_eval_method_invocation
   error - Methods can't be invoked in constant expressions - migration\modulos_migrados\products\presentation\widgets\recent_products_card.dart:110:34 - const_eval_method_invocation
-warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryItem' - migration\modulos_migrados\products\products.dart:17:26 - undefined_hidden_name
-warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryModel' - migration\modulos_migrados\products\products.dart:17:95 - undefined_hidden_name
+warning - The library 'file:///d:/tagbean/frontend/migration/modulos_migrados/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryItem' - migration\modulos_migrados\products\products.dart:17:26 - undefined_hidden_name
+warning - The library 'file:///d:/tagbean/frontend/migration/modulos_migrados/products/presentation/providers/products_state_provider.dart' doesn't export a member with the hidden name 'PriceHistoryModel' - migration\modulos_migrados\products\products.dart:17:95 - undefined_hidden_name
    info - Dangling library doc comment - test\integration\auth\forgot_password_test.dart:2:1 - dangling_library_doc_comments
    info - Dangling library doc comment - test\integration\auth\login_test.dart:1:1 - dangling_library_doc_comments
    info - Dangling library doc comment - test\integration\auth\logout_test.dart:1:1 - dangling_library_doc_comments
@@ -2422,28 +2314,19 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - Expected a method, getter, setter or operator declaration - test\unit\sync\sync_minew_usecase_test.dart:1:7 - expected_executable
   error - Unexpected text ';' - test\unit\sync\sync_minew_usecase_test.dart:1:47 - unexpected_token
   error - Directives must appear before any declarations - test\unit\sync\sync_minew_usecase_test.dart:2:1 - directive_after_declaration
-   info - The imported package 'mocktail' isn't a dependency of the importing package - test\unit\sync\sync_minew_usecase_test.dart:2:8 - depend_on_referenced_packages
-  error - Target of URI doesn't exist: 'package:mocktail/mocktail.dart' - test\unit\sync\sync_minew_usecase_test.dart:2:8 - uri_does_not_exist
   error - Directives must appear before any declarations - test\unit\sync\sync_minew_usecase_test.dart:3:1 - directive_after_declaration
   error - Directives must appear before any declarations - test\unit\sync\sync_minew_usecase_test.dart:4:1 - directive_after_declaration
   error - Directives must appear before any declarations - test\unit\sync\sync_minew_usecase_test.dart:5:1 - directive_after_declaration
   error - Directives must appear before any declarations - test\unit\sync\sync_minew_usecase_test.dart:6:1 - directive_after_declaration
   error - Directives must appear before any declarations - test\unit\sync\sync_minew_usecase_test.dart:7:1 - directive_after_declaration
-  error - Missing concrete implementations of 'class MinewSyncRepository.getStoreStats', 'class MinewSyncRepository.importGateways', 'class MinewSyncRepository.importTags', 'class MinewSyncRepository.syncGateways', and 5 more - test\unit\sync\sync_minew_usecase_test.dart:10:7 - non_abstract_class_inherits_abstract_member
-  error - Classes can only extend other classes - test\unit\sync\sync_minew_usecase_test.dart:10:39 - extends_non_class
-  error - Missing concrete implementations of 'class SyncHistoryRepository.addEntry', 'class SyncHistoryRepository.clearHistory', 'class SyncHistoryRepository.dispose', 'class SyncHistoryRepository.getHistory', and 7 more - test\unit\sync\sync_minew_usecase_test.dart:11:7 - non_abstract_class_inherits_abstract_member
-  error - Classes can only extend other classes - test\unit\sync\sync_minew_usecase_test.dart:11:41 - extends_non_class
   error - The function 'setUp' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:23:3 - undefined_function
   error - The function 'group' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:47:3 - undefined_function
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:48:5 - undefined_function
   error - The function 'MinewStoreStats' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:50:29 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:62:7 - undefined_function
   error - The method 'call' isn't defined for the type 'GetMinewStatsUseCase' - test\unit\sync\sync_minew_usecase_test.dart:66:49 - undefined_method
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:69:7 - undefined_function
   error - The function 'equals' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:69:22 - undefined_function
-  error - The function 'verify' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:70:7 - undefined_function
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:73:5 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:75:7 - undefined_function
    info - Use 'const' with the constructor to improve performance - test\unit\sync\sync_minew_usecase_test.dart:76:22 - prefer_const_constructors
   error - The named parameter 'statusCode' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:76:61 - undefined_named_parameter
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:79:7 - undefined_function
@@ -2451,7 +2334,6 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The function 'throwsA' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:81:9 - undefined_function
   error - The function 'isA' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:81:17 - undefined_function
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:85:5 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:87:7 - undefined_function
    info - Use 'const' with the constructor to improve performance - test\unit\sync\sync_minew_usecase_test.dart:88:22 - prefer_const_constructors
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:91:7 - undefined_function
   error - The method 'call' isn't defined for the type 'GetMinewStatsUseCase' - test\unit\sync\sync_minew_usecase_test.dart:92:36 - undefined_method
@@ -2478,9 +2360,7 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The named parameter 'created' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:116:11 - undefined_named_parameter
   error - The named parameter 'updated' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:117:11 - undefined_named_parameter
   error - The named parameter 'deleted' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:118:11 - undefined_named_parameter
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:125:7 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:127:7 - undefined_function
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:127:43 - undefined_function
+  error - The returned type 'MinewSyncResult' isn't returnable from a 'Future<ApiResponse<InvalidType>>' function, as required by the closure's context - test\unit\sync\sync_minew_usecase_test.dart:126:36 - return_of_invalid_type_from_closure
   error - The method 'call' isn't defined for the type 'SyncMinewStoreUseCase' - test\unit\sync\sync_minew_usecase_test.dart:131:50 - undefined_method
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:134:7 - undefined_function
   error - Undefined name 'isTrue' - test\unit\sync\sync_minew_usecase_test.dart:134:30 - undefined_identifier
@@ -2490,15 +2370,9 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The function 'equals' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:136:40 - undefined_function
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:137:7 - undefined_function
   error - The function 'equals' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:137:44 - undefined_function
-  error - The function 'verify' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:139:7 - undefined_function
-  error - The function 'verify' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:140:7 - undefined_function
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:140:45 - undefined_function
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:143:5 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:145:7 - undefined_function
    info - Use 'const' with the constructor to improve performance - test\unit\sync\sync_minew_usecase_test.dart:146:22 - prefer_const_constructors
   error - The named parameter 'statusCode' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:146:51 - undefined_named_parameter
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:147:7 - undefined_function
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:147:43 - undefined_function
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:151:7 - undefined_function
   error - The method 'call' isn't defined for the type 'SyncMinewStoreUseCase' - test\unit\sync\sync_minew_usecase_test.dart:152:37 - undefined_method
   error - The function 'throwsA' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:153:9 - undefined_function
@@ -2506,11 +2380,8 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:157:5 - undefined_function
    info - Use 'const' with the constructor to improve performance - test\unit\sync\sync_minew_usecase_test.dart:160:30 - prefer_const_constructors
   error - The named parameter 'message' is required, but there's no corresponding argument - test\unit\sync\sync_minew_usecase_test.dart:160:30 - missing_required_argument
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:162:7 - undefined_function
   error - The named parameter 'onProgress' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:164:9 - undefined_named_parameter
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:164:21 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:173:7 - undefined_function
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:173:43 - undefined_function
+  error - The returned type 'MinewSyncResult' isn't returnable from a 'Future<ApiResponse<InvalidType>>' function, as required by the closure's context - test\unit\sync\sync_minew_usecase_test.dart:171:16 - return_of_invalid_type_from_closure
   error - The method 'call' isn't defined for the type 'SyncMinewStoreUseCase' - test\unit\sync\sync_minew_usecase_test.dart:177:35 - undefined_method
    info - Use the generic function type syntax to declare the parameter '' - test\unit\sync\sync_minew_usecase_test.dart:179:22 - use_function_type_syntax_for_parameters
   error - Undefined class 'toDouble' - test\unit\sync\sync_minew_usecase_test.dart:179:22 - undefined_class
@@ -2529,9 +2400,7 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The named parameter 'created' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:193:9 - undefined_named_parameter
   error - The named parameter 'updated' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:194:9 - undefined_named_parameter
   error - The named parameter 'deleted' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:195:9 - undefined_named_parameter
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:201:7 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:203:7 - undefined_function
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:203:43 - undefined_function
+  error - The returned type 'SyncResult' isn't returnable from a 'Future<ApiResponse<InvalidType>>' function, as required by the closure's context - test\unit\sync\sync_minew_usecase_test.dart:202:36 - return_of_invalid_type_from_closure
   error - The method 'call' isn't defined for the type 'SyncMinewTagsUseCase' - test\unit\sync\sync_minew_usecase_test.dart:207:49 - undefined_method
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:210:7 - undefined_function
   error - Undefined name 'isTrue' - test\unit\sync\sync_minew_usecase_test.dart:210:30 - undefined_identifier
@@ -2542,7 +2411,6 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:213:7 - undefined_function
   error - The function 'equals' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:213:31 - undefined_function
   error - There's no constant named 'minewTags' in 'SyncType' - test\unit\sync\sync_minew_usecase_test.dart:213:47 - undefined_enum_constant
-  error - The function 'verify' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:215:7 - undefined_function
   error - The function 'group' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:219:3 - undefined_function
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:220:5 - undefined_function
   error - The named parameter 'errorCount' is required, but there's no corresponding argument - test\unit\sync\sync_minew_usecase_test.dart:222:30 - missing_required_argument
@@ -2553,9 +2421,7 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The named parameter 'created' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:225:9 - undefined_named_parameter
   error - The named parameter 'updated' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:226:9 - undefined_named_parameter
   error - The named parameter 'deleted' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:227:9 - undefined_named_parameter
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:233:7 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:235:7 - undefined_function
-  error - The function 'any' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:235:43 - undefined_function
+  error - The returned type 'SyncResult' isn't returnable from a 'Future<ApiResponse<InvalidType>>' function, as required by the closure's context - test\unit\sync\sync_minew_usecase_test.dart:234:36 - return_of_invalid_type_from_closure
   error - The method 'call' isn't defined for the type 'ImportMinewTagsUseCase' - test\unit\sync\sync_minew_usecase_test.dart:239:51 - undefined_method
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:242:7 - undefined_function
   error - Undefined name 'isTrue' - test\unit\sync\sync_minew_usecase_test.dart:242:30 - undefined_identifier
@@ -2567,14 +2433,12 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - The function 'equals' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:245:31 - undefined_function
   error - There's no constant named 'minewImport' in 'SyncType' - test\unit\sync\sync_minew_usecase_test.dart:245:47 - undefined_enum_constant
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:248:5 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:250:7 - undefined_function
    info - Use 'const' with the constructor to improve performance - test\unit\sync\sync_minew_usecase_test.dart:251:22 - prefer_const_constructors
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:254:7 - undefined_function
   error - The method 'call' isn't defined for the type 'ImportMinewTagsUseCase' - test\unit\sync\sync_minew_usecase_test.dart:255:38 - undefined_method
   error - The function 'throwsA' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:256:9 - undefined_function
   error - The function 'isA' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:256:17 - undefined_function
   error - The function 'test' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:260:5 - undefined_function
-  error - The function 'when' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:262:7 - undefined_function
    info - Use 'const' with the constructor to improve performance - test\unit\sync\sync_minew_usecase_test.dart:263:22 - prefer_const_constructors
   error - The function 'expect' isn't defined - test\unit\sync\sync_minew_usecase_test.dart:266:7 - undefined_function
   error - The method 'call' isn't defined for the type 'ImportMinewTagsUseCase' - test\unit\sync\sync_minew_usecase_test.dart:267:38 - undefined_method
@@ -2618,4 +2482,31 @@ warning - The library 'file:///D:/tagbean/frontend/migration/modulos_migrados/pr
   error - Directives must appear before any declarations - test\widget_test.dart:4:1 - directive_after_declaration
   error - Directives must appear before any declarations - test\widget_test.dart:5:1 - directive_after_declaration
 
-2555 issues found. (ran in 29.0s)
+Package file_picker:linux references file_picker:linux as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: linux: default_package: file_picker` or add an inline implementation to file_picker via `platforms: linux:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:macos references file_picker:macos as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: macos: default_package: file_picker` or add an inline implementation to file_picker via `platforms: macos:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:windows references file_picker:windows as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: windows: default_package: file_picker` or add an inline implementation to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:linux references file_picker:linux as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: linux: default_package: file_picker` or add an inline implementation to file_picker via `platforms: linux:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:macos references file_picker:macos as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: macos: default_package: file_picker` or add an inline implementation to file_picker via `platforms: macos:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:windows references file_picker:windows as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: windows: default_package: file_picker` or add an inline implementation to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:linux references file_picker:linux as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: linux: default_package: file_picker` or add an inline implementation to file_picker via `platforms: linux:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:macos references file_picker:macos as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: macos: default_package: file_picker` or add an inline implementation to file_picker via `platforms: macos:` `pluginClass` or `dartPluginClass`.
+
+Package file_picker:windows references file_picker:windows as the default plugin, but it does not provide an inline implementation.
+Ask the maintainers of file_picker to either avoid referencing a default implementation via `platforms: windows: default_package: file_picker` or add an inline implementation to file_picker via `platforms: windows:` `pluginClass` or `dartPluginClass`.
+
+2448 issues found. (ran in 5.0s)

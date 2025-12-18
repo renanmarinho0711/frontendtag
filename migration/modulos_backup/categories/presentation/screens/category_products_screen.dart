@@ -1519,6 +1519,7 @@ class _CategoriasProdutosScreenState extends ConsumerState<CategoriasProdutosScr
     );
   }
 
+  // ignore: unused_element
   void _unlinkSingleProduct(Map<String, dynamic> produto) {
     showDialog(
       context: context,

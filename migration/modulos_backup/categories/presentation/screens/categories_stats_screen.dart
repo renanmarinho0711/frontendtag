@@ -1422,6 +1422,7 @@ class _CategoriasEstatisticasScreenState extends ConsumerState<CategoriasEstatis
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: _categorias.map((cat) {
+                // ignore: unused_local_variable
                 final height = (cat['percentual'] / 100) * 180;
                 return TweenAnimationBuilder(
                   duration: const Duration(milliseconds: 1000),
