@@ -529,7 +529,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Container(
                 padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                 decoration: BoxDecoration(
-                  gradient: AppGradients.primaryHeade(context)r(context),
+                  gradient: AppGradients.primaryHeader(context),
                   borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                 ),
                 child: Icon(
@@ -905,7 +905,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
               Container(
                 padding: AppSizes.productEditIconPadding.toEdgeInsetsAll(isMobile, isTablet),
                 decoration: BoxDecoration(
-                  gradient: AppGradients.primaryHeade(context)r(context),
+                  gradient: AppGradients.primaryHeader(context),
                   borderRadius: isMobile ? AppRadius.sm : AppRadius.sm,
                 ),
                 child: Icon(
@@ -1292,6 +1292,7 @@ class _ProdutosEditarScreenState extends ConsumerState<ProdutosEditarScreen>
     );
   }
 }
+
 
 
 
