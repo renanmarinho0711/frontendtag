@@ -701,7 +701,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     return Container(
       padding: EdgeInsets.all(isMobile ? 16 : 20),
       decoration: BoxDecoration(
-        gradient: ModuleGradients.produto(context)s(context),
+        gradient: ModuleGradients.produtos(context),
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(24)),
         boxShadow: [
           BoxShadow(
@@ -1138,6 +1138,7 @@ class _ProdutosAssociarQRScreenState extends ConsumerState<ProdutosAssociarQRScr
     );
   }
 }
+
 
 
 

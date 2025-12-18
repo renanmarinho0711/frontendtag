@@ -544,7 +544,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         vertical: AppSizes.cardPadding.get(isMobile, isTablet),
       ),
       decoration: BoxDecoration(
-        gradient: ModuleGradients.produto(context)s(context),
+        gradient: ModuleGradients.produtos(context),
         borderRadius: AppRadius.card,
         boxShadow: AppShadows.elevatedCard,
       ),
@@ -552,7 +552,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
         children: [
           Container(
             decoration: BoxDecoration(
-              color: AppGradients.overlayWhite2(context)0(context),
+              color: AppGradients.overlayWhite20(context),
               borderRadius: AppRadius.iconButtonMedium,
             ),
             child: IconButton(
@@ -572,7 +572,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           Container(
             padding: EdgeInsets.all(AppSizes.paddingBase.get(isMobile, isTablet)),
             decoration: BoxDecoration(
-              color: AppGradients.overlayWhite2(context)0(context),
+              color: AppGradients.overlayWhite20(context),
               borderRadius: AppRadius.button,
             ),
             child: Icon(
@@ -649,7 +649,7 @@ class _ProdutosListaScreenState extends ConsumerState<ProdutosListaScreen>
           vertical: AppSizes.paddingXs.get(isMobile, isTablet),
         ),
         decoration: BoxDecoration(
-          color: AppGradients.overlayWhite2(context)0(context),
+          color: AppGradients.overlayWhite20(context),
           borderRadius: AppRadius.sm,
         ),
         child: Row(
@@ -2365,6 +2365,7 @@ class _BatchCategoryDialogState extends State<_BatchCategoryDialog> {
     );
   }
 }
+
 
 
 
